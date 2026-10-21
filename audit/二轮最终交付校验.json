@@ -1,0 +1,361 @@
+{
+  "date": "2026-10-21",
+  "lectures": 29,
+  "problems": 950,
+  "question_diagrams": 950,
+  "analysis_diagrams": 950,
+  "explicit_refs": 1900,
+  "manual_focus_problems": 47,
+  "manual_focus_by_lecture": {
+    "1": [
+      "W1",
+      "T5",
+      "T12"
+    ],
+    "2": [
+      "W6"
+    ],
+    "3": [
+      "T14",
+      "T16",
+      "T18"
+    ],
+    "4": [
+      "T7",
+      "T16"
+    ],
+    "5": [
+      "W12",
+      "T17"
+    ],
+    "6": [
+      "W10"
+    ],
+    "7": [
+      "W9",
+      "T15"
+    ],
+    "8": [
+      "W6",
+      "T8"
+    ],
+    "9": [
+      "T15"
+    ],
+    "10": [
+      "W11"
+    ],
+    "11": [
+      "T3",
+      "T9",
+      "T10"
+    ],
+    "12": [
+      "T9",
+      "T18"
+    ],
+    "13": [
+      "W1",
+      "T2"
+    ],
+    "14": [
+      "T10"
+    ],
+    "15": [
+      "T2"
+    ],
+    "16": [
+      "W1",
+      "W12"
+    ],
+    "17": [
+      "T8"
+    ],
+    "18": [
+      "W5"
+    ],
+    "19": [
+      "W9"
+    ],
+    "20": [
+      "W9"
+    ],
+    "21": [
+      "T9"
+    ],
+    "22": [
+      "W8"
+    ],
+    "23": [
+      "T16"
+    ],
+    "24": [
+      "W2",
+      "T15"
+    ],
+    "25": [
+      "W9"
+    ],
+    "26": [
+      "W3"
+    ],
+    "27": [
+      "T4"
+    ],
+    "28": [
+      "W1",
+      "W2",
+      "W3"
+    ],
+    "29": [
+      "P2W2",
+      "P3W6",
+      "P4W1"
+    ]
+  },
+  "modified_problems": 16,
+  "modified_lectures": 12,
+  "unchanged_lectures": [
+    3,
+    6,
+    8,
+    10,
+    13,
+    14,
+    17,
+    19,
+    20,
+    21,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "existing_formula_scripts_passed": 28,
+  "formula_instances_lectures_4_to_29": 5530,
+  "first_lecture_problems_checked": 20,
+  "lectures_2_3_additional_checks": 61,
+  "new_focused_checks": 46,
+  "all_passed": true,
+  "pages": 1255,
+  "rendered_neighbor_pages": 77,
+  "merge_checks": [
+    {
+      "lecture": 1,
+      "pages": 29,
+      "first_page": 1,
+      "text_pixels_match": true,
+      "links_preserved": 40
+    },
+    {
+      "lecture": 2,
+      "pages": 48,
+      "first_page": 30,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 3,
+      "pages": 40,
+      "first_page": 78,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 4,
+      "pages": 42,
+      "first_page": 118,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 5,
+      "pages": 41,
+      "first_page": 160,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 6,
+      "pages": 43,
+      "first_page": 201,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 7,
+      "pages": 40,
+      "first_page": 244,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 8,
+      "pages": 40,
+      "first_page": 284,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 9,
+      "pages": 45,
+      "first_page": 324,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 10,
+      "pages": 46,
+      "first_page": 369,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 11,
+      "pages": 42,
+      "first_page": 415,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 12,
+      "pages": 42,
+      "first_page": 457,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 13,
+      "pages": 43,
+      "first_page": 499,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 14,
+      "pages": 41,
+      "first_page": 542,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 15,
+      "pages": 43,
+      "first_page": 583,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 16,
+      "pages": 41,
+      "first_page": 626,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 17,
+      "pages": 44,
+      "first_page": 667,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 18,
+      "pages": 43,
+      "first_page": 711,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 19,
+      "pages": 35,
+      "first_page": 754,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 20,
+      "pages": 35,
+      "first_page": 789,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 21,
+      "pages": 35,
+      "first_page": 824,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 22,
+      "pages": 35,
+      "first_page": 859,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 23,
+      "pages": 39,
+      "first_page": 894,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 24,
+      "pages": 39,
+      "first_page": 933,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 25,
+      "pages": 44,
+      "first_page": 972,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 26,
+      "pages": 39,
+      "first_page": 1016,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 27,
+      "pages": 41,
+      "first_page": 1055,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 28,
+      "pages": 42,
+      "first_page": 1096,
+      "text_pixels_match": true,
+      "links_preserved": 60
+    },
+    {
+      "lecture": 29,
+      "pages": 118,
+      "first_page": 1138,
+      "text_pixels_match": true,
+      "links_preserved": 257
+    }
+  ],
+  "zip_entries_checked": 140,
+  "output_pdf": "pdf/电磁学讲义_全二十九讲_图与解答复审版.pdf",
+  "output_zip": "pdf/电磁学全二十九讲_图与解答复审_LaTeX及TikZ源码.zip",
+  "report": "audit/全册图与解答复审记录.md",
+  "output_sha256": {
+    "电磁学讲义_全二十九讲_图与解答复审版.pdf": "2526b903231e3b051da0140b771f61c1e03b9bb5cf777cf71a2824a19da08c36",
+    "电磁学全二十九讲_图与解答复审_LaTeX及TikZ源码.zip": "e98d34ba9c9486a5cd073a689fdc320018bf12272ac6c016c8eb9a4bd7c5e613",
+    "全册图与解答复审记录.md": "25101d6909813e007585f8429402b8be9992334028914ceefd6dad1c445b9d13",
+    "950题图与解答复审覆盖表.csv": "55c46aff68e9bab2b2a345c60c0e2ad0e56abdc97b2f887f0ada234a4ba50e05"
+  },
+  "original_58_files_unchanged": true
+}

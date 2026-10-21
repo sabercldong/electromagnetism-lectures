@@ -1,0 +1,2013 @@
+{
+  "lecture": "第十一讲",
+  "passed": 330,
+  "all_passed": true,
+  "groups": {
+    "运动方程积分": {
+      "count": 198,
+      "maximum_normalized_error": 8.617853303222543e-09
+    },
+    "积分或恒等式": {
+      "count": 85,
+      "maximum_normalized_error": 7.999999607211095e-08
+    },
+    "有限差分": {
+      "count": 35,
+      "maximum_normalized_error": 1.4199030173855931e-08
+    },
+    "渐近比较": {
+      "count": 3,
+      "maximum_normalized_error": 2.6672555462310335e-08
+    },
+    "量子网格近似": {
+      "count": 3,
+      "maximum_normalized_error": 0.0001300175061714981
+    },
+    "数值代入与有效位数": {
+      "count": 6,
+      "maximum_normalized_error": 0.0005709792190847936
+    }
+  },
+  "checks": [
+    {
+      "name": "正交场轨迹 q=-1.3 vD=0.3 t=0.8",
+      "normalized_error": 3.276545701424993e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.0816681711721685e-17,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=0.3 t=2.3",
+      "normalized_error": 9.586775817638227e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=0.3 t=6.1",
+      "normalized_error": 1.8342467513261672e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 8.409072049797572e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=0.3 t=0.8",
+      "normalized_error": 7.438494264988549e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.0581813203458523e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=0.3 t=2.3",
+      "normalized_error": 2.1441182163073336e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 5.134781488891349e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=0.3 t=6.1",
+      "normalized_error": 4.130350161620627e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 6.410345344820545e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=0.3 t=0.8",
+      "normalized_error": 8.748557434046234e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 8.326672684688674e-17,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=0.3 t=2.3",
+      "normalized_error": 2.5646151868841116e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 9.159339953157541e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=0.3 t=6.1",
+      "normalized_error": 4.779906146798596e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.1163626406917047e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=1.2 t=0.8",
+      "normalized_error": 1.3106182805699973e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 3.3306690738754696e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=1.2 t=2.3",
+      "normalized_error": 1.8075565619716732e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 6.343305300738532e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=1.2 t=6.1",
+      "normalized_error": 1.8342467513261672e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.3454515279676116e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=1.2 t=0.8",
+      "normalized_error": 6.414636610019453e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 5.689893001203927e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=1.2 t=2.3",
+      "normalized_error": 7.859678239711249e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 3.608224830031759e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=1.2 t=6.1",
+      "normalized_error": 1.0417239536142064e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 4.458022492825897e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=1.2 t=0.8",
+      "normalized_error": 8.770761894538737e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.1102230246251565e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=1.2 t=2.3",
+      "normalized_error": 1.800056853194502e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.7763568394002505e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=1.2 t=6.1",
+      "normalized_error": 1.1898311277700556e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 5.88418203051333e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=2.5 t=0.8",
+      "normalized_error": 1.4511984273249664e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 5.687828603576962e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=2.5 t=2.3",
+      "normalized_error": 1.8271916291995759e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 7.307487706450782e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=2.5 t=6.1",
+      "normalized_error": 1.8317899716323492e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.0627609903224311e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=2.5 t=0.8",
+      "normalized_error": 3.3139020476081332e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 4.385380947269368e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=2.5 t=2.3",
+      "normalized_error": 4.004850684100029e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 5.162537064506978e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=2.5 t=6.1",
+      "normalized_error": 6.633670100379481e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.1827158136478175e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=2.5 t=0.8",
+      "normalized_error": 4.625695507496206e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.6108318651627817e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=2.5 t=2.3",
+      "normalized_error": 5.816983211463709e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.205895169672029e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=-1.3 vD=2.5 t=6.1",
+      "normalized_error": 5.716453734127433e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.2212453270876722e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=0.3 t=0.8",
+      "normalized_error": 1.734723475976807e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 9.540979117872439e-18,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=0.3 t=2.3",
+      "normalized_error": 4.718447854656915e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=0.3 t=6.1",
+      "normalized_error": 9.058039253361105e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 5.551115123125783e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=0.3 t=0.8",
+      "normalized_error": 6.106226635438361e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.233456475320139e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=0.3 t=2.3",
+      "normalized_error": 1.1657341758564144e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 3.5041414214731503e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=0.3 t=6.1",
+      "normalized_error": 2.3993248863693036e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.3592239273284576e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=0.3 t=0.8",
+      "normalized_error": 3.9968028886505635e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 6.106226635438361e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=0.3 t=2.3",
+      "normalized_error": 9.576828947281131e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.3877787807814457e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=0.3 t=6.1",
+      "normalized_error": 7.858750309477337e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 5.134781488891349e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=1.2 t=0.8",
+      "normalized_error": 6.938893903907228e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.5265566588595902e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=1.2 t=2.3",
+      "normalized_error": 1.3486203265932101e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 8.881784197001252e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=1.2 t=6.1",
+      "normalized_error": 9.058039253361105e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.818803722240103e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=1.2 t=0.8",
+      "normalized_error": 3.5115004284950284e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.214306433183765e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=1.2 t=2.3",
+      "normalized_error": 5.140086665564089e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.4016565685892601e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=1.2 t=6.1",
+      "normalized_error": 1.5728768236512054e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 9.43689570931383e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=1.2 t=0.8",
+      "normalized_error": 2.6536242957174433e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.2212453270876722e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=1.2 t=2.3",
+      "normalized_error": 3.607555660643264e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.4432899320127035e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=1.2 t=6.1",
+      "normalized_error": 3.447873975819704e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 6.38378239159465e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=2.5 t=0.8",
+      "normalized_error": 1.4349632593280148e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 5.551115123125783e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=2.5 t=2.3",
+      "normalized_error": 1.477453233086585e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 6.769545168781705e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=2.5 t=6.1",
+      "normalized_error": 9.920466652695203e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.0391238041665932e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=2.5 t=0.8",
+      "normalized_error": 3.4631283497241786e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.615963001773025e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=2.5 t=2.3",
+      "normalized_error": 9.064729908807545e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.3314683517128287e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=2.5 t=6.1",
+      "normalized_error": 8.142613793372944e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 9.43689570931383e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=2.5 t=0.8",
+      "normalized_error": 1.4638559784044034e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 4.107825191113079e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=2.5 t=2.3",
+      "normalized_error": 1.3290130263403537e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.6746685744192671e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=0.6 vD=2.5 t=6.1",
+      "normalized_error": 1.251814851346394e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 3.2585045772748344e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=0.3 t=0.8",
+      "normalized_error": 1.4929724123646793e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 6.938893903907228e-17,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=0.3 t=2.3",
+      "normalized_error": 4.783326512658448e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 6.661338147750939e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=0.3 t=6.1",
+      "normalized_error": 6.204220352704839e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 5.273559366969494e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=0.3 t=0.8",
+      "normalized_error": 3.441691376337985e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.1510571102112408e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=0.3 t=2.3",
+      "normalized_error": 1.122608950243631e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 8.326672684688674e-17,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=0.3 t=6.1",
+      "normalized_error": 1.2911511248387618e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.706168622523819e-16,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=0.3 t=0.8",
+      "normalized_error": 3.912684288870929e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.4988010832439613e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=0.3 t=2.3",
+      "normalized_error": 6.938832413535851e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 3.3254649034475392e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=0.3 t=6.1",
+      "normalized_error": 9.994629198755569e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 7.022160630754115e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=1.2 t=0.8",
+      "normalized_error": 5.548589532077129e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.1102230246251565e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=1.2 t=2.3",
+      "normalized_error": 6.810025982072306e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 3.367094374277218e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=1.2 t=6.1",
+      "normalized_error": 6.204220352704839e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 3.3510485759652042e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=1.2 t=0.8",
+      "normalized_error": 2.8681053840584795e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=1.2 t=2.3",
+      "normalized_error": 4.101167507313906e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.2212453270876722e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=1.2 t=6.1",
+      "normalized_error": 3.267025998761042e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 4.440892098500626e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=1.2 t=0.8",
+      "normalized_error": 2.0776951043146272e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.55351295663786e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=1.2 t=2.3",
+      "normalized_error": 3.2658827913822425e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 3.795574965437254e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=1.2 t=6.1",
+      "normalized_error": 3.3293424008986246e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.3322676295501878e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=2.5 t=0.8",
+      "normalized_error": 5.547475481752785e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.43193285299542e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=2.5 t=2.3",
+      "normalized_error": 6.803691625562978e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.19803920752817e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=2.5 t=6.1",
+      "normalized_error": 6.200009555794108e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.95052191638497e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=2.5 t=0.8",
+      "normalized_error": 1.4037046913275124e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.1518563880486e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=2.5 t=2.3",
+      "normalized_error": 2.013035302095898e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.1879386363489175e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=2.5 t=6.1",
+      "normalized_error": 1.5857581527637188e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 2.4646951146678475e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=2.5 t=0.8",
+      "normalized_error": 1.2406446204265839e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 9.565078542345195e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=2.5 t=2.3",
+      "normalized_error": 1.8492516488776893e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 1.2628786905111156e-14,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "正交场轨迹 q=1.7 vD=2.5 t=6.1",
+      "normalized_error": 1.6916802541558313e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能差",
+      "normalized_error": 4.248630431269148e-15,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "整周期磁聚焦",
+      "normalized_error": 1.7158117374821424e-13,
+      "tolerance": 5e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "半周期最大离轴距离",
+      "normalized_error": 3.4416913763379853e-15,
+      "tolerance": 5e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "整周期磁聚焦",
+      "normalized_error": 3.0102483006277936e-13,
+      "tolerance": 5e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "半周期最大离轴距离",
+      "normalized_error": 8.881784197001254e-16,
+      "tolerance": 5e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "整周期磁聚焦",
+      "normalized_error": 3.822510884210484e-13,
+      "tolerance": 5e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "半周期最大离轴距离",
+      "normalized_error": 0.0,
+      "tolerance": 5e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "整周期磁聚焦",
+      "normalized_error": 5.77642100818565e-13,
+      "tolerance": 5e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "半周期最大离轴距离",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 5e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "整周期磁聚焦",
+      "normalized_error": 1.0138417882998851e-12,
+      "tolerance": 5e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "半周期最大离轴距离",
+      "normalized_error": 1.9032394707859825e-16,
+      "tolerance": 5e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "整周期磁聚焦",
+      "normalized_error": 1.3048960783440533e-12,
+      "tolerance": 5e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "半周期最大离轴距离",
+      "normalized_error": 2.808666774861361e-16,
+      "tolerance": 5e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "补偿双载流子精确电阻张量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "补偿双载流子精确电阻张量",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "补偿双载流子精确电阻张量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "补偿双载流子精确电阻张量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "补偿双载流子精确电阻张量",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "补偿双载流子精确电阻张量",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "补偿双载流子精确电阻张量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "补偿双载流子精确电阻张量",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "补偿双载流子精确电阻张量",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "补偿双载流子精确电阻张量",
+      "normalized_error": 1.8564385001928848e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "补偿双载流子精确电阻张量",
+      "normalized_error": 2.0970879354030734e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "补偿双载流子精确电阻张量",
+      "normalized_error": 1.887379141862766e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向开路",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向短路",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向开路",
+      "normalized_error": 1.7763568394002506e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向短路",
+      "normalized_error": 1.7080354225002407e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向开路",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向短路",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向开路",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向短路",
+      "normalized_error": 1.7650604525042237e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向开路",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向短路",
+      "normalized_error": 2.166288828536891e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向开路",
+      "normalized_error": 1.7763568394002506e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向短路",
+      "normalized_error": 2.1021974430772191e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向开路",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向短路",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向开路",
+      "normalized_error": 1.7763568394002506e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向短路",
+      "normalized_error": 1.7080354225002407e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向开路",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向短路",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向开路",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向短路",
+      "normalized_error": 1.7650604525042237e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向开路",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向短路",
+      "normalized_error": 2.166288828536891e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向开路",
+      "normalized_error": 1.7763568394002506e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子横向短路",
+      "normalized_error": 2.1021974430772191e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "两自旋通道相对磁阻",
+      "normalized_error": 3.3306690738754696e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "两自旋通道相对磁阻",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "两自旋通道相对磁阻",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "两自旋通道相对磁阻",
+      "normalized_error": 5.904787277784766e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱势的旋度",
+      "normalized_error": 6.189215806529091e-13,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的径向磁通积分",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱泊松方程",
+      "normalized_error": 2.508253826860596e-09,
+      "tolerance": 3e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的旋度",
+      "normalized_error": 9.18792819604164e-13,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的径向磁通积分",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱泊松方程",
+      "normalized_error": 8.065536682977381e-09,
+      "tolerance": 3e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的旋度",
+      "normalized_error": 2.325750703136009e-12,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的径向磁通积分",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱泊松方程",
+      "normalized_error": 2.657618569656961e-10,
+      "tolerance": 3e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的旋度",
+      "normalized_error": 3.375300039465401e-12,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的径向磁通积分",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱泊松方程",
+      "normalized_error": 3.0359224023612796e-09,
+      "tolerance": 3e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的旋度",
+      "normalized_error": 1.3654966046772188e-11,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的径向磁通积分",
+      "normalized_error": 9.71445146547012e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱势的旋度",
+      "normalized_error": 4.2708614422792834e-12,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的径向磁通积分",
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱势的旋度",
+      "normalized_error": 3.644848312056581e-12,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的径向磁通积分",
+      "normalized_error": 1.3322676295501878e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱泊松方程",
+      "normalized_error": 2.4830716371937456e-09,
+      "tolerance": 3e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的旋度",
+      "normalized_error": 5.843020511875352e-12,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的径向磁通积分",
+      "normalized_error": 9.992007221626409e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱泊松方程",
+      "normalized_error": 1.4199030173855931e-08,
+      "tolerance": 3e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的旋度",
+      "normalized_error": 1.4787171487284922e-11,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的径向磁通积分",
+      "normalized_error": 6.38378239159465e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱泊松方程",
+      "normalized_error": 4.5992809560857495e-10,
+      "tolerance": 3e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的旋度",
+      "normalized_error": 1.5908774297912487e-11,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的径向磁通积分",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱泊松方程",
+      "normalized_error": 3.3725617853974654e-09,
+      "tolerance": 3e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的旋度",
+      "normalized_error": 6.48264775193752e-12,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的径向磁通积分",
+      "normalized_error": 4.163336342344337e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱势的旋度",
+      "normalized_error": 4.912181772454005e-12,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "圆柱势的径向磁通积分",
+      "normalized_error": 1.6653345369377348e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴矢势与直接分段场积分",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴矢势求旋度",
+      "normalized_error": 3.250677504951227e-12,
+      "tolerance": 3e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "同轴矢势与直接分段场积分",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴矢势求旋度",
+      "normalized_error": 1.9997892231060632e-13,
+      "tolerance": 3e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "同轴矢势与直接分段场积分",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴矢势求旋度",
+      "normalized_error": 8.750777880095484e-13,
+      "tolerance": 3e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "同轴矢势与直接分段场积分",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴矢势求旋度",
+      "normalized_error": 1.0510370351823894e-11,
+      "tolerance": 3e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "同轴矢势与直接分段场积分",
+      "normalized_error": 1.0408340855860843e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴矢势求旋度",
+      "normalized_error": 6.819239617428252e-12,
+      "tolerance": 3e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "同轴矢势与直接分段场积分",
+      "normalized_error": 8.673617379884035e-19,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴矢势求旋度",
+      "normalized_error": 1.2730649867620514e-12,
+      "tolerance": 3e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "同轴矢势与直接分段场积分",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴矢势求旋度",
+      "normalized_error": 0.0,
+      "tolerance": 3e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "同轴界面矢势连续",
+      "normalized_error": 7.999999607211095e-08,
+      "tolerance": 1e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴界面磁场连续",
+      "normalized_error": 3.941291737419306e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴界面矢势连续",
+      "normalized_error": 4.9999998225080944e-08,
+      "tolerance": 1e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴界面磁场连续",
+      "normalized_error": 6.63377181797653e-08,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴界面矢势连续",
+      "normalized_error": 1.7608526963229126e-15,
+      "tolerance": 1e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴界面磁场连续",
+      "normalized_error": 3.508772001992567e-08,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的正则轴向动量",
+      "normalized_error": 9.458074109834006e-10,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的机械能",
+      "normalized_error": 9.619260863178252e-16,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的正则轴向动量",
+      "normalized_error": 1.0519765174588595e-09,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的机械能",
+      "normalized_error": 8.016050719315211e-16,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的正则轴向动量",
+      "normalized_error": 1.3897856086125366e-09,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的机械能",
+      "normalized_error": 2.5651362301808677e-15,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的正则轴向动量",
+      "normalized_error": 8.617853303222543e-09,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的机械能",
+      "normalized_error": 1.8465247810813413e-16,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的正则轴向动量",
+      "normalized_error": 6.549355379464113e-09,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的机械能",
+      "normalized_error": 1.2925673467569389e-15,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的正则轴向动量",
+      "normalized_error": 6.549355379464113e-09,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的机械能",
+      "normalized_error": 1.2925673467569389e-15,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的正则轴向动量",
+      "normalized_error": 7.813850421518278e-09,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的机械能",
+      "normalized_error": 7.243045216718656e-16,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的正则轴向动量",
+      "normalized_error": 7.698778451006096e-09,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的机械能",
+      "normalized_error": 3.259370347523395e-15,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的正则轴向动量",
+      "normalized_error": 7.698778451006096e-09,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴完整洛伦兹轨迹的机械能",
+      "normalized_error": 3.259370347523395e-15,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "同轴外边界二次势的截断",
+      "normalized_error": 2.6672555462310335e-08,
+      "tolerance": 2e-06,
+      "kind": "渐近比较"
+    },
+    {
+      "name": "同轴外边界二次势的截断",
+      "normalized_error": 7.184382283740793e-10,
+      "tolerance": 2e-06,
+      "kind": "渐近比较"
+    },
+    {
+      "name": "同轴外边界二次势的截断",
+      "normalized_error": 2.659061029554919e-11,
+      "tolerance": 2e-06,
+      "kind": "渐近比较"
+    },
+    {
+      "name": "边缘场正则角动量",
+      "normalized_error": 3.0357660829594124e-17,
+      "tolerance": 2e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "边缘场正则角动量",
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "边缘场正则角动量",
+      "normalized_error": 1.9109063290057016e-18,
+      "tolerance": 2e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "边缘场正则角动量",
+      "normalized_error": 2.47198095326695e-17,
+      "tolerance": 2e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "边缘场正则角动量",
+      "normalized_error": 3.8163916471489756e-17,
+      "tolerance": 2e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "边缘场正则角动量",
+      "normalized_error": 7.19910242530375e-17,
+      "tolerance": 2e-10,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "对称与朗道规范闭合环流",
+      "normalized_error": 3.6637359812630166e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "对称与朗道规范闭合环流",
+      "normalized_error": 7.350615263826794e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "对称与朗道规范闭合环流",
+      "normalized_error": 7.05453842391404e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向双导线势的旋度与直线毕奥场",
+      "normalized_error": 3.653341731699391e-11,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "反向双导线势的旋度与直线毕奥场",
+      "normalized_error": 1.270542162640725e-10,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "反向双导线势的旋度与直线毕奥场",
+      "normalized_error": 3.414535321155654e-11,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "反向双导线势的旋度与直线毕奥场",
+      "normalized_error": 4.969358258222201e-12,
+      "tolerance": 2e-09,
+      "kind": "有限差分"
+    },
+    {
+      "name": "偶极子圆盘磁通与圆周矢势",
+      "normalized_error": 7.979245644690197e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偶极子圆盘磁通与圆周矢势",
+      "normalized_error": 1.1879386363489175e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偶极子圆盘磁通与圆周矢势",
+      "normalized_error": 4.6629367034256575e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偶极子圆盘磁通与圆周矢势",
+      "normalized_error": 3.0531133177191805e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偶极子圆盘磁通与圆周矢势",
+      "normalized_error": 4.218847493575595e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偶极子圆盘磁通与圆周矢势",
+      "normalized_error": 3.608224830031759e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偶极子圆盘磁通与圆周矢势",
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偶极子圆盘磁通与圆周矢势",
+      "normalized_error": 4.718447854656915e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偶极子圆盘磁通与圆周矢势",
+      "normalized_error": 1.9984014443252818e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "开口与闭合电流矢势散度",
+      "normalized_error": 1.4350082233605121e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "开口与闭合电流矢势散度",
+      "normalized_error": 2.238487173400472e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "开口与闭合电流矢势散度",
+      "normalized_error": 1.1953431577893525e-09,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "开口与闭合电流矢势散度",
+      "normalized_error": 1.4593881658697683e-09,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "双损失锥粒子数积分",
+      "normalized_error": 7.771561172376096e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单端损失锥通量积分",
+      "normalized_error": 4.218847493575595e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双损失锥粒子数积分",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单端损失锥通量积分",
+      "normalized_error": 6.661338147750939e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双损失锥粒子数积分",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单端损失锥通量积分",
+      "normalized_error": 8.326672684688674e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双损失锥粒子数积分",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单端损失锥通量积分",
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "朗道对应谐振子的数值本征值",
+      "normalized_error": 3.2501093846804e-05,
+      "tolerance": 0.00015,
+      "kind": "量子网格近似"
+    },
+    {
+      "name": "朗道对应谐振子的数值本征值",
+      "normalized_error": 6.500437566501205e-05,
+      "tolerance": 0.00015,
+      "kind": "量子网格近似"
+    },
+    {
+      "name": "朗道对应谐振子的数值本征值",
+      "normalized_error": 0.0001300175061714981,
+      "tolerance": 0.00015,
+      "kind": "量子网格近似"
+    },
+    {
+      "name": "例12霍尔电压",
+      "normalized_error": 1.9254069548793606e-07,
+      "tolerance": 2e-07,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "例12面密度",
+      "normalized_error": 4.4490963946714665e-06,
+      "tolerance": 3e-05,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "例12磁长度纳米",
+      "normalized_error": 0.0003096618172595376,
+      "tolerance": 0.0006,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "例12轨道间隔毫电子伏",
+      "normalized_error": 0.00016182018055377334,
+      "tolerance": 0.0002,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "题16整数填充磁场",
+      "normalized_error": 7.810788050657622e-06,
+      "tolerance": 2e-05,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "题16有效质量轨道间隔",
+      "normalized_error": 0.0005709792190847936,
+      "tolerance": 0.001,
+      "kind": "数值代入与有效位数"
+    }
+  ]
+}

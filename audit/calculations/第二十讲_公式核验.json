@@ -1,0 +1,1427 @@
+{
+  "count": 150,
+  "count_description": "独立比较的参数实例数；不是独立公式数量",
+  "all_passed": true,
+  "groups": {
+    "源及负载": {
+      "count": 12,
+      "max_error": 2.1490895599549345e-16
+    },
+    "有限差分": {
+      "count": 19,
+      "max_error": 2.114701191935353e-10
+    },
+    "数字代入": {
+      "count": 10,
+      "max_error": 9.791987449416568e-06
+    },
+    "积分": {
+      "count": 16,
+      "max_error": 4.457578588853525e-15
+    },
+    "热平衡": {
+      "count": 31,
+      "max_error": 3.3355176944384843e-15
+    },
+    "微观输运": {
+      "count": 1,
+      "max_error": 0
+    },
+    "网络方程": {
+      "count": 23,
+      "max_error": 2.220446049250313e-15
+    },
+    "能量收支": {
+      "count": 14,
+      "max_error": 7.08748435922322e-16
+    },
+    "代数递推": {
+      "count": 8,
+      "max_error": 1.942890293094024e-16
+    },
+    "整数比较": {
+      "count": 1,
+      "max_error": 0
+    },
+    "仪表负载": {
+      "count": 3,
+      "max_error": 1.5631940186722206e-16
+    },
+    "叠加": {
+      "count": 1,
+      "max_error": 2.220446049250313e-16
+    },
+    "功率": {
+      "count": 1,
+      "max_error": 2.220446049250313e-16
+    },
+    "网络等效": {
+      "count": 3,
+      "max_error": 3.9474596431116675e-16
+    },
+    "稳定性": {
+      "count": 3,
+      "max_error": 0
+    },
+    "端口测试": {
+      "count": 1,
+      "max_error": 1.555932998014818e-16
+    },
+    "独立优化": {
+      "count": 3,
+      "max_error": 1.2224306305721255e-08
+    }
+  },
+  "records": [
+    {
+      "group": "源及负载",
+      "name": "能量收支",
+      "actual": 15.0,
+      "expected": 15.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "负载功率导数",
+      "actual": 16.666666666646325,
+      "expected": 16.666666666666668,
+      "normalized_error": 1.2205703114887001e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "源及负载",
+      "name": "能量收支",
+      "actual": 9.0,
+      "expected": 9.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "负载功率导数",
+      "actual": 5.921189464667501e-12,
+      "expected": 0.0,
+      "normalized_error": 5.921189464667501e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "源及负载",
+      "name": "能量收支",
+      "actual": 3.5999999999999996,
+      "expected": 3.5999999999999996,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "负载功率导数",
+      "actual": -0.8640000000004199,
+      "expected": -0.864,
+      "normalized_error": 4.198863479132342e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "源及负载",
+      "name": "能量收支",
+      "actual": 0.8571428571428571,
+      "expected": 0.8571428571428571,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "负载功率导数",
+      "actual": -0.07385811467424304,
+      "expected": -0.0738581146744412,
+      "normalized_error": 1.9816093210778263e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "源及负载",
+      "name": "能量收支",
+      "actual": 60.0,
+      "expected": 60.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "负载功率导数",
+      "actual": 16.666666666646325,
+      "expected": 16.666666666666668,
+      "normalized_error": 1.2205703114887001e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "源及负载",
+      "name": "能量收支",
+      "actual": 36.0,
+      "expected": 36.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "负载功率导数",
+      "actual": 5.921189464667501e-12,
+      "expected": 0.0,
+      "normalized_error": 5.921189464667501e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "源及负载",
+      "name": "能量收支",
+      "actual": 14.399999999999999,
+      "expected": 14.399999999999999,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "负载功率导数",
+      "actual": -0.8640000000004199,
+      "expected": -0.864,
+      "normalized_error": 4.198863479132342e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "源及负载",
+      "name": "能量收支",
+      "actual": 3.4285714285714284,
+      "expected": 3.4285714285714284,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "负载功率导数",
+      "actual": -0.07385811467424304,
+      "expected": -0.0738581146744412,
+      "normalized_error": 1.9816093210778263e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "源及负载",
+      "name": "能量收支",
+      "actual": 264.50000000000006,
+      "expected": 264.5,
+      "normalized_error": 2.1490895599549345e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "负载功率导数",
+      "actual": 244.90740740690242,
+      "expected": 244.90740740740745,
+      "normalized_error": 2.062107309105318e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "源及负载",
+      "name": "能量收支",
+      "actual": 158.70000000000005,
+      "expected": 158.70000000000002,
+      "normalized_error": 1.790907966629112e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "负载功率导数",
+      "actual": 1.9737298215558338e-10,
+      "expected": 0.0,
+      "normalized_error": 1.9737298215558338e-10,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "源及负载",
+      "name": "能量收支",
+      "actual": 63.48000000000001,
+      "expected": 63.48000000000001,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "负载功率导数",
+      "actual": -12.69599999997379,
+      "expected": -12.696000000000002,
+      "normalized_error": 2.064581090279623e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "源及负载",
+      "name": "能量收支",
+      "actual": 15.114285714285716,
+      "expected": 15.114285714285716,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "负载功率导数",
+      "actual": -1.0853039628564183,
+      "expected": -1.0853039628549837,
+      "normalized_error": 1.3218694868179708e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W1储能与热",
+      "actual": 30.0,
+      "expected": 30.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W2约束功率",
+      "actual": 11.52,
+      "expected": 11.52,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "W3内阻反演",
+      "actual": -6.000000000561111,
+      "expected": -6.0,
+      "normalized_error": 9.351852625627544e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "W3内阻反演",
+      "actual": 12.000000001188836,
+      "expected": 12.0,
+      "normalized_error": 9.906964137940122e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "W4温差电动势",
+      "actual": 0.008800000000000004,
+      "expected": 0.0088,
+      "normalized_error": 3.942553354492743e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W4负载微瓦",
+      "actual": 0.15488000000000002,
+      "expected": 0.15488,
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "W5冷热端能量",
+      "actual": 20.639999999999997,
+      "expected": 20.639999999999997,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W5制冷量",
+      "actual": 3.8400000000000007,
+      "expected": 3.84,
+      "normalized_error": 2.312964634635743e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W6漂移速度",
+      "actual": 0.0001762282743580518,
+      "expected": 0.00017623,
+      "normalized_error": 9.791987449416568e-06,
+      "tolerance": 2e-05,
+      "passed": true
+    },
+    {
+      "group": "微观输运",
+      "name": "Drude一致性",
+      "actual": 0.0001762282743580518,
+      "expected": 0.0001762282743580518,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "W7变截面电阻",
+      "actual": 0.15000000000000005,
+      "expected": 0.15,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "W7前半段发热比例",
+      "actual": 0.666666666666667,
+      "expected": 0.6666666666666666,
+      "normalized_error": 3.3306690738754696e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "W7变截面电阻",
+      "actual": 0.5000000000000002,
+      "expected": 0.5,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "W7前半段发热比例",
+      "actual": 0.666666666666667,
+      "expected": 0.6666666666666666,
+      "normalized_error": 3.3306690738754696e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "W7变截面电阻",
+      "actual": 2.000000000000001,
+      "expected": 2.0,
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "W7前半段发热比例",
+      "actual": 0.666666666666667,
+      "expected": 0.6666666666666666,
+      "normalized_error": 3.3306690738754696e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "非平衡桥检测电流",
+      "actual": 0.6593406593406614,
+      "expected": 0.6593406593406592,
+      "normalized_error": 2.220446049250313e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "电桥全部耗散",
+      "actual": 49.31868131868134,
+      "expected": 49.31868131868132,
+      "normalized_error": 4.322151668059433e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "非平衡桥检测电流",
+      "actual": 0.41379310344827536,
+      "expected": 0.4137931034482758,
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "电桥全部耗散",
+      "actual": 48.82758620689655,
+      "expected": 48.827586206896555,
+      "normalized_error": 1.45520758029964e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "非平衡桥检测电流",
+      "actual": 0.1558441558441559,
+      "expected": 0.1558441558441558,
+      "normalized_error": 8.326672684688674e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "电桥全部耗散",
+      "actual": 48.3116883116883,
+      "expected": 48.311688311688314,
+      "normalized_error": 2.941494121157404e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "非平衡桥检测电流",
+      "actual": 0.25751072961373467,
+      "expected": 0.257510729613734,
+      "normalized_error": 6.661338147750939e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "电桥全部耗散",
+      "actual": 40.17167381974248,
+      "expected": 40.17167381974249,
+      "normalized_error": 1.768765570855805e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "非平衡桥检测电流",
+      "actual": 0.1518987341772151,
+      "expected": 0.15189873417721525,
+      "normalized_error": 1.3877787807814457e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "电桥全部耗散",
+      "actual": 40.10126582278479,
+      "expected": 40.10126582278482,
+      "normalized_error": 7.08748435922322e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "非平衡桥检测电流",
+      "actual": 0.053811659192824914,
+      "expected": 0.053811659192825136,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "电桥全部耗散",
+      "actual": 40.03587443946188,
+      "expected": 40.03587443946188,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "非平衡桥检测电流",
+      "actual": -1.9885714285714307,
+      "expected": -1.9885714285714289,
+      "normalized_error": 8.932828933765626e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "电桥全部耗散",
+      "actual": 54.47314285714285,
+      "expected": 54.473142857142854,
+      "normalized_error": 1.3043909319194522e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "非平衡桥检测电流",
+      "actual": -1.27007299270073,
+      "expected": -1.2700729927007302,
+      "normalized_error": 1.748282234179844e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "电桥全部耗散",
+      "actual": 49.92700729927007,
+      "expected": 49.92700729927008,
+      "normalized_error": 1.42316308185868e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "非平衡桥检测电流",
+      "actual": -0.4873949579831933,
+      "expected": -0.4873949579831934,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "电桥全部耗散",
+      "actual": 44.97478991596638,
+      "expected": 44.97478991596638,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W9双源负载",
+      "actual": 1.4,
+      "expected": 1.4,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "W10立方体",
+      "actual": 0.8333333333333331,
+      "expected": 0.8333333333333334,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "立方体首层等势",
+      "actual": 0.6,
+      "expected": 0.6,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "立方体首层等势",
+      "actual": 0.6,
+      "expected": 0.6,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "立方体首层等势",
+      "actual": 0.6,
+      "expected": 0.6,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "代数递推",
+      "name": "梯形网络1级误差",
+      "actual": 0.048632677916771616,
+      "expected": 0.04863267791677181,
+      "normalized_error": 1.942890293094024e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "代数递推",
+      "name": "梯形网络2级误差",
+      "actual": 0.0069660112501050975,
+      "expected": 0.0069660112501051235,
+      "normalized_error": 2.6020852139652106e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "代数递推",
+      "name": "梯形网络3级误差",
+      "actual": 0.0010136302977241662,
+      "expected": 0.0010136302977241916,
+      "normalized_error": 2.5370330836160804e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "代数递推",
+      "name": "梯形网络4级误差",
+      "actual": 0.00014782943192326314,
+      "expected": 0.00014782943192332877,
+      "normalized_error": 6.562133648968516e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "代数递推",
+      "name": "梯形网络5级误差",
+      "actual": 2.15668056606777e-05,
+      "expected": 2.156680566069707e-05,
+      "normalized_error": 1.936994943781134e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "代数递推",
+      "name": "梯形网络6级误差",
+      "actual": 3.1465286198795184e-06,
+      "expected": 3.146528619736329e-06,
+      "normalized_error": 1.4318922566744496e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "代数递推",
+      "name": "梯形网络7级误差",
+      "actual": 4.590717870289751e-07,
+      "expected": 4.5907178703629035e-07,
+      "normalized_error": 7.315241230284155e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "代数递推",
+      "name": "梯形网络8级误差",
+      "actual": 6.697765941865441e-08,
+      "expected": 6.697765933325058e-08,
+      "normalized_error": 8.540383067747874e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W12检流计微安",
+      "actual": 1.9708394982014021,
+      "expected": 1.97084,
+      "normalized_error": 2.546115350739263e-07,
+      "tolerance": 3e-06,
+      "passed": true
+    },
+    {
+      "group": "整数比较",
+      "name": "T2最优串数",
+      "actual": 6.0,
+      "expected": 6.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "仪表负载",
+      "name": "T3电压表",
+      "actual": 7.5,
+      "expected": 7.5,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "仪表负载",
+      "name": "T4外接电流表",
+      "actual": 90.90909090909092,
+      "expected": 90.9090909090909,
+      "normalized_error": 1.5631940186722206e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "仪表负载",
+      "name": "T4内接电流表",
+      "actual": 101.0,
+      "expected": 101.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "T5负载功率",
+      "actual": 16.949092203631185,
+      "expected": 16.9491,
+      "normalized_error": 4.5998718612287255e-07,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "T7随温度系数",
+      "actual": 0.013500000000000003,
+      "expected": 0.0135,
+      "normalized_error": 2.5699607051508254e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "T8漂移动能收支",
+      "actual": 4.950290420959761e-05,
+      "expected": 4.950290420959701e-05,
+      "normalized_error": 6.030874584450618e-19,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "T8漂移动能收支",
+      "actual": 0.016429269939837798,
+      "expected": 0.016429269939837798,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "T8漂移动能收支",
+      "actual": 0.19978820044686385,
+      "expected": 0.19978820044686402,
+      "normalized_error": 1.6653345369377348e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "T8漂移动能收支",
+      "actual": 0.4514523077204684,
+      "expected": 0.45145230772046924,
+      "normalized_error": 8.326672684688674e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "T8漂移动能收支",
+      "actual": 0.49995460110081424,
+      "expected": 0.4999546011008143,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "T9双载流子电导",
+      "actual": 384.528,
+      "expected": 384.528,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "T10径向电阻",
+      "actual": 0.6931471805599453,
+      "expected": 0.6931471805599453,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "T10径向电阻",
+      "actual": 2.5902671654458382,
+      "expected": 2.5902671654458267,
+      "normalized_error": 4.457578588853525e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "积分",
+      "name": "T10径向电阻",
+      "actual": 0.048790164169432056,
+      "expected": 0.04879016416943205,
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "T11失衡检测",
+      "actual": 0.017857142857142794,
+      "expected": 0.017857142857142856,
+      "normalized_error": 6.245004513516506e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "T11失衡检测",
+      "actual": 0.00016677785190122307,
+      "expected": 0.0001667778519012675,
+      "normalized_error": 4.4425184017593544e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "T11失衡检测",
+      "actual": -0.000166555629580456,
+      "expected": -0.00016655562958027982,
+      "normalized_error": 1.7618285302889447e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "T11失衡检测",
+      "actual": -0.015625,
+      "expected": -0.015625,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "叠加",
+      "name": "T12共同电压",
+      "actual": 8.000000000000002,
+      "expected": 8.0,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "功率",
+      "name": "T12交叉功率",
+      "actual": 3.999999999999999,
+      "expected": 4.0,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络等效",
+      "name": "T13星三角",
+      "actual": 5.000000000000001,
+      "expected": 5.0,
+      "normalized_error": 1.7763568394002506e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络等效",
+      "name": "T13星三角",
+      "actual": 9.000000000000004,
+      "expected": 9.0,
+      "normalized_error": 3.9474596431116675e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络等效",
+      "name": "T13星三角",
+      "actual": 8.000000000000002,
+      "expected": 8.0,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "T14九节点",
+      "actual": 1.5,
+      "expected": 1.5,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "T15瑞利灵敏度",
+      "actual": 0.2500000002048086,
+      "expected": 0.2500000000000002,
+      "normalized_error": 2.0480839246772575e-10,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "T15瑞利灵敏度",
+      "actual": 0.0625000001042153,
+      "expected": 0.06250000000000006,
+      "normalized_error": 1.0421524754278266e-10,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "T15瑞利灵敏度",
+      "actual": 0.06250000004981437,
+      "expected": 0.0625,
+      "normalized_error": 4.9814374847301224e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "T15瑞利灵敏度",
+      "actual": 0.0625000001086562,
+      "expected": 0.06249999999999989,
+      "normalized_error": 1.0865630617473698e-10,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "T15瑞利灵敏度",
+      "actual": 0.25000000021146995,
+      "expected": 0.24999999999999983,
+      "normalized_error": 2.114701191935353e-10,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "稳定性",
+      "name": "T16回复系数",
+      "actual": 0.8,
+      "expected": 0.8,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "稳定性",
+      "name": "T16回复系数",
+      "actual": -0.09999999999999998,
+      "expected": -0.09999999999999998,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "稳定性",
+      "name": "T16回复系数",
+      "actual": 0.0,
+      "expected": 0.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "端口测试",
+      "name": "T17真实电源关闭",
+      "actual": 2.854166666666667,
+      "expected": 2.8541666666666665,
+      "normalized_error": 1.555932998014818e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "T17端口电流",
+      "actual": 0.4609475032010235,
+      "expected": 0.46094750320102434,
+      "normalized_error": 8.326672684688674e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "T17电源真实功率",
+      "actual": 36.69142125480154,
+      "expected": 36.69142125480154,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "T17端口电流",
+      "actual": 0.38918918918918877,
+      "expected": 0.3891891891891892,
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "T17电源真实功率",
+      "actual": 36.58378378378377,
+      "expected": 36.58378378378379,
+      "normalized_error": 3.8844682658279706e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "T17端口电流",
+      "actual": 0.2627737226277369,
+      "expected": 0.26277372262773724,
+      "normalized_error": 3.3306690738754696e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "T17电源真实功率",
+      "actual": 36.39416058394159,
+      "expected": 36.394160583941606,
+      "normalized_error": 3.904707372608653e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "T17端口电流",
+      "actual": 0.19098143236074297,
+      "expected": 0.19098143236074272,
+      "normalized_error": 2.498001805406602e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "T17电源真实功率",
+      "actual": 36.286472148541115,
+      "expected": 36.286472148541115,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "网络方程",
+      "name": "T17端口电流",
+      "actual": 0.06563354603464,
+      "expected": 0.06563354603463992,
+      "normalized_error": 8.326672684688674e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量收支",
+      "name": "T17电源真实功率",
+      "actual": 36.09845031905197,
+      "expected": 36.098450319051956,
+      "normalized_error": 3.9366938440849997e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 10.000000000000004,
+      "expected": 10.0,
+      "normalized_error": 3.552713678800501e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 0.04311326281445105,
+      "expected": 0.043113262814449896,
+      "normalized_error": 1.1518563880486e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 10.0,
+      "expected": 10.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 0.09192924146804593,
+      "expected": 0.09192924146804503,
+      "normalized_error": 9.020562075079397e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 10.000000000000002,
+      "expected": 10.0,
+      "normalized_error": 1.7763568394002506e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 0.09367618176962722,
+      "expected": 0.09367618176962629,
+      "normalized_error": 9.298117831235686e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 10.0,
+      "expected": 10.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 0.0796247050731882,
+      "expected": 0.07962470507318739,
+      "normalized_error": 8.049116928532385e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 10.0,
+      "expected": 10.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 0.038838613893434015,
+      "expected": 0.03883861389343518,
+      "normalized_error": 1.1657341758564144e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立优化",
+      "name": "T18黄金分割与驻值",
+      "actual": 1.3188456978879475,
+      "expected": 1.3188457140099215,
+      "normalized_error": 1.2224306305721255e-08,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 20.000000000000004,
+      "expected": 20.0,
+      "normalized_error": 1.7763568394002506e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 0.16750783314163797,
+      "expected": 0.16750783314163464,
+      "normalized_error": 3.3306690738754696e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 20.0,
+      "expected": 20.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 0.3580397433184608,
+      "expected": 0.3580397433184616,
+      "normalized_error": 8.326672684688674e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 19.999999999999996,
+      "expected": 20.0,
+      "normalized_error": 1.7763568394002506e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 0.3654724601682986,
+      "expected": 0.3654724601683003,
+      "normalized_error": 1.7208456881689926e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 19.999999999999996,
+      "expected": 20.0,
+      "normalized_error": 1.7763568394002506e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 0.31276692144803064,
+      "expected": 0.3127669214480295,
+      "normalized_error": 1.1657341758564144e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 20.0,
+      "expected": 20.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 0.1541051631914847,
+      "expected": 0.15410516319148543,
+      "normalized_error": 7.216449660063518e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立优化",
+      "name": "T18黄金分割与驻值",
+      "actual": 1.3369701686671198,
+      "expected": 1.3369701720732294,
+      "normalized_error": 2.5476332140569303e-09,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 49.99999999999999,
+      "expected": 50.0,
+      "normalized_error": 1.4210854715202004e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 0.9659344654020288,
+      "expected": 0.9659344654020311,
+      "normalized_error": 2.3314683517128287e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 50.0,
+      "expected": 50.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 2.0775759304055086,
+      "expected": 2.077575930405505,
+      "normalized_error": 1.7100283204123739e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 49.99999999999999,
+      "expected": 50.0,
+      "normalized_error": 1.4210854715202004e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 2.130232248339844,
+      "expected": 2.130232248339837,
+      "normalized_error": 3.3355176944384843e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 50.0,
+      "expected": 50.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 1.8562425102227706,
+      "expected": 1.8562425102227673,
+      "normalized_error": 1.7943070776219625e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18给定供热",
+      "actual": 50.0,
+      "expected": 50.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "热平衡",
+      "name": "T18冷热端能量",
+      "actual": 0.9406407016077907,
+      "expected": 0.940640701607792,
+      "normalized_error": 1.3322676295501878e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立优化",
+      "name": "T18黄金分割与驻值",
+      "actual": 1.387626087215713,
+      "expected": 1.3876260951248152,
+      "normalized_error": 5.6997358941231174e-09,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "T18最大输出",
+      "actual": 0.36547246016830043,
+      "expected": 0.3654724601683,
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    }
+  ]
+}

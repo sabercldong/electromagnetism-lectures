@@ -1,0 +1,590 @@
+% 第十八讲 磁荷、边界条件与电磁能量
+% 使用 Tectonic 或 XeLaTeX 编译。正文可在下方各 ContentPart 中编辑。
+% 图像以无损 PDF 图像流嵌入本文件，编译时无需另附图片文件。
+\documentclass[UTF8,fontset=fandol,zihao=-4,a4paper]{ctexart}
+\usepackage[top=19mm,bottom=18mm,left=21mm,right=21mm]{geometry}
+\usepackage{amsmath,amssymb,bm,esint}
+\usepackage{booktabs,array,float,caption}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={第十八讲 磁荷、边界条件与电磁能量},pdfsubject={电磁学课程讲义},pdfauthor={}}
+\ctexset{
+ section={format=\Large\sffamily\bfseries,beforeskip=3ex,afterskip=1.5ex},
+ subsection={format=\normalsize\sffamily\bfseries,beforeskip=2ex,afterskip=1ex}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.18}
+\renewcommand{\thefigure}{18-\arabic{figure}}
+\captionsetup{font=small,labelformat=simple,labelsep=quad,skip=6pt}
+\setlength{\abovedisplayskip}{7pt}
+\setlength{\belowdisplayskip}{7pt}
+\setlength{\intextsep}{8pt}
+\pagestyle{plain}
+\raggedbottom
+
+% 自包含原图排版命令，保留原始像素和比例。
+\newlength{\PptWidth}
+\newlength{\PptHeight}
+\newlength{\PptTileHeight}
+\newlength{\PptTileY}
+\makeatletter
+\newcommand{\PptDrawTile}[3]{%
+ \setlength{\PptTileHeight}{#2\PptHeight}%
+ \setlength{\PptTileY}{#3\PptHeight}%
+ \edef\PptTileHeightBP{\strip@pt\dimexpr0.996264\PptTileHeight\relax}%
+ \edef\PptTileYBP{\strip@pt\dimexpr0.996264\PptTileY\relax}%
+ \special{pdf:put @Ppt#1 << /Filter /FlateDecode >>}%
+ \special{pdf:put @resources << /XObject << /Ppt#1 @Ppt#1 >> >>}%
+ \special{pdf:content q \PptWidthBP\space 0 0 \PptTileHeightBP\space 0 \PptTileYBP\space cm /Ppt#1 Do Q}}
+\newcommand{\PptImageBox}[3]{%
+ \begingroup
+ \setlength{\PptWidth}{#2}%
+ \setlength{\PptHeight}{#3\PptWidth}%
+ \edef\PptWidthBP{\strip@pt\dimexpr0.996264\PptWidth\relax}%
+ \edef\PptHeightBP{\strip@pt\dimexpr0.996264\PptHeight\relax}%
+ \leavevmode\hbox to\PptWidth{%
+  \vrule width0pt height\PptHeight depth0pt%
+  \csname PptStream#1\endcsname%
+  \global\expandafter\let\csname PptStream#1\endcsname\relax%
+  \hss}%
+ \endgroup}
+\makeatother
+
+
+\usepackage{enumitem}
+\usepackage{xcolor,tikz,needspace}
+\usetikzlibrary{arrows.meta,calc,decorations.pathmorphing}
+\definecolor{ink}{HTML}{25323C}
+\definecolor{sourceink}{HTML}{A34435}
+\definecolor{fieldink}{HTML}{205D83}
+\definecolor{surfaceink}{HTML}{4B7B77}
+\tikzset{
+ charge/.style={circle,draw=sourceink,fill=sourceink!6,minimum size=6mm,inner sep=2pt},
+ point/.style={circle,fill=ink,inner sep=1.5pt},
+ axis/.style={draw=ink!65,thin,-{Latex[length=1.7mm]}},
+ force/.style={draw=fieldink,thick,-{Latex[length=2mm]}},
+ aux/.style={draw=ink!45,dashed,thin},
+ dim/.style={draw=ink!60,thin,{Latex[length=1.6mm]}-{Latex[length=1.6mm]}},
+ source/.style={draw=sourceink,very thick},
+ surface/.style={draw=surfaceink,fill=surfaceink!7}}
+\newcommand{\ProblemDiagram}[1]{\DrawDiagram{#1}{0}{Q}{题图}}
+\newcommand{\AnalysisDiagram}[1]{\DrawDiagram{#1}{1}{A}{解答分析图}}
+\newcommand{\DrawDiagram}[4]{%
+ \par\smallskip\noindent\begin{minipage}{\linewidth}\centering\refstepcounter{figure}\label{fig:L18:#1:#3}
+ \begin{tikzpicture}[x=1cm,y=1cm,font=\small,text=ink,line cap=round,line join=round]
+ \csname Diagram#1\endcsname{#2}
+ \end{tikzpicture}\par\vspace{2pt}
+ {\footnotesize\textbf{图~\thefigure\quad #4}\quad\csname Caption#3#1\endcsname\par}
+ \end{minipage}\par\smallskip}
+\setlist[enumerate]{itemsep=4pt,parsep=0pt,topsep=5pt,leftmargin=2.3em}
+\newcommand{\Coach}[1]{\par\smallskip\noindent #1\par\smallskip}
+\newcommand{\Trap}[1]{\par\smallskip\noindent\textbf{注意}\quad #1\par\smallskip}
+\newcommand{\Task}[2]{\needspace{85mm}\subsection*{习题 #1\quad #2}}
+\newcommand{\Answer}[2]{\needspace{75mm}\subsection*{习题 #1 解答\quad #2}}
+\newcommand{\Worked}[2]{\needspace{85mm}\subsection*{例题 #1\quad #2}}
+\newcommand{\Solution}{\par\noindent\textbf{解}\quad}
+\newcommand{\Key}[1]{}
+
+\expandafter\def\csname DiagramW1\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (1.05);\draw[axis] (0,-1.4)--(0,1.65) node[above] {$z$};\draw[force,-{Latex}] (-0.32,-0.65)--++(0,1.3) node[midway,left] {$M$};\node[above left] at (-.2,1.05) {$+$};\node[below left] at (-.2,-1.05) {$-$};\node[align=center,text width=5.2cm] at (6,1.05) {固定均匀磁化};
+\node[align=center,text width=5.2cm] at (6,0.27) {无自由电流};
+\else
+\draw[surface] (0,0) circle (1.05);\draw[axis] (0,-1.4)--(0,1.65) node[above] {$z$};\draw[force,-{Latex}] (-0.32,-0.65)--++(0,1.3) node[midway,left] {$M$};\node[above left] at (-.2,1.05) {$+$};\node[below left] at (-.2,-1.05) {$-$};\draw[force,-{Latex}] (0.35,0.6)--++(0,-1.2) node[midway,right] {$H_d$};\draw[force,-{Latex}] (-1.6,-0.55)--++(0,1.1) node[midway,left] {$B$};\node[align=center,text width=5.2cm] at (6,1.05) {$H_{\rm in}=-M/3$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$B_{\rm in}=2\mu_0M/3$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {外场磁矩 $m=MV$};
+\fi
+}
+\expandafter\def\csname CaptionQW1\endcsname{上半球为正磁荷，下半球为负磁荷}
+\expandafter\def\csname CaptionAW1\endcsname{内部退磁场向下，磁化电流产生的磁感应强度向上}
+\expandafter\def\csname DiagramW2\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (-1.45,-.65) rectangle (1.45,.65);\node at (-1.45,0) {$-$};\node at (1.45,0) {$+$};\draw[dim] (-1.45,-1.05)--(1.45,-1.05) node[midway,below] {$\ell$};\draw[dim] (1.8,0)--(1.8,.65) node[midway,right] {$R$};\draw[force,-{Latex}] (-0.65,0.22)--++(1.3,0) node[midway,above] {$M$};\node[point] at (0,0) {};\node[align=center,text width=5.2cm] at (6,1.05) {两个端面磁荷 $\pm M$};
+\node[align=center,text width=5.2cm] at (6,0.27) {在几何中心求场};
+\else
+
+\draw[surface] (-1.45,-.65) rectangle (1.45,.65);\node at (-1.45,0) {$-$};\node at (1.45,0) {$+$};\draw[dim] (-1.45,-1.05)--(1.45,-1.05) node[midway,below] {$\ell$};\draw[dim] (1.8,0)--(1.8,.65) node[midway,right] {$R$};\draw[force,-{Latex}] (-0.65,0.22)--++(1.3,0) node[midway,above] {$M$};\node[point] at (0,0) {};\draw[force,-{Latex}] (0.65,-0.25)--++(-1.3,0) node[midway,below] {$H_d$};\draw[force,-{Latex}] (-0.65,0.95)--++(1.3,0) node[midway,above] {$B_M$};
+\begin{scope}[shift={(5.9,0)}]
+\draw[surface] (0,0) circle (1.25);\fill[sourceink!20,even odd rule] (0,0) circle (.82) (0,0) circle (.7);\draw[sourceink] (0,0) circle (.82) (0,0) circle (.7);
+\draw[aux] (0,0)--(.54,.54);\node[above left] at (.27,.27) {$s$};\draw[aux] (.76,0)--(1.6,-.55) node[right] {$\mathrm ds$};
+\node at (0,1.8) {端面薄环：$\mathrm dA=2\pi s\,\mathrm ds$};\node at (0,-1.8) {到中心的轴向距离 $\ell/2$};\end{scope}
+
+\fi}
+\expandafter\def\csname CaptionQW2\endcsname{图中圆柱轴线水平，侧面磁荷为零}
+\expandafter\def\csname CaptionAW2\endcsname{同一个中心点的H与B不能相互按真空关系换算}
+\expandafter\def\csname DiagramW3\endcsname#1{%
+\ifnum#1=0
+\draw[source] (-1.3,0) ellipse (.28 and 1.05);\draw[axis] (-1.75,0)--(2.5,0) node[right] {$z$};\draw[surface] (1.25,0) circle (.22);\draw[dim] (-1.3,-1.4)--(1.25,-1.4) node[midway,below] {$z$};\node[left] at (-1.65,.75) {$R,I$};\node[above] at (1.25,.35) {$V,\chi_m<0$};\node[align=center,text width=5.2cm] at (6,1.05) {当地均匀场近似};
+\node[align=center,text width=5.2cm] at (6,0.27) {线圈电流固定};
+\else
+\draw[source] (-1.3,0) ellipse (.28 and 1.05);\draw[axis] (-1.75,0)--(2.5,0) node[right] {$z$};\draw[surface] (1.25,0) circle (.22);\draw[dim] (-1.3,-1.4)--(1.25,-1.4) node[midway,below] {$z$};\node[left] at (-1.65,.75) {$R,I$};\node[above] at (1.25,.35) {$V,\chi_m<0$};\draw[force,-{Latex}] (0.93,0.9)--++(0.85,0) node[midway,above] {$F_z$};\draw[source,-{Latex}] (1.4,-0.55)--++(-0.65,0) node[midway,below] {$m$};\node[align=center,text width=5.2cm] at (6,1.05) {$F_z=-3\mu_0V\chi_{\rm eff}I^2R^4z/[4(R^2+z^2)^4]$};
+\node[align=center,text width=5.2cm] at (6,0.27) {轴向稳定需 $F_z^\prime<0$};
+\fi
+}
+\expandafter\def\csname CaptionQW3\endcsname{轴坐标从线圈中心指向小球}
+\expandafter\def\csname CaptionAW3\endcsname{抗磁矩向左，球被推向较弱的轴向场}
+\expandafter\def\csname DiagramW4\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (-1.8,0)--(1.8,0);\draw[axis] (0,-1.35)--(0,1.65) node[above] {$n=+z$};\node[left] at (-1.85,-.75) {区域1};\node[left] at (-1.85,.75) {区域2};\node[charge] at (.85,.2) {$\odot$};\node[right] at (1.15,.2) {$K_x$};\draw[axis] (-1.4,-1.1)--(1.4,-1.1) node[right] {$y$};\node at (-.85,-.4) {$H_1,E_1$};\node[align=center,text width=5.2cm] at (6,1.05) {法向从区域1到区域2};
+\node[align=center,text width=5.2cm] at (6,0.27) {$K_x$ 朝纸外，$y$ 向右};
+\else
+\draw[surface] (-1.8,0)--(1.8,0);\draw[axis] (0,-1.35)--(0,1.65) node[above] {$n=+z$};\node[left] at (-1.85,-.75) {区域1};\node[left] at (-1.85,.75) {区域2};\node[charge] at (.85,.2) {$\odot$};\node[right] at (1.15,.2) {$K_x$};\draw[axis] (-1.4,-1.1)--(1.4,-1.1) node[right] {$y$};\draw[force,-{Latex}] (1.1,1.0)--++(-1.2,0);\node[above] at (1.35,1.12) {$\Delta H_y=-K$};\node[align=center,text width=5.2cm] at (6,1.05) {$E_t$ 连续，$\Delta D_n=\sigma_f$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$B_n$ 连续，$\Delta H_y=-K$};
+\fi
+}
+\expandafter\def\csname CaptionQW4\endcsname{用纸外圆点表示沿x方向的面电流}
+\expandafter\def\csname CaptionAW4\endcsname{面电流导致负y方向的切向磁场跃变}
+\expandafter\def\csname DiagramW5\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (-1.85,0)--(1.85,0);\draw[aux] (0,-1.35)--(0,1.45);\node[right] at (.1,1.55) {$n$};\draw[force,-{Latex}] (-0.6,-1.05)--++(0.6,1.05);\node[left] at (-.62,-.42) {$B_1$};\draw[force,-{Latex}] (0,0)--++(1.65,1.05) node[midway,right] {$B_2$};\draw (0,-.45) arc (270:240:.45);\node[right] at (.08,-.74) {$30^\circ$};\node at (1.2,1.55) {$\theta_2$};\node[align=center,text width=5.2cm] at (6,1.05) {$B,E$ 在区域1均为30度};
+\node[align=center,text width=5.2cm] at (6,0.27) {角度都相对法向};
+\else
+
+\begin{scope}
+\draw[ink] (-1.2,0)--(2.5,0);\draw[aux] (0,-1.5)--(0,1.8);\node[above] at (0,1.8) {$n$};
+\draw[force] (-.5,-.866)--(0,0) node[midway,left] {$B_1$};\draw[force] (0,0)--(2,.866) node[midway,above] {$B_2$};\node at (1,2.85) {磁感应：$\mu_2/\mu_1=4$};\node at (.7,-2) {$B_{2n}=B_{1n},\ B_{2t}=4B_{1t}$};\node at (1,1.4) {$66.59^\circ$};\end{scope}
+\begin{scope}[xshift=6.5cm]
+\draw[ink] (-1.2,0)--(2.5,0);\draw[aux] (0,-1.5)--(0,1.8);\node[above] at (0,1.8) {$n$};
+\draw[force] (-.5,-.866)--(0,0) node[midway,left] {$E_1$};\draw[force] (0,0)--(.5,.288675) node[midway,right] {$E_2$};\node at (1,2.85) {电场：$\epsilon_2/\epsilon_1=3$};\node at (.7,-2) {$E_{2t}=E_{1t},\ E_{2n}=E_{1n}/3$};\node at (1,1.4) {$60^\circ$};\end{scope}
+\node at (3.9,-2.8) {两入射角均为相对法向的$30^\circ$；每图内矢量使用共同分量比例};
+
+\fi}
+\expandafter\def\csname CaptionQW5\endcsname{图中用B表示待匹配的场方向}
+\expandafter\def\csname CaptionAW5\endcsname{分别绘出磁感应与电场折射，按各自连续分量确定方向和角度}
+\expandafter\def\csname DiagramW6\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (-1.8,0)--(1.8,0);\draw[aux] (0,-1.3)--(0,1.3);\draw[force,-{Latex}] (-0.85,-0.85)--++(0.85,0.85) node[midway,left] {$j_1$};\draw[force,-{Latex}] (0,0)--++(1.25,1.25) node[midway,right] {$j_2$};\node at (-1.35,-1.2) {$45^\circ$};\node[align=center,text width=5.2cm] at (6,1.05) {$j_{2n}=j_{1n}$};
+\node[align=center,text width=5.2cm] at (6,0.27) {电导率增至4倍};
+\else
+\draw[surface] (-1.8,0)--(1.8,0);\draw[aux] (0,-1.3)--(0,1.3);\draw[force,-{Latex}] (-0.85,-0.85)--++(0.85,0.85) node[midway,left] {$j_1$};\draw[force,-{Latex}] (0,0)--++(1.6,0.4) node[midway,above] {$j_2$};\node at (.6,1.15) {$75.96^\circ$};\node[align=center,text width=5.2cm] at (6,1.05) {$j_{2t}=4j_{1t}$};
+\node[align=center,text width=5.2cm] at (6,0.27) {界面自由电荷为负};
+\fi
+}
+\expandafter\def\csname CaptionQW6\endcsname{区域1的电流与法向成45度}
+\expandafter\def\csname CaptionAW6\endcsname{区域2电流更偏向界面，法向分量仍相同}
+\expandafter\def\csname DiagramW7\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (-1.6,-1.2) rectangle (1.7,1.2);\draw[ink,fill=white] (-.95,-.6) rectangle (1.05,.6);\draw[ink,fill=white] (1.0,-.18) rectangle (1.75,.18);\draw[dim] (2.0,-.18)--(2.0,.18);\node[right] at (2.1,.38) {$g$};\draw[source] (-1.75,-0.65)--(-.83,-0.53);\draw[source] (-1.75,-0.33)--(-.83,-0.21000000000000002);\draw[source] (-1.75,0)--(-.83,0.12);\draw[source] (-1.75,0.33)--(-.83,0.45);\draw[source] (-1.75,0.65)--(-.83,0.77);\node[left] at (-1.85,0) {$NI$};\node[align=center,text width=5.2cm] at (6,1.05) {等截面磁芯与单气隙};
+\node[align=center,text width=5.2cm] at (6,0.27) {坐标为气隙长度g};
+\else
+\draw[surface] (-1.6,-1.2) rectangle (1.7,1.2);\draw[ink,fill=white] (-.95,-.6) rectangle (1.05,.6);\draw[ink,fill=white] (1.0,-.18) rectangle (1.75,.18);\draw[dim] (2.0,-.18)--(2.0,.18);\node[right] at (2.1,.38) {$g$};\draw[source] (-1.75,-0.65)--(-.83,-0.53);\draw[source] (-1.75,-0.33)--(-.83,-0.21000000000000002);\draw[source] (-1.75,0)--(-.83,0.12);\draw[source] (-1.75,0.33)--(-.83,0.45);\draw[source] (-1.75,0.65)--(-.83,0.77);\node[left] at (-1.85,0) {$NI$};\draw[force,-{Latex}] (-1.3,-0.4)--++(0,0.8);\draw[aux] (-1.3,.2)--(-2.15,.6);\node[left] at (-2.2,.65) {$B$};\draw[source,-{Latex}] (1.35,0.5)--++(0,-0.28);\draw[source,-{Latex}] (1.35,-0.5)--++(0,0.28);\node at (.3,-1.6) {红：吸力；蓝：磁感应强度};\draw[force,-{Latex}] (1.6,0.14)--++(0,-0.28);\node[align=center,text width=5.2cm] at (6,1.05) {$B=0.2856\,\mathrm T$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$F_g=-12.98\,\mathrm N$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {磁芯与气隙磁位降相加};
+\fi
+}
+\expandafter\def\csname CaptionQW7\endcsname{绕组磁动势推动同一磁通经过磁芯和气隙}
+\expandafter\def\csname CaptionAW7\endcsname{磁场方向向下，两个气隙面相互吸引}
+\expandafter\def\csname DiagramW8\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (1.35);\draw[ink,fill=white] (0,0) circle (.9);\draw[dim] (0,0)--(.9,0) node[midway,below] {$a$};\draw[aux] (0,0)--(-.955,.955);\node[left] at (-.96,.96) {$b$};\draw[force,-{Latex}] (1.9,-0.65)--++(0,1.3) node[midway,right] {$H_0$};\node at (0,-1.7) {空腔与外部均为真空};\node[align=center,text width=5.2cm] at (6,1.05) {无自由电流};
+\node[align=center,text width=5.2cm] at (6,0.27) {分三个区域匹配势};
+\else
+\draw[surface] (0,0) circle (1.35);\draw[ink,fill=white] (0,0) circle (.9);\draw[dim] (0,0)--(.9,0) node[midway,below] {$a$};\draw[aux] (0,0)--(-.955,.955);\node[left] at (-.96,.96) {$b$};\draw[force,-{Latex}] (1.9,-0.65)--++(0,1.3) node[midway,right] {$H_0$};\draw[force,-{Latex}] (0,-0.65)--++(0,0.65) node[midway,left] {$H_c$};\node at (0,1.65) {$\mu=\mu_0k$};\node[align=center,text width=5.2cm] at (6,1.05) {$H_c/H_0=1/\mathcal S$};
+\node[align=center,text width=5.2cm] at (6,0.27) {内场仍均匀};
+\node[align=center,text width=5.2cm] at (6,-0.51) {有限厚度、有限磁导率};
+\fi
+}
+\expandafter\def\csname CaptionQW8\endcsname{球壳内外均为真空，示意未按薄壳比例绘制}
+\expandafter\def\csname CaptionAW8\endcsname{空腔场向上但减弱，不能用实心球结果替代}
+\expandafter\def\csname DiagramW9\endcsname#1{%
+\ifnum#1=0
+\draw[source] (-1.7,1.0)--(1.7,1.0);\draw[source] (-1.7,-1.0)--(1.7,-1.0);\draw[dim] (2.0,-1.0)--(2.0,1.0) node[midway,right] {$d$};\node[left] at (-1.8,1.0) {$+$};\node[left] at (-1.8,-1.0) {$-$};\draw[surface] (-1.7,-.92) rectangle (-.1,.92);\node at (-.9,0) {$\kappa$};\draw[dim] (-1.7,-1.4)--(-.1,-1.4) node[midway,below] {$x$};\node[align=center,text width=5.2cm] at (6,1.05) {插入长度x};
+\node[align=center,text width=5.2cm] at (6,0.27) {比较恒压与固定电荷};
+\else
+\draw[source] (-1.7,1.0)--(1.7,1.0);\draw[source] (-1.7,-1.0)--(1.7,-1.0);\draw[dim] (2.0,-1.0)--(2.0,1.0) node[midway,right] {$d$};\node[left] at (-1.8,1.0) {$+$};\node[left] at (-1.8,-1.0) {$-$};\draw[surface] (-1.7,-.92) rectangle (-.1,.92);\node at (-.9,0) {$\kappa$};\draw[dim] (-1.7,-1.4)--(-.1,-1.4) node[midway,below] {$x$};\draw[force,-{Latex}] (-0.6,0.45)--++(1.25,0) node[midway,above] {$F_x$};\node[align=center,text width=5.2cm] at (6,1.05) {$F_x=U^2C^\prime/2$};
+\node[align=center,text width=5.2cm] at (6,0.27) {固定Q时令 $U=Q/C(x)$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {力朝插入加深方向};
+\fi
+}
+\expandafter\def\csname CaptionQW9\endcsname{介质与真空两区按并联电容计算}
+\expandafter\def\csname CaptionAW9\endcsname{吸力指向电容增加的方向，局部力来自前缘场}
+\expandafter\def\csname DiagramW10\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (.55);\draw[ink] (0,0) circle (1.1);\node at (0,0) {$\odot$};\node at (-.25,-.3) {$I$};\draw[aux] (0,0)--(.39,.39);\draw[aux] (.39,.39)--(1.1,-.15)--(1.4,-.25);\node[right] at (1.45,-.25) {$a$};\node at (-1.2,-.95) {$b$};\node at (0,1.4) {$\otimes\,I$};\node[align=center,text width=5.2cm] at (6,1.05) {内导体均匀通电};
+\node[align=center,text width=5.2cm] at (6,0.27) {外部薄筒回流};
+\else
+\draw[surface] (0,0) circle (.55);\fill[sourceink!20,even odd rule] (0,0) circle (.38) (0,0) circle (.30);\draw[sourceink] (0,0) circle (.38) (0,0) circle (.30);\draw[aux] (-.24,-.24)--(-1.25,-1.45) node[left] {$r,\mathrm dr$};\draw[ink] (0,0) circle (1.1);\node at (0,0) {$\odot$};\node at (-1.2,.45) {$I$};\draw[aux] (0,0)--(.39,.39);\draw[aux] (.39,.39)--(1.1,-.15)--(1.4,-.25);\node[right] at (1.45,-.25) {$a$};\node at (-1.2,-.95) {$b$};\node at (0,1.4) {$\otimes\,I$};\draw[force] (.8,0) arc (0:135:.8);\node[right] at (1.5,.8) {$H_\phi$};\node[align=center,text width=5.2cm] at (6,1.05) {$L_i^\prime=\mu_i/(8\pi)$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$L_o^\prime=\mu\ln(b/a)/(2\pi)$};
+\fi
+}
+\expandafter\def\csname CaptionQW10\endcsname{图为横截面，内电流朝纸外，回流朝纸内}
+\expandafter\def\csname CaptionAW10\endcsname{间隙的H沿逆时针，内部场还需另计能量}
+\expandafter\def\csname DiagramW11\endcsname#1{%
+\ifnum#1=0
+\draw[source] (0,0) ellipse (1.3 and .32);\draw[source,rotate=45] (0,0) ellipse (1.3 and .32);\draw[aux] (0,0)--(1.7,0);\draw[aux] (0,0)--(1.2,1.2);\draw (.7,0) arc (0:45:.7);\draw[aux] (.647,.268)--(1.65,.65)--(1.95,.65);\node[right] at (2.0,.65) {$\theta$};\node[align=center,text width=5.2cm] at (6,1.05) {$\mathcal M=M_0\cos\theta$};
+\node[align=center,text width=5.2cm] at (6,0.27) {两电流独立保持};
+\else
+\draw[source] (0,0) ellipse (1.3 and .32);\draw[source,rotate=45] (0,0) ellipse (1.3 and .32);\draw[aux] (0,0)--(1.7,0);\draw[aux] (0,0)--(1.2,1.2);\draw (.7,0) arc (0:45:.7);\draw[aux] (.647,.268)--(1.65,.65)--(1.95,.65);\node[right] at (2.0,.65) {$\theta$};\draw[force] (1.13,1.13) arc (45:5:1.6);\node at (0,-1.4) {$\tau_\theta<0$，图取同向电流};\node[align=center,text width=5.2cm] at (6,1.05) {$\tau_\theta=-M_0I_1I_2\sin\theta$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$M_0\leq\sqrt{L_1L_2}$};
+\fi
+}
+\expandafter\def\csname CaptionQW11\endcsname{用绕组平面的相对角表示相对磁矩角，范围取锐角示意}
+\expandafter\def\csname CaptionAW11\endcsname{图取正电流乘积，力矩使两个磁矩方向趋于一致}
+\expandafter\def\csname DiagramW12\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (-1.6,-1.2) rectangle (1.7,1.2);\draw[ink,fill=white] (-.95,-.6) rectangle (1.05,.6);\draw[ink,fill=white] (1.0,-.18) rectangle (1.75,.18);\draw[dim] (2.0,-.18)--(2.0,.18);\node[right] at (2.1,.38) {$g$};\draw[source] (-1.75,-0.65)--(-.83,-0.53);\draw[source] (-1.75,-0.33)--(-.83,-0.21000000000000002);\draw[source] (-1.75,0)--(-.83,0.12);\draw[source] (-1.75,0.33)--(-.83,0.45);\draw[source] (-1.75,0.65)--(-.83,0.77);\node[left] at (-1.85,0) {$NI$};\node[align=center,text width=5.2cm] at (6,1.05) {$H_c=\alpha B+\beta B^3$};
+\node[align=center,text width=5.2cm] at (6,0.27) {气隙长度g可变};
+\else
+
+\begin{scope}
+\fill[fieldink!12] (0,0) rectangle (3,2.16);
+\fill[sourceink!25] (0,0)--plot[domain=0:3,samples=80] (\x,{.3*\x+.046666667*\x^3})--(3,0)--cycle;
+\draw[axis] (0,0)--(3.7,0) node[right] {$B$};\draw[axis] (0,0)--(0,2.8) node[above] {$H$};
+\draw[source,domain=0:3,samples=80] plot (\x,{.3*\x+.046666667*\x^3});\draw[aux] (0,2.16)--(3,2.16)--(3,0);
+\node at (2.15,.45) {$w_m$};\node at (.9,1.6) {$w_m^{\prime}$};\node[point] at (3,2.16) {};
+\end{scope}
+\node[align=left,text width=5.1cm] at (7,.95) {红色曲线下面积：$w_m$\\[4pt]蓝色矩形补区：$w_m^{\prime}$};
+\node[align=left,text width=5.1cm] at (7,-.2) {两区之和等于端点的$BH$；非线性时两区不相等};
+
+\fi}
+\expandafter\def\csname CaptionQW12\endcsname{气隙与非线性磁芯串联}
+\expandafter\def\csname CaptionAW12\endcsname{曲线下积分对应磁能，非线性时余能与磁能不同}
+\expandafter\def\csname DiagramT1\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (1.05);\draw[axis] (0,-1.4)--(0,1.65) node[above] {$z$};\draw[force,-{Latex}] (0.35,0.0)--++(0.48,0.0);\draw[force,-{Latex}] (0.24748737341529164,0.2474873734152916)--++(0.33941125496954283,0.3394112549695428);\draw[force,-{Latex}] (2.143131898507868e-17,0.35)--++(2.9391523179536474e-17,0.48);\draw[force,-{Latex}] (-0.2474873734152916,0.24748737341529164)--++(-0.3394112549695428,0.33941125496954283);\draw[force,-{Latex}] (-0.35,4.286263797015736e-17)--++(-0.48,5.878304635907295e-17);\draw[force,-{Latex}] (-0.24748737341529167,-0.2474873734152916)--++(-0.3394112549695429,-0.3394112549695428);\draw[force,-{Latex}] (-6.429395695523604e-17,-0.35)--++(-8.817456953860942e-17,-0.48);\draw[force,-{Latex}] (0.24748737341529156,-0.24748737341529167)--++(0.3394112549695427,-0.3394112549695429);\node at (-1.7,1.25) {$M=\kappa r$};\node[align=center,text width=5.2cm] at (6,1.05) {固定径向磁化};
+\node[align=center,text width=5.2cm] at (6,0.27) {外部无场};
+\else
+\draw[surface] (0,0) circle (1.05);\draw[axis] (0,-1.4)--(0,1.65) node[above] {$z$};\draw[force,-{Latex}] (0.35,0.0)--++(0.48,0.0);\draw[force,-{Latex}] (0.24748737341529164,0.2474873734152916)--++(0.33941125496954283,0.3394112549695428);\draw[force,-{Latex}] (2.143131898507868e-17,0.35)--++(2.9391523179536474e-17,0.48);\draw[force,-{Latex}] (-0.2474873734152916,0.24748737341529164)--++(-0.3394112549695428,0.33941125496954283);\draw[force,-{Latex}] (-0.35,4.286263797015736e-17)--++(-0.48,5.878304635907295e-17);\draw[force,-{Latex}] (-0.24748737341529167,-0.2474873734152916)--++(-0.3394112549695429,-0.3394112549695428);\draw[force,-{Latex}] (-6.429395695523604e-17,-0.35)--++(-8.817456953860942e-17,-0.48);\draw[force,-{Latex}] (0.24748737341529156,-0.24748737341529167)--++(0.3394112549695427,-0.3394112549695429);\node at (-1.7,1.25) {$M=\kappa r$};\draw[aux] (.15,.15)--(-1.25,-1.35);\node[left] at (-1.3,-1.4) {$\rho_m<0$};\node at (1.55,-1.3) {$\sigma_m>0$};\node[align=center,text width=5.2cm] at (6,1.05) {$\rho_m=-3\kappa,\ \sigma_m=\kappa a$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$H=-M,\ B=0$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {图取 $\kappa>0$};
+\fi
+}
+\expandafter\def\csname CaptionQT1\endcsname{磁化沿径向，图取正的 \(\kappa\)}
+\expandafter\def\csname CaptionAT1\endcsname{体负磁荷与面正磁荷共同使外部场为零}
+\expandafter\def\csname DiagramT2\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (-1.6,-.9) rectangle (1.6,.9);\draw[axis] (0,-1.35)--(0,1.55) node[above] {$z$};\node[right] at (1.7,.9) {$a$};\node[right] at (1.7,-.9) {$-a$};\draw[force,-{Latex}] (-0.7,0.2)--++(0,0.6) node[midway,left] {$M$};\draw[force,-{Latex}] (-0.7,-0.2)--++(0,-0.6) node[midway,left] {$M$};\node[align=center,text width=5.2cm] at (6,1.05) {$M_z=kz$};
+\node[align=center,text width=5.2cm] at (6,0.27) {两个表面：$z=\pm a$};
+\else
+\draw[surface] (-1.6,-.9) rectangle (1.6,.9);\draw[axis] (0,-1.35)--(0,1.55) node[above] {$z$};\node[right] at (1.7,.9) {$a$};\node[right] at (1.7,-.9) {$-a$};\draw[force,-{Latex}] (-0.7,0.2)--++(0,0.6) node[midway,left] {$M$};\draw[force,-{Latex}] (-0.7,-0.2)--++(0,-0.6) node[midway,left] {$M$};\draw[force,-{Latex}] (0.7,0.8)--++(0,-0.6) node[midway,right] {$H$};\draw[force,-{Latex}] (0.7,-0.8)--++(0,0.6) node[midway,right] {$H$};\node at (-1.35,1.25) {$+ka$};\node at (-1.35,-1.25) {$+ka$};\node[align=center,text width=5.2cm] at (6,1.05) {两面均为 $+ka$};
+\node[align=center,text width=5.2cm] at (6,0.27) {体磁荷为 $-k$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {$H_z=-kz,\ B=0$};
+\fi
+}
+\expandafter\def\csname CaptionQT2\endcsname{图取k为正，磁化背离中心面}
+\expandafter\def\csname CaptionAT2\endcsname{退磁场指向中心面，抵消磁化的B贡献}
+\expandafter\def\csname DiagramT3\endcsname#1{%
+\ifnum#1=0
+\draw[surface,rotate=30] (0,0) ellipse (1.6 and .55);\draw[aux] (-1.5,-.866)--(1.5,.866);\draw[force,-{Latex}] (-0.25,-0.9)--++(0,2.1) node[midway,left] {$H_0$};\draw (0,.65) arc (90:30:.65);\node[right] at (.85,1.15) {$\theta$};\node[align=center,text width=5.2cm] at (6,1.05) {$N_\parallel<N_\perp$};
+\node[align=center,text width=5.2cm] at (6,0.27) {固定外部电流};
+\else
+\draw[surface,rotate=30] (0,0) ellipse (1.6 and .55);\draw[aux] (-1.5,-.866)--(1.5,.866);\draw[force,-{Latex}] (-0.25,-0.9)--++(0,2.1) node[midway,left] {$H_0$};\draw (0,.65) arc (90:30:.65);\node[right] at (.85,1.15) {$\theta$};\draw[force] (.85,.49) arc (30:65:.98);\node at (0,-1.65) {长轴向外场靠拢};\node[align=center,text width=5.2cm] at (6,1.05) {$a_\parallel-a_\perp\geq0$};
+\node[align=center,text width=5.2cm] at (6,0.27) {顺磁、抗磁均长轴顺场稳定};
+\fi
+}
+\expandafter\def\csname CaptionQT3\endcsname{长轴与向上的外场成 \(\theta\) 角}
+\expandafter\def\csname CaptionAT3\endcsname{形状引起各向异性响应，力矩使长轴向场转动}
+\expandafter\def\csname DiagramT4\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) ellipse (1.4 and .85);\node[point] at (.65,.3) {};\draw[aux] (0,0)--(.65,.3);\node[above] at (.55,.65) {$r^\prime$};\node[point] at (2.5,1.3) {};\draw[aux] (0,0)--(2.5,1.3);\node[above] at (2.5,1.35) {$r\gg a$};\node[align=center,text width=5.2cm] at (6,1.05) {体磁荷和面磁荷一起积分};
+\node[align=center,text width=5.2cm] at (6,0.27) {局域磁化分布};
+\else
+\draw[surface] (0,0) ellipse (1.4 and .85);\node[point] at (.65,.3) {};\draw[aux] (0,0)--(.65,.3);\node[above] at (.55,.65) {$r^\prime$};\node[point] at (2.5,1.3) {};\draw[aux] (0,0)--(2.5,1.3);\node[above] at (2.5,1.35) {$r\gg a$};\node[align=center,text width=5.2cm] at (6,1.05) {总磁荷为零};
+\node[align=center,text width=5.2cm] at (6,0.27) {$m=\int M\,\mathrm dV$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {偶极项可能也为零};
+\fi
+}
+\expandafter\def\csname CaptionQT4\endcsname{近处磁化分布的体源和面源共同决定远势}
+\expandafter\def\csname CaptionAT4\endcsname{分部积分把等效磁荷矩还原为磁化体积分}
+\expandafter\def\csname DiagramT5\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (-1.8,0)--(1.8,0);\draw[axis] (0,-1.35)--(0,1.65) node[above] {$n=+z$};\node[left] at (-1.85,-.75) {区域1};\node[left] at (-1.85,.75) {区域2};\node[charge] at (.85,.2) {$\odot$};\node[right] at (1.15,.2) {$K_x$};\draw[axis] (-1.4,-1.1)--(1.4,-1.1) node[right] {$y$};\node at (-.85,-.4) {$H_1,B_1$};\node[align=center,text width=5.2cm] at (6,1.05) {$H_1=H_0(2,3,4)$};
+\node[align=center,text width=5.2cm] at (6,0.27) {自由面电流沿+x};
+\else
+\draw[surface] (-1.8,0)--(1.8,0);\draw[axis] (0,-1.35)--(0,1.65) node[above] {$n=+z$};\node[left] at (-1.85,-.75) {区域1};\node[left] at (-1.85,.75) {区域2};\node[charge] at (.85,.2) {$\odot$};\node[right] at (1.15,.2) {$K_x$};\draw[axis] (-1.4,-1.1)--(1.4,-1.1) node[right] {$y$};\draw[force,-{Latex}] (1.1,1.0)--++(-1.2,0);\node[above] at (1.35,1.12) {$\Delta H_y=-K$};\node[align=center,text width=5.2cm] at (6,1.05) {$\Delta H_y=-K$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$K_b=(M_1-M_2)\times n$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {计算B跃变时计入全部面电流};
+\fi
+}
+\expandafter\def\csname CaptionQT5\endcsname{界面法向朝上，x向纸外，y向右}
+\expandafter\def\csname CaptionAT5\endcsname{H的跃变只由自由面电流决定，束缚电流另由磁化求}
+\expandafter\def\csname DiagramT6\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (-1.8,0)--(1.8,0);\draw[axis] (0,-1.3)--(0,1.65) node[above] {$z$};\draw[force,-{Latex}] (-1.2,-0.65)--++(2.4,0);\node[above] at (-.8,-.65) {$H_0$};\node at (-1.05,.65) {张量介质};\node[align=center,text width=5.2cm] at (6,1.05) {真空侧 $B_n=0$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$\mu_{xz}=\mu_{zx}=3\mu_0$};
+\else
+\draw[surface] (-1.8,0)--(1.8,0);\draw[axis] (0,-1.3)--(0,1.65) node[above] {$z$};\draw[force,-{Latex}] (-1.2,-0.65)--++(2.4,0);\node[above] at (-.8,-.65) {$H_0$};\node at (-1.05,.65) {张量介质};\draw[force,-{Latex}] (0,1.0)--++(1.0,-0.6) node[midway,below] {$H$};\draw[force,-{Latex}] (0,1.0)--++(1.3,0) node[midway,above] {$B$};\node[align=center,text width=5.2cm] at (6,1.05) {$H_z=-3H_0/5$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$B_x=16\mu_0H_0/5$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {内场H与B不平行};
+\fi
+}
+\expandafter\def\csname CaptionQT6\endcsname{各向异性材料在上，真空在下}
+\expandafter\def\csname CaptionAT6\endcsname{B保持沿界面，H却有负法向分量}
+\expandafter\def\csname DiagramT7\endcsname#1{%
+\ifnum#1=0
+\draw[surface,fill=surfaceink!8] (-1.7,-1.2) rectangle (1.7,-0.6);\draw[surface,fill=sourceink!6] (-1.7,-0.6) rectangle (1.7,0.0);\draw[surface,fill=surfaceink!8] (-1.7,0) rectangle (1.7,0.6);\draw[surface,fill=sourceink!6] (-1.7,0.6) rectangle (1.7,1.2);\node at (-.8,.25) {$\mu_1$};\node at (-.8,-.35) {$\mu_2$};\draw[force,-{Latex}] (0.6,-0.95)--++(0,1.9) node[midway,right] {$B_n$};\draw[force,-{Latex}] (-1.3,1.7)--++(2.6,0) node[midway,above] {$H_t$};\node[align=center,text width=5.2cm] at (6,1.05) {体积分数 $f,1-f$};
+\node[align=center,text width=5.2cm] at (6,0.27) {层厚远小于宏观尺度};
+\else
+\draw[surface,fill=surfaceink!8] (-1.7,-1.2) rectangle (1.7,-0.6);\draw[surface,fill=sourceink!6] (-1.7,-0.6) rectangle (1.7,0.0);\draw[surface,fill=surfaceink!8] (-1.7,0) rectangle (1.7,0.6);\draw[surface,fill=sourceink!6] (-1.7,0.6) rectangle (1.7,1.2);\node at (-.8,.25) {$\mu_1$};\node at (-.8,-.35) {$\mu_2$};\draw[force,-{Latex}] (0.6,-0.95)--++(0,1.9) node[midway,right] {$B_n$};\draw[force,-{Latex}] (-1.3,1.7)--++(2.6,0) node[midway,above] {$H_t$};\node at (0,-1.65) {垂直场串联，平行场并联};\node[align=center,text width=5.2cm] at (6,1.05) {平行：算术平均};
+\node[align=center,text width=5.2cm] at (6,0.27) {垂直：调和平均};
+\node[align=center,text width=5.2cm] at (6,-0.51) {有效介质各向异性};
+\fi
+}
+\expandafter\def\csname CaptionQT7\endcsname{平行层面与垂直层面分别施场}
+\expandafter\def\csname CaptionAT7\endcsname{两个方向须按不同的连续分量求平均}
+\expandafter\def\csname DiagramT8\endcsname#1{%
+\ifnum#1=0
+\draw[source] (-1.7,1.0)--(1.7,1.0);\draw[source] (-1.7,-1.0)--(1.7,-1.0);\draw[dim] (2.0,-1.0)--(2.0,1.0) node[midway,right] {$d$};\node[left] at (-1.8,1.0) {$+$};\node[left] at (-1.8,-1.0) {$-$};\draw[surface] (-1.7,0)--(1.7,0);\node[left] at (-1.75,.5) {层1};\node[left] at (-1.75,-.5) {层2};\draw[axis] (-2.8,.55)--(-2.8,-.55) node[below] {$n$};\node[align=center,text width=5.2cm] at (6,1.05) {固定电压U};
+\node[align=center,text width=5.2cm] at (6,0.27) {初始面电荷为零};
+\else
+\draw[source] (-1.7,1.0)--(1.7,1.0);\draw[source] (-1.7,-1.0)--(1.7,-1.0);\draw[dim] (2.0,-1.0)--(2.0,1.0) node[midway,right] {$d$};\node[left] at (-1.8,1.0) {$+$};\node[left] at (-1.8,-1.0) {$-$};\draw[surface] (-1.7,0)--(1.7,0);\node[left] at (-1.75,.5) {层1};\node[left] at (-1.75,-.5) {层2};\draw[axis] (-2.8,.55)--(-2.8,-.55) node[below] {$n$};\draw[force,-{Latex}] (0.5,0.85)--++(0,-0.65) node[midway,right] {$E_1$};\draw[force,-{Latex}] (0.5,-0.15)--++(0,-0.65) node[midway,right] {$E_2$};\node at (-.7,.2) {$\sigma_f$};\node[align=center,text width=5.2cm] at (6,1.05) {$\tau=A_\epsilon/A_\gamma$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$\sigma_f=\sigma_\infty(1-e^{-t/\tau})$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {传导加位移电流连续};
+\fi
+}
+\expandafter\def\csname CaptionQT8\endcsname{法向从上层1指向下层2，电场也向下}
+\expandafter\def\csname CaptionAT8\endcsname{传导电流差逐步建立界面电荷，场重新分配}
+\expandafter\def\csname DiagramT9\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (1.05);\draw[axis] (0,-1.4)--(0,1.65) node[above] {$z$};\draw[force,-{Latex}] (-0.32,-0.65)--++(0,1.3) node[midway,left] {$M$};\node[above left] at (-.2,1.05) {$+$};\node[below left] at (-.2,-1.05) {$-$};\node[align=center,text width=5.2cm] at (6,1.05) {线性球 $\mu=\mu_0k$};
+\node[align=center,text width=5.2cm] at (6,0.27) {外加均匀场 $H_0$};
+\else
+\draw[surface] (0,0) circle (1.05);\draw[axis] (0,-1.4)--(0,1.65) node[above] {$z$};\draw[force,-{Latex}] (-0.32,-0.65)--++(0,1.3) node[midway,left] {$M$};\node[above left] at (-.2,1.05) {$+$};\node[below left] at (-.2,-1.05) {$-$};\draw[force,-{Latex}] (0.35,0.6)--++(0,-1.2) node[midway,right] {$H_d$};\draw[force,-{Latex}] (-1.6,-0.55)--++(0,1.1) node[midway,left] {$B$};\node[align=center,text width=5.2cm] at (6,1.05) {$H_{\rm in}=3H_0/(k+2)$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$B_{\rm in}=3k\mu_0H_0/(k+2)$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {图示 $k>1$ 的磁化与退磁};
+\fi
+}
+\expandafter\def\csname CaptionQT9\endcsname{图示k大于1，磁化方向向上；抗磁时磁荷符号反转}
+\expandafter\def\csname CaptionAT9\endcsname{球内退磁项向下，总H仍向上，B也向上}
+\expandafter\def\csname DiagramT10\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (1.35);\draw[ink,fill=white] (0,0) circle (.65);\draw[aux] (0,0)--(.46,-.46);\node[below right] at (.46,-.46) {$a$};\node at (-1.45,1.0) {$b$};\node at (-.2,.25) {$+Q$};\node at (0,-1.75) {$-Q$ 在外球壳};\node[align=center,text width=5.2cm] at (6,1.05) {$\epsilon(r)=\epsilon_0r/a$};
+\node[align=center,text width=5.2cm] at (6,0.27) {同心球形电容器};
+\else
+\draw[surface] (0,0) circle (1.35);\draw[ink,fill=white] (0,0) circle (.65);\draw[aux] (0,0)--(.46,-.46);\node[below right] at (.46,-.46) {$a$};\node at (-1.45,1.0) {$b$};\node at (-.2,.25) {$+Q$};\node at (0,-1.75) {$-Q$ 在外球壳};\draw[force,-{Latex}] (0.7,0)--++(0.5,0) node[midway,above] {$E$};\node at (0,1.75) {$E\propto r^{-3}$};\node[align=center,text width=5.2cm] at (6,1.05) {$D\propto r^{-2}$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$C=8\pi\epsilon_0ab^2/(b^2-a^2)$};
+\fi
+}
+\expandafter\def\csname CaptionQT10\endcsname{间隙中介电常数随半径增大}
+\expandafter\def\csname CaptionAT10\endcsname{D由自由电荷决定，E还需除以当地介电常数}
+\expandafter\def\csname DiagramT11\endcsname#1{%
+\ifnum#1=0
+\draw[source] (-1.5,.9)--(1.5,.9);\draw[source] (-1.5,-.9)--(1.5,-.9);\draw[surface] (-1.5,-.82) rectangle (1.5,.82);\draw[force,-{Latex}] (0,0.6)--++(0,-1.2) node[midway,right] {$E$};\node[align=center,text width=5.2cm] at (6,1.05) {$D=\epsilon E+\eta E^3$};
+\node[align=center,text width=5.2cm] at (6,0.27) {固定几何，过程可逆};
+\else
+
+\begin{scope}
+\fill[fieldink!12] (0,0) rectangle (3,2.16);
+\fill[sourceink!25] (0,0)--plot[domain=0:3,samples=80] (\x,{.3*\x+.046666667*\x^3})--(3,0)--cycle;
+\draw[axis] (0,0)--(3.7,0) node[right] {$E$};\draw[axis] (0,0)--(0,2.8) node[above] {$D$};
+\draw[source,domain=0:3,samples=80] plot (\x,{.3*\x+.046666667*\x^3});\draw[aux] (0,2.16)--(3,2.16)--(3,0);
+\node at (2.15,.45) {$w_e^{\prime}$};\node at (.9,1.6) {$w_e$};\node[point] at (3,2.16) {};
+\end{scope}
+\node[align=left,text width=5.1cm] at (7,.95) {红色曲线下面积：$w_e^{\prime}$\\[4pt]蓝色矩形补区：$w_e$};
+\node[align=left,text width=5.1cm] at (7,-.2) {两区之和等于端点的$ED$；非线性时两区不相等};
+
+\fi}
+\expandafter\def\csname CaptionQT11\endcsname{两板间场均匀但本构关系非线性}
+\expandafter\def\csname CaptionAT11\endcsname{D对E曲线下面积是电余能，矩形减去该面积才是储能}
+\expandafter\def\csname DiagramT12\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (.55);\draw[ink] (0,0) circle (1.1);\node at (0,0) {$\odot$};\node at (-.25,-.3) {$I$};\draw[aux] (0,0)--(.39,.39);\draw[aux] (.39,.39)--(1.1,-.15)--(1.4,-.25);\node[right] at (1.45,-.25) {$a$};\node at (-1.2,-.95) {$b$};\node at (0,1.4) {$\otimes\,I$};\node[align=center,text width=5.2cm] at (6,1.05) {$j(r)=j_0(r/a)^p$};
+\node[align=center,text width=5.2cm] at (6,0.27) {保持总电流讨论极限};
+\else
+\draw[surface] (0,0) circle (.55);\fill[sourceink!20,even odd rule] (0,0) circle (.38) (0,0) circle (.30);\draw[sourceink] (0,0) circle (.38) (0,0) circle (.30);\draw[aux] (-.24,-.24)--(-1.25,-1.45) node[left] {$r,\mathrm dr$};\draw[ink] (0,0) circle (1.1);\node at (0,0) {$\odot$};\node at (-1.2,.45) {$I$};\draw[aux] (0,0)--(.39,.39);\draw[aux] (.39,.39)--(1.1,-.15)--(1.4,-.25);\node[right] at (1.45,-.25) {$a$};\node at (-1.2,-.95) {$b$};\node at (0,1.4) {$\otimes\,I$};\draw[force] (0.35,0) arc (0:110:0.35);\draw[aux] (0.120,0.329)--(1.55,1.05);\node[right] at (1.6,1.08) {$H_\phi$};\node[align=center,text width=5.2cm] at (6,1.05) {$I_{\rm enc}=I(r/a)^{p+2}$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$L_i^\prime=\mu_i/[4\pi(p+2)]$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {$p\to\infty$ 时内电感趋零};
+\fi
+}
+\expandafter\def\csname CaptionQT12\endcsname{外回流筒按无厚度处理，内电流分布非均匀}
+\expandafter\def\csname CaptionAT12\endcsname{用包围电流求内部H，再按场能求内部电感}
+\expandafter\def\csname DiagramT13\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (.55);\draw[ink] (0,0) circle (1.1);\draw[surface,even odd rule] (0,0) circle (1.4) (0,0) circle (1.1);\node at (0,0) {$\odot$};\node at (-.25,-.3) {$I$};\draw[aux] (0,0)--(.39,.39);\draw[aux] (.39,.39)--(1.1,-.15)--(1.4,-.25);\node[right] at (1.45,-.25) {$a$};\node at (-1.2,-.95) {$b$};\node at (1.4,-1.25) {$c$};\node at (0,-1.25) {$\otimes$};\node[align=center,text width=5.2cm] at (6,1.05) {内导体和回流筒均匀通电};
+\node[align=center,text width=5.2cm] at (6,0.27) {外筒厚度 $c-b$};
+\else
+\draw[surface] (0,0) circle (.55);\draw[ink] (0,0) circle (1.1);\draw[surface,even odd rule] (0,0) circle (1.4) (0,0) circle (1.1);\node at (0,0) {$\odot$};\node at (-.25,-.3) {$I$};\draw[aux] (0,0)--(.39,.39);\draw[aux] (.39,.39)--(1.1,-.15)--(1.4,-.25);\node[right] at (1.45,-.25) {$a$};\node at (-1.2,-.95) {$b$};\node at (1.4,-1.25) {$c$};\node at (0,-1.25) {$\otimes$};\draw[force] (1.25,0) arc (0:110:1.25);\draw[aux] (0.428,1.175)--(1.55,1.05);\node[right] at (1.6,1.08) {$H_\phi$};\node[align=center,text width=5.2cm] at (6,1.05) {$H=I(c^2-r^2)/[2\pi r(c^2-b^2)]$};
+\node[align=center,text width=5.2cm] at (6,0.27) {回流筒也有内部磁能};
+\node[align=center,text width=5.2cm] at (6,-0.51) {薄筒极限该项趋零};
+\fi
+}
+\expandafter\def\csname CaptionQT13\endcsname{阴影回流筒占据b到c的有限厚度区域}
+\expandafter\def\csname CaptionAT13\endcsname{回流筒内包围净电流逐渐降到零}
+\expandafter\def\csname DiagramT14\endcsname#1{%
+\ifnum#1=0
+\draw[source] (-1.2,0) ellipse (.25 and 1.05);\draw[source] (1.2,0) ellipse (.25 and 1.05);\node[above] at (-1.2,1.1) {$L_1,I_1$};\node[above] at (1.2,1.1) {$L_2,I_2$};\draw[dim] (-1.2,-1.4)--(1.2,-1.4) node[midway,below] {$x$};\node[align=center,text width=5.2cm] at (6,1.05) {次级无电阻闭合};
+\node[align=center,text width=5.2cm] at (6,0.27) {次级初始磁链为零};
+\else
+\draw[source] (-1.2,0) ellipse (.25 and 1.05);\draw[source] (1.2,0) ellipse (.25 and 1.05);\node[above] at (-1.2,1.1) {$L_1,I_1$};\node[above] at (1.2,1.1) {$L_2,I_2$};\draw[dim] (-1.2,-1.4)--(1.2,-1.4) node[midway,below] {$x$};\draw[force,-{Latex}] (1.25,0.45)--++(0.85,0);\node[above right] at (1.65,.55) {$F_x>0$};\node at (0,-2.0) {$I_2=-\mathcal M I_1/L_2$};\node[align=center,text width=5.2cm] at (6,1.05) {$L_{\rm eff}=L_1-\mathcal M^2/L_2$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$F_x=-I_1^2\mathcal M\mathcal M^\prime/L_2$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {图取 $\mathcal M>0,\mathcal M^\prime<0$};
+\fi
+}
+\expandafter\def\csname CaptionQT14\endcsname{初级恒流，次级受磁链守恒约束}
+\expandafter\def\csname CaptionAT14\endcsname{反向次级电流产生排斥，向距离增大的方向运动}
+\expandafter\def\csname DiagramT15\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (-1.3,-.55) rectangle (1.3,.55);\draw[ink] (-1.3,0) ellipse (.18 and .55);\draw[ink] (1.3,0) ellipse (.18 and .55);\draw[force,-{Latex}] (-0.8,0)--++(1.6,0) node[midway,above] {$I,E_z$};\draw[dim] (-1.3,-1.05)--(1.3,-1.05) node[midway,below] {$\ell$};\node[align=center,text width=5.2cm] at (6,1.05) {轴向稳恒电流};
+\node[align=center,text width=5.2cm] at (6,0.27) {侧面H沿周向};
+\else
+\draw[surface] (-1.3,-.55) rectangle (1.3,.55);\draw[ink] (-1.3,0) ellipse (.18 and .55);\draw[ink] (1.3,0) ellipse (.18 and .55);\draw[force,-{Latex}] (-0.8,0)--++(1.6,0) node[midway,above] {$I,E_z$};\draw[dim] (-1.3,-1.05)--(1.3,-1.05) node[midway,below] {$\ell$};\draw[force,-{Latex}] (0,1.2)--++(0,-0.6) node[midway,right] {$S_r<0$};\draw[force,-{Latex}] (-0.8,-1.7)--++(0,0.6);\node[align=center,text width=5.2cm] at (6,1.05) {$S_r=-E_zH_\phi$};
+\node[align=center,text width=5.2cm] at (6,0.27) {侧面流入功率 $I^2R$};
+\fi
+}
+\expandafter\def\csname CaptionQT15\endcsname{圆柱电流沿水平轴向右}
+\expandafter\def\csname CaptionAT15\endcsname{上下箭头表示朝内的能量流，周向H与轴向E相乘}
+\expandafter\def\csname DiagramT16\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (-1.6,-1.2) rectangle (1.7,1.2);\draw[ink,fill=white] (-.95,-.6) rectangle (1.05,.6);\draw[ink,fill=white] (1.0,-.18) rectangle (1.75,.18);\draw[dim] (2.0,-.18)--(2.0,.18);\node[right] at (2.1,.38) {$g$};\node[left] at (-1.85,0) {永磁体};\node[align=center,text width=5.2cm] at (6,1.05) {磁体在左，气隙在右};
+\node[align=center,text width=5.2cm] at (6,0.27) {允许反向场不超过 $H_k$};
+\else
+\draw[surface] (-1.6,-1.2) rectangle (1.7,1.2);\draw[ink,fill=white] (-.95,-.6) rectangle (1.05,.6);\draw[ink,fill=white] (1.0,-.18) rectangle (1.75,.18);\draw[dim] (2.0,-.18)--(2.0,.18);\node[right] at (2.1,.38) {$g$};\node[left] at (-1.85,0) {$H_m<0$};\draw[force,-{Latex}] (-1.3,-0.4)--++(0,0.8);\draw[aux] (-1.3,.2)--(-2.15,.6);\node[left] at (-2.2,.65) {$B$};\draw[source,-{Latex}] (1.35,0.5)--++(0,-0.28);\draw[source,-{Latex}] (1.35,-0.5)--++(0,0.28);\node at (.3,-1.6) {红：吸力；蓝：磁感应强度};\draw[force,-{Latex}] (1.6,0.14)--++(0,-0.28);\node[align=center,text width=5.2cm] at (6,1.05) {允许最优点在 $h=H_k$};
+\node[align=center,text width=5.2cm] at (6,0.27) {$P_{\max}V_m=2W_g$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {需按磁通与磁位降匹配尺寸};
+\fi
+}
+\expandafter\def\csname CaptionQT16\endcsname{用闭合磁轭连接永磁体与气隙，左侧长方块代表磁体}
+\expandafter\def\csname CaptionAT16\endcsname{B沿磁路，磁体内部H反向，气隙两面相吸}
+\expandafter\def\csname DiagramT17\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (-1.7,-1.2) rectangle (1.7,1.2);\draw[ink,fill=white] (-1,-.6) rectangle (-.25,.6);\draw[ink,fill=white] (.25,-.6) rectangle (1,.6);\draw[ink,fill=white] (-.3,-.16) rectangle (.3,.16);\draw[ink,fill=white] (1,-.16) rectangle (1.75,.16);\node at (.52,.05) {$x$};\node[right] at (1.85,.1) {$g$};\draw[source] (-1.85,-0.6)--(-.88,-0.5);\draw[source] (-1.85,-0.2)--(-.88,-0.1);\draw[source] (-1.85,0.2)--(-.88,0.30000000000000004);\draw[source] (-1.85,0.6)--(-.88,0.7);\node[left] at (-1.95,0) {$NI$};\node at (-1.5,1.6) {$S_c$};\node at (0,-1.6) {$S_1$};\node at (1.5,-1.6) {$S_2$};\node[align=center,text width=5.2cm] at (6,1.05) {共同磁芯非线性};
+\node[align=center,text width=5.2cm] at (6,0.27) {支路仅计真空气隙};
+\else
+\draw[surface] (-1.7,-1.2) rectangle (1.7,1.2);\draw[ink,fill=white] (-1,-.6) rectangle (-.25,.6);\draw[ink,fill=white] (.25,-.6) rectangle (1,.6);\draw[ink,fill=white] (-.3,-.16) rectangle (.3,.16);\draw[ink,fill=white] (1,-.16) rectangle (1.75,.16);\node at (.52,.05) {$x$};\node[right] at (1.85,.1) {$g$};\draw[source] (-1.85,-0.6)--(-.88,-0.5);\draw[source] (-1.85,-0.2)--(-.88,-0.1);\draw[source] (-1.85,0.2)--(-.88,0.30000000000000004);\draw[source] (-1.85,0.6)--(-.88,0.7);\node[left] at (-1.95,0) {$NI$};\node at (-1.5,1.6) {$S_c$};\node at (0,-1.6) {$S_1$};\node at (1.5,-1.6) {$S_2$};\draw[force,-{Latex}] (-1.35,-0.45)--++(0,0.9);\draw[aux] (-1.35,-.2)--(-2.3,-.8);\node[left] at (-2.35,-.85) {$\Phi$};\draw[force,-{Latex}] (0,0.95)--++(0,-0.65);\draw[force,-{Latex}] (1.35,0.95)--++(0,-0.65);\draw[aux] (0,.75)--(.42,1.38);\node[above] at (.45,1.4) {$\Phi_1$};\node[right] at (1.75,.7) {$\Phi_2$};\node[align=center,text width=5.2cm] at (6,1.05) {$\Phi=\Phi_1+\Phi_2$};
+\node[align=center,text width=5.2cm] at (6,0.27) {共同磁位降 $\mathcal V$};
+\node[align=center,text width=5.2cm] at (6,-0.51) {$F_x=-S_1B_1^2/(2\mu_0)$};
+\fi
+}
+\expandafter\def\csname CaptionQT17\endcsname{共同磁芯在左，中央为可变气隙x，右侧为固定气隙g}
+\expandafter\def\csname CaptionAT17\endcsname{磁通在上节点分流，气隙x的磁压力决定该支路吸力}
+\expandafter\def\csname DiagramT18\endcsname#1{%
+\ifnum#1=0
+\draw[source] (-1.55,1.25)--(1.55,1.25);\draw[surface] (-1.55,-.1) rectangle (1.55,.12);\draw[thick] (-1.0,-1.65)--(1,-1.65);\draw[decorate,decoration={zigzag,segment length=4pt,amplitude=3pt}] (0,-1.65)--(0,-.1);\node[right] at (.25,-1.05) {$k_s$};\draw[dim] (1.9,.12)--(1.9,1.25);\node[right] at (2.0,.7) {$d_0-x$};\draw[force,-{Latex}] (-1.9,-0.3)--++(0,0.8) node[midway,left] {$x$};\node[align=center,text width=5.2cm] at (6,1.05) {向上靠近位移为x};
+\node[align=center,text width=5.2cm] at (6,0.27) {比较四种供电约束};
+\else
+
+\begin{scope}
+\draw[axis] (0,0)--(3.7,0) node[right] {$x/D$};\draw[axis] (0,0)--(0,2.3) node[above] {$K/(k_sD^3)$};
+\draw[source,domain=0:.25,samples=80] plot ({4.4*\x},{12*\x*(1-\x)^2});\draw[fieldink,dashed,domain=.25:.333333,samples=30] plot ({4.4*\x},{12*\x*(1-\x)^2});\draw[source,dashed,domain=.333333:.7,samples=70] plot ({4.4*\x},{12*\x*(1-\x)^2});
+\draw[aux] (1.1,0)--(1.1,2.05);\node[below] at (1.1,0) {$1/4$};\node[above] at (1.1,2.05) {接触};\node at (1.8,3) {$d_0/D=1/4$：先接触};\end{scope}
+\begin{scope}[xshift=6.4cm]
+\draw[axis] (0,0)--(3.7,0) node[right] {$x/D$};\draw[axis] (0,0)--(0,2.3) node[above] {$K/(k_sD^3)$};
+\draw[source,domain=0:.333333,samples=80] plot ({4.4*\x},{12*\x*(1-\x)^2});\draw[source,dashed,domain=.333333:.7,samples=70] plot ({4.4*\x},{12*\x*(1-\x)^2});
+\draw[aux] (2.9333,0)--(2.9333,2.05);\node[below] at (2.9333,0) {$2/3$};\node[above] at (2.9333,2.05) {接触};\node[point] at (1.466667,1.777778) {};\node[above left] at (1.466667,1.777778) {折叠};\node at (1.8,3) {$d_0/D=2/3$：先失稳};\end{scope}
+\node at (4.9,-1) {恒压／恒流模型：实线为接触前稳定支；固定Q／磁链的恒力模型不使用此曲线};
+
+\fi}
+\expandafter\def\csname CaptionQT18\endcsname{图示弹簧在下、固定极在上，气隙随x减小}
+\expandafter\def\csname CaptionAT18\endcsname{对比接触界限在折叠点之前与之后的两种几何条件，虚线区分接触后延拓与不稳定支}
+% ===== 可编辑正文 =====
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ===== 图像数据与排版 =====
+
+\begin{document}
+\section*{18-W1\quad 均匀磁化球的两种表示}
+\setcounter{figure}{13}\ProblemDiagram{W1}
+\bigskip\setcounter{figure}{14}\AnalysisDiagram{W1}\clearpage
+\section*{18-W2\quad 圆柱中心的退磁场}
+\setcounter{figure}{15}\ProblemDiagram{W2}
+\bigskip\setcounter{figure}{16}\AnalysisDiagram{W2}\clearpage
+\section*{18-W3\quad 线圈轴线上抗磁小球的力}
+\setcounter{figure}{17}\ProblemDiagram{W3}
+\bigskip\setcounter{figure}{18}\AnalysisDiagram{W3}\clearpage
+\section*{18-W4\quad 带自由面源的界面}
+\setcounter{figure}{19}\ProblemDiagram{W4}
+\bigskip\setcounter{figure}{20}\AnalysisDiagram{W4}\clearpage
+\section*{18-W5\quad 磁感应线与电场线的偏折}
+\setcounter{figure}{21}\ProblemDiagram{W5}
+\bigskip\setcounter{figure}{22}\AnalysisDiagram{W5}\clearpage
+\section*{18-W6\quad 不同导体之间的面电荷}
+\setcounter{figure}{23}\ProblemDiagram{W6}
+\bigskip\setcounter{figure}{24}\AnalysisDiagram{W6}\clearpage
+\section*{18-W7\quad 有气隙电磁铁的吸力}
+\setcounter{figure}{25}\ProblemDiagram{W7}
+\bigskip\setcounter{figure}{26}\AnalysisDiagram{W7}\clearpage
+\section*{18-W8\quad 球壳的磁屏蔽}
+\setcounter{figure}{27}\ProblemDiagram{W8}
+\bigskip\setcounter{figure}{28}\AnalysisDiagram{W8}\clearpage
+\section*{18-W9\quad 电介质片被吸入电容器}
+\setcounter{figure}{29}\ProblemDiagram{W9}
+\bigskip\setcounter{figure}{30}\AnalysisDiagram{W9}\clearpage
+\section*{18-W10\quad 同轴线的外部电感与内部电感}
+\setcounter{figure}{31}\ProblemDiagram{W10}
+\bigskip\setcounter{figure}{32}\AnalysisDiagram{W10}\clearpage
+\section*{18-W11\quad 互感能量与转动力矩}
+\setcounter{figure}{33}\ProblemDiagram{W11}
+\bigskip\setcounter{figure}{34}\AnalysisDiagram{W11}\clearpage
+\section*{18-W12\quad 非线性磁芯中的能量与吸力}
+\setcounter{figure}{35}\ProblemDiagram{W12}
+\bigskip\setcounter{figure}{36}\AnalysisDiagram{W12}\clearpage
+\section*{18-T1\quad 径向磁化球}
+\setcounter{figure}{37}\ProblemDiagram{T1}
+\bigskip\setcounter{figure}{55}\AnalysisDiagram{T1}\clearpage
+\section*{18-T2\quad 法向非均匀磁化薄层}
+\setcounter{figure}{38}\ProblemDiagram{T2}
+\bigskip\setcounter{figure}{56}\AnalysisDiagram{T2}\clearpage
+\section*{18-T3\quad 椭球的取向力矩}
+\setcounter{figure}{39}\ProblemDiagram{T3}
+\bigskip\setcounter{figure}{57}\AnalysisDiagram{T3}\clearpage
+\section*{18-T4\quad 磁荷分布的远场磁矩}
+\setcounter{figure}{40}\ProblemDiagram{T4}
+\bigskip\setcounter{figure}{58}\AnalysisDiagram{T4}\clearpage
+\section*{18-T5\quad 界面自由电流的方向}
+\setcounter{figure}{41}\ProblemDiagram{T5}
+\bigskip\setcounter{figure}{59}\AnalysisDiagram{T5}\clearpage
+\section*{18-T6\quad 各向异性材料的界面}
+\setcounter{figure}{42}\ProblemDiagram{T6}
+\bigskip\setcounter{figure}{60}\AnalysisDiagram{T6}\clearpage
+\section*{18-T7\quad 层状磁介质的等效磁导率}
+\setcounter{figure}{43}\ProblemDiagram{T7}
+\bigskip\setcounter{figure}{61}\AnalysisDiagram{T7}\clearpage
+\section*{18-T8\quad 两层漏电介质的暂态}
+\setcounter{figure}{44}\ProblemDiagram{T8}
+\bigskip\setcounter{figure}{62}\AnalysisDiagram{T8}\clearpage
+\section*{18-T9\quad 线性磁球在均匀场中}
+\setcounter{figure}{45}\ProblemDiagram{T9}
+\bigskip\setcounter{figure}{63}\AnalysisDiagram{T9}\clearpage
+\section*{18-T10\quad 径向介电常数变化的球形电容器}
+\setcounter{figure}{46}\ProblemDiagram{T10}
+\bigskip\setcounter{figure}{64}\AnalysisDiagram{T10}\clearpage
+\section*{18-T11\quad 非线性电介质的储能}
+\setcounter{figure}{47}\ProblemDiagram{T11}
+\bigskip\setcounter{figure}{65}\AnalysisDiagram{T11}\clearpage
+\section*{18-T12\quad 非均匀电流的内部电感}
+\setcounter{figure}{48}\ProblemDiagram{T12}
+\bigskip\setcounter{figure}{66}\AnalysisDiagram{T12}\clearpage
+\section*{18-T13\quad 有限厚度回流圆筒的电感}
+\setcounter{figure}{49}\ProblemDiagram{T13}
+\bigskip\setcounter{figure}{67}\AnalysisDiagram{T13}\clearpage
+\section*{18-T14\quad 闭合次级线圈对电感和力的影响}
+\setcounter{figure}{50}\ProblemDiagram{T14}
+\bigskip\setcounter{figure}{68}\AnalysisDiagram{T14}\clearpage
+\section*{18-T15\quad 能量从哪里进入电阻器}
+\setcounter{figure}{51}\ProblemDiagram{T15}
+\bigskip\setcounter{figure}{69}\AnalysisDiagram{T15}\clearpage
+\section*{18-T16\quad 磁能积与磁体最小体积}
+\setcounter{figure}{52}\ProblemDiagram{T16}
+\bigskip\setcounter{figure}{70}\AnalysisDiagram{T16}\clearpage
+\section*{18-T17\quad 非线性分支磁路}
+\setcounter{figure}{53}\ProblemDiagram{T17}
+\bigskip\setcounter{figure}{71}\AnalysisDiagram{T17}\clearpage
+\section*{18-T18\quad 弹簧吸合与供电约束}
+\setcounter{figure}{54}\ProblemDiagram{T18}
+\bigskip\setcounter{figure}{72}\AnalysisDiagram{T18}\clearpage
+\end{document}

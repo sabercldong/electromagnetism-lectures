@@ -1,0 +1,997 @@
+{
+  "count": 136,
+  "count_description": "独立比较的参数实例数；不是独立公式数量",
+  "all_passed": true,
+  "groups": {
+    "独立微分方程": {
+      "count": 76,
+      "max_error": 6.350314819248165e-12
+    },
+    "状态矩阵": {
+      "count": 16,
+      "max_error": 5.551115123125783e-16
+    },
+    "独立积分": {
+      "count": 15,
+      "max_error": 1.8318679906315083e-14
+    },
+    "能量": {
+      "count": 3,
+      "max_error": 1.573010076417673e-14
+    },
+    "电荷与能量": {
+      "count": 9,
+      "max_error": 5.098802039019234e-16
+    },
+    "有效值积分": {
+      "count": 3,
+      "max_error": 1.2918958832001822e-15
+    },
+    "数字代入": {
+      "count": 8,
+      "max_error": 3.9232998363447624e-05
+    },
+    "相量": {
+      "count": 3,
+      "max_error": 8.881784197001253e-17
+    },
+    "有限差分": {
+      "count": 3,
+      "max_error": 1.5162315847305763e-12
+    }
+  },
+  "records": [
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 6.661338147750939e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.892930256985892e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 4.573647016670179e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 3.774567499745602e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.3703261575747092e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 4.360845018425152e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 5.779226180940296e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.2009610702229453e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 6.350314819248165e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "半群",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "面积压缩",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "RLC能量",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.887379141862766e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.454392162258955e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 6.537409502627156e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.1657341758564144e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.4210854715202004e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 9.391654121060355e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.0452860760714783e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.556070026497523e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.0427548541590568e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "半群",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "面积压缩",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "RLC能量",
+      "normalized_error": 6.661338147750939e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 3.3306690738754696e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 6.2450045135165055e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.8716278527008967e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 5.551115123125783e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 7.271960811294775e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.6333982777450018e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.7310829650661326e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.2878587085651816e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.9292540615344365e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "半群",
+      "normalized_error": 8.326672684688674e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "面积压缩",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "RLC能量",
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.220446049250313e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.0325074129013956e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 3.195707587444474e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 8.881784197001252e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 8.075354621106534e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 8.332744216854593e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.025856812178883e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.6978419498391304e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 3.1981362003108416e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "半群",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "面积压缩",
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "RLC能量",
+      "normalized_error": 3.3306690738754696e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 3.3306690738754696e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.0436096431476471e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 3.061439990403869e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.3314683517128287e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 8.896841054671645e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 7.722121553310757e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.8815626119564375e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.7422508708241367e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 3.0676849949173857e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "半群",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "面积压缩",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "RLC能量",
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 7.771561172376096e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 9.769962616701378e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.929601006229632e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.7755575615628914e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 9.089408913032226e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 7.114968336718874e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 8.509436724517036e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.8144153674247718e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.953887134893307e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "半群",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "面积压缩",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "RLC能量",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 5.551115123125783e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 9.048317650695026e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.2254086634300165e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.489780521168882e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.2234620123106367e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.3124365142495804e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 3.957945082788683e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.0963452368173421e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "半群",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "面积压缩",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "RLC能量",
+      "normalized_error": 8.881784197001252e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.1094237467877974e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.498001805406602e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 3.885780586188048e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 9.43689570931383e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.3808398868775384e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 1.3877787807814457e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 9.992007221626409e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 3.1502578323738817e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "三阻尼响应",
+      "normalized_error": 2.7755575615628914e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "半群",
+      "normalized_error": 5.551115123125783e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "状态矩阵",
+      "name": "面积压缩",
+      "normalized_error": 5.237797635936417e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "RLC能量",
+      "normalized_error": 4.440892098500626e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "RC有限时热",
+      "normalized_error": 2.6020852139652106e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量",
+      "name": "RC供能",
+      "normalized_error": 9.367506770274758e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "RC有限时热",
+      "normalized_error": 1.63202784619898e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量",
+      "name": "RC供能",
+      "normalized_error": 1.573010076417673e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "RC有限时热",
+      "normalized_error": 1.8318679906315083e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量",
+      "name": "RC供能",
+      "normalized_error": 6.4771003146608626e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "电荷与能量",
+      "name": "交换差模热",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "电荷与能量",
+      "name": "两电容共同电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "电荷与能量",
+      "name": "两电容共同电荷",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "电荷与能量",
+      "name": "交换差模热",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "电荷与能量",
+      "name": "两电容共同电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "电荷与能量",
+      "name": "两电容共同电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "电荷与能量",
+      "name": "交换差模热",
+      "normalized_error": 5.098802039019234e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "电荷与能量",
+      "name": "两电容共同电荷",
+      "normalized_error": 1.5860328923216522e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "电荷与能量",
+      "name": "两电容共同电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "周期不动点",
+      "normalized_error": 5.551115123125783e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "周期供能",
+      "normalized_error": 1.3010426069826053e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "周期不动点",
+      "normalized_error": 2.5215940446798868e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "周期供能",
+      "normalized_error": 7.771561172376096e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "周期不动点",
+      "normalized_error": 6.38378239159465e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "周期供能",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "周期不动点",
+      "normalized_error": 1.3877787807814457e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "周期供能",
+      "normalized_error": 2.6020852139652106e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有效值积分",
+      "name": "三角波",
+      "normalized_error": 4.996003610813204e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有效值积分",
+      "name": "半波",
+      "normalized_error": 4.718447854656915e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有效值积分",
+      "name": "谐波",
+      "normalized_error": 1.2918958832001822e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W1过零",
+      "normalized_error": 4.517808696591352e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W4峰值",
+      "normalized_error": 3.9232998363447624e-05,
+      "tolerance": 5e-05,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W5剩余能量",
+      "normalized_error": 2.3583816936456614e-05,
+      "tolerance": 5e-05,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W8峰时",
+      "normalized_error": 2.2779632696257046e-06,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W8校正",
+      "normalized_error": 1.1559389952519645e-05,
+      "tolerance": 5e-05,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W10相角",
+      "normalized_error": 3.9115610687640065e-06,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "T7超调",
+      "normalized_error": 2.6104926586389965e-05,
+      "tolerance": 5e-05,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "T7阻尼界",
+      "normalized_error": 6.7305598216993445e-06,
+      "tolerance": 5e-05,
+      "passed": true
+    },
+    {
+      "group": "相量",
+      "name": "串联电压",
+      "normalized_error": 8.881784197001253e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "相量",
+      "name": "并联电流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "相量",
+      "name": "混合输入",
+      "normalized_error": 7.021666937153402e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "正弦RC完整解",
+      "normalized_error": 1.66644475996236e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "正弦RC完整解",
+      "normalized_error": 9.61342117022923e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "正弦RC完整解",
+      "normalized_error": 1.5162315847305763e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    }
+  ]
+}

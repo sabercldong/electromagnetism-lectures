@@ -1,0 +1,171 @@
+[
+  {
+    "script": "核验第七讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 133, \"all_passed\": true, \"maximum_normalized_error\": 4.577203572213957e-08}\n",
+    "error": ""
+  },
+  {
+    "script": "核验第九讲公式.py",
+    "returncode": 0,
+    "summary": "{\"lecture\": \"第九讲\", \"passed\": 203, \"all_passed\": true, \"groups\": {\"差分\": {\"count\": 27, \"max_normalized_error\": 6.225500237544423e-08}, \"渐近截断\": {\"count\": 4, \"max_normalized_error\": 2.3695750916985503e-09}, \"积分或恒等式\": {\"count\": 172, \"max_normalized_error\": 2.7144952952085077e-14}}}\n",
+    "error": ""
+  },
+  {
+    "script": "核验第二十一讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 136, \"count_description\": \"独立比较的参数实例数；不是独立公式数量\", \"all_passed\": true, \"groups\": {\"独立微分方程\": {\"count\": 76, \"max_error\": 6.350314819248165e-12}, \"状态矩阵\": {\"count\": 16, \"max_error\": 5.551115123125783e-16}, \"独立积分\": {\"count\": 15, \"max_error\": 1.8318679906315083e-14}, \"能量\": {\"count\": 3, \"max_error\": 1.573010076417673e-14}, \"电荷与能量\": {\"count\": 9, \"max_error\": 5.098802039019234e-16}, \"有效值积分\": {\"count\": 3, \"max_error\": 1.2918958832001822e-15}, \"数字代入\": {\"count\": 8, \"max_error\": 3.9232998363447624e-0",
+    "error": ""
+  },
+  {
+    "script": "核验第二十七讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 169, \"all_passed\": true, \"failed\": []}\n",
+    "error": ""
+  },
+  {
+    "script": "核验第二十三讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 211, \"count_description\": \"独立比较的参数实例数；不是独立公式数量\", \"all_passed\": true, \"groups\": {\"独立节点\": {\"count\": 62, \"max_error\": 6.0144511278675184e-15}, \"独立求根\": {\"count\": 15, \"max_error\": 2.220446049250313e-16}, \"元件电压\": {\"count\": 8, \"max_error\": 2.1499376424746294e-16}, \"有限差分\": {\"count\": 16, \"max_error\": 4.317346894339673e-07}, \"独立积分\": {\"count\": 3, \"max_error\": 4.618527782440651e-15}, \"储能极值\": {\"count\": 3, \"max_error\": 4.440892098500626e-16}, \"独立微分方程\": {\"count\": 5, \"max_error\": 1.959650323957174e-12",
+    "error": ""
+  },
+  {
+    "script": "核验第二十二讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 113, \"count_description\": \"独立比较的参数实例数；不是独立公式数量\", \"all_passed\": true, \"groups\": {\"节点方程\": {\"count\": 33, \"max_error\": 1.2906342661267445e-15}, \"电桥平衡\": {\"count\": 9, \"max_error\": 1.214306433183765e-17}, \"独立反演\": {\"count\": 3, \"max_error\": 7.279509460923747e-16}, \"互感方程\": {\"count\": 6, \"max_error\": 1.1009711660866121e-15}, \"互感能量\": {\"count\": 3, \"max_error\": 2.736604593727472e-16}, \"磁能\": {\"count\": 3, \"max_error\": 0}, \"独立积分\": {\"count\": 4, \"max_error\": 6.808636620756003e-15}, \"线路能量\": {\"count\": 3, \"m",
+    "error": ""
+  },
+  {
+    "script": "核验第二十五讲公式.py",
+    "returncode": 0,
+    "summary": "{\n  \"count\": 123,\n  \"all_passed\": true,\n  \"values\": {\n    \"W9_zeq_mm\": 3.6453958900741013,\n    \"T17_Rc_uncertainty\": 0.00022738021023044415,\n    \"T17_G_uncertainty\": 0.00025377155081385033\n  },\n  \"failed\": []\n}\n",
+    "error": "",
+    "note": "原脚本按单行取图，已改为从真实多行源码提取W12分析图的plot coordinates段；123项通过。"
+  },
+  {
+    "script": "核验第二十八讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 189, \"count_description\": \"一项为一个参数实例的一次数值比较；复数或向量以最大分量误差计作一次。覆盖12例题、18习题与规范理论，积分和差分网格点不计数，次数不等于独立公式数量。\", \"all_passed\": true, \"groups\": [\"T1\", \"T10\", \"T11\", \"T12\", \"T13\", \"T14\", \"T15\", \"T16\", \"T17\", \"T18\", \"T2\", \"T3\", \"T4\", \"T5\", \"T6\", \"T7\", \"T8\", \"T9\", \"W1\", \"W10\", \"W11\", \"W12\", \"W2\", \"W3\", \"W4\", \"W5\", \"W6\", \"W7\", \"W8\", \"W9\", \"理论\"]}\n",
+    "error": ""
+  },
+  {
+    "script": "核验第二十六讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 133, \"all_passed\": true, \"failures\": []}\n",
+    "error": ""
+  },
+  {
+    "script": "核验第二十四讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 472, \"count_description\": \"每次独立计算与一个解析结论的比较计一个参数实例；不是独立公式数量。\", \"all_passed\": true, \"groups\": {\"独立面积积分\": 62, \"有限差分反演\": 10, \"独立数值极值\": 3, \"独立线积分\": 1, \"独立方程求解\": 3, \"独立周期积分\": 25, \"独立弛豫积分\": 36, \"独立空间积分\": 26, \"有限差分\": 3, \"独立时间积分\": 3, \"变化参数\": 9, \"有限差分场方程\": 24, \"独立积分场方程\": 12, \"误差界\": 4, \"数值边界\": 3, \"有限差分行波\": 12, \"有限差分驻波\": 12, \"有限差分纵向场\": 12, \"有限差分给定源\": 8, \"独立初值求导\": 4, \"独立耦合方程积分\": 24, \"独立同轴积分\": 6, \"有限差分同轴守恒\": 3, \"独立横向耦合积分\": 18, \"独立RC能量积分\": 36, \"有限差分RC极值\": 3, \"RC极值\": 3, \"独立磁能空间积分\": 3, \"独立两层弛豫积分\": 48,",
+    "error": ""
+  },
+  {
+    "script": "核验第二十讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 150, \"count_description\": \"独立比较的参数实例数；不是独立公式数量\", \"all_passed\": true, \"groups\": {\"源及负载\": {\"count\": 12, \"max_error\": 2.1490895599549345e-16}, \"有限差分\": {\"count\": 19, \"max_error\": 2.114701191935353e-10}, \"数字代入\": {\"count\": 10, \"max_error\": 9.791987449416568e-06}, \"积分\": {\"count\": 16, \"max_error\": 4.457578588853525e-15}, \"热平衡\": {\"count\": 31, \"max_error\": 3.3355176944384843e-15}, \"微观输运\": {\"count\": 1, \"max_error\": 0}, \"网络方程\": {\"count\": 23, \"max_error\": 2.220446049250313e-15}, \"能量收支\": {\"count\": 1",
+    "error": ""
+  },
+  {
+    "script": "核验第五讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 129, \"passed\": 129, \"max_scaled_error\": 2.1688969257589883e-09}\n",
+    "error": ""
+  },
+  {
+    "script": "核验第八讲公式.py",
+    "returncode": 0,
+    "summary": "{\"lecture\": \"第八讲\", \"passed\": 131, \"max_normalized_error\": 0.005357993584204697}\n",
+    "error": ""
+  },
+  {
+    "script": "核验第六讲公式.py",
+    "returncode": 0,
+    "summary": "{\"units\": \"k=1, epsilon=1/(4pi)\", \"count\": 179, \"all_passed\": true, \"maximum_normalized_error\": 1.9231310988132577e-11, \"limits\": \"数值交叉核验覆盖上述有限模型，不替代唯一性、收敛性及近似条件的解析论证。\"}\n",
+    "error": ""
+  },
+  {
+    "script": "核验第十一讲公式.py",
+    "returncode": 0,
+    "summary": "{\"lecture\": \"第十一讲\", \"passed\": 330, \"all_passed\": true, \"groups\": {\"运动方程积分\": {\"count\": 198, \"maximum_normalized_error\": 8.617853303222543e-09}, \"积分或恒等式\": {\"count\": 85, \"maximum_normalized_error\": 7.999999607211095e-08}, \"有限差分\": {\"count\": 35, \"maximum_normalized_error\": 1.4199030173855931e-08}, \"渐近比较\": {\"count\": 3, \"maximum_normalized_error\": 2.6672555462310335e-08}, \"量子网格近似\": {\"count\": 3, \"maximum_normalized_error\": 0.0001300175061714981}, \"数值代入与有效位数\": {\"count\": 6, \"maximum_normalized_error\": 0.0",
+    "error": ""
+  },
+  {
+    "script": "核验第十七讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 235, \"all_passed\": true, \"count_description\": \"同一关系在不同参数下的积分、矩阵求解、有限差分和数值比较实例，非独立公式数量\", \"normalized_error_definition\": \"abs(got-expected)/max(1,abs(got),abs(expected));单位化预期零值使用绝对误差\", \"maximum_normalized_error\": 0.0019575416669934485, \"groups\": {\"代数与统计积分\": {\"count\": 86, \"maximum_normalized_error\": 7.549516567451064e-15}, \"有限差分\": {\"count\": 53, \"maximum_normalized_error\": 4.440892098500626e-08}, \"回线与空间积分\": {\"count\": 41, \"maximum_normalized_error\": 1.1597836024890285e-09}, \"磁路矩阵\": {\"count",
+    "error": ""
+  },
+  {
+    "script": "核验第十三讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 241, \"all_passed\": true, \"description\": \"同一物理关系在不同参数下的实例；包含场与回路积分、有限差分、几何积分、矩阵本征值、缓变和远场近似、书面有效位数核对，不代表独立公式数量。\", \"maximum_normalized_error\": 0.007158103843154612, \"groups\": {\"积分或恒等式\": {\"count\": 86, \"maximum_normalized_error\": 6.09245403798458e-13}, \"完整运动方程积分\": {\"count\": 6, \"maximum_normalized_error\": 1.4920843628115181e-09}, \"缓变近似\": {\"count\": 3, \"maximum_normalized_error\": 0.003602211041744404}, \"渐近比较\": {\"count\": 3, \"maximum_normalized_error\": 9.925426443194805e-06}, \"回路方程积分\": {\"count\":",
+    "error": ""
+  },
+  {
+    "script": "核验第十九讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 103, \"all_passed\": true, \"count_description\": \"不同参数的空间积分、有限差分、相位极值、边界和平衡比较实例，非独立公式数量\", \"groups\": {\"空间积分\": {\"count\": 23, \"maximum_normalized_error\": 3.308464613382857e-14}, \"能量积分\": {\"count\": 5, \"maximum_normalized_error\": 7.349676423018536e-14}, \"边界关系\": {\"count\": 5, \"maximum_normalized_error\": 0}, \"有限差分\": {\"count\": 45, \"maximum_normalized_error\": 1.1453155035479057e-08}, \"相位极值\": {\"count\": 5, \"maximum_normalized_error\": 1.1537659387583377e-10}, \"代数与势能\": {\"count\": 6, \"maximum_normalized_e",
+    "error": ""
+  },
+  {
+    "script": "核验第十二讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 200, \"all_passed\": true, \"maximum_normalized_error\": 1.5546987323552303e-09, \"description\": \"参数实例下的源场比较、有限差分、数值积分与耦合方程积分；不把实例数当作独立物理定律数。\"}\n",
+    "error": ""
+  },
+  {
+    "script": "核验第十五讲公式.py",
+    "returncode": 0,
+    "summary": "{\n  \"count\": 308,\n  \"all_passed\": true,\n  \"maximum_normalized_error\": 7.946200916864608e-09,\n  \"kinds\": {\n    \"积分或恒等式\": 220,\n    \"有限差分\": 18,\n    \"边界线性方程\": 32,\n    \"极值采样\": 8,\n    \"常微分方程积分\": 30\n  },\n  \"groups\": {\n    \"积分或恒等式\": {\n      \"count\": 220,\n      \"maximum_normalized_error\": 7.946200916864608e-09\n    },\n    \"有限差分\": {\n      \"count\": 18,\n      \"maximum_normalized_error\": 2.2655448637233868e-10\n    },\n    \"边界线性方程\": {\n      \"count\": 32,\n      \"maximum_normalized_error\": 8.881784197001252e-16\n  ",
+    "error": ""
+  },
+  {
+    "script": "核验第十八讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 209, \"all_passed\": true, \"count_description\": \"不同参数下的空间积分、边界矩阵、能量积分、有限差分与舍入比较实例，非独立公式数量\", \"normalized_error_definition\": \"abs(got-expected)/max(1,abs(got),abs(expected));零值用单位化绝对误差\", \"groups\": {\"空间积分\": {\"count\": 40, \"maximum_normalized_error\": 3.4638958368304884e-14}, \"有限差分\": {\"count\": 84, \"maximum_normalized_error\": 8.881784197001252e-08}, \"边界矩阵\": {\"count\": 47, \"maximum_normalized_error\": 1.5525626643358275e-15}, \"能量积分\": {\"count\": 18, \"maximum_normalized_error\": 1.998401444325278e-15}",
+    "error": ""
+  },
+  {
+    "script": "核验第十六讲公式.py",
+    "returncode": 0,
+    "summary": "{\"count\": 572, \"all_passed\": true, \"maximum_normalized_error\": 1.8218740722820168e-10, \"计数说明\": \"同一关系在不同参数下的积分、边界矩阵、有限差分或极值采样实例，不代表独立公式数量。\", \"零值误差说明\": \"mu0=1等单位化条件下，预期零值使用绝对误差。\", \"groups\": {\"积分或恒等式\": {\"count\": 372, \"maximum_normalized_error\": 1.4210854715202004e-14}, \"边界线性方程\": {\"count\": 128, \"maximum_normalized_error\": 4.0824846320126407e-16}, \"有限差分\": {\"count\": 56, \"maximum_normalized_error\": 1.8218740722820168e-10}, \"极值采样\": {\"count\": 16, \"maximum_normalized_error\": 2.7755575615628914e-17}}}\n",
+    "error": ""
+  },
+  {
+    "script": "核验第十四讲公式.py",
+    "returncode": 0,
+    "summary": "{\n  \"count\": 359,\n  \"all_passed\": true,\n  \"maximum_normalized_error\": 0.003321035473967892,\n  \"exact_maximum_normalized_error\": 2.333136633468808e-10,\n  \"kinds\": {\n    \"库仑面积分\": 19,\n    \"积分或恒等式\": 175,\n    \"库仑环积分\": 9,\n    \"渐近比较\": 6,\n    \"边界线性方程\": 52,\n    \"椭球积分\": 20,\n    \"有限差分\": 33,\n    \"张量方程\": 4,\n    \"统计角积分\": 14,\n    \"周期积分\": 12,\n    \"运动方程积分\": 6,\n    \"小角近似\": 3,\n    \"数值代入与有效位数\": 6\n  },\n  \"groups\": {\n    \"库仑面积分\": {\n      \"count\": 19,\n      \"maximum_normalized_error\": 7.722988915048745e-14\n    },\n    ",
+    "error": ""
+  },
+  {
+    "script": "核验第十讲公式.py",
+    "returncode": 0,
+    "summary": "{\"lecture\": \"第十讲\", \"passed\": 227, \"all_passed\": true, \"groups\": {\"积分或恒等式\": {\"count\": 165, \"maximum_normalized_error\": 5.745404152435185e-14}, \"差分\": {\"count\": 15, \"maximum_normalized_error\": 1.1137613054046369e-10}, \"渐近截断\": {\"count\": 6, \"maximum_normalized_error\": 1.2522364928324592e-07}, \"弱场近似\": {\"count\": 4, \"maximum_normalized_error\": 6.6666666356440926e-09}, \"运动方程积分\": {\"count\": 31, \"maximum_normalized_error\": 3.5065323250402325e-08}, \"绝热近似\": {\"count\": 6, \"maximum_normalized_error\": 8.957483683",
+    "error": ""
+  },
+  {
+    "script": "核验第四讲公式.py",
+    "returncode": 0,
+    "summary": "37 项公式核验通过；最大误差 1.32e-11\n",
+    "error": ""
+  },
+  {
+    "script": "核验习题合集.py",
+    "returncode": 0,
+    "summary": "instances 238 problems 120 failures []\n",
+    "error": ""
+  },
+  {
+    "script": "第一讲独立计算复核.py",
+    "returncode": 0,
+    "summary": "PASS 20 problems\n",
+    "error": ""
+  },
+  {
+    "script": "第二三讲独立计算复核.py",
+    "returncode": 0,
+    "summary": "61 independent checks passed\n",
+    "error": ""
+  }
+]

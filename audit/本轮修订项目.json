@@ -1,0 +1,228 @@
+[
+  {
+    "lecture": 1,
+    "problem": "W1",
+    "kind": "图",
+    "reason": "题图d的尺寸线与0、d坐标标签分开。",
+    "old": "\\draw[dim] (-2,-.85)--(2,-.85)",
+    "new": "\\draw[dim] (-2,-1.35)--(2,-1.35)",
+    "replacements": 1
+  },
+  {
+    "lecture": 1,
+    "problem": "W1",
+    "kind": "图",
+    "reason": "横向说明与两源坐标0、d的标签过近，向下移开。",
+    "old": "\\node at (0,-.85) {横向：",
+    "new": "\\node at (0,-1.35) {横向：",
+    "replacements": 1
+  },
+  {
+    "lecture": 1,
+    "problem": "T5",
+    "kind": "图",
+    "reason": "两源分量说明与x轴标签重叠，移至右上方。",
+    "old": "\\node[anchor=west,align=left] at (2.7,.2)",
+    "new": "\\node[anchor=west,align=left] at (3.3,1.7)",
+    "replacements": 1
+  },
+  {
+    "lecture": 1,
+    "problem": "T12",
+    "kind": "图",
+    "reason": "参考方向说明与-a、a坐标标签重叠，扩大竖向间隔。",
+    "old": "\\node at (.2,-1.05)",
+    "new": "\\node at (.2,-1.50)",
+    "replacements": 1
+  },
+  {
+    "lecture": 1,
+    "problem": "T12",
+    "kind": "图",
+    "reason": "电荷反演关系随说明同步下移。",
+    "old": "\\node at (.2,-1.75)",
+    "new": "\\node at (.2,-2.20)",
+    "replacements": 1
+  },
+  {
+    "lecture": 2,
+    "problem": "W6",
+    "kind": "图",
+    "reason": "显示分式的上沿与上一行图例过近，增大间隔。",
+    "old": "\\node at (.2,-2.5)",
+    "new": "\\node at (.2,-3.10)",
+    "replacements": 1
+  },
+  {
+    "lecture": 4,
+    "problem": "T7",
+    "kind": "图",
+    "reason": "等势线标签碰到横轴标签；用引线明确指向原等势曲线。",
+    "old": "\\node[right] at (1.2,.3) {等势线};",
+    "new": "\\node[above right] at (1.05,1.55) {等势线};\\draw[aux] (1.2,1.5)--(.95,{ln(cos(.95 r))+1.35});",
+    "replacements": 1
+  },
+  {
+    "lecture": 4,
+    "problem": "T7",
+    "kind": "图",
+    "reason": "将原来略偏离场线的直箭头改为沿同一场线表达式绘制的有向曲线。",
+    "old": "\\draw[force] (.85,.814)--(1.2,1.121);",
+    "new": "\\draw[force,domain=.85:1.2,samples=24] plot (\\x,{ln(sin(\\x r))+1.1});",
+    "replacements": 1
+  },
+  {
+    "lecture": 4,
+    "problem": "T7",
+    "kind": "图",
+    "reason": "右侧两条曲线方程与横轴标签进一步分离。",
+    "old": "at (4.8,",
+    "new": "at (5.5,",
+    "replacements": 3
+  },
+  {
+    "lecture": 4,
+    "problem": "T16",
+    "kind": "图",
+    "reason": "导体标签与左侧负像电荷标签重叠，移至阴影空白处。",
+    "old": "\\node at (-1.1,-1.45) {导体};",
+    "new": "\\node at (-1.85,-.65) {导体};",
+    "replacements": 1
+  },
+  {
+    "lecture": 5,
+    "problem": "T17",
+    "kind": "解答说明",
+    "reason": "原图注已注明电场箭头取q0>0；本轮补充q0<0时两场反向而压力和合力不变的图解说明，属于解释增强，非原图错误。",
+    "old": "的正位移使右间隙变窄、右侧吸引增强。电力与位移同向，是负的有效刚度；与弹簧叠加后须由总线性系数判定稳定性。",
+    "new": "中取\\(q_0>0\\)，故\\(E_1<0,E_2>0\\)；若\\(q_0<0\\)，两场箭头同时反向，平方场给出的压力和合力不变。正位移使右间隙变窄、右侧吸引增强，电力与位移同向；与弹簧叠加后须由总线性系数判定稳定性。"
+  },
+  {
+    "lecture": 9,
+    "problem": "T15",
+    "kind": "图",
+    "reason": "标题与z轴标签过近，分开两者。",
+    "old": "\\node at (0,2.8) {斜截面示意};",
+    "new": "\\node at (0,3.25) {斜截面示意};",
+    "replacements": 2
+  },
+  {
+    "lecture": 11,
+    "problem": "T3",
+    "kind": "图",
+    "reason": "最大离轴距离说明碰到z轴标签，移至轴下方右侧。",
+    "old": "\\node[align=center,text width=3.8cm] at (7,0.08000000000000007)",
+    "new": "\\node[align=center,text width=3.8cm] at (7,-.55)",
+    "replacements": 1
+  },
+  {
+    "lecture": 11,
+    "problem": "T10",
+    "kind": "图",
+    "reason": "将右侧说明与x轴标签分开。",
+    "old": "at (6,",
+    "new": "at (7,",
+    "replacements": 2
+  },
+  {
+    "lecture": 11,
+    "problem": "T10",
+    "kind": "方向",
+    "reason": "解答要求红路径去、蓝路径反向返回；原分析图蓝箭头仍为O到P。将分析图蓝路径改为P经左上角返回O，形成正向闭路；题图的两条开放路径方向保留。"
+  },
+  {
+    "lecture": 12,
+    "problem": "T9",
+    "kind": "图",
+    "reason": "补上归一化磁场的纵轴刻度，明确2厘米表示数值1。",
+    "old": "\\node[below left] at (0,0) {$0$};",
+    "new": "\\node[below left] at (0,0) {$0$};\\draw[ink] (-.05,2)--(.05,2);\\node[left] at(-.05,2) {$1$};",
+    "replacements": 2
+  },
+  {
+    "lecture": 12,
+    "problem": "T9",
+    "kind": "标尺",
+    "reason": "原蓝线仅标“缩放”，两曲线共轴但归一化未完整定义。现给出两种无量纲量、共同纵轴刻度与峰值参考线，并移开蓝线说明和r/a标签。原解答公式及峰位置不变。"
+  },
+  {
+    "lecture": 12,
+    "problem": "T9",
+    "kind": "解答说明",
+    "reason": "解答明确两条曲线的归一化定义与图示条件；零变化率情形仍按原答案另行讨论。",
+    "old": "圆内累计磁通决定环向电场，峰值不在轴心；无量纲极值方程的零边界根须排除。",
+    "new": "圆内累计磁通决定环向电场。图取\\(B_0>0,\\dot B_0\\ne0\\)，红线为\\(B_z/B_0\\)，蓝线为\\(2|E_\\varphi|/(a|\\dot B_0|)\\)，共用同一纵轴标尺；峰值不在轴心，无量纲极值方程的零边界根须排除。"
+  },
+  {
+    "lecture": 15,
+    "problem": "T2",
+    "kind": "解答说明",
+    "reason": "原题图说明称电位移沿场方向增大，但D沿x、大小随y变化。修正图注和对应正文说明，场公式及环流解答不变。",
+    "old": "电位移沿场方向增大，回路按逆时针绕行",
+    "new": "电位移沿\\(x\\)方向，大小随\\(y\\)增大；回路按逆时针绕行"
+  },
+  {
+    "lecture": 16,
+    "problem": "W1",
+    "kind": "解答说明",
+    "reason": "原“外法向与磁化的叉乘”没有明确顺序，易误读为n×M；现明确M×n。原六面电流表和环流图方向正确，保持不变。",
+    "old": "每个面的电流由该面外法向与磁化的叉乘确定。",
+    "new": "每个面的电流均按\\(\\boldsymbol K_b=\\boldsymbol M\\times\\boldsymbol n_{\\rm out}\\)确定，叉乘顺序是磁化在前、外法向在后。"
+  },
+  {
+    "lecture": 18,
+    "problem": "W5",
+    "kind": "图",
+    "reason": "两子图标题与法向n标签过近，抬高标题。",
+    "old": "\\node at (1,2.3)",
+    "new": "\\node at (1,2.85)",
+    "replacements": 2
+  },
+  {
+    "lecture": 22,
+    "problem": "W8",
+    "kind": "标尺",
+    "reason": "原功率三角形为定性比例，画成Q小于P，但本题实际Q大于P。现按输入复功率的同一比例绘图并给出P、Q、|S|及P1、P2。原阻抗与有功收支解答不变。"
+  },
+  {
+    "lecture": 22,
+    "problem": "W8",
+    "kind": "图注",
+    "reason": "图注同步说明已采用本题数值及共同标尺，移除原来“比例仅示意”的旧说明。"
+  },
+  {
+    "lecture": 7,
+    "problem": "W9",
+    "kind": "图",
+    "reason": "明确箭头为电流密度，并将两侧法向分量按同一标尺画为相等；j1标签与入射角标签分开。",
+    "old": "\\draw[force] (-.7,-1.4)--(0,0);",
+    "new": "\\draw[force] (-.55,-1.1)--(0,0);\\node[left] at(-.65,-.35) {$\\boldsymbol j_1$};",
+    "replacements": 2
+  },
+  {
+    "lecture": 7,
+    "problem": "W9",
+    "kind": "图",
+    "reason": "折射后电流矢量长度为原来的两倍，法向分量保持不变；角度与原解答一致。",
+    "old": "\\draw[force] (0,0)--(1.7,.85);",
+    "new": "\\draw[force] (0,0)--(2.2,1.1) node[above right] {$\\boldsymbol j_2$};",
+    "replacements": 2
+  },
+  {
+    "lecture": 7,
+    "problem": "W9",
+    "kind": "图",
+    "reason": "入射角标签移离入射箭头，并以辅助线指向原角弧。",
+    "old": "\\node at (-.38,-.8) {$\\theta_1$};",
+    "new": "\\node[right] at(.25,-.9) {$\\theta_1$};\\draw[aux] (.22,-.65)--(-.12,-.58);",
+    "replacements": 2
+  },
+  {
+    "lecture": 7,
+    "problem": "W9",
+    "kind": "解答说明",
+    "reason": "原箭头未明确变量及比例；现明确画j而非E，图示大小与解答j2/j1=2、E2/E1=1/2相配。",
+    "old": "的角从界面法向量起。法向电流连续、切向场连续共同确定折射角，负界面电荷对应法向场减小。",
+    "new": "的角从界面法向量起，两支\\(\\boldsymbol j\\)箭头采用共同标尺，法向分量相同；电流模长之比为2，而非电场模长之比。法向电流连续、切向场连续共同确定折射角，负界面电荷对应法向场减小。"
+  }
+]

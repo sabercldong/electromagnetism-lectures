@@ -1,0 +1,2668 @@
+% 第四讲 电势梯度、偶极层与静电场方程
+% 使用 Tectonic 或 XeLaTeX 编译。正文可在下方各 ContentPart 中编辑。
+% 图像以无损 PDF 图像流嵌入本文件，编译时无需另附图片文件。
+\documentclass[UTF8,fontset=fandol,zihao=-4,a4paper]{ctexart}
+\usepackage[top=19mm,bottom=18mm,left=21mm,right=21mm]{geometry}
+\usepackage{amsmath,amssymb,bm,esint}
+\usepackage{booktabs,array,float,caption}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={第四讲 电势梯度、偶极层与静电场方程},pdfsubject={电磁学课程讲义},pdfauthor={}}
+\ctexset{
+ section={format=\Large\sffamily\bfseries,beforeskip=3ex,afterskip=1.5ex},
+ subsection={format=\normalsize\sffamily\bfseries,beforeskip=2ex,afterskip=1ex}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.18}
+\renewcommand{\thefigure}{4-\arabic{figure}}
+\captionsetup{font=small,labelformat=simple,labelsep=quad,skip=6pt}
+\setlength{\abovedisplayskip}{7pt}
+\setlength{\belowdisplayskip}{7pt}
+\setlength{\intextsep}{8pt}
+\pagestyle{plain}
+\raggedbottom
+
+% 自包含原图排版命令，保留原始像素和比例。
+\newlength{\PptWidth}
+\newlength{\PptHeight}
+\newlength{\PptTileHeight}
+\newlength{\PptTileY}
+\makeatletter
+\newcommand{\PptDrawTile}[3]{%
+ \setlength{\PptTileHeight}{#2\PptHeight}%
+ \setlength{\PptTileY}{#3\PptHeight}%
+ \edef\PptTileHeightBP{\strip@pt\dimexpr0.996264\PptTileHeight\relax}%
+ \edef\PptTileYBP{\strip@pt\dimexpr0.996264\PptTileY\relax}%
+ \special{pdf:put @Ppt#1 << /Filter /FlateDecode >>}%
+ \special{pdf:put @resources << /XObject << /Ppt#1 @Ppt#1 >> >>}%
+ \special{pdf:content q \PptWidthBP\space 0 0 \PptTileHeightBP\space 0 \PptTileYBP\space cm /Ppt#1 Do Q}}
+\newcommand{\PptImageBox}[3]{%
+ \begingroup
+ \setlength{\PptWidth}{#2}%
+ \setlength{\PptHeight}{#3\PptWidth}%
+ \edef\PptWidthBP{\strip@pt\dimexpr0.996264\PptWidth\relax}%
+ \edef\PptHeightBP{\strip@pt\dimexpr0.996264\PptHeight\relax}%
+ \leavevmode\hbox to\PptWidth{%
+  \vrule width0pt height\PptHeight depth0pt%
+  \csname PptStream#1\endcsname%
+  \global\expandafter\let\csname PptStream#1\endcsname\relax%
+  \hss}%
+ \endgroup}
+\makeatother
+
+
+\usepackage{enumitem}
+\usepackage{xcolor,tikz,needspace}
+\usetikzlibrary{arrows.meta,calc,decorations.pathmorphing}
+\definecolor{ink}{HTML}{25323C}
+\definecolor{sourceink}{HTML}{A34435}
+\definecolor{fieldink}{HTML}{205D83}
+\definecolor{surfaceink}{HTML}{4B7B77}
+\tikzset{
+ charge/.style={circle,draw=sourceink,fill=sourceink!6,minimum size=6mm,inner sep=2pt},
+ point/.style={circle,fill=ink,inner sep=1.5pt},
+ axis/.style={draw=ink!65,thin,-{Latex[length=1.7mm]}},
+ force/.style={draw=fieldink,thick,-{Latex[length=2mm]}},
+ aux/.style={draw=ink!45,dashed,thin},
+ dim/.style={draw=ink!60,thin,{Latex[length=1.6mm]}-{Latex[length=1.6mm]}},
+ source/.style={draw=sourceink,very thick},
+ surface/.style={draw=surfaceink,fill=surfaceink!7}}
+\newcommand{\ProblemDiagram}[1]{\DrawDiagram{#1}{0}{Q}{题图}}
+\newcommand{\AnalysisDiagram}[1]{\DrawDiagram{#1}{1}{A}{解答分析图}}
+\newcommand{\DrawDiagram}[4]{%
+ \par\smallskip\noindent\begin{minipage}{\linewidth}\centering
+ \refstepcounter{figure}\label{fig:L4:#1:#3}
+ \begin{tikzpicture}[x=1cm,y=1cm,font=\small,text=ink,line cap=round,line join=round]
+ \csname Diagram#1\endcsname{#2}
+ \end{tikzpicture}\par\vspace{2pt}
+ {\footnotesize\textbf{图~\thefigure\quad #4}\quad\csname Caption#3#1\endcsname\par}
+ \end{minipage}\par\smallskip}
+\setlist[enumerate]{itemsep=4pt,parsep=0pt,topsep=5pt,leftmargin=2.3em}
+\newcommand{\Coach}[1]{\par\smallskip\noindent #1\par\smallskip}
+\newcommand{\Trap}[1]{\par\smallskip\noindent\textbf{注意}\quad #1\par\smallskip}
+\newcommand{\Task}[2]{\needspace{85mm}\subsection*{习题 #1\quad #2}}
+\newcommand{\Answer}[2]{\needspace{75mm}\subsection*{习题 #1 解答\quad #2}}
+\newcommand{\Worked}[2]{\needspace{85mm}\subsection*{例题 #1\quad #2}}
+\newcommand{\Solution}{\par\noindent\textbf{解}\quad}
+\newcommand{\Key}[1]{}
+
+\expandafter\def\csname DiagramW1\endcsname#1{%
+
+\draw[source] (0,0) circle (1.0);
+\draw[source] (0,0) circle (1.7);
+\draw[axis] (-2,0)--(2.25,0) node[right] {$r$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};
+\draw[dim] (0,-2)--(1,-2) node[midway,fill=white] {$a$};
+\draw[dim] (0,-2.5)--(1.7,-2.5) node[midway,fill=white] {$b$};
+\node[fill=white,inner sep=1pt] at (-.4,.55) {$Q_a$};
+\node[fill=white,inner sep=1pt] at (-1.25,.45) {$Q_b$};
+
+\node at (4.8,1) {$\varphi(a)=V_a$};
+\node at (4.8,.3) {$\varphi(b)=V_b$};
+\node at (4.8,-.4) {$\varphi(\infty)=0$};
+\ifnum#1=1
+\node[align=center] at (4.8,-1.15) {$V_a-V_b=kQ_a(1/a-1/b)$};
+\node[align=center] at (4.8,-1.85) {$Q_a+Q_b=4\pi\varepsilon_0bV_b$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW1\endcsname{同心薄球壳，给定两表面势；电量符号待求。}
+\expandafter\def\csname CaptionAW1\endcsname{势差只含内壳项，外壳势确定总电量。}
+\expandafter\def\csname DiagramW2\endcsname#1{%
+
+\draw[axis] (0,-1.9)--(0,2.2) node[above] {$z$};
+\draw[source] (0,-1.4)--(0,1.4);
+\node[left] at (0,1.4) {$a$};\node[left] at (0,-1.4) {$-a$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};
+\node[left] at (-.2,.7) {$\lambda>0$};
+\node[point] (P) at (2,0.65) {};\node[below right=4pt] at (P) {$P(s,z)$};
+\draw[aux] (0,0.65)--(P);
+\draw[dim] (0,-1.85)--(2,-1.85) node[midway,fill=white] {$s$};
+\ifnum#1=1
+
+\draw[force] (P)--++(.85,0) node[midway,above] {$E_s$};
+\draw[force] (P)--++(0,.85) node[above] {$E_z$};
+\node[align=center] at (6.2,1.0) {$\varphi=k\lambda\int_{-a}^a\frac{\mathrm dz'}{\sqrt{s^2+(z-z')^2}}$};
+\node[align=center] at (6.2,0.35) {固定其他坐标，再逐分量求导};
+\fi
+
+}
+\expandafter\def\csname CaptionQW2\endcsname{有限杆与离轴场点；图取 \(0<z<a\)。}
+\expandafter\def\csname CaptionAW2\endcsname{图示正杆、正高度处的两个场分量；轴线与中垂面另作极限。}
+\expandafter\def\csname DiagramW3\endcsname#1{%
+
+\draw[source,fill=sourceink!5] (0,0) ellipse[x radius=1.55,y radius=.4];
+\draw[axis] (0,-1.8)--(0,2.25) node[above] {$z$};
+\draw[aux] (-1.55,0)--(1.55,0);
+\node[below left,fill=white,inner sep=1pt] at (0,0) {$O$};
+\draw[dim] (.2,-.65)--(1.55,-.65) node[midway,fill=white] {$a$};
+\node[left] at (-1.55,.55) {$\sigma>0$};
+\node[point] (P) at (0,1.15) {};\node[left=5pt] at (P) {$P$};
+\ifnum#1=1
+
+\draw[force] (P)--++(0,.65) node[right] {$E_z>0$};
+\draw[force] (0,-1.05)--(0,-1.7) node[right] {$E_z<0$};
+\node[align=center] at (5.25,1.0) {$\varphi(0^+)=\varphi(0^-)$};
+\node[align=center] at (5.25,0.35) {$E_z(0^+)-E_z(0^-)=\sigma/\varepsilon_0$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW3\endcsname{普通正电荷圆盘及轴线上场点。}
+\expandafter\def\csname CaptionAW3\endcsname{普通电荷盘：势连续，法向场发生跃变。}
+\expandafter\def\csname DiagramW4\endcsname#1{%
+
+\draw[axis] (0,-1.3)--(0,2.6) node[above] {$z$};
+\draw[axis] (0,0)--(2.8,0) node[right] {$s$};
+\node[charge] at (0,.55) {$+q$};\node[charge] at (0,-.55) {$-q$};
+\node[below left,fill=white,inner sep=1pt] at (0,0) {$O$};
+\node[point] (P) at (1.5,1.9) {};\node[above left] at (P) {$P$};
+\draw[aux] (0,0)--(P) node[midway,below right] {$r$};
+\draw (0,.95) arc[start angle=90,end angle=51.7,radius=.95];
+\node at (.45,1.05) {$\theta$};
+\draw[dim] (-.7,-.55)--(-.7,.55) node[midway,fill=white] {$d$};
+\ifnum#1=1
+
+\draw[force] (P)--++(.6,.76) node[right] {$E_r$};
+\draw[force] (P)--++(.3,-.23684) node[right] {$E_\theta$};
+\node[align=center] at (5.2,1.0) {$\boldsymbol p=qd\,\hat{\boldsymbol z}$};
+\node[align=center] at (5.2,0.35) {$r\gg d$};
+
+\begin{scope}[xshift=5.8cm,yshift=-2.5cm,scale=.65]
+\draw[axis] (0,-.2)--(0,3) node[above] {$z$};\draw[axis] (-.2,0)--(2.8,0) node[right] {$s$};
+\draw[fieldink,thick,->,domain=12:88,samples=90] plot ({2.5*sin(\x)^3},{2.5*sin(\x)^2*cos(\x)});
+\draw[sourceink,thick,dashed,domain=2:87,samples=90] plot ({2.5*sqrt(cos(\x))*sin(\x)},{2.5*sqrt(cos(\x))*cos(\x)});
+\node[below,fieldink] at (1.5,-.2) {$r=C\sin^2\theta$：场线};
+\node[above,sourceink] at (1.1,3.1) {$r^2=C_V\cos\theta$：等势线};
+\end{scope}
+\fi
+
+}
+\expandafter\def\csname CaptionQW4\endcsname{轴向偶极与球坐标角；场点远离实际电荷间距。}
+\expandafter\def\csname CaptionAW4\endcsname{第一象限处两场分量；场线方程只在偶极近似适用区使用。}
+\expandafter\def\csname DiagramW5\endcsname#1{%
+
+\draw[axis] (-1.8,0)--(2.05,0) node[right] {$x$};
+\draw[axis] (0,-1.5)--(0,1.85) node[above] {$y$};
+\node[point] (O) at (0,0) {};\node[fill=white,inner sep=1pt] at (-.35,.25) {$O$};
+
+\draw[aux] (-1.2,-.7)--(1.2,.7) node[above right] {$\xi_+$};
+\draw[aux] (-.75,1.3)--(.75,-1.3) node[below right] {$\xi_-$};
+\ifnum#1=1
+
+\draw[force] (.85,.495)--(.35,.204);
+\draw[force] (-.85,-.495)--(-.35,-.204);
+\draw[force] (.38,-.66)--(.65,-1.12);
+\draw[force] (-.38,.66)--(-.65,1.12);
+\node[align=center] at (4.8,1.0) {$h_\pm=\pm\sqrt{4A^2+B^2}$};
+\node[align=center] at (4.8,0.35) {$q_t>0:\ \xi_+\text{ 恢复}$};
+\node[align=center] at (4.8,-0.30000000000000004) {$\xi_-\text{ 失稳}$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW5\endcsname{二次势的两个正交主方向；方向角由 \(A,B\) 决定。}
+\expandafter\def\csname CaptionAW5\endcsname{箭头示正试探电荷的力，沿正本征值方向恢复，另一个方向失稳。}
+\expandafter\def\csname DiagramW6\endcsname#1{%
+\ifnum#1=0
+
+\draw[axis] (0,-1.5)--(0,2) node[above] {$z$};
+\draw[axis] (-1.3,0)--(2.1,0) node[right] {$x$};
+\node[point] at (0,.9) {};\node[left] at (0,.9) {$f(z)=-E_0z$};
+\node[point] at (0,-.9) {};
+\node[point] (P) at (1.3,.9) {};\node[right=4pt] at (P) {离轴点};
+\ifnum#1=1
+\node[align=center] at (5.3,1.0) {$\varphi_1=-E_0z$};
+\node[align=center] at (5.3,0.35) {$\varphi_2=-E_0z+Bx+A(x^2-y^2)$};
+\node[align=center] at (5.3,-0.30000000000000004) {$\Delta E_x=-B-2Ax$};
+\fi
+
+\else
+\begin{scope}[xshift=-2.6cm]
+\draw[axis] (-1.5,0)--(1.5,0) node[right] {$x$};
+\draw[axis] (0,-.4)--(0,2.4) node[above] {$z$};
+\node[point] (P) at (0,.7) {};\node[left] at (P) {$P$};
+\draw[force] (P)--(0,1.8) node[right] {$\boldsymbol E_1$};
+\node at (0,-1) {$\varphi_1=-E_0z$};
+\end{scope}
+\begin{scope}[xshift=2.6cm]
+\draw[axis] (-1.5,0)--(1.5,0) node[right] {$x$};
+\draw[axis] (0,-.4)--(0,2.4) node[above] {$z$};
+\node[point] (P) at (0,.7) {};\node[right] at (P) {$P$};
+\draw[force] (P)--(-.9,1.8) node[left] {$\boldsymbol E_2$};
+\draw[force] (P)--(-.9,.7) node[midway,below] {$-B$};
+\draw[aux] (-.9,.7)--(-.9,1.8)--(0,1.8);
+\node at (0,-1) {$\varphi_2=-E_0z+Bx+A(x^2-y^2)$};
+\end{scope}
+\node at (0,-1.85) {同一轴线点 $P$：$E_z=E_0$ 相同，横向场不同（图取 $E_0,B>0$）};
+\fi
+
+}
+\expandafter\def\csname CaptionQW6\endcsname{轴线上的势数据与离轴观察点。}
+\expandafter\def\csname CaptionAW6\endcsname{两个无源势给同一轴线数据，却可有不同横向场；须补完整边界或对称性。}
+\expandafter\def\csname DiagramW7\endcsname#1{%
+
+\draw[surface] (-2,-1)--(2,-1)--(2,1)--(-2,1)--cycle;
+\draw[source] (-2,-1)--(2,-1) (-2,1)--(2,1);
+\draw[axis] (0,-1.8)--(0,1.9) node[above] {$z$};
+\node[right] at (2,1) {$z=a,\ V_R$};
+\node[right] at (2,-1) {$z=-a,\ V_L$};
+\node[fill=white,inner sep=2pt] at (0,.25) {$\rho_0(1-z^2/a^2)$};
+\node[below left,fill=white,inner sep=1pt] at (0,0) {$O$};
+\ifnum#1=1
+\node[align=center] at (5.45,-.1) {$E_z=\frac{\rho_0}{\varepsilon_0}(z-\frac{z^3}{3a^2})-\frac{\Delta V}{2a}$};
+\node[align=center] at (5.45,-.75) {$\Delta V=V_R-V_L$};
+\node[align=center] at (5.45,-1.4) {边界势差控制零场点位置};
+\fi
+
+}
+\expandafter\def\csname CaptionQW7\endcsname{非均匀体电荷层，规定两端电势；只求层内解。}
+\expandafter\def\csname CaptionAW7\endcsname{奇对称自场加边界引入的匀强分量；不能据此自动决定层外场。}
+\expandafter\def\csname DiagramW8\endcsname#1{%
+
+\draw[source] (-2,.55)--(2,.55) node[right] {$+\sigma,\ z=h/2$};
+\draw[source] (-2,-.55)--(2,-.55) node[right] {$-\sigma,\ z=-h/2$};
+\draw[axis] (0,-1.4)--(0,1.7) node[above] {$z$};
+\draw[dim] (-2.45,-.55)--(-2.45,.55) node[midway,fill=white] {$h$};
+\draw[force] (-1.5,.9)--(-1.5,1.5) node[left] {$\boldsymbol n$};
+\ifnum#1=1
+
+\draw[force] (.9,.4)--(.9,-.4) node[midway,right=5pt] {$-\sigma/\varepsilon_0$};
+\node at (0,2.2) {$\varphi_+=+\mu/(2\varepsilon_0)$};
+\node at (0,-1.9) {$\varphi_-=-\mu/(2\varepsilon_0)$};
+
+\fi
+
+}
+\expandafter\def\csname CaptionQW8\endcsname{有限厚度双层：法向由负面指向正面。}
+\expandafter\def\csname CaptionAW8\endcsname{层内场反向于法向；压缩厚度后两侧势差仍为 \(\mu/\varepsilon_0\)。}
+\expandafter\def\csname DiagramW9\endcsname#1{%
+
+\draw[source] (0,0) circle (1.25);
+\draw[source] (0,0) circle (1.65);
+\draw[axis] (-2,0)--(2.2,0) node[right] {$r$};
+\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\node[left] at (-1.8,.8) {$+Q$};
+\node[fill=white,inner sep=1pt] at (-.45,.65) {$-Q$};
+\draw[dim] (-1.65,-2)--(-1.25,-2) node[midway,below] {$h$};
+\node at (0,2.1) {$R\mp h/2$};
+\ifnum#1=1
+
+\draw[force] (1.58,0)--(1.3,0);
+\node[align=center] at (4.85,1.0) {$\mu=Qh/(4\pi R^2)$};
+\node[align=center] at (4.85,0.35) {$\varphi_{\mathrm{in}}\to-\mu/\varepsilon_0$};
+\node[align=center] at (4.85,-0.30000000000000004) {$\varphi_{\mathrm{out}}=0$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW9\endcsname{正、负球壳具有相反且等大的总电量。}
+\expandafter\def\csname CaptionAW9\endcsname{两侧常规场零；两壳间场向内，形成有限的向外势跃变。}
+\expandafter\def\csname DiagramW10\endcsname#1{%
+
+\draw[source,fill=sourceink!5] (0,0) ellipse[x radius=1.55,y radius=.4];
+\draw[axis] (0,-1.8)--(0,2.25) node[above] {$z$};
+\draw[aux] (-1.55,0)--(1.55,0);
+\node[below left,fill=white,inner sep=1pt] at (0,0) {$O$};
+\draw[dim] (.2,-.65)--(1.55,-.65) node[midway,fill=white] {$a$};
+\node[left] at (-1.55,.55) {$\mu>0,\ \boldsymbol n=+\hat{\boldsymbol z}$};
+\node[point] (P) at (0,1.15) {};\node[left=5pt] at (P) {$P$};
+\ifnum#1=1
+
+\draw[force] (P)--++(0,.6) node[right] {$E_z^{\mathrm{reg}}>0$};
+\draw[force] (0,-1.5)--(0,-.9) node[left=4pt] {$E_z^{\mathrm{reg}}>0$};
+\node[align=center] at (5.0,1.0) {$[\varphi]=\mu/\varepsilon_0$};
+\node[align=center] at (5.0,0.35) {$[E_z^{\mathrm{reg}}]=0$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW10\endcsname{恒定强度的有限偶极圆盘，法向为正轴向。}
+\expandafter\def\csname CaptionAW10\endcsname{轴线两侧常规场同向；跨层仍有集中场贡献。}
+\expandafter\def\csname DiagramW11\endcsname#1{%
+
+\fill[surfaceink!9] (-2.3,-1.7) rectangle (2.3,0);
+\draw[surfaceink,thick] (-2.3,0)--(2.3,0);
+\draw[axis] (0,-1.9)--(0,2.1) node[above] {$z$};
+\node[right] at (2.3,0) {$\varphi=0$};
+\node at (-1.1,-1.45) {导体};
+
+\node[charge] (Q) at (0,1.25) {$q>0$};
+\draw[dim] (-.8,0)--(-.8,1.25) node[midway,fill=white] {$a$};
+\ifnum#1=1
+
+\node[charge,dashed,fill=white] (I) at (0,-1.25) {$-q$};
+\node[right=6pt] at (I.east) {辅助像源};
+\draw[force] (Q.east)--++(0,-.8) node[right] {$F_z<0$};
+\node[align=center] at (5.0,1.0) {$\sigma(s)<0$};
+\node[align=center] at (5.0,0.35) {$Q_{\mathrm{ind}}=-q$};
+\node[align=center] at (5.0,-0.30000000000000004) {$U=\frac12q\varphi_{\mathrm{ind}}$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW11\endcsname{真电荷在接地平面上方；下方属于导体。}
+\expandafter\def\csname CaptionAW11\endcsname{虚构像源仅服务上半空间解；受力向下，感应能包含半因子。}
+\expandafter\def\csname DiagramW12\endcsname#1{%
+
+\draw[surface] (0,0) circle (1.3);
+\draw[axis] (0,-1.65)--(0,2.05) node[above] {$z$};
+\draw[axis] (0,0)--(2.0,0) node[right] {$s$};
+\node[below left,fill=white,inner sep=1pt] at (0,0) {$O$};
+\draw[force] (-1.9,-.8)--(-1.9,.8) node[above] {$E_0$};
+\node at (0,-2.0) {$\varphi(R)=0$};
+\draw[dim] (0,-1.65)--(1.3,-1.65) node[midway,fill=white] {$R$};
+\ifnum#1=1
+
+\node[fill=white,inner sep=1pt,text=sourceink] at (.35,.8) {$\sigma>0$};
+\node[fill=white,inner sep=1pt,text=sourceink] at (.35,-.8) {$\sigma<0$};
+\draw[force] (.92,.92)--(1.45,1.45) node[right] {$E_n$};
+\node[align=center] at (5.1,1.0) {$\sigma=3\varepsilon_0E_0\cos\theta$};
+\node[align=center] at (5.1,0.35) {$Q=0$};
+\node[align=center] at (5.1,-0.30000000000000004) {$p=4\pi\varepsilon_0R^3E_0$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW12\endcsname{接地导体球置于沿正 \(z\) 的匀强外场。}
+\expandafter\def\csname CaptionAW12\endcsname{球面等势、场垂直表面；感应分布上下异号，净电量零。}
+\expandafter\def\csname DiagramT1\endcsname#1{%
+
+\draw[source] (0,0) circle (1.0);
+\draw[source] (0,0) circle (1.7);
+\draw[axis] (-2,0)--(2.25,0) node[right] {$r$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};
+\draw[dim] (0,-2)--(1,-2) node[midway,fill=white] {$a$};
+\draw[dim] (0,-2.5)--(1.7,-2.5) node[midway,fill=white] {$b$};
+\node[fill=white,inner sep=1pt] at (-.4,.55) {$Q_a$};
+\node[fill=white,inner sep=1pt] at (-1.25,.45) {$Q_b$};
+\node at (4.5,.9) {$\varphi(a)=\varphi(b)=V$};\ifnum#1=1
+\node[align=center] at (4.5,0.0) {$Q_a=0$};
+\node[align=center] at (4.5,-.65) {$Q_b=4\pi\varepsilon_0bV$};
+\node[align=center] at (4.5,-1.3) {$r<b:\ \boldsymbol E=0$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT1\endcsname{给两球壳相同的非零势。}
+\expandafter\def\csname CaptionAT1\endcsname{相同势值消去内壳净电量；内壳势由外壳提供。}
+\expandafter\def\csname DiagramT2\endcsname#1{%
+
+\draw[axis] (0,-1.9)--(0,2.2) node[above] {$z$};
+\draw[source] (0,-1.4)--(0,1.4);
+\node[left] at (0,1.4) {$a$};\node[left] at (0,-1.4) {$-a$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};
+\node[left] at (-.2,.7) {$\lambda>0$};
+\node[point] (P) at (2,0) {};\node[below right=4pt] at (P) {$P(s,0)$};
+\draw[aux] (0,0)--(P);
+\draw[dim] (0,-1.85)--(2,-1.85) node[midway,fill=white] {$s$};
+\ifnum#1=1
+
+\draw[force] (P)--++(.85,0) node[midway,above] {$E_s$};
+\node[align=center] at (5.0,1.0) {$E_s=kQ/[s\sqrt{s^2+a^2}]$};
+\node[align=center] at (5.0,0.35) {$\epsilon=\sqrt{1+a^2/s^2}-1$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT2\endcsname{正电杆中垂面上的观察点。}
+\expandafter\def\csname CaptionAT2\endcsname{精确场小于同电量点源场；误差用精确场作为分母。}
+\expandafter\def\csname DiagramT3\endcsname#1{%
+
+\draw[source,fill=none] (0,0) ellipse[x radius=1.55,y radius=.4];
+\draw[axis] (0,-1.8)--(0,2.25) node[above] {$z$};
+\draw[aux] (-1.55,0)--(1.55,0);
+\node[below left,fill=white,inner sep=1pt] at (0,0) {$O$};
+\draw[dim] (.2,-.65)--(1.55,-.65) node[midway,fill=white] {$a$};
+\node[left] at (-1.55,.55) {$+Q$};
+\node[point] (P) at (0,1.15) {};\node[left=5pt] at (P) {$P$};
+\ifnum#1=1
+
+\draw[force] (0,1.15)--(0,1.8) node[right] {$E_z$};
+\draw[force] (.85,0)--(.3,0) node[midway,below=1pt,fill=white,inner sep=0pt,font=\footnotesize] {$E_s$};
+\node[align=center] at (5.2,1.0) {$E_z\simeq kQz/a^3$};
+\node[align=center] at (5.2,0.35) {$E_s\simeq-kQs/(2a^3)$};
+\node[align=center] at (5.2,-0.30000000000000004) {正粒子：径向聚焦、轴向散焦};
+\fi
+
+}
+\expandafter\def\csname CaptionQT3\endcsname{均匀正电圆环；图中椭圆为圆环透视。}
+\expandafter\def\csname CaptionAT3\endcsname{近中心的两个相反趋势表明一维恢复不足以建立空间稳定。}
+\expandafter\def\csname DiagramT4\endcsname#1{%
+
+\draw[surface,dashed,fill=none] (0,0) circle (1.2);
+\draw[surface,dashed,fill=none] (4,0) circle (1.2);
+\draw[axis] (0,0)--(1.8,0) node[right] {$r$};
+\draw[axis] (4,0)--(5.8,0) node[right] {$s$};
+\node at (0,1.7) {球对称};\node at (4,1.7) {无限圆柱对称};
+\node at (0,-1.65) {$V_0\ln(r_0/r)$};\node at (4,-1.65) {$V_0\ln(s_0/s)$};
+\ifnum#1=1
+
+\draw[force] (.7,0)--(1.3,0);\draw[force] (4.7,0)--(5.3,0);
+\node at (0,-2.3) {$\rho=\varepsilon_0V_0/r^2$};
+\node at (4,-2.3) {$\rho(s>0)=0$};
+\node at (4,-2.9) {$\lambda=2\pi\varepsilon_0V_0$};
+
+\fi
+
+}
+\expandafter\def\csname CaptionQT4\endcsname{用球形与柱形高斯面比较同一对数函数；虚线为辅助面。}
+\expandafter\def\csname CaptionAT4\endcsname{球、柱的散度尺度不同；圆柱模型的源集中于轴线。}
+\expandafter\def\csname DiagramT5\endcsname#1{%
+\ifnum#1=0
+
+\draw[source] (0,-1.4)--(0,1.4);
+\draw[axis] (-2.1,0)--(2.1,0) node[right] {$x$};
+\node[below right,fill=white,inner sep=1pt] at (0,0) {$0$};
+\node at (0,1.85) {$\varphi=\varphi_0-A|x|+Bx$};
+\ifnum#1=1
+
+\node at (-1.35,-1.85) {$E_x=-A-B$};
+\node at (1.35,-1.85) {$E_x=A-B$};
+\node at (4.4,.45) {$\sigma=2\varepsilon_0A$};
+\node at (4.4,-.35) {$[\varphi]=0$};
+
+\fi
+
+\else
+\begin{scope}[xshift=-2.9cm]
+\draw[axis] (-2,0)--(2,0) node[right] {$x$};
+\draw[axis] (0,-2.2)--(0,1.05) node[above] {$\varphi-\varphi_0$};
+\draw[source] (-1.5,-1.875)--(0,0)--(1.5,-1.125);
+\node[left] at (-.8,-1) {斜率 $A+B$};
+\node[right] at (1.05,-.78) {斜率 $-A+B$};
+\node[point] at (0,0) {};
+\node at (0,-2.8) {势连续，有尖点};
+\end{scope}
+\begin{scope}[xshift=3.4cm]
+\draw[axis] (-2,0)--(2,0) node[right] {$x$};
+\draw[axis] (0,-2.2)--(0,1.5) node[right] {$E_x$};
+\draw[fieldink,thick] (-1.7,-1.25)--(0,-1.25) (0,.75)--(1.7,.75);
+\draw[aux] (0,-1.25)--(0,.75);
+\draw[fill=white,draw=fieldink] (0,-1.25) circle (.055) (0,.75) circle (.055);
+\node[below] at (-1,-1.25) {$-A-B$};
+\node[above] at (1,.75) {$A-B$};
+\node at (0,-2.8) {$[E_x]=2A$};
+\end{scope}
+\node at (0,2.5) {图取 $B=A/4$ 示意；场的跃变对应 $\sigma=2\varepsilon_0A$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT5\endcsname{连续但有尖点的势，界面法向为正 \(x\)。}
+\expandafter\def\csname CaptionAT5\endcsname{势斜率的差形成普通正面电荷，背景匀强项不改变跳跃。}
+\expandafter\def\csname DiagramT6\endcsname#1{%
+
+\draw[axis] (-1.8,0)--(2.05,0) node[right] {$x$};
+\draw[axis] (0,-1.5)--(0,1.85) node[above] {$y$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};
+
+\draw[aux] (-1,-.9)--(1,-.9)--(1,.9)--(-1,.9)--cycle;
+\node at (4.7,1) {$\widetilde{\boldsymbol E}=-\nabla\varphi+\boldsymbol G$};
+\node at (4.7,.25) {$\boldsymbol G=\Gamma(-y,x,0)$};
+\ifnum#1=1
+
+\draw[force] (-.8,-.9)--(.7,-.9);
+\draw[force] (1,-.7)--(1,.7);
+\draw[force] (.8,.9)--(-.7,.9);
+\draw[force] (-1,.7)--(-1,-.7);
+\node at (4.7,-.6) {$\nabla\cdot\boldsymbol G=0$};
+\node at (4.7,-1.25) {$\oint\boldsymbol G\cdot\mathrm d\boldsymbol l=2\Gamma S$};
+
+\fi
+
+}
+\expandafter\def\csname CaptionQT6\endcsname{取 \(xy\) 平面闭路检验新增的场项。}
+\expandafter\def\csname CaptionAT6\endcsname{箭头标回路正向；即使散度零，非零环流仍排除静电场。}
+\expandafter\def\csname DiagramT7\endcsname#1{%
+
+\draw[axis] (-.25,0)--(2.1,0) node[right] {$\xi=\kappa x$};
+\draw[axis] (0,-.25)--(0,1.9) node[above] {$\eta=\kappa y$};
+\draw[surfaceink,thick,domain=.1:1.2,samples=55]
+ plot (\x,{ln(cos(\x r))+1.35});
+\node[above right] at (1.05,1.55) {等势线};\draw[aux] (1.2,1.5)--(.95,{ln(cos(.95 r))+1.35});
+\ifnum#1=1
+
+\draw[fieldink,thick,domain=.3:1.5,samples=55]
+ plot (\x,{ln(sin(\x r))+1.1});
+\draw[force,domain=.85:1.2,samples=24] plot (\x,{ln(sin(\x r))+1.1});
+\node at (5.5,1) {$e^{-\eta}\cos\xi=\text{常数}$};
+\node at (5.5,.25) {$e^{-\eta}\sin\xi=\text{常数}$};
+\node at (5.5,-.5) {蓝色曲线为场线};
+
+\fi
+
+}
+\expandafter\def\csname CaptionQT7\endcsname{无量纲坐标中的一条等势线分支。}
+\expandafter\def\csname CaptionAT7\endcsname{场线与等势线的切向互相垂直；曲线常数含义不同。}
+\expandafter\def\csname DiagramT8\endcsname#1{%
+
+\draw[surface,dashed,fill=none] (0,0) circle (1.5);
+\draw[axis] (0,0)--(2.05,0) node[right] {$r$};
+\node[point] at (0,0) {};\node at (-.4,-.4) {$O$};
+\node at (0,1.95) {$\varphi=A/r+Br^2$};
+\draw[dim] (0,-1.8)--(1.5,-1.8) node[midway,fill=white] {$r$};
+\ifnum#1=1
+\node[charge] at (0,0) {$Q_0$};\node[fill=white,inner sep=1pt] at (-1,-.7) {$\rho$};
+\node[align=center] at (5.1,1.0) {$Q_0=4\pi\varepsilon_0A$};
+\node[align=center] at (5.1,0.35) {$\rho=-6\varepsilon_0B$};
+\node[align=center] at (5.1,-0.30000000000000004) {$Q(<r)=Q_0-8\pi\varepsilon_0Br^3$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT8\endcsname{高斯球包围原点；轴上的奇点需单独辨认。}
+\expandafter\def\csname CaptionAT8\endcsname{总通量包含中心点源和常规体电荷，不能只积分普通密度。}
+\expandafter\def\csname DiagramT9\endcsname#1{%
+
+\draw[source,fill=sourceink!4] (-1.5,-.5)
+ ..controls(-1.9,1.4)and(-.2,1.5)..(.7,1.2)
+ ..controls(1.9,1.0)and(1.6,-.2)..(1.2,-.8)
+ ..controls(.6,-1.6)and(-1.3,-1.5)..(-1.5,-.5);
+\node[point] at (0,0) {};\node[below] at (0,0) {$P_{\mathrm{in}}$};
+\node[point] at (2.5,.2) {};\node[right=5pt] at (2.5,.2) {$P_{\mathrm{out}}$};
+\draw[force] (1.5,.4)--(2.1,.5) node[midway,above=3pt] {$\boldsymbol n$};
+\node at (0,1.8) {$\mu=\text{常数}>0$};
+\ifnum#1=1
+
+\node at (0,-2.0) {$\Omega_{\mathrm{in}}=-4\pi$};
+\node at (4.8,1) {$\varphi_{\mathrm{in}}=-\mu/\varepsilon_0$};
+\node at (4.8,.3) {$\varphi_{\mathrm{out}}=0$};
+\node at (4.8,-.4) {$\boldsymbol E^{\mathrm{reg}}=0$};
+
+\fi
+
+}
+\expandafter\def\csname CaptionQT9\endcsname{非球形闭合曲面上的恒定强度偶极层。}
+\expandafter\def\csname CaptionAT9\endcsname{内外有向立体角由包围关系确定，连续变形不改变区域内常数势。}
+\expandafter\def\csname DiagramT10\endcsname#1{%
+\ifnum#1=0
+
+\draw[source] (-2,0)--(2,0);
+\draw[axis] (-2.1,-.45)--(2.15,-.45) node[right] {$x$};
+\draw[axis] (0,-1.4)--(0,1.5) node[above] {$z$};
+\node at (-1.2,.55) {$+$};\node at (-1.2,-.25) {$-$};
+\node at (0,2) {$\mu(x)=\mu_0+\delta\mu\cos(\kappa x)$};
+\draw[force] (1.35,.35)--(1.35,1.0) node[right] {$\boldsymbol n$};
+\ifnum#1=1
+\node[align=center] at (5.15,1.0) {$[\varphi]=\mu(x)/\varepsilon_0$};
+\node[align=center] at (5.15,0.35) {$[E_x^{\mathrm{reg}}]=-\mu'(x)/\varepsilon_0$};
+\node[align=center] at (5.15,-0.30000000000000004) {$[E_z^{\mathrm{reg}}]=0$};
+\fi
+
+\else
+\draw[axis] (-3,0)--(3,0) node[right] {$\kappa x$};
+\draw[axis] (0,-.3)--(0,2.3) node[right] {$\mu(x)$};
+\draw[source,domain=-2.7:2.7,samples=80] plot (\x,{1.3+.45*cos(\x r)});
+\draw[aux] (-2.7,1.3)--(2.7,1.3) node[right] {$\mu_0$};
+\node at (0,2.95) {$[\varphi](x)=\mu(x)/\varepsilon_0$};
+\begin{scope}[yshift=-2.7cm]
+\draw[source] (-3,0)--(3,0) node[right] {$z=0$};
+\draw[axis] (-3.2,-.85)--(-3.2,.9) node[above] {$z$};
+\foreach \x/\h in {-2.2/.28,-1.1/.42,0/.52,1.1/.42,2.2/.28}
+{\draw[force] (\x,-.15)--(\x,\h);}
+\node[above left] at (0,.6) {$\boldsymbol\mu$ 随 $x$ 变化};
+\draw[force] (1.2,.85)--(2.15,.85) node[right] {$E_x^+>0$};
+\draw[force] (1.2,-.65)--(.25,-.65) node[left] {$E_x^-<0$};
+\node at (0,-1.4) {切向箭头仅示右半区 $\delta\mu>0,\ 0<\kappa x<\pi$};
+\end{scope}
+\node at (0,-4.8) {$[E_x^{\mathrm{reg}}]=-\mu'(x)/\varepsilon_0,\qquad [E_z^{\mathrm{reg}}]=0$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT10\endcsname{强度沿面变化的法向偶极层。}
+\expandafter\def\csname CaptionAT10\endcsname{势跳跃不是常数，其沿面导数形成切向常规场跳跃。}
+\expandafter\def\csname DiagramT11\endcsname#1{%
+
+\fill[surfaceink!9] (-2.3,-1.7) rectangle (2.3,0);
+\draw[surfaceink,thick] (-2.3,0)--(2.3,0);
+\draw[axis] (0,-1.9)--(0,2.1) node[above] {$z$};
+\node[right] at (2.3,0) {$\varphi=0$};
+\node at (-1.1,-1.45) {导体};
+
+\node[charge] (Q) at (0,1.25) {$q>0$};
+\draw[dim] (-.8,0)--(-.8,1.25) node[midway,fill=white] {$h$};
+\draw[force] (-2, .35)--(-2,1.3) node[left] {$E_0$};
+\ifnum#1=1
+
+\node[charge,dashed,fill=white] (I) at (0,-1.25) {$-q$};
+\node[right=6pt] at (I.east) {辅助像源};
+\draw[force] (Q.east)--++(0,.65) node[right] {$qE_0$};
+\draw[force] (Q.east)--++(0,-.8) node[right] {$|F_{\mathrm{ind}}|$};
+\node[align=center] at (5.0,1.0) {$h_0=\sqrt{kq/(4E_0)}$};
+\node[align=center] at (5.0,0.35) {$F_z^{\prime}(h_0)>0$};
+\node[align=center] at (5.0,-0.30000000000000004) {竖直失稳};
+\fi
+
+}
+\expandafter\def\csname CaptionQT11\endcsname{匀强向上场中的接地平面与正电荷。}
+\expandafter\def\csname CaptionAT11\endcsname{感应吸引与外场力反向；平衡点上方偏离会继续向上。}
+\expandafter\def\csname DiagramT12\endcsname#1{%
+
+\draw[surface] (0,0) circle (1.3);
+\draw[axis] (0,-1.65)--(0,2.05) node[above] {$z$};
+\draw[axis] (0,0)--(2.0,0) node[right] {$s$};
+\node[below left,fill=white,inner sep=1pt] at (0,0) {$O$};
+\draw[force] (-1.9,-.8)--(-1.9,.8) node[above] {$E_0$};
+\node at (0,-2.0) {$\varphi(R)=V_s$};
+\draw[dim] (0,-1.65)--(1.3,-1.65) node[midway,fill=white] {$R$};
+\ifnum#1=1
+\node[align=center] at (5.3,1.0) {$\sigma=\varepsilon_0(V_s/R+3E_0\cos\theta)$};
+\node[align=center] at (5.3,0.35) {$Q=4\pi\varepsilon_0RV_s$};
+\node[align=center] at (5.3,-0.30000000000000004) {$\sigma_{\min}=\varepsilon_0(V_s/R-3E_0)$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT12\endcsname{具有给定常数势的导体球及匀强背景场。}
+\expandafter\def\csname CaptionAT12\endcsname{单极项控制净电量，偶极项控制上下差异；不能只看总量判断局部符号。}
+\expandafter\def\csname DiagramT13\endcsname#1{%
+
+\draw[axis] (0,-1.5)--(0,1.9) node[above] {$z$};
+\draw[axis] (0,0)--(2,0) node[right] {$s$};
+\node[below left] at (0,0) {$O$};
+\node[point] (Z) at (0,.85) {};\node[left=4pt] at (Z) {$f(z)$};
+\node[point] (P) at (.9,0) {};\node[below=4pt] at (P) {$s$};
+\ifnum#1=1
+
+\draw[force] (Z)--++(0,.55) node[right] {$E_z$};
+\draw[force] (P)--(.25,0) node[midway,above] {$E_s$};
+\node[align=center] at (5.5,1.0) {$\varphi=f-\frac{s^2}{4}f^{\prime\prime}+\frac{s^4}{64}f^{(4)}+\cdots$};
+\node[align=center] at (5.5,0.35) {轴对称、无源、轴线正则};
+\node[align=center] at (5.5,-0.30000000000000004) {图示 \(f=V_0\cos(\kappa z)\) 的近原点场};
+\fi
+
+}
+\expandafter\def\csname CaptionQT13\endcsname{轴对称势的轴线数据与近轴展开。}
+\expandafter\def\csname CaptionAT13\endcsname{额外条件提供离轴系数；示例的径向场向内、正轴场向上。}
+\expandafter\def\csname DiagramT14\endcsname#1{%
+
+\draw[source] (0,0) circle (1.5);
+\draw[axis] (0,0)--(2.1,0) node[right] {$r$};
+\node at (0,.45) {$\varphi_{\mathrm{in}}=C$};
+\node at (0,1.95) {同一球面：\(\sigma,\mu\)};
+\draw[dim] (0,-1.85)--(1.5,-1.85) node[midway,fill=white] {$R$};
+\node at (4.6,1.0) {$\varphi_{\mathrm{out}}=B/r$};
+\ifnum#1=1
+
+\node at (4.6,.15) {$\sigma=\varepsilon_0B/R^2$};
+\node at (4.6,-.6) {$\mu=\varepsilon_0(B/R-C)$};
+\node at (4.6,-1.35) {分别来自场跳跃与势跳跃};
+
+\fi
+
+}
+\expandafter\def\csname CaptionQT14\endcsname{允许普通电荷层与法向偶极层同时存在的球面。}
+\expandafter\def\csname CaptionAT14\endcsname{两项界面条件独立识别面电荷与偶极强度。}
+\expandafter\def\csname DiagramT15\endcsname#1{%
+\ifnum#1=0
+
+\draw[axis] (-1.8,0)--(2.05,0) node[right] {$x$};
+\draw[axis] (0,-1.5)--(0,1.85) node[above] {$y$};
+\node[point] (O) at (0,0) {};\node[fill=white,inner sep=1pt] at (-.35,.2) {$O$};
+
+\draw[aux] (-1.15,-1.15)--(1.15,1.15) node[above right] {$y=x$};
+\node at (4.8,1) {$\Delta\varphi=A(x^4-6x^2y^2+y^4)$};
+\ifnum#1=1
+
+\node at (4.8,.15) {$y=0:\ \Delta\varphi=Ax^4>0$};
+\node at (4.8,-.6) {$y=x:\ \Delta\varphi=-4Ax^4<0$};
+\node at (4.8,-1.35) {高阶鞍点，线性判据失效};
+
+\fi
+
+\else
+\begin{scope}[xshift=-2.8cm]
+\draw[axis] (-1.8,0)--(1.8,0) node[right] {$x$};
+\draw[axis] (0,-1.7)--(0,2) node[above] {$\varphi-\varphi_0$};
+\draw[source,domain=-1.2:1.2,samples=65] plot (\x,{pow(\x,4)});
+\node at (0,-2.2) {$y=0:\ \Delta\varphi=Ax^4>0$};
+\node[above] at (.95,.815) {上升};
+\end{scope}
+\begin{scope}[xshift=2.8cm]
+\draw[axis] (-1.8,0)--(1.8,0) node[right] {$x$};
+\draw[axis] (0,-2)--(0,1.3) node[above] {$\varphi-\varphi_0$};
+\draw[fieldink,thick,domain=-.83:.83,samples=65] plot (\x,{-4*pow(\x,4)});
+\node at (0,-2.55) {$y=x:\ \Delta\varphi=-4Ax^4<0$};
+\node[right] at (.8,-1.6) {下降};
+\end{scope}
+\node at (0,2.9) {图取 $A>0$；原点二阶导数为零，高阶剖面仍揭示鞍点};
+\fi
+
+}
+\expandafter\def\csname CaptionQT15\endcsname{两条穿原点的路径，用于检查没有二次项的势。}
+\expandafter\def\csname CaptionAT15\endcsname{任意小邻域均有正负势变化，不能由零 Hessian 推断稳定。}
+\expandafter\def\csname DiagramT16\endcsname#1{%
+
+\fill[surfaceink!9] (-2.3,-1.7) rectangle (2.3,0);
+\draw[surfaceink,thick] (-2.3,0)--(2.3,0);
+\draw[axis] (0,-1.9)--(0,2.1) node[above] {$z$};
+\node[right] at (2.3,0) {$\varphi=0$};
+\node at (-1.85,-.65) {导体};
+
+\node[charge] (L) at (-1.1,1.25) {$q$};
+\node[charge] (Q) at (1.1,1.25) {$q$};
+\draw[dim] (-1.1,1.9)--(1.1,1.9) node[midway,fill=white] {$2a$};
+\draw[dim] (-1.9,0)--(-1.9,1.25) node[midway,fill=white] {$h$};
+\ifnum#1=1
+
+\node[charge,dashed,fill=white] at (-1.1,-1.25) {$-q$};
+\node[charge,dashed,fill=white] at (1.1,-1.25) {$-q$};
+\draw[force] (Q.east)--++(.8,0) node[midway,above] {$F_x>0$};
+\draw[force] (Q.south)--++(0,-.55) node[right] {$F_z<0$};
+\node at (4.8,1.0) {下方两点为辅助像源};
+\node at (4.8,.2) {$-\partial_hU=2F_z$};
+\node at (4.8,-.55) {$-\partial_aU=2F_x$};
+\node at (4.8,-1.3) {$Q_{\mathrm{ind}}=-2q$};
+
+\fi
+
+}
+\expandafter\def\csname CaptionQT16\endcsname{两个等高正电荷与接地平面；半间距为 \(a\)。}
+\expandafter\def\csname CaptionAT16\endcsname{右电荷水平排斥、竖直吸引；共同参数变化同时移动两个真电荷。}
+\expandafter\def\csname DiagramT17\endcsname#1{%
+
+\draw[surface,fill=none] (0,0) rectangle (3,1.8);
+\draw[axis] (-.3,0)--(3.65,0) node[right] {$x$};
+\draw[axis] (0,-.3)--(0,2.25) node[above] {$y$};
+\node[below] at (1.5,0) {$\varphi=0$};
+\node[left] at (0,.9) {$0$};\node[right] at (3,.9) {$0$};
+\node at (2.4,2.8) {$\varphi(x,b)=V_s\sin(\pi x/a)$};
+\node[left] at (0,1.8) {$b$};
+\node[below] at (3,-.45) {$a$};
+\ifnum#1=1
+
+\draw[force] (1.5,1.25)--(1.5,.55) node[right] {$E_y<0$};
+\node at (5.9,1.2) {$Y(y)\propto\sinh(\pi y/a)$};
+\node at (5.9,.4) {上边规定势随位置变化};
+\node at (5.9,-.4) {不能是一整块等势导体};
+
+\fi
+
+}
+\expandafter\def\csname CaptionQT17\endcsname{矩形解域与四边给定势；上边为数学规定势边界。}
+\expandafter\def\csname CaptionAT17\endcsname{分离变量满足所有边界；中线处水平分量零、竖直场向下。}
+\expandafter\def\csname DiagramT18\endcsname#1{%
+\ifnum#1=0
+
+\draw[source,fill=sourceink!5] (0,0) ellipse[x radius=1.55,y radius=.4];
+\draw[axis] (0,-1.8)--(0,2.25) node[above] {$z$};
+\draw[aux] (-1.55,0)--(1.55,0);
+\node[below left,fill=white,inner sep=1pt] at (0,0) {$O$};
+\draw[dim] (.2,-.65)--(1.55,-.65) node[midway,fill=white] {$a$};
+\node[left] at (-1.55,.55) {$\mu>0$};
+
+
+\node[charge,draw=ink,fill=white] (Q) at (0,-1.25) {$q_t$};
+\draw[axis] (-.9,-1.6)--(-.9,-.8) node[left] {$v$};
+\ifnum#1=1
+\node[align=center] at (5.2,1.0) {$K(0^-)=K_0+q_tM$};
+\node[align=center] at (5.2,0.35) {$K(0^+)=K_0-q_tM$};
+\node[align=center] at (5.2,-0.30000000000000004) {$K_0>|q_t|M,\quad M=\mu/(2\varepsilon_0)$};
+\fi
+
+\else
+\draw[axis] (-3.1,0)--(3.2,0) node[right] {$z/a$};
+\draw[axis] (0,-1.3)--(0,1.9) node[above] {$U/(|q_t|M)$};
+\draw[source,domain=-2.9:-.01,samples=80] plot (\x,{-1-\x/sqrt(1+\x*\x)});
+\draw[source,domain=.01:2.9,samples=80] plot (\x,{1-\x/sqrt(1+\x*\x)});
+\draw[fieldink,thick,domain=-2.9:-.01,samples=80] plot (\x,{1+\x/sqrt(1+\x*\x)});
+\draw[fieldink,thick,domain=.01:2.9,samples=80] plot (\x,{-1+\x/sqrt(1+\x*\x)});
+\draw[aux] (0,-1)--(0,1);
+\draw[aux] (-2.9,.55)--(2.9,.55);
+\node[right] at (2.9,.55) {$K_0/(|q_t|M)<1$};
+\node[point] (T) at (-.5039,.55) {};
+\draw[axis] (-1.8,1)--(T);
+\node[left] at (-1.8,1) {负粒子转折点};
+\draw[force] (-2.9,1.4)--(2.9,1.4) node[midway,above,fill=white,inner sep=2pt] {$K_0>|q_t|M$：可越过完整屏障};
+\node[text=sourceink] at (1.7,-1.55) {红：$q_t>0$};
+\node[text=fieldink] at (-1.7,-1.55) {蓝：$q_t<0$};
+\node at (0,-2.3) {理想层在 $z=0$ 有势能跃变；转折标记取负粒子 $K_0/(|q_t|M)=0.55$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT18\endcsname{试探粒子从负半轴沿轴线入射，源盘固定。}
+\expandafter\def\csname CaptionAT18\endcsname{完整路径势能屏障为 \(|q_t|M\)；两侧动能只有在相应位置可达时才有物理意义。}
+% ===== 可编辑正文 =====
+\newcommand{\ContentPartA}{%
+{\centering\zihao{2}\sffamily\bfseries 第四讲\quad 电势梯度、偶极层与静电场方程\par}\vspace{4mm}
+电场由电势梯度确定。以下讨论等势面、方向导数、静电场方程和带电界面，并用边界条件确定电势。除特别说明外，在真空中讨论静电问题，记 \(k=1/(4\pi\varepsilon_0)\)，电势为 \(\varphi\)，试探电荷为 \(q_t\)。\par
+
+\section*{一\quad 电势的计算}
+\subsection*{1 由场积分：参考点与跨区域积分}
+若取有限点 \(P_0\) 为参考，则
+\[
+\varphi(P)-\varphi(P_0)=-\int_{P_0}^{P}\boldsymbol E\cdot\mathrm d\boldsymbol l.
+\]
+对有限源且积分收敛，可取 \(\varphi(\infty)=0\)，写成 \(\varphi(P)=\int_P^\infty\boldsymbol E\cdot\mathrm d\boldsymbol l\)。场点以外直到参考点的每一段都要计算；不能只知道场点附近的场就完成绝对电势计算。无限线、无限板或匀强背景场一般改用有限参考。\par
+两个均匀薄球壳半径 \(a<b\)、电量 \(Q_a,Q_b\)。以无穷远为零，场为
+\[
+E_r=\begin{cases}0,&r<a,\\kQ_a/r^2,&a<r<b,\\k(Q_a+Q_b)/r^2,&r>b.\end{cases}
+\]
+在壳间求势时，积分路径必须从 \(r\) 先走到 \(b\)，再走向无穷远：
+\[
+\varphi(r)=\int_r^b\frac{kQ_a}{s^2}\,\mathrm ds+
+\int_b^\infty\frac{k(Q_a+Q_b)}{s^2}\,\mathrm ds
+=\frac{kQ_a}{r}+\frac{kQ_b}{b}.
+\]
+内区与 \(r=a\) 同势；外区使用总电量，得到
+\[
+\varphi(r)=\begin{cases}kQ_a/a+kQ_b/b,&r\le a,\\
+kQ_a/r+kQ_b/b,&a\le r\le b,\\k(Q_a+Q_b)/r,&r\ge b.\end{cases}
+\]
+}
+
+\newcommand{\ContentPartB}{%
+\begin{figure}[H]\centering
+\PptImageA{3.4cm}
+\caption{两个同心球壳及内区、壳间和外区；半径分别对应 \(a,b\)}
+\end{figure}
+\subsection*{2 由源叠加：所有项采用共同零点}
+各球壳单独存在时，内部势等于表面势、外部势等于点源势。直接按所在区域取相应表达式，便得到上述三段结果。一般有限源的电势为
+\[
+\varphi(\boldsymbol r)=k\sum_i\frac{Q_i}{|\boldsymbol r-\boldsymbol r_i|},\qquad
+\varphi(\boldsymbol r)=k\int\frac{\rho(\boldsymbol r')\,\mathrm dV'}{|\boldsymbol r-\boldsymbol r'|}.
+\]
+标量叠加无需投影，但负源符号不能丢失。对于薄面、细线，将 \(\rho\,\mathrm dV\) 换成 \(\sigma\,\mathrm dS\)、\(\lambda\,\mathrm dl\)。先声明源的固定分布与参考点，再判断“先求势再求导”是否比直接积分矢量场更简单。\par
+\Coach{从场积分适合已知分段场的模型；从源叠加适合距离表达式简单的模型。两个方法得到的势差、界面值和远场应相互吻合。}
+
+\section*{二\quad 等势面：几何信息与适用限度}
+\subsection*{1 场垂直于规则等势面}
+在可微且 \(\boldsymbol E\ne0\) 的点，沿等势面任意切向小位移 \(\mathrm d\boldsymbol l_t\)，有 \(\mathrm d\varphi=0\)，所以
+\[
+\boldsymbol E\cdot\mathrm d\boldsymbol l_t=0.
+\]
+因此场沿等势面的法向。一个等势面的电势数值即使为零，也可以有非零法向场。临界点若 \(\nabla\varphi=0\)，法向不一定由这一式唯一确定，等势面的几何形状也可能退化，不能机械地画出唯一场线方向。\par
+\subsection*{2 等势面疏密与场强}
+沿局部法线跨过相邻两面，若距离 \(\Delta n\) 很小，场在该距离内变化不大，则
+\[
+E\simeq\frac{|\Delta\varphi|}{\Delta n}.
+\]
+必须给每对相邻面相同的电势差，才能从距离比较场强。距离应沿局部法线测量；斜着量的路径更长，不能直接当成 \(\Delta n\)。\par
+}
+
+\newcommand{\ContentPartC}{%
+\begin{figure}[H]\centering
+\PptImageB{5.4cm}
+\caption{点电荷的等势面截线和径向场线；等势差相同的面在近源处更密}
+\end{figure}
+对 \(Q>0\) 点源，\(\varphi=kQ/r\)。相邻半径 \(r,r+\Delta r\) 的正势差大小为
+\[
+\Delta\varphi=kQ\left(\frac1r-\frac1{r+\Delta r}\right)
+\simeq\frac{kQ}{r^2}\Delta r.
+\]
+故 \(\Delta r\simeq r^2\Delta\varphi/(kQ)\)。若距离不小，应使用前面的精确差值，而不是把近似比值当成某一端点的场强。\par
+\Trap{画得密不必然意味着场强大；没有电势差标尺的等势图只能说明几何方向。}
+
+\section*{三\quad 从方向导数到电势梯度}
+\subsection*{1 梯度指向最快的电势增加方向}
+沿单位方向 \(\hat{\boldsymbol t}\)，电势的方向导数为
+\[
+D_{\hat{\boldsymbol t}}\varphi=\lim_{h\to0}\frac{\varphi(\boldsymbol r+h\hat{\boldsymbol t})-\varphi(\boldsymbol r)}h
+=\nabla\varphi\cdot\hat{\boldsymbol t}.
+\]
+由点积不等式，\(|D_{\hat{\boldsymbol t}}\varphi|\le|\nabla\varphi|\)。最大正导数沿 \(+\nabla\varphi\)，最小负导数沿 \(-\nabla\varphi\)。梯度是矢量，最大方向导数是它的模；两者不能混为同一对象。\par
+}
+
+\newcommand{\ContentPartD}{%
+\begin{figure}[H]\centering
+\PptImageC{6.8cm}
+\caption{跨越相邻等势面的法向路径与斜路径；有限差值应再取局部极限}
+\end{figure}
+静电功的微分关系给出
+\[
+\mathrm d\varphi=-\boldsymbol E\cdot\mathrm d\boldsymbol l,
+\qquad \boxed{\boldsymbol E=-\nabla\varphi}.
+\]
+电场指向最快的势降低方向；正粒子的力同向，负粒子的力反向。沿场线行进时势降低，是方向关系，不要求势的数值一定为正。\par
+\subsection*{2 直角坐标系逐分量求导}
+因为 \(\mathrm d\varphi=\partial_x\varphi\,\mathrm dx+\partial_y\varphi\,\mathrm dy+\partial_z\varphi\,\mathrm dz\)，所以
+\[
+E_x=-\frac{\partial\varphi}{\partial x},\quad
+E_y=-\frac{\partial\varphi}{\partial y},\quad
+E_z=-\frac{\partial\varphi}{\partial z}.
+\]
+求 \(E_x\) 时固定 \(y,z\)。若已把点限制在一条曲线并代入 \(y=y(x)\)，所得全导数含有 \(E_y\mathrm dy/\mathrm dx\)，一般不再等于 \(-E_x\)。\par
+\subsection*{3 曲线坐标中的尺度因子}
+柱坐标用 \((s,\psi,z)\)，球坐标用 \((r,\theta,\psi)\)，其中 \(\theta\) 从正 \(z\) 轴起算。相应梯度为
+\begin{align*}
+\nabla\varphi&=\hat{\boldsymbol s}\partial_s\varphi+
+\hat{\boldsymbol\psi}\frac1s\partial_\psi\varphi+
+\hat{\boldsymbol z}\partial_z\varphi,\\
+\nabla\varphi&=\hat{\boldsymbol r}\partial_r\varphi+
+\hat{\boldsymbol\theta}\frac1r\partial_\theta\varphi+
+\hat{\boldsymbol\psi}\frac1{r\sin\theta}\partial_\psi\varphi.
+\end{align*}
+尺度因子来自实际弧长 \(s\,\mathrm d\psi\)、\(r\,\mathrm d\theta\)、\(r\sin\theta\,\mathrm d\psi\)。对角度求导后若漏掉这些因子，场的量纲就会错误。纯径向势才允许直接用 \(\boldsymbol E=-\varphi'(r)\hat{\boldsymbol r}\)。\par
+
+\section*{四\quad 轴上电势与空间电势}
+知道 \(\varphi(0,0,z)=f(z)\)，可求这条轴上的 \(E_z=-f'(z)\)，但无法自动得到 \(E_x,E_y\)。例如 \(-E_0z\) 与 \(-E_0z+Bx\) 在整条轴上势相同，轴上的横向场却不同。即使都满足无源场方程，也要补充空间对称性或完整边界条件。\par
+若源与边界确实具有轴对称性，并且轴附近无源、势规则，则轴上横向场为零；进一步可以用拉普拉斯方程推导近轴展开。但这是额外物理条件提供的信息，而不是对轴线函数求一次导数得到的。\par
+\Coach{先写全空间的势再求梯度。只有轴线表达式时，明确哪些分量由导数确定，哪些分量由对称性确定，哪些仍然无法确定。}
+
+\section*{五\quad 散度、旋度与静电场的基本方程}
+\subsection*{1 高斯定理给出局部源信息}
+对光滑场，用散度定理将闭面通量改写为体积分：
+\[
+\oiint_{\partial V}\boldsymbol E\cdot\mathrm d\boldsymbol S
+=\iiint_V\nabla\cdot\boldsymbol E\,\mathrm dV
+=\iiint_V\frac\rho{\varepsilon_0}\,\mathrm dV.
+\]
+该关系对任意小体积成立，故 \(\nabla\cdot\boldsymbol E=\rho/\varepsilon_0\)。散度测量净流出，而非场大小；匀强场可非零但散度为零。\par
+\subsection*{2 环路定理给出局部无旋条件}
+斯托克斯定理将有向闭合回路积分改成跨面旋度通量，因此静电场满足
+\[
+\nabla\times\boldsymbol E=\boldsymbol0.
+\]
+当区域单连通且场光滑时，局部无旋可推出全局路径无关。若删去线奇点而形成有孔区域，只检验局部旋度并不自动排除绕孔的非零环流；静电势必须是单值的，还要检查允许的全局回路。\par
+\subsection*{3 泊松方程与拉普拉斯方程}
+代入 \(\boldsymbol E=-\nabla\varphi\)，得
+\[
+\boxed{\nabla^2\varphi=-\rho/\varepsilon_0},\qquad
+\rho=0\Longrightarrow\nabla^2\varphi=0.
+\]
+前者是泊松方程，后者是无源区域内的拉普拉斯方程。无源不等于零势、零场；边界上的电势或场仍能产生非平凡解。\par
+纯球对称和纯柱对称情况下，分别有
+\[
+\nabla^2\varphi=\frac1{r^2}\frac{\mathrm d}{\mathrm dr}\left(r^2\frac{\mathrm d\varphi}{\mathrm dr}\right),\qquad
+\nabla^2\varphi=\frac1s\frac{\mathrm d}{\mathrm ds}\left(s\frac{\mathrm d\varphi}{\mathrm ds}\right).
+\]
+不能在球对称问题中只取二阶普通导数 \(\varphi''\)。几何因子正是球面和柱面面积增长不同的体现。点电荷、面电荷或理想偶极层应在奇点与界面单独处理；普通光滑密度公式不直接覆盖它们。\par
+
+\section*{六\quad 边界条件与唯一性}
+\subsection*{1 方程必须配合边界条件}
+一维无源区域中 \(\varphi''=0\)，解为 \(Az+B\)；不给两条独立条件，常数不能确定。同样，知道 \(\rho\) 只给出势的曲率约束，不能独自确定所有场。常见边界条件包括已知边界势、已知法向场，或适当的混合条件。全法向场条件还须符合总电量约束，电势的整体常数一般仍需另外指定。\par
+\subsection*{2 固定边界势时的唯一性证明}
+在连通、有界区域 \(D\) 中，若 \(\varphi_1,\varphi_2\) 满足相同的体密度和边界势，令 \(u=\varphi_1-\varphi_2\)，则 \(\nabla^2u=0\)、\(u|_{\partial D}=0\)。利用 \(\nabla\cdot(u\nabla u)=|\nabla u|^2+u\nabla^2u\)，得
+\[
+\int_D|\nabla u|^2\,\mathrm dV
+=\oint_{\partial D}u\frac{\partial u}{\partial n}\,\mathrm dS-
+\int_Du\nabla^2u\,\mathrm dV=0.
+\]
+非负函数的积分为零，故 \(\nabla u=0\)，再由零边界值得 \(u=0\)。因此只要构造出满足方程、真实源和全部边界条件的解，它就是所求解。无界区域还要给定远场条件，并保证外边界项的极限消失或满足相应唯一性条件。\par
+\Coach{检验一个猜测势时逐项检查：区域内是否有虚构奇点，方程是否正确，每一片边界是否匹配，远场是否符合题设。满足其中一部分不能证明它就是答案。}
+
+\section*{七\quad 普通面电荷：势连续，法向导数跃变}
+单位法矢从负侧指向正侧时，普通面电荷满足
+\[
+\varphi^+=\varphi^-,\qquad
+E_n^+-E_n^-=\frac\sigma{\varepsilon_0},\qquad
+\boldsymbol E_t^+=\boldsymbol E_t^-.
+\]
+势连续来自跨越趋零厚度时有限场的积分趋零；法向条件来自薄高斯盒，切向条件来自薄矩形回路。用势表示，法向导数的差为 \(\partial_n\varphi^+-\partial_n\varphi^-=-\sigma/\varepsilon_0\)。两侧都使用同一个法向，不能分别改用各自区域的外法向后仍照抄减号。\par
+
+\section*{八\quad 理想电偶极层：模型与有向立体角}
+\subsection*{1 偶极矩与法向的约定}
+给每对面元配置相等的 \(-\mathrm dq,+\mathrm dq\)，相隔 \(h\hat{\boldsymbol n}\)，\(\hat{\boldsymbol n}\) 从负电荷指向正电荷。每单位面积的偶极矩为 \(\boldsymbol\mu=\mu\hat{\boldsymbol n}\)，\(\mu=\sigma h\)，单位是 C/m。理想层取 \(h\to0\)，同时保持 \(\mu\) 有限，因而 \(\sigma\) 随 \(1/h\) 增大。\par
+}
+
+\newcommand{\ContentPartE}{%
+\begin{figure}[H]\centering
+\PptImageD{7.2cm}
+\caption{配对正、负面元的距离差与法向投影；偶极矩从负面元指向正面元}
+\end{figure}
+对于曲面，配对面元的正负电量必须相等。两偏移曲面的面积不同，直接要求两面的面密度具有相等数值，未必仍表示纯偶极层；应通过配对电量定义模型，再取薄层极限。\par
+\subsection*{2 从一对电荷推导电势积分}
+源面元位置为 \(\boldsymbol r'\)，观察点为 \(\boldsymbol P\)，令 \(\boldsymbol R=\boldsymbol P-\boldsymbol r'\)。一对电荷的势为
+\[
+\mathrm d\varphi=k\,\mathrm dq\left(\frac1{|\boldsymbol R-h\hat{\boldsymbol n}/2|}
+-\frac1{|\boldsymbol R+h\hat{\boldsymbol n}/2|}\right)
+\simeq k\mu\frac{\hat{\boldsymbol n}\cdot\boldsymbol R}{R^3}\,\mathrm dS.
+\]
+对恒定 \(\mu\)，本讲定义有向立体角
+\[
+\Omega(P)=\int_S\frac{\hat{\boldsymbol n}\cdot(\boldsymbol P-\boldsymbol r')}{|\boldsymbol P-\boldsymbol r'|^3}\,\mathrm dS,
+\qquad \varphi(P)=\frac\mu{4\pi\varepsilon_0}\Omega(P).
+\]
+这个定义明确使用“源指向场点”的矢径，正侧附近平面对应正立体角。若改用相反的矢径，有向立体角和势公式的前置符号必须一起改变，物理势差保持不变。\par
+当 \(\mu\) 随源位置变化时，\(\mu\) 不能提出积分号，势也不再只由整个面的一个立体角决定。几何化简依赖恒定层强度。\par
+
+\section*{九\quad 偶极层的势跃变与界面辨认}
+无限平面上，正侧 \(\Omega=2\pi\)、负侧 \(\Omega=-2\pi\)。对局部光滑曲面，靠近同一点的两侧也有 \(\Omega^+-\Omega^-=4\pi\)，其他远处面元贡献连续。因此
+\[
+\boxed{\varphi^+-\varphi^-=\mu/\varepsilon_0}.
+\]
+同样的结果可由有限厚平行板验证：正板在 \(z=h/2\)，负板在 \(z=-h/2\)，内部 \(E_z=-\sigma/\varepsilon_0\)，于是 \(\varphi(h/2)-\varphi(-h/2)=\sigma h/\varepsilon_0\)。正面电势更高，这个有限厚度检查最适合保护符号。\par
+恒定强度、没有附加普通面电荷的理想层，两侧的\textbf{规则法向场}连续；势却有跳跃。穿层时极限电场含有集中在层上的奇异贡献，不能只积分两侧的规则场就断言势差为零。层强度变化时切向规则场还会发生跃变：
+\[
+\boldsymbol E_t^+-\boldsymbol E_t^-=-\frac1{\varepsilon_0}\nabla_t\mu.
+\]
+\begin{center}\small\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}p{.27\linewidth}p{.30\linewidth}p{.34\linewidth}@{}}\toprule
+界面模型 & 电势条件 & 法向场条件\\\midrule
+普通面电荷 \(\sigma\) & 势连续 & \(E_n^+-E_n^-=\sigma/\varepsilon_0\)\\
+纯偶极层 \(\mu\) & \(\varphi^+-\varphi^-=\mu/\varepsilon_0\) & 规则法向场连续\\
+两类源同时存在 & 势有上述跳跃 & 规则场有上述跃变\\\bottomrule
+\end{tabular}\end{center}
+表中的偶极层指法向、零厚度的理想双层模型。实际有限层的势连续，但在很小厚度内变化很快；将它替换成跳跃边界是极限近似。\par
+
+\section*{十\quad 从物质响应进入静电导体模型}
+}
+
+\newcommand{\ContentPartF}{%
+\begin{figure}[H]\centering
+\PptImageE{4.8cm}
+\caption{原子中正、负电荷组成的示意；导电性还取决于载流子是否能在材料中移动}
+\end{figure}
+金属有大量可移动电子；绝缘体中的电子主要受束缚；半导体的移动载流子与温度、掺杂等条件相关。不能把所有价电子一概称为自由电子，也不能仅从“含有电子”推断材料具有强导电性。宏观静电问题通常采用连续介质与静电平衡近似。\par
+理想导体若已达到静电平衡，内部不能保留使自由电荷持续定向移动的静电场，故内部 \(\boldsymbol E=0\)，每个连通导体等势。由小高斯面可知普通导体体内无多余宏观净电荷，多余净电量分布在表面；这里说的是净电荷，不是材料内部没有正、负电荷。\par
+导体表面外侧场沿法线，且 \(E_n^{\text{外}}=\sigma/\varepsilon_0\)。这个结论使用了内场为零，不能与孤立无限薄板的单侧场 \(\sigma/(2\varepsilon_0)\) 混用。导体等势使表面电荷成为待求量：源与边界相互影响，必须自洽地求解。\par
+若移动试探粒子会改变导体感应电荷，不能把感应源误当成始终固定的外场。本讲末尾例题将用唯一性构造场，再区分场力、势与整个系统的能量。
+
+\section*{十一\quad 无源区的平均值与静电稳定性}
+对无源小球，定义球面平均势 \(M(r)=(4\pi)^{-1}\int\varphi(r,\theta,\psi)\,\mathrm d\Omega\)。求导并用高斯定理：
+\[
+M'(r)=\frac1{4\pi r^2}\oint\partial_r\varphi\,\mathrm dS
+=-\frac1{4\pi r^2}\oint E_r\,\mathrm dS=0.
+\]
+由 \(r\to0\) 的连续性得 \(M(r)=\varphi(0)\)。若中心是严格极小点，足够小球面上势处处更高，平均值也应更高，矛盾；严格极大点同理。非严格极值若保持在整个小邻域，平均值条件还会迫使势在该邻域为常数，不能形成孤立的束缚点。\par
+正粒子的稳定点需要势能 \(q_t\varphi\) 有局部极小，负粒子则需要电势有局部极大。固定静电场在无源邻域不能为自由点粒子提供孤立的三维稳定势阱。若有连续体电荷、机械约束、随时间变化的场或其他作用，应重新检查模型条件，不能直接套用这一结论。\par
+\Coach{}
+
+\needspace{115mm}
+\section*{十二\quad 例题}
+本节按“完整电势—梯度—源与边界—物理检验”的顺序解题。涉及无限背景场、奇点或理想偶极层时，先声明允许区域和参考约定。
+
+\Worked{1}{从两个球壳的电势反推电量}
+两个均匀薄球壳半径 \(a<b\)，以无穷远为零，其表面势分别为 \(V_a,V_b\)。求 \(Q_a,Q_b\)，以及三段电势。何时壳间有场而外部无场？
+参照图~\ref{fig:L4:W1:Q}：同心薄球壳，给定两表面势；电量符号待求。\par
+\ProblemDiagram{W1}
+\Solution 壳间势差只由内壳的场产生：
+\[
+V_a-V_b=kQ_a\left(\frac1a-\frac1b\right),\qquad
+V_b=\frac{k(Q_a+Q_b)}b.
+\]
+\AnalysisDiagram{W1}
+图~\ref{fig:L4:W1:A} 的内、外球面分别保持给定势。内球面势含两壳贡献，外球面势只由总电量决定；联立这两项边界条件求壳电量，再逐区检查连续性。\par
+
+解这两个线性方程得
+\[
+Q_a=4\pi\varepsilon_0\frac{ab}{b-a}(V_a-V_b),\qquad
+Q_b=4\pi\varepsilon_0bV_b-Q_a.
+\]
+内区场为零，势为 \(V_a\)；壳间从外壳表面向内积分；外区由总电量决定，故
+\[
+\varphi(r)=\begin{cases}V_a,&r\le a,\\
+V_b+\dfrac{ab(V_a-V_b)}{b-a}\left(\dfrac1r-\dfrac1b\right),&a\le r\le b,\\
+bV_b/r,&r\ge b.
+\end{cases}
+\]
+代入 \(r=a,b\) 可直接复核两表面势。外场为零要求总电量为零，即 \(V_b=0\)。若还要求壳间有场，则 \(V_a\ne0\)，此时 \(Q_b=-Q_a\)。相同的表面势 \(V_a=V_b\) 则给 \(Q_a=0\)，壳间也无场。\par
+当 \(b\to a\) 而保持非零势差，所需电量按 \(1/(b-a)\) 增大，这与近似平行板中固定电压、距离缩小后场增大的趋势一致。
+
+
+\Worked{2}{有限带电棒的电势与电场}
+均匀细棒沿 \(z\) 轴从 \(-a\) 到 \(+a\)，线密度 \(\lambda>0\)。取无穷远零势，在 \(s>0\) 的场点求 \(\varphi(s,z)\) 和 \(E_s,E_z\)，再检查中垂面与棒外正轴极限。
+参照图~\ref{fig:L4:W2:Q}：有限杆与离轴场点；图取 \(0<z<a\)。\par
+\ProblemDiagram{W2}
+\Solution 用源坐标 \(u\) 积分：
+\[
+\varphi(s,z)=k\lambda\int_{-a}^{a}\frac{\mathrm du}{\sqrt{s^2+(z-u)^2}}
+=k\lambda\left[\operatorname{arsinh}\frac{a-z}s+
+\operatorname{arsinh}\frac{a+z}s\right].
+\]
+\AnalysisDiagram{W2}
+图~\ref{fig:L4:W2:A} 中 \(R\) 是微元到场点的距离。先以 \(1/R\) 积分求势，再分别对 \(s,z\) 求负偏导；轴向导数必须保留两端距离不同造成的符号。\par
+
+求 \(s\) 的偏导时固定 \(z\)。利用 \(\mathrm d\operatorname{arsinh}v/\mathrm dv=(1+v^2)^{-1/2}\)，得到
+\[
+E_s=\frac{k\lambda}s\left[
+\frac{a-z}{\sqrt{s^2+(a-z)^2}}+
+\frac{a+z}{\sqrt{s^2+(a+z)^2}}\right].
+\]
+求 \(z\) 的偏导时固定 \(s\)，两项中的分子导数分别为 \(-1,+1\)，故
+\[
+E_z=k\lambda\left[
+\frac1{\sqrt{s^2+(z-a)^2}}-
+\frac1{\sqrt{s^2+(z+a)^2}}\right].
+\]
+没有方位分量。中垂面 \(z=0\) 上两轴向贡献抵消，结果为
+\[
+\varphi(s,0)=2k\lambda\operatorname{arsinh}(a/s),\quad
+E_s(s,0)=\frac{2k\lambda a}{s\sqrt{s^2+a^2}},\quad E_z=0.
+\]
+棒外正轴 \(z>a\) 上可直接令 \(s=0\) 重新积分，避免分别处理发散的反双曲函数项：
+\[
+\varphi(0,z)=k\lambda\ln\frac{z+a}{z-a},\qquad
+E_z(0,z)=\frac{2k\lambda a}{z^2-a^2}.
+\]
+远处两者恢复总电量 \(Q=2a\lambda\) 的点源近似。棒内部轴线属于理想线源奇点，不能把那里当作普通有限势点。
+
+
+\Worked{3}{带电圆盘：势的尖点对应面电荷}
+半径 \(a\) 的均匀圆盘位于 \(z=0\)，面密度 \(\sigma>0\)。求轴线势与场，检查圆盘两侧的势和场极限，并说明为何不能由轴线势直接求任意离轴场。
+参照图~\ref{fig:L4:W3:Q}：普通正电荷圆盘及轴线上场点。\par
+\ProblemDiagram{W3}
+\Solution 把圆盘分成半径 \(s\) 的细环，\(\mathrm dq=2\pi\sigma s\,\mathrm ds\)，得到
+\[
+\varphi(0,z)=2\pi k\sigma\int_0^a\frac{s\,\mathrm ds}{\sqrt{s^2+z^2}}
+=\frac\sigma{2\varepsilon_0}\left(\sqrt{z^2+a^2}-|z|\right).
+\]
+\AnalysisDiagram{W3}
+图~\ref{fig:L4:W3:A} 的盘面两侧采用同一零势约定。势含 \(|z|\)，所以势连续而导数跳变；两侧极限之差正好对应 \(\sigma/\varepsilon_0\)。\par
+
+绝对值不能丢。对 \(z\ne0\) 分别求导：
+\[
+E_z(0,z)=\frac\sigma{2\varepsilon_0}
+\left(\operatorname{sgn}z-\frac z{\sqrt{z^2+a^2}}\right).
+\]
+轴对称性给轴线上 \(E_x=E_y=0\)。两侧势均趋 \(\sigma a/(2\varepsilon_0)\)，但场分别趋 \(\pm\sigma/(2\varepsilon_0)\)，其差为 \(\sigma/\varepsilon_0\)。势连续而一阶导数有尖点，正是普通面电荷的界面结构。\par
+在 \(|z|\gg a\) 时，\(\sqrt{z^2+a^2}=|z|+a^2/(2|z|)+\cdots\)，所以 \(\varphi\simeq\sigma a^2/(4\varepsilon_0|z|)=kQ/|z|\)，其中 \(Q=\pi a^2\sigma\)。固定 \(z\ne0\) 后令 \(a\to\infty\)，场趋无限板值，但相对无穷远零点的圆盘势会发散，不能同时保持这一无限板零点约定。\par
+离轴时每个细环到观察点的距离随环角变化，轴线积分式已经删去了这项信息。需要重新积分完整势，或在额外条件下使用近轴展开。
+
+
+\Worked{4}{偶极势给出场分量、等势线与场线}
+一对 \(-q,+q\) 沿 \(z\) 轴排列，间距 \(d\)，偶极矩 \(\boldsymbol p=qd\hat{\boldsymbol z}\)。在 \(r\gg d\) 的区域，从电势推导球坐标场分量、等势线和场线方程。
+参照图~\ref{fig:L4:W4:Q}：轴向偶极与球坐标角；场点远离实际电荷间距。\par
+\ProblemDiagram{W4}
+\Solution 先从精确两点源势做远场展开：
+\[
+\varphi=kq\left(\frac1{|\boldsymbol r-d\hat{\boldsymbol z}/2|}
+-\frac1{|\boldsymbol r+d\hat{\boldsymbol z}/2|}\right)
+\simeq\frac{kp\cos\theta}{r^2}.
+\]
+\AnalysisDiagram{W4}
+图~\ref{fig:L4:W4:A} 的角 \(\theta\) 从正 \(z\) 轴量起，\(E_\theta\) 沿增角方向。右侧曲线将势的等值线与场线分开绘制，场线方程由 \(\mathrm dr/(r\mathrm d\theta)=E_r/E_\theta\) 积分得到。\par
+
+只保留偶极首项时，球坐标梯度给出
+\[
+E_r=-\partial_r\varphi=\frac{2kp\cos\theta}{r^3},\qquad
+E_\theta=-\frac1r\partial_\theta\varphi=\frac{kp\sin\theta}{r^3},\qquad E_\psi=0.
+\]
+若忘记 \(1/r\)，角向场的单位和衰减幂次都会错误。固定 \(\varphi=V\ne0\) 得
+\[
+r^2=\frac{kp}{V}\cos\theta.
+\]
+实际分支须满足右侧为正；零势面为中垂面 \(\theta=\pi/2\)。在不位于轴线的场线上，实际切向位移为 \(\mathrm dr\hat{\boldsymbol r}+r\,\mathrm d\theta\hat{\boldsymbol\theta}\)，故
+\[
+\frac{\mathrm dr}{r\,\mathrm d\theta}=\frac{E_r}{E_\theta}=2\cot\theta,
+\qquad \ln r=2\ln\sin\theta+\text{常数},\qquad r=C\sin^2\theta.
+\]
+场线方向从正源指向负源。在轴线与源附近，除法或远场近似的条件不满足，须分别处理；不能把 \(r=C\sin^2\theta\) 的远场近似延伸到实际两点电荷上作为精确曲线。\par
+在任意规则点，场线切向与等势线切向的点积为零，与梯度几何一致。
+
+
+\Worked{5}{混合二次势：恢复方向可能已经旋转}
+在局部无源区域，电势为 \(\varphi=A(x^2-y^2)+Bxy\)，与 \(z\) 无关，\(A,B\) 不同时为零。求场、体密度和原点附近试探电荷的线性稳定性，找出两个主方向。
+参照图~\ref{fig:L4:W5:Q}：二次势的两个正交主方向；方向角由 \(A,B\) 决定。\par
+\ProblemDiagram{W5}
+\Solution 逐分量求导：
+\[
+E_x=-2Ax-By,\qquad E_y=2Ay-Bx,\qquad E_z=0.
+\]
+\AnalysisDiagram{W5}
+图~\ref{fig:L4:W5:A} 的两条主轴对应势的 Hessian 特征方向。两特征值等大反号，因此无论怎样旋转坐标，总有一个方向使给定符号的试探电荷偏离平衡。\par
+
+拉普拉斯为 \(2A-2A=0\)，所以区域内 \(\rho=0\)。场为零的平衡点在原点。平面内写成 \(\boldsymbol E=-H\boldsymbol r_\perp\)，其中
+\[
+H=\begin{pmatrix}2A&B\\B&-2A\end{pmatrix},\qquad
+\det(H-hI)=h^2-(4A^2+B^2).
+\]
+两个本征值为 \(h_\pm=\pm\sqrt{4A^2+B^2}\)。对相应主坐标 \(\xi_\pm\)，运动方程是
+\[
+m\ddot\xi_\pm=-q_t h_\pm\xi_\pm.
+\]
+当 \(q_t h_\pm>0\) 时该方向恢复，当 \(q_t h_\pm<0\) 时偏离增长。两个本征值异号，任何非零正、负电荷都只有一个恢复方向和一个失稳方向；\(z\) 向还只是中性，不存在三维严格稳定。\par
+主轴角可由 \(\tan2\alpha=B/(2A)\) 表示，但应用 \(\operatorname{atan2}(B,2A)\) 或直接求本征向量确定象限。若 \(A=0\)，主轴是 \(x\pm y\) 方向；仅检查原始 \(x,y\) 轴会漏掉混合项导致的失稳。\par
+沿两个主方向，势分别向上和向下弯曲，原点是鞍点。系数 \(A,B\) 的单位均为 V/m\(^{2}\)。
+
+
+\Worked{6}{轴线上完全相同的势，能对应不同的场}
+只知道某区域内 \(z\) 轴上 \(\varphi(0,0,z)=-E_0z\)。比较 \(\varphi_1=-E_0z\) 与 \(\varphi_2=-E_0z+Bx+A(x^2-y^2)\)：它们是否满足无源静电方程？轴线数据能否确定完整场？
+参照图~\ref{fig:L4:W6:Q}：轴线上的势数据与离轴观察点。\par
+\ProblemDiagram{W6}
+\Solution 两个势的拉普拉斯都为零，且都是单值光滑函数。因此相应场均无旋、无体电荷：
+\[
+\boldsymbol E_1=E_0\hat{\boldsymbol z},\qquad
+\boldsymbol E_2=(-B-2Ax)\hat{\boldsymbol x}+2Ay\hat{\boldsymbol y}+E_0\hat{\boldsymbol z}.
+\]
+\AnalysisDiagram{W6}
+图~\ref{fig:L4:W6:A} 的共同轴线只约束 \(s=0\) 上的函数值。新增横向线性项或调和二次项在轴上可不改变给定势，却改变轴外场，故一条轴线的数据不足以确定三维解。\par
+
+在整条 \(z\) 轴上，两个势相同、轴向场相同，但若 \(B\ne0\)，第二个场还含有 \(-B\hat{\boldsymbol x}\)。即使令 \(B=0\)，离轴区域仍可有不同场。\par
+这没有违反唯一性，因为题目只给了一条线的数据，没有给整个区域边界的势。两种解可以由不同的外部边界装置实现；在考虑的局部区域内，无需安置任何体电荷。若额外规定完整轴对称性，则 \(Bx\) 和 \(A(x^2-y^2)\) 都会被排除，但这个条件必须来自真实源和边界。\par
+因此从轴线势做全导数只得到 \(E_z\)。没有对称性时，甚至轴线上的总场方向也不能由这一数据确定。
+
+
+\Worked{7}{给定两端电势的非均匀带电层}
+在 \(-a<z<a\) 内，体电荷密度为 \(\rho(z)=\rho_0(1-z^2/a^2)\)，\(\rho_0>0\)，沿 \(x,y\) 平移不变。两端电势分别为 \(\varphi(-a)=V_L,\ \varphi(a)=V_R\)。求层内势和场，并判断层内出现零场点的条件。
+参照图~\ref{fig:L4:W7:Q}：非均匀体电荷层，规定两端电势；只求层内解。\par
+\ProblemDiagram{W7}
+\Solution 平移对称性将泊松方程化为一维方程。令 \(\Delta V=V_R-V_L\)，两次积分得到
+\[
+\varphi''=-\frac{\rho_0}{\varepsilon_0}\left(1-\frac{z^2}{a^2}\right),\qquad
+\varphi=-\frac{\rho_0z^2}{2\varepsilon_0}
++\frac{\rho_0z^4}{12\varepsilon_0a^2}+C_1z+C_2.
+\]
+\AnalysisDiagram{W7}
+图~\ref{fig:L4:W7:A} 的两端电势同时确定积分常数。均匀场项由端点势差给出，空间电荷项决定场的弯曲；判断内部零场点须检查该根位于 \((-a,a)\)。\par
+
+分别代入 \(z=\pm a\)。相减消去偶函数项，相加消去奇函数项，得
+\[
+C_1=\frac{\Delta V}{2a},\qquad
+C_2=\frac{V_L+V_R}{2}+\frac{5\rho_0a^2}{12\varepsilon_0}.
+\]
+因此
+\[
+E_z=\frac{\rho_0}{\varepsilon_0}
+\left(z-\frac{z^3}{3a^2}\right)-\frac{\Delta V}{2a},\qquad E_x=E_y=0.
+\]
+第一项为偶对称电荷产生的奇对称场，第二项由不对称边界电势引入。逐项检查：\(-\varphi'=E_z\)，两端势正确；又有
+\[
+E_z(a)-E_z(-a)=\frac{4\rho_0a}{3\varepsilon_0}
+=\frac1{\varepsilon_0}\int_{-a}^{a}\rho(z)\,\mathrm dz.
+\]
+这是微分解与高斯定理的交叉检验。函数 \(g(z)=z-z^3/(3a^2)\) 在开区间内严格递增，其端值为 \(\pm2a/3\)。故存在唯一的层内零场点，当且仅当
+\[
+|\Delta V|<\frac{4\rho_0a^2}{3\varepsilon_0}.
+\]
+等号对应零场点落在边界；超过该值时层内场同号。题目只规定层内问题，外侧场和边界上的自由面电荷不能凭这两个电势值单独确定。
+
+
+\Worked{8}{从有限双层推导电势跃变}
+无限负电平面位于 \(z=-h/2\)，面密度 \(-\sigma\)；无限正电平面位于 \(z=h/2\)，面密度 \(+\sigma\)，\(\sigma>0\)。令 \(h\to0\)，保持偶极面密度 \(\mu=\sigma h\) 不变。求各区的场、势和理想层的跳跃条件，并求试探电荷由负侧穿向正侧时场所做的功。
+参照图~\ref{fig:L4:W8:Q}：有限厚度双层：法向由负面指向正面。\par
+\ProblemDiagram{W8}
+\Solution 每张无限平面的场为 \(\sigma/(2\varepsilon_0)\)，方向由正面指向外、由外指向负面。叠加得
+\[
+E_z=\begin{cases}
+0,& |z|>h/2,\\
+-\sigma/\varepsilon_0,& |z|<h/2.
+\end{cases}
+\]
+\AnalysisDiagram{W8}
+图~\ref{fig:L4:W8:A} 中负面在下、正面在上，偶极矩沿 \(+z\)。压缩层厚而保持偶极矩面密度不变时，常规外场消失、势保留向上的跳跃，层内窄而强的场成为奇性项。\par
+
+取中面 \(\varphi(0)=0\)，由 \(\varphi'=-E_z\) 积分，并在两张普通电荷面上保持势连续：
+\[
+\varphi(z)=\begin{cases}
+-\sigma h/(2\varepsilon_0),&z<-h/2,\\
+\sigma z/\varepsilon_0,&|z|<h/2,\\
+\sigma h/(2\varepsilon_0),&z>h/2.
+\end{cases}
+\]
+所以有限层的势连续、斜率分段变化。令 \(\sigma=\mu/h\) 后，层内场无限增大但作用距离缩小，乘积保持有限：
+\[
+\varphi(0^+)-\varphi(0^-)=\frac{\mu}{\varepsilon_0}.
+\]
+正侧电势更高，法向 \(\boldsymbol n=\hat{\boldsymbol z}\) 由负面指向正面。正、负两侧的常规场均为零；但穿越层的积分 \(\int E_z\,\mathrm dz=-\mu/\varepsilon_0\)，并不为零。若用广义函数，可写
+\[
+\varphi=\frac{\mu}{2\varepsilon_0}\operatorname{sgn}z,\qquad
+E_z=-\frac{\mu}{\varepsilon_0}\delta(z).
+\]
+这一奇异项只描述被压缩的层内场，不应与两侧常规场混淆。穿越功为
+\[
+W=q_t(\varphi_- -\varphi_+)=-\frac{q_t\mu}{\varepsilon_0}.
+\]
+正电荷穿向正侧时动能减小，负电荷则增加。两个半空间的势均为常数，但不能同时各取为零后仍保持同一个势函数。
+
+
+\Worked{9}{闭合球形偶极层的电势}
+半径 \(R-h/2\) 的球面均匀带 \(-Q\)，半径 \(R+h/2\) 的球面均匀带 \(+Q\)。保持 \(\mu=Qh/(4\pi R^2)\) 不变，令 \(h/R\to0\)。求极限层内外的势和常规场，取外部势为零。
+参照图~\ref{fig:L4:W9:Q}：正、负球壳具有相反且等大的总电量。\par
+\ProblemDiagram{W9}
+\Solution 两球的电量必须等大反号，而非简单规定不同半径球面的面密度等大。球壳定理给出外部净场、净势均为零。在内球之内，两壳各给一个常数势：
+\[
+\varphi_{\mathrm{in}}
+=kQ\left(\frac1{R+h/2}-\frac1{R-h/2}\right)
+=-\frac{kQh}{R^2-h^2/4}.
+\]
+\AnalysisDiagram{W9}
+图~\ref{fig:L4:W9:A} 的内层为负、外层为正。分别写两球壳的常量内势并相减，薄层极限留下负的内势；外部总电量为零，故外势为零。\par
+
+代入 \(Qh=4\pi R^2\mu\)，得
+\[
+\varphi_{\mathrm{in}}\longrightarrow-\frac{\mu}{\varepsilon_0},
+\qquad \varphi_{\mathrm{out}}=0,\qquad
+\boldsymbol E_{\mathrm{in}}=\boldsymbol E_{\mathrm{out}}=\boldsymbol0.
+\]
+在两壳之间，外壳不贡献场，内负壳给出 \(E_r=-kQ/r^2\)。于是向外穿越的势差为
+\[
+-\int_{R-h/2}^{R+h/2}E_r\,\mathrm dr
+=kQ\left(\frac1{R-h/2}-\frac1{R+h/2}\right)
+\longrightarrow\frac{\mu}{\varepsilon_0}.
+\]
+这与法向向外的偶极层跳跃条件一致。两侧都无场，只说明每一连通区域内部势为常数；常数之间还由层的物理结构联系。\par
+进一步，任意闭合曲面若具有恒定 \(\mu\)、法向向外，按本讲的有向立体角定义，
+\(\Omega_{\mathrm{in}}=-4\pi,\ \Omega_{\mathrm{out}}=0\)。故同样有内势 \(-\mu/\varepsilon_0\)、外势零。这是几何结论，不依赖球面对称；球壳模型则给出了其可核对的有限厚度实现。
+
+
+\Worked{10}{有限圆盘偶极层：两侧场竟然同向}
+半径 \(a\) 的薄圆盘位于 \(z=0\)，偶极面密度 \(\mu>0\) 为常数，法向为 \(+\hat{\boldsymbol z}\)。求轴线上 \(z\ne0\) 的势和常规场，检查势跳跃、远场与无限盘极限。
+参照图~\ref{fig:L4:W10:Q}：恒定强度的有限偶极圆盘，法向为正轴向。\par
+\ProblemDiagram{W10}
+\Solution 对源点半径 \(s\) 的细环，\(\boldsymbol n\cdot(\boldsymbol r-\boldsymbol r')=z\)，于是
+\[
+\Omega(z)=2\pi\int_0^a\frac{zs\,\mathrm ds}{(s^2+z^2)^{3/2}}
+=2\pi\left(\operatorname{sgn}z-\frac{z}{\sqrt{z^2+a^2}}\right).
+\]
+\AnalysisDiagram{W10}
+图~\ref{fig:L4:W10:A} 的有限盘边缘使常规轴向场在两侧都不为零。势在盘上跳变，但远离盘面求导时先固定 \(z\) 的符号，得到两侧同向的常规场。\par
+
+采用统一定义 \(\varphi=\mu\Omega/(4\pi\varepsilon_0)\)，得到
+\[
+\varphi(z)=\frac{\mu}{2\varepsilon_0}
+\left(\operatorname{sgn}z-\frac{z}{\sqrt{z^2+a^2}}\right).
+\]
+对 \(z>0\) 和 \(z<0\) 分别求常规导数，符号函数在每个开半轴上为常数：
+\[
+E_z^{\mathrm{reg}}(z)=\frac{\mu a^2}{2\varepsilon_0(z^2+a^2)^{3/2}}>0.
+\]
+因此轴线上两侧的常规场都沿 \(+z\)，而不是像普通正电圆盘那样背离圆盘。两侧极限分别为
+\[
+\varphi(0^\pm)=\pm\frac{\mu}{2\varepsilon_0},\qquad
+E_z^{\mathrm{reg}}(0^\pm)=\frac{\mu}{2\varepsilon_0a}.
+\]
+势有跃变 \(\mu/\varepsilon_0\)，常规法向场连续；若跨层求导，还要补入 \(-\mu\delta(z)/\varepsilon_0\)。盘边缘的局部结构不能由轴线式描述。\par
+远处 \(|z|\gg a\)，展开根式可得
+\[
+\varphi\simeq\frac{\mu a^2}{4\varepsilon_0}\frac{\operatorname{sgn}z}{z^2},
+\qquad E_z\simeq\frac{\mu a^2}{2\varepsilon_0|z|^3}.
+\]
+总偶极矩 \(p=\mu\pi a^2\)，这正是偶极的轴线远场。若固定 \(z\ne0\) 而令 \(a\to\infty\)，常规场趋于零，势趋于两侧常数 \(\pm\mu/(2\varepsilon_0)\)，跃变仍保留。\par
+与例题3对照：普通电荷盘的势连续、法向场跳跃；纯偶极盘的势跳跃、常规法向场连续。不能因同为“薄盘”就交换边界条件。
+
+
+\Worked{11}{接地平面：由唯一性求感应电荷与作用能}
+接地理想导体占据 \(z\le0\)，真空中点电荷 \(q>0\) 位于 \((0,0,a)\)。取远处势为零。求真空势、导体表面电荷、点电荷受力和电荷与导体的相互作用能，扣除点电荷自身发散的能量。
+参照图~\ref{fig:L4:W11:Q}：真电荷在接地平面上方；下方属于导体。\par
+\ProblemDiagram{W11}
+\Solution 在物理区域 \(z>0\) 外放一个辅助点源 \(-q\) 于 \((0,0,-a)\)。候选势为
+\[
+\varphi(s,z)=kq\left[\frac1{\sqrt{s^2+(z-a)^2}}-
+\frac1{\sqrt{s^2+(z+a)^2}}\right],\quad z>0.
+\]
+\AnalysisDiagram{W11}
+图~\ref{fig:L4:W11:A} 的负镜像只用于上半空间边界解。真电荷受镜像场作用，系统能量还含感应建立过程的二分之一因子；求力和求能不能混用两点电荷的全相互作用能。\par
+
+它在真电荷处具有正确奇点，其他真空点满足拉普拉斯方程；平面上两距离相等，势为零；远处也趋于零。任何两个满足这些条件的解之差没有真源奇点，满足零边界与零远场条件，由唯一性可知候选势就是物理解。导体内部应另写 \(\varphi=0,\ \boldsymbol E=0\)，不能把辅助像源公式延伸进去。\par
+法向取从导体指向真空的 \(+\hat{\boldsymbol z}\)。在表面外侧，
+\[
+E_z(0^+)=-\frac{2kqa}{(s^2+a^2)^{3/2}},\qquad
+\sigma(s)=\varepsilon_0E_z(0^+)=-\frac{qa}{2\pi(s^2+a^2)^{3/2}}.
+\]
+感应总量可直接检验：
+\[
+Q_{\mathrm{ind}}=2\pi\int_0^\infty\sigma(s)s\,\mathrm ds
+=-qa\int_0^\infty\frac{s\,\mathrm ds}{(s^2+a^2)^{3/2}}=-q.
+\]
+真电荷的自身场不计入其受力。其感应场与像源的场相同，距离 \(2a\)，故
+\[
+\boldsymbol F=-\frac{kq^2}{4a^2}\hat{\boldsymbol z}.
+\]
+能量不能直接写成 \(q\varphi_{\mathrm{ind}}\)，因为感应电荷随真电荷建立。固定 \(a\)，把真电量从0缓慢增到 \(q\)，每一步的感应势为 \(\varphi_{\mathrm{ind}}(q')=-kq'/(2a)\)，所以
+\[
+U=\int_0^q\varphi_{\mathrm{ind}}(q')\,\mathrm dq'
+=-\frac{kq^2}{4a}=\frac12q\varphi_{\mathrm{ind}}(q).
+\]
+再检查 \(-\mathrm dU/\mathrm da=-kq^2/(4a^2)=F_z\)。若漏掉 \(1/2\)，能量求出的力将大一倍。接地装置可交换电荷，导体净电量并非另给定的守恒约束。
+
+
+\Worked{12}{匀强外场中的接地导体球}
+半径 \(R\) 的理想导体球接地，远处外场为 \(\boldsymbol E_0=E_0\hat{\boldsymbol z}\)，\(E_0>0\)。求球外势、场、表面电荷及感应偶极矩。
+参照图~\ref{fig:L4:W12:Q}：接地导体球置于沿正 \(z\) 的匀强外场。\par
+\ProblemDiagram{W12}
+\Solution 远处势应接近 \(-E_0z\)，不能同时要求无穷远势为零。外场轴对称，最简单的无源候选形式由匀强场势和中心偶极势组成：
+\[
+\varphi_{\mathrm{out}}=-E_0r\cos\theta+\frac{D\cos\theta}{r^2}.
+\]
+\AnalysisDiagram{W12}
+图~\ref{fig:L4:W12:A} 的球面法向从导体指向真空。求外侧径向场后乘 \(\varepsilon_0\) 得到面密度；上下半球的余弦项积分为零，总感应电量为零。\par
+
+二者在 \(r>R\) 都满足拉普拉斯方程。球面上所有角度均须为零，故 \(D=E_0R^3\)，即
+\[
+\varphi_{\mathrm{out}}=-E_0\left(r-\frac{R^3}{r^2}\right)\cos\theta,
+\qquad \varphi_{\mathrm{in}}=0.
+\]
+候选势满足球面与远场条件，差势唯一性保证无需再添其他多极项。完整梯度给出
+\[
+E_r=E_0\left(1+\frac{2R^3}{r^3}\right)\cos\theta,\qquad
+E_\theta=-E_0\left(1-\frac{R^3}{r^3}\right)\sin\theta,\qquad E_\psi=0.
+\]
+球面切向场为零，法向场为 \(3E_0\cos\theta\)。因此
+\[
+\sigma(\theta)=3\varepsilon_0E_0\cos\theta,\qquad
+Q_{\mathrm{ind}}=2\pi R^2\int_0^\pi\sigma\sin\theta\,\mathrm d\theta=0.
+\]
+上半球为正、下半球为负；南北两极场强均为 \(3E_0\)，方向分别沿外法向与内法向。在球外势中识别 \(kp\cos\theta/r^2\)，得
+\[
+\boldsymbol p_{\mathrm{ind}}=4\pi\varepsilon_0R^3E_0\hat{\boldsymbol z}.
+\]
+也可用 \(\boldsymbol p=\int\boldsymbol r'\sigma\,\mathrm dS\) 检验：只有 \(z\) 分量，角积分 \(\int_0^\pi\cos^2\theta\sin\theta\,\mathrm d\theta=2/3\)，结果相同。场线垂直球面和局部增强是同一边界条件的两个表现。
+
+
+\clearpage
+\section*{十三、习题}
+以下习题讨论电势梯度、场方程、带电界面及电像法。近轴展开和理想薄层题中的近似均以题设区域为限。除注明外，均在真空中，\(k=1/(4\pi\varepsilon_0)\)。
+
+\Task{1}{等势的同心双壳}
+半径 \(a<b\) 的两同心均匀薄球壳，表面电势均为 \(V\ne0\)，以无穷远为零。求两壳电量、各区势和场。说明“两个壳均有非零势”是否意味着它们都带非零净电量。
+参照图~\ref{fig:L4:T1:Q}：给两球壳相同的非零势。\par
+\ProblemDiagram{T1}
+
+\Task{2}{有限杆的点源近似到底要多远}
+长度 \(2a\) 的细杆沿 \(z\) 轴均匀带正电，密度 \(\lambda\)。在中垂面上、距轴 \(s\) 处求精确势和场。以精确场为分母，要求点电荷近似的相对误差不超过 \(\eta>0\)，求 \(s/a\) 的下限，并计算 \(\eta=1\%\) 的结果。
+参照图~\ref{fig:L4:T2:Q}：正电杆中垂面上的观察点。\par
+\ProblemDiagram{T2}
+
+\Task{3}{带电圆环附近的空间稳定性}
+半径 \(a\) 的圆环总电量 \(Q>0\)，位于 \(z=0\)。求轴线势和场，找出 \(z>0\) 上轴向场的最大值位置。进一步用环中心附近的轴对称性与拉普拉斯方程求最低阶径向场，判断任意符号试探电荷的空间稳定性。
+参照图~\ref{fig:L4:T3:Q}：均匀正电圆环；图中椭圆为圆环透视。\par
+\ProblemDiagram{T3}
+
+\Task{4}{对数势的坐标形式与源分布}
+在不含轴或原点的区域内，比较球对称势 \(\varphi_1=V_0\ln(r_0/r)\) 与无限长圆柱对称势 \(\varphi_2=V_0\ln(s_0/s)\)，其中 \(V_0,r_0,s_0>0\)。求各自场及体密度；若第二式延伸到 \(s>0\) 的全部空间，轴上还需要什么源？
+参照图~\ref{fig:L4:T4:Q}：用球形与柱形高斯面比较同一对数函数；虚线为辅助面。\par
+\ProblemDiagram{T4}
+
+\Task{5}{势的尖点与普通面电荷}
+全空间势只依赖 \(x\)，为 \(\varphi=\varphi_0-A|x|+Bx\)，\(A>0\)。求两侧场、界面面密度与体密度。什么情况下某一侧场为零？这里能否取共同的无穷远势为零？
+参照图~\ref{fig:L4:T5:Q}：连续但有尖点的势，界面法向为正 \(x\)。\par
+\ProblemDiagram{T5}
+
+\Task{6}{电荷密度正确是否足以证明静电场正确}
+给定 \(\varphi=Ax^3+Bxy+Cz\)。求场与体密度。再把场改为
+\(\widetilde{\boldsymbol E}=-\nabla\varphi+\Gamma(-y\hat{\boldsymbol x}+x\hat{\boldsymbol y})\)。
+新增项是否改变体密度？当 \(\Gamma\ne0\) 时它能否成为该区域的静电场？用旋度和闭路积分各验证一次。
+参照图~\ref{fig:L4:T6:Q}：取 \(xy\) 平面闭路检验新增的场项。\par
+\ProblemDiagram{T6}
+
+\Task{7}{同时画等势线与场线}
+二维无源区域内，\(\varphi=\Phi e^{-\kappa y}\cos(\kappa x)\)，\(\Phi,\kappa>0\)，与 \(z\) 无关。求场、场强大小和体密度，求等势线与场线方程，验证二者正交。场线可在 \(0<\kappa x<\pi\) 内分支讨论。
+参照图~\ref{fig:L4:T7:Q}：无量纲坐标中的一条等势线分支。\par
+\ProblemDiagram{T7}
+
+\Task{8}{径向势中的中心奇点}
+在 \(r>0\) 处，球对称势为 \(\varphi=A/r+Br^2\)。求场、常规体密度及半径 \(r\) 的高斯球内总电量。若将模型延伸到原点，解释积分结果中与 \(A\) 有关的部分来自何处。
+参照图~\ref{fig:L4:T8:Q}：高斯球包围原点；轴上的奇点需单独辨认。\par
+\ProblemDiagram{T8}
+
+\Task{9}{变形后的闭合偶极层}
+任意光滑闭合曲面具有恒定偶极面密度 \(\mu>0\)，法向向外。外部势取零。求内外势与常规场；解释把曲面连续变形但仍保持闭合、\(\mu\) 恒定，为什么结论不变；向外穿越时势差是多少？
+参照图~\ref{fig:L4:T9:Q}：非球形闭合曲面上的恒定强度偶极层。\par
+\ProblemDiagram{T9}
+
+\Task{10}{非均匀偶极层的切向场也可跳跃}
+平面 \(z=0\) 的偶极面密度为 \(\mu(x)=\mu_0+\delta\mu\cos(\kappa x)\)，法向 \(+z\)，\(\mu_0>|\delta\mu|\)，\(\kappa>0\)。给定两侧势
+\[
+\varphi_\pm(x,z)=\pm\frac1{2\varepsilon_0}
+\left[\mu_0+\delta\mu\,e^{\mp\kappa z}\cos(\kappa x)\right],
+\qquad \pm z>0.
+\]
+验证两侧场方程，求常规场与势、场的界面跳跃。说明为何这里不能套用普通面电荷的切向场连续条件。
+参照图~\ref{fig:L4:T10:Q}：强度沿面变化的法向偶极层。\par
+\ProblemDiagram{T10}
+
+\Task{11}{接地平面上方的悬浮点}
+正电荷 \(q\) 位于接地平面上方高度 \(h\)，另有固定匀强外场 \(E_0\hat{\boldsymbol z}\)，\(E_0>0\)。求电荷所受竖直合力、平衡高度和竖直稳定性，并写相应作用能。平面始终接地，远场势接近 \(-E_0z\)。
+参照图~\ref{fig:L4:T11:Q}：匀强向上场中的接地平面与正电荷。\par
+\ProblemDiagram{T11}
+
+\Task{12}{有给定电势的导体球}
+半径 \(R\) 的导体球表面保持势 \(V_s\)，远处为 \(E_0\hat{\boldsymbol z}\)，\(E_0>0\)，势接近 \(-E_0z\)。求球外势、表面电荷与总净电量。给出整个球面上面密度均非负的条件。
+参照图~\ref{fig:L4:T12:Q}：具有给定常数势的导体球及匀强背景场。\par
+\ProblemDiagram{T12}
+
+\Task{13}{轴对称条件补回近轴信息}
+轴对称、无源且在轴线正则的区域，已知 \(f(z)=\varphi(0,z)\)。从圆柱坐标拉普拉斯方程推导 \(\varphi(s,z)\) 至 \(s^4\) 阶的近轴展开。应用于 \(f(z)=V_0\cos(\kappa z)\)，\(V_0,\kappa>0\)，判断原点附近试探电荷的径向与轴向稳定性。
+参照图~\ref{fig:L4:T13:Q}：轴对称势的轴线数据与近轴展开。\par
+\ProblemDiagram{T13}
+
+\Task{14}{同一球面同时有电荷层与偶极层}
+半径 \(R\) 的球面把两区势分开：内部 \(\varphi_{\mathrm{in}}=C\)，外部 \(\varphi_{\mathrm{out}}=B/r\)。界面可以同时承载普通面电荷与法向向外的偶极层。求 \(\sigma,\mu\) 及普通电荷总量，并把势分解为两类层的贡献。只有普通面电荷时 \(B,C\) 满足什么条件？
+参照图~\ref{fig:L4:T14:Q}：允许普通电荷层与法向偶极层同时存在的球面。\par
+\ProblemDiagram{T14}
+
+\Task{15}{没有二次项是否就可以稳定}
+局部无源势为 \(\varphi=\varphi_0+A(x^4-6x^2y^2+y^4)\)，\(A>0\)，与 \(z\) 无关。求场、验证体密度为零。原点的势 Hessian 为零，能否据此认定非零试探电荷严格稳定？至少比较两条穿过原点的路径。
+参照图~\ref{fig:L4:T15:Q}：两条穿原点的路径，用于检查没有二次项的势。\par
+\ProblemDiagram{T15}
+
+\Task{16}{两个电荷与接地平面的共同能量}
+两相同正电荷 \(q\) 位于 \((\pm a,0,h)\)，接地导体占据 \(z\le0\)，\(a,h>0\)，远处势为零。求右侧真电荷的两个非零力分量、整个系统扣除自身能后的作用能，以及导体感应总电量。用能量对共同高度 \(h\)、半间距 \(a\) 求导交叉检验受力。
+参照图~\ref{fig:L4:T16:Q}：两个等高正电荷与接地平面；半间距为 \(a\)。\par
+\ProblemDiagram{T16}
+
+\Task{17}{矩形区域的边界值解}
+二维矩形 \(0<x<a,\ 0<y<b\) 内无电荷，与 \(z\) 无关。左、右、下三边势均为零，上边规定
+\(\varphi(x,b)=V_s\sin(\pi x/a)\)，\(V_s>0\)。
+构造势与场并验证唯一性。上边能否由一整块处于静电平衡的理想导体实现？给出合理的边界实现解释。
+参照图~\ref{fig:L4:T17:Q}：矩形解域与四边给定势；上边为数学规定势边界。\par
+\ProblemDiagram{T17}
+
+\Task{18}{穿过有限偶极盘的能量门槛}
+例题10的偶极盘固定不动，\(\mu>0\)。质量 \(m\)、非零电量 \(q_t\) 的试探粒子沿轴线从 \(z\to-\infty\) 处向 \(+z\) 运动，初始动能 \(K_0>0\)，忽略辐射及对源的扰动。求到达 \(0^-\)、穿出 \(0^+\) 后的动能表达式，以及严格能穿过的能量条件；若 \(q_t<0\) 且能量不足，求进入层前的转向位置。用很薄的有限双层理解理想势跃变，临界相等的情形单独说明。
+参照图~\ref{fig:L4:T18:Q}：试探粒子从负半轴沿轴线入射，源盘固定。\par
+\ProblemDiagram{T18}
+
+\clearpage
+\section*{十四、训练题详细解答}
+
+\Answer{1}{等势不意味着每个壳都有净电量}
+\AnalysisDiagram{T1}
+图~\ref{fig:L4:T1:A} 中两球面等势使夹层势为常量，内壳电量为零。共同的非零势由最外层相对无穷远的电量维持。\par
+设内、外壳电量为 \(Q_a,Q_b\)。球壳势叠加，在两壳表面分别为
+\[
+V=k\left(\frac{Q_a}{a}+\frac{Q_b}{b}\right),\qquad
+V=k\frac{Q_a+Q_b}{b}.
+\]
+相减得 \(0=kQ_a(1/a-1/b)\)。由于 \(a<b\)，括号不为零，故
+\[
+Q_a=0,\qquad Q_b=4\pi\varepsilon_0bV.
+\]
+内壳上测到的非零势全来自外壳。在外壳之内，外壳势为常数 \(kQ_b/b=V\)，所以
+\[
+\varphi=\begin{cases}V,&r\le b,\\bV/r,&r\ge b,\end{cases}\qquad
+\boldsymbol E=\begin{cases}\boldsymbol0,&r<b,\\(bV/r^2)\hat{\boldsymbol r},&r>b.\end{cases}
+\]
+在 \(r=b\) 处势连续，场跳跃对应 \(\sigma_b=\varepsilon_0V/b\)；在 \(r=a\) 处场两侧都为零，普通面电荷为零。若 \(V<0\)，外部场沿内向。内壳的非零势不能作为其非零净电量的证据。
+
+
+\Answer{2}{用误差定义反求距离}
+\AnalysisDiagram{T2}
+图~\ref{fig:L4:T2:A} 比较真实有限杆与把同样总电量集中在中心的模型。误差分母取精确场，解出距离阈值后才代入百分之一，避免直接把近似展开当作严格界限。\par
+中垂面上场只有径向分量。令 \(Q=2a\lambda\)，从有限杆积分可得
+\[
+\varphi=2k\lambda\operatorname{arsinh}(a/s),\qquad
+E_s=\frac{2k\lambda a}{s\sqrt{s^2+a^2}}
+=\frac{kQ}{s\sqrt{s^2+a^2}}.
+\]
+点源近似给 \(E_{\mathrm{pt}}=kQ/s^2\)。因 \(\sqrt{s^2+a^2}>s\)，它总高估精确场。按题设的分母，
+\[
+\epsilon=\frac{E_{\mathrm{pt}}-E_s}{E_s}
+=\sqrt{1+\frac{a^2}{s^2}}-1.
+\]
+要求 \(\epsilon\le\eta\)，先加1，再平方（两边均正），得
+\[
+\frac{s}{a}\ge\frac1{\sqrt{(1+\eta)^2-1}}.
+\]
+当 \(\eta=0.01\)，下限为 \(1/\sqrt{0.0201}\simeq7.053\)。所以仅说“距杆长几倍”并不精确，需同时指明半长还是全长及允许误差。\par
+再展开检验：
+\[
+\varphi=\frac{kQ}{s}\left[1-\frac{a^2}{6s^2}+O(a^4/s^4)\right],\qquad
+E_s=\frac{kQ}{s^2}\left[1-\frac{a^2}{2s^2}+O(a^4/s^4)\right].
+\]
+小误差时 \(s/a\gtrsim1/\sqrt{2\eta}\)，与精确阈值一致。势与场的修正系数不同，不能把势的误差直接用于场。
+
+
+\Answer{3}{圆环中心是鞍点}
+\AnalysisDiagram{T3}
+图~\ref{fig:L4:T3:A} 对中心附近轴向和径向分别作二阶展开。势的两种曲率异号，正试探电荷只在环面内恢复，沿轴方向偏离。\par
+轴线上所有源元到观察点距离相同，故
+\[
+\varphi(0,z)=\frac{kQ}{\sqrt{a^2+z^2}},\qquad
+E_z=\frac{kQz}{(a^2+z^2)^{3/2}}.
+\]
+对 \(z>0\) 求导，
+\[
+\frac{\mathrm dE_z}{\mathrm dz}
+=kQ\frac{a^2-2z^2}{(a^2+z^2)^{5/2}}.
+\]
+导数由正变负，最大值位置为 \(z=a/\sqrt2\)，场强为 \(2kQ/(3\sqrt3a^2)\)。\par
+中心附近无电荷且具有轴对称性。势的二次项可写
+\[
+\varphi(s,z)=\varphi_c+c_s s^2+c_z z^2+\cdots.
+\]
+轴线式展开给 \(c_z=-kQ/(2a^3)\)。圆柱坐标拉普拉斯作用于 \(s^2\) 得4、作用于 \(z^2\) 得2，故 \(4c_s+2c_z=0\)，于是
+\[
+\varphi=\frac{kQ}{a}+\frac{kQ}{4a^3}s^2-\frac{kQ}{2a^3}z^2+\cdots,\quad
+E_s=-\frac{kQ}{2a^3}s+\cdots,\quad E_z=\frac{kQ}{a^3}z+\cdots.
+\]
+正试探电荷径向恢复而轴向失稳；负试探电荷轴向恢复而径向失稳。由于存在偏离增长方向，二者都不具备三维严格稳定。轴线运动若被机械约束，可以有一维稳定；解除约束后结论会改变。
+
+
+\Answer{4}{尺度因子决定源密度}
+\AnalysisDiagram{T4}
+图~\ref{fig:L4:T4:A} 将球对称与柱对称的对数势并列。相同的径向函数作用于不同体积元，其拉普拉斯算符不同，所以球形区域有体密度、柱形轴外区域却无体密度。\par
+球对称时 \(E_r=-\mathrm d\varphi_1/\mathrm dr=V_0/r\)。但散度须使用球坐标：
+\[
+\rho_1=\varepsilon_0\frac1{r^2}\frac{\mathrm d}{\mathrm dr}(r^2E_r)
+=\frac{\varepsilon_0V_0}{r^2},\quad r>0.
+\]
+在任意不含原点的球形薄层内，这一正体密度是真实所需的源。若把它延伸到原点，密度虽发散却可积，球内量为 \(4\pi\varepsilon_0V_0r\to0\)，不强制额外点电荷。\par
+无限圆柱对称时 \(E_s=V_0/s\)，其散度则为
+\[
+\rho_2=\varepsilon_0\frac1s\frac{\mathrm d}{\mathrm ds}(sE_s)=0,\quad s>0.
+\]
+若模型延伸到所有 \(s>0\)，半径 \(s\)、长度 \(L\) 的高斯柱有通量 \(2\pi sLE_s=2\pi LV_0\)。柱内量因此必须为 \(2\pi\varepsilon_0LV_0\)，集中于轴线：
+\[
+\lambda=2\pi\varepsilon_0V_0.
+\]
+参考半径 \(r_0,s_0\) 只改变势常数，不改变场。对数势在远处不趋于有限零值；题目给的是有限参考半径。
+
+
+\Answer{5}{尖点对应法向场跃变}
+\AnalysisDiagram{T5}
+图~\ref{fig:L4:T5:A} 中 \(|x|\) 在界面两侧的导数反号，线性项 \(Bx\) 则给出相同背景场。两侧法向场作差时背景项消去，留下固定的面电量。\par
+分别在 \(x>0,\ x<0\) 求导，得
+\[
+E_x(x>0)=A-B,\qquad E_x(x<0)=-A-B,\qquad E_y=E_z=0.
+\]
+势在 \(x=0\) 两侧均趋于 \(\varphi_0\)，所以没有偶极层势跃变。以法向 \(+\hat{\boldsymbol x}\) 取跳跃，
+\[
+\sigma=\varepsilon_0[E_x(0^+)-E_x(0^-)]=2\varepsilon_0A>0.
+\]
+两侧场均为常数，常规体密度为零。可把场分解为正电荷面产生的 \(A\operatorname{sgn}x\) 和外部匀强场 \(-B\)，后者不改变面密度。\par
+当 \(B=A\)，正侧零场；当 \(B=-A\)，负侧零场。因 \(A>0\)，不可能两侧同时为零。至少一侧势随距离线性变化，无法共同以无穷远有限势为零；\(\varphi_0\) 是合法参考常数。
+
+
+\Answer{6}{散度与旋度是独立约束}
+\AnalysisDiagram{T6}
+图~\ref{fig:L4:T6:A} 的附加旋转场沿闭路有非零环流。即使它不改变散度与由此反推的密度，也不能与原势场合并为静电场。\par
+直接求梯度，
+\[
+\boldsymbol E=(-3Ax^2-By,\ -Bx,\ -C),\qquad
+\nabla\cdot\boldsymbol E=-6Ax,\qquad \rho=-6\varepsilon_0Ax.
+\]
+这是光滑单值势生成的场，旋度为零。新增项 \(\boldsymbol G=\Gamma(-y,x,0)\) 的散度为
+\[
+\nabla\cdot\boldsymbol G=\partial_x(-\Gamma y)+\partial_y(\Gamma x)=0.
+\]
+因此修改后的体密度相同，但
+\[
+\nabla\times\boldsymbol G
+=\left(0,0,\partial_x(\Gamma x)-\partial_y(-\Gamma y)\right)
+=2\Gamma\hat{\boldsymbol z}.
+\]
+当 \(\Gamma\ne0\)，它违反静电无旋条件。\par
+再取 \(xy\) 平面逆时针圆周 \(x=R\cos t,\ y=R\sin t\)。沿该圆有
+\[
+\boldsymbol G\cdot\mathrm d\boldsymbol l=\Gamma R^2\,\mathrm dt,\qquad
+\oint\widetilde{\boldsymbol E}\cdot\mathrm d\boldsymbol l
+=2\pi\Gamma R^2=2\Gamma S.
+\]
+原梯度部分闭路积分为零；新增部分不为零，与斯托克斯定理一致。高斯定理检验只能控制散度，不能替代环路定理。
+
+
+\Answer{7}{双曲型曲线之间的正交关系}
+\AnalysisDiagram{T7}
+图~\ref{fig:L4:T7:A} 中等势线与场线分别由余弦和正弦组合给出。对势求梯度确定场方向，再用 \(\mathrm dy/\mathrm dx=E_y/E_x\) 检查图示场线的切向。\par
+求完整梯度：
+\[
+E_x=\kappa\Phi e^{-\kappa y}\sin(\kappa x),\quad
+E_y=\kappa\Phi e^{-\kappa y}\cos(\kappa x),\quad E_z=0.
+\]
+因此 \(|\boldsymbol E|=\kappa\Phi e^{-\kappa y}\)，且
+\(\nabla^2\varphi=(-\kappa^2+\kappa^2)\Phi e^{-\kappa y}\cos(\kappa x)=0\)，区域无体电荷。\par
+等势线方程为 \(e^{-\kappa y}\cos(\kappa x)=V/\Phi\)。沿场线，
+\[
+\frac{\mathrm dy}{\mathrm dx}=\frac{E_y}{E_x}=\cot(\kappa x),\qquad
+y=\frac1\kappa\ln|\sin(\kappa x)|+C.
+\]
+在 \(\sin(\kappa x)\ne0\) 的分支上可等价写成
+\[
+e^{-\kappa y}\sin(\kappa x)=C'.
+\]
+在 \(0<\kappa x<\pi\) 这一正弦为正的区间，场线指向 \(x\) 增大方向，跨过 \(\kappa x=\pi/2\) 后 \(E_y\) 改为负。边界直线 \(\kappa x=n\pi\) 需单独处理，不能因除以 \(E_x\) 而遗漏。\par
+把等势线隐式求导得 \((\mathrm dy/\mathrm dx)_{\mathrm{eq}}=-\tan(\kappa x)\)。与场线斜率相乘为 \(-1\)，在斜率有限处证明正交；竖直、水平切线处则直接由 \(\boldsymbol E=-\nabla\varphi\) 判定。两条曲线的常数分别代表势值与场线标号，不可混用。
+
+
+\Answer{8}{常规密度漏不掉中心点源}
+\AnalysisDiagram{T8}
+图~\ref{fig:L4:T8:A} 在中心补出由 \(A/r\) 对应的点源，并将球内连续密度单独标识。球面总通量包含这两项，不能仅积分 \(r>0\) 的普通密度。\par
+在 \(r>0\)，
+\[
+E_r=\frac{A}{r^2}-2Br,\qquad
+\rho=\varepsilon_0\frac1{r^2}\frac{\mathrm d}{\mathrm dr}(A-2Br^3)
+=-6\varepsilon_0B.
+\]
+高斯球直接给
+\[
+Q(<r)=4\pi\varepsilon_0r^2E_r=4\pi\varepsilon_0A-8\pi\varepsilon_0Br^3.
+\]
+常规体密度在球内的积分为
+\[
+\int_0^r(-6\varepsilon_0B)\,4\pi u^2\,\mathrm du
+=-8\pi\varepsilon_0Br^3.
+\]
+还差 \(4\pi\varepsilon_0A\)，来自原点的点电荷 \(Q_0=4\pi\varepsilon_0A\)，其势正是 \(kQ_0/r=A/r\)。若只考虑不含原点的球形环域，这个中心源在解域外；若域包含原点，就必须说明奇点源。\par
+完整密度可形式写成 \(-6\varepsilon_0B+4\pi\varepsilon_0A\delta^{(3)}(\boldsymbol r)\)。计算 \(r>0\) 的普通导数无法直接“看见”点源，但缩小高斯面的通量始终保留它。
+
+
+\Answer{9}{闭合性决定有向立体角}
+\AnalysisDiagram{T9}
+图~\ref{fig:L4:T9:A} 的偶极方向沿闭面的外法向。内部点看到的有向立体角为 \(-4\pi\)，外部为零，因此常量偶极面产生势跳跃而两侧常规场均为零。\par
+本讲约定 \(\boldsymbol R=\boldsymbol r-\boldsymbol r'\)，于是
+\[
+\Omega(\boldsymbol r)=\oiint_S\frac{\boldsymbol n'\cdot\boldsymbol R}{R^3}\,\mathrm dS'.
+\]
+注意这是以源点为积分变量的通量。在源坐标中，\(\boldsymbol R/R^3=-(\boldsymbol r'-\boldsymbol r)/|\boldsymbol r'-\boldsymbol r|^3\)。若观察点在曲面内，其散度积分为 \(-4\pi\)；若在外，则无包围奇点，积分为零。因此
+\[
+\Omega_{\mathrm{in}}=-4\pi,\quad \Omega_{\mathrm{out}}=0,\qquad
+\varphi_{\mathrm{in}}=-\frac{\mu}{\varepsilon_0},\quad\varphi_{\mathrm{out}}=0.
+\]
+每一区域的势均为常数，常规场均为零。任意保持闭合且不穿过观察点的连续变形不改变通量包围数；\(\mu\) 恒定才能提出积分号，故结论不受形状影响。\par
+从内部穿向外部的势差为 \(+\mu/\varepsilon_0\)，对电荷 \(q_t\) 的功为 \(-q_t\mu/\varepsilon_0\)。奇异层内场仍承担这段有限功。若 \(\mu\) 随位置变化，便不能只用总立体角，内外势一般也不再常数。
+
+
+\Answer{10}{切向势跳跃的导数就是切向场跳跃}
+\AnalysisDiagram{T10}
+图~\ref{fig:L4:T10:A} 的调制偶极层在两侧产生衰减场。法向常规场连续，切向常规场之差由面势差的切向导数决定；奇性法向场补足整个分布场的无旋条件。\par
+在每个开半空间，常数项的拉普拉斯为零；变化项的 \(x\) 二阶导为负、\(z\) 二阶导为正，大小相同，故 \(\nabla^2\varphi_\pm=0\)。逐侧求导得
+\[
+E_x^\pm=\pm\frac{\kappa\delta\mu}{2\varepsilon_0}
+e^{\mp\kappa z}\sin(\kappa x),\qquad
+E_z^\pm=\frac{\kappa\delta\mu}{2\varepsilon_0}
+e^{\mp\kappa z}\cos(\kappa x),\qquad E_y^\pm=0.
+\]
+令 \(z\to0^\pm\)，得到
+\[
+[\varphi]=\frac{\mu(x)}{\varepsilon_0},\qquad
+[E_z^{\mathrm{reg}}]=0,\qquad
+[E_x^{\mathrm{reg}}]=\frac{\kappa\delta\mu}{\varepsilon_0}\sin(\kappa x)
+=-\frac1{\varepsilon_0}\frac{\mathrm d\mu}{\mathrm dx}.
+\]
+此处 \([f]=f(0^+)-f(0^-)\)。普通面电荷层的势连续，跨界面窄矩形中的短边贡献随高度趋零，因而切向场连续；本题跨偶极层短边却保留有限势跃变，且该跃变随 \(x\) 改变，所以两条长边的贡献无需互相完全抵消。\par
+如需把整个理想层写成广义函数场，常规场之外还有
+\[
+E_z^{\mathrm{sing}}=-\frac{\mu(x)}{\varepsilon_0}\delta(z).
+\]
+旋度的 \(y\) 分量是 \(\partial_zE_x-\partial_xE_z\)。第一项中切向跳跃产生 \(-\mu'(x)\delta(z)/\varepsilon_0\)，第二项的奇异部分也是 \(-\mu'(x)\delta(z)/\varepsilon_0\)，二者相减为零。因此完整场仍无旋；只保留常规场会遗漏层内必要的积分贡献。
+
+
+\Answer{11}{竖直平衡是能量极大值}
+\AnalysisDiagram{T11}
+图~\ref{fig:L4:T11:A} 的向上外场力与向下镜像吸引力在某高度相等。把高度稍增后，镜像吸引减弱而外场力不变，故净力继续向上，平衡不稳定。\par
+匀强外场给向上力 \(qE_0\)，接地平面感应力用距离 \(2h\) 的像源计算：
+\[
+F_z=qE_0-\frac{kq^2}{4h^2}.
+\]
+平衡满足 \(F_z=0\)，所以
+\[
+h_0=\sqrt{\frac{kq}{4E_0}}.
+\]
+令 \(h=h_0+\xi\)，线性展开为 \(F_z\simeq F_z'(h_0)\xi\)，其中
+\[
+F_z'(h_0)=\frac{kq^2}{2h_0^3}>0.
+\]
+向上偏离后合力向上、向下偏离后合力向下，因此竖直失稳。横向平移不改变几何条件，像源随真电荷的横向位置移动，所以没有横向恢复力，是中性。\par
+作用能由外场能与感应能组成：
+\[
+U(h)=-qE_0h-\frac{kq^2}{4h}+\text{常数}.
+\]
+求导得 \(-U'=F_z\)，且 \(U''(h_0)=-kq^2/(2h_0^3)<0\)，再证平衡为极大值。由于匀强场遍布远处，不能取共同无穷远势为零；其与接地平面相容的势是 \(-E_0z\)。
+
+
+\Answer{12}{单极项与感应偶极项相加}
+\AnalysisDiagram{T12}
+图~\ref{fig:L4:T12:A} 的单极项保持球面势 \(V_s\)，偶极项满足均匀外场边界。面密度在两极取极值，检查最小值才能得到全表面不变号的条件。\par
+接地球的解在球面为零；叠加一个球对称单极势 \(V_sR/r\)，即可把整个球面提高到 \(V_s\)，同时仍满足真空方程和给定远场：
+\[
+\varphi_{\mathrm{out}}=\frac{V_sR}{r}
+-E_0\left(r-\frac{R^3}{r^2}\right)\cos\theta,\qquad
+\varphi_{\mathrm{in}}=V_s.
+\]
+球面处 \(E_\theta=0\)，外法向场为
+\[
+E_r(R^+)=\frac{V_s}{R}+3E_0\cos\theta,\qquad
+\sigma(\theta)=\varepsilon_0\left(\frac{V_s}{R}+3E_0\cos\theta\right).
+\]
+积分中 \(\cos\theta\) 项抵消，所以
+\[
+Q=4\pi R^2\varepsilon_0\frac{V_s}{R}=4\pi\varepsilon_0RV_s.
+\]
+偶极感应项改变局部分布但不贡献总量。面密度的最小值出现在南极 \(\cos\theta=-1\)，因此全表面非负当且仅当
+\[
+\frac{V_s}{R}\ge3E_0.
+\]
+等号时南极密度为零，其余为正；小于该值便有负电荷区域。特别是 \(V_s=0\) 时净电量零，上下半球却分别有正、负局部电荷。
+
+
+\Answer{13}{近轴展开需要轴对称和正则性}
+\AnalysisDiagram{T13}
+图~\ref{fig:L4:T13:A} 从轴上函数 \(f(z)\) 向径向递推。柱坐标 Laplace 方程中的 \(s^{-1}\partial_s\) 决定二阶和四阶系数；局部径向聚焦伴随轴向散焦。\par
+在轴线上正则且轴对称的光滑势，近轴展开只含 \(s\) 的偶次幂。设
+\[
+\varphi(s,z)=f(z)+a_2(z)s^2+a_4(z)s^4+O(s^6).
+\]
+代入 \(\partial_s^2\varphi+s^{-1}\partial_s\varphi+\partial_z^2\varphi=0\)，分别比较 \(s^0,s^2\) 项：
+\[
+4a_2+f''=0,\qquad16a_4+a_2''=0.
+\]
+因此
+\[
+\varphi(s,z)=f(z)-\frac{s^2}{4}f''(z)+\frac{s^4}{64}f^{(4)}(z)+O(s^6).
+\]
+这里没有宣称任意轴线数据都能确定任意非轴对称场；正是轴对称、无源和轴线正则性排除了例题6的反例。\par
+对于 \(f=V_0\cos(\kappa z)\)，
+\[
+\varphi=V_0\cos(\kappa z)
+\left(1+\frac{\kappa^2s^2}{4}+\frac{\kappa^4s^4}{64}+\cdots\right).
+\]
+在原点附近保留最低非平凡阶，
+\[
+\varphi\simeq V_0+\frac{V_0\kappa^2s^2}{4}
+-\frac{V_0\kappa^2z^2}{2},\quad
+E_s\simeq-\frac{V_0\kappa^2}{2}s,\quad
+E_z\simeq V_0\kappa^2z.
+\]
+正电荷径向恢复、轴向失稳，负电荷相反。若 \(q_t>0\)，径向小振动角频率为 \(\sqrt{q_tV_0\kappa^2/(2m)}\)，轴向偏离增长率为 \(\sqrt{q_tV_0\kappa^2/m}\)。同一势既能给一个方向的聚焦，也必须给另一个方向的散焦。
+
+
+\Answer{14}{势跳跃与场跳跃分别识别两类源}
+\AnalysisDiagram{T14}
+图~\ref{fig:L4:T14:A} 的界面同时允许普通面电荷与偶极面层。法向场跳变求前者，势跳变求后者，这两个边界条件各自独立。\par
+内场为零，外场为 \(E_r=B/r^2\)。取法向向外，法向场跳跃给普通面电荷：
+\[
+\sigma=\varepsilon_0\frac{B}{R^2},\qquad Q=4\pi R^2\sigma=4\pi\varepsilon_0B.
+\]
+界面势跃变为
+\[
+J=\varphi_{\mathrm{out}}(R)-\varphi_{\mathrm{in}}(R)=\frac{B}{R}-C,
+\qquad \mu=\varepsilon_0J.
+\]
+球面上的普通电荷层独自给外势 \(B/r\)、内势 \(B/R\)。法向向外的恒定偶极层独自给外势零、内势 \(-\mu/\varepsilon_0=-J\)。两者相加后内势为
+\[
+\frac{B}{R}-J=C,
+\]
+外势仍为 \(B/r\)，恰好重建题设。若只有普通电荷层，须 \(\mu=0\)，即 \(C=B/R\)。若 \(B=0,C\ne0\)，可由纯偶极层实现两侧均无常规场、势常数不同。\par
+不能把任意 \(B,C\) 都解释成普通理想导体表面的自由电荷；通常理想导体模型默认势连续，本题特别允许额外的界面偶极层。
+
+
+\Answer{15}{高阶项仍能给鞍点}
+\AnalysisDiagram{T15}
+图~\ref{fig:L4:T15:A} 沿 \(y=0\) 与 \(y=x\) 检查四次势，势增量一正一负。原点 Hessian 虽为零，高阶首项仍显示鞍点，不能据零二阶项判为稳定。\par
+求完整梯度：
+\[
+E_x=-4Ax^3+12Axy^2,\qquad
+E_y=12Ax^2y-4Ay^3,\qquad E_z=0.
+\]
+势的二阶导分别为 \(12A(x^2-y^2)\) 与 \(-12A(x^2-y^2)\)，相加为零，所以常规体密度为零；原点确为零场点，且 Hessian 全为零。\par
+然而稳定性不能在二次项消失后停止检查。沿 \(y=0\)，
+\[
+\varphi(x,0)-\varphi_0=Ax^4>0\quad(x\ne0);
+\]
+沿 \(y=x\)，
+\[
+\varphi(x,x)-\varphi_0=-4Ax^4<0.
+\]
+任意小邻域内同时存在比原点更高和更低的势，所以势不是局部极值。乘以任意非零 \(q_t\)，势能 \(q_t\varphi\) 仍同时有增大和减小方向，故不是稳定陷阱。\par
+甚至可直接看动力学：对 \(q_t>0\)，沿 \(y=x\) 有 \(F_x=F_y=8q_tAx^3\)，两坐标同向偏离增长；对 \(q_t<0\)，沿 \(y=0\) 有 \(F_x=-4q_tAx^3\)，仍是失稳方向。\(z\) 向为中性。Hessian 零只意味着线性判据失效，不意味着稳定。
+
+
+\Answer{16}{两个真电荷的感应能只计一次}
+\AnalysisDiagram{T16}
+图~\ref{fig:L4:T16:A} 中每个真电荷受到三个其余点的场，镜像全部位于下半空间。同步改变 \(a\) 或 \(h\) 会同时移动两个真电荷，所以系统能量导数对应两者的力之和。\par
+在 \((\pm a,0,-h)\) 放两个像源 \(-q\)，候选势满足平面零势、真源奇点和远处零势，故适用于上半空间。右真电荷受三个非自身源的力：左真电荷的斥力、自己的像源引力、左像源的斜向引力。设 \(D=\sqrt{a^2+h^2}\)，第三段距离为 \(2D\)，其方向为 \((-a,0,-h)/D\)。因此
+\[
+F_x=\frac{kq^2}{4a^2}-\frac{kq^2a}{4D^3},\qquad
+F_z=-\frac{kq^2}{4h^2}-\frac{kq^2h}{4D^3},\qquad F_y=0.
+\]
+由于 \(D>a\)，\(F_x>0\)；\(F_z<0\)，与图上方向一致。左真电荷的水平力相反、竖直力相同。\par
+真电荷彼此的作用能只计一对，等于 \(kq^2/(2a)\)。每个真电荷处的感应势为
+\[
+\varphi_{\mathrm{ind}}=-\frac{kq}{2h}-\frac{kq}{2D}.
+\]
+因感应源随真源建立，感应部分为 \(\tfrac12\sum_iq_i\varphi_{\mathrm{ind}}(\boldsymbol r_i)\)。两个真源相同，故
+\[
+U(a,h)=\frac{kq^2}{2a}-\frac{kq^2}{2h}-\frac{kq^2}{2D}.
+\]
+共同高度改变 \(\mathrm dh\) 时两个真源都移动，故能量导数应等于两个竖直力之和：
+\[
+-\frac{\partial U}{\partial h}
+=-\frac{kq^2}{2h^2}-\frac{kq^2h}{2D^3}=2F_z.
+\]
+半间距增大 \(\mathrm da\) 时左右真源分别向右、向左移动，两个水平力都做正功，因此
+\[
+-\frac{\partial U}{\partial a}
+=\frac{kq^2}{2a^2}-\frac{kq^2a}{2D^3}=2F_x.
+\]
+这两项检验也会捕捉把像源当独立真实电荷导致的能量倍数错误。感应密度由两份单电荷结果平移叠加，每份总量为 \(-q\)，故导体感应总量为 \(-2q\)。不要把虚构像源的自身能或像源之间的相互作用额外计入物理能量。
+
+
+\Answer{17}{矩形区域的分离变量解}
+\AnalysisDiagram{T17}
+图~\ref{fig:L4:T17:A} 的上边界给定随 \(x\) 变化的势。正弦因子满足左右零势，双曲正弦因子满足下边界并匹配上边界；上边不是单块等势金属板。\par
+令 \(\alpha=\pi/a\)。由于 \(\sin(\alpha x)\) 在左右边界为零，尝试可分离形式 \(\varphi=\sin(\alpha x)Y(y)\)。代入拉普拉斯方程得 \(Y''-\alpha^2Y=0\)，所以
+\[
+Y=C_1\sinh(\alpha y)+C_2\cosh(\alpha y).
+\]
+下边 \(y=0\) 为零给 \(C_2=0\)，上边 \(Y(b)=V_s\) 给 \(C_1=V_s/\sinh(\alpha b)\)。故
+\[
+\varphi=V_s\sin(\alpha x)\frac{\sinh(\alpha y)}{\sinh(\alpha b)}.
+\]
+对任意内部点，完整场为
+\[
+E_x=-\alpha V_s\cos(\alpha x)\frac{\sinh(\alpha y)}{\sinh(\alpha b)},\qquad
+E_y=-\alpha V_s\sin(\alpha x)\frac{\cosh(\alpha y)}{\sinh(\alpha b)},\qquad E_z=0.
+\]
+二阶导的正负两项相消，四边势分别正确，角点也连续（正弦在两端为零）。若存在两个解，差函数满足零拉普拉斯和四边零势；格林恒等式给 \(\int|\nabla u|^2\,\mathrm dA=0\)，故差为常数，并因边界为零而处处为零。\par
+上边势沿 \(x\) 变化，所以不能是一整块处于静电平衡的理想导体。它可作为数学上的规定势边界，或由许多相互绝缘且分别控势的小电极近似实现；连续正弦边界是理想化极限。求解前必须分清“给定边界值”与“单块导体等势”。
+
+
+\Answer{18}{粒子穿过偶极层的能量条件}
+\AnalysisDiagram{T18}
+图~\ref{fig:L4:T18:A} 逐段标出下方、跨层及上方的势能变化。完整穿越必须检查整个路径的最高势能，不能只看终点；理想层的临界等号还需要有限厚度模型说明。\par
+设 \(M=\mu/(2\varepsilon_0)>0\)。轴线势为
+\[
+\varphi(z)=M\left(\operatorname{sgn}z-\frac{z}{\sqrt{z^2+a^2}}\right),
+\quad z\ne0.
+\]
+在两端无穷远均趋于零，左极限 \(\varphi(0^-)=-M\)，右极限 \(\varphi(0^+)=+M\)。总能守恒给任意可到达位置
+\[
+K(z)=K_0-q_t\varphi(z),
+\]
+因而到层前和穿出后形式上分别为
+\[
+K(0^-)=K_0+q_tM,\qquad K(0^+)=K_0-q_tM.
+\]
+这些表达式若为负，意味着相应位置不可到达，不能解释成“负动能”。势沿负半轴由0降到 \(-M\)，穿薄层从 \(-M\) 升到 \(+M\)，再沿正半轴降回0。对 \(q_t>0\)，最高势能屏障为 \(q_tM\)，在正侧层边；对 \(q_t<0\)，最高势能为 \(|q_t|M\)，在负侧层边。因此严格越过整个屏障的条件为
+\[
+K_0>|q_t|M=\frac{|q_t|\mu}{2\varepsilon_0}.
+\]
+若成功通过，\(K(+\infty)=K_0\)。跨层本身的动能变化为 \(-q_t\mu/\varepsilon_0=-2q_tM\)，但到层前动能已经改变，不能把整段跃变能量简单当作从无穷远出发的门槛。\par
+若 \(q_t<0\) 且 \(0<K_0<|q_t|M\)，粒子在负半轴先被常规向上场给出的向下力减速，未到层就转向。令 \(z=-u,\ u>0\)，并设
+\(\eta=K_0/(|q_t|M)\in(0,1)\)。条件 \(K=0\) 给
+\[
+\eta=1-\frac{u}{\sqrt{u^2+a^2}},\qquad
+u=\frac{a(1-\eta)}{\sqrt{\eta(2-\eta)}},
+\]
+所以
+\[
+z_{\mathrm{turn}}=-\frac{a(1-\eta)}{\sqrt{\eta(2-\eta)}}.
+\]
+若 \(q_t>0\) 而能量不足，粒子会先在负半轴加速，再在有限厚度偶极层内减速转向；理想势阶跃模型把该窄区压缩到界面附近。\par
+等号 \(K_0=|q_t|M\) 是临界总能。粒子在理想层的某侧极限动能为零；精确跨越或停留过程需要指定有限厚度势形及取极限方式。严格通行的无歧义判据使用上面的 \(>\)，不能仅凭理想跳跃式把临界情形一律算作畅通。
+
+
+\section*{十五、边界条件与近似的适用范围}
+二次展开适合判断线性稳定；二次项消失时要检查高阶项。平均值性质提供了不局限于二次项的无源静电限制。\par
+电势表达式须同时满足指定区域的场方程、真源奇点、边界条件和远场条件。电像法中的辅助源应放在求解区域之外；它只保证该区域的电场，并不代表真实感应电荷的能量。\par
+由电势求场时，柱坐标和球坐标的角向导数带有尺度因子。轴线上的势只能直接确定轴向导数，横向场还依赖空间中的势分布。光滑区域的散度给出体电荷；点、线及面奇源需要另用积分关系确定。\par
+普通面电荷对应法向场跳跃，理想偶极层对应势跳跃。有限厚度模型取薄层极限时，源密度和观察位置的取极限方式须明确。电势、场强及偶极面密度的单位分别为 V、V/m、C/m。\par
+受力与稳定性问题还涉及源是否固定、感应分布是否随位移变化，以及允许的运动方向。无源区的电势极值条件不能替代受约束系统的稳定性判断。
+}
+
+% ===== 图像数据与排版 =====
+\begin{document}
+\special{dvipdfmx:config z 0}
+\ContentPartA
+\newcommand{\PptImageA}[1]{\PptImageBox{A}{#1}{0.795698925}}
+\expandafter\def\csname PptDataA0\endcsname{%
+\special{pdf:stream @PptA0 <
+78DAEDDDCB9AAC200C85D1F3FE2FED99775B5D885C92B0F6A806F529D9FC848B88D7454444444444444444444444445453FFBAC43778748BABE710B2
+F76A149990ECF7A2D97577CEDD296935C12605278A47D92B023341CC5772AAED3666980C18DE8A2BA9A502244E02469616AFB626708E099F574CE012
+2B8CD6A072ECD2C1EFDF9C01CC1FA83C02062A079AD3470B54CE04A68316A81C0BCC535AA07232309F68F9142054DE3B5C6C4EF42940A800E63724B7
+D1E983F4478D19062A6F8CAD3D80F99D64A0F2BE032ADC1FFD6811D1220DFE5EFC515DF92D2DF1090942CED7F587DA5DEDDE00FB00D8824DFB32B8C1
+FC829E71EF75863070D433C75C9C2C60A67B9B87C492E2BE03AFDF7791431E38AE4C29C16F34A4739458A6DE71ECC0F5CD76C1D403C2EC89E5D164E7
+7D5FD05D6B7B073C68F951652D33D0B1D5D708CC7043CAD0B20B952DB45CFB3669543A7A625707F468E832BB24537D2840CBE295CF4F1B69BEE696E1
+257C9AE5F2AE51A403FEAB517FF40B3F7E4F5AC17BF4E7EE32A065D45DBEA69D4FBF774D91BACF09D70D4D9A2FDF6E1A19B506F2D48151B42405264E
+62793A451AB8B2BA9296D4E965596279DAE4470D361A0BD33774396D6614909649D39396D7A6DA0B76E033A398A8CC00A63D6FB45FA7712DBA0C3091
+69193BEB99316B434BB409D7CA84DFB222346A573F5A665C7F715E5A76FC115A265D7F6545BC199077E431B4CCB8FEC081075A6AA3D25217C39F1CCD
+A6251D30E99ECEB73C76DC52ECB1EB84F5686959CF9CE1C682ED288BB7FA94A7A5F148CCA9B414D8DE76022DEDFBCD26B951667B1B5AD6B88116B41C
+32F8470B5AD08216B4A49E13A1A5C67ACBC0E7B393221DBB6FE1FDFEFFAF0D2DDAF957A3F603DCA69A506DE7E977521EADFCCCF0FFF6FA1BFD1C7BC4
+C42DF6A1D2CB584FD0F2A63FBA7D2F0C2D686924072D9568B932ECB45C494BDF6B689336E91D484B9CF4326ACF3F5AD08296385519E464F5B185440B
+5AD012A11E239C063FB67807D2728539EA67232DDD2F0475D7E0A397220FA4657B7A19BE7F182D25D34BCBF1957D2FC0763FE66B7C7F36E0F79856DE
+3DDAB1485BCA93FDA0C28D87E59E86CAE594C284C06C2C430D5ACE01663B2A350E583EA723D80BEA955C87545C84651F1F86785F7DF1BF66059520B1
+24FA521E5A428D3CE37F85F3E4F16D28F8137DE1F7E4C4123063A7F87AF8B189256013F8D72BAE1EDE0AD211523EB1D46E08FC142027254F366A1412
+8B76410C040CEBE452BE099C63922ABB38C0283E108BB8C11C9EB085330CE10F2BB8C4045E099F38761B355458A781F050989C14A05E495C98110B15
+36192ADCC64916E7839B9FA8A898513CFAA352021EE6A08E60039292CCCCABBB74273350476DBEF93037429053E3FC1F0A050FDF8888888888888888
+888888A8B6FE03E78FCEC6
+> << /Type /XObject /Subtype /Image /Width 186 /Height 148 /BitsPerComponent 8 /ColorSpace /DeviceRGB >>}%
+\PptDrawTile{A0}{1.000000000}{0.000000000}%
+}
+\expandafter\def\csname PptStreamA\endcsname{%
+\csname PptDataA0\endcsname\global\expandafter\let\csname PptDataA0\endcsname\relax%
+}
+
+\ContentPartB
+\newcommand{\PptImageB}[1]{\PptImageBox{B}{#1}{1.000000000}}
+\expandafter\def\csname PptDataB0\endcsname{%
+\special{pdf:stream @PptB0 <
+78DAEDDDC992EBB80E0540FFFF4FBB17775751ED922512C490B97C11AFAF05923882CAC3FB0D0000004046AFD74B1100000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000028E7F57A290200E4C9E57F9402
+005245B3740600D10C008866002891CBA21900443300F0219AA53300886600403403806826F336500400D10C005C8966E90C00A6660040340340FE5C
+96CE00209A0100D10C00A2190010CD670BAB14C0CC4C518DE5D1ACAA3627C0C3405113D19CB3A40A02486744B3680610CDA219DB12409A8866D10C50
+22535466492E2BA65C0630388B66BB11C0E0AC80A2593403E887A2D95DE28DFFBE22035AA2685646FB10606DB828CEF3685646B90CA0318A66378700
+7AA3D2A9A13B4300D12C9AED3D001D12D16CE301648818F5B99DCBAA67D7016892A2D9C80C302165944834BB1B0490CE3DA259E96C3600DDD2D46C64
+0690CE2AA650B619C091315095AE544F354433806816CD72194034239A6D3000CD5334DB5D009AA7FE299A6D2D80E4FD530B15CD466600D34DADBA29
+884D05607016CDA2194034F36BDD54432E03E8A5A2D9760218DE4B55E973D11444340384F552F5F9B36E4A615F01447651C511CD3615C0F194D14831
+320324EFAB6A82680648D55A1584DBFBE7C7FFA838006BBB2BB8AF0380BAB92C9A0108CE2075303203902D8394423403902A8054E3FF7259710010CD
+46660031A42C4A219A01F45BD16C9F00E8BABAAE68BEBE49540340344B223B0440E3551305B14300F45ED1AC1A3D6AA50E80681646F686680684916A
+280500862379645700C823A55007A50090474AA10E00FC68C5EAA01446660044B322008054BA52075B020091E47EC3060360C8730089E01E09806CD1
+2C14AC0250B78DA883A9994DB96C2180DB6D4435A6ADA9A597CB80210B7765A342596D012DFAC9E55B7796E7B2DA020667F164D1E53220A15CB80B77
+70E432A051BB7023B37919326C7EA5D0AB45B3E52E312FAB2A7A0842CAEE72D57219CE1E0165D1B15DB2AB96CB209A0DCE42CA2A3B2072193E1F0795
+1155CBFBEA84ADE5106DDD3F0A8513A138FAF68DE45DCEFACA6525C5B9701CB4EE571DD6572E837466499D0571BF987664B6EE3DB5C219712EF4C3AD
+E9D935AF9D974D9B50B970589C0E59BC640F2CDC3FD3FE666D435A38B87E5E9468421C6F7A0D8D2F13B90CC74F8D2A358BE380D793B902B64DE62DAA
+6260763E52E7DE63C8F13D2308E432CC393E0AB5AAC8018D4EC1B7564C9DE53248E77E15B63475935AD9DD4C8243347370B616396F47D5DF6D3F48E7
+6983B3FA27DFF316624791950856752A076A6D34772A78D1BDE1CDDE7219CCCE6ADBF8171F1C01E4321C8C0F15D3F37FBD40C962B7AB1E1C9CEC146D
+616DDB5CA055B3D57F2D918A81D9597B17CD61C7C13EFF339701D15CA2925D2F76EC71B0E1150432B423B5326A8D8AE63FD7D79ED719E06CB8A89221
+6B54345F5F6EB90C88E6E4159BD0C426DF720C3F203A0348E75AB59A335F4C7887F6927B33B90C48E72325BAF87F99365D0EB9A85127452B00E95C71
+4C1E5813B933677BD8F990E7F40D8F24A13CA14B3F5F5CF76FC0F178322CDB12A2D99E01A4B3499980E5B67F7E5C881D02D2D9655274646E16D08E00
+88AD09C3B22E376164EE7164DC9D82749E93CB1ADDC0D9B0DCF8ECC11148E7F6A16C0C191ECDB5025A2E83741E75219DDA9D1FB86C7970E432686B13
+86E5AE8373B37B8CC80B491B7F72195ACECE4279C8E0AC7BD7DD81721946F599BA5D51A8B55F74012D97019D70CEE06C5F35D896721930A18866F26C
+4EB90C4C0EE54EB9A699F7D8A5721990CB6D72ADCD9BF3C7EE557F5F86C98198AAD7A98F4BC8FCE223D3592EC3F059D5B0FCE115CAE5699B33C3EE95
+CB209A0F7E40296DF36933358BE67287482E83803EF89D1E3A8F682E3DF26FDACC0E0868E0914D402E8BE666A9B4E9119003027AB8DFDD13CD4666F7
+9CC0A874D6B84473CB91D926078A76152D8BDE23F387AD7EF1421C0D207266E991CB3AA768DEB7E1DDB502915DA2592EEB9CE5EE0CF35F8B074A40E4
+84D8E639B6E6E91668D3FEF7B71E409C498D09F78455D2592E0372593493279DE532209707A6B39E9F369DE53210994A8D1B8E6866533AAB0FB06F10
+6EDF70EA7E81A43D9C369D5506D894CE431A8E68463403991BCBA879593407BC4ED10CB0AAB78C6A35A259342F3F3B7A0BB0359D4715A1EE530EF70F
+0E0E30A4C90CAC40E6C717B789E6DD4BF6F6B96620241A6656A041109F4DEAE1D9249D81DD6131AD022D833832AFA592D919D89D1D8AD33B8E972FBA
+CD239D81DD21A23E3171BCAFE1472675EFCD13B058001FDAA97EB22F8ED7AE54F08D845CBE7E69A219C8D0EDC5F1D6270FFB166B49460FF9AE758F11
+00B95C319453CD6E31572A979D32402E47C65F9ECF0EC72F59FE8F51E73F26CE1AB0AF570C692C9993E86C879F16CD9BDEB82E9D81855D62DAAF5D24
+4C9F3C4BD03EA0975F8B740676F48751BFDD9C336BB2D5BF6B3A977B231F30791018F227C5B41193FC25F5C8E8ADAF5C3A033B7A42B3DE522B56EA46
+7395AD12F09AA533B0A3ABB77C68299A576D86D2011DFF2138E90C7279C77B5A1A87B207DA4F5E52C5803EF2B1710D0AE472E3987812CA259A67E697
+74A3EC4EA552ACAAA43AA003FCF8EF970EE55ACD336D342FBC297236B977A2D584A21B5811BEAA8668CEB316D299DBF7D820979B1DE4B4D13CF366A9
+653D1DD2DBA758E990CB339BBFE3DF38A0737EB59A5D219411CDFBFEDD363D5F13D8BDCA47FA6DAAF66E8FDD4864B5422EDFFBA77B0C62BA41C0EE3A
+F8DB9ADE45502E919D4474CEA277057E95A0E212C7B4DFFC1F8B9BB6CDC6FEE428DA66F57C3C3B76690B6105D9DD8A3337F9690134FCA7C0D136DBF7
+9969FD3CCFDF466BAD66FE263F2483843272B9773A871DE184373CBD5FC3D8F70C740DA3D7337A3B72B94A3A9F7AE390682EF730A4509F1FF8CB6E42
+9921D1DCBED59CFDB8CDE4688E7F01033F9CDE23985E2BE8EA1899ABA4F3E4F33B309A97DC8995FE1D16C332E8D8C9D379F811CE13CD3D1EBF5489B6
+69D1ACA597584D95E931142CFF8BE1C0BD91E46FCD795A84B56E96CE9A79C5A554A2EA47582E0F6FD7D279CE720BE539D16C29C7F66A4BAF0803D3B9
+E8651A96A5B395D5A09C88E16F87FB71F9CDAA516E7D756FEDC87277FA6B54ADF928E61BA41D84871573CC93376D613736A0878C932DC7E1CCEBF8F0
+55BD8E6A130D434E7DA1CF456ACB02DA7E68F9BD042572F95EF15F29358E06CFC78E3FB210CA327A5A468FFA2ABF72F37E7C10BF77FE194834E7DF6F
+691F560865E93C2A9D1BFF35ADCA325D9FF757EDC38703EFBD97947C2DE63C2FCDF98B72575E955016D043A2B9F71B5D2AFE4250D8C6DBF4334C758F
+CCA8BF6666FB7113B3309B02DAF14CBEA09D7660CED56F9CCBA259FF61DAF0229AC3D6B1F4C62BB4FAE58ECCCC7702C7FF22A788E148403B98C9974F
+28076F8012A7E6F34BF2B98C7DB50513F49068AEB534675F6D5841321F996FDF556E707EB2E26285E3E95CE8096AE3F54A7BA5633F359FEA92BF7D63
+B0C1F9E15ACB1404F4C58BEABA4CA726C4BA3995E70465CB65E9FC70958508C1EDA568A79DF081290955E2AEE9ECC3FC879FEC9E704F6B4CA6D336CE
+BC51A735FF12A1DCF869C6FBD62F8F44BE37A9D34E8BEC094299B43BF9DEA02D9A3374DA980AE85DD7AF3AA6506B7FA1A3C73A7E7B45429951512E9A
+8373F9D44787466DCB255F079AED01CBE4C15928332AB8E572709B0D1ECD7AFCE255CCBF12F31D68C7F3BDE25112CA4C1BA87D2D4F7C7BDC54F98ADF
+769270CB5579E6D0FB407DFEF9270D9C39D15CF18B19EB26CBDA9AFB6C7BCC0191CED57B11543F143BA639B9BCA3C1EE58BBEA5FD4D93EA0BBFE6EBB
+68868B01BDF0AF63CD0A9521A47674B3B0472825B6C4BD13D1E3ABC8DB4C07E08CC8E5B0470A557EB431E0356F9DF7BF3D11F93F25DD7E228021012D
+9A0BFD6851E68703613F067DAAE607BF5BAC4D28CB65D87AEA5BFE392C615BCB73BDAFD5522DD39FAF303E621AFC754034C3BDD32497935C4B58135B
+F81D4D91617DEAEB5CDEE7DE3056F16DF9A2190EB60523F3C37FF14A5B3B75D5AF1C8E8454B670E9F12DEEEFD6BF4F0D09EF84E5F2A6F922D598934D
+9EC49999CE374A249A41343F7F2C70B0AAA9EE10B6BE7B39ED8F95A7DAF0A94EDC937511CD209DD30E23198AB92F04D77ECD69C2BB97517B75ED1D8B
+688696B35E9B5E973C9797FCC793BFCE5AD19C24D78EDFB901D95AA5681EB882A7EE09135629D56BA83EFE836896CB19A2B9E8DA1D79BE9DF6195192
+37F057BFC100D19CFF2AB25572C80CB8369A377D9169C2A2C56F957E37C6D03B9A7FFCEF9FFF2F46E623773867FF4ABB7BCB6DFDB9963FFFC566BBF7
+C8BDA2A60AF16D21E180963F97774F7F67C7DBB5EBB5B686553E9C1BF915E85D8F2188666F73FD7628DBD46F23237861527FFB61EA25B701177FDEA2
+F4C79C93BCFB5D5FADE23FEEB9DFA7
+> << /Type /XObject /Subtype /Image /Width 649 /Height 256 /BitsPerComponent 8 /ColorSpace /DeviceRGB >>}%
+\PptDrawTile{B0}{0.394453005}{0.605546995}%
+}
+\expandafter\def\csname PptDataB1\endcsname{%
+\special{pdf:stream @PptB1 <
+78DAEDDDD192E4280E40D1FAFF9FCE7DDA8D8DE9E92C1B9010E2DCC799AE4C1B235D4462F87C50949FFFF2F6DF7F61CBF5277FEFDF5A63A66DDFB6F9
+CCC3FD4961CB5D0F748FBD7DF8CF0B58D55699B7B3371281965E5E9E0DEE54738EFD1F7ED14F25F60ABAC8A30CBA8022836476064A85D2B503F52D5E
+5E58491DE4E80BED5C3CF4A8194808A54303B3CE0CE4F20B583B973B2CCD579711AAE91BEC3CFC8345112152335050CDFFFBCC81FF754FC93CECB808
+2FC7DD695011FDEB87AC9D023A4BCD5D530A70A797F3279F977CE3A18B767EFDDB49854597ABAB66009697CF41BF6E57E85A07F94EE10C9C35BE8D5B
+1D7490973F8F17755790729A9A8BDC69053B977AFD819A81F66AFE2C5D4A7AA8975FA96AF9ECF12E35E7DBB9E024CF856A6667E094C1ED72131D9A79
+B678B94ED5BC649C16EDAF826A965B002573D90ABAC8B8627B7DF4EB1F46BCBBB4B6DD16AE4F0B5573424F3BBD5EA666A0819A67526B032FCFD747CF
+FF706DD91BD17493DD20CE623972ACB6C35E8FF4029CEBE53AB13396908F56F37225E5B835AEDD666E2A4E6499AF51F7F0B2C219681638ABF6BE38DA
+CB633ECA297BA39B6E782AE0B8C2396D2B721906382E704E8CF4BD7B8EE524E75575E53FFEF6942CFDE436338D96BFC0A0CD8436350317AAF9D0CD52
+F2BD7C5C967E65E7E44154CE436F5338CBB740D701EDC619BF1C2F47FCC9E99D6DD5EAB80A5133FFE3853C0350F3716A3EE8BC83845F963B75B6793B
+6FEF06AB5E109367006A3ED7CEC59700555B819CF3D4D63EF7ED0F2EAD235133709B9ACF8DF434476FDCFE317A338DB12B2FF2E82B3FBBA3B73D916A
+0043D92509AAF8DED1C31F98B33B74FD6E33BF2F4DC213ECB75FA8C219102CF3528B3E1A38B9F1D30E6E28DE6D269F69F2066EF55FDD926D0091B2E5
+CAEB1C521C5132EF9AA5AF790653BE9D772D476C30A2967E01C3EFCFF47C66CD9279D761C4C3FFBE427D9AAC66914BCD80007FF8E76F0DB26B0E39A1
+2E4B58ED1CF116F0F0A02BED1C4F914BCD80005F5E01257879CC23A5EC1CA1F2E75E9EB7738497052F3B03A23B48CDDB7FD85DEBA30A6A5E3B641ABE
+8B88D102355333B0364C8C28B6A8795E975B7E71CE9C3D8E2B8723B6F3A2666A068476E88747E4DEB4B22EB46DB79C3E193179FEEA7EBF0F6BA9999A
+01A19DB3F63574D392D062B38D9A07E676568D7F4227F985303503D45CC1CEC54BE6083557384DFBEDA99AC3CF5AE1AC7006C4757E86CF79337AEDCA
+AE88BFAA7F88E1921343EAEFC442CD4063350BEA0435274F65A74DFB17ACFD23D45C533AD40C503335FFDA6E0F0FDD482B99F73EE2BD6A1B58DF5E70
+97F5969AA366C0783BCD6E4BA64683DE843AE22927EF529EB0B59A40A666E02A351734C5BC9AA34F5E3845CAD42C90016A76CD4BBE6E52CDD107FB0E
+FF3EBE45CD39E3ABE8B34204323503ED43A3F26CF62B41A7A979C6CE0F2FB8B2979F7FF8B976A666809AEF54F32A218EAD1FDB65E7E7173C23EE642F
+E7FC9AB0AB70967F006A6EECE54FE4C944C97A1AFE8A87ABCDBFDFD12E2FEFFDA1DF9C76D7621F10172DD5BCAAA49DBF9E38350FBF501C6AE4E40D52
+CC69533320966B7ED7FC5E9111B7366FF399823AEE99965A214FCDD40C0CC785E1447135EF7D4CD16A7E3B54885673F2A3BF39A2A919A0E6D3D55C61
+3BAFFF5DC6F76BDB7BCD6BA7D9A9D9350382A2CE35A76D3D117D3CF464C3FEED4A06AAE9ED4FE792396D110D50B39279AD9AF3EFFAD731C0AF6A7E7E
+C1692BDEE39E48FB4E2B0B0182829A576D6C1267E7553FD4C66DE1B2FCC95273BFA006A8999A3F43D3A7C925E4F78F1AB3EA43B9AFDA90BCDA43A166
+6A0644F1E96A9E114DA8B3BEE8F5D7CF79FBC9D19572E654C6C631B0A006A8B971997FC46C76445D39F0E771FB8AC4AD85EBAA665361F9D76C680111
+D14FCD116560A8A0DF7ECBCC95E46CE099D90D0475836BFE99837AD038228EF8AE2DE74C85DA792C053D6C872F97119D5D2B4C9E50F3256A2671CCA7
+266AAEBC066CB8F24DCB3FBFDEE0AE7474839AC5F5E96A66677676C111F92DF907CD5FBFE2CB3F88B6F3F30FA7666ABED3C2EC0C6ACEF9A2226A7E95
+7922F2D2ABCF2CD59D32076977AA796D079851DE4F55A88A9A5DF0C22FDA3B9B5D735EAE540AA2E6B3AAD1E51DB8BE9A498A9A5D7085AAB97E86FCF5
+6F57655D6ADE5B84AE15E22A03B657332BC14A4E55F3DB8CF45C0447E4A2B4F5F30B6F3CE73785E50A2BA8E6576D1B6A70320235274F091EA1E6CFC4
+7994C349ACE09CEA42A5162CE2EAA87955FB3CFFA80AB3F1748C1B66B38F50F32955F3F384F3D65C6533D2727D2C2FE5424BB364B10E74B6B3721117
+839A9B4D68D7AF25C77E4DFE0CBD1BB5BC3E4A3363C42C6BE8ACE9AF0FAB6B6847C708B3E066351FF15D65D5FCA7833E3B36388A50D5162FAF52EA73
+05FCE3D93DF9C742DB3543111A7DCDD43C393D58610D6A842EB74C4AAFAAF18DBA690E30527DAEB9B705E972450E27FF82EF89BCBA8CF9868A68A2CC
+1E45CD80AAD905FF3A853856B7469466757EC70CBA920A3D2A794D2035CBCC88E85AD45CB3927DBE0029DA74BBD4BCE4969BBDC8B94BCD4C47CDC82C
+ACCE9D1C2E7BD9395EC87C0B75A15B3F8B7ED07C3E6FFC7686E12035478B839AA919DBD5D0E9A6FEAC3ADFBEAB5BADACABA3E64FC955B593438BB5C3
+066AA666F06F83F9BA7365B7B16A5E52C08E09B7B2AD86D57C4AC8503335A3F71CE9D8B45E82A7EE54F39FF3B4933D64C9E70CFF9B6A71D1664C3B30
+FF43CD2E1827EAB8B8EF9257F57CAFAADEDA33339347A8F9C933151795D57C8A7DA819D47C969A3FBF2DCEF9FEBF4A3DC4FAE9626C66E0F288A0666A
+06351F97A01676E013179653738F8878D844D12DD35ECD27E667B6A2E6DBDEE26C100ED4DC3528DE2EFFA6666A0647777A738A9AABA939FABE06D687
+5718B2468758F2A3A1666AC65E651F7AD72E38E2BBB6ABF961D9BEABA69E0CC984E76B79B644841EEEA6666AAEA0E699FEB956BE116F88A7E9929A25
+223450F6B917EF9A8BA839628DDF5A1B8EBDCEFFFDBF4F5E55D0F3F552B3140A50B3C279896872BCFCEBDD8DADCA8E9B0AD8389B41CD0FAF594E06A8
+F93635AFAD97DFAA79959D3F8F5FB9A2666A06A8999A575960BE0C8CFE7DF9E165E7BFB33CB0275E4267A3666A06A8F944350715CE6BEBEE856AFEE4
+2E7EFBB2262D68B044CD8DB31020281A64B9B4E9D3B575F7F7FF3EAFE684A7B66A07F884A71F71EF221AA0666A5EA8E65FDF354EBBDFC9BD348BEF75
+A6649685004171AE9A37FEDCBCF70DFAF901C3C052B4344153B32C04548E8B1303F9D0C279BED6EBAAE6A0BBA3666A0614CE5D0BE7841145A69757E9
+72E18969A1C38F571BA49CF843F3C7F26C809AEF5373FE9C7682979F1BF3D77F1324D038353F6CF683E28B9A016ABEE49A23D43C63E7CAFAAB6CE799
+63B6AE9AE1A166809AEFA9449EA7FDB49310CB3EFAE48982203B9BCDEE3A9C008446A98CB7B6707EF83A70F266595DED3C301C5ABB8B8B58A6666020
+3A8C2842BFEE79C2CF99C45EFBC9119D6DE1056FF9ADDF0FCDD40C5073CDAF1B2BC772D49CDC384B76F60EBDC8856ACE9F9A10C8404B351B6C2FFFBA
+E169D2D0E9DCE7865ADE38F32735C795CC9FC7BBBE1454F3E96BC0A81968A6E6B23F374FEE1F12AAE65DB69DFFDD36ADAEFFDBFF1D78CAA2B853A50F
+507391CB8E3E63F1C96E1EDFFFCDC6B69D699952FD24EEC42E51AC64068A57A087C6F5DB568A5073FD3BAD3CA68A8B026AA666408C6C1951AC2A9C3F
+6F5664E5E7F9C9DB2CF5E086E7F08316FB895F6A06A839F4EBFE5C23F4FDAFC62AE2E1249FB94B46D9B78AD2BCBC5DD0D40C50F39D6AFEAC9EB79CD9
+BA33EE69A67936741BCCCC161BB073E8C91DD20E40CDF75C7644B21DDE8124E834C3CC8D35E20E0D99F172A69A23DE5817BC4057352B9CD3D4FC593A
+ADBDBC90AFAFE6F9A98CB49DBAA9999A01019E2CE5551B48BE5A0FF67D5D59CE6CF667C57E2C6DD43C30CABA73504DCD0035871A39422E4B2E69A68A
+4F7B04A1DB83D729999F8F498A6FD32DE1002265E3656FFCB970C926CF990FB142CFA9E0E5F9A698BC8B43138EDC0B187E2FF772B29A3F65B69F9AAC
+B54BA9B9483FDCBB95AB6C0318C752F38C5C4A79B9540738B7647ED5F73E9B768AA36640BC44949C4BB27D85F394797995976B2E93FE798F54035073
+FB2B9F3F78623E1B2FB752F12718DD6239C3AAE8814783E7CECBC06D6A1E58DD9AA0D1CA762EB5886B6D5BE5FF18913939E0601AE0363BF75673C46E
+217149782C6967E6C9B5CB9FC63C3560B48DC3C29B054DCDC0256A7E18EFD11B8684DA79AC364CB8FEE4665CB55EEE5CD1503370AD9ADB14CEA185C6
+AE1F195739A8889A3FEF37EB28F28BFC162D1EADE6CB572D02170E689F9C7470CA12A0B12B9FB47965350F3FBE1E53D993C3361906A0E62203F2D38F
+E41BBBFEE77F153175B0F0667FBDA3C9366CA3E6E1869561801305D755CD7B53E5AA3B5A3B50D9AEE6A09155684FD8659955DD407A0114CE15BC5CA4
+90C951F327EBADD864351719A755F0F292119ADC0250F3162F9FDB6E4B6EAA8D9A273FEA6FFFABD43C49506B17113435034B22889737669EB5F755BC
+7E0CF5F25AB116E9600B0FB7DAF25EB6348B0AEE5038DFA6E684D9DD226939FFC4A5B17A79D5353718FB6D57332900370C6EAB1D8F18AAAAE8C9ED19
+1BEE1D7E0CBCF27C55C93C3C92513203D56477E268A1DF94E3C25CBA56FACF5FB88EF8F664C5D419F59D18EFD40C748AA3F9C5C96715CE6F7F2A8D9B
+DFFE559A3F31D42CFD1ACCC6A4451F2F038DD5BCB09A3BD7CE6F1B676D3BA7B1B6932CAF1C4BFD50B23D06A919A860E73A46CE3F53A9722ECDD15C35
+17C755CA0FB74DBBA7647ED22BA819B861A01EB728A86B3ACD3CF170BB91E3BCFCD9B79B5C7DAF2D5C9020AF02C72584365B36BD15745015F9AFD55F
+9C1977B972FBA922BDBDFC6B135133B02B0C7779F994D275388F45CFF1F638D577E38EE8A54677478CDBBF8CD6A81938312D44D741A5AA8CBD53D00D
+D49CFFBDBC7CE2B40340CDEEA2822E7BD8B9C84925D7AEFE8AEB7BF22AB030D6CEB564F117C182AEEDDC2459679F676ABE76D206B8A4E4741A5DB5E9
+D9E523AE1E59BD88538E76194103F5A5D6ECE089E3CAB1E8B561C97B86379BDCA83C98ACDCEB002C3F49E1E8F2FF383547BB6F7E0F8A226A4E5EB0D7
+D8CBD5465C0035179472918C57BF6A1EB8C2276F524F7EDD9699FF57B7D96F86674BC7936981B85C5139EEEACCA8974AF53F95D8F2E08A5C46E392F9
+941401742D9C8B475C59356F4FF5C5CFB6086AA881239E7939A2D7759D3A000A16CEA7DF48A697734AC2E557BBE5E4C75D5EFEFFBF6A36AB53ED4694
+D5C07CBA3EEE5E4213ECF3FC9FFC8273E60023FAF8895D5E6E39A553F046FC240DDCA6E64FB10D48A39B347FBBE9E866E4E51BE2CBB231E036357F5A
+1CE853B36F24CC78546BE7E51BF2F0F2ABB91AF919A4DC262EEA2F203FF41C8AB37A728572BE99686C0B0FF0724DA71CBD735A4BB3649E2772B3973F
+C1AB40A919A47CC3183534512F6FFC7BDA30BA33D7F97C0175CF201688EBF6EC9C53041D9479CA5E61661BCEBFACDD6C2A7BFBEB0FC00D6ABE649C5F
+ED74ADF90D3ABAAA796007D1FC52EE2A2FD7CC0CAC8D9676BEA4B72F3F8029610D4CCDE2A542BEDD38E130B6E1A7216E91691312C7E9E349764E4EB6
+A5769C7E3590CBECBD058F1FDD7B52869279F814158246911E7BB99A678CB66537ECBDE734D5CFBAD54EFFECFD808ED833FF7B3FB1AE0C357BA9C279
+206DF63B7CB9939A5D21350F840C3BA342CFEC1A8CAB1AAA9A978F281B0FEDD2D47C432AE068F4AB94D9B98897EF2CCD3E07EE81739597CFBA298246
+E39C7089026A7AF92A419F7B8FA6B2D919287E167083F2B966A8EE4D29F9875B51332F6F54F3DF96F61110EAE4816BE74E4FFC71335AA07B73E6B593
+57D4BC45CDFF58E0CD3E785BE809CFB8C86D9064D67E75F2D0A2B2EFEEF989A1FDF0DB1437967436417A5B767DF8166D44925978EED2D8859DB58337
+3577B53341439C5608DEE3DA3F28F9FC049356B6E70C96768D9FC57B8E9D09FACEB2F76835507391F6FF29CFD1DDAF7DAEBEF9ED3C82BEB9EAACFFB6
+CE3D763E6E42BB42D5B0258F95DD04CC14D9CD8EA6B60BBB8180ADF0684A5D6AC1DA21ADE90ABE607EDCB8E2F29239282208EE92276E385DED01E9A5
+72D4CCCD1E1AE0774A47E7F7940F7DBE8D0BE72579B87D37D60293CBD43DEBAE099CF23C538573F16C4CCD7AC271DD49879FCCEA9A8897D9999D65EC
+B3FA80C524ED33BC96216551CCCED47CDCD33F714F1B3C6C374DD1C0C8CD76C06B1F47DB4F6DF6B8939361DA696E45C28797C1CB0AE7132FF8F2DDCB
+CBEEF871E85449E573CDA4745C2E65BBF91D57175C7BE657E5CDB8CE9272413BF33278D906F8A727F3FC2392555539D7931F9E15B281A96C9072FB3D
+69DB7BF94B07B844CD2D7BDDC620DDFB947919A47CC96EB4F51FD9114556CD83965AF6BAED715AA46496DE7195972F6C9C1BBC9CE97DA117D44497BF
+9AAA64C685529627DB7B3934BDCB99D1AD7479CCF232AE92B2B6BAF344DDE59D418F8AEB7222D7D80F3748595B558BF7EDEF202F9C6BD5A9D6F6B753
+42386DF1BF3E86665ED64A3543BEC2921E5DA5A09D0F7A3457ED7602ECAA80A4CADB2AF7C67BCB9CD8DF4E7C1C39AF15C857E017AD977C0135477787
+F6A8B2D7FFA56D7B9C8A1EF7FAB64C05DC3CE7A0291A08FAAC57D75B9EBEBAF6DC2B690AA024AD71BA2CEAAF98BAE188B785A745CB51001F698DD3DF
+C23BBA6A36D0E5650099F9FCDCF2939A13DAB3EBD08E9701944DE9E7E69CE3EC7CC46E6FBD1D347677BC0C203333345BF65C5C2EC5B77ABBE43DC7B7
+37C8CB0032F343D7453E654553F66DF13B4F793B77AE0340D79AABEB6E1E958D536D83B57F6D1626E265005B6AE7F6EB6F6B0A3AFFDBC71A81893ED7
+1FAA0520D9CE2D73CE931A70BBA673BED1DEF5338DC6CB00F2EDDC35E7FC7A53150AEAB8AFF00B7268036A1F00A149FE865756175A2CEE58844C17F3
+CB4C7B6A1C00A1799E9767D4F6FF5F31D08693397FF85231D3BC5A0640A692CC212CD1F4C37CFE9385A0586B67CD026032996884B837BE2B93D0BCD4
+0C00EC9C56329F68EA4E6D5BD9CBEC0C809DCFD2C70D73D497F42B3F1300905B82EEFD946771D633BA6A4BED3F97F9B13380382328994D6E50F3432F
+9FFEC8009C62E7F6774D7346146BBDCCCE0042D5AC65A859E13CEC5CA10420C2CE9A85E3A879A616164A009657CD520AC7B1F3B0970120C2CB5210A8
+99970154F3B24484CBED2C1C00D4C939BD8F80F4F4A9798B97F540009339A79F9DD53E9A7D6FBDAC0007309F223A651229D164C55E2FB33380559E6A
+93491ACCAC1EDDF8BCCCCE001666FB1E2B61BC828422BDDDD2320086FA9F468B91F4C34C29671E18AAFD01DC66676A464157B23320F3DCBCC4949A51
+B086553B03324F909DCF3A57D1E3C3F7CE9CDFC8EC0C483E178EF6A91965BDCCCE80E4D332ADB54F7A2D0F8928E8651D15408FE453DFCE0DD25DD7F3
+9B78999D015EBE2ACB51F311DDB2425C946A55760678B9BD9DED6346CD0779B9DFE306B0579435931E35BB9DFA03C82F972A9B01BCDC4CD00EE65038
+1F542C03E0E51BD22035BB235206C0CB052FC6AAE66B0BE74E5E36A80078596294998F1E6FFCFC8506CD2516005E26681CA7E6965D4E0401C256AAC4
+899560BF62F988E13780E402849D718A9ADBF731E1035C5E7D103432BB846259ED0CA0BDA0A5AC9BFB52EFA7FFF066891B402941F79ECCD473BE4BF9
+8626523B0338CBCE2DF39524AC58666740A23E57D0D4AC5266675D05D81B8F8A206AEE749BA4BC6AACA271005E2E5241DFF0D64CFBBECDCBEC0C1C1D
+83B7A51A6ABEE4A193323B03BCDC43D097EC3571A75C88869A015E3E51D08DDB879A29667248A3AD80D0E8D3024F663EA959DDC7CBDA10502FCB42D4
+1CF464E5017101F072834444CDA42C223429B024C478796D46A266432CB1A04981C9E0E265655763352BF1D819E0170DD8A6014FBF97E7CF48CF4FB0
+B3E602684552BA56CD634F44FF4F88056D05CC8492267ADB869FA6BF449F75CD93ED2F04D819503277F2B2162E2E85C6B304FD1E04207CC4CE6433CA
+549D44E0B9B033503370C4CEF2F24AB39FD27B3D0BE37FA06C72133B41095CFBEBB11E9CE7058C653981F3A43D3D8EEDBD54476567809771958F72BE
+F16708DDA641C7D6441020925E574DC73DB588CFFF9940F76067E0CE6CAFB91A687AD5339DF99CED178F537AB2F681A01020976BFA6F8FFEA70605DB
+5CDF63678097B157D397EBF85F1B599763678097EB372965B79F9A1623C9BD54CB809745C49D6554827C1D578DE1AEA859C0CB0241A256DA289CD9F9
+42FE033C97D9D0
+> << /Type /XObject /Subtype /Image /Width 649 /Height 256 /BitsPerComponent 8 /ColorSpace /DeviceRGB >>}%
+\PptDrawTile{B1}{0.394453005}{0.211093991}%
+}
+\expandafter\def\csname PptDataB2\endcsname{%
+\special{pdf:stream @PptB2 <
+78DAEDD741B2E230104441EE7F69B3604710204B6A5CB232B7B3FA358E7EE838B8C6A38195BA27DDF643F2FF4EF5A5B209BA8C13EDAFF6E324676453
+A0CB889430F9AF072EEFB2891C677FB811809C34DBC771F687DB01D06567F9367FBE6FC00EC0AC2E1BC75996669F01A0CBDAE4CF9766C0D1D0650759
+9A7D09802E3BC8D2EC6300F8D965B338C5D25CBA861D805369B6893403201F1E8C00F05610234833006C92663B000069BF4FFC44010069360B006890
+5900D0A0A567B10C000294B68C7100FE70758D20CDD20C9076724D6110BF5B009448803C9C0190219B1807C093597DEC03801BEBE74AF56763250069
+364B5A9ACD0520409651670001DA363A069166006996E6158B6C31005D96E6C02E5B0C409AA5599D0174D93E96916600E9B9641F53F4D5D94A00D22C
+CDEA0C20CDD26C1F6906A8B8AB06A1A2CE26026839A4D28C3A03449D505D469A01C24FA871A8ABB37D001C4F7C5D00AB1F4F27F4FB6E76506700698E
+1ACD14D20C20CD69A35963E41B330E404797DD4F695667004F6669DEE763B30CC0A9349B489AA519C09379ADDD0C32FEBD1907409ABD9A3D9C01564C
+B389A4F93F5F9D59005AD26C1F699666006996667506701EDDC9F1C55EFF6A22690690E69CC5ECA6CE00A56F40FAD26CBD913D6D02B88ACAE2D51C35
+A9410027515CA4D9C31920BC329691660F6700699666AB1A10700C65459A3387B506E012BA8AD21CB5AD2900897112A5396A5E3B0012A32973EB6C22
+00743927CDF601604A5C6C22CD0048B33403C0C7B818449A01F064966600F064966600A4599A01A0BD2CD6985E67E300D09D155378350320CDF7AEB3
+6500409A0100690600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0000000080453D01017E60BC
+> << /Type /XObject /Subtype /Image /Width 649 /Height 137 /BitsPerComponent 8 /ColorSpace /DeviceRGB >>}%
+\PptDrawTile{B2}{0.211093991}{0.000000000}%
+}
+\expandafter\def\csname PptStreamB\endcsname{%
+\csname PptDataB0\endcsname\global\expandafter\let\csname PptDataB0\endcsname\relax%
+\csname PptDataB1\endcsname\global\expandafter\let\csname PptDataB1\endcsname\relax%
+\csname PptDataB2\endcsname\global\expandafter\let\csname PptDataB2\endcsname\relax%
+}
+
+\ContentPartC
+\newcommand{\PptImageC}[1]{\PptImageBox{C}{#1}{0.491694352}}
+\expandafter\def\csname PptDataC0\endcsname{%
+\special{pdf:stream @PptC0 <
+78DAEDDDD192E220104051FFFFA79D376B4A0D8949A01BFA9CC7A9ADD9085C21EEAACF27000000000000000000000000000000000000000000000000
+0000000040A4C7368303810D1A19C8B015B2246B5E86C890468006A4C8D3AC31D1206619F362FB43809865B363764C31E608536C760C889B41669F1D
+33EE69960CB3F3FF179A770112323BAF5F6BEA9D42897A862C32FB6F0F33CF4316A0234AA9DDF06D24C31FAF0035B8B53865E8142ABDC153536A3D84
+67F839D4DE5B214319CA10B7097532DC2AC8FB0D0528C379A7589BD335685EBE0EF81AF3ABC7593641D351EA9C23C69C13642E6ADE688831CF049985
+E22B5F8C1946C31454DB04C5986D576AFC2B956A0A3ED7B96D94A10C65582DC0E7DEFFD9D04ED9C35EA918F33C4CDDB9E3AEF9EA41D787F6EB53990C
+BDD6512DC6F1FF3166F72F92A1B55AEAD18D7FAFAE0C2DD1355ECA98719A64E8142AC3F069726F68131CF63C6F9A6E1925190AF0DC6337593294A10C
+934F930CDD0C6A304383C7FF6A19DA0405E8765B801A345332740A9D3DC005E64886B6BFA917C6023395F6E203AFCA7B606779E00F6AA87C0CD02075
+02CCB3E6677C69F1F6EFD50D3FFE79DBEFF5F57062317FFDC36F3FF1017D32A45F865B632EC3A8A94CF26288186F19C38327CF0C199AEEF0061B87A2
+1EDFAA20C3AD1FB67F43EF77886B30F367D12C73F00ECCB0710B139BA10053ED1107DF177CF1528B7F3762B6DD5083D9CE69072FE3628C32FC2CABF1
+937E190A30E78DD2898B3991A44F87F829CC46926ECF971C8D2B1BDCF1CFD930EF5B4377E4AB7EED806B3778FD928EAC166B2043F286428696810C35
+D8FBAAFCA3BF256740925C98182D390392E4DAC4E8202AC324D726460D6A70378D316FCAF32E5A01D669D0DB6931C2631A4C15823605B85E806557AC
+60D5274319CA70E1F1B971ED155F63064783B7EC8356D498309DB5B0CD9D1EA8730BACE6F05A3C17EB334A5F5B6B7C2E848D528317978131F9F5D07E
+E3716BBD24ADAB25CFEAA9BE02B5EB652C90A406AB9D09D7CB70EA240558F34C58E1027693D4203294A10C65B8FCA9387F92029461E095E4BC2F1B16
+A6FACA96183BEF53BC6839A6470D962DD1BC27E9D144D81309ECD19321F6C4D81E0D3EF4EE518090767FD42004C62840902148528690274603020000
+0000000000000000000000000000000000000000000040067FE99CD42F
+> << /Type /XObject /Subtype /Image /Width 301 /Height 148 /BitsPerComponent 8 /ColorSpace /DeviceRGB >>}%
+\PptDrawTile{C0}{1.000000000}{0.000000000}%
+}
+\expandafter\def\csname PptStreamC\endcsname{%
+\csname PptDataC0\endcsname\global\expandafter\let\csname PptDataC0\endcsname\relax%
+}
+
+\ContentPartD
+\newcommand{\PptImageD}[1]{\PptImageBox{D}{#1}{0.740716612}}
+\expandafter\def\csname PptDataD0\endcsname{%
+\special{pdf:stream @PptD0 <
+78DAEDDD4996E3300800D0DCFFD2EE55AFBABA624B2021FCFFB6325490308897E1BA0000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008AFAFC251400000000CB2C98C67C7E
+22F200000000793EDF643F97250000000008F779E89707997C466B419144100D000000FA9D76A30C3FAFE5A04E3A88060000009DCEB98B873FDEF643
+FDA4100D000000DA1C720D7FE0DF9D291A000000F438E1DE9CC3040E7FD67C9B344CA646FD9CB55E0030535B050180971C6F03E736863F34CB8E82E9
+296B0020B0E08A03006F38DB0E9F22674EA38EB19C92207512D3FC0700322AAF3800D0FE603B73784C1AFE58204AE5C8F6AC34FC0180BCCA2B1400BC
+E1603B7978F4992FDAE7C8C67C34FC018006B51E00B617BBF9C267F88386303C190D7F00604D09160A00DA9F6A0D7FE0EBFEDC928C263F00B0AC040B
+0800BD2BDDAEE18F032C0765CAAE7C34F9018005F5574000685FECA26A5FD4DB7E2C100533654B329AF900C0B2122C2600B42F76863FF0FB165D9C89
+C3B7040006EAAFB000F092925764F86375A89929CBD250CA00C0FA4E5858007849C9CBF8DA9FD8DBC3C64CA9D0796A560120AF131619005E52F26287
+3F8EB174CA94226DA7AC01802D251800DA54BDC90AE86D3F34CE940539987A4700C077E801A0F0C5CE7F9EFE0F1685E299B2200753EF0800F8F54C00
+14BE903A68F8C3E91B3EC39D7F69F2B558650098E907C40700C7E1EC6FBBB51C94DAED95873F9737FF004042332044003811879745A596E25B7DF1F0
+67FEE558650098690684080027E2F0CAA8D4527FABE70D7FA23E5C298F0048AA928F6EDFA313B0130070280E2F91EA2CC725486ADECDE7ACC50220BC
+F77B7AC7A35FB2BD01801E20BC4A2AB21C971DA949379FB0160B808CAEEFCAFCA19052AFDAF600402790F48BF022CF41A9919A74F3D96AB100C86EF9
+4E9CA21C3DB602806ACDC0C073893967E5456AC6CDE769B5170840CB96EFAC41CAE9EF59028082CDC0D3271270CE4A8AD4749B4FD2C064B7EE005ABE
+1EF31FC31F00C8E807EE3F8538735C3AA426DA7C7AC6E6B8A507D0EC9D3EFC39FAD36A0050BC311037BA6641767ECDA4E4F0F3DEFC13007ABC814738
+EB35DA1800E80DD44DA4C082FC1A4EC6B1671CB801001ABCCBF0070034094A274D77FE82B41ACBC1C097239701F475770A4DF19ED0DBD70160411915
+2B5A6EFB6569F528F5869FEBE6FF630F00BCB9A9BB5F2F0C7F00A054AD5F5049C59996ED71A90675FE17BE6EFE33F60040EFEAD66FF873FACFD30340
+8533ACD289C429D2A64E3EC5CCCD006853DDC66A4DD971CAE9BF4D0F0081757041551573FAE54EA9667559336C0F00F46E0BF3263FEB8B88C90F004A
+7C6C7553407961FA6CEF5AB7F4C3F60040FBCE30E3035FC7BDED47C903A05F895F505B859D7EE9D3AFD5B7BE00DAC236C39FCF34DB038066553EBBC2
+8A392DD3C77500807E6DA1CF7CA98C00742DF1D91556D8699941CD2E051617406768F2A32C02D0BBC4A7165961A7650635BB14585C009D618FE1CF27
+88ED0140BF129F5A67859D9619D4EC6A607101B4850DBEEDC7E40700AEB4E18FD209A75F0D0404405BE86D3F2A2300EDAB7CC6C30A389C7541F87A4B
+410368DF139E3BFC31F90180AF35B1D46302BB2E08BFDF40D000DAF7843EF3A5DE01D0BBCAC73EAC80C3A19785FFFD49B800DED3161E37FCF944B349
+00685CE5A31E53B4A159FF2F50002EFE8FEEBBB27C98FC00C0D39A18F280020E6D2E118203F0DACE70B2ABFCF1DDA47B1B5DF31F0094F8A8EFF7136D
+0080D3DBC290AEF2CAFF7DC9FB7327931FE0BE3FE46F5731
+> << /Type /XObject /Subtype /Image /Width 1535 /Height 256 /BitsPerComponent 8 /ColorSpace /DeviceRGB >>}%
+\PptDrawTile{D0}{0.225153914}{0.774846086}%
+}
+\expandafter\def\csname PptDataD1\endcsname{%
+\special{pdf:stream @PptD1 <
+78DAEDDD4D685C597E37E086ECB2CB76D65906B29A6598E5AC025965318B2C66D559D894306A0432414646C8B851616CD41819199BC28D1BE1414650
+7850636C34C808051B314641205A084C8440C120040291AAF7D29714F5AAA4AA5B753FEA7E3CCF62E8914BF571EE39A7EEFFA773CF6DB7A190BEC984
+76060028C769614A6795697F9644DEAD4E0240B9BFE5253F0000CE098B15FE24FE56F513004AF35D9FDB2F710000B239211CE1EC2E57C94F9C0FDBE7
+01FA0900CE077C27020094FB642F91D3C5B19F40467933CE7501C03720004059CFEE320E7FF2F661FB3C4C3F010000000A6A5CE14F0E3F699F07EB27
+00000040112515D414627FC8A1DE92F0070080F84E4F4FBF0CE9E3C78F9BD1ECECEC6C8E24F8C52FB1B55A2DC717A02892CA6AF2BF4BE4B06F4CF803
+0030465FBF7EBD3273B89463BC7EFDFACD9B37C17FACACACBC1CC68B172FEE0F697676F6469E3C7EFCF846914D4C4CDC8F6D7979F9E5A89E3F7FFEE0
+57AF5EBD5AFBD55FFFFA57430FA860FE936C8E94E78CABFF6FE924008028264A14135A5F5FBFB2D6AED7EBBDC5FBDCDCDC0D2A19FEE459AD56EB74D1
+46A31176E0A0635F5A3A757C7C6C7200E448F9094F62EE68E4C80200451414A71F3E7C585959595E5EFEE1871F1EFC9FA74F9F8A62843F246B7E7E3E
+1C44CF9E3D0BC3A266B3198645DBDBDB9DBCD4BC0430AEF0A74FBC23FC0100C6E2E4E4A4532D1E1C1C74AFAB595B5BBBEEDAA5E9E9693578753C7CF8
+502314D7ECEC6C386C979696C2E1BCBABA1A8EF1ADAD2D7B2B016496FC747E5D1B0200D19D9F9F775F18B5BDBDDDC96DDEBE7DDB7D195450BC5B72C3
+C8BEFFFE7B8D501DB76FDF0EE78AC5C5C57002595959E9CC2D878787E18413CC3F266140F893C34BD200807CBAB4EAE6D3A74FDD5B0A2F2D2D752FB9
+A9D56A8A53843FE4C7F4F474383BD5EBF5CEC4B5B1B1114E68FBFBFBE114777A7A6AB607843F00409974762DEEDC4DFBD5AB57614DB4B0B010164A2E
+B141F843054D4E4E76D2EC4E58B4B5B5D5BD67912F1140F803008CCBA5253A9D4BAB969797C342E6F6EDDBF12BA3C5C545E521D1377289EEC58B1743
+DDA0BC73B1CF870F1F3A57FDBC8CAD335EE2989898D007CAE4CAD03BBC00ADB3A0285C4DB4BBBBDBB9FDD99B376F829F075371783D9A7BA201634F7E
+843F00904F7196E8A4E4C183072AC16CCCCDCDF5A60ADD97AE740B3AC6EBD7AF372308FAD29721B922267BAD56EB4B6C3B3B3B51BA44D07F3AB7C09B
+F955D0F72627278DC134563CDEBA75EBEEDDBB4153371A8D4E2E747474A4CF0319843FDA0700327676761694669F3F7F0E2F254863894EFE8BA01247
+31EBEBEB5756D95756E85FBF7E3522C8ADD3D3D3B0A3EEEFEF87DD786363A3D3D5832150855BEC3D7AF42883579998980826FF7BF7EE05D3ECAB57AF
+D6D6D60E0E0EE44280F00700722E28970E0F0F835AE9FDFBF74195F4ECD9B3A0449A999929F45A9A62BDDB5AADD6B98958D0F24155D559E110945757
+A631A21888A3739BBF70F60B7576895F5C5CCC7FC49DC3D0FBE6CD9BB76EDD0A26B1BB77EF3E79F2E4F9F3E7EFDEBDFBF8F1A34BC980E8C98FF00700
+46165E96155E93155E90155E8D95C3BF29177173DDEEC53641F1D5BDB426BC5C22D4D985D52D9EA170BA2F700BF7550EACAEAE5EBA9FE0ECECEC18E7
+BD7ABD9EFF7DAAA7A6A68239F3C183074F9F3E6D369B9D1BDF9F9D9DE96620FC11FE00407F171717C1C9F3DEDE5E7022BDBEBEDE294612BCC6A1585B
+28478CB63AB757EEDDCB776D6DADFB4AA8838303AB6E80E83A33C6F6F676388D349BCD707A09175806E6E7E70B1A7AA7B70CB2B370A8B33DB5B41C2A
+15FE681F00383E3EEEFCD139382B7EF1E24578A1905D74C2DBD904969797C3DAEADDBB779DDC26BCAF4D878E04E47686EFDE013B4CF2038D46A39351
+D76AB5EB66C264A3A43CB879F3E6A55C687171F1C71F7F0CD70BD9E31D843F005002E1ED771F3E7C189CEDE7E18E360B0B0BD9AFDE0904AFDBB951D4
+A5FB405981035456E7368BBBBBBBE1DCF8E73FFFB9F37781C0C4C4441576B90FAF237BF4E8D1EBD7AFB7B7B77D2F80E407008A25FBDBA3F777EFDEBD
+3496E87476C5E95C57E5D0032425BC6963675FEB70DBB7F0BAE0F2AD14EABE25D9F4F4F4DCDCDC93274F828F1CFEC9406780FC873FF21F002AE8F1E3
+C7B93A97BE73E78E253A00E5135E7116AE20DAD8D80867F27ABD5EB8FB9D45B98E2C5C29F4C30F3F845F55E1DF1DF401C886E407007A05E7DE79B833
+4BE70E56ABABAB96E8005453F7E6D5E155C925BBBEAC56ABDDB973A75EAF071F6D7D7D5D2E046910FE0040AFE0EC3ACB3B958737BA0A4E77B7B6B682
+D3DDE3E363870080884A7C7DD9C4C4C4BD7BF7161717E5421093E407007A05A797499DB88637340F4EC23B27AE7B7B7BC189EBC5C5857606201BC35E
+5FF6DD77DFE53F170ADEFCC9C989830B51087F00A057707A3CECBDB1C25D77C27D0CC2FD766CB6034081745F5FF6A73FFD29BCCD7DCEAF2C7BFEFC79
+B3D974ECA03FD77C01C07527C0974E2F6766668273E067CF9EBD7CF9F2FDFBF7C189F1E1E1A195E70094DEF9F979F07DB7B5B5D56C36C3ED86A6A6A6
+F293FF4C4F4FF72F751D4110FE00C0955AADD6E6E6E6E7CF9F83D3DDB3B3330D0200DD2E2E2EC26542EBEBEB2F5FBEBC7FFFFEF4F4F458C29F7ABD3E
+54A9EBD85141921F00000092F2E5CB978F1F3FBE7DFB36DC5368666626EDF0A7D1680C5BEA2A7BA914A300000080B47DF9F2E5F3E7CFE146D30F1F3E
+9C9D9D4D30FCE9DDF3E79B51395294926E0F0000C0581C1F1F87771F7BF9F2E5E3C78FE7E6E6460B7FB6B7B7872A756541548D7E0E0000407E9C9C9C
+ECEFEF6F6E6EAEACAC2C2D2DDDBF7F7F60F87370703054A93B5A0AA446A6B8843F000000E4DCD7AF5F0F0E0E363737575757979797EFDFBF5FABD53A
+E14FEF7D19BE499F834251E8CC00000014D4D9D9D9E1E1E1E6E6E608D5AEA5415487F007000080AA95BAE2208C08C90F00000025AE76C79B0851CDDE
+98DBB1E00001000050F4BABB9DE32C48015EE28E979303ADE301000050B592BC5D902C48615EE86E26FC29C45400000040450AC06F0AC2F12A50BFCA
+CFD1D4A906364BF7FFD57B010000D4EC16083154AA705DD7CA4997768C340B0000802ABE881CBBB1F79981DD290F7DD891D2380000000C552D5A2044
+F4F0279B2322DFD038000000A451364A84F48A88DD66BCBDD4F1D2380000002452628B832AD81322F616E1466E47AEF601000060605DD9B640A8C261
+42F4C041B89187E3A57100000048AAD86C17361172F8A28709C3660E19271B0EE8C026D23800000024587EB68B1607B5AD051A94270C9B39649C6CC8
+37063691C6010000608C65A9454185386A431DDFECBB9083D51E77F8D37915870300008088E5BC3828570768D843997157319ADA59E5635156F73916
+0000008C5C540A82C612268C90391431D6C8DB586847BBEC2E4A2B65732004410000008C5C6CB6731C0AB5CB7B9D4B9C953FC9B649A51286D13E66DA
+ED233205000020CBD2B82D0BCA3C854836A94836792853DF1E394E49AF7D2C99030000202755733BAF895039B288119281CC22917274E07CF6C07C8E
+854BE3DD04080000504DB98D838A1B4A8C100E64108C94A3AF163AFCE91E71117F2BD91633DD010000D0CEF1A2A03C97AE435D67D44EED9E5F250E7F
+868A2847EEC629BDB781BD378D77E89A32000000622609B2A0FECDD5FBC381CD9BF6F12A716FBCAE3F6493FC24F2B489BF4F7B0A010000304291DBCE
+7D2294AB74A27DFD5E2B63B9C954A1FBDEC81F6DBCE14FB21F33E273DA4D1A000080A4EAF1B66BC4A255DC117F25D584A4B8DD2CED30243FE14F229F
+57EC030000C078EBF472AF028A59A7A7DAF825EE5449F5CC3C34BBF0070000809295ED25BBF82B7E9D9E526B97B80B25F554F969F694921FE10F0000
+0039A9E5AB1CFEA4D7B665ED306379AAB49B3DBDDD8D4C41000000E4ADB42FD686CFEDE1C31C2B7F62768FA49E2AA57798F1A114FE00000090F34ABF
+1D2F0ECA616491C6E3AB53F567B6EC27BD7798EC3E4271DE8F1906000080C215FE85087F4628D8D368AEB2F681A49E2D27EF70E0D356B00F00000050
+1DFDD7056596428C50B927FEF88A14FEC9C67DE9B54F96F94FF66F03000000C6980C74FE37E3206284B27DA8C7E7277F18FB21CEFF6ECFED74AEFC4A
+7CB71F3306000000442FC6137FBCF067B40F5594953F89843F71DE86F10B000000D755D3D755D68917EFA9863FC56DFF6C36FCC920FC891F558DFC1E
+0C6400000048292EC8ECB2AFB26EF65294F0A79D42FE93C8055F8630000000C4A9E5877D92E80F4EFCDD96F2288CF7D946EB33295D0628F901000080
+B154F1D11F9FF35823B7C722A9A7CAB8DB24BB6CAC2DFC01000080E4F281DEDBCD0FF584511E9978EC50CAC391AB6BBE22BECA6879CEB02F6A140300
+0040F4CA7DE083937A4ED77C8DF0D1C6F554718E4506D79A19C800000010B18ECEF2695DF335ECA74BB095B279C3D96C346D14030000401A7574CCCD
+7FE25C1054E2653FD7355D22B74D4FB58932CB7FC43E00000010A7601FA1C08F1F08249B2A94231348FC9EE9E9A57CA31DACF82D33EC7B030000800A
+8A7E71567BD4E528D9273FE55EF913F1D325D23E696C3414FF4859F30300000023D7E9DD3F4FAA90CF3EF9B1ED4FB2B75C4FF672B344763132720100
+0060E43A7D84FA7DB4F53FC9660895BAED57FC761BE119127CFF316325C316000000122FCF334E5ABE4947698E4EFCA61BF675533D8E433DA1310B00
+00006994E759062CDF64A5D007284EEB8DF08A691F4D231100000032CE16C618AA7C93AD76BED793447FFF295D9D27FC0100008042CBF38A9A6FC6A1
+0A876984174AFBCD1B89000000909F6061E0EFE6E14D962C052A7DF823FF01000080F1660BDD8F1CF8BB637C9FE50E8232F82CE3BA94CF1804000080
+116AED76E45B63E7E1CE5031D383EA6C10945EFE33C67DBC8D59000000C8A6CA1EF906DC2915F2DFE4DB788FF2752D3FDADB1EEF26DE862D0000008C
+960664536BE767ABE7B66DA2A335E0B0AD9DF15B0200000086ADACD3BB8229D99D81DBF1929FF8CD52919DA24768A854BBA8210C000000712AEBCC2A
+FAB17C84985B195724088AB9F227D5836BFC020000C008A57DCC8062E0D2A0A44AF8B1242DD6028DD61A49F54FC90F0000008C56568F567D0FBC08A8
+FBE7EDAB2ECE4A360D186D3F9F915BAF9D6116D4CEC1CDC2E21C8B349EDF1006000080E86575523578AACB5A52DAC939CB0CA49A7B44A7B4C2CA2806
+000080889575CC4A7CB428208D6C615CE14F526FB5E8295094A648AA258D62000000885E59C72CC6872DDB134C0022BED05832848AA74071DEB3D807
+000000922DCCE3D4F2C316EF89E406C34622634F125C1416676996F00700000062D6E3F1ABF8880F8E1F14249BFC8C2549A8DA5DE32B72991B000000
+E44AE2DBEF44796436F940FEC39FB43F789E9313C90F0000008CA5068F5FBCF7FF9534A280446E4096DB23622190CC0700000012ACBEE317EF692700
+69243FB90D164A1F045D778C3AFFDDEE9B1902000000C3C60B317F3D91F828A534A3D04B4ADC351E000000482A5588F3EB09BE0DE14F660D25080200
+0080228A78D54CCC923FD9B8602CC94F41238E8C23204110000000E43C1C18364318398248E9FDC75CAF52E2F52D55BB5F3C00000054D968057B8257
+7E65F98986FAA4158932A4400000005062714AF5914BFBF4D280641389AA25185220000000A866BD3FD4EF8EF08A638F2F46782ABD420A0400000085
+ABF1DB43E639A3D5F229D5FE89270FC28A980D2B05020000805C55F4FD2BFD113281282F3DF67462B4E7D467A44000000050A02A3E4A8D3F421A30C2
+4B271E4AB4478D714413A335B81408000000F256BF4729ED47CE01063E26D51422CEAB8B23E2B7BF1408000000F250B38FF680F82140AAB14394478E
+FCFCFA4F527D400A040000001914E96329FCD37EC5818F4CEAC989DF190441000000906A799E7DE19FEA4B447C7CB22FC1C89D410A040000006997E4
+19D4FBEDBE5B0C25152644FFAD382FA4FFA471ECA440000000906A199EF6AB64901E44FFC5F45E88F8C7510A040000809239F1EABB048941F4DF8DF9
+5AFA619687551004000040356BE434CAED42470489B79E0C2157C7570A04000040054BE39C3C6106A5742285FC080F161D8CABABB7B3CA82B4360000
+00F92987132F5D130C7F522DA2932ADE853F65EAF952200000002A52FF26FEB4233F49F685FF08CF36F63627A5CE2002020000A0AC356F1ACF3CF293
+E4FCB35BF65385112102020000A07CA56EE2CF3CF2F364F6A9C7DBE6FA6451868608080000807294BAE37ACE948AE53C94E40281D28C0E2910000000
+25A870D32B9987FADD0CAAF83C24093A6111C7881408000080A2D7B62955CAD17F3783B23D27E9811E58F4C12205020000A088C56CDA05F2C0DF4ABB
+4ECF4962A007966CE08880000000284A199B415DDC4E277A6AE76CA58D62BF82C3470404000040210AD83156C4E9BD74DEC2017DAFF4E3480A040000
+406E8BD67115C2E9BD68DE02011DAF9443A92D05020000209715EBB86EB35EE2D867E01BD3F12A38AC4440000000E4AA50CDB2044EEF25725BFEEB75
+951D59522000000072529F16E225F25C26ABDF89D8514540000000645F9CA6FA421914D439AFF7F537034D0A040000401E0AD28256D0DE21051D7122
+2000000032AE468B5838E7FF4D3A8E44ECCC52200000003228420B54297BAB6281928D3E291000000069979FC52A908BF256C79B1EE8EA851B862220
+000000522D3C0B511417A884CFE6E5FABF0D5DBD8823510A040000404A25E7750FCB492D5CB8E23DEDD71AF9B052AC8E240202000020C162F3BAC7E4
+A1F82D5CC19EEA6BC539AC146E604A8100000048AAC0BCEE61E3AD790B5AA7A7FA5A43BD2B1DBE3423540404000040CCEAF2BAC78CABD42D6E859EEA
+0B8DF0C674F8D20C522910000000314BCB2B1F3096F2B6D08579AA2F94C6AF50DCCE260202000060A88AF2BA0724FBD20B0B0BED22273F6DE10FF9EB
+758220000000A21492573E20C1173D3B3BFB9BBFF99B1254A3B94D7EDAC29F4A8E5C1110000000D14BC8DE0724F58A9F3E7D2A4D055AACF047755FA9
+212C02020000A07FE5D8FB80445EEED1A34755487E520D7FE2BC3D1DBE6A035904040000407B50FE93603DF84FFFF44F65AA37F3BCECA72DFCA9E440
+6E279D026955000080D2D48C699781272727E52B33853FE4AD370E3BA8454000000055AB1C53AAFEDEBD7B57A9E447F8C3B8BAE208435BFE03000050
+CD1232C1D26F6666A6947565CE939FB6F0A77A2377E4D12D02020000A85A099954D1777171F1F77FFFF765AD28B3F944C21F863AD031FBAD08080000
+A06A85649C42EF975F7EE95F3FFEE10F7F78FBF66D695AC9CA1FC6DE1513ECC32220000080D297939DFF1DCD4F3FFDD4BF6CFCF6DB6F6FDCB8B1B8B8
+58828A3BCBE4277EF8A3662FD9508D797045400000008CE08F7FFC639F52F137BFF9CD8D2E474747E528BA330B7F626EF8AC5A2F8D048FAC08080000
+80882E2E2EFEF66FFFB64F85F80FFFF00F37FE7F8D46A3044577C6E14F9CAD5DF4D27248E3E08A80000000E86F777777606DD86C362F853FB55AEDF4
+F4B4047577C6E18FF2BCE2D23BB8BA19000000577AF2E449FF62F08F7FFC63FBD7A54193939397F29FD5D5D512D4DD85487E54E5255094EEE7480100
+0094C9EF7FFFFBFE65E04F3FFDD479F0EAEAEAA5F0677272F2E2E2A204A5B7F087F1F6C0EC3BBCCE060000507A676767030BC05F7EF9A5FB57AE5CFC
+B3B6B6A6F44EB0E8568F97D5B80EAECE060000504D9F3E7D1A58FD5DB9A4E7CAC53FE7E7E745AFBEB379A16C7E3DE70E0F0F171616363737AB36E8C6
+98B4087F000000AA2628BDFBD77D737373D7FDEEE9E969AD56BB94FF4C4F4FABBE07BE50C6CF9043272727CBCBCB619FB97DFB76812E184CB5EF6576
+70853F00000015F18FFFF88F7D2ABEDFFEF6B7CD66B3FF33341A8D1B3DFEEBBFFEABD0D57706AF95F133E4CAC5C5C5DADADAA5D8F0CD9B37151974B9
+4A5A464E7E0E0E0ECC9F00000039777272D2BFE2FBD77FFDD7A0249F9D9DEDFF3C474747BDE1CFFCFC7C710BF00C5E2B91775BD08EB7B1B1313535D5
+DB672627274F4F4F4B3FEEF2B9D266D837F3F5EBD75AAD363737B7BDBD6D2E050000C8A777EFDEF52FF7BEFDF6DB4E553E70F14F5003F6D6F25FBE7C
+29680D9ECD6B65FC0C79B0B3B3333B3B7BE37A2F5FBE2CF7B8CBF93556D1DF4FF77ABFE0988A80000000F2666A6AAA7FED79A924AFD56A272727D73D
+5BABD57AFAF4696F21FFE8D1A382D6E0D9BC5CC6CF305E5FBE7C595858B8D1D7ECECECCECE4EB9875E2136D889B8ECA7F7F08980000000F2E0E2E262
+60E1F9F6EDDBDEC2BC5EAF5FF984BBBBBB333333D795F347474785ABC1337BB9F8EFB6105DEEF4F4F4C58B17FD639FC9C9C9F5F5F556AB55EED157AC
+DD95232EFB1101010000E4CD870F1FA2DCCFFDCAE26E6B6BEB5251BFB4B4D4A7A27FF6EC599FF542B9ADC1B379C544DE70CE3B5BB8ABF3C4C4449F4E
+52ABD5565656CECFCF4B3FF44A736BAD2B97FD88800000000A517E76DFCFFDECECAC774BDEE0279D22FDEDDBB77D8AFADBB76FE733F689D20ED9BC62
+FC379CF3CE76DDAECEDD969797F3DC4FB2EC75053AB87D96FDF44640971263000000C655787EFBEDB71F3E7CB8F42B9B9B9BBDD55C50F71D1C1CCCCF
+CFF7A9F8BEFBEEBB9CFFD13FFBA2BB52E1CFDEDE5EFF5D9DC39BC11D1E1E1A7D854B7E2E2E2E2627276F0C430404000030F6DAB337F6E9A8D7EB3786
+F4F2E5CBFC5FC223FC49C9D1D1D1E2E262FF1E72FBF6EDAA4501571EB2E2E63FC1007FF5EA55FFABF9444000000063293CAF747676D6E7778F8F8F07
+6EEED1BD96E3E0E0A0E80D92D98BC67FC3B96A55BB3A27D80F0BF1FE4540000000F92F3023D698CD667360411714806FDFBE55740FF5A2F1DF704EDA
+D3AECE31FBC3753F290411100000404EAACB38B941ABD5EABF7FCBD2D2D2E9E969395A26CB178DF98673D29841097FFBF6EDFE95FEE2E2E2F1F1B121
+79DD31EDFFC34210010100008CB7B48C9F1BECEDED5D59BBCDCCCC7CFEFCB9CA2D13E77563BEE7B1B764D02BFAEFFB1D5E09183CCC78EC7F407B7F5E
+D0CF757E7EBEBABA2A02020000C8B8AE4C2A31B8F2E6CE9B9B9BDA277EC93FDA1B1E631BDAD539C19E70E53F15FAD389800020A6D3D3D32F43FAF8F1
+E366343B3B3B9B23097EF14B6CF67E04C879B871767636353575A95E0B7E52B85D5CFA34CE1FFEF0872C5F3ACE1B1E635D3F7057E7A0EAB7AB73F463
+7AE53F95E0338A8000188BAF5FBF5E99395CCA315EBF7EFDE6CD9BE03F5656565E0E233811BA3FA4FEFB2764EFF1E3C7378A2C38BBB81FDBF2F2F2CB
+513D7FFEFCC1AF5EBD7AB5F6ABBFFEF5AF861E5082D8A723F87EEC9D7E1B8D46699A28E3953F515E2E3FCB7E5AADD6FAFAFAE4E464FFAFE3E08CA858
+1B408DBD135EF980D27CD8D122A0999919111040A5A2985070A67165AD5DAFD77B8BF7B9B9B91B5432FCC9B35AADD6E9A241951476E0A0635F5A3A65
+334C20CFC94F28F8F2ED9DE5F6F7F7CBD14ABFFFFDEFC75EF84779C3D9B75BC45D9D8F8E8E8CC4A18E69453E7218010D4C0E454000391114A71F3E7C
+585959595E5EFEE1871F1EFC9FA74F9F8A62843F246B7E7E3E1C44CF9E3D0BC3A266B3198645DBDBDB9DBCD4BC04B4B3DDC4E6F8F8B856ABF55EA951
+8EB63A3939C9FE0DE43CFCB1ABF378D33F119008086028C1C94CA75A3C3838E85E57B3B6B676DDB54BD3D3D36AF0EA78F8F0A14628AEA0F20A87EDD2
+D252389C83F3AB708C07A74CF65682CA863F69BC5CB3D9EC9D85821F9620FCC960FFA2A18ED178939FE0EC717979B9FFB7CFD4D4541137FDCE490FAC
+660B8C1601058FDFD8D868FFFAC768BD0828F10CD97D61D4F6F67627B779FBF66DF7655041F16EC90D23FBFEFBEF354275DCBE7D3B9C2B161717C309
+646565A533B71C1E1E86134EE1F67105994F06A565ABD5EADDB6AE56AB65B06C26D516FBDDEF7E77EBD6AD1F7EF821ED452C118FD418939F60F20FBE
+147A97785DDA6A6F6D6DEDE2E2C24814FE6416013D78F02018A4F3F3F3BBBBBBFA12905B9756DD7CFAF4A97B4BE1A5A5A5EE2537FDBF6D41F843C6A6
+A7A7C3D9A95EAF7726AE8D8D8D7042DBDFDF0FA7389B7C424E728CB45F7D6F6FAF77A208E68742375AF767B973E7CEDADADAFFFCCFFF8C31FF19CB91
+B5ABB3E427E308281868C34640A1858585C3C3436D0864A3B36B71E76EDAAF5EBD0A6BA2603A0A0B2597D820FCA1828213B94E9ADD098BB6B6B6BAF7
+2CF22502054D7E428D46A377ECE77C6B8E3E8DF6777FF777BD1FE7D6AD5BF57AFD975F7EC9E69D8C3DF9094E68EDEA2CFC295604B4BCBCEC7E19C0C8
+2E2DD1E95C5A15CC2D612133F06B318AE0AB5379C8409D8D5CA27BF1E2C5503728EF5CECF3E1C387CE553F2F63EB8C973886BD3128397765E81D5E80
+D6595014AE26DADDDDEDDCFEECCD9B37C1CF83A938BC1ECD391EB433DFE4E74A676767535353974674F093DC5E2EDA3F317BF2E4C9AD5BB7AE9BBEE6
+E7E7B7B7B7337E4B591ED960765D585818784EB2B3B363F42575B83548821190A56840479C253A2979F0E0814A301B737373BDA942F7A52BDD828EF1
+FAF5EBCD0882BEF46548BE95B2D76AB5BEC4169CEB46E91241FFE9DC026FE65741DF1BED1CA652E1CF68821AEDEEDDBB4153371A8D4E2EE48FD15439
+F3194B2D190CBDDEE1198CCA82B65EF095117CA23EBB264E4D4D05C5E9D9D959F6F94F7ACD127157E770AF5D923AD65A23F10828DC84CA5E855062C1
+F76F509A7DFEFC39BC94208D253AF92F824A1CC5ACAFAF5F59655F59A17FFDFAD588209173B3349EF6F4F434ECA8FBFBFB61370E4EA43B5D3D180255
+B8C5DEA3478F327895E0F42F98FCEFDDBB174CB3AF5EBD0A4E050F0E0EE442487E52124C5FBDC33098E88AD58097928DE3E3E346A3D16721D0F3E7CF
+B3CC7FD2ABB2EDEA2CFCC96D04D46C36FB8CC13E579D07E5837B9B42F9147A2D4DB1DE6D7062D0B989D8CCCC4C505575563804E5D595698C2806629E
+F68443E9F0F0B0137B7676895F5C5CCC7FC49DC3D0FBE6CD9BC199643089DDBD7BF7C9932741F9F6EEDDBB8F1F3FBA940CC9CFC882E1D39B1ECCCECE
+96A00183FA716363A3F7BE66A13B77EE24BB7759C60737F8680317573C7BF6CCA265C628E87E8F1E3D1AE13E38C1D951CEF71F0362863FD9FC4D3929
+596EAEDBBDD82628BEBA97D684974B843ABBB0BAC533144EF7056EE1BECA81D5D5D54BF713BCAE8AC9C6952B0472252885A6A6A68239F3C183074F9F
+3E6D369B9D1BDF277BA10724955AE461094130527A4753F0C3A2346330E4FBFFEEDEDE5E30275CB90DDDF3E7CF0BB72A66676767E07781FB28911F27
+27279DBD526FDEBC39D4CE9976A982B2863FC5DA4239E22E439DDB2BF7EEE5BBB6B6D67D25D4C1C181553740749D19637B7B3B9C4682622D9C5E9E3D
+7B16CE39F3F3F3050DBDD35B06D95938D4D99E5A5ACEB8528B9CBCC356ABD51B2604832528D90AD18C11D39BC3C3C3A5A5A5DEDA737272F22F7FF94B
+21FA925D9D29AEA05BAEACAC04354E500D0DF5C51DF4F9A04AD28050B2F027CFBBE884B7B3092C2F2F87B5D5BB77EF3AB94D785F9B0E4716C8A1E3E3
+E34B3B60AFAFAF87135AA3D1E864D47D9667271B25E541771918E6428B8B8B3FFEF863B85EC8E512A49757E46DCF90BDBDBD2B17FB95AF253F7FFE7C
+E5DFEF82F9ED3FFFF33F73DB978292D9AECE94C6D1D1D1B07FF40F1E6FF73F2853F833F06F1969ACDE0904AFDBB951D4A5FB405981035456E7368BBB
+BBBBE1DCF8E73FFF39982A5FBC78114E9E575E43513EE175648F1E3D7AFDFAF5F6F6B6EF054A16FB74341A8DDEFE9F936D37E22FFBE9F6BFFFFBBF3F
+FFFC73EF6DEE6FDEBCF9F8F1E3BC5D0516BC9FB5B5B5FEF36DAD565B5959B182916239383818B6FA0BCE407C0B4339C29F7BF7EEA5B144A7B32B4EE7
+BA2A2D0F9094F0A68D9D7DAD5FBD7AD5D9A4A87C2B85BA6FA0333D3D3D3737F7E4C993E023877F32D019881256E4792CF7E621C14FF21029A4D19EA7
+A7A74F9F3EEDBD0AAC56AB7DFAF4292707656363A3F7A05C129CF1E6EA023D184A943DAC449D50BEF0E7CE9D3B96E800944F78C559B88228A865C299
+BC5EAF17EE7E6751AE230B570AFDF0C30FE15755F877077D40EC53883B44073DB6B757371A8D3C3769CC27FFE5975F8201DB5B5DFEFCF3CFF9AF88ED
+EA9C5E1FD32619DBDADA1AEA7C20BC237CE1766B878A873FC1C8EDDCC16A7575D5121D806AEADEBCFACD9B37E5BBBE2C2827EFDCB953AFD7838F169C
+B2CA85C43EF974E54DFDF6F7F7F3D9B049BDC4CF3FFFDC3BCF04D3D1583EEFD1D1D1C05B2B0665B25D9D531DADF29FECB55AADE0CB31A80D87BA2EDB
+3E57009087F328CD42824A7C7D595075DEBB776F7171512E54D65AB2401FE4F8F8B877D7F7D9D9D972873FED5FAF02BBB4F0E03FFEE33FFEF297BF04
+0569669F34780F036F84142E78C8F25D5533F9710E332EE7E7E70337B9EA9DA03E7EFCA8E900602CA74C4E9F1857DD3AD4F565DF7DF75DFE73A1E0CD
+DBD0A3D07363E13E4BB3D9ECED8AC10F73F8A593F8CBFDF4D34FDD9F7A7A7A3AA843CFCECED2FE98767516FED02D4A10DA7BC3BEBDBD3D4D0700D967
+3ECEA0C8A7EEEBCBFEF4A73F85B7B9CFF99565CF9F3FBFAEF436D0723E3716F143B55AADDEDD666AB5DA5842C88C9B3728392F6D41393535F5E38F3F
+FEF77FFF777A9FD1AECE062F573A3E3E0E7AFEB07784B76E1600C612FB3883A228CECFCF8333C6ADADAD66B3196E3734B01CCBD2F4F4F4B02334FC57
+47B634B94496F6F6F67A3B61BD5ECF5523A737157CFFFDF797AEB47AFEFC791A7BEC04ED3CF0AAD5E001E3DD73C91066BC0E0F0F87BD23BCB01400B2
+8F7D9C415168171717E132A1F5F5F5972F5FDEBF7F7F7A7A7A2CE1CF7575F7B023D178543646D468347AFBE1D6D656E9C39FF6AF6B9F161717BB3FF8
+AD5BB79E3E7DFAEEDDBBA4EE2E74747474E925AEDCD539FB06378A9DBAE4D3EEEEEE50FBFB8597496670CD2600487E9C4151625FBE7CF9F8F1E3DBB7
+6FC33D85666666D20E7FAEBCDD76FC816978AA19AF13144DBD8BDF829F64B9E7CC781BF9D2F526412D19FCE4F4F434E6D3DAD5D9406664C3DE117E62
+62626D6DCD1DE10140F20309FAF2E5CBE7CF9FC38DA61F3E7CD8BB6B4A1C51F6FC3160558BC9DADCDC8C98439632FC090463F9D2C7BF7BF7EEC8994C
+F08BC1401EB8C3985D9DABD3C1186D1CBD7FFF7EA8EBB2C33BC24B530120D57252635271C7C7C7E1DDC7822AF2F1E3C7737373A3853FDBDBDBA90E55
+4B83243F57AAD7EBBDBD319B2D6872D2DABDF73E1B2DFE8AB262617171F1E8E8C840CBC388D6383917E50679AEA3048038E7DB321F88EFE4E424289F
+373737575656969696EEDFBF3FF0ACF5E0E020A5D12A1A2A561691B1E3E3E35AAD76A937CECECE56AA367FFFFE7D9C1BDF47D9D5F977BFFB9DBB541B
+D10CEBF4F434F81AED9DA3FAEFA0BEBBBBABE90020FA8990532648D6D7AF5F0F0E0E363737575757979797EFDFBFDF7D427BE5AE95DFE48F22B17C7A
+97BE0C9B7EA4FD7D94810F1F3E5C5AB773E562BC4BECEA5C8E131E72EEE4E464D83BC22F2C2C1C1E1E6A3A28F724AF11608413A1617F454B4252CECE
+CE8213D4CDCDCD1142094150DA156245A6BB56ABD5BB8155AD564BF54ECA396CF6603076E73F410B5CB91E2F747E7E3E7041C2C4C444B3D9B40F490E
+87B6C629A2E0BB7260D6DA7B47F8E3E3634D071599DBCDF01033C931A620CF5F70E220C94F22F6F6F67AEBA67ABD5EB5DA3CA813272727BB7791EDAD
+1C5BADD6FAFA7AF7C3AEF4E2C58BF8370EA3641D8C4426ABA1EE086F3042354F89FB3C89C6A4CA4366845FD49820FF297A1C24F6B9A4D168F4164DE9
+5DAF94DBC6DFDDDDED5ECF333737D77D672EBB3A9763E6D43E45B7BDBD3DD40D37C33BC2BBCB1E3813F62D40594BB628EF67E40FE2F842F6538A2CA8
+0AE1C3B89C9D9DF5DE5B39F8494AE5529EDB7F7373F3D2E621C10F0F0E0E06AE37081E605767039CCC6C6C6C0C7547F8C9C9C9F5F5755762826A5ADB
+22FC11FE407113A1B66BC4129A9CABDC9D2E851E71EE7B5EF443B0BABADADD08FFFCCFFFDCBFA80C2AD0A00E3523097FC8D8C5C5C59B376F065E8669
+0F76504AFB22A0E2E14FCC0FE21043FE43215990D86728F57ABDB756DADFDFAF6061FEF8F1E3E897930415A8CE53941330ED533E513660BF64767676
+676747D34171EBE838A5B71646F833EC677188411C94EA0C96EC3CE334208AE3E3E3DE022AA892AA16FEB45AAD376FDEFCFBBFFFBB8D64853F14C5C9
+C9493024DD111EAA3C870B7FE0CAB1107F0C6A5228F7D76B99B220E700D1359BCDDE1229F861750AF39D9D9D999999FE3563BD5EB7AB731167368D53
+7AC1C01CF68EF036698772243FD1CF6FB533551B47C21F60D8EFCA22C641BEFD87D56AB57A6FA353ABD54E4E4E4A5F981F1E1E2E2C2CB85A44F843D1
+EDEFEF0F1CCB16F24159676FE10F8652B2D77C193550F16FE1426C19E4AB7F347B7B7B57AE752971617E7272B2BCBC6C5767B50365B2B3B333D41DE1
+6BB5DACACA8A3BC243092670DF05184AC21F20E64C12E55B35278B82243F71341A8DDECA28915BE4E4EDA05C5C5C0CDC2AD6AECED5AC1D2887CDCDCD
+DBB76FBB233C147702CFC3B341A147938103645673B9CB7CE19C9D9D4D4D4DF52E7D89F937F1BC1D978D8D8DDE8F79C9F2F2725297BC31DE5948FB54
+56ABD55A5F5F1FEA8EF056FA417E26F0649F505353C10135966168DC4175269C7611560739527D6C6E6EF616448D462357A776238B723D883B01A91D
+2893F3F3F3D5D5D589890977848702CDDEC21F88DFFFB33C8FF2973830FF580B5444F57ABDB71ADADFDFCFCFA9DD08ECEA5CCDA946E3103A3D3D1DF6
+8EF0F3F3F37B7B7B9A0EC675A298E0D36A6AAA39A6323B8F52760197E68476EEE3A076D7BAA02ACF51C7C7C7BD9BE1CCCECE16B4300F8ABE67CF9E0D
+DCEEE3FDFBF7C669F9CA078D43B7A3A3A3817BBCBB233CE461F616FE40369D3FF1E427E23F01959A9ADAF60BCAB166B3D95B04053F2C56617E7171B1
+B6B6D6FF720F37FA2977F9A071E815651DA04DC060BCB3B7F00732E8FFF1C7E0C05F3118812B67867641E2A02A1C8E56ABD5BB374EAD561BA1FC1957
+4BDAD559EDE01C833E3E7FFE3C3F3FEF8EF090DB093CC16D7F3435551E56A99EA50FFC158311883899B46D1C343E7B7B7BBDE54FBD5ECF7F616E5767
+B583130C22DADADA1AEA8EF01313136B6B6B1717179A0E529DC0130C7FB4334656EF404864E845F92DA767404A2709EE2696AC46A3D15BFB04B5526E
+0BF3A3A3A3C5C5C5FEB55B50E86D6F6F1B4D559816340E51B45AADF7EFDF0F5C28E88EF03096F3BAF84FAB9D31B852FABBB6F007A872F853B2F9EDEC
+ECACB7200A7E12FDC287CC5A26CAAD7C262727D7D7D78342CF5092FCC02551B608EB4D925D370A199CD7C579668D8CF1954DF223FC0132ABF28A7237
+B1C2D9DCDCEC2D791A8D46FC2F9D2C4B369B75087F208AD3D3D360AEE8BDDDE19546BE07223042712AFC81B4F39F549FDCA80412995B129F946441DD
+EAF57A6FD5B3BFBF9F87C27C737373E0C51A4B4B4BFE3A2FFC81E8821923CA1DE13F7EFCA8AD20CFC529D0CEF0B67A463190ABF94A163482E3E3E3DE
+BF8347F99377AA1F766F6F6FE09D7A8207040F33884C0E3082C3C3C33E7B88DDBF7F5F13410693B9191E0A3472350B90C3E22EE79789E5ED40349BCD
+DEDA27F8E1588E5DC45D9D87DA989A92CD0F1A87A45C97330B96219B933DF33C1465E46A13208D3381FC9C7B5424086AB55ABD374FAFD56A7D2EA74A
+E313D9D599314E1154D9F6F676F71CB8B8B8A84D2027E7605A0F72326CB50950DCB22E9FAB83C67550F6F6F67A93967ABD3EC2411CE1D55BADD6FAFA
+FAE4E464FFE4E7C58B177675364B0CBCDF84D663341B1B1BE126635FBE7CD11A90E5AC2EFF81FC8F596D026450D315E5E4248D2028CB3669341ABD79
+CB955757257B108397B87DFB76FFD8677171F1E8E8C8F031515CD7C79C9C90888B8B0BFB3C433E4FB134208C77CC6A1020BD6AAE04272AC55A177476
+76D67B6BADE027BD8B6D927A9376756684A137F0F15A0FA094A7551A10C638603508905E3557B2339694D60525DB869B9B9BBDF14BA3D188DE0E115F
+E8E4E4C4AECE24355D38390128C1F42EFF81FC0FD8818FD46860DE28DFF778597790AED7EBBD39CCFEFEFE685579AFF3F3F3959595DE9BCB779B9898
+585B5BBBB8B830764C1AAEF902A8DA99A1FC07F23C54FB3F40A38119A3F45FDFA509828E8F8F7B9399D9D9D9F8C734FAAECEA7A7A7C68EA923621F73
+CA0150B5D327ED06E31DA4D7FD93E602D345A5BEBB737813B1F6901B47379BCDDE4C26F8619C036A5767929A3AFA3C4CBB0194EC5C51F8034519A41A
+0ACC122687C20541AD566B7676F6523253ABD54E4E4E4638AC878787F7EFDFEF1FFB042FB7BBBB6BD41065D4F479987603A8C8F992E6827C9E9B0166
+0693C308273663BC286C6F6FAF37A2A9D7EB433DDBC9C9C9F2F272FFD8676A6A6A6363C3A86184130C730B40654F93B4150014A26A63D8939CECB3A0
+46A3716971CEDEDE5EC45FB7AB33198F0ECD05909FD93B83C95F3B03406E8B35ED936CB59B761074767636353515A634CD66B3D56A453CBE767526E3
+E1A0AD00F2366FA73DFF6B6D00C86799A689D2AB7C53F5F0E1C3939393286F2978C0CECE4EEF6641972C2C2C1C1E1E3ABE24380A341440DE66EC0CE6
+7F6D0E00B9AAD1344E22CDDB1E771C14E528BF7CF9B2FFAECE3B3B3B8E26099EFF6B1F807CCED569CFFFBE02004069A6D9C7B55F50F01FFFF66FFF66
+5767B2E9ED5A0620B7137506A73A9A1D00721241689F3C1C85EC75C73EDF7EFBEDEAEAAA5D9D01A052A722699FE1687300C843E0A07DC6785CA21CA0
+54FDCBBFFC4B98FCFCE637BFD11F00A082E784699F6D6A760018D7B7BCAFE3221EAC94FCF6B7BFD51F00A0CA671AA99EC3687600186398A0718A7BEC
+52DD265ACB0340D5CE2E9C73024059A3034D54A6A329080200463EA348EF44459B03C0B8B202ED53E2839BEA0DC20080B29E45A4F1B41A1C00C6150E
+689F8A1C6841100010FDE42157CF09008C9C06689F6A1E7797860174FB7F631A8EB8
+> << /Type /XObject /Subtype /Image /Width 1535 /Height 256 /BitsPerComponent 8 /ColorSpace /DeviceRGB >>}%
+\PptDrawTile{D1}{0.225153914}{0.549692172}%
+}
+\expandafter\def\csname PptDataD2\endcsname{%
+\special{pdf:stream @PptD2 <
+78DAEDDD4D4B64D71606E0FEC3016B2008E95985A607A14213103271148480642464E2B0462204844C1C0547D250A3222008D60D48C4DB1FF6A973F6
+DE67EDBD9F6794DC7BDBB6DFB58EED7A6FA9BB1D74EACDB7A47DB3020780F27FA70BA7DB4FE48A310B00A8FD7386546F53DA0050FEAF7211F5F6999B
+2288F2DB280D80363E7F48F206050E0025FF36174E6F9FB07D6D079EFE410B44BEB5140840639F4B8C7E53D20680927F8FCBA7C3CFD3527DDA96A305
+B2930DEFA734009AFFA4C2FFE9030001FF12974FE79F9E85FA545011D4FCA24A03A087CF2E7CF2090071FEFA964F8D034DF85959E44F0B2D6AAB1F85
+040250F5876E7FA70340F0BFB8FDE55BFB3477016A9F7DD7CCAB80F06107A0C3CF337DF00780087F23CBA7BDCFACE6FD1CACF0B789B618352EB03400
+7CC00700CAD405F2696088C13B936245D0CE6B81DC020000004A03E54F43B3ABF4A5325E0E64A50D080000A0CC952D9FEA46D65E2BA205EA79BD0502
+000090EFA6964FBDB36BB50929F9A56144D86D69000000642D10E453FB041BAE3EFCC8F84EB65A1A000000996E67F9B434CD56BB8EC23F29CC73517E
+99A501000090A328904FC3C36DB8DF78539C652B304781000000243F9385D3FC883BE93414410D0C4E1A000000C92F62F97432E8AE16400B54EFBCA4
+01000090F004964F3FB3EE730D5440354E4A1A000000A92E5FF97432686B303D25C1161B8D34000000529DBAF2E961CA7620476EA2CE3A0B81000000
+24B96DE5D3C394351205329479F2110804000060E2312B9F1EA6AC851817E9AE6017D4EDD2BEBECCF6100000606227209FE647FC72D0366174C2BBB2
+AF08EA6A755FDF67EB07000030BA13904FF3237E1EF437CB1F49EE95F9CECB8152EFF0D7B6DABE0100004C6906E4D3F67C87BCA6C226949982226848
+7AAFFF87000000EC7590CAA787C261E02F1466C9A168815E09ED8B31DA2B0000801147A87C9A6F1886FF7279CE32202DD02B0B693F010000A61C9EF2
+E9A15518FE46449A7B5E3B2F074AF421EB6598560B0000500E687E3A1CEEF0115B89C813ECB0081AF28DCA7D2803000018725ACAA7EDC660DF3728D8
+F833EDA405F283CF000000A65F4FF269BE2518F106655BD7881BAE80943F000000134F27F9B4DD098C7BCBE2AD7AE82D15419A1F00008089A7937CDA
+6E0046BF712137B303B557409A1F000080D147937CDA3EF96565259AA9802C3C0000C08873493E0D9FF982B21E2DB540D61E000060C4B9249F86EF7A
+59B1CB5F0445FBB398380000E0E87322F570C5CB8A892B14B305B2F9000000AE2437BBAC48BB51A12A20CB0F0000E044EAF948971559172C420BE411
+000000701CF57C988B8B92FB36CB66DA7F000000C7518767B8AC986BF7CAB7409E020000C0C9A622E8EDEE961871B631F7D27A0A000000379ACBA881
+390EBFB8C545908F30C55A200F020000E02ED312F4735C4B2CC2BC5EFEAB2D2DD30279160000800E2FD09D2F85E8ECA61657B4917DFEAF3636530BE4
+710000009406CEA2B68F68715534B84E42D8652882765F7F259527020000707BBA895A6A0FCCB4F6F149237905E4890000009C5A6EA2262F6589553A
+479924FF5A30CF050000E0BC721035761A4BCC93D8C9AA0F7F2D9078010000C726CD9CC312AB7AA6C219B7F69E0E0000C00DE514EAE1FE959847B2F3
+47C093020000B89BDC3E4D1EBF52F2604A4F1D040000B88F9C394DDEB9226A6FB2C249F268A88000000077250DDCB6526A72B8597FDFAFFD43DB4F8A
+16080000E8AA31109139927C52BB3D7F9278B1C97EFEBEB5BA4E6FB2B1E400004045E78F7C9AB961A554FBA4CA0CB7CFA2430B040000747B8ACAA7ED
+3281E00DC3CB5FB8CB5FFE683976BE1C0C0000E8E90E954F1B57AA941AEE13120E5ACB5166649E05000020CE69239F36EE5311B5DD24046C7E1ADBBA
+81DFFB480B04000054778ACAA78126414AD58DECE50FD20A58FEBCFC5F0EFC557D0E510B04000004BF5FE4D3C0052AA206E655AC4018F2AD845E7FFB
+BE224C050400005474B3C8A78193534A2DCDAB40F333FD8DF7FC15615A200000A0AE53453EB55F9A226A6F64B91B83846FB3E772430B040000C4BF4D
+E4D37C8740CC42A0E4DB29F09141A1A1050200005407B8A60D6EDFC1CDF5B21FE54FD6E9AB800000806267887C7A680F0838BE088F70F0AF23EBE429
+5601010000D12E3BE2DC8C52AA7A8285DF4EB10F119676F4133DBCFCF1F8030000056E46CC8E8997FEECCB10FF3B48F7B9185EFF030000B8BF3406F4
+36CA595EF633FAEDDBDE2111ED2617416204000057A77BA1F3BA80E0D38CF050177E4D91AD18F7D40B13000028732432FB0128A5C6663ACB9B2AF6C6
+EDF0BE71EDF62C825EFEF2ABABABFBFB7B3102008093D3E5D549514015036DBBFCB1C6B997E765981F3F7E3C3838582C16BFFFFEBB0A080000B407B4
+5D11D0EAF3987543727C9191354EB242BB6135DAAFBFFEFADD7F54400000D0EDA5299F1ACB0183F3540E7C6B055651F91364919EFFF5F9BF7D7AD9CF
+77FF4F050400006E4C828FCCE07A1871A8673CF93719B6CF9996EAF3FFF0E5CB7E54400000E0C0C4D48833E8B9DED4E8B51CFE7B59E962BEF8B21F15
+100000F4735D0AA7AE2AC0D43C9EF33EE9697FC8B8AD2EE39597FDA8800000A0F926413E75CDCBD47A1BFA8C6F6AE296EE5BFE58837C1E1F1FDFBD7B
+F7DD3E54400000D0E751C9BCF33235CFE9C4FD29B9A8F636A0ABABABE572A9020200003502E645B40548B242E537D602C7A4020200804E9A04F95434
+2C23EB7C0D223FF5FA9F7AA9800000A0E126413E150DCBC82CC388EF995C7E91943FF55201010040937D827C6A999461D98759CA9F1C2F3AB2D8C1A9
+800000A09932413E150DCBC86C45DAF267DCEF9E769F2D76702A200000A8BD4910512D93322C1BB2EF56A4FD79EB997ECABC25AF850A0800006AEC13
+E453CBA40C8BDD9EE54FC2B225D5362A7FDAA0020200808AFA04F9543126C362DF87FAE91FF2353F531652FFD30C15100000C4BF138553C52D6F528C
+D899B43F635DF9C32B5440000010F336944F4527BC9498B23F999A9F899B69F3DB33BA02FAE79F7FA4070000C90F2BF9D472B64B89E95B94E96BBEA6
+EFA747A049575757EFDEBD53010100C0BCF7A07C8C890E376AF4BEE5DB52CD4FC354400000A04F3023672F05766CF7DFB77DDE4D6B5A943F8CA30202
+0080C2C58270820FC8989877FD52FD92DCEF12D5195D01FDFCF3CF9797970204000037541B03322622ACE2BE4B5BE0B930AF668CA8809EFCFBAB6E6E
+6E0408008053CEE954EF808C8920CB39626F73FFC02F036ACFE80AE8C3870F777777020400C0EDE67AAA7146F221C896EEFBB145F9C368A32BA05F7E
+F965BBDD0A100000AD82BBA98AE97CF2CD78A1BA059EFEA1C687AFCE8DAB80168BC5F9F9F9C3C38300010070978928F8D52C251A58E329CBEC01E1C9
+B80AE8E8E868BD5E4B0F00806EEF32E1C43F99A5444BFBBCEF563FBFECCD33C2B37115D072B9BCBEBE961E0000BDDD62F2097E264B8986573DD59322
+E16E5D5D5DFDF0C30FFB5640ABD5EAF6F6567A000074D22D88C87420F8B67B4CF8A6ABABABE572B96F05747272B2D96CA4070040C3D7967C221FC206
+44B7CBBFDBE70BC73C29BCF4D75F7FFDF8E38F7BF53F070707676767F7F7F7D20300A0BD0B4B3E612F5FD3C153A0F6618ABFFFFEFBA79F7EDAAB023A
+3C3CBCB8B8787C7C941E0000CDDC56F2897CF68A084F84E687E9369BCD870F1FF6AA80DEBE7D7B7979293A00006ABFA4E413F9C295129E91815F1426
+2E06DA6EB7C7C7C7878787C32BA0F7EFDFDFDCDC880E00804AAF27F9843D69A5049F3C359F3C3B3B9D0F13DCDFDF9F9D9D1D1C1C0CAF808E8F8FEFEE
+EE440700405D0D8388CC05A0679BCDE6E4E464AF2F043B3D3DDD6EB7A203002008F5425D43311D8059DCDEDEAE56ABE1FDCF62B1383F3F7F7878101D
+000033D22DD43511730198DDF5F5F572B91C5E011D1D1DADD76BB90100509E86A1C6A1980B4010EBF5FAE8E8687805B45C2EAFAFAFE506004049EA85
+8A26622E00013D3C3C9C9F9F2F168BE115D06AB5BABDBD151D0000B969182A1A87A10004B7DD6E4F4F4FF7FA5ED02727279BCD4674000064A264A86B
+2286025085BBBBBBE3E3E3E1FDCFC1C1C1D9D9D9FDFDBDE800004848C350D1380C05A046373737EFDFBF1F5E011D1E1E5E5C5C3C3E3E8A0E0080E994
+0C158DC35000AA767979F9F6EDDBE115D0BFFFE33FFFFC536E00004CA164A8681C2602D080C7C7C78B8B8BC3C343DF0B1A0080DC940CB5CCC24400DA
+737F7F7F7676767070E07B41030090899EA19659980840C3369BCDC9C989EF050D0040727A862A06611C009DB8BDBD5DAD56BE1734000049E8198C03
+8098AEAFAF97CBE5F097007DFCF8516800007C4EDB107F0A6601D0B3F57A7D7474F4CDF2E7B7DF7E931500009F5335441E815900F0E4E1E1E1FCFC7C
+B158BCF2655FDBED565000007C42D5307BFE3B3FC91D80C1B6DBEDE9E9E917CB9F3FFEF8433E0000BCA46D883F058300E08BEEEEEE3EF95ED0DF7FFF
+FDC3C38364000078A26D083E028300608897DF0B7ABD5E0B04008067DA8698F91B040023ACD7EBD56A250700009E281CC2E66F16000000C044DA86C8
+23300500000060342F35099EBF1100000000A3E91CC2866F04000000C0446A87B0E11B010000003091DA216CF8F207000000A6503BC44C5EFE000000
+C0449A87C8E1CB1F0000009848ED102D76F903000000A9281F66C95CF2000000406ECA8780B10B1F0000004842F9103076C903000000D3291F02C62E
+790000002009FD43B4CC850F000000A4A27C8896B9D80100008024F40FD132173B000000908A0A2254E0CF3FE75D50000000C0749A9F50818B1D0000
+004845FF102A70B10300000009A920E2A42D73000000202D2D449CB4050E000000A4A5880812B5C001000080B4B41071D216380000005477E357F14E
+2A2222A42D70000000A8F7C6AFE85DD54294CC59E0000000D0C6A55FC53BA98B103500000030EED2AFE29DD44594CC59DA000000D0CCBD1FFCDD5344
+14CE59DA000000D0D8C91FFF3D5447140B59CE000000D0DED51FF97D534794CC59D400000090E3189FFDEA9F3D015DC4BC218B1A000000CA1CE07BFD
+AA84BF7BD84CEC4C99C51335000000E43EBD3F3FC0D31EEC310F7F754484DD9312000000E4BEBEA798FE6EC44CC6E614D83D11010000408103BC4CFF
+13AA01D04844D83A2901000040C94BBC93F247231161D9A404000000B39CE49DBCF2472931E39A8908000000E6BACAB3963F11DA00A5C4EC0B262500
+000098F7362F5FFE04F9E35B8FDCDB252200000098FD3C9FE56BBE22FCD9ED46D6BD12110000000439D2BF78B6672D7F66FF53DB8ADC1B2525000000
+8873A77FED664F72DD6B7E7ADB281101000040A853FD9B977BDAE6A74039A09A987197A404000000010FF62197FBB8BBBE7039A09798718BA4040000
+0061CFF67CC7BBE6A787151211000000843DDB9B297FB41373ED8F9400000020F8F19EF5842FFC5B682712A6BA53A9010000400D277C9097FDCCF207
+B40099D6464400000050CB155FF5CB7E14148D2D0C00000090E3902F50FE14FED3197DA6851111000000D475CB97297FCAFFB98C3EC7AA4809000000
+6ABCE8AB2B7F1414E597444A00000050E9515FE0CBB28AFD894C3CC7928808000000EABDEBEB7AD98F9AA2FC7A48090000006ABFEEB31EF8C59A1FB3
+4EBE185202000080366EFC2ACE7C1D45C9AD10110000003473E6C73FF6D51485F7414A000000D0D2A51FFCDED7540813000000187DEC473EF9D51485
+37414A000000D0E4C91FF3EAD75494DC012901000040AB577FCCDB5F53516C0744040000000D1FFE311B006545B1E94B090000009A3FFF4335009A8A
+62A31711000000F4D00084EA01941565862E22000000E8A707085205E82BBA1A3700000050AC0D88FF7E1A6263B3060000008A7502C1DF3D7D45920C
+C508000000CC4265512043310200000073D157E40B508C000000C08C541659031423000000301795C5F40077DA33000000202A9545A6F4C408000000
+CC4B6B91353D010200000033D25AE44B4F80000000C08CB416F9D29321000000302FAD45BEF40408000000CC4B71213D000000A0498A8B7CE9091000
+0000989DE2224774D20300000066A7BB101D000000D0245FAC243A000000A061BA8BE4B9890E00000088407D912337E901000000B3535CE4C84D7A00
+00004010EA8BE4A1C90D00000088407D913C34D10100000011E82E72E4263A00000020020D468ED0E40600000044A0BE489B98DC0000008038341869
+13131A000000108406236D624203000000E25062248C4B6800000040284A8C8471490C00000088438991302EA101000000A1283112C6253100000020
+0E3D46DAB8240600000084A2C4981E94C400000080805419B2020000005AA5CA481294AC000000806854194982121700000010902A234950B2020000
+00A279EA2BB4194382D2FC00000000D551654C4C4956000000404CDA8CE929C90A00000088499B3131224101000000616933A6442428000000202C9D
+86880000008056E934A6E42325000000202C9DC6F488A40400000084A5D018178E8800000080E0D41AA3C3911200000010994E63623E2202000000C2
+D2698C0E4744000000407C6A8D11C9C807000000884FB3312E19F900000000C1A935C625231F000000203EE5866400000080566936F68D453E000000
+4015941BE36251FB00000000F12937F6CD649664144D000000C0089A9F11B1E44E66DCEF6E88000000C04BBEA0295A2C6F06DBF757D976000000E88D
+AE60DF4C667FB5CF44761E0000003AA1251891498158DEE467F9010000A007CA81E181148E45F90300000064ED160412E1477A297F00000080E4AD82
+348264A2FC01000000D2F609D2089589F20700000048DB27482354209A1F000000205593208A80818C6B75943F000003FD0FA26ADD84
+> << /Type /XObject /Subtype /Image /Width 1535 /Height 256 /BitsPerComponent 8 /ColorSpace /DeviceRGB >>}%
+\PptDrawTile{D2}{0.225153914}{0.324538259}%
+}
+\expandafter\def\csname PptDataD3\endcsname{%
+\special{pdf:stream @PptD3 <
+78DAEDDDC96E5B31104541FFFF4F2B0B0142E0417A23D9BC5DB50E1CA8992C74D0A41F0F0008F1F59669D49CC9D74E4E1C0000007AD201368EA2DA40
+CEC49F373FC1FF0800000048A2FC6C1C45C1699C2C3FFFFF1CFF110000002092F2B3650E65A77149F9010000002269055BE650791A57ADFD00000000
+7984822D73283E0AE507000000F8954AF05879E167D747107F000000A0159520690ECA0F000000F03F89E01194BFACFD00000000DB4381212C3707F1
+07000000D8120A4C60D139883F000000C0C355AFB8859FED1F4AFC010000806C9A407018517E000000A039D9277B08CA0F00000074A609C44F40FC01
+000080B63AD7803E3D44FC01000080866CFB349980077F000000A0210B3F7D26A0FC0000004037CA4FAB8F2FFE000000401FB28FF223FE00000040B0
+9EDFFD3BA70FF1070000003AE89C3E1EF69D941F0000004827FBF8A566E20F00000034FCEEDFF683F7C91DCA0F000000B4FDE2DFF353776B1DA60100
+00000DBFF2F7FCD46D5B876900000080EFFBD91F59E80000000032F40C20167E0000008026BA0510D9070000006842F6917D0000008054AE7A293F00
+000040AA560DC4C20F000000D087AB5EB20F00000090CAC28FF203000000A4B2F023FB00000000915A95100B3F000000402BB28FEC0300000044EA53
+42641F000000A0216F3B2B3F00000040240B3FB20F00000010C9552FD9070000000826FB283F00000040240B3FB20F00000090AA430FB1F003000000
+3424FB683E00000040AAF82462DB0700000068CBCE8FF20300000044B2F023FB00000000A9E2AB88EC03000000B425FB00000000A472D5CBBF010000
+0020527615D17C00000080B69A671FE507000000C826FB000000004472D50B00000020556A18B1F0030000003467DB070000002055DB851F470F0000
+00C473D50B0000002055641BD17C000000007A661FE50700000088179947641F00000080976E3B3F4E1C000000E8A0E7C28FF80300000074D0B0FC38
+74000000A083BC4862DB07000000E0C5C20F00000040A46E0B3F4E1C0000006822AC93B8E705000000F0F22C21167E00000000F258F80100000048D5
+AAFC386E000000A08F984E62DB07000000E09BA4F2F388FB2565000000006764A4120B3F00000000DFF479E1C75903000000DD64ECC958F801000000
+F826A696C83E00000000BFF2C20F000000409E806022FB00000000FCF4F177A0AFF229641F000000806F3CEC0C000000102CFEAA9723060000007AF2
+C20F0000004024D90700000020D5D2CD44F6010000007843F90100000048955D7E9C2F000000D0D6BAD9C4B60F000000C01B4B9713E507000000E0A3
+D4F2E36401000080CE2CFC00000000A45AB49C683E00000000EF2DDA4F6CFB000000006C11B9F0A3FC00000000ACD84F641F000000808F9E85C40B3F
+0000000091F2167E9C29000000C04BD83D2FF107000000E029ECB77A395000000080270F3B03000000A45A28A1C83E00000000BB283F0000000091D6
+AA28B20F000000C076B20F00000040AA555A8AEC03000000B0CB422D45F901000000D86B899CE2616700000080BD641F00000080484BE414D9070000
+00E0808C851FE708000000F093AB5E00000000A902AE7A3944000000809FBCF00300000090AA7851917D000000000E5B7DE7C70902000000FCCAC20F
+00000040AAD5CB8F1304000000F84BE5AE62E107000000E030D90700000020D5D2E5C7F101000000FCA5725AB1F0030000007092851F000000804816
+7E0000000052D54C2BB20F000000C049EB2EFC383B00000080F72CFC00000000A47A9F56A60416D907000000E0BC9A8145F601000000386FC5ECA3FC
+000000006C61E1070000002052C1C662E107000000E02AB20F00000040A4E5167E1C19000000C0465EF80100000088542DB3C83E0000000057596BE1
+C779010000006C64E1070000002098EC030000001069A1DFEAE5B000000000B62BB56363E107000000E0420B651FE5070000006017E5070000002095
+AB5E0000000091641F000000805445628B7B5E00000000975BA5FC3829000000805D8AF416D907000000E0724B641FE507000000602FD90700000020
+D8DCE4F2FC2B941F00000080CB79E10700000020D5F4E422FB00000000DCA17EF6517E000000008E99FEC28FEC030000007093E23B3F0E08000000E0
+180B3F00000000A98A971F070400000070D8C4F062E107000000E056B3C28BEC0300000070ABCA0B3F4E07000000E00C0B3F0000000091641F000000
+8060E3F3CBF3C7CA3E00000000B72ABBF3E36800000000CE907D00000000828DCF2F5EF80100000018607C81917D000000000698925F641F00000080
+012CFC00000000A4927D0000000082952A3F8E03000000E012167E00000000528D8C30B20F000000C018D5B67D9C08000000C055867518AB3E000000
+0083293F0000000091641F0000008060636A8CEC03000000305891ECA3FC000000005C6B4C8D917D00000000A670CF0B000000208F851F0000008060
+167E00000000220D6832B20F000000C014D3B38FF20300000070130B3F00000000912A641FF107000000E00EB7961FD90700000060965BEF61BDC28E
+AB5E00000000534CBCEA65F800000000F7997BD54BFC01000000B8CFDC177E00000000B8C97D71C6B60F000000C05CB7BEED2CFB000000004C64E107
+0000002092EC03000000906A56F9317900000080BB293F00000000916EEA33B20F000000C07453B28FF20300000030C0E57D46F60100000028C23D2F
+000000804897571A0B3F0000000015DC9168641F0000008022641F0000008048EE7901000000A41A5C7E0C1C000000600C0B3F00000000A92E0C35B2
+0F000000402917861AD907000000A09461D947F90100000018C93D2F0000008054CA0F00000040AA31E5C79C0100000006BB24D77C6D63DA00000000
+238D293FE60C00000030D825C5C6B60F000000404D5EF801000000883460E1E7F9678C1A00000060B093E5C73D2F000000809AC62CFC00000000309E
+851F000000804827A38DEC0300000050D6EBED65E507000000208C851F0000008054B73EF263BC00000000B358F8010000004875B8DBC83E00000000
+C5DD577ECC1600000060A233F546F90100000028EE40BA71CF0B000000A0BE63F546F60100000028EEA6ECA3FC00000000547020E0C83E00000000C5
+1D0B38167E0000000096B037E0C83E000000004B70CF0B0000002095F20300000090CA3D2F00000080487B338EEC03000000B08ACBDF763652000000
+80222CFC0000000044927D00000000526D2F391E760600000058C8AE9223FB00000000ACC5552F00000080481B4B8E7B5E00000000CBB9AAFC982400
+00004029167E000000005259F80100000048B5A5E7C83E00000000CBB1F00300000010E9596C2CFC0000000044FA98743CEC0C000000B0A22D4947F6
+01000020D83FE2926BAF
+> << /Type /XObject /Subtype /Image /Width 1535 /Height 256 /BitsPerComponent 8 /ColorSpace /DeviceRGB >>}%
+\PptDrawTile{D3}{0.225153914}{0.099384345}%
+}
+\expandafter\def\csname PptDataD4\endcsname{%
+\special{pdf:stream @PptD4 <
+78DAEDDDC16E83301045D1F9FF9FA68B4A5555454D30B6B11FE7AC49220DACAE06E7382056FDEBED05DFD700000000B0A0BACC0C01000000D664E107
+0000002092851F0000008054B20F0000004024D9070000002098F2030000001049F6010000008824FB00000000A4527E0000000052C93E00000000A9
+941F0000008048B20F000000402AD9070000002095F2030000001049F6010000004825FB00000000A4527E0000000022C93E00000000A9941F000000
+8048B20F0000004030D9070000002092851F0000008054B20F0000004024D9070000002095F203000000904AF6010000005844DF3E63E10700000060
+113F05A6A1D5BCAC37B20F000000C022AAD59FCF9EFD42930700000018AA7A3B941F0000008035D44D4C1E0000006034D90700000020D5E8BCA3FC00
+000000DC65CE628FEC03000000708B99F1C7B4010000006672AA0F000000402AA73A0300000004137F0000000082893F00000000C16A16A306000000
+98AC26326D00000080C9C41F000000808B3E0F23F38389F803000000D06CFD8422FE00000000B4D922A4883F000000006DB6C829E20F000000409B2D
+8A8AF803000000D04CFF117F0000008078D70BC9B8AEA2FC000000005C773D8FECDE7F3C0300000040B02E6D44FC010000005853AF36B269FFF10000
+000000D9C41F00000080547DDBC8A0C6A2FC00000000B4117F000000005275CF23E34A8BF2030000007056F73C3234B6283F00000000A7EC157F8E7E
+FDC7AD070000009E60E63B5F1D938BF203000000F0894DE3CFD1DA7FDC71000000E051F67AE7EBEC2FCA3E000000C0936D77E04FC3AFBBCB000000C0
+63CD2C3F3A0C000000C04C616B3F00000000FCB6EF51CF00000000BCD52BD7386C190000006041D78B8DBFD90200000058564D61CE00000000B7507E
+0000000052293F00000000A9641F00000080609A0F0000004030A9070000002098BC03000000904AF6010000000826FE0000000004537E0000000082
+893F00000000C1941F0000008054D67E0000000082893F00000000C1941F0000008060E20F000000402AEF7C0100000004137F0000000052D5074C09
+0000006053CA0F0000004030F10700000020557DC6A000000000B653671817000000C016AA95D101000000ACAC7A30460000008005553F8609000000
+B01AF107000000209BF20300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000BCF405B45A85E6
+> << /Type /XObject /Subtype /Image /Width 1535 /Height 113 /BitsPerComponent 8 /ColorSpace /DeviceRGB >>}%
+\PptDrawTile{D4}{0.099384345}{0.000000000}%
+}
+\expandafter\def\csname PptStreamD\endcsname{%
+\csname PptDataD0\endcsname\global\expandafter\let\csname PptDataD0\endcsname\relax%
+\csname PptDataD1\endcsname\global\expandafter\let\csname PptDataD1\endcsname\relax%
+\csname PptDataD2\endcsname\global\expandafter\let\csname PptDataD2\endcsname\relax%
+\csname PptDataD3\endcsname\global\expandafter\let\csname PptDataD3\endcsname\relax%
+\csname PptDataD4\endcsname\global\expandafter\let\csname PptDataD4\endcsname\relax%
+}
+
+\ContentPartE
+\newcommand{\PptImageE}[1]{\PptImageBox{E}{#1}{0.612765957}}
+\expandafter\def\csname PptDataE0\endcsname{%
+\special{pdf:stream @PptE0 <
+78DAED9D4976E42010447DFF53F96678EB57122A440E44C28F55DBFDAC42F02B09A6A4358410420821841042082184104208218456EAE78DA82EA486
+6BE69F236484B6D6C311DC667205C9C811A4930B8008B9A1E5C178A04211EFA3781F458561E82D54CE5E40A61D09BCA5BF6B300CBA008CF00CD193C6
+ADBFF647CB12787DBF1AEE9F450426F0263FDFF7431F3E0280A1B7446C6416027A339D498447BD352A300CBD7323B5FFFC3C0FAF1CC75CB7CF816186
+6C83D8B8588888D903A62308BC7360583C7004C60000C06F83A47178E5189001187AE71EE2320F0CC3D06B1F0D4D03E0324C7309C5307C02BDD1A3AA
+B52332183E875ED9213C0C43EF20BDB22D7E9D64866100AED5DC96E12100EF37ED506B5FA27DFFC3F29722DF8B6FEB148AC05E45CD7FAF71440F8719
+80D500B6CF43426F42BFBC6A04A73C9A735C4C3C016323BD25CEA7FB761671EF1881DCF618DBD76A1DDD57D020E579339B08C09907B5A0377F9C6284
+F921398F020F39CE04807DEBC1C28FE336A1E541380DADCD185EBBD1CBCB6FD8A3FDDA209C0CD54E0CAF8A3C82E16B8FAA388DE1FC560B4D705D0EE0
+85206DC0F0127A951B25B9421416A60158ADBA924B08C085CA5FA5B132CBE9BB8209C39AD166C90618F16AB11F957259E83907E05A7DA57810366ED1
+F9ED486A55711B8057D54F5A813383F6EF804E386952A2A35CC57074E584D27B08C3E2E1D7CBE36906E1B917E91906178601D8B1A57C3D5E4EC94369
+E955C8735D8D335CF11C872C06EEFD23008F1446F92C7995714A9CC7CB297C7EB57C05F86B4515CDF22D187E433D9E5410D601B8EE452113991E4383
+5882C703E00301FEF045F65C7F006C04F8674CAF00AE986262DCDB4FB7D1F85EF1508FD7121349150578CB086C4C93FEF68169839450EF8485D800E0
+B91B2E321B68A2F7F125935988348027DC911160C72ED2F73B386DBAC4016E45727A2447E057E44B01ECEE9D5CE21B2B71075A88B94E2401E0A6B794
+DCAAED85889B85500378EEBFE66696426961334FDA3CB0C82C84AC85686CA7CC0278DA1DBDCD1912D445DE9621F49AC5685A8236B46F0CB0A5CB5358
+899BD86A153D0B6167982345476DE6995E9278BBC330D373FAAEFF6E0F703B723B65D04A9C1A361C884B98F0CC1FA1486D2106E0122E22C8E3099EC8
+D08187A410A1439585893B001817A150459AC7EA45EAA7746234001601B8911F581BE07640669E56ED26F13DB25B93DC4F84DEE42A22373B0007BD1D
+B714894F2C6C496FF3BEB3097A0F1FAD14CAD0DE7B203775CA061CE53B32A4A659B82B59B6C976BAA528A1D3E7B6FAD05613B9F07DD5755769A668FC
+5448B93C930B1BCE78A075D54D9DE500EE215A2B9D4E8901FBF4EE9DB55DE4393B6961F8EB9FD853B2877691D727402F00BBDBD1A02EF2EA794A5F53
+882CF6B5554B6CE89B46097A3700B850CB46781EB0A9CBF0E10043EF7E0C97F00F2E9E077A773512E50CB0BB7D421519F69A95CA89C071DE091565B8
+B40D865E007E88CC3A6FE4B5F60D1EE730AC80F1B5008CDD60B88AA3D8E015900E0069D1D8FDB3A01786DF9A0A97BCC4D08B825AF0EBB52FAF0A1017
+DEA11780C723EDF8546DDADE2100DE86E18F74FD41F03C3C3679B7DBB1071CB60FC5A1F7E289EC1102DDA3EC84FB787FED3663E83DD00C279C4DD34F
+8A8200782DC0D07B88070EEDDF97DC9FCE908D081CF741CAD9A810003F84C484695EE885E1573729EBBC08E8C270EBDC475CB72B418730DCEBDFC523
+1B8117BD229CF2A00D4826E42202322117299B67F18723F4C0DBDC114B723B2371A449458E104208218410420821841042082184104AD0350D174B93
+A822C3BD1F11026064EC191F7E8900589CE187DFA0D6D9B347B50030111819DBA55DEEC3FAB83F919803C04501BEFE0380011880AB8F76E992D400BE
+B50D5862541D60B84555A6206EFB474670681BEF07C3A8AEC1B8FD11A172037084508EFE005C15E4AC
+> << /Type /XObject /Subtype /Image /Width 235 /Height 144 /BitsPerComponent 8 /ColorSpace /DeviceRGB >>}%
+\PptDrawTile{E0}{1.000000000}{0.000000000}%
+}
+\expandafter\def\csname PptStreamE\endcsname{%
+\csname PptDataE0\endcsname\global\expandafter\let\csname PptDataE0\endcsname\relax%
+}
+
+\ContentPartF
+\end{document}

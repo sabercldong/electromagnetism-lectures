@@ -1,0 +1,496 @@
+{
+  "checks": [
+    {
+      "lecture": 2,
+      "problem": "W1",
+      "check": "finite rod radial source integration",
+      "scaled_error": 2.0539125955565396e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W1",
+      "check": "finite rod signed axial source integration",
+      "scaled_error": 7.360547356801324e-18,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W2",
+      "check": "odd density axial field",
+      "scaled_error": 3.2612801348363973e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W3",
+      "check": "arc central x component",
+      "scaled_error": 3.3306690738754696e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W3",
+      "check": "full ring nonuniform x component",
+      "scaled_error": 3.3306690738754696e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W4",
+      "check": "ring maximum derivative",
+      "scaled_error": 1.6653345369377348e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W5",
+      "check": "disk integrated as concentric rings",
+      "scaled_error": 3.632941262219594e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W6",
+      "check": "annulus subtraction",
+      "scaled_error": 4.9939441976619765e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T9",
+      "check": "annulus maximum derivative",
+      "scaled_error": 2.886579864025407e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W7",
+      "check": "axial dipole relative error",
+      "scaled_error": 1.1102230246251565e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W7",
+      "check": "equatorial dipole relative error",
+      "scaled_error": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W7",
+      "check": "axial dipole relative error",
+      "scaled_error": 9.280770596475918e-17,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W7",
+      "check": "equatorial dipole relative error",
+      "scaled_error": 2.220446049250313e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W8",
+      "check": "disk flux source integration",
+      "scaled_error": 4.772896438341285e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T11",
+      "check": "square solid angle",
+      "scaled_error": 2.1203697876423447e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T1",
+      "check": "rod nonuniform charge",
+      "scaled_error": 1.4432899320127035e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T1",
+      "check": "disk nonuniform charge",
+      "scaled_error": 1.792366684397586e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T2",
+      "check": "two point sources maximum",
+      "scaled_error": 3.3306690738754696e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T3",
+      "check": "semi infinite radial",
+      "scaled_error": 3.6637359812630166e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T3",
+      "check": "semi infinite axial",
+      "scaled_error": 9.43689570931383e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T5",
+      "check": "semicircle nonuniform x field",
+      "scaled_error": 2.220446049250313e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T7",
+      "check": "second angular harmonic zero total charge",
+      "scaled_error": 6.240959365770112e-17,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T7",
+      "check": "second harmonic zero transverse field",
+      "scaled_error": 1.5579145957771887e-17,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T10",
+      "check": "dipole zero z component",
+      "scaled_error": 2.220446049250313e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W12",
+      "check": "axial quadrupole coefficient",
+      "scaled_error": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "W12",
+      "check": "equatorial quadrupole coefficient",
+      "scaled_error": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T16",
+      "check": "two ring linear cancellation",
+      "scaled_error": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T16",
+      "check": "two ring cubic coefficient",
+      "scaled_error": 5.551115123125783e-17,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 2,
+      "problem": "T18",
+      "check": "least squares residual orthogonality",
+      "scaled_error": 7.105427357601002e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W1",
+      "check": "power density Gaussian flux n=-2.0",
+      "scaled_error": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W1",
+      "check": "power density potential derivative n=-2.0",
+      "scaled_error": 4.983037284275989e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W1",
+      "check": "power density Gaussian flux n=-0.5",
+      "scaled_error": 1.5587264975675915e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W1",
+      "check": "power density potential derivative n=-0.5",
+      "scaled_error": 1.480863910578237e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W1",
+      "check": "power density Gaussian flux n=0.0",
+      "scaled_error": 1.3226232917342408e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W1",
+      "check": "power density potential derivative n=0.0",
+      "scaled_error": 1.617370954684966e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W1",
+      "check": "power density Gaussian flux n=1.0",
+      "scaled_error": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W1",
+      "check": "power density potential derivative n=1.0",
+      "scaled_error": 3.950562099674926e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W1",
+      "check": "power density Gaussian flux n=2.0",
+      "scaled_error": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W1",
+      "check": "power density potential derivative n=2.0",
+      "scaled_error": 1.9724832878154075e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W3",
+      "check": "cylinder radial integration",
+      "scaled_error": 1.4246206686099568e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W3",
+      "check": "cylinder maximum",
+      "scaled_error": 8.881784197001251e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W5",
+      "check": "hole field superposition",
+      "scaled_error": 5.551115123125783e-17,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W6",
+      "check": "hole field superposition",
+      "scaled_error": 2.5438405243138006e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W8",
+      "check": "rectangular circulation independent edge integral",
+      "scaled_error": 1.8590684547348246e-13,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W9",
+      "check": "radial power potential derivative p=0.5",
+      "scaled_error": 1.2152168160639576e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W9",
+      "check": "radial power potential derivative p=1.0",
+      "scaled_error": 2.2408630506731697e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W9",
+      "check": "radial power potential derivative p=2.0",
+      "scaled_error": 9.228273700756517e-11,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "W9",
+      "check": "radial power potential derivative p=3.0",
+      "scaled_error": 1.9968093845079693e-10,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T2",
+      "check": "uniform ball internal work",
+      "scaled_error": 5.551115123125783e-17,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T3",
+      "check": "linear density charge",
+      "scaled_error": 4.293648404005008e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T3",
+      "check": "linear density centre potential",
+      "scaled_error": 1.3088702392853978e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T4",
+      "check": "cylinder outside potential difference",
+      "scaled_error": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T6",
+      "check": "normal field jump",
+      "scaled_error": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T10",
+      "check": "dipole potential work",
+      "scaled_error": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T12",
+      "check": "log potential work",
+      "scaled_error": 5.551115123125783e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T14",
+      "check": "no surface charge potential match",
+      "scaled_error": 1.1422047578448112e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T14",
+      "check": "no surface charge field match",
+      "scaled_error": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T17",
+      "check": "odd slab outer potential jump",
+      "scaled_error": 3.7639700372349316e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T18",
+      "check": "charged ball crossing endpoint",
+      "scaled_error": 1.2335811384723962e-16,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T18",
+      "check": "charged ball crossing exit speed",
+      "scaled_error": 0.0,
+      "tolerance": 1e-07,
+      "passed": true
+    },
+    {
+      "lecture": 3,
+      "problem": "T18",
+      "check": "outside fall time from energy integral",
+      "scaled_error": 2.4424906541753444e-15,
+      "tolerance": 1e-07,
+      "passed": true
+    }
+  ],
+  "count": 61,
+  "passed": 61,
+  "normalization": "k=1; epsilon_0=1/(4*pi)",
+  "scope": "selected independent integrations, potential derivatives, far-field expansions and dynamics; every question also manually reviewed"
+}

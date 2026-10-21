@@ -1,0 +1,938 @@
+{
+  "count": 133,
+  "all_passed": true,
+  "maximum_normalized_error": 4.577203572213957e-08,
+  "checks": [
+    {
+      "name": "shell angular eta=-0.12,r=0.15",
+      "computed": 1.1359108671634885,
+      "expected": 1.1359108671634903,
+      "error": 1.563817101104097e-15,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=-0.12,r=0.6",
+      "computed": 1.1283179530557188,
+      "expected": 1.1283179530557155,
+      "error": 2.9518887516194594e-15,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=-0.12,r=1.4",
+      "computed": 0.8361496953502627,
+      "expected": 0.8361496953502175,
+      "error": 4.518607710224387e-14,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=-0.12,r=2.5",
+      "computed": 0.5058806633108708,
+      "expected": 0.5058806633108708,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=-0.01,r=0.15",
+      "computed": 1.0100632563682044,
+      "expected": 1.0100632563682017,
+      "error": 2.6379885044833832e-15,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=-0.01,r=0.6",
+      "computed": 1.009422759262151,
+      "expected": 1.0094227592621485,
+      "error": 2.419690493169295e-15,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=-0.01,r=1.4",
+      "computed": 0.7231980035393636,
+      "expected": 0.723198003539312,
+      "error": 5.162537064506978e-14,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=-0.01,r=2.5",
+      "computed": 0.4076464003555816,
+      "expected": 0.4076464003555807,
+      "error": 8.881784197001252e-16,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=0,r=0.15",
+      "computed": 1.0000000000000002,
+      "expected": 0.9999999999999998,
+      "error": 4.440892098500625e-16,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=0,r=0.6",
+      "computed": 1.0000000000000049,
+      "expected": 1.0000000000000002,
+      "error": 4.6629367034256346e-15,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=0,r=1.4",
+      "computed": 0.7142857142857687,
+      "expected": 0.7142857142857143,
+      "error": 5.440092820663267e-14,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=0,r=2.5",
+      "computed": 0.39999999999999997,
+      "expected": 0.4,
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=0.03,r=0.15",
+      "computed": 0.9709870734484871,
+      "expected": 0.9709870734484851,
+      "error": 1.9984014443252818e-15,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=0.03,r=0.6",
+      "computed": 0.9729173942095904,
+      "expected": 0.9729173942095868,
+      "error": 3.6637359812630166e-15,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=0.03,r=1.4",
+      "computed": 0.6887051215857292,
+      "expected": 0.6887051215856733,
+      "error": 5.5844218138645374e-14,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=0.03,r=2.5",
+      "computed": 0.3781476222144522,
+      "expected": 0.37814762221445275,
+      "error": 5.551115123125783e-16,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=0.15,r=0.15",
+      "computed": 0.8701320528683142,
+      "expected": 0.8701320528683126,
+      "error": 1.5543122344752192e-15,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=0.15,r=0.6",
+      "computed": 0.8799222244582839,
+      "expected": 0.8799222244582793,
+      "error": 4.6629367034256575e-15,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=0.15,r=1.4",
+      "computed": 0.6012837439288975,
+      "expected": 0.6012837439288312,
+      "error": 6.628031457012185e-14,
+      "passed": true
+    },
+    {
+      "name": "shell angular eta=0.15,r=2.5",
+      "computed": 0.30463639341324644,
+      "expected": 0.304636393413247,
+      "error": 5.551115123125783e-16,
+      "passed": true
+    },
+    {
+      "name": "null response derivative x=0.05",
+      "computed": 0.30643583995848545,
+      "expected": 0.3064358399008208,
+      "error": 5.766465083212324e-11,
+      "passed": true
+    },
+    {
+      "name": "initial outer potential x=0.05",
+      "computed": 1.0000000000000002,
+      "expected": 1,
+      "error": 2.2204460492503126e-16,
+      "passed": true
+    },
+    {
+      "name": "initial inner potential x=0.05",
+      "computed": 1.0,
+      "expected": 1,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "grounded outer x=0.05",
+      "computed": 0.0,
+      "expected": 0,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "inner readout x=0.05",
+      "computed": 0.0006146836863888112,
+      "expected": 0.0006146836863888394,
+      "error": 2.8189256484623115e-17,
+      "passed": true
+    },
+    {
+      "name": "charge fraction x=0.05",
+      "computed": 3.2146343699390556e-05,
+      "expected": 3.2146343699390556e-05,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "null response derivative x=0.2",
+      "computed": 0.30010459253493327,
+      "expected": 0.30010459245033827,
+      "error": 8.459499767354828e-11,
+      "passed": true
+    },
+    {
+      "name": "initial outer potential x=0.2",
+      "computed": 1.0,
+      "expected": 1,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "initial inner potential x=0.2",
+      "computed": 1.0,
+      "expected": 1,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "grounded outer x=0.2",
+      "computed": 0.0,
+      "expected": 0,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "inner readout x=0.2",
+      "computed": 0.0006020034019200227,
+      "expected": 0.0006020034019200704,
+      "error": 4.7704895589362195e-17,
+      "passed": true
+    },
+    {
+      "name": "charge fraction x=0.2",
+      "computed": 0.00014985183034025976,
+      "expected": 0.0001498518303402597,
+      "error": 5.421010862427522e-20,
+      "passed": true
+    },
+    {
+      "name": "null response derivative x=0.5",
+      "computed": 0.2616240719621743,
+      "expected": 0.2616240718822739,
+      "error": 7.99004196139208e-11,
+      "passed": true
+    },
+    {
+      "name": "initial outer potential x=0.5",
+      "computed": 1.0000000000000002,
+      "expected": 1,
+      "error": 2.2204460492503126e-16,
+      "passed": true
+    },
+    {
+      "name": "initial inner potential x=0.5",
+      "computed": 1.0,
+      "expected": 1,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "grounded outer x=0.5",
+      "computed": 0.0,
+      "expected": 0,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "inner readout x=0.5",
+      "computed": 0.0005249234026345624,
+      "expected": 0.0005249234026345473,
+      "error": 1.5070410197548512e-17,
+      "passed": true
+    },
+    {
+      "name": "charge fraction x=0.5",
+      "computed": 0.0005229235556319985,
+      "expected": 0.0005229235556319985,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "null response derivative x=0.8",
+      "computed": 0.16929255661213283,
+      "expected": 0.16929255650920105,
+      "error": 1.0293177421516475e-10,
+      "passed": true
+    },
+    {
+      "name": "initial outer potential x=0.8",
+      "computed": 1.0,
+      "expected": 1,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "initial inner potential x=0.8",
+      "computed": 1.0,
+      "expected": 1,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "grounded outer x=0.8",
+      "computed": 0.0,
+      "expected": 0,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "inner readout x=0.8",
+      "computed": 0.0003398876459286325,
+      "expected": 0.0003398876459286271,
+      "error": 5.421010862427522e-18,
+      "passed": true
+    },
+    {
+      "name": "charge fraction x=0.8",
+      "computed": 0.0013528525637475932,
+      "expected": 0.0013528525637475925,
+      "error": 6.505213034913027e-19,
+      "passed": true
+    },
+    {
+      "name": "null response derivative x=0.95",
+      "computed": 0.0710917091112373,
+      "expected": 0.07109170901912187,
+      "error": 9.211542639775416e-11,
+      "passed": true
+    },
+    {
+      "name": "initial outer potential x=0.95",
+      "computed": 0.9999999999999987,
+      "expected": 1,
+      "error": 1.3322676295501878e-15,
+      "passed": true
+    },
+    {
+      "name": "initial inner potential x=0.95",
+      "computed": 0.9999999999999987,
+      "expected": 1,
+      "error": 1.3322676295501878e-15,
+      "passed": true
+    },
+    {
+      "name": "grounded outer x=0.95",
+      "computed": 0.0,
+      "expected": 0,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "inner readout x=0.95",
+      "computed": 0.00014290006853598337,
+      "expected": 0.00014290006853601156,
+      "error": 2.8189256484623115e-17,
+      "passed": true
+    },
+    {
+      "name": "charge fraction x=0.95",
+      "computed": 0.0026949376717407283,
+      "expected": 0.002694937671740722,
+      "error": 6.071532165918825e-18,
+      "passed": true
+    },
+    {
+      "name": "inner field linear eta=-0.08",
+      "computed": 2.666667886508378e-05,
+      "expected": 2.666666666666667e-05,
+      "error": 1.2198417111624693e-11,
+      "passed": true
+    },
+    {
+      "name": "inner field linear eta=0.08",
+      "computed": -2.6666683861087392e-05,
+      "expected": -2.666666666666667e-05,
+      "error": 1.7194420722437898e-11,
+      "passed": true
+    },
+    {
+      "name": "S small x=0.0005",
+      "computed": 0.30685277777338504,
+      "expected": 0.30685277777338804,
+      "error": 2.9976021664879227e-15,
+      "passed": true
+    },
+    {
+      "name": "S small x=0.001",
+      "computed": 0.30685265277333784,
+      "expected": 0.306852652773388,
+      "error": 5.0182080713057076e-14,
+      "passed": true
+    },
+    {
+      "name": "S small x=0.002",
+      "computed": 0.30685215277258826,
+      "expected": 0.30685215277338806,
+      "error": 7.998046669399628e-13,
+      "passed": true
+    },
+    {
+      "name": "S narrow gap h=1e-05",
+      "computed": 5.6030936036788326e-05,
+      "expected": 5.6030363227650876e-05,
+      "error": 5.728091374501373e-10,
+      "passed": true
+    },
+    {
+      "name": "S narrow gap h=3e-05",
+      "computed": 0.00015161656635043208,
+      "expected": 0.00015161190535293098,
+      "error": 4.660997501100463e-09,
+      "passed": true
+    },
+    {
+      "name": "S narrow gap h=0.0001",
+      "computed": 0.00044522014966252854,
+      "expected": 0.0004451743776268064,
+      "error": 4.577203572213957e-08,
+      "passed": true
+    },
+    {
+      "name": "W2 exponent bound",
+      "computed": 1.1813868496287372e-06,
+      "expected": 1.1813868e-06,
+      "error": 4.9628737170263654e-14,
+      "passed": true
+    },
+    {
+      "name": "T3 bound",
+      "computed": 1.9111391257031997e-06,
+      "expected": 1.9111404e-06,
+      "error": 1.2742968000957055e-12,
+      "passed": true
+    },
+    {
+      "name": "T18 bound",
+      "computed": 9.555695628515999e-07,
+      "expected": 9.555702e-07,
+      "error": 6.371484000478527e-13,
+      "passed": true
+    },
+    {
+      "name": "taper R (1, 2, 3)",
+      "computed": 0.4774648292756845,
+      "expected": 0.477464829275686,
+      "error": 1.4988010832439613e-15,
+      "passed": true
+    },
+    {
+      "name": "taper gradient (1, 2, 3, 0.44999999999999996)",
+      "computed": 0.5040957782032063,
+      "expected": 0.5040957781978577,
+      "error": 5.348610443434154e-12,
+      "passed": true
+    },
+    {
+      "name": "taper gradient (1, 2, 3, 1.35)",
+      "computed": 0.3170828378945556,
+      "expected": 0.3170828378913991,
+      "error": 3.1564750813117826e-12,
+      "passed": true
+    },
+    {
+      "name": "taper gradient (1, 2, 3, 2.55)",
+      "computed": 0.19478938398029275,
+      "expected": 0.19478938397857312,
+      "error": 1.719624442841905e-12,
+      "passed": true
+    },
+    {
+      "name": "taper Joule (1, 2, 3)",
+      "computed": 2.094395102393195,
+      "expected": 2.0943951023931953,
+      "error": 2.1203697876423447e-16,
+      "passed": true
+    },
+    {
+      "name": "taper R (2, 1, 4)",
+      "computed": 0.6366197723675817,
+      "expected": 0.6366197723675814,
+      "error": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "name": "taper gradient (2, 1, 4, 0.6)",
+      "computed": 0.14609203798365833,
+      "expected": 0.14609203798392986,
+      "error": 2.7153279624769766e-13,
+      "passed": true
+    },
+    {
+      "name": "taper gradient (2, 1, 4, 1.8)",
+      "computed": 0.2081165452694211,
+      "expected": 0.20811654526534856,
+      "error": 4.072547854505615e-12,
+      "passed": true
+    },
+    {
+      "name": "taper gradient (2, 1, 4, 3.4)",
+      "computed": 0.37807183365379243,
+      "expected": 0.37807183364839325,
+      "error": 5.39918110220583e-12,
+      "passed": true
+    },
+    {
+      "name": "taper Joule (2, 1, 4)",
+      "computed": 1.5707963267948974,
+      "expected": 1.5707963267948966,
+      "error": 5.654319433712916e-16,
+      "passed": true
+    },
+    {
+      "name": "taper R (0.7, 0.7, 2)",
+      "computed": 1.2992240252398897,
+      "expected": 1.299224025239962,
+      "error": 5.571521138718988e-14,
+      "passed": true
+    },
+    {
+      "name": "taper gradient (0.7, 0.7, 2, 0.3)",
+      "computed": 0.5000000000032756,
+      "expected": 0.5,
+      "error": 3.275602011854062e-12,
+      "passed": true
+    },
+    {
+      "name": "taper gradient (0.7, 0.7, 2, 0.9)",
+      "computed": 0.49999999999772443,
+      "expected": 0.5,
+      "error": 2.275568622422952e-12,
+      "passed": true
+    },
+    {
+      "name": "taper gradient (0.7, 0.7, 2, 1.7)",
+      "computed": 0.5000000000032756,
+      "expected": 0.5,
+      "error": 3.275602011854062e-12,
+      "passed": true
+    },
+    {
+      "name": "taper Joule (0.7, 0.7, 2)",
+      "computed": 0.7696902001294658,
+      "expected": 0.7696902001294993,
+      "error": 3.352873534367973e-14,
+      "passed": true
+    },
+    {
+      "name": "taper R (0.4, 3, 1)",
+      "computed": 0.2652582384864955,
+      "expected": 0.2652582384864922,
+      "error": 3.2751579226442118e-15,
+      "passed": true
+    },
+    {
+      "name": "taper gradient (0.4, 3, 1, 0.15)",
+      "computed": 1.922768789142104,
+      "expected": 1.9227687870533567,
+      "error": 1.0863225921998324e-09,
+      "passed": true
+    },
+    {
+      "name": "taper gradient (0.4, 3, 1, 0.45)",
+      "computed": 0.48683516585962255,
+      "expected": 0.4868351657268042,
+      "error": 1.3281836741541042e-10,
+      "passed": true
+    },
+    {
+      "name": "taper gradient (0.4, 3, 1, 0.85)",
+      "computed": 0.17615713217861842,
+      "expected": 0.17615713216188844,
+      "error": 1.67299785136521e-11,
+      "passed": true
+    },
+    {
+      "name": "taper Joule (0.4, 3, 1)",
+      "computed": 3.769911184307806,
+      "expected": 3.7699111843077517,
+      "error": 1.4371395227353462e-14,
+      "passed": true
+    },
+    {
+      "name": "sphere layers R (1, 3, 2)",
+      "computed": 0.04642019173513599,
+      "expected": 0.046420191735136146,
+      "error": 1.5265566588595902e-16,
+      "passed": true
+    },
+    {
+      "name": "sphere layers power (1, 3, 2)",
+      "computed": 21.542349624615746,
+      "expected": 21.54234962461572,
+      "error": 1.1544235510497197e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere layers R (0.6, 4, 1)",
+      "computed": 0.17573358299730063,
+      "expected": 0.17573358299730113,
+      "error": 4.996003610813204e-16,
+      "passed": true
+    },
+    {
+      "name": "sphere layers power (0.6, 4, 1)",
+      "computed": 5.690431976313581,
+      "expected": 5.690431976313587,
+      "error": 9.364966562087023e-16,
+      "passed": true
+    },
+    {
+      "name": "sphere layers R (2, 6, 4)",
+      "computed": 0.037894034069498914,
+      "expected": 0.03789403406949889,
+      "error": 2.0816681711721685e-17,
+      "passed": true
+    },
+    {
+      "name": "sphere layers power (2, 6, 4)",
+      "computed": 26.38937829015432,
+      "expected": 26.389378290154262,
+      "error": 2.15402645093825e-15,
+      "passed": true
+    },
+    {
+      "name": "cylinder R (0.5, 1, 2)",
+      "computed": 0.055158900038163004,
+      "expected": 0.0551589000381629,
+      "error": 1.0408340855860843e-16,
+      "passed": true
+    },
+    {
+      "name": "cylinder Joule (0.5, 1, 2)",
+      "computed": 163.1649651057791,
+      "expected": 163.16496510577866,
+      "error": 2.6128503823089424e-15,
+      "passed": true
+    },
+    {
+      "name": "cylinder R (1, 3, 5)",
+      "computed": 0.03496991525660597,
+      "expected": 0.034969915256605984,
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "cylinder Joule (1, 3, 5)",
+      "computed": 257.3640780642112,
+      "expected": 257.3640780642115,
+      "error": 1.3252063603054757e-15,
+      "passed": true
+    },
+    {
+      "name": "cylinder R (2, 2.001, 1)",
+      "computed": 7.955758380702273e-05,
+      "expected": 7.955758380702258e-05,
+      "error": 1.4907779871675686e-19,
+      "passed": true
+    },
+    {
+      "name": "cylinder Joule (2, 2.001, 1)",
+      "computed": 113125.6075075216,
+      "expected": 113125.60750752148,
+      "error": 1.157715215333485e-15,
+      "passed": true
+    },
+    {
+      "name": "graded rod integral",
+      "computed": 0.896361676485675,
+      "expected": 0.896361676485673,
+      "error": 1.9984014443252818e-15,
+      "passed": true
+    },
+    {
+      "name": "graded rod gradient 0.1",
+      "computed": 1.110401287701679,
+      "expected": 1.1104012877278164,
+      "error": 2.3538820486262883e-11,
+      "passed": true
+    },
+    {
+      "name": "graded rod gradient 0.4",
+      "computed": 1.0469524624412418,
+      "expected": 1.046952462458266,
+      "error": 1.6260680852336954e-11,
+      "passed": true
+    },
+    {
+      "name": "graded rod gradient 0.8",
+      "computed": 0.9023055722090499,
+      "expected": 0.9023055722127653,
+      "error": 3.715361351908086e-12,
+      "passed": true
+    },
+    {
+      "name": "W9 angle",
+      "computed": 63.43494882292202,
+      "expected": 63.4349488229,
+      "error": 3.4712283669800565e-13,
+      "passed": true
+    },
+    {
+      "name": "W9 field ratio",
+      "computed": 0.5,
+      "expected": 0.5,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "tensor heat (1, 0)",
+      "computed": 2,
+      "expected": 2.0,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "tensor heat (1, 2)",
+      "computed": 14,
+      "expected": 14.0,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "tensor heat (-2, 3)",
+      "computed": 14,
+      "expected": 14.0,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "hole Laplace (1.4, 0.3)",
+      "computed": 0.0,
+      "expected": 0,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "hole Laplace (0.3, 1.8)",
+      "computed": -5.551115123125783e-09,
+      "expected": 0,
+      "error": 5.551115123125783e-09,
+      "passed": true
+    },
+    {
+      "name": "hole Laplace (-2, 0.7)",
+      "computed": 0.0,
+      "expected": 0,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "hole zero normal theta=0",
+      "computed": -8.881784197001251e-11,
+      "expected": 0,
+      "error": 8.881784197001251e-11,
+      "passed": true
+    },
+    {
+      "name": "hole tangent theta=0",
+      "computed": -0.0,
+      "expected": -0.0,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "hole zero normal theta=0.3",
+      "computed": -7.771561172376096e-11,
+      "expected": 0,
+      "error": 7.771561172376096e-11,
+      "passed": true
+    },
+    {
+      "name": "hole tangent theta=0.3",
+      "computed": -0.5910404133224745,
+      "expected": -0.5910404133226791,
+      "error": 2.0461410343841635e-13,
+      "passed": true
+    },
+    {
+      "name": "hole zero normal theta=0.8",
+      "computed": -6.661338147750939e-11,
+      "expected": 0,
+      "error": 6.661338147750939e-11,
+      "passed": true
+    },
+    {
+      "name": "hole tangent theta=0.8",
+      "computed": -1.4347121817692707,
+      "expected": -1.4347121817990456,
+      "error": 2.07531863397725e-11,
+      "passed": true
+    },
+    {
+      "name": "hole zero normal theta=1.57",
+      "computed": -6.505213034913027e-14,
+      "expected": 0,
+      "error": 6.505213034913027e-14,
+      "passed": true
+    },
+    {
+      "name": "hole tangent theta=1.57",
+      "computed": -1.9999993658434323,
+      "expected": -1.9999993658636692,
+      "error": 1.0118464832374295e-11,
+      "passed": true
+    },
+    {
+      "name": "hole zero normal theta=2.3",
+      "computed": 6.661338147750939e-11,
+      "expected": 0,
+      "error": 6.661338147750939e-11,
+      "passed": true
+    },
+    {
+      "name": "hole tangent theta=2.3",
+      "computed": -1.4914104243368695,
+      "expected": -1.4914104243534407,
+      "error": 1.1111085583794991e-11,
+      "passed": true
+    },
+    {
+      "name": "thermal I balance 0.2",
+      "computed": 0.08012820512820515,
+      "expected": 0.08012820512820515,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "thermal I balance 0.5",
+      "computed": 0.5050505050505051,
+      "expected": 0.5050505050505051,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "thermal I balance 0.8",
+      "computed": 1.3136288998357966,
+      "expected": 1.3136288998357966,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "thermal U balance 0.5",
+      "computed": 0.12468905280222567,
+      "expected": 0.12468905280222375,
+      "error": 1.915134717478395e-15,
+      "passed": true
+    },
+    {
+      "name": "thermal U balance 2",
+      "computed": 1.9258240356725203,
+      "expected": 1.9258240356725187,
+      "error": 8.070894358385319e-16,
+      "passed": true
+    },
+    {
+      "name": "thermal U balance 6",
+      "computed": 14.051248379533273,
+      "expected": 14.05124837953327,
+      "error": 2.5283971806912916e-16,
+      "passed": true
+    },
+    {
+      "name": "nonlinear load point",
+      "computed": 3,
+      "expected": 3,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "nonlinear small response",
+      "computed": 0.2000000000002,
+      "expected": 0.2,
+      "error": 1.9997892231060632e-13,
+      "passed": true
+    },
+    {
+      "name": "two battery energy",
+      "computed": 12,
+      "expected": 12,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "timed layers ratio",
+      "computed": 6.0,
+      "expected": 6,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "timed layers sum",
+      "computed": 0.046420191735136146,
+      "expected": 0.04642019173513614,
+      "error": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "name": "timed source heat",
+      "computed": 0.9856807669405446,
+      "expected": 0.9856807669405446,
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "polarity estimate (-0.01, 0.01)",
+      "computed": -0.0038222782514063976,
+      "expected": -0.0038222782514064,
+      "error": 2.6020852139652106e-18,
+      "passed": true
+    },
+    {
+      "name": "polarity bound (-0.01, 0.01)",
+      "computed": 0.0038222782514063976,
+      "expected": 0.0038222782514064,
+      "error": 0,
+      "passed": true
+    },
+    {
+      "name": "polarity estimate (0.01, -0.01)",
+      "computed": 0.003822278251406408,
+      "expected": 0.0038222782514064,
+      "error": 7.806255641895632e-18,
+      "passed": true
+    },
+    {
+      "name": "polarity bound (0.01, -0.01)",
+      "computed": 0.003822278251406408,
+      "expected": 0.0038222782514064,
+      "error": 0,
+      "passed": true
+    },
+    {
+      "name": "polarity estimate (0.005, 0.005)",
+      "computed": 6.938893903907228e-18,
+      "expected": 0.0,
+      "error": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "name": "polarity bound (0.005, 0.005)",
+      "computed": 6.938893903907228e-18,
+      "expected": 0.0038222782514064,
+      "error": 0,
+      "passed": true
+    }
+  ]
+}

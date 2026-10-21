@@ -1,0 +1,653 @@
+% 第一讲 库仑定律与电荷体系
+% 使用 Tectonic 或 XeLaTeX 编译。正文可在下方各 ContentPart 中编辑。
+% 图像以无损 PDF 图像流嵌入本文件，编译时无需另附图片文件。
+\documentclass[UTF8,fontset=fandol,zihao=-4,a4paper]{ctexart}
+\usepackage[top=19mm,bottom=18mm,left=21mm,right=21mm]{geometry}
+\usepackage{amsmath,amssymb,bm,esint}
+\usepackage{booktabs,array,float,caption}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={第一讲 库仑定律与电荷体系},pdfsubject={电磁学课程讲义},pdfauthor={}}
+\ctexset{
+ section={format=\Large\sffamily\bfseries,beforeskip=3ex,afterskip=1.5ex},
+ subsection={format=\normalsize\sffamily\bfseries,beforeskip=2ex,afterskip=1ex}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.18}
+\renewcommand{\thefigure}{1-\arabic{figure}}
+\captionsetup{font=small,labelformat=simple,labelsep=quad,skip=6pt}
+\setlength{\abovedisplayskip}{7pt}
+\setlength{\belowdisplayskip}{7pt}
+\setlength{\intextsep}{8pt}
+\pagestyle{plain}
+\raggedbottom
+
+% 自包含原图排版命令，保留原始像素和比例。
+\newlength{\PptWidth}
+\newlength{\PptHeight}
+\newlength{\PptTileHeight}
+\newlength{\PptTileY}
+\makeatletter
+\newcommand{\PptDrawTile}[3]{%
+ \setlength{\PptTileHeight}{#2\PptHeight}%
+ \setlength{\PptTileY}{#3\PptHeight}%
+ \edef\PptTileHeightBP{\strip@pt\dimexpr0.996264\PptTileHeight\relax}%
+ \edef\PptTileYBP{\strip@pt\dimexpr0.996264\PptTileY\relax}%
+ \special{pdf:put @Ppt#1 << /Filter /FlateDecode >>}%
+ \special{pdf:put @resources << /XObject << /Ppt#1 @Ppt#1 >> >>}%
+ \special{pdf:content q \PptWidthBP\space 0 0 \PptTileHeightBP\space 0 \PptTileYBP\space cm /Ppt#1 Do Q}}
+\newcommand{\PptImageBox}[3]{%
+ \begingroup
+ \setlength{\PptWidth}{#2}%
+ \setlength{\PptHeight}{#3\PptWidth}%
+ \edef\PptWidthBP{\strip@pt\dimexpr0.996264\PptWidth\relax}%
+ \edef\PptHeightBP{\strip@pt\dimexpr0.996264\PptHeight\relax}%
+ \leavevmode\hbox to\PptWidth{%
+  \vrule width0pt height\PptHeight depth0pt%
+  \csname PptStream#1\endcsname%
+  \global\expandafter\let\csname PptStream#1\endcsname\relax%
+  \hss}%
+ \endgroup}
+\makeatother
+
+
+\usepackage{enumitem}
+\usepackage{xcolor,tikz,needspace}
+\usetikzlibrary{arrows.meta,calc,decorations.pathmorphing}
+\definecolor{ink}{HTML}{25323C}
+\definecolor{sourceink}{HTML}{A34435}
+\definecolor{fieldink}{HTML}{205D83}
+\definecolor{surfaceink}{HTML}{4B7B77}
+\tikzset{
+ charge/.style={circle,draw=sourceink,fill=sourceink!6,minimum size=6mm,inner sep=2pt},
+ point/.style={circle,fill=ink,inner sep=1.5pt},
+ axis/.style={draw=ink!65,thin,-{Latex[length=1.7mm]}},
+ force/.style={draw=fieldink,thick,-{Latex[length=2mm]}},
+ aux/.style={draw=ink!45,dashed,thin},
+ dim/.style={draw=ink!60,thin,{Latex[length=1.6mm]}-{Latex[length=1.6mm]}},
+ source/.style={draw=sourceink,very thick},
+ surface/.style={draw=surfaceink,fill=surfaceink!7}}
+\newcommand{\ProblemDiagram}[1]{\DrawDiagram{#1}{0}{Q}{题图}}
+\newcommand{\AnalysisDiagram}[1]{\DrawDiagram{#1}{1}{A}{解答分析图}}
+\newcommand{\DrawDiagram}[4]{%
+ \par\smallskip\noindent\begin{minipage}{\linewidth}\centering
+ \refstepcounter{figure}\label{fig:L1:#1:#3}
+ \begin{tikzpicture}[x=1cm,y=1cm,font=\small,text=ink,line cap=round,line join=round]
+ \csname Diagram#1\endcsname{#2}
+ \end{tikzpicture}\par\vspace{2pt}
+ {\footnotesize\textbf{图~\thefigure\quad #4}\quad\csname Caption#3#1\endcsname\par}
+ \end{minipage}\par\smallskip}
+\setlist[enumerate]{itemsep=4pt,parsep=0pt,topsep=5pt,leftmargin=2.3em}
+\newcommand{\Coach}[1]{\par\smallskip\noindent #1\par\smallskip}
+\newcommand{\Trap}[1]{\par\smallskip\noindent\textbf{注意}\quad #1\par\smallskip}
+\newcommand{\Task}[2]{\needspace{45mm}\subsection*{习题 #1\quad #2}}
+\newcommand{\Answer}[2]{\needspace{60mm}\subsection*{习题 #1 解答\quad #2}}
+\newcommand{\Worked}[2]{\needspace{45mm}\subsection*{例题 #1\quad #2}}
+\newcommand{\Solution}{\par\noindent\textbf{解}\quad}
+\newcommand{\Key}[1]{}
+
+\expandafter\def\csname DiagramW1\endcsname#1{%
+\ifnum#1=0
+
+\draw[axis] (-3.2,0)--(4.6,0) node[right] {$x$};
+\node[charge] (L) at (-2,0) {$Q_1$};
+\node[charge] (R) at (2,0) {$Q_2$};
+\node[charge,draw=ink] (P) at (0,0) {$q$};
+\node[below=5pt] at (L.south) {$0$};
+\node[below=5pt] at (R.south) {$d$};
+\draw[dim] (-2,-1.35)--(2,-1.35) node[midway,fill=white] {$d$};
+\draw[aux] (0,-.35)--(0,.65) node[above] {$x$};
+\ifnum#1=1
+\draw[force] (P.north)--++(1,0) node[above] {$F_L$};
+\draw[force] (P.north)--++(-1,0) node[above] {$F_R$};
+\node at (0,1.35) {图中先取 $q>0$；平衡时两力相等};
+\fi
+
+\else
+\draw[axis] (-2.8,0)--(2.8,0) node[right] {$x$};
+\node[charge] at (-2,0) {$Q_1$};\node[charge] at (2,0) {$Q_2$};
+\node[below] at (-2,-.3) {$0$};\node[below] at (2,-.3) {$d$};
+\node[point] (O) at (0,0) {};\node[below] at (O) {$x_0$};\node[charge,draw=ink] (X) at (.65,0) {$q$};
+\draw[dim] (0,-.85)--(.65,-.85) node[midway,below] {$\xi>0$};
+\draw[force] (X.north)--++(-.85,0) node[above] {$F_x<0$};
+\node at (0,1.85) {$q>0$；$\xi,y$ 均为相对平衡点的微扰};
+\node at (0,1.2) {轴向：$F_x\simeq-2kqA\xi$};\begin{scope}[yshift=-3.9cm]
+\draw[axis] (-2.8,0)--(2.8,0) node[right] {$x$};
+\node[charge] at (-2,0) {$Q_1$};\node[charge] at (2,0) {$Q_2$};
+\node[below] at (-2,-.3) {$0$};\node[below] at (2,-.3) {$d$};
+\node[point] (O) at (0,0) {};\node[below] at (O) {$x_0$};\draw[axis] (0,-.2)--(0,1.9) node[above] {$y$};
+\node[charge,draw=ink] (Y) at (0,.8) {$q$};
+\draw[aux] (-2,0)--(Y)--(2,0);
+\draw[force] (Y.north)--++(0,.6) node[right] {$F_y>0$};
+\node[right] at (.3,.8) {$y>0$};
+\node at (0,-1.35) {横向：$F_y\simeq kqAy$，偏离被放大};
+\end{scope}
+\fi
+
+}
+\expandafter\def\csname CaptionQW1\endcsname{同号源之间的连线约束}
+\expandafter\def\csname CaptionAW1\endcsname{正试探电荷：轴向小位移产生恢复力，横向小位移产生发散力。}
+\expandafter\def\csname DiagramW2\endcsname#1{
+\ifnum#1=0
+\draw[axis] (-2.8,0)--(4.2,0) node[right] {$x$};
+\node[charge] (L) at (-1.5,0) {$+Q$};\node[charge] (R) at (1.5,0) {$-\alpha Q$};
+\node[point] (P) at (3.25,0) {};\node[above] at (P) {$q$};
+\node[below=5pt] at (L.south) {$0$};\node[below=5pt] at (R.south) {$d$};
+\draw[dim] (-1.5,-.8)--(1.5,-.8) node[midway,fill=white] {$d$};
+\node at (.3,1) {分别考察 $x<0$、$0<x<d$、$x>d$};
+\else
+\foreach \yy/\textcase in {0/{$0<\alpha<1$},-2.7/{$\alpha>1$}}{
+ \begin{scope}[yshift=\yy cm]
+ \draw[axis] (-3.8,0)--(3.9,0) node[right] {$x$};
+ \node[charge] (L) at (-1.45,0) {$+Q$};\node[charge] (R) at (1.45,0) {$-\alpha Q$};
+ \node[below] at (-1.45,-.35) {$0$};\node[below] at (1.45,-.35) {$d$};
+ \node[anchor=west] at (-3.7,1.05) {\textcase};
+ \end{scope}}
+\node[charge] (P) at (3,0) {$q$};
+\draw[force] (P.north)--++(-.7,0) node[above] {$F_-$};\draw[force] (P.north)--++(.7,0) node[above] {$F_+$};
+\node at (.3,-1.1) {$x_0=d/(1-\sqrt\alpha)>d$};
+\node[charge] (S) at (-3,-2.7) {$q$};
+\draw[force] (S.north)--++(-.7,0) node[above] {$F_+$};\draw[force] (S.north)--++(.7,0) node[above] {$F_-$};
+\node at (.3,-3.8) {$x_0=-d/(\sqrt\alpha-1)<0$};
+\node at (0,-4.5) {箭头取 $q>0$；$\alpha=1$ 时无有限平衡点};
+\fi
+}
+\expandafter\def\csname CaptionQW2\endcsname{异号源与外侧场点}
+\expandafter\def\csname CaptionAW2\endcsname{图示右侧候选点；需按电量分区}
+\expandafter\def\csname DiagramW3\endcsname#1{%
+
+\coordinate (O) at (0,2.6);
+\draw[thick] (-.5,2.65)--(.5,2.65);\node[above] at (O) {$O$};
+\draw (O)--(-1.1,.3) node[midway,left] {$L$};
+\draw (O)--(1.1,.3) node[midway,right] {$L$};
+\draw[aux] (O)--(0,.2);
+\draw (0,1.85) arc[start angle=-90,end angle=-64.44,radius=.75];
+\node at (.38,1.6) {$\theta$};
+\node[charge] (L) at (-1.1,.3) {$q$};
+\node[charge] (R) at (1.1,.3) {$q$};
+\draw[dim] (-1.1,-.3)--(1.1,-.3) node[midway,fill=white] {$s=2L\sin\theta$};
+\ifnum#1=1
+\node[point] (B) at (4,.3) {};\node[below left] at (B) {右球};
+\draw[force] (B)--++(.95,0) node[right] {$F_e$};
+\draw[force] (B)--++(0,-.85) node[right] {$mg$};
+\draw[force] (B)--++(-.65,1.35) node[left] {$T$};
+\draw[aux] (B)--++(0,1.35);
+\node at (6.5,1.8) {$T\cos\theta=mg$};
+\node at (6.5,1.05) {$T\sin\theta=F_e$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW3\endcsname{悬挂双球的几何}
+\expandafter\def\csname CaptionAW3\endcsname{右球的三个力与分量平衡}
+\expandafter\def\csname DiagramW4\endcsname#1{%
+\ifnum#1=0
+
+\draw[axis] (-3.2,0)--(4.6,0) node[right] {$x$};
+\node[charge] (L) at (-2,0) {$+Q$};
+\node[charge] (R) at (2,0) {$+Q$};
+\node[charge,draw=ink] (P) at (0,0) {$q$};
+\node[below=5pt] at (L.south) {$-a$};
+\node[below=5pt] at (R.south) {$a$};
+\draw[dim] (-2,-.85)--(2,-.85) node[midway,fill=white] {$2a$};
+\draw[aux] (0,-.35)--(0,.65) node[above] {$x$};
+\ifnum#1=1
+\draw[force] (L.north)--++(-.9,0) node[above] {$F_{R\to L}$};
+\draw[force] (L.north)--++(.9,0) node[above] {$F_{q\to L}$};
+\draw[force] (R.north)--++(.9,0) node[above] {$F_{L\to R}$};
+\draw[force] (R.north)--++(-.9,0) node[above] {$F_{q\to R}$};
+\node at (0,1.35) {$q<0$；中心平衡与两端平衡须同时成立};
+\fi
+
+\else
+\draw[axis] (-2.8,0)--(2.8,0) node[right] {$x$};
+\node[charge] at (-2,0) {$+Q$};\node[charge] at (2,0) {$+Q$};
+\node[below] at (-2,-.3) {$-a$};\node[below] at (2,-.3) {$a$};
+\node[point] (O) at (0,0) {};\node[below] at (O) {$0$};\node[charge,draw=ink] (X) at (.65,0) {$q$};
+\draw[dim] (0,-.85)--(.65,-.85) node[midway,below] {$\xi>0$};
+\draw[force] (X.north)--++(.9,0) node[above] {$F_x>0$};
+\node at (0,1.3) {$F_x\simeq kQ^2\xi/a^3$};
+\node at (0,-1.55) {$q=-Q/4$：位移与合力同向，轴向失稳};
+\node at (0,-2.05) {图示势能变分：两端位置暂保持不变};
+\fi
+
+}
+\expandafter\def\csname CaptionQW4\endcsname{三个电荷的平衡构型；两端为 $\pm a$}
+\expandafter\def\csname CaptionAW4\endcsname{中心负电荷的轴向微扰使合力与位移同向；对应总势能的下降方向。}
+\expandafter\def\csname DiagramW5\endcsname#1{%
+\ifnum#1=0
+\node[charge,draw=ink] (O) at (0,0) {$q_c$};
+\node[charge] (P0) at (0.0:1.6) {$Q$};
+\node[charge] (P1) at (120.0:1.6) {$Q$};
+\node[charge] (P2) at (240.0:1.6) {$Q$};
+\draw[aux] (P0)--(P1)--(P2)--cycle;
+\draw[dim] (0,-.6)--(1.6,-.6) node[midway,fill=white] {$R$};\ifnum#1=1
+\draw[force] (P0.east)--++(1.1,0) node[right] {$F_{\text{源},r}$};
+\draw[force] (P0.west)--++(-.8,0) node[above] {$F_c$};\node at (0,2.2) {向外的顶点合力由中心负电荷补偿};
+\fi
+
+\else
+\node[charge] (V) at (1.6,0) {$Q$};
+\node[charge] (U) at (-.8,1.3856) {$Q$};
+\node[charge] (L) at (-.8,-1.3856) {$Q$};
+\node[charge] (O) at (0,0) {$q_c$};
+\draw[aux] (U)--(V)--(L)--cycle;
+\draw[dim] (-1.2,-1.3856)--(-1.2,1.3856) node[midway,left] {$a$};
+\draw[force] (V)--++(1.0392,.6) node[above right] {$F_0$};
+\draw[force] (V)--++(1.0392,-.6) node[below right] {$F_0$};
+\draw[force] (V.east)--++(1.7,0) node[right] {$2F_0\cos30^\circ$};
+\draw[force] (V.west)--++(-.8,0) node[above] {$F_c$};
+\draw (2.05,0) arc (0:30:.45);
+\node at (2.45,.22) {$30^\circ$};
+\draw[dim] (0,-.5)--(1.6,-.5) node[midway,below] {$R=a/\sqrt3$};
+\node at (.5,2) {两条邻顶点斥力投影相加；中心负电荷向内补偿};
+\fi
+
+}
+\expandafter\def\csname CaptionQW5\endcsname{等边三角形与中心电荷}
+\expandafter\def\csname CaptionAW5\endcsname{顶点合力方向沿中心至顶点向外}
+\expandafter\def\csname DiagramW6\endcsname#1{%
+\ifnum#1=0
+\node[charge,draw=ink] (O) at (0,0) {$q_c$};
+\node[charge] (P0) at (0.0:1.6) {$Q$};
+\node[charge] (P1) at (60.0:1.6) {$Q$};
+\node[charge] (P2) at (120.0:1.6) {$Q$};
+\node[charge] (P3) at (180.0:1.6) {$Q$};
+\node[charge] (P4) at (240.0:1.6) {$Q$};
+\node[charge] (P5) at (300.0:1.6) {$Q$};
+\draw[aux] (P0)--(P1)--(P2)--(P3)--(P4)--(P5)--cycle;
+\draw[dim] (0,-.6)--(1.6,-.6) node[midway,fill=white] {$R$};\draw[aux] (O)--(P1) (O)--(P0);
+\draw (.7,0) arc (0:60:.7);\node at (1.05,.92) {$2\pi j/N$};
+\node at (0,-2.25) {绘图以 $N=6$ 示意；公式适用于一般 $N$};\ifnum#1=1
+\draw[force] (P0.east)--++(1.1,0) node[right] {$F_{\text{源},r}$};
+\draw[force] (P0.west)--++(-.8,0) node[above] {$F_c$};\draw[force] (P0)--++(.75,-1.25) node[right] {$F_j$};
+\node at (3.7,-1.75) {$F_{j,r}=F_j\sin(\pi j/N)$};
+\fi
+
+\else
+\node[charge,draw=ink] (O) at (0,0) {$q_c$};
+\node[charge] (P0) at (0.0:1.6) {$Q$};
+\node[charge] (P1) at (60.0:1.6) {$Q$};
+\node[charge] (P2) at (120.0:1.6) {$Q$};
+\node[charge] (P3) at (180.0:1.6) {$Q$};
+\node[charge] (P4) at (240.0:1.6) {$Q$};
+\node[charge] (P5) at (300.0:1.6) {$Q$};
+\draw[aux] (P0)--(P1)--(P2)--(P3)--(P4)--(P5)--cycle;
+\draw[dim] (0,-.6)--(1.6,-.6) node[midway,fill=white] {$R$};\draw[aux] (O)--(P1) (O)--(P0);
+\draw (.7,0) arc (0:60:.7);\node at (-.1,.75) {$2\pi j/N$};
+\node at (0,-2.25) {绘图以 $N=6$ 示意；公式适用于一般 $N$};\draw[dim] (P1)--(P0) node[midway,above right] {$d_j$};
+\draw[force] (P0)--(2.3,-1.2124) node[below right] {$F_j$};
+\draw[force] (P0)--(2.3,0) node[above right] {$F_{j,r}$};
+\draw[aux] (2.3,-1.2124)--(2.3,0);
+\draw (2.05,0) arc (0:-60:.45);
+\node[align=left] at (4.1,-.55) {$\angle=\pi/2-\pi j/N$\\$F_{j,r}=F_j\sin(\pi j/N)$};
+\node at (2.9,1.6) {$d_j=2R\sin(\pi j/N)$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW6\endcsname{正多边形的代表性几何}
+\expandafter\def\csname CaptionAW6\endcsname{弦长与径向投影决定求和项}
+\expandafter\def\csname DiagramW7\endcsname#1{
+\ifnum#1=0
+\draw[thick] (0,-.35)--(0,.7);\node[above left] at (0,.65) {固定端};
+\node[charge] at (0,0) {$+Q$};\node[charge] (P) at (3.4,0) {$q$};
+\draw[decorate,decoration={zigzag,segment length=5pt,amplitude=3pt}] (.3,0)--(3.1,0);
+\draw[axis] (-.5,-.65)--(4.5,-.65) node[right] {$x$};
+\draw[aux] (1.8,-.35)--(1.8,.7);\node[above] at (1.8,.7) {自然端点 $x=L$};
+\draw[dim] (0,-1.15)--(3.4,-1.15) node[midway,fill=white] {$x$};
+\node[below] at (0,-.65) {$0$};
+\else
+\draw[axis] (-.2,0)--(5.8,0) node[right] {$u=x/L$};
+\draw[axis] (0,-.2)--(0,2.7) node[above] {$h(u)$};
+\draw[fieldink,thick,domain=0:1,samples=80] plot ({5*\x},{14*\x*\x*(1-\x)});
+\draw[sourceink,thick] (0,1.4)--(5.1,1.4) node[right] {$b$};
+\draw[aux] (3.3333,0)--(3.3333,2.0741)--(0,2.0741);
+\node[left] at (0,2.0741) {$4/27$};\node[below] at (3.3333,0) {$2/3$};\node[below] at (5,0) {$1$};
+\fill[fieldink] (2.0630,1.4) circle (.05);\fill[fieldink] (4.3348,1.4) circle (.05);
+\node[align=center] at (1.3,2.65) {小根\\不稳定};\node[align=center] at (4.7,2.65) {大根\\稳定};\draw[aux] (1.5,2.3)--(2.0630,1.4);\draw[aux] (4.6,2.3)--(4.3348,1.4);
+\node at (2.5,-.9) {$h(u)=u^2(1-u)$，$b=B/(\kappa L^3)$};
+\node at (2.5,-1.5) {$q<0$；水平线示例取 $0<b<4/27$};
+\fi
+}
+\expandafter\def\csname CaptionQW7\endcsname{带电粒子与弹簧的轴线模型}
+\expandafter\def\csname CaptionAW7\endcsname{异号分支的平衡根、临界值与稳定性}
+\expandafter\def\csname DiagramW8\endcsname#1{%
+\node[charge] at (-2.8,.7) {$q_1$};\node[charge] at (.5,.7) {$q_2$};
+\draw[dim] (-2.8,.1)--(.5,.1) node[midway,fill=white] {$r_1$};
+\node[right] at (1,.7) {$F_1$};
+\node[charge] at (-2.8,-.9) {$q_1$};\node[charge] at (2,-.9) {$q_2$};
+\draw[dim] (-2.8,-1.5)--(2,-1.5) node[midway,fill=white] {$r_2$};
+\node[right] at (2.5,-.9) {$F_2$};\ifnum#1=1
+\node at (0,1.75) {$F_1/F_2=(r_2/r_1)^{2+\delta}$};
+\node at (0,-2.2) {比值消去未知电荷乘积与比例常数};
+\fi
+
+}
+\expandafter\def\csname CaptionQW8\endcsname{两次测力的距离与电荷条件}
+\expandafter\def\csname CaptionAW8\endcsname{用比值消去未知常量}
+\expandafter\def\csname DiagramT1\endcsname#1{%
+
+\draw[axis] (-3,0)--(3.2,0) node[right] {$x$};
+\draw[axis] (0,-.4)--(0,2.7) node[above] {$y$};
+\node[charge] (L) at (-2,0) {$+Q$};
+\node[charge] (R) at (2,0) {$+Q$};
+\node[charge,draw=ink] (P) at (0,1.65) {$q$};
+\node[below=5pt] at (L.south) {$-a$};
+\node[below=5pt] at (R.south) {$a$};
+\node[right=5pt] at (P.east) {$P(0,b)$};
+\draw[aux] (L)--(P)--(R);
+\node at (-1.15,1) {$\sqrt{a^2+b^2}$};
+\ifnum#1=1
+\draw[force] (P)--++(.75,.61875) node[right] {$F_L$};
+\draw[force] (P)--++(-.75,.61875) node[left] {$F_R$};
+\draw[force] (P)--++(0,1) node[right] {$F_y$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT1\endcsname{两源与二维场点}
+\expandafter\def\csname CaptionAT1\endcsname{图中取 $q>0$，水平方向抵消}
+\expandafter\def\csname DiagramT2\endcsname#1{
+\ifnum#1=0
+\draw[axis] (-.7,0)--(4.9,0) node[right] {$x$};
+\node[charge] (L) at (0,0) {$+Q$};\node[charge] (R) at (4,0) {$+9Q$};
+\node[charge] at (1.8,0) {$q$};\node[above] at (1.8,.5) {$x$};
+\node[below] at (0,-.35) {$0$};\node[below] at (4,-.35) {$d$};
+\draw[dim] (0,-.9)--(4,-.9) node[midway,fill=white] {$d$};
+\else
+\draw[axis] (-.7,0)--(4.9,0) node[right] {$x$};
+\node[charge] at (0,0) {$+Q$};\node[charge] at (4,0) {$+9Q$};
+\node[point] (O) at (1,0) {};\node[below=4pt] at (O) {$x_0=d/4$};
+\node[charge] (P) at (1.7,0) {$q>0$};
+\draw[force] (P.north)--++(-1.05,0) node[above] {$F_R$};
+\draw[force] (P.north)--++(.65,0) node[above] {$F_L$};
+\draw[dim] (1,-.95)--(1.7,-.95) node[midway,below] {$\xi>0$};
+\node at (2,1.25) {$x=x_0+\xi$：$F_R>F_L$，合力向左};
+\node at (2,-1.75) {$F_x\simeq-\dfrac{512kQq}{3d^3}\xi$};
+\fi
+}
+\expandafter\def\csname CaptionQT2\endcsname{不等正电荷间的约束粒子}
+\expandafter\def\csname CaptionAT2\endcsname{平衡点更靠近较弱源}
+\expandafter\def\csname DiagramT3\endcsname#1{
+\ifnum#1=0
+\draw[axis] (-.7,0)--(5.2,0) node[right] {$x$};
+\node[charge] at (0,0) {$+4Q$};\node[charge] at (2,0) {$-Q$};
+\node[point] at (3.6,0) {};\node[above] at (3.6,.2) {$q$};
+\node[below] at (0,-.35) {$0$};\node[below] at (2,-.35) {$d$};
+\else
+\draw[axis] (-.7,0)--(5.3,0) node[right] {$x$};
+\node[charge] at (0,0) {$+4Q$};\node[charge] at (2,0) {$-Q$};
+\node[charge] (P) at (4,0) {$q$};
+\draw[force] (P.north)--++(-.8,0) node[above] {$F_-$};\draw[force] (P.north)--++(.8,0) node[above] {$F_+$};
+\node[below] at (0,-.35) {$0$};\node[below] at (2,-.35) {$d$};\node[below] at (4,-.35) {$2d$};
+\draw[dim] (0,-1)--(4,-1) node[midway,fill=white] {$x_0=2d$};
+\node at (2,1.2) {$q>0$；外侧平衡时两力等大反向};
+\begin{scope}[yshift=-2.6cm]
+\node[charge] at (0,0) {$+4Q$};\node[charge] at (2.8,0) {$-Q$};\node[point] (M) at (1.4,0) {};
+\draw[force] ($(M)+(0,.15)$)--++(.8,0) node[above] {$F_+$};
+\draw[force] ($(M)+(0,-.15)$)--++(.8,0) node[below] {$F_-$};
+\node at (1.4,-.9) {$0<x<d$：两力均向右，不平衡};
+\end{scope}
+\fi
+}
+\expandafter\def\csname CaptionQT3\endcsname{右侧候选点；两源之间与左侧另行判断}
+\expandafter\def\csname CaptionAT3\endcsname{只有较弱源外侧可能平衡}
+\expandafter\def\csname DiagramT4\endcsname#1{%
+\node[charge] (A) at (-2,0) {$9q$};\node[charge] (B) at (2,0) {$q$};
+\draw[dim] (-2,-.6)--(2,-.6) node[midway,fill=white] {$r$};
+\node at (0,.8) {接触前};
+\node[charge] (C) at (-2,-1.7) {$q'_1$};\node[charge] (D) at (2,-1.7) {$q'_2$};
+\draw[dim] (-2,-2.3)--(2,-2.3) node[midway,fill=white] {$r$};
+\node at (0,-1) {接触后重新分开};\ifnum#1=1
+\draw[force] (C)--++(-.7,0);\draw[force] (D)--++(.7,0);
+\node at (4,-.1) {$q'_1+q'_2=10q$};\node at (4,-.9) {$q'_1=q'_2=5q$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT4\endcsname{相同小球接触前后}
+\expandafter\def\csname CaptionAT4\endcsname{守恒与相同小球的对称分配}
+\expandafter\def\csname DiagramT5\endcsname#1{%
+\ifnum#1=0
+\node[charge,draw=ink] (O) at (0,0) {$q_c$};
+\node[charge] (P0) at (0.0:1.6) {$Q$};
+\node[charge] (P1) at (90.0:1.6) {$Q$};
+\node[charge] (P2) at (180.0:1.6) {$Q$};
+\node[charge] (P3) at (270.0:1.6) {$Q$};
+\draw[aux] (P0)--(P1)--(P2)--(P3)--cycle;
+\draw[dim] (0,-.6)--(1.6,-.6) node[midway,fill=white] {$R$};\ifnum#1=1
+\draw[force] (P0.east)--++(1.1,0) node[right] {$F_{\text{源},r}$};
+\draw[force] (P0.west)--++(-.8,0) node[above] {$F_c$};\node at (0,2.2) {向外的顶点合力由中心负电荷补偿};
+\fi
+
+\else
+\foreach \ang in {0,90,180,270}{\node[charge] at (\ang:1.6) {$Q$};}
+\draw[aux] (1.6,0)--(0,1.6)--(-1.6,0)--(0,-1.6)--cycle;
+\draw[axis] (-2.3,0)--(2.8,0) node[right] {$x$};
+\node[point] (O) at (0,0) {};\node[above left] at (O) {$O$};
+\node[point] (P) at (.55,0) {};
+\node[above=8pt] at (P) {$q_c<0$};
+\draw[force] (P)--++(.85,0);
+\node[fill=white,inner sep=2pt] at (.7,.95) {$F_x>0$};
+\draw[dim] (0,-.6)--(.55,-.6) node[midway,below] {$x>0$};
+\node[anchor=west,align=left] at (3.3,1.7) {沿轴的两源：$E_x\simeq-4kQx/R^3$\\垂直轴的两源：$E_x\simeq+2kQx/R^3$};
+\node at (1,-2.2) {$R=a/\sqrt2$；总场向左，负中心电荷受力向右};
+\node at (1,-2.75) {中心电荷的平面内位移被放大};
+\fi
+
+}
+\expandafter\def\csname CaptionQT5\endcsname{正方形顶点与中心电荷；边长为 $a$}
+\expandafter\def\csname CaptionAT5\endcsname{中心负电荷偏移后，两对源的场相加向左，粒子受力向右而失稳。}
+\expandafter\def\csname DiagramT6\endcsname#1{%
+
+\coordinate (O) at (0,2.6);
+\draw[thick] (-.5,2.65)--(.5,2.65);\node[above] at (O) {$O$};
+\draw (O)--(-.4,.3) node[midway,left] {$L$};
+\draw (O)--(.4,.3) node[midway,right] {$L$};
+\draw[aux] (O)--(0,.2);
+\draw (0,1.85) arc[start angle=-90,end angle=-80.13,radius=.75];
+\node at (.25,1.65) {$\theta$};
+\node[charge] (L) at (-.4,.3) {$q$};
+\node[charge] (R) at (.4,.3) {$q$};
+\draw[dim] (-.4,-.3)--(.4,-.3) node[midway,fill=white] {$s=2L\sin\theta$};
+\ifnum#1=1
+\node[point] (B) at (4,.3) {};\node[below left] at (B) {右球};
+\draw[force] (B)--++(.95,0) node[right] {$F_e$};
+\draw[force] (B)--++(0,-.85) node[right] {$mg$};
+\draw[force] (B)--++(-.235,1.35) node[left] {$T$};
+\draw[aux] (B)--++(0,1.35);
+\node at (6.5,1.8) {$T\cos\theta=mg$};
+\node at (6.5,1.05) {$T\sin\theta=F_e$};\node at (6.5,2.5) {$s^3\propto q^2/m$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT6\endcsname{悬挂双球的电荷与质量改变}
+\expandafter\def\csname CaptionAT6\endcsname{受力和几何关系共同决定比例律}
+\expandafter\def\csname DiagramT7\endcsname#1{%
+
+\coordinate (O) at (0,2.6);
+\draw[thick] (-.5,2.65)--(.5,2.65);\node[above] at (O) {$O$};
+\draw (O)--(-1.327906,.3) node[midway,left] {$L$};
+\draw (O)--(1.327906,.3) node[midway,right] {$L$};
+\draw[aux] (O)--(0,.2);
+\draw (0,1.85) arc[start angle=-90,end angle=-60,radius=.75];
+\node at (.38,1.6) {$30^\circ$};
+\node[charge] (L) at (-1.327906,.3) {$q$};
+\node[charge] (R) at (1.327906,.3) {$q$};
+\draw[dim] (-1.327906,-.3)--(1.327906,-.3) node[midway,fill=white] {$s=2L\sin\theta$};
+\ifnum#1=1
+\node[point] (B) at (4,.3) {};\node[below left] at (B) {右球};
+\draw[force] (B)--++(.95,0) node[right] {$F_e$};
+\draw[force] (B)--++(0,-.85) node[right] {$mg$};
+\draw[force] (B)--++(-.779423,1.35) node[left] {$T$};
+\draw[aux] (B)--++(0,1.35);
+\node at (6.5,1.8) {$T\cos\theta=mg$};
+\node at (6.5,1.05) {$T\sin\theta=F_e$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT7\endcsname{有限偏角的悬挂双球}
+\expandafter\def\csname CaptionAT7\endcsname{使用精确三角函数关系}
+\expandafter\def\csname DiagramT8\endcsname#1{%
+\draw[axis] (-2.6,0)--(4,0) node[right] {$x$};
+\node[charge] (L) at (-1.1,0) {$-Q$};\node[charge] (R) at (1.1,0) {$+Q$};
+\node[point] (P) at (3.2,0) {};\node[below] at (P) {$P(r)$};
+\draw[dim] (-1.1,-.6)--(1.1,-.6) node[midway,fill=white] {$l$};\ifnum#1=1
+\draw[force] ($(P)+(0,.25)$)--++(-.8,0) node[above] {$F_-$};
+\draw[force] ($(P)+(0,.25)$)--++(1.3,0) node[above] {$F_+$};
+\node at (1.1,1.3) {$r\gg l$：两项相减后保留 $r^{-3}$};
+\node at (1.1,-1.3) {$q>0$：$F_+>F_-$；$q<0$ 时全部反向};
+\fi
+
+}
+\expandafter\def\csname CaptionQT8\endcsname{中性电荷对的外侧场点}
+\expandafter\def\csname CaptionAT8\endcsname{正负贡献相减后保留首个非零项}
+\expandafter\def\csname DiagramT9\endcsname#1{%
+\draw[axis] (-3,0)--(3,0) node[right] {$x$};
+\draw[axis] (0,-.6)--(0,1.8) node[above] {$y$};
+\node[charge] at (-2,0) {$+Q$};\node[charge] at (2,0) {$+Q$};
+\node[charge,draw=ink] at (0,0) {$q$};
+\node[below] at (-2,-.3) {$-a$};\node[below] at (2,-.3) {$a$};
+\node[point] (X) at (.8,0) {};\node[point] (Y) at (0,.8) {};
+\node[below] at (X) {$\xi$};\node[left] at (Y) {$y$};\ifnum#1=1
+\draw[force] ($(X)+(0,.3)$)--++(-.55,0) node[above] {$F_x$};
+\draw[force] (Y)--++(0,.7) node[right] {$F_y$};
+\node at (0,-1.05) {$q>0$：轴向恢复，横向偏离被放大};
+\fi
+
+}
+\expandafter\def\csname CaptionQT9\endcsname{轴向和横向的两种约束}
+\expandafter\def\csname CaptionAT9\endcsname{同一平衡位置的两种一阶受力}
+\expandafter\def\csname DiagramT10\endcsname#1{%
+
+\draw[axis] (-3.2,0)--(4.6,0) node[right] {$x$};
+\node[charge] (L) at (-2,0) {$Q_1$};
+\node[charge] (R) at (2,0) {$Q_2$};
+\node[charge,draw=ink] (P) at (0,0) {$q$};
+\node[below=5pt] at (L.south) {$0$};
+\node[below=5pt] at (R.south) {$d$};
+\draw[dim] (-2,-.85)--(2,-.85) node[midway,fill=white] {$d$};
+\draw[aux] (0,-.35)--(0,.65) node[above] {$x$};
+\ifnum#1=1
+\draw[force] (L.north)--++(-.9,0) node[above] {$F_{R\to L}$};
+\draw[force] (L.north)--++(.9,0) node[above] {$F_{q\to L}$};
+\draw[force] (R.north)--++(.9,0) node[above] {$F_{L\to R}$};
+\draw[force] (R.north)--++(-.9,0) node[above] {$F_{q\to R}$};
+\node at (0,1.35) {$q<0$；中心平衡与两端平衡须同时成立};
+\fi
+
+}
+\expandafter\def\csname CaptionQT10\endcsname{三个自由电荷各自平衡}
+\expandafter\def\csname CaptionAT10\endcsname{对两端列方程，再检查中心}
+\expandafter\def\csname DiagramT11\endcsname#1{
+\ifnum#1=0
+\draw[axis] (-.5,0)--(5,0) node[right] {$x$};\node[charge] at (0,0) {$+Q$};
+\node[charge] (P) at (2.5,0) {$q<0$};
+\draw[decorate,decoration={zigzag,segment length=5pt,amplitude=3pt}] (.3,0)--(2.2,0);
+\draw[dim] (0,-.8)--(2.5,-.8) node[midway,fill=white] {$x$};
+\node at (2.2,1.15) {$B=kQ|q|=4\kappa L^3/27$};
+\else
+\draw[axis] (-1.4,0)--(3.7,0) node[right] {$x$};
+\draw[aux] (1.2,-.4)--(1.2,.6);\node[above] at (1.2,.6) {$x_0=2L/3$};
+\node[charge] (L) at (.2,0) {$q$};\node[charge] (R) at (2.2,0) {$q$};
+\draw[force] (L.west)--++(-.8,0) node[above] {$F_x<0$};\draw[force] (R.west)--++(-.8,0) node[above] {$F_x<0$};
+\node[below] at (.2,-.4) {$\xi<0$};\node[below] at (2.2,-.4) {$\xi>0$};
+\begin{scope}[xshift=1.2cm,yshift=-2cm]
+\draw[axis] (-2,0)--(2.2,0) node[right] {$\xi$};\draw[axis] (0,-1.8)--(0,.4) node[above] {$F_x$};
+\draw[fieldink,thick,domain=-1.6:1.6,samples=70] plot (\x,{-.5*\x*\x});
+\node[below] at (0,-2) {$F_x\simeq-9\kappa\xi^2/(4L)$};
+\end{scope}
+\fi
+}
+\expandafter\def\csname CaptionQT11\endcsname{异号弹簧模型的临界位置}
+\expandafter\def\csname CaptionAT11\endcsname{首个非零项是二次项，方向不随位移变号}
+\expandafter\def\csname DiagramT12\endcsname#1{
+\draw[axis] (-2.8,0)--(3.1,0) node[right] {$x$};\draw[axis] (0,-.6)--(0,2.7) node[above] {$y$};
+\node[charge] (L) at (-1.8,0) {$Q_L$};\node[charge] (R) at (1.8,0) {$Q_R$};
+\node[below=5pt] at (L.south) {$-a$};\node[below=5pt] at (R.south) {$a$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};
+\node[charge] (P) at (0,1.8) {$q_0$};\node[left=6pt] at (P.west) {$P(0,a)$};
+\draw[aux] (L)--(P)--(R);
+\ifnum#1=1
+\draw[axis,thick] (O)--(1,0) node[above] {$+f$};\draw[axis,thick] (P.north)--++(0,.65) node[right] {$+g$};
+\node at (.2,-1.50) {箭头表示正分量参考方向；$f,g$ 可正可负};
+\node at (.2,-2.20) {$f\propto Q_L-Q_R$，$g\propto Q_L+Q_R$};
+\fi
+}
+\expandafter\def\csname CaptionQT12\endcsname{两个测点与待反演电荷}
+\expandafter\def\csname CaptionAT12\endcsname{箭头标示分量正方向；测得的 $f,g$ 可正可负}
+% ===== 可编辑正文 =====
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ===== 图像数据与排版 =====
+
+\begin{document}
+\section*{1-W1\quad 两个同号固定电荷之间的平衡点}
+\setcounter{figure}{6}\ProblemDiagram{W1}
+\bigskip\setcounter{figure}{7}\AnalysisDiagram{W1}\clearpage
+\section*{1-W2\quad 异号电荷的平衡位置}
+\setcounter{figure}{8}\ProblemDiagram{W2}
+\bigskip\setcounter{figure}{9}\AnalysisDiagram{W2}\clearpage
+\section*{1-W3\quad 悬挂带电小球：精确方程与小角近似}
+\setcounter{figure}{10}\ProblemDiagram{W3}
+\bigskip\setcounter{figure}{11}\AnalysisDiagram{W3}\clearpage
+\section*{1-W4\quad 三电荷体系的平衡}
+\setcounter{figure}{12}\ProblemDiagram{W4}
+\bigskip\setcounter{figure}{13}\AnalysisDiagram{W4}\clearpage
+\section*{1-W5\quad 等边三角形中的合力与补偿电荷}
+\setcounter{figure}{14}\ProblemDiagram{W5}
+\bigskip\setcounter{figure}{15}\AnalysisDiagram{W5}\clearpage
+\section*{1-W6\quad 正多边形顶点电荷的合力}
+\setcounter{figure}{16}\ProblemDiagram{W6}
+\bigskip\setcounter{figure}{17}\AnalysisDiagram{W6}\clearpage
+\section*{1-W7\quad 库仑力与弹簧：平衡、频率及失稳阈值}
+\setcounter{figure}{18}\ProblemDiagram{W7}
+\bigskip\setcounter{figure}{19}\AnalysisDiagram{W7}\clearpage
+\section*{1-W8\quad 从力的比值反推距离指数}
+\setcounter{figure}{20}\ProblemDiagram{W8}
+\bigskip\setcounter{figure}{21}\AnalysisDiagram{W8}\clearpage
+\section*{1-T1\quad 二维力的叠加}
+\setcounter{figure}{22}\ProblemDiagram{T1}
+\bigskip\setcounter{figure}{34}\AnalysisDiagram{T1}\clearpage
+\section*{1-T2\quad 不等电荷之间的平衡}
+\setcounter{figure}{23}\ProblemDiagram{T2}
+\bigskip\setcounter{figure}{35}\AnalysisDiagram{T2}\clearpage
+\section*{1-T3\quad 异号电荷的区域判断}
+\setcounter{figure}{24}\ProblemDiagram{T3}
+\bigskip\setcounter{figure}{36}\AnalysisDiagram{T3}\clearpage
+\section*{1-T4\quad 接触前后的力}
+\setcounter{figure}{25}\ProblemDiagram{T4}
+\bigskip\setcounter{figure}{37}\AnalysisDiagram{T4}\clearpage
+\section*{1-T5\quad 正方形与中心电荷}
+\setcounter{figure}{26}\ProblemDiagram{T5}
+\bigskip\setcounter{figure}{38}\AnalysisDiagram{T5}\clearpage
+\section*{1-T6\quad 带电小球的比例律}
+\setcounter{figure}{27}\ProblemDiagram{T6}
+\bigskip\setcounter{figure}{39}\AnalysisDiagram{T6}\clearpage
+\section*{1-T7\quad 无需小角近似的反演}
+\setcounter{figure}{28}\ProblemDiagram{T7}
+\bigskip\setcounter{figure}{40}\AnalysisDiagram{T7}\clearpage
+\section*{1-T8\quad 总电荷为零仍有作用力}
+\setcounter{figure}{29}\ProblemDiagram{T8}
+\bigskip\setcounter{figure}{41}\AnalysisDiagram{T8}\clearpage
+\section*{1-T9\quad 挑战：稳定性取决于允许运动的方向}
+\setcounter{figure}{30}\ProblemDiagram{T9}
+\bigskip\setcounter{figure}{42}\AnalysisDiagram{T9}\clearpage
+\section*{1-T10\quad 挑战：三个自由电荷的平衡条件}
+\setcounter{figure}{31}\ProblemDiagram{T10}
+\bigskip\setcounter{figure}{43}\AnalysisDiagram{T10}\clearpage
+\section*{1-T11\quad 挑战：临界平衡的一阶系数为零}
+\setcounter{figure}{32}\ProblemDiagram{T11}
+\bigskip\setcounter{figure}{44}\AnalysisDiagram{T11}\clearpage
+\section*{1-T12\quad 挑战：从两次测力反演电荷}
+\setcounter{figure}{33}\ProblemDiagram{T12}
+\bigskip\setcounter{figure}{45}\AnalysisDiagram{T12}\clearpage
+\end{document}

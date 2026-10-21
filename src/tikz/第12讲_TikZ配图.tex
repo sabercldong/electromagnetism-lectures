@@ -1,0 +1,685 @@
+% 第十二讲 法拉第定律与电磁感应
+% 使用 Tectonic 或 XeLaTeX 编译。正文可在下方各 ContentPart 中编辑。
+% 图像以无损 PDF 图像流嵌入本文件，编译时无需另附图片文件。
+\documentclass[UTF8,fontset=fandol,zihao=-4,a4paper]{ctexart}
+\usepackage[top=19mm,bottom=18mm,left=21mm,right=21mm]{geometry}
+\usepackage{amsmath,amssymb,bm,esint}
+\usepackage{booktabs,array,float,caption}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={第十二讲 法拉第定律与电磁感应},pdfsubject={电磁学课程讲义},pdfauthor={}}
+\ctexset{
+ section={format=\Large\sffamily\bfseries,beforeskip=3ex,afterskip=1.5ex},
+ subsection={format=\normalsize\sffamily\bfseries,beforeskip=2ex,afterskip=1ex}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.18}
+\renewcommand{\thefigure}{12-\arabic{figure}}
+\captionsetup{font=small,labelformat=simple,labelsep=quad,skip=6pt}
+\setlength{\abovedisplayskip}{7pt}
+\setlength{\belowdisplayskip}{7pt}
+\setlength{\intextsep}{8pt}
+\pagestyle{plain}
+\raggedbottom
+
+% 自包含原图排版命令，保留原始像素和比例。
+\newlength{\PptWidth}
+\newlength{\PptHeight}
+\newlength{\PptTileHeight}
+\newlength{\PptTileY}
+\makeatletter
+\newcommand{\PptDrawTile}[3]{%
+ \setlength{\PptTileHeight}{#2\PptHeight}%
+ \setlength{\PptTileY}{#3\PptHeight}%
+ \edef\PptTileHeightBP{\strip@pt\dimexpr0.996264\PptTileHeight\relax}%
+ \edef\PptTileYBP{\strip@pt\dimexpr0.996264\PptTileY\relax}%
+ \special{pdf:put @Ppt#1 << /Filter /FlateDecode >>}%
+ \special{pdf:put @resources << /XObject << /Ppt#1 @Ppt#1 >> >>}%
+ \special{pdf:content q \PptWidthBP\space 0 0 \PptTileHeightBP\space 0 \PptTileYBP\space cm /Ppt#1 Do Q}}
+\newcommand{\PptImageBox}[3]{%
+ \begingroup
+ \setlength{\PptWidth}{#2}%
+ \setlength{\PptHeight}{#3\PptWidth}%
+ \edef\PptWidthBP{\strip@pt\dimexpr0.996264\PptWidth\relax}%
+ \edef\PptHeightBP{\strip@pt\dimexpr0.996264\PptHeight\relax}%
+ \leavevmode\hbox to\PptWidth{%
+  \vrule width0pt height\PptHeight depth0pt%
+  \csname PptStream#1\endcsname%
+  \global\expandafter\let\csname PptStream#1\endcsname\relax%
+  \hss}%
+ \endgroup}
+\makeatother
+
+
+\usepackage{enumitem}
+\usepackage{xcolor,tikz,needspace}
+\usetikzlibrary{arrows.meta,calc,decorations.pathmorphing}
+\definecolor{ink}{HTML}{25323C}
+\definecolor{sourceink}{HTML}{A34435}
+\definecolor{fieldink}{HTML}{205D83}
+\definecolor{surfaceink}{HTML}{4B7B77}
+\tikzset{
+ charge/.style={circle,draw=sourceink,fill=sourceink!6,minimum size=6mm,inner sep=2pt},
+ point/.style={circle,fill=ink,inner sep=1.5pt},
+ axis/.style={draw=ink!65,thin,-{Latex[length=1.7mm]}},
+ force/.style={draw=fieldink,thick,-{Latex[length=2mm]}},
+ aux/.style={draw=ink!45,dashed,thin},
+ dim/.style={draw=ink!60,thin,{Latex[length=1.6mm]}-{Latex[length=1.6mm]}},
+ source/.style={draw=sourceink,very thick},
+ surface/.style={draw=surfaceink,fill=surfaceink!7}}
+\newcommand{\ProblemDiagram}[1]{\DrawDiagram{#1}{0}{Q}{题图}}
+\newcommand{\AnalysisDiagram}[1]{\DrawDiagram{#1}{1}{A}{解答分析图}}
+\newcommand{\DrawDiagram}[4]{%
+ \par\smallskip\noindent\begin{minipage}{\linewidth}\centering\refstepcounter{figure}\label{fig:L12:#1:#3}
+ \begin{tikzpicture}[x=1cm,y=1cm,font=\small,text=ink,line cap=round,line join=round]
+ \csname Diagram#1\endcsname{#2}
+ \end{tikzpicture}\par\vspace{2pt}
+ {\footnotesize\textbf{图~\thefigure\quad #4}\quad\csname Caption#3#1\endcsname\par}
+ \end{minipage}\par\smallskip}
+\setlist[enumerate]{itemsep=4pt,parsep=0pt,topsep=5pt,leftmargin=2.3em}
+\newcommand{\Coach}[1]{\par\smallskip\noindent #1\par\smallskip}
+\newcommand{\Trap}[1]{\par\smallskip\noindent\textbf{注意}\quad #1\par\smallskip}
+\newcommand{\Task}[2]{\needspace{85mm}\subsection*{习题 #1\quad #2}}
+\newcommand{\Answer}[2]{\needspace{75mm}\subsection*{习题 #1 解答\quad #2}}
+\newcommand{\Worked}[2]{\needspace{85mm}\subsection*{例题 #1\quad #2}}
+\newcommand{\Solution}{\par\noindent\textbf{解}\quad}
+\newcommand{\Key}[1]{}
+
+\expandafter\def\csname DiagramW1\endcsname#1{%
+\ifnum#1=0
+\draw[axis] (-2.7,0)--(2.7,0) node[right] {$x$};\draw[aux] (0,-.5)--(0,2);
+\node[point] at (0,1.5) {};\node[right] at (.15,1.45) {$P(0,y)$};
+\draw[aux] (-1.7,0)--(0,1.5)--(1.7,0);\node at (-1.7,-.5) {$+I$};\node at (1.7,-.5) {$-I$};
+\node at (-1.7,-1) {$-d$};\node at (1.7,-1) {$d$};\draw[fieldink] (-1.7,0) circle (.11);\fill[fieldink] (-1.7,0) circle (.027);\draw[fieldink] (1.7,0) circle (.11);\draw[fieldink] (1.63,-0.07)--(1.77,0.07) (1.63,0.07)--(1.77,-0.07);
+\else
+\draw[axis] (-2.7,0)--(2.7,0) node[right] {$x$};\draw[aux] (0,-.5)--(0,2);
+\node[point] at (0,1.5) {};\node[right] at (.15,1.45) {$P(0,y)$};
+\draw[aux] (-1.7,0)--(0,1.5)--(1.7,0);\node at (-1.7,-.5) {$+I$};\node at (1.7,-.5) {$-I$};
+\node at (-1.7,-1) {$-d$};\node at (1.7,-1) {$d$};\draw[fieldink] (-1.7,0) circle (.11);\fill[fieldink] (-1.7,0) circle (.027);\draw[fieldink] (1.7,0) circle (.11);\draw[fieldink] (1.63,-0.07)--(1.77,0.07) (1.63,0.07)--(1.77,-0.07);\draw[force,-{Latex[length=2mm]}] (0,1.6)--++(0,0.8) node[midway,left,fill=white,inner sep=1pt] {$B_y>0$};\node[align=center,text width=4cm] at (6,1.0) {$A_z=0$ 于 $x=0$};
+\node[align=center,text width=4cm] at (6,0.25) {$\partial_x A_z\ne0$};
+\fi
+}
+\expandafter\def\csname CaptionQW1\endcsname{左线电流向纸外，右线向纸内，中垂面上取场点}
+\expandafter\def\csname CaptionAW1\endcsname{势值可相消，势的法向梯度不相消}
+\expandafter\def\csname DiagramW2\endcsname#1{%
+\ifnum#1=0
+\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\draw[source,very thick] (-1.35,1.35)--(1.35,-1.35);
+\node at (.9,-2.3) {线圈侧视};
+\draw[force] (0,0)--(0,2.2) node[above] {$B$};
+\draw[force] (0,0)--(1.55,1.55) node[above right] {$\boldsymbol n$};
+\draw[ink] (0,.75) arc[start angle=90,end angle=45,radius=.75];\node at (.43,1.03) {$\theta$};
+\draw[force] (2.2,0) arc[start angle=0,end angle=-55,radius=2.2];\node at (2.25,-.9) {$\omega$};\node[align=center,text width=4cm] at (6,1.0) {$B=B_0e^{-t/T}$};
+\else
+\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\draw[source,very thick] (-1.35,1.35)--(1.35,-1.35);
+\node at (.9,-2.3) {线圈侧视};
+\draw[force] (0,0)--(0,2.2) node[above] {$B$};
+\draw[force] (0,0)--(1.55,1.55) node[above right] {$\boldsymbol n$};
+\draw[ink] (0,.75) arc[start angle=90,end angle=45,radius=.75];\node at (.43,1.03) {$\theta$};
+\draw[force] (2.2,0) arc[start angle=0,end angle=-55,radius=2.2];\node at (2.25,-.9) {$\omega$};\node[align=center,text width=4cm] at (6,1.0) {$B=B_0e^{-t/T}$};\node[align=center,text width=4cm] at (6,0.3) {$\Psi=NSB\cos\theta$};
+\node[align=center,text width=4cm] at (6,-0.45) {$-\dot\Psi$ 含两个分项};
+\fi
+}
+\expandafter\def\csname CaptionQW2\endcsname{转轴垂直图面，法向与场夹角改变，外场同时衰减}
+\expandafter\def\csname CaptionAW2\endcsname{场强导数与夹角导数都进入磁通链的全导数}
+\expandafter\def\csname DiagramW3\endcsname#1{%
+\ifnum#1=0
+\draw[ink] (0,1.1)--(4,1.1) (0,-1.1)--(4,-1.1) (0,-1.1)--(0,1.1);
+\draw[source] (3.25,-1.1)--(3.25,1.1);
+\node[fill=white] at (0,.25) {$\mathcal R$};
+\draw[dim] (4.35,-1.1)--(4.35,1.1) node[midway,right] {$\ell$};\draw[fieldink] (0.65,-0.5) circle (.11);\fill[fieldink] (0.65,-0.5) circle (.027);\draw[fieldink] (0.65,0.5) circle (.11);\fill[fieldink] (0.65,0.5) circle (.027);\draw[fieldink] (1.65,-0.5) circle (.11);\fill[fieldink] (1.65,-0.5) circle (.027);\draw[fieldink] (1.65,0.5) circle (.11);\fill[fieldink] (1.65,0.5) circle (.027);\draw[fieldink] (2.65,-0.5) circle (.11);\fill[fieldink] (2.65,-0.5) circle (.027);\draw[fieldink] (2.65,0.5) circle (.11);\fill[fieldink] (2.65,0.5) circle (.027);\draw[force,-{Latex[length=2mm]}] (3.3,1.5)--++(0.85,0) node[midway,above,fill=white,inner sep=1pt] {$v$};\node at (1.7,-1.7) {$B_z>0$};
+\else
+\draw[ink] (0,1.1)--(4,1.1) (0,-1.1)--(4,-1.1) (0,-1.1)--(0,1.1);
+\draw[source] (3.25,-1.1)--(3.25,1.1);
+\node[fill=white] at (0,.25) {$\mathcal R$};
+\draw[dim] (4.35,-1.1)--(4.35,1.1) node[midway,right] {$\ell$};\draw[fieldink] (0.65,-0.5) circle (.11);\fill[fieldink] (0.65,-0.5) circle (.027);\draw[fieldink] (0.65,0.5) circle (.11);\fill[fieldink] (0.65,0.5) circle (.027);\draw[fieldink] (1.65,-0.5) circle (.11);\fill[fieldink] (1.65,-0.5) circle (.027);\draw[fieldink] (1.65,0.5) circle (.11);\fill[fieldink] (1.65,0.5) circle (.027);\draw[fieldink] (2.65,-0.5) circle (.11);\fill[fieldink] (2.65,-0.5) circle (.027);\draw[fieldink] (2.65,0.5) circle (.11);\fill[fieldink] (2.65,0.5) circle (.027);\draw[force,-{Latex[length=2mm]}] (3.3,1.5)--++(0.85,0) node[midway,above,fill=white,inner sep=1pt] {$v$};\node at (1.7,-1.7) {$B_z>0$};\draw[source,-{Latex[length=2mm]}] (3.25,-0.1)--++(0,-0.8) node[midway,right,fill=white,inner sep=1pt] {$I$};\draw[force,-{Latex[length=2mm]}] (3.1,0)--++(-1,0) node[midway,above,fill=white,inner sep=1pt] {$F_B$};\draw[force,-{Latex[length=2mm]}] (3.4,0)--++(0.9,0) node[midway,above,fill=white,inner sep=1pt] {$F_{\rm ext}$};\node[align=center,text width=4cm] at (6.6,1.8) {$P_{\rm ext}=I^2\mathcal R$};
+\fi
+}
+\expandafter\def\csname CaptionQW3\endcsname{外场向纸外，右棒向右运动，左端接电阻}
+\expandafter\def\csname CaptionAW3\endcsname{右棒电流向下，磁力向左，外力功率转为热}
+\expandafter\def\csname DiagramW4\endcsname#1{%
+\ifnum#1=0
+\draw[ink] (-.4,1)--(4,1) (-.4,-1)--(4,-1);
+\draw[source] (0,-1)--(0,1) (3.4,-1)--(3.4,1);
+\node[above] at (0,1.2) {$m_1$};\node[above] at (3.4,1.2) {$m_2$};
+\node at (1.7,-1.6) {总电阻 $\mathcal R$};\draw[fieldink] (0.65,-0.5) circle (.11);\fill[fieldink] (0.65,-0.5) circle (.027);\draw[fieldink] (0.65,0.5) circle (.11);\fill[fieldink] (0.65,0.5) circle (.027);\draw[fieldink] (1.65,-0.5) circle (.11);\fill[fieldink] (1.65,-0.5) circle (.027);\draw[fieldink] (1.65,0.5) circle (.11);\fill[fieldink] (1.65,0.5) circle (.027);\draw[fieldink] (2.65,-0.5) circle (.11);\fill[fieldink] (2.65,-0.5) circle (.027);\draw[fieldink] (2.65,0.5) circle (.11);\fill[fieldink] (2.65,0.5) circle (.027);\draw[force,-{Latex[length=2mm]}] (0,1.8)--++(0.6,0) node[midway,above,fill=white,inner sep=1pt] {$v_1$};\draw[force,-{Latex[length=2mm]}] (3.4,1.8)--++(0.8,0) node[midway,above,fill=white,inner sep=1pt] {$v_2$};
+\else
+\draw[ink] (-.4,1)--(4,1) (-.4,-1)--(4,-1);
+\draw[source] (0,-1)--(0,1) (3.4,-1)--(3.4,1);
+\node[above] at (0,1.2) {$m_1$};\node[above] at (3.4,1.2) {$m_2$};
+\node at (1.7,-1.6) {总电阻 $\mathcal R$};\draw[fieldink] (0.65,-0.5) circle (.11);\fill[fieldink] (0.65,-0.5) circle (.027);\draw[fieldink] (0.65,0.5) circle (.11);\fill[fieldink] (0.65,0.5) circle (.027);\draw[fieldink] (1.65,-0.5) circle (.11);\fill[fieldink] (1.65,-0.5) circle (.027);\draw[fieldink] (1.65,0.5) circle (.11);\fill[fieldink] (1.65,0.5) circle (.027);\draw[fieldink] (2.65,-0.5) circle (.11);\fill[fieldink] (2.65,-0.5) circle (.027);\draw[fieldink] (2.65,0.5) circle (.11);\fill[fieldink] (2.65,0.5) circle (.027);\draw[force,-{Latex[length=2mm]}] (0,1.8)--++(0.6,0) node[midway,above,fill=white,inner sep=1pt] {$v_1$};\draw[force,-{Latex[length=2mm]}] (3.4,1.8)--++(0.8,0) node[midway,above,fill=white,inner sep=1pt] {$v_2$};\draw[force,-{Latex[length=2mm]}] (0.1,0)--++(1,0) node[midway,above,fill=white,inner sep=1pt] {$+kw$};\draw[force,-{Latex[length=2mm]}] (3.3,0)--++(-1,0) node[midway,above,fill=white,inner sep=1pt] {$-kw$};\node[align=center,text width=4cm] at (6,1.0) {图取 $w=v_2-v_1>0$};
+\node[align=center,text width=4cm] at (6,0.25) {质心匀速，相对速度衰减};
+\fi
+}
+\expandafter\def\csname CaptionQW4\endcsname{两根棒均能移动，图示右棒比左棒快}
+\expandafter\def\csname CaptionAW4\endcsname{两棒受力相反，只有相对运动的动能变为热}
+\expandafter\def\csname DiagramW5\endcsname#1{%
+\ifnum#1=0
+\draw[aux] (0,0) circle (.65);\draw[aux] (0,0) circle (1.8);
+\draw[source] (.65,0).. controls (1.2,1.1) and (2,-.7)..(1.8,0);
+\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\node[below] at (.65,-.1) {$r_1$};\node[right] at (1.95,0) {$r_2$};\draw[fieldink] (-1,0.6) circle (.11);\fill[fieldink] (-1,0.6) circle (.027);\draw[force,-{Latex[length=2mm]}] (1.8,0)--++(0,0.75) node[midway,right,fill=white,inner sep=1pt] {$\omega r_2$};
+\else
+\draw[aux] (0,0) circle (.65);\draw[aux] (0,0) circle (1.8);
+\draw[source] (.65,0).. controls (1.2,1.1) and (2,-.7)..(1.8,0);
+\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\node[below] at (.65,-.1) {$r_1$};\node[right] at (1.95,0) {$r_2$};\draw[fieldink] (-1,0.6) circle (.11);\fill[fieldink] (-1,0.6) circle (.027);\draw[force,-{Latex[length=2mm]}] (1.8,0)--++(0,0.75) node[midway,right,fill=white,inner sep=1pt] {$\omega r_2$};\draw[force,-{Latex[length=2mm]}] (0.9,0.28)--++(0.55,0.171);\draw[aux] (1.45,.45)--(1.05,1.45);\node[above] at (1.05,1.45) {$\omega Br\boldsymbol e_r$};\node[align=center,text width=4cm] at (6,1.0) {$\mathcal E=\int\omega Br\,\mathrm dr$};
+\node[align=center,text width=4cm] at (6,0.25) {$V_2>V_1$};
+\fi
+}
+\expandafter\def\csname CaptionQW5\endcsname{弯导线刚性转动，内外端到轴的距离不同}
+\expandafter\def\csname CaptionAW5\endcsname{径向作用的路径积分只依赖半径平方差}
+\expandafter\def\csname DiagramW6\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (1.8);\fill[white] (0,0) circle (.7);\draw[surfaceink] (0,0) circle (.7);\draw[dim] (0,-.18)--(.7,-.18) node[midway,below] {$a$};\draw[aux] (0,0) circle (1.3);\draw[dim] (0,-2.2)--(1.8,-2.2) node[midway,fill=white] {$b$};\draw[fieldink] (-1.1,0.6) circle (.11);\fill[fieldink] (-1.1,0.6) circle (.027);\draw[source] (.7,0)--(1.8,0);\draw[ink] (.7,0)--(.7,-2.7)--(2.7,-2.7)--(2.7,0)--(1.8,0);\node[fill=white] at (1.7,-2.7) {$R_e$};\draw[force] (1.8,0) arc[start angle=0,end angle=50,radius=1.8];\node at (2.1,.8) {$\omega$};
+\else
+\draw[surface] (0,0) circle (1.8);\fill[white] (0,0) circle (.7);\draw[surfaceink] (0,0) circle (.7);\draw[dim] (0,-.18)--(.7,-.18) node[midway,below] {$a$};\draw[aux] (0,0) circle (1.3);\draw[dim] (0,-2.2)--(1.8,-2.2) node[midway,fill=white] {$b$};\draw[fieldink] (-1.1,0.6) circle (.11);\fill[fieldink] (-1.1,0.6) circle (.027);\draw[source] (.7,0)--(1.8,0);\draw[ink] (.7,0)--(.7,-2.7)--(2.7,-2.7)--(2.7,0)--(1.8,0);\node[fill=white] at (1.7,-2.7) {$R_e$};\draw[force] (1.8,0) arc[start angle=0,end angle=50,radius=1.8];\node at (2.1,.8) {$\omega$};\draw[force,-{Latex[length=2mm]}] (0.8,0.1)--++(0.8,0) node[midway,above,fill=white,inner sep=1pt] {$I$};\node[align=center,text width=4cm] at (5.6,1.0) {$R_d=\ln(b/a)/(2\pi\sigma h)$};
+\node[align=center,text width=4cm] at (5.6,0.25) {$\tau_B=-IB(b^2-a^2)/2$};
+\fi
+}
+\expandafter\def\csname CaptionQW6\endcsname{内外圆周电刷与外电阻构成回路，盘内电流径向流动}
+\expandafter\def\csname CaptionAW6\endcsname{径向电流受负方位磁力，驱动转矩支付内外电阻发热}
+\expandafter\def\csname DiagramW7\endcsname#1{%
+\ifnum#1=0
+\draw[source,-{Latex}] (0,-1.5)--(0,2.2) node[above] {$I_s(t)$};
+\draw[ink,thick] (1,-1) rectangle (3,1);
+\draw[dim] (0,-1.65)--(1,-1.65) node[midway,fill=white] {$x$};
+\draw[dim] (1,-1.65)--(3,-1.65) node[midway,fill=white] {$a$};
+\draw[dim] (3.95,-1)--(3.95,1) node[midway,right] {$b$};\draw[fieldink] (1.55,0.35) circle (.11);\draw[fieldink] (1.48,0.27999999999999997)--(1.62,0.42) (1.48,0.42)--(1.62,0.27999999999999997);\draw[fieldink] (2.55,-0.35) circle (.11);\draw[fieldink] (2.48,-0.42)--(2.6199999999999997,-0.27999999999999997) (2.48,-0.27999999999999997)--(2.6199999999999997,-0.42);\draw[force,-{Latex[length=2mm]}] (2.9,1.6)--++(0.9,0) node[midway,above,fill=white,inner sep=1pt] {$v$};
+\else
+\draw[source,-{Latex}] (0,-1.5)--(0,2.2) node[above] {$I_s(t)$};
+\draw[ink,thick] (1,-1) rectangle (3,1);
+\draw[dim] (0,-1.65)--(1,-1.65) node[midway,fill=white] {$x$};
+\draw[dim] (1,-1.65)--(3,-1.65) node[midway,fill=white] {$a$};
+\draw[dim] (3.95,-1)--(3.95,1) node[midway,right] {$b$};\draw[fieldink] (1.55,0.35) circle (.11);\draw[fieldink] (1.48,0.27999999999999997)--(1.62,0.42) (1.48,0.42)--(1.62,0.27999999999999997);\draw[fieldink] (2.55,-0.35) circle (.11);\draw[fieldink] (2.48,-0.42)--(2.6199999999999997,-0.27999999999999997) (2.48,-0.27999999999999997)--(2.6199999999999997,-0.42);\draw[force,-{Latex[length=2mm]}] (2.9,1.6)--++(0.9,0) node[midway,above,fill=white,inner sep=1pt] {$v$};\draw[force,-{Latex[length=2mm]}] (1,-0.7)--++(0,1.2);\draw[force,-{Latex[length=2mm]}] (3,-0.7)--++(0,0.55);\node[above] at (1,1.05) {$vB(x)$};\node[below] at (3.5,-2.05) {$vB(x+a)$};\node[align=center,text width=4cm] at (6.6,1.0) {$I_s=I_0\cos\Omega t$};
+\node[align=center,text width=4cm] at (6.6,0.25) {$\mathcal E=\mathcal E_{\rm mot}+\mathcal E_{\rm ind}$};
+\fi
+}
+\expandafter\def\csname CaptionQW7\endcsname{直导线右侧磁场向纸内，矩形线圈向右离开}
+\expandafter\def\csname CaptionAW7\endcsname{两纵向边的动生项相减，另加外场变化的感生项}
+\expandafter\def\csname DiagramW8\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (1.1);
+\draw[aux] (0,0) circle (2);
+\draw[dim] (0,-2.4)--(1.1,-2.4) node[midway,fill=white] {$a$};
+\node[point] at (0,0) {};\node[below] at (0,-.2) {$O$};\draw[fieldink] (-0.4,0.45) circle (.11);\fill[fieldink] (-0.4,0.45) circle (.027);\node at (.45,.55) {$B(t)$};\node at (0,2.5) {外部 $B=0$};
+\else
+\draw[surface] (0,0) circle (1.1);
+\draw[aux] (0,0) circle (2);
+\draw[dim] (0,-2.4)--(1.1,-2.4) node[midway,fill=white] {$a$};
+\node[point] at (0,0) {};\node[below] at (0,-.2) {$O$};\draw[fieldink] (-0.4,0.45) circle (.11);\fill[fieldink] (-0.4,0.45) circle (.027);\node at (.45,.55) {$B(t)$};\node at (0,2.5) {外部 $B=0$};\draw[force] (2,0) arc[start angle=0,end angle=-60,radius=2];\draw[force] (.8,0) arc[start angle=0,end angle=-70,radius=.8];\node[align=center,text width=4cm] at (6,1.0) {$\dot B>0$ 时场沿顺时针};
+\node[align=center,text width=4cm] at (6,0.25) {外部 $E_\varphi\propto1/r$};
+\fi
+}
+\expandafter\def\csname CaptionQW8\endcsname{外圆周位于磁场为零的区域，却围住变化的磁通}
+\expandafter\def\csname CaptionAW8\endcsname{内外电场方向一致，边界连续，外部环流仍非零}
+\expandafter\def\csname DiagramW9\endcsname#1{%
+\ifnum#1=0
+\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\draw[source,very thick] (-1.35,1.35)--(1.35,-1.35);
+\node at (.9,-2.3) {线圈侧视};
+\draw[force] (0,0)--(0,2.2) node[above] {$B$};
+\draw[force] (0,0)--(1.55,1.55) node[above right] {$\boldsymbol n$};
+\draw[ink] (0,.75) arc[start angle=90,end angle=45,radius=.75];\node at (.43,1.03) {$\theta$};
+\draw[force] (2.2,0) arc[start angle=0,end angle=-55,radius=2.2];\node at (2.25,-.9) {$\omega$};
+\else
+\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\draw[source,very thick] (-1.35,1.35)--(1.35,-1.35);
+\node at (.9,-2.3) {线圈侧视};
+\draw[force] (0,0)--(0,2.2) node[above] {$B$};
+\draw[force] (0,0)--(1.55,1.55) node[above right] {$\boldsymbol n$};
+\draw[ink] (0,.75) arc[start angle=90,end angle=45,radius=.75];\node at (.43,1.03) {$\theta$};
+\draw[force] (2.2,0) arc[start angle=0,end angle=-55,radius=2.2];\node at (2.25,-.9) {$\omega$};\node[align=center,text width=4cm] at (6,1.0) {$I\propto\sin\theta$};
+\node[align=center,text width=4cm] at (6,0.25) {$\tau_B\propto-\sin^2\theta$};
+\node[align=center,text width=4cm] at (6,-0.5) {$\langle P\rangle=\mathcal E_0^2/(2\mathcal R)$};
+\fi
+}
+\expandafter\def\csname CaptionQW9\endcsname{线圈在恒定场中旋转，法向与场的夹角为转角}
+\expandafter\def\csname CaptionAW9\endcsname{电流与几何因子同时换号，磁转矩始终阻转}
+\expandafter\def\csname DiagramW10\endcsname#1{%
+\ifnum#1=0
+\draw[ink,thick] (0,0) circle (1.5);\node[point] at (-1.5,0) {};\node[point] at (1.5,0) {};
+\node[left] at (-1.65,0) {$A$};\node[right] at (1.65,0) {$B$};
+\node[fill=white] at (0,1.5) {$R_1$};\node[fill=white] at (0,-1.5) {$R_2$};
+\draw[aux] (-1.5,.05).. controls (-1.4,2.1) and (1.4,2.1)..(1.5,.05);
+\draw[aux] (-1.5,-.05).. controls (-1.4,-2.1) and (1.4,-2.1)..(1.5,-.05);\draw[fieldink] (0,0.3) circle (.11);\fill[fieldink] (0,0.3) circle (.027);\node at (0,-.35) {$\dot B=\beta>0$};
+\else
+\draw[ink,thick] (0,0) circle (1.5);\node[point] at (-1.5,0) {};\node[point] at (1.5,0) {};
+\node[left] at (-1.65,0) {$A$};\node[right] at (1.65,0) {$B$};
+\node[fill=white] at (0,1.5) {$R_1$};\node[fill=white] at (0,-1.5) {$R_2$};
+\draw[aux] (-1.5,.05).. controls (-1.4,2.1) and (1.4,2.1)..(1.5,.05);
+\draw[aux] (-1.5,-.05).. controls (-1.4,-2.1) and (1.4,-2.1)..(1.5,-.05);\draw[fieldink] (0,0.3) circle (.11);\fill[fieldink] (0,0.3) circle (.027);\node at (0,-.35) {$\dot B=\beta>0$};\draw[source,-{Latex}] (1.5,0) arc[start angle=0,end angle=-60,radius=1.5];\draw[source,-{Latex}] (-1.5,0) arc[start angle=180,end angle=120,radius=1.5];\node[align=center,text width=4cm] at (5.3,1.0) {上路径 $U=-IR_1$};
+\node[align=center,text width=4cm] at (5.3,0.25) {下路径 $U=+IR_2$};
+\node[align=center,text width=4cm] at (5.3,-0.5) {两次引线走向不同};
+\fi
+}
+\expandafter\def\csname CaptionQW10\endcsname{虚线示意紧贴上、下支路的两种测量路径，正端均接右端}
+\expandafter\def\csname CaptionAW10\endcsname{电流顺时针，上、下支路沿同一端点方向的场积分不同}
+\expandafter\def\csname DiagramW11\endcsname#1{%
+\ifnum#1=0
+\draw[ink] (-2,-.65)--(-2,.65);\draw[ink,decorate,decoration={zigzag,segment length=5pt,amplitude=2pt}] (-2,0)--(-.8,0);
+\draw[ink,thick] (-.8,-.8) rectangle (1.5,.8);
+\node at (-1.45,.75) {$\kappa$};\node at (.4,-1.3) {$S,\mathcal R,m$};\draw[fieldink] (0,0.2) circle (.11);\fill[fieldink] (0,0.2) circle (.027);\draw[fieldink] (0.9,0.2) circle (.11);\fill[fieldink] (0.9,0.2) circle (.027);\draw[force,-{Latex[length=2mm]}] (1.5,1.2)--++(0.9,0) node[midway,above,fill=white,inner sep=1pt] {$\dot X$};\node at (.4,1.9) {$B_z=B_0+gx$};
+\else
+\draw[ink] (-2,-.65)--(-2,.65);\draw[ink,decorate,decoration={zigzag,segment length=5pt,amplitude=2pt}] (-2,0)--(-.8,0);
+\draw[ink,thick] (-.8,-.8) rectangle (1.5,.8);
+\node at (-1.45,.75) {$\kappa$};\node at (.4,-1.3) {$S,\mathcal R,m$};\draw[fieldink] (0,0.2) circle (.11);\fill[fieldink] (0,0.2) circle (.027);\draw[fieldink] (0.9,0.2) circle (.11);\fill[fieldink] (0.9,0.2) circle (.027);\draw[force,-{Latex[length=2mm]}] (1.5,1.2)--++(0.9,0) node[midway,above,fill=white,inner sep=1pt] {$\dot X$};\node at (.4,1.9) {$B_z=B_0+gx$};\draw[force,-{Latex[length=2mm]}] (1.4,0)--++(-0.8,0) node[midway,above,fill=white,inner sep=1pt] {$F_B$};\node[align=center,text width=4cm] at (5.6,1.0) {$F_B=-(Sg)^2\dot X/\mathcal R$};
+\node[align=center,text width=4cm] at (5.6,0.25) {$m\ddot X+k\dot X+\kappa X=0$};
+\fi
+}
+\expandafter\def\csname CaptionQW11\endcsname{弹簧约束线圈在具有恒定梯度的外场中平移}
+\expandafter\def\csname CaptionAW11\endcsname{图取速度向右，磁力向左，机械能按焦耳功率损失}
+\expandafter\def\csname DiagramW12\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (1.8);\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};\draw[aux] (0,0) circle (1.3);\draw[dim] (0,-2.2)--(1.8,-2.2) node[midway,fill=white] {$a$};\draw[fieldink] (-0.55,0.6) circle (.11);\fill[fieldink] (-0.55,0.6) circle (.027);\node at (0,2.3) {$B=B_0\cos\Omega t$};
+\else
+\draw[surface] (0,0) circle (1.8);\fill[sourceink!18,even odd rule] (0,0) circle (1.33) (0,0) circle (1.23);\draw[sourceink] (0,0) circle (1.33) (0,0) circle (1.23);\draw[aux] (-.95,-.8)--(-1.9,-1.3) node[left] {$r,\mathrm dr$};\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};\draw[aux] (0,0) circle (1.3);\draw[dim] (0,-2.2)--(1.8,-2.2) node[midway,fill=white] {$a$};\draw[fieldink] (-0.55,0.6) circle (.11);\fill[fieldink] (-0.55,0.6) circle (.027);\node at (0,2.3) {$B=B_0\cos\Omega t$};\draw[force] (1.3,0) arc[start angle=0,end angle=65,radius=1.3];\node[align=center,text width=4cm] at (5.4,1.0) {图取 $\dot B<0$};
+\node[align=center,text width=4cm] at (5.4,0.25) {$J_\varphi=\sigma E_\varphi$};
+\node[align=center,text width=4cm] at (5.4,-0.5) {环带体积 $2\pi rh\,\mathrm dr$};
+\fi
+}
+\expandafter\def\csname CaptionQW12\endcsname{轴对称薄圆盘受到垂直的均匀交变场}
+\expandafter\def\csname CaptionAW12\endcsname{场衰减时涡流逆时针，功率由所有环带积分}
+\expandafter\def\csname DiagramT1\endcsname#1{%
+\ifnum#1=0
+\draw[ink] (-1.5,0) ellipse (.6 and 1);\draw[ink] (1.5,0) ellipse (.6 and 1);
+\draw[ink] (-.9,0)--(.9,0);\node at (-1.5,1.5) {$N_1,S_1$};\node at (1.5,1.5) {$N_2,S_2$};
+\draw[ink] (-2.1,0)--(-2.1,-1.7)--(2.1,-1.7)--(2.1,0);\node[fill=white] at (0,-1.7) {$\mathcal R$};\draw[force,-{Latex[length=2mm]}] (-1.5,0)--++(0.8,0) node[midway,above,fill=white,inner sep=1pt] {$\boldsymbol n_1$};\draw[force,-{Latex[length=2mm]}] (1.5,0)--++(-0.8,0) node[midway,above,fill=white,inner sep=1pt] {$\boldsymbol n_2$};\draw[force,-{Latex[length=2mm]}] (-0.8,2.1)--++(1.6,0) node[midway,above,fill=white,inner sep=1pt] {$\boldsymbol B(t)$};
+\else
+\draw[ink] (-1.5,0) ellipse (.6 and 1);\draw[ink] (1.5,0) ellipse (.6 and 1);
+\draw[ink] (-.9,0)--(.9,0);\node at (-1.5,1.5) {$N_1,S_1$};\node at (1.5,1.5) {$N_2,S_2$};
+\draw[ink] (-2.1,0)--(-2.1,-1.7)--(2.1,-1.7)--(2.1,0);\node[fill=white] at (0,-1.7) {$\mathcal R$};\draw[force,-{Latex[length=2mm]}] (-1.5,0)--++(0.8,0) node[midway,above,fill=white,inner sep=1pt] {$\boldsymbol n_1$};\draw[force,-{Latex[length=2mm]}] (1.5,0)--++(-0.8,0) node[midway,above,fill=white,inner sep=1pt] {$\boldsymbol n_2$};\draw[force,-{Latex[length=2mm]}] (-0.8,2.1)--++(1.6,0) node[midway,above,fill=white,inner sep=1pt] {$\boldsymbol B(t)$};\node[align=center,text width=4cm] at (6,1.0) {$\Psi=(N_1S_1-N_2S_2)B$};
+\node[align=center,text width=4cm] at (6,0.25) {反向串接使磁通链相减};
+\fi
+}
+\expandafter\def\csname CaptionQT1\endcsname{两绕组按串联方向具有相反面积矢量}
+\expandafter\def\csname CaptionAT1\endcsname{总磁通链须带符号相加，局部感应场仍可存在}
+\expandafter\def\csname DiagramT2\endcsname#1{%
+\ifnum#1=0
+\draw[ink,thick] (0,0) circle (1.5);\draw[aux] (0,0) circle (2);\node at (0,2.5) {$r=r_0e^{\alpha t}$};\draw[fieldink] (0,0.3) circle (.11);\fill[fieldink] (0,0.3) circle (.027);\node at (0,-.3) {$B_0e^{-\lambda t}$};\draw[force,-{Latex[length=2mm]}] (1.5,0)--++(0.6,0) node[midway,above,fill=white,inner sep=1pt] {$\dot r$};
+\else
+\draw[ink,thick] (0,0) circle (1.5);\draw[aux] (0,0) circle (2);\node at (0,2.5) {$r=r_0e^{\alpha t}$};\draw[fieldink] (0,0.3) circle (.11);\fill[fieldink] (0,0.3) circle (.027);\node at (0,-.3) {$B_0e^{-\lambda t}$};\draw[force,-{Latex[length=2mm]}] (1.5,0)--++(0.6,0) node[midway,above,fill=white,inner sep=1pt] {$\dot r$};\node[align=center,text width=4cm] at (6,1.0) {$\mathcal E_{\rm mot}=-2\alpha\Phi$};
+\node[align=center,text width=4cm] at (6,0.25) {$\mathcal E_{\rm ind}=+\lambda\Phi$};
+\fi
+}
+\expandafter\def\csname CaptionQT2\endcsname{圆环均匀扩张，向纸外的外场同时衰减}
+\expandafter\def\csname CaptionAT2\endcsname{面积变化与场变化反向贡献，可在特定速率下抵消}
+\expandafter\def\csname DiagramT3\endcsname#1{%
+\ifnum#1=0
+\draw[source] (0,0).. controls (.7,1.6) and (2,-.4)..(3,1.1);
+\draw[aux] (3,1.1).. controls (1.8,-1.3) and (.6,-1)..(0,0);
+\node[point] at (0,0) {};\node[below left] at (0,0) {$A$};\node[point] at (3,1.1) {};\node[above right] at (3,1.1) {$B(a,b)$};\draw[fieldink] (1.5,0.1) circle (.11);\fill[fieldink] (1.5,0.1) circle (.027);\draw[force,-{Latex[length=2mm]}] (2,1.8)--++(1,0) node[midway,above,fill=white,inner sep=1pt] {$v$};
+\else
+\draw[source] (0,0).. controls (.7,1.6) and (2,-.4)..(3,1.1);
+\draw[aux] (3,1.1).. controls (1.8,-1.3) and (.6,-1)..(0,0);
+\node[point] at (0,0) {};\node[below left] at (0,0) {$A$};\node[point] at (3,1.1) {};\node[above right] at (3,1.1) {$B(a,b)$};\draw[fieldink] (1.5,0.1) circle (.11);\fill[fieldink] (1.5,0.1) circle (.027);\draw[force,-{Latex[length=2mm]}] (2,1.8)--++(1,0) node[midway,above,fill=white,inner sep=1pt] {$v$};\draw[force,-{Latex[length=2mm]}] (2,0.1)--++(0,-0.7) node[midway,right,fill=white,inner sep=1pt] {$\boldsymbol u\times\boldsymbol B$};\node[align=center,text width=4cm] at (6,1.0) {$\mathcal E_{A\to B}=-vB_zb$};
+\node[align=center,text width=4cm] at (6,0.25) {共同平动时闭合积分为零};
+\fi
+}
+\expandafter\def\csname CaptionQT3\endcsname{实线为任意弯导线，虚线为返回路径}
+\expandafter\def\csname CaptionAT3\endcsname{均匀平动的局部作用为常矢量，端点纵向差决定开口积分}
+\expandafter\def\csname DiagramT4\endcsname#1{%
+\ifnum#1=0
+\node[point] at (0,0) {};\node[below] at (0,-.1) {$O$};\draw[aux] (0,0)--(0,1.2);
+\draw[source] (-1.7,1.2)--(1.7,1.2);\node[point] at (0,1.2) {};\node[above] at (0,1.2) {$M$};
+\node[left] at (-1.8,1.2) {$-a$};\node[right] at (1.8,1.2) {$+a$};\node[left] at (-.1,.6) {$d$};\draw[fieldink] (-1,0) circle (.11);\fill[fieldink] (-1,0) circle (.027);\draw[force,-{Latex[length=2mm]}] (1.7,1.2)--++(-0.4,0.6) node[midway,right,fill=white,inner sep=1pt] {$\boldsymbol u$};
+\else
+\node[point] at (0,0) {};\node[below] at (0,-.1) {$O$};\draw[aux] (0,0)--(0,1.2);
+\draw[source] (-1.7,1.2)--(1.7,1.2);\node[point] at (0,1.2) {};\node[above] at (0,1.2) {$M$};
+\node[left] at (-1.8,1.2) {$-a$};\node[right] at (1.8,1.2) {$+a$};\node[left] at (-.1,.6) {$d$};\draw[fieldink] (-1,0) circle (.11);\fill[fieldink] (-1,0) circle (.027);\draw[force,-{Latex[length=2mm]}] (1.7,1.2)--++(-0.4,0.6) node[midway,right,fill=white,inner sep=1pt] {$\boldsymbol u$};\draw[force,-{Latex[length=2mm]}] (0.25,1.2)--++(0.65,0) node[midway,above,fill=white,inner sep=1pt] {$B\omega s$};\draw[force,-{Latex[length=2mm]}] (-0.25,1.2)--++(-0.65,0);\node[align=center,text width=4cm] at (6,1.0) {$\mathcal E_{-a\to+a}=0$};
+\node[align=center,text width=4cm] at (6,0.25) {两端均比中点电势高};
+\fi
+}
+\expandafter\def\csname CaptionQT4\endcsname{棒不穿过转轴，两端到轴等距}
+\expandafter\def\csname CaptionAT4\endcsname{两半棒的动生贡献相反，沿棒存在二次电势分布}
+\expandafter\def\csname DiagramT5\endcsname#1{%
+\ifnum#1=0
+\draw[ink] (-1,-2)--(-1,1.6)--(1,1.6)--(1,-2);
+\draw[source] (-1,-.5)--(1,-.5);\node[above] at (.65,-.45) {$m$};
+\node[fill=white] at (0,1.6) {$\mathcal R$};
+\draw[dim] (-1,-2.3)--(1,-2.3) node[midway,fill=white] {$\ell$};\draw[fieldink] (-0.45,0.5) circle (.11);\fill[fieldink] (-0.45,0.5) circle (.027);\draw[force,-{Latex[length=2mm]}] (1.4,-0.55)--++(0,-0.75) node[midway,right,fill=white,inner sep=1pt] {$v$};
+\else
+\draw[ink] (-1,-2)--(-1,1.6)--(1,1.6)--(1,-2);
+\draw[source] (-1,-.5)--(1,-.5);\node[above] at (.65,-.45) {$m$};
+\node[fill=white] at (0,1.6) {$\mathcal R$};
+\draw[dim] (-1,-2.3)--(1,-2.3) node[midway,fill=white] {$\ell$};\draw[fieldink] (-0.45,0.5) circle (.11);\fill[fieldink] (-0.45,0.5) circle (.027);\draw[force,-{Latex[length=2mm]}] (1.4,-0.55)--++(0,-0.75) node[midway,right,fill=white,inner sep=1pt] {$v$};\draw[source,-{Latex[length=2mm]}] (0,-0.6)--++(0,-0.9) node[midway,right,fill=white,inner sep=1pt] {$mg$};\draw[force,-{Latex[length=2mm]}] (0,-0.35)--++(0,0.8) node[midway,right,fill=white,inner sep=1pt] {$F_B$};\node[align=center,text width=4cm] at (4.7,1.0) {$m\dot v=mg-kv$};
+\node[align=center,text width=4cm] at (4.7,0.25) {$v_\infty=mg/k$};
+\node[align=center,text width=4cm] at (4.7,-0.5) {$Q=mgy-mv^2/2$};
+\fi
+}
+\expandafter\def\csname CaptionQT5\endcsname{横棒沿竖直导轨下落，顶部由电阻闭合}
+\expandafter\def\csname CaptionAT5\endcsname{磁力向上，随速度增大直到平衡重力}
+\expandafter\def\csname DiagramT6\endcsname#1{%
+\ifnum#1=0
+\fill[surfaceink!7] (0,-1.2) rectangle (4,1.2);\draw[aux] (0,-1.7)--(0,1.7) (4,-1.7)--(4,1.7);
+\draw[ink,thick] (-1.2,-.8) rectangle (.7,.8);
+\draw[dim] (0,-1.8)--(4,-1.8) node[midway,fill=white] {$D$};\draw[dim] (-1.2,-1.42)--(.7,-1.42) node[midway,fill=white] {$a$};\node at (4,2) {$x=D$};\node at (0,2) {$x=0$};\draw[fieldink] (0.3,-0.5) circle (.11);\fill[fieldink] (0.3,-0.5) circle (.027);\draw[fieldink] (0.3,0.5) circle (.11);\fill[fieldink] (0.3,0.5) circle (.027);\draw[fieldink] (1.65,-0.5) circle (.11);\fill[fieldink] (1.65,-0.5) circle (.027);\draw[fieldink] (1.65,0.5) circle (.11);\fill[fieldink] (1.65,0.5) circle (.027);\draw[fieldink] (2.65,-0.5) circle (.11);\fill[fieldink] (2.65,-0.5) circle (.027);\draw[fieldink] (2.65,0.5) circle (.11);\fill[fieldink] (2.65,0.5) circle (.027);\draw[force,-{Latex[length=2mm]}] (0.7,1.4)--++(0.8,0) node[midway,above,fill=white,inner sep=1pt] {$v$};
+\else
+\begin{scope}[xshift=0.0cm]\fill[surfaceink!7] (0,-.8) rectangle (3,.8);\draw[aux] (0,-1.3)--(0,1.2) (3,-1.3)--(3,1.2);\draw[ink,thick] (-0.8,-.55) rectangle (0.7,.55);\node at (1.5,1.65) {进入：$0<X<a$};\node at (1.5,-1.65) {顺时针电流};\draw[dim] (0,-1.05)--(0.7,-1.05) node[midway,fill=white] {$X$};\draw[force] (1.4,1)--(2.1,1) node[above] {$v$};\node at (1.5,-2.25) {$F_x<0$};\draw[source,-{Latex}] (0.7,.35)--++(0,-.7);\end{scope}
+\begin{scope}[xshift=4.9cm]\fill[surfaceink!7] (0,-.8) rectangle (3,.8);\draw[aux] (0,-1.3)--(0,1.2) (3,-1.3)--(3,1.2);\draw[ink,thick] (1,-.55) rectangle (2.5,.55);\node at (1.5,1.65) {完全进入：$a<X<D$};\node at (1.5,-1.65) {$I=0$};\draw[dim] (0,-1.05)--(2.5,-1.05) node[midway,fill=white] {$X$};\draw[force] (1.4,1)--(2.1,1) node[above] {$v$};\node at (1.5,-2.25) {$F_x=0$};\end{scope}
+\begin{scope}[xshift=9.8cm]\fill[surfaceink!7] (0,-.8) rectangle (3,.8);\draw[aux] (0,-1.3)--(0,1.2) (3,-1.3)--(3,1.2);\draw[ink,thick] (2.2,-.55) rectangle (3.7,.55);\node at (1.5,1.65) {离开：$D<X<D+a$};\node at (1.5,-1.65) {逆时针电流};\draw[dim] (0,-1.05)--(3.7,-1.05) node[midway,fill=white] {$X$};\draw[force] (1.4,1)--(2.1,1) node[above] {$v$};\node at (1.5,-2.25) {$F_x<0$};\draw[source,-{Latex}] (2.2,.35)--++(0,-.7);\end{scope}
+\fi}
+\expandafter\def\csname CaptionQT6\endcsname{图示进入阶段，灰绿色带内有磁场，外部为零}
+\expandafter\def\csname CaptionAT6\endcsname{三阶段按磁场重叠面积区分，出入时电流反向而阻力均向左}
+\expandafter\def\csname DiagramT7\endcsname#1{%
+\ifnum#1=0
+\draw[source,-{Latex}] (0,-1.5)--(0,2.2) node[above] {$I_s(t)$};
+\draw[ink,thick] (1,-1) rectangle (3,1);
+\draw[dim] (0,-1.65)--(1,-1.65) node[midway,fill=white] {$x$};
+\draw[dim] (1,-1.65)--(3,-1.65) node[midway,fill=white] {$a$};
+\draw[dim] (3.95,-1)--(3.95,1) node[midway,right] {$b$};\draw[fieldink] (1.55,0.35) circle (.11);\draw[fieldink] (1.48,0.27999999999999997)--(1.62,0.42) (1.48,0.42)--(1.62,0.27999999999999997);\draw[fieldink] (2.55,-0.35) circle (.11);\draw[fieldink] (2.48,-0.42)--(2.6199999999999997,-0.27999999999999997) (2.48,-0.27999999999999997)--(2.6199999999999997,-0.42);\node at (2,1.6) {线圈固定};
+\else
+\draw[source,-{Latex}] (0,-1.5)--(0,2.2) node[above] {$I_s(t)$};
+\draw[ink,thick] (1,-1) rectangle (3,1);
+\draw[dim] (0,-1.65)--(1,-1.65) node[midway,fill=white] {$x$};
+\draw[dim] (1,-1.65)--(3,-1.65) node[midway,fill=white] {$a$};
+\draw[dim] (3.95,-1)--(3.95,1) node[midway,right] {$b$};\draw[fieldink] (1.55,0.35) circle (.11);\draw[fieldink] (1.48,0.27999999999999997)--(1.62,0.42) (1.48,0.42)--(1.62,0.27999999999999997);\draw[fieldink] (2.55,-0.35) circle (.11);\draw[fieldink] (2.48,-0.42)--(2.6199999999999997,-0.27999999999999997) (2.48,-0.27999999999999997)--(2.6199999999999997,-0.42);\node at (2,1.6) {线圈固定};\node[align=center,text width=4cm] at (6,1.0) {$Q=-\Delta\Psi/\mathcal R$};
+\node[align=center,text width=4cm] at (6,0.25) {变化过程影响发热};
+\fi
+}
+\expandafter\def\csname CaptionQT7\endcsname{固定矩形线圈接收直导线电流变化引起的感应}
+\expandafter\def\csname CaptionAT7\endcsname{电荷由初末磁通链决定，热量由电流平方的时间积分决定}
+\expandafter\def\csname DiagramT8\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (1.1);
+\draw[aux] (0,0) circle (2);
+\draw[dim] (0,-2.4)--(1.1,-2.4) node[midway,fill=white] {$a$};
+\node[point] at (0,0) {};\node[below] at (0,-.2) {$O$};\draw[fieldink] (-0.4,0.45) circle (.11);\fill[fieldink] (-0.4,0.45) circle (.027);\node at (.45,.55) {$B(t)$};\node at (0,2.5) {外部 $B=0$};\draw[force,-{Latex[length=2mm]}] (2,0)--++(0.6,0) node[midway,above,fill=white,inner sep=1pt] {$\dot r$};
+\else
+\draw[surface] (0,0) circle (1.1);
+\draw[aux] (0,0) circle (2);
+\draw[dim] (0,-2.4)--(1.1,-2.4) node[midway,fill=white] {$a$};
+\node[point] at (0,0) {};\node[below] at (0,-.2) {$O$};\draw[fieldink] (-0.4,0.45) circle (.11);\fill[fieldink] (-0.4,0.45) circle (.027);\node at (.45,.55) {$B(t)$};\node at (0,2.5) {外部 $B=0$};\draw[force,-{Latex[length=2mm]}] (2,0)--++(0.6,0) node[midway,above,fill=white,inner sep=1pt] {$\dot r$};\node[align=center,text width=4cm] at (6,1.0) {金属处 $B=0$};
+\node[align=center,text width=4cm] at (6,0.25) {$\mathcal E_{\rm mot}=0$};
+\node[align=center,text width=4cm] at (6,-0.5) {$\mathcal E_{\rm ind}=-\pi a^2\dot B$};
+\fi
+}
+\expandafter\def\csname CaptionQT8\endcsname{同轴外圆环在无磁场区继续扩张}
+\expandafter\def\csname CaptionAT8\endcsname{扩张扫过的区域无磁通，只有原磁通随外场改变}
+\expandafter\def\csname DiagramT9\endcsname#1{%
+\ifnum#1=0
+\draw[axis] (-.2,0)--(3.6,0) node[right] {$r/a$};\draw[axis] (0,-.2)--(0,2.4) node[above] {$B_z/B_0$};
+\draw[source,domain=0:3.3,samples=90] plot (\x,{2*exp(-\x*\x)});\node[below left] at (0,0) {$0$};\draw[ink] (-.05,2)--(.05,2);\node[left] at(-.05,2) {$1$};
+\else
+\draw[axis] (-.2,0)--(3.6,0) node[right] {$r/a$};\draw[axis] (0,-.2)--(0,2.4) node[above] {归一化场};
+\draw[source,domain=0:3.3,samples=90] plot (\x,{2*exp(-\x*\x)});\node[below left] at (0,0) {$0$};\draw[ink] (-.05,2)--(.05,2);\node[left] at(-.05,2) {$1$};\draw[fieldink,domain=.001:3.3,samples=90] plot (\x,{2*(1-exp(-\x*\x))/\x});\draw[aux] (1.1209,0)--(1.1209,1.27635);\node[below] at (1.1209,-.1) {$r_*/a$};\node[align=center,text width=4cm] at (6.5,1.25) {红线：$B_z/B_0$};
+\node[align=center,text width=4cm] at (6.5,.35) {蓝线：$2|E_\varphi|/(a|\dot B_0|)$};
+\node[align=center,text width=4cm] at (6.5,-.65) {$e^u=1+2u$};
+\fi
+}
+\expandafter\def\csname CaptionQT9\endcsname{高斯型径向场在轴心最大，向外衰减}
+\expandafter\def\csname CaptionAT9\endcsname{感应电场由圆内积分给出，在轴外达到最大值}
+\expandafter\def\csname DiagramT10\endcsname#1{%
+\ifnum#1=0
+\draw[source,-{Latex}] (0,-1.5)--(0,2.2) node[above] {$I_s(t)$};
+\draw[ink,thick] (1,-1) rectangle (3,1);
+\draw[dim] (0,-1.65)--(1,-1.65) node[midway,fill=white] {$x$};
+\draw[dim] (1,-1.65)--(3,-1.65) node[midway,fill=white] {$a$};
+\draw[dim] (3.95,-1)--(3.95,1) node[midway,right] {$b$};\draw[fieldink] (1.55,0.35) circle (.11);\draw[fieldink] (1.48,0.27999999999999997)--(1.62,0.42) (1.48,0.42)--(1.62,0.27999999999999997);\draw[fieldink] (2.55,-0.35) circle (.11);\draw[fieldink] (2.48,-0.42)--(2.6199999999999997,-0.27999999999999997) (2.48,-0.27999999999999997)--(2.6199999999999997,-0.42);\draw[force,-{Latex[length=2mm]}] (2.9,1.6)--++(0.9,0) node[midway,above,fill=white,inner sep=1pt] {$v$};
+\else
+\draw[source,-{Latex}] (0,-1.5)--(0,2.2) node[above] {$I_s(t)$};
+\draw[ink,thick] (1,-1) rectangle (3,1);
+\draw[dim] (0,-1.65)--(1,-1.65) node[midway,fill=white] {$x$};
+\draw[dim] (1,-1.65)--(3,-1.65) node[midway,fill=white] {$a$};
+\draw[dim] (3.95,-1)--(3.95,1) node[midway,right] {$b$};\draw[fieldink] (1.55,0.35) circle (.11);\draw[fieldink] (1.48,0.27999999999999997)--(1.62,0.42) (1.48,0.42)--(1.62,0.27999999999999997);\draw[fieldink] (2.55,-0.35) circle (.11);\draw[fieldink] (2.48,-0.42)--(2.6199999999999997,-0.27999999999999997) (2.48,-0.27999999999999997)--(2.6199999999999997,-0.42);\draw[force,-{Latex[length=2mm]}] (2.9,1.6)--++(0.9,0) node[midway,above,fill=white,inner sep=1pt] {$v$};\node[align=center,text width=4cm] at (6,1.0) {$I_s f(x)=I_0 f(x_0)$};
+\node[align=center,text width=4cm] at (6,0.25) {$\mathcal E_{\rm mot}=-\mathcal E_{\rm ind}$};
+\fi
+}
+\expandafter\def\csname CaptionQT10\endcsname{线圈远离导线，同时调节原电流}
+\expandafter\def\csname CaptionAT10\endcsname{原电流增加恰好补偿几何因子的下降}
+\expandafter\def\csname DiagramT11\endcsname#1{%
+\ifnum#1=0
+\draw[axis] (-1.8,0)--(2,0) node[right] {$x$};\draw[axis] (0,-1.8)--(0,2) node[above] {$y$};
+\draw[ink] (0,0) circle (1.3);\draw[force] (1.3,0) arc[start angle=0,end angle=60,radius=1.3];\draw[fieldink] (-0.6,0.6) circle (.11);\fill[fieldink] (-0.6,0.6) circle (.027);\node at (.6,-.6) {$B(t)$};
+\else
+\draw[axis] (-1.8,0)--(2,0) node[right] {$x$};\draw[axis] (0,-1.8)--(0,2) node[above] {$y$};
+\draw[ink] (0,0) circle (1.3);\draw[force] (1.3,0) arc[start angle=0,end angle=60,radius=1.3];\draw[fieldink] (-0.6,0.6) circle (.11);\fill[fieldink] (-0.6,0.6) circle (.027);\node at (.6,-.6) {$B(t)$};\node[align=center,text width=4cm] at (6,1.0) {$\chi=c(t)xy$};
+\node[align=center,text width=4cm] at (6,0.25) {$\boldsymbol A\to\boldsymbol A+\nabla\chi$};
+\node[align=center,text width=4cm] at (6,-0.5) {$\phi\to\phi-\partial_t\chi$};
+\fi
+}
+\expandafter\def\csname CaptionQT11\endcsname{逆时针固定圆周围住变化的均匀场}
+\expandafter\def\csname CaptionAT11\endcsname{规范变换须同时改变标势，两种电场修正相消}
+\expandafter\def\csname DiagramT12\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (1.1);
+\draw[aux] (0,0) circle (2);
+\draw[dim] (0,-2.4)--(1.1,-2.4) node[midway,fill=white] {$a$};
+\node[point] at (0,0) {};\node[below] at (0,-.2) {$O$};\draw[fieldink] (-0.4,0.45) circle (.11);\fill[fieldink] (-0.4,0.45) circle (.027);\node at (.45,.55) {$B(t)$};\node at (0,2.5) {外部 $B=0$};\node at (0,-3) {外环均匀带电 $Q$，转动惯量 $J$};
+\else
+\draw[surface] (0,0) circle (1.1);
+\draw[aux] (0,0) circle (2);
+\draw[dim] (0,-2.4)--(1.1,-2.4) node[midway,fill=white] {$a$};
+\node[point] at (0,0) {};\node[below] at (0,-.2) {$O$};\draw[fieldink] (-0.4,0.45) circle (.11);\fill[fieldink] (-0.4,0.45) circle (.027);\node at (.45,.55) {$B(t)$};\node at (0,2.5) {外部 $B=0$};\node at (0,-3) {外环均匀带电 $Q$，转动惯量 $J$};\draw[source,-{Latex}] (2,0) arc[start angle=0,end angle=65,radius=2];\node[align=center,text width=4cm] at (6,1.0) {图取 $Q>0,\ \dot\Phi<0$};
+\node[align=center,text width=4cm] at (6,0.25) {$J\omega_f=-Q\Delta\Phi/(2\pi)$};
+\fi
+}
+\expandafter\def\csname CaptionQT12\endcsname{带电绝缘圆环处于磁通区外，可绕轴自由转动}
+\expandafter\def\csname CaptionAT12\endcsname{磁通下降时正电荷受逆时针电力，获得正角动量}
+\expandafter\def\csname DiagramT13\endcsname#1{%
+\ifnum#1=0
+\draw[surface] (0,0) circle (1.8);\fill[white] (0,0) circle (.7);\draw[surfaceink] (0,0) circle (.7);\draw[dim] (0,-.18)--(.7,-.18) node[midway,below] {$a$};\draw[aux] (0,0) circle (1.3);\draw[dim] (0,-2.2)--(1.8,-2.2) node[midway,fill=white] {$b$};\draw[fieldink] (0,0.1) circle (.11);\fill[fieldink] (0,0.1) circle (.027);\node at (0,2.3) {孔内磁通 $\Phi(t)$，金属处 $B=0$};
+\else
+\draw[surface] (0,0) circle (1.8);\fill[sourceink!18,even odd rule] (0,0) circle (1.33) (0,0) circle (1.23);\draw[sourceink] (0,0) circle (1.33) (0,0) circle (1.23);\draw[aux] (-.95,-.8)--(-1.9,-1.3) node[left] {$r,\mathrm dr$};\fill[white] (0,0) circle (.7);\draw[surfaceink] (0,0) circle (.7);\draw[dim] (0,-.18)--(.7,-.18) node[midway,below] {$a$};\draw[aux] (0,0) circle (1.3);\draw[dim] (0,-2.2)--(1.8,-2.2) node[midway,fill=white] {$b$};\draw[fieldink] (0,0.1) circle (.11);\fill[fieldink] (0,0.1) circle (.027);\node at (0,2.3) {孔内磁通 $\Phi(t)$，金属处 $B=0$};\draw[force] (1.3,0) arc[start angle=0,end angle=-65,radius=1.3];\node[align=center,text width=4cm] at (5.6,1.0) {图取 $\dot\Phi>0$};
+\node[align=center,text width=4cm] at (5.6,0.25) {$E_\varphi=-\dot\Phi/(2\pi r)$};
+\node[align=center,text width=4cm] at (5.6,-0.5) {$P\propto\ln(b/a)$};
+\fi
+}
+\expandafter\def\csname CaptionQT13\endcsname{薄金属环片围住变化磁通，外场不穿过金属}
+\expandafter\def\csname CaptionAT13\endcsname{闭合环流仍非零，电流随半径按 $1/r$ 减小}
+\expandafter\def\csname DiagramT14\endcsname#1{%
+\ifnum#1=0
+\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\draw[source,very thick] (-1.35,1.35)--(1.35,-1.35);
+\node at (.9,-2.3) {线圈侧视};
+\draw[force] (0,0)--(0,2.2) node[above] {$B$};
+\draw[force] (0,0)--(1.55,1.55) node[above right] {$\boldsymbol n$};
+\draw[ink] (0,.75) arc[start angle=90,end angle=45,radius=.75];\node at (.43,1.03) {$\theta$};
+\draw[force] (2.2,0) arc[start angle=0,end angle=-55,radius=2.2];\node at (2.25,-.9) {$\omega$};\node[align=center,text width=4cm] at (6,1.0) {$B=B_0\cos\Omega t$};
+\else
+\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\draw[source,very thick] (-1.35,1.35)--(1.35,-1.35);
+\node at (.9,-2.3) {线圈侧视};
+\draw[force] (0,0)--(0,2.2) node[above] {$B$};
+\draw[force] (0,0)--(1.55,1.55) node[above right] {$\boldsymbol n$};
+\draw[ink] (0,.75) arc[start angle=90,end angle=45,radius=.75];\node at (.43,1.03) {$\theta$};
+\draw[force] (2.2,0) arc[start angle=0,end angle=-55,radius=2.2];\node at (2.25,-.9) {$\omega$};\node[align=center,text width=4cm] at (6,1.0) {$B=B_0\cos\Omega t$};\node[align=center,text width=4cm] at (6,0.25) {$\Psi\propto\cos\Omega t\cos\omega t$};
+\node[align=center,text width=4cm] at (6,-0.5) {频率为 $\Omega+\omega$};
+\node[align=center,text width=4cm] at (6,-1.25) {以及 $|\Omega-\omega|$};
+\fi
+}
+\expandafter\def\csname CaptionQT14\endcsname{线圈转动与外场振荡具有不同角频率}
+\expandafter\def\csname CaptionAT14\endcsname{先展开磁通链，再求导，零频磁通不产生电动势}
+\expandafter\def\csname DiagramT15\endcsname#1{%
+\ifnum#1=0
+\draw[aux] (0,0) circle (2);
+\draw[source] (0,0)--(1.6,1.2);\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\node[above right] at (1.6,1.2) {$P$};
+\draw[dim] (.3,-.35)--(1.9,.85) node[midway,below right] {$a$};\draw[fieldink] (-1,0.8) circle (.11);\fill[fieldink] (-1,0.8) circle (.027);\node at (-1,.35) {$B_z>0$};\draw[force,-{Latex[length=2mm]}] (1.6,1.2)--++(-0.6,0.8) node[midway,above right,fill=white,inner sep=1pt] {$\omega r$};\node[align=center,text width=4cm] at (6,1.0) {$B_z(r)=B_0(1-r^2/a^2)$};
+\else
+\draw[aux] (0,0) circle (2);
+\draw[source] (0,0)--(1.6,1.2);\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\node[above right] at (1.6,1.2) {$P$};
+\draw[dim] (.3,-.35)--(1.9,.85) node[midway,below right] {$a$};\draw[fieldink] (-1,0.8) circle (.11);\fill[fieldink] (-1,0.8) circle (.027);\node at (-1,.35) {$B_z>0$};\draw[force,-{Latex[length=2mm]}] (1.6,1.2)--++(-0.6,0.8) node[midway,above right,fill=white,inner sep=1pt] {$\omega r$};\node[align=center,text width=4cm] at (6,1.0) {$B_z(r)=B_0(1-r^2/a^2)$};\draw[force,-{Latex[length=2mm]}] (0.6,0.45)--++(0.45,0.34) node[midway,below right,fill=white,inner sep=1pt] {$I$};\node[align=center,text width=4cm] at (6,0.3) {$\mathcal E=\omega\int_0^a rB_z(r)\,\mathrm dr$};
+\node[align=center,text width=4cm] at (6,-0.45) {$\tau_B=-I\int_0^a rB_z(r)\,\mathrm dr$};
+\fi
+}
+\expandafter\def\csname CaptionQT15\endcsname{轴对称场在外端降为零，棒内部仍有非零磁场}
+\expandafter\def\csname CaptionAT15\endcsname{电动势与力矩都需沿全棒积分}
+\expandafter\def\csname DiagramT16\endcsname#1{%
+\ifnum#1=0
+\draw[ink] (0,1.1)--(4,1.1) (0,-1.1)--(4,-1.1) (0,-1.1)--(0,1.1);
+\draw[source] (3.25,-1.1)--(3.25,1.1);
+\node[fill=white] at (0,.25) {$\mathcal R$};
+\draw[dim] (4.35,-1.1)--(4.35,1.1) node[midway,right] {$\ell$};\draw[fieldink] (0.65,-0.5) circle (.11);\fill[fieldink] (0.65,-0.5) circle (.027);\draw[fieldink] (0.65,0.5) circle (.11);\fill[fieldink] (0.65,0.5) circle (.027);\draw[fieldink] (1.65,-0.5) circle (.11);\fill[fieldink] (1.65,-0.5) circle (.027);\draw[fieldink] (1.65,0.5) circle (.11);\fill[fieldink] (1.65,0.5) circle (.027);\draw[fieldink] (2.65,-0.5) circle (.11);\fill[fieldink] (2.65,-0.5) circle (.027);\draw[fieldink] (2.65,0.5) circle (.11);\fill[fieldink] (2.65,0.5) circle (.027);\draw[force,-{Latex[length=2mm]}] (3.3,1.5)--++(0.85,0) node[midway,above,fill=white,inner sep=1pt] {$v$};\fill[white] (-.13,-.7) rectangle (.13,-.3);\draw[ink] (-.28,-.63)--(.28,-.63) (-.28,-.37)--(.28,-.37);\node[left] at (-.3,-.5) {$C$};\node at (1.7,-1.7) {$B_z>0$};
+\else
+\draw[ink] (0,1.1)--(4,1.1) (0,-1.1)--(4,-1.1) (0,-1.1)--(0,1.1);
+\draw[source] (3.25,-1.1)--(3.25,1.1);
+\node[fill=white] at (0,.25) {$\mathcal R$};
+\draw[dim] (4.35,-1.1)--(4.35,1.1) node[midway,right] {$\ell$};\draw[fieldink] (0.65,-0.5) circle (.11);\fill[fieldink] (0.65,-0.5) circle (.027);\draw[fieldink] (0.65,0.5) circle (.11);\fill[fieldink] (0.65,0.5) circle (.027);\draw[fieldink] (1.65,-0.5) circle (.11);\fill[fieldink] (1.65,-0.5) circle (.027);\draw[fieldink] (1.65,0.5) circle (.11);\fill[fieldink] (1.65,0.5) circle (.027);\draw[fieldink] (2.65,-0.5) circle (.11);\fill[fieldink] (2.65,-0.5) circle (.027);\draw[fieldink] (2.65,0.5) circle (.11);\fill[fieldink] (2.65,0.5) circle (.027);\draw[force,-{Latex[length=2mm]}] (3.3,1.5)--++(0.85,0) node[midway,above,fill=white,inner sep=1pt] {$v$};\fill[white] (-.13,-.7) rectangle (.13,-.3);\draw[ink] (-.28,-.63)--(.28,-.63) (-.28,-.37)--(.28,-.37);\node[left] at (-.3,-.5) {$C$};\node at (1.7,-1.7) {$B_z>0$};\draw[source,-{Latex[length=2mm]}] (3.25,0.65)--++(0,-1.1) node[midway,right,fill=white,inner sep=1pt] {$I$};\draw[force,-{Latex[length=2mm]}] (3.1,0)--++(-1,0) node[midway,above,fill=white,inner sep=1pt] {$-cI$};\node[align=center,text width=4cm] at (6.6,1.8) {$mv+cQ=mv_0$};
+\node[align=center,text width=4cm] at (6.6,1.05) {$v_\infty=v_0/(1+Cc^2/m)$};
+\fi
+}
+\expandafter\def\csname CaptionQT16\endcsname{左侧返回支路串接电阻与电容，棒自由向右滑动}
+\expandafter\def\csname CaptionAT16\endcsname{充电电流制动棒，最终电容电压与动生电动势平衡}
+\expandafter\def\csname DiagramT17\endcsname#1{%
+\ifnum#1=0
+\draw[source,-{Latex}] (0,-1.5)--(0,2.2) node[above] {$I_s(t)$};
+\draw[ink,thick] (1,-1) rectangle (3,1);
+\draw[dim] (0,-1.65)--(1,-1.65) node[midway,fill=white] {$x$};
+\draw[dim] (1,-1.65)--(3,-1.65) node[midway,fill=white] {$a$};
+\draw[dim] (3.95,-1)--(3.95,1) node[midway,right] {$b$};\draw[fieldink] (1.55,0.35) circle (.11);\draw[fieldink] (1.48,0.27999999999999997)--(1.62,0.42) (1.48,0.42)--(1.62,0.27999999999999997);\draw[fieldink] (2.55,-0.35) circle (.11);\draw[fieldink] (2.48,-0.42)--(2.6199999999999997,-0.27999999999999997) (2.48,-0.27999999999999997)--(2.6199999999999997,-0.42);\draw[force,-{Latex[length=2mm]}] (2.9,1.6)--++(0.9,0) node[midway,above,fill=white,inner sep=1pt] {$v$};
+\else
+\draw[source,-{Latex}] (0,-1.5)--(0,2.2) node[above] {$I_s(t)$};
+\draw[ink,thick] (1,-1) rectangle (3,1);
+\draw[dim] (0,-1.65)--(1,-1.65) node[midway,fill=white] {$x$};
+\draw[dim] (1,-1.65)--(3,-1.65) node[midway,fill=white] {$a$};
+\draw[dim] (3.95,-1)--(3.95,1) node[midway,right] {$b$};\draw[fieldink] (1.55,0.35) circle (.11);\draw[fieldink] (1.48,0.27999999999999997)--(1.62,0.42) (1.48,0.42)--(1.62,0.27999999999999997);\draw[fieldink] (2.55,-0.35) circle (.11);\draw[fieldink] (2.48,-0.42)--(2.6199999999999997,-0.27999999999999997) (2.48,-0.27999999999999997)--(2.6199999999999997,-0.42);\draw[force,-{Latex[length=2mm]}] (2.9,1.6)--++(0.9,0) node[midway,above,fill=white,inner sep=1pt] {$v$};\draw[source,-{Latex[length=2mm]}] (1,0)--++(0,0.7) node[midway,left,fill=white,inner sep=1pt] {$I>0$};\draw[source,-{Latex[length=2mm]}] (3,0)--++(0,-0.7);\draw[force,-{Latex[length=2mm]}] (1,-0.5)--++(-0.55,0);\draw[force,-{Latex[length=2mm]}] (3,-0.5)--++(0.45,0);\node at (.8,-1.27) {$F_{\rm near}$};\node at (3.15,-1.27) {$F_{\rm far}$};\node[align=center,text width=4cm] at (6.9,1.3) {图取顺时针 $I>0$};
+\node[align=center,text width=4cm] at (6.9,0.55) {若 $I<0$，两力都反向};
+\node[align=center,text width=4cm] at (6.9,-0.19999999999999996) {$P_J=P_{\rm mech}+P_{\rm ind}$};
+\fi
+}
+\expandafter\def\csname CaptionQT17\endcsname{原电流指数增长，线圈匀速离开直导线}
+\expandafter\def\csname CaptionAT17\endcsname{磁力方向依赖两个电动势的代数和，外场源可能帮助运动}
+\expandafter\def\csname DiagramT18\endcsname#1{%
+\ifnum#1=0
+\draw[ink,thick] (2,0) arc[start angle=0,end angle=145,radius=2];
+\draw[ink] (0,0)--(2,0);\node[fill=white] at (1,0) {$\mathcal R$};
+\draw[source] (0,0)--(1,1.732);\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\node[right] at (2.05,0) {$P_0$};\node[above right] at (1,1.732) {$P$};\node[left] at (-1.7,1.2) {开口端};
+\draw[ink] (.65,0) arc[start angle=0,end angle=60,radius=.65];\node at (.75,.4) {$\theta$};\draw[fieldink] (0.9,0.65) circle (.11);\fill[fieldink] (0.9,0.65) circle (.027);\draw[force,-{Latex[length=2mm]}] (1,1.732)--++(-0.65,0.375);\node[above] at (.6,2.22) {$\omega a$};
+\else
+\draw[ink,thick] (2,0) arc[start angle=0,end angle=145,radius=2];
+\draw[ink] (0,0)--(2,0);\node[fill=white] at (1,0) {$\mathcal R$};
+\draw[source] (0,0)--(1,1.732);\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\node[right] at (2.05,0) {$P_0$};\node[above right] at (1,1.732) {$P$};\node[left] at (-1.7,1.2) {开口端};
+\draw[ink] (.65,0) arc[start angle=0,end angle=60,radius=.65];\node at (.75,.4) {$\theta$};\draw[fieldink] (0.9,0.65) circle (.11);\fill[fieldink] (0.9,0.65) circle (.027);\draw[force,-{Latex[length=2mm]}] (1,1.732)--++(-0.65,0.375);\node[above] at (.6,2.22) {$\omega a$};\draw[source,-{Latex[length=2mm]}] (0.2,0.35)--++(0.45,0.78) node[midway,left,fill=white,inner sep=1pt] {$I$};\draw[source,-{Latex}] (1,1.732) arc[start angle=60,end angle=35,radius=2];\node[align=center,text width=4cm] at (5.6,1.5) {正回路沿棒向外};
+\node[align=center,text width=4cm] at (5.6,0.75) {$\Phi=-Ba^2\theta/2$};
+\node[align=center,text width=4cm] at (5.6,0.0) {$\mathcal E=c(B\omega+\beta\theta)$};
+\fi
+}
+\expandafter\def\csname CaptionQT18\endcsname{旋转棒端在开口圆弧导轨上滑动，经固定径向电阻返回轴心}
+\expandafter\def\csname CaptionAT18\endcsname{正绕行方向为顺时针，棒中向外电流产生阻转矩}
+% ===== 可编辑正文 =====
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ===== 图像数据与排版 =====
+
+\begin{document}
+\section*{12-W1\quad 返回电流与磁矢势}
+\setcounter{figure}{13}\ProblemDiagram{W1}
+\bigskip\setcounter{figure}{14}\AnalysisDiagram{W1}\clearpage
+\section*{12-W2\quad 场强和线圈角度同时改变}
+\setcounter{figure}{15}\ProblemDiagram{W2}
+\bigskip\setcounter{figure}{16}\AnalysisDiagram{W2}\clearpage
+\section*{12-W3\quad 匀速滑动棒的外力功率}
+\setcounter{figure}{17}\ProblemDiagram{W3}
+\bigskip\setcounter{figure}{18}\AnalysisDiagram{W3}\clearpage
+\section*{12-W4\quad 两根滑动棒的相对运动}
+\setcounter{figure}{19}\ProblemDiagram{W4}
+\bigskip\setcounter{figure}{20}\AnalysisDiagram{W4}\clearpage
+\section*{12-W5\quad 旋转弯导线的端电压}
+\setcounter{figure}{21}\ProblemDiagram{W5}
+\bigskip\setcounter{figure}{22}\AnalysisDiagram{W5}\clearpage
+\section*{12-W6\quad 环形圆盘发电机的转矩}
+\setcounter{figure}{23}\ProblemDiagram{W6}
+\bigskip\setcounter{figure}{24}\AnalysisDiagram{W6}\clearpage
+\section*{12-W7\quad 变电流导线旁的移动线圈}
+\setcounter{figure}{25}\ProblemDiagram{W7}
+\bigskip\setcounter{figure}{26}\AnalysisDiagram{W7}\clearpage
+\section*{12-W8\quad 螺线管内外的感应电场}
+\setcounter{figure}{27}\ProblemDiagram{W8}
+\bigskip\setcounter{figure}{28}\AnalysisDiagram{W8}\clearpage
+\section*{12-W9\quad 交流发电机的功率和转矩}
+\setcounter{figure}{29}\ProblemDiagram{W9}
+\bigskip\setcounter{figure}{30}\AnalysisDiagram{W9}\clearpage
+\section*{12-W10\quad 两种引线走向的电压读数}
+\setcounter{figure}{31}\ProblemDiagram{W10}
+\bigskip\setcounter{figure}{32}\AnalysisDiagram{W10}\clearpage
+\section*{12-W11\quad 磁场梯度中的阻尼振动}
+\setcounter{figure}{33}\ProblemDiagram{W11}
+\bigskip\setcounter{figure}{34}\AnalysisDiagram{W11}\clearpage
+\section*{12-W12\quad 薄圆盘的涡流功率}
+\setcounter{figure}{35}\ProblemDiagram{W12}
+\bigskip\setcounter{figure}{36}\AnalysisDiagram{W12}\clearpage
+\section*{12-T1\quad 不同面积绕组的磁通链}
+\setcounter{figure}{37}\ProblemDiagram{T1}
+\bigskip\setcounter{figure}{55}\AnalysisDiagram{T1}\clearpage
+\section*{12-T2\quad 膨胀圆环与衰减磁场}
+\setcounter{figure}{38}\ProblemDiagram{T2}
+\bigskip\setcounter{figure}{56}\AnalysisDiagram{T2}\clearpage
+\section*{12-T3\quad 弯导线平动时的电动势}
+\setcounter{figure}{39}\ProblemDiagram{T3}
+\bigskip\setcounter{figure}{57}\AnalysisDiagram{T3}\clearpage
+\section*{12-T4\quad 偏轴旋转的直导体棒}
+\setcounter{figure}{40}\ProblemDiagram{T4}
+\bigskip\setcounter{figure}{58}\AnalysisDiagram{T4}\clearpage
+\section*{12-T5\quad 下落导体棒的终速}
+\setcounter{figure}{41}\ProblemDiagram{T5}
+\bigskip\setcounter{figure}{59}\AnalysisDiagram{T5}\clearpage
+\section*{12-T6\quad 穿过有限磁场带的线圈}
+\setcounter{figure}{42}\ProblemDiagram{T6}
+\bigskip\setcounter{figure}{60}\AnalysisDiagram{T6}\clearpage
+\section*{12-T7\quad 磁场变化传输的电荷}
+\setcounter{figure}{43}\ProblemDiagram{T7}
+\bigskip\setcounter{figure}{61}\AnalysisDiagram{T7}\clearpage
+\section*{12-T8\quad 在无磁场处扩张的圆环}
+\setcounter{figure}{44}\ProblemDiagram{T8}
+\bigskip\setcounter{figure}{62}\AnalysisDiagram{T8}\clearpage
+\section*{12-T9\quad 径向非均匀场的电场分布}
+\setcounter{figure}{45}\ProblemDiagram{T9}
+\bigskip\setcounter{figure}{63}\AnalysisDiagram{T9}\clearpage
+\section*{12-T10\quad 移动线圈的零电动势条件}
+\setcounter{figure}{46}\ProblemDiagram{T10}
+\bigskip\setcounter{figure}{64}\AnalysisDiagram{T10}\clearpage
+\section*{12-T11\quad 随时间变化的规范函数}
+\setcounter{figure}{47}\ProblemDiagram{T11}
+\bigskip\setcounter{figure}{65}\AnalysisDiagram{T11}\clearpage
+\section*{12-T12\quad 变化磁通对带电圆环的角冲量}
+\setcounter{figure}{48}\ProblemDiagram{T12}
+\bigskip\setcounter{figure}{66}\AnalysisDiagram{T12}\clearpage
+\section*{12-T13\quad 围住变化磁通的金属圆环片}
+\setcounter{figure}{49}\ProblemDiagram{T13}
+\bigskip\setcounter{figure}{67}\AnalysisDiagram{T13}\clearpage
+\section*{12-T14\quad 场振荡与线圈转动的频率}
+\setcounter{figure}{50}\ProblemDiagram{T14}
+\bigskip\setcounter{figure}{68}\AnalysisDiagram{T14}\clearpage
+\section*{12-T15\quad 边缘磁场为零的旋转棒}
+\setcounter{figure}{51}\ProblemDiagram{T15}
+\bigskip\setcounter{figure}{69}\AnalysisDiagram{T15}\clearpage
+\section*{12-T16\quad 电容接入的自由滑动棒}
+\setcounter{figure}{52}\ProblemDiagram{T16}
+\bigskip\setcounter{figure}{70}\AnalysisDiagram{T16}\clearpage
+\section*{12-T17\quad 变电流与移动回路的能量（综合题）}
+\setcounter{figure}{53}\ProblemDiagram{T17}
+\bigskip\setcounter{figure}{71}\AnalysisDiagram{T17}\clearpage
+\section*{12-T18\quad 旋转棒与固定圆弧轨道（综合题）}
+\setcounter{figure}{54}\ProblemDiagram{T18}
+\bigskip\setcounter{figure}{72}\AnalysisDiagram{T18}\clearpage
+\end{document}

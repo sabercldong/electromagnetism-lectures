@@ -1,0 +1,1434 @@
+{
+  "count": 123,
+  "count_description": "每条记录为一个给定参数实例的一项数值比较；同一题的多个观测、残差或参数实例分别计数，非独立公式数量。积分网格点不单独计数。",
+  "all_passed": true,
+  "groups": {
+    "W1": 6,
+    "W2": 6,
+    "W3": 4,
+    "W4": 5,
+    "W5": 4,
+    "W6": 3,
+    "W7": 3,
+    "W8": 6,
+    "W9": 4,
+    "W10": 5,
+    "W11": 3,
+    "W12": 5,
+    "T1": 2,
+    "T2": 2,
+    "T3": 2,
+    "T4": 4,
+    "T5": 1,
+    "T6": 3,
+    "T7": 3,
+    "T8": 2,
+    "T9": 3,
+    "T10": 2,
+    "T11": 8,
+    "T12": 7,
+    "T13": 1,
+    "T14": 1,
+    "T15": 3,
+    "T16": 2,
+    "T17": 12,
+    "T18": 11
+  },
+  "values": {
+    "W9_zeq_mm": 3.6453958900741013,
+    "T17_Rc_uncertainty": 0.00022738021023044415,
+    "T17_G_uncertainty": 0.00025377155081385033
+  },
+  "records": [
+    {
+      "group": "W1",
+      "name": "电荷nC",
+      "computed": 13.627570850877566,
+      "reference": 13.62757085,
+      "absolute_error": 8.775664639415481e-10,
+      "tolerance": 1.3627571849999999e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W1",
+      "name": "水平受力平衡",
+      "computed": 0.0003459535361500083,
+      "reference": 0.0003459535361500083,
+      "absolute_error": 0.0,
+      "tolerance": 6.9200707230001675e-09,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W1",
+      "name": "有限差分标准不确定度",
+      "computed": 0.030824513858458743,
+      "reference": 0.03082451385893635,
+      "absolute_error": 4.776075368528865e-13,
+      "tolerance": 6.164912771787271e-07,
+      "method": "三参数中央差分",
+      "passed": true
+    },
+    {
+      "group": "W1",
+      "name": "小角四阶展开_2",
+      "computed": 0.9999999504919056,
+      "reference": 0.9999999505110547,
+      "absolute_error": 1.91491267287347e-11,
+      "tolerance": 2.0000009010221094e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W1",
+      "name": "小角四阶展开_5",
+      "computed": 0.9999980621551031,
+      "reference": 0.9999980668380742,
+      "absolute_error": 4.682971121994228e-09,
+      "tolerance": 1.9999971336761483e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W1",
+      "name": "小角四阶展开_10",
+      "computed": 0.9999687678869132,
+      "reference": 0.9999690694091875,
+      "absolute_error": 3.0152227425972455e-07,
+      "tolerance": 1.999939138818375e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W2",
+      "name": "时间常数ms",
+      "computed": 11.940298507462689,
+      "reference": 11.94029851,
+      "absolute_error": 2.5373108059056904e-09,
+      "tolerance": 0.0002388059712,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W2",
+      "name": "6ms电压",
+      "computed": 0.5041801890776194,
+      "reference": 0.504180189,
+      "absolute_error": 7.761946640982842e-11,
+      "tolerance": 1.0083604779999999e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W2",
+      "name": "微分方程_0",
+      "computed": -1.0482826815660018e-18,
+      "reference": 0,
+      "absolute_error": 1.0482826815660018e-18,
+      "tolerance": 2e-15,
+      "method": "中央差分方程残差",
+      "passed": true
+    },
+    {
+      "group": "W2",
+      "name": "微分方程_0.006",
+      "computed": -9.805332806754586e-19,
+      "reference": 0,
+      "absolute_error": 9.805332806754586e-19,
+      "tolerance": 2e-15,
+      "method": "中央差分方程残差",
+      "passed": true
+    },
+    {
+      "group": "W2",
+      "name": "微分方程_0.02",
+      "computed": -1.8541418866498626e-19,
+      "reference": 0,
+      "absolute_error": 1.8541418866498626e-19,
+      "tolerance": 2e-15,
+      "method": "中央差分方程残差",
+      "passed": true
+    },
+    {
+      "group": "W2",
+      "name": "接表前后时间比",
+      "computed": 167.49999999999997,
+      "reference": 167.5,
+      "absolute_error": 2.842170943040401e-14,
+      "tolerance": 0.003350000001,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W3",
+      "name": "水平场微特斯拉",
+      "computed": 19.999999999999996,
+      "reference": 20,
+      "absolute_error": 3.552713678800501e-15,
+      "tolerance": 0.000400000001,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W3",
+      "name": "固定横向场微特斯拉",
+      "computed": 0.7999999999999998,
+      "reference": 0.8,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 1.6000001000000002e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W3",
+      "name": "正负读数反代",
+      "computed": [
+        0.34,
+        -0.26
+      ],
+      "reference": [
+        0.34,
+        -0.26
+      ],
+      "absolute_error": 0.0,
+      "tolerance": 6.800001000000001e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W3",
+      "name": "单向反演相对偏差",
+      "computed": -0.11764705882352944,
+      "reference": -0.1176470588,
+      "absolute_error": 2.3529442283454216e-11,
+      "tolerance": 2.352942176e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W4",
+      "name": "磁场",
+      "computed": 0.0502654824574367,
+      "reference": 0.05026548246,
+      "absolute_error": 2.5632967970423692e-12,
+      "tolerance": 1.0053106492e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W4",
+      "name": "自感",
+      "computed": 0.04021238596594935,
+      "reference": 0.04021238597,
+      "absolute_error": 4.050648705344884e-12,
+      "tolerance": 8.042487194000001e-07,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W4",
+      "name": "力",
+      "computed": 0.4021238596594937,
+      "reference": 0.4021238597,
+      "absolute_error": 4.050626500884391e-11,
+      "tolerance": 8.042478193999999e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W4",
+      "name": "余能位移导数",
+      "computed": 0.4021238596621513,
+      "reference": 0.4021238596594937,
+      "absolute_error": 2.6575963651964685e-12,
+      "tolerance": 8.042478193189875e-06,
+      "method": "气隙长度中央差分",
+      "passed": true
+    },
+    {
+      "group": "W4",
+      "name": "微位移电源能量收支",
+      "computed": 8.042879337144539e-08,
+      "reference": 8.042879337144539e-08,
+      "absolute_error": 0.0,
+      "tolerance": 2.6085758674289078e-12,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W5",
+      "name": "双线圈轴场求和",
+      "computed": 0.0007792861141634513,
+      "reference": 0.0007792861141634514,
+      "absolute_error": 1.0842021724855044e-19,
+      "tolerance": 1.558672228326903e-08,
+      "method": "单线圈轴场叠加",
+      "passed": true
+    },
+    {
+      "group": "W5",
+      "name": "荷质比",
+      "computed": 182963144232.1015,
+      "reference": 182963000000.0,
+      "absolute_error": 144232.10150146484,
+      "tolerance": 3659260.0000000005,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W5",
+      "name": "荷质比误差传播",
+      "computed": 0.024094720494543757,
+      "reference": 0.024094720491334935,
+      "absolute_error": 3.2088220969228587e-12,
+      "tolerance": 4.818954098266987e-07,
+      "method": "四参数中央差分",
+      "passed": true
+    },
+    {
+      "group": "W5",
+      "name": "相对论修正百分比",
+      "computed": 0.020361540347790807,
+      "reference": 0.0204,
+      "absolute_error": 3.8459652209194006e-05,
+      "tolerance": 5.100000100000001e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W6",
+      "name": "动生电动势径向积分",
+      "computed": 0.16,
+      "reference": 0.16,
+      "absolute_error": 0.0,
+      "tolerance": 3.200001e-06,
+      "method": "10001点梯形积分",
+      "passed": true
+    },
+    {
+      "group": "W6",
+      "name": "转矩径向积分",
+      "computed": 0.0012799999999999999,
+      "reference": 0.00128,
+      "absolute_error": 2.168404344971009e-19,
+      "tolerance": 2.5601000000000005e-08,
+      "method": "10001点梯形积分",
+      "passed": true
+    },
+    {
+      "group": "W6",
+      "name": "机械与焦耳功率",
+      "computed": 0.128,
+      "reference": 0.12799999999999997,
+      "absolute_error": 2.7755575615628914e-17,
+      "tolerance": 2.5600009999999994e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W7",
+      "name": "磁通链变化",
+      "computed": 0.015000000000000001,
+      "reference": 0.015,
+      "absolute_error": 1.734723475976807e-18,
+      "tolerance": 3.00001e-07,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W7",
+      "name": "每匝磁通",
+      "computed": 7.500000000000001e-05,
+      "reference": 7.5e-05,
+      "absolute_error": 1.3552527156068805e-20,
+      "tolerance": 1.501e-09,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W7",
+      "name": "自感端点修正",
+      "computed": 0.015500000000000002,
+      "reference": 0.0155,
+      "absolute_error": 1.734723475976807e-18,
+      "tolerance": 3.10001e-07,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W8",
+      "name": "完整热量积分",
+      "computed": 0.0005317361552716547,
+      "reference": 0.0005317361552716548,
+      "absolute_error": 1.0842021724855044e-19,
+      "tolerance": 1.0635723105433095e-08,
+      "method": "50001点空间积分",
+      "passed": true
+    },
+    {
+      "group": "W8",
+      "name": "最大阻力",
+      "computed": 0.011036383235143271,
+      "reference": 0.01103638324,
+      "absolute_error": 4.8567278670974545e-12,
+      "tolerance": 2.207286648e-07,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W8",
+      "name": "局部机械热功率_-0.02",
+      "computed": 0.0033109149705429814,
+      "reference": 0.0033109149705429805,
+      "absolute_error": 8.673617379884035e-19,
+      "tolerance": 6.621929941085962e-08,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W8",
+      "name": "局部机械热功率_0",
+      "computed": 0.0,
+      "reference": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-12,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W8",
+      "name": "局部机械热功率_0.02",
+      "computed": 0.0033109149705429814,
+      "reference": 0.0033109149705429805,
+      "absolute_error": 8.673617379884035e-19,
+      "tolerance": 6.621929941085962e-08,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W8",
+      "name": "低自感时间尺度比",
+      "computed": 0.015000000000000001,
+      "reference": 0.015,
+      "absolute_error": 1.734723475976807e-18,
+      "tolerance": 3.00001e-07,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W9",
+      "name": "相量实部平均力",
+      "computed": 0.09080003316496249,
+      "reference": 0.090800033164,
+      "absolute_error": 9.624939734109716e-13,
+      "tolerance": 1.8160016632800001e-06,
+      "method": "复数电路求解",
+      "passed": true
+    },
+    {
+      "group": "W9",
+      "name": "焦耳功率",
+      "computed": 0.4540001658248125,
+      "reference": 0.454000165821,
+      "absolute_error": 3.8125058665627876e-12,
+      "tolerance": 9.08000431642e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W9",
+      "name": "一周期力平均",
+      "computed": 0.09080003316496249,
+      "reference": 0.09080003316496249,
+      "absolute_error": 0.0,
+      "tolerance": 1.81600166329925e-06,
+      "method": "20001点时域积分",
+      "passed": true
+    },
+    {
+      "group": "W9",
+      "name": "竖直平衡高度mm",
+      "computed": 3.6453958900741013,
+      "reference": 3.65,
+      "absolute_error": 0.004604109925898658,
+      "tolerance": 0.005475000001,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W10",
+      "name": "能量二阶差分轴_0",
+      "computed": 13122.159998602,
+      "reference": 13122.1625334259,
+      "absolute_error": 0.002534823901441996,
+      "tolerance": 3.93664876002877,
+      "method": "三维Hessian对角中央差分",
+      "passed": true
+    },
+    {
+      "group": "W10",
+      "name": "能量二阶差分轴_1",
+      "computed": 13122.159998602,
+      "reference": 13122.1625334259,
+      "absolute_error": 0.002534823901441996,
+      "tolerance": 3.93664876002877,
+      "method": "三维Hessian对角中央差分",
+      "passed": true
+    },
+    {
+      "group": "W10",
+      "name": "能量二阶差分轴_2",
+      "computed": 52488.649089355014,
+      "reference": 52488.6501337036,
+      "absolute_error": 0.0010443485880387016,
+      "tolerance": 15.74659504011208,
+      "method": "三维Hessian对角中央差分",
+      "passed": true
+    },
+    {
+      "group": "W10",
+      "name": "重力与磁力",
+      "computed": 0.0,
+      "reference": 0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-10,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W10",
+      "name": "竖直频率Hz",
+      "computed": 1.1530624613757272,
+      "reference": 1.1530621,
+      "absolute_error": 3.6137572712036103e-07,
+      "tolerance": 2.3061243000000003e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W11",
+      "name": "最小二乘截距斜率",
+      "computed": [
+        0.05020000000000004,
+        0.05000000000000002
+      ],
+      "reference": [
+        0.0502,
+        0.05
+      ],
+      "absolute_error": 4.163336342344337e-17,
+      "tolerance": 1.004001e-06,
+      "method": "numpy矩阵最小二乘",
+      "passed": true
+    },
+    {
+      "group": "W11",
+      "name": "读数残差mm",
+      "computed": [
+        -0.20000000000004042,
+        0.7999999999999396,
+        -1.2000000000000899,
+        0.7999999999999119,
+        -0.200000000000089
+      ],
+      "reference": [
+        -0.2,
+        0.8,
+        -1.2,
+        0.8,
+        -0.2
+      ],
+      "absolute_error": 8.992806499463768e-14,
+      "tolerance": 2.4000001e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W11",
+      "name": "斜率标准误差",
+      "computed": 0.00031622776601683794,
+      "reference": 0.00031622776601683794,
+      "absolute_error": 0.0,
+      "tolerance": 6.325555320336759e-09,
+      "method": "设计矩阵协方差",
+      "passed": true
+    },
+    {
+      "group": "W12",
+      "name": "偏振背景与泄漏三角验证",
+      "computed": 0.626,
+      "reference": 0.626,
+      "absolute_error": 0.0,
+      "tolerance": 1.2520001e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "W12",
+      "name": "泄漏功率系数",
+      "computed": 0.01,
+      "reference": 0.01,
+      "absolute_error": 0.0,
+      "tolerance": 2.0000100000000002e-07,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T1",
+      "name": "漏电时间s",
+      "computed": 28.852207495204155,
+      "reference": 28.8522075,
+      "absolute_error": 4.795843722149584e-09,
+      "tolerance": 0.000577044151,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T1",
+      "name": "精确角度模型反代",
+      "computed": 0.35353181716685833,
+      "reference": 0.3535318171668583,
+      "absolute_error": 5.551115123125783e-17,
+      "tolerance": 7.070637343337167e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T2",
+      "name": "离子风主项与气流修正",
+      "computed": [
+        0.025,
+        0.024390243902439025
+      ],
+      "reference": [
+        0.025,
+        0.0243902439
+      ],
+      "absolute_error": 2.4390246766703427e-12,
+      "tolerance": 5.000010000000001e-07,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T2",
+      "name": "机械电功率效率",
+      "computed": 0.025,
+      "reference": 0.025,
+      "absolute_error": 0.0,
+      "tolerance": 5.000010000000001e-07,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T3",
+      "name": "复数频率幅值与相位",
+      "computed": [
+        1.9751409843027836,
+        9.043061079037688
+      ],
+      "reference": [
+        1.975140984,
+        9.04306108
+      ],
+      "absolute_error": 9.623111196788159e-10,
+      "tolerance": 0.0001808612226,
+      "method": "复数电路求解",
+      "passed": true
+    },
+    {
+      "group": "T3",
+      "name": "百分之一平台阈值频率",
+      "computed": 22.33874567271913,
+      "reference": 22.33839,
+      "absolute_error": 0.00035567271913095055,
+      "tolerance": 0.002233839001,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T4",
+      "name": "有限导线积分_0.02",
+      "computed": 9.284766906092557e-06,
+      "reference": 9.284766908852591e-06,
+      "absolute_error": 2.760034835771509e-15,
+      "tolerance": 1.9284766908852593e-12,
+      "method": "20001点毕奥萨伐尔积分",
+      "passed": true
+    },
+    {
+      "group": "T4",
+      "name": "有限导线积分_0.04",
+      "computed": 3.9043440448925205e-06,
+      "reference": 3.904344047215152e-06,
+      "absolute_error": 2.3226312569741246e-15,
+      "tolerance": 1.3904344047215151e-12,
+      "method": "20001点毕奥萨伐尔积分",
+      "passed": true
+    },
+    {
+      "group": "T4",
+      "name": "有限导线积分_0.007",
+      "computed": 2.8295478475075752e-05,
+      "reference": 2.8295478476409433e-05,
+      "absolute_error": 1.333680480506208e-15,
+      "tolerance": 3.8295478476409434e-12,
+      "method": "20001点毕奥萨伐尔积分",
+      "passed": true
+    },
+    {
+      "group": "T4",
+      "name": "反演场相对偏差",
+      "computed": [
+        0.07703296142690097,
+        0.2806248474865698
+      ],
+      "reference": [
+        0.07703296143,
+        0.28062484749
+      ],
+      "absolute_error": 3.430200568033115e-12,
+      "tolerance": 5.612497949800001e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T5",
+      "name": "能量与出射速度",
+      "computed": [
+        0.00725,
+        2.1984843263788196
+      ],
+      "reference": [
+        0.00725,
+        2.198484326
+      ],
+      "absolute_error": 3.788196423215595e-10,
+      "tolerance": 4.396968752000001e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T6",
+      "name": "退磁线性方程",
+      "computed": 179049.31097838224,
+      "reference": 179049.3109783823,
+      "absolute_error": 5.820766091346741e-11,
+      "tolerance": 3.5809862195686466,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T6",
+      "name": "磁矩与饱和力",
+      "computed": [
+        0.0007500000000000001,
+        0.0004188790204786391
+      ],
+      "reference": [
+        0.00075,
+        0.0004188790205
+      ],
+      "absolute_error": 2.1360896992200784e-14,
+      "tolerance": 1.5001000000000003e-08,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T6",
+      "name": "诱导能量梯度力",
+      "computed": 0.0007500000000185852,
+      "reference": 0.0007500000000000001,
+      "absolute_error": 1.858506838009477e-14,
+      "tolerance": 1.5001000000000006e-08,
+      "method": "诱导能量中央差分",
+      "passed": true
+    },
+    {
+      "group": "T7",
+      "name": "两次历史的电流",
+      "computed": [
+        -0.5,
+        -1.0
+      ],
+      "reference": [
+        -0.5,
+        -1.0
+      ],
+      "absolute_error": 0.0,
+      "tolerance": 2.0000001e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T7",
+      "name": "历史势能与力_0",
+      "computed": -1.0000000000064279e-05,
+      "reference": -1e-05,
+      "absolute_error": 6.427794223533984e-17,
+      "tolerance": 2.0100000000000003e-10,
+      "method": "势能中央差分",
+      "passed": true
+    },
+    {
+      "group": "T7",
+      "name": "历史势能与力_5e-06",
+      "computed": -5.0000000000109636e-06,
+      "reference": -5e-06,
+      "absolute_error": 1.096314743631241e-17,
+      "tolerance": 1.0100000000000001e-10,
+      "method": "势能中央差分",
+      "passed": true
+    },
+    {
+      "group": "T8",
+      "name": "恒压升温吸力",
+      "computed": 0.6944444444444444,
+      "reference": 0.6944444444,
+      "absolute_error": 4.4444448121794267e-11,
+      "tolerance": 1.3888889888e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T8",
+      "name": "吸力反演温升",
+      "computed": 29.508497187473726,
+      "reference": 29.50849719,
+      "absolute_error": 2.5262743008624966e-09,
+      "tolerance": 0.0005901699448,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T9",
+      "name": "电动机稳态转矩",
+      "computed": 0.003508771929824562,
+      "reference": 0.0035087719298245615,
+      "absolute_error": 4.336808689942018e-19,
+      "tolerance": 7.017643859649124e-08,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T9",
+      "name": "电机转速电流",
+      "computed": [
+        350.8771929824561,
+        2.192982456140351
+      ],
+      "reference": [
+        350.87719298,
+        2.192982456
+      ],
+      "absolute_error": 2.4560904421377927e-09,
+      "tolerance": 0.007017543860600001,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T9",
+      "name": "电机能量",
+      "computed": 2.192982456140351,
+      "reference": 2.192982456140351,
+      "absolute_error": 0.0,
+      "tolerance": 4.3859650122807024e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T10",
+      "name": "圆弧几何",
+      "computed": 0.007225000000000001,
+      "reference": 0.007225000000000001,
+      "absolute_error": 0.0,
+      "tolerance": 1.4450100000000003e-07,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T10",
+      "name": "抛物线反演偏差",
+      "computed": 0.12890625,
+      "reference": 0.12890625,
+      "absolute_error": 0.0,
+      "tolerance": 2.5781260000000002e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "脉冲方程残差_0.001",
+      "computed": -0.047561471224427304,
+      "reference": -0.047561471225035706,
+      "absolute_error": 6.084022174945858e-13,
+      "tolerance": 4.757147122503571e-09,
+      "method": "中央差分方程残差",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "脉冲方程残差_0.01",
+      "computed": -0.030326532984675775,
+      "reference": -0.030326532985631673,
+      "absolute_error": 9.558985547553078e-13,
+      "tolerance": 3.033653298563167e-09,
+      "method": "中央差分方程残差",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "脉冲方程残差_0.03",
+      "computed": -0.011156508007135489,
+      "reference": -0.011156508007421491,
+      "absolute_error": 2.860021247608202e-13,
+      "tolerance": 1.1166508007421493e-09,
+      "method": "中央差分方程残差",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "峰值时刻与电流",
+      "computed": [
+        0.009241962407465937,
+        -0.003149802624737183
+      ],
+      "reference": [
+        0.009241962407,
+        -0.003149802625
+      ],
+      "absolute_error": 4.659363173065145e-13,
+      "tolerance": 1.8484024814000002e-07,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "完整电荷积分",
+      "computed": -9.9999997914815e-05,
+      "reference": -0.0001,
+      "absolute_error": 2.085185011311587e-12,
+      "tolerance": 1.0999999999999999e-11,
+      "method": "100001点时间积分",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "重根极限_0.01",
+      "computed": -0.0015163152769330987,
+      "reference": -0.0015163266492815835,
+      "absolute_error": 1.1372348484792183e-08,
+      "tolerance": 1.5164266492815837e-08,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "重根极限_0.02",
+      "computed": -0.0018393880089130332,
+      "reference": -0.0018393972058572117,
+      "absolute_error": 9.196944178446742e-09,
+      "tolerance": 1.839497205857212e-08,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "重根极限_0.05",
+      "computed": -0.0010260650478940497,
+      "reference": -0.0010260624827987351,
+      "absolute_error": 2.5650953145404942e-09,
+      "tolerance": 1.0261624827987352e-08,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T12",
+      "name": "耗散周期积分_0.02",
+      "computed": 9.615384615384617e-05,
+      "reference": 9.61538461538462e-05,
+      "absolute_error": 2.710505431213761e-20,
+      "tolerance": 1.924076923076924e-09,
+      "method": "复数解与20001点平均",
+      "passed": true
+    },
+    {
+      "group": "T12",
+      "name": "机械与焦耳平均_0.02",
+      "computed": 9.615384615384614e-05,
+      "reference": 9.615384615384617e-05,
+      "absolute_error": 2.710505431213761e-20,
+      "tolerance": 1.9240769230769235e-09,
+      "method": "20001点机械功率积分",
+      "passed": true
+    },
+    {
+      "group": "T12",
+      "name": "耗散周期积分_0.1",
+      "computed": 0.0002500000000000001,
+      "reference": 0.00025000000000000006,
+      "absolute_error": 5.421010862427522e-20,
+      "tolerance": 5.001000000000002e-09,
+      "method": "复数解与20001点平均",
+      "passed": true
+    },
+    {
+      "group": "T12",
+      "name": "机械与焦耳平均_0.1",
+      "computed": 0.00025000000000000006,
+      "reference": 0.0002500000000000001,
+      "absolute_error": 5.421010862427522e-20,
+      "tolerance": 5.001000000000003e-09,
+      "method": "20001点机械功率积分",
+      "passed": true
+    },
+    {
+      "group": "T12",
+      "name": "耗散周期积分_0.5",
+      "computed": 9.615384615384622e-05,
+      "reference": 9.61538461538462e-05,
+      "absolute_error": 2.710505431213761e-20,
+      "tolerance": 1.924076923076924e-09,
+      "method": "复数解与20001点平均",
+      "passed": true
+    },
+    {
+      "group": "T12",
+      "name": "机械与焦耳平均_0.5",
+      "computed": 9.615384615384618e-05,
+      "reference": 9.615384615384622e-05,
+      "absolute_error": 4.0657581468206416e-20,
+      "tolerance": 1.9240769230769243e-09,
+      "method": "20001点机械功率积分",
+      "passed": true
+    },
+    {
+      "group": "T12",
+      "name": "最优电阻与最大功率",
+      "computed": [
+        0.1,
+        0.0002500000000000001
+      ],
+      "reference": [
+        0.1,
+        0.00025
+      ],
+      "absolute_error": 1.0842021724855044e-19,
+      "tolerance": 2.000001e-06,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T13",
+      "name": "冷热力功率比",
+      "computed": [
+        1.6,
+        0.8
+      ],
+      "reference": [
+        1.6,
+        0.8
+      ],
+      "absolute_error": 0.0,
+      "tolerance": 3.200000100000001e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T14",
+      "name": "近远场电压与功率主项",
+      "computed": [
+        0.125,
+        0.015625,
+        0.5,
+        0.25
+      ],
+      "reference": [
+        0.125,
+        0.015625,
+        0.5,
+        0.25
+      ],
+      "absolute_error": 0.0,
+      "tolerance": 1.0000001e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "斜率协方差",
+      "computed": 9.561828874675149e-05,
+      "reference": 9.561828874675149e-05,
+      "absolute_error": 0.0,
+      "tolerance": 1.91336577493503e-09,
+      "method": "设计矩阵协方差",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "刻度综合相对误差",
+      "computed": 0.002767154288640743,
+      "reference": 0.00276715,
+      "absolute_error": 4.2886407428804896e-09,
+      "tolerance": 5.5344e-08,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "频率标准误差MHz",
+      "computed": 8.295719858568498,
+      "reference": 8.2957198586,
+      "absolute_error": 3.150191218992404e-11,
+      "tolerance": 0.000165914398172,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T16",
+      "name": "共振频率层厚",
+      "computed": [
+        63865500.0,
+        0.0023486859102332244
+      ],
+      "reference": [
+        63865500.0,
+        0.002348686
+      ],
+      "absolute_error": 8.976677561001178e-11,
+      "tolerance": 1277.310000000001,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T16",
+      "name": "能级差",
+      "computed": [
+        4.231772831648249e-26,
+        2.6412648529789067e-07
+      ],
+      "reference": [
+        4.23177283165e-26,
+        2.641264853e-07
+      ],
+      "absolute_error": 2.1093237969000214e-18,
+      "tolerance": 5.2825297060000006e-12,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "标定参数",
+      "computed": [
+        0.008,
+        0.02,
+        0.007999999999999998
+      ],
+      "reference": [
+        0.008,
+        0.02,
+        0.008
+      ],
+      "absolute_error": 1.734723475976807e-18,
+      "tolerance": 4.00001e-07,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "相关误差有限差分",
+      "computed": [
+        0.00025377155081385033,
+        0.00022738021023044415
+      ],
+      "reference": [
+        0.00025377155,
+        0.00022738
+      ],
+      "absolute_error": 2.102304441371338e-10,
+      "tolerance": 7.6141465e-09,
+      "method": "对四个原始参数中央差分，含共同开路量",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "三个特征根实部",
+      "computed": [
+        -199.4987449764463,
+        -0.3506275117768468,
+        -0.3506275117768468
+      ],
+      "reference": [
+        -199.498744976,
+        -0.3506275118,
+        -0.3506275118
+      ],
+      "absolute_error": 4.462776814762037e-10,
+      "tolerance": 0.003989974900520001,
+      "method": "机电状态矩阵特征值",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "振动根虚部大小",
+      "computed": 6.322781289954198,
+      "reference": 6.32278128995,
+      "absolute_error": 4.198419389922492e-12,
+      "tolerance": 0.000126455626799,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "特征多项式各根残差",
+      "computed": [
+        3.4843643042804626e-17,
+        3.4843643042804626e-17,
+        1.3739009929736312e-15
+      ],
+      "reference": [
+        0,
+        0,
+        0
+      ],
+      "absolute_error": 1.3739009929736312e-15,
+      "tolerance": 2e-12,
+      "method": "根代入原始三次多项式",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "有限自感焦耳热微焦",
+      "computed": 57.12655157654445,
+      "reference": 57.12655158,
+      "absolute_error": 3.4555469596853072e-09,
+      "tolerance": 0.0011425310326,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "独立状态方程热量积分",
+      "computed": 5.712655157654448e-05,
+      "reference": 5.712655157654445e-05,
+      "absolute_error": 2.710505431213761e-20,
+      "tolerance": 1.0057126551576544e-12,
+      "method": "连续Lyapunov矩阵方程，9未知数线性求解",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "机械热与能量收支",
+      "computed": [
+        2.287344842345556e-05,
+        8.000000000000003e-05
+      ],
+      "reference": [
+        2.2873448423455557e-05,
+        8e-05
+      ],
+      "absolute_error": 2.710505431213761e-20,
+      "tolerance": 1.008e-12,
+      "method": "连续Lyapunov矩阵方程",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "时域积分焦耳热",
+      "computed": 5.7126551532753944e-05,
+      "reference": 5.712655157654445e-05,
+      "absolute_error": 4.3790505618347686e-14,
+      "tolerance": 1.242531031530889e-11,
+      "method": "120001点精确模态解积分；与解析热量比例比较",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "瞬时机电能量_17",
+      "computed": -2.9233849392041077e-08,
+      "reference": -2.9233849392037434e-08,
+      "absolute_error": 3.642903417683534e-21,
+      "tolerance": 5.856769878407487e-13,
+      "method": "状态方程与二次能量导数",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "瞬时机电能量_1800",
+      "computed": -8.110238111622937e-06,
+      "reference": -8.110238111622984e-06,
+      "absolute_error": 4.743384504624082e-20,
+      "tolerance": 1.622057622324597e-10,
+      "method": "状态方程与二次能量导数",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "瞬时机电能量_22000",
+      "computed": -9.003662264668005e-08,
+      "reference": -9.003662264667988e-08,
+      "absolute_error": 1.7205356741102976e-22,
+      "tolerance": 1.8017324529335979e-12,
+      "method": "状态方程与二次能量导数",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "幅值系数与入射标度",
+      "computed": [
+        0.49999999999999994,
+        0.8
+      ],
+      "reference": [
+        0.5,
+        0.8
+      ],
+      "absolute_error": 5.551115123125783e-17,
+      "tolerance": 1.6000001000000002e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "反射功率可见度",
+      "computed": [
+        0.24999999999999994,
+        0.7999999999999999
+      ],
+      "reference": [
+        0.25,
+        0.8
+      ],
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 1.6000001000000002e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "45度极大功率",
+      "computed": 0.92,
+      "reference": 0.92,
+      "absolute_error": 0.0,
+      "tolerance": 1.8400001000000003e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "最小二乘波长频率",
+      "computed": [
+        0.10000000000000003,
+        2997924579.999999
+      ],
+      "reference": [
+        0.1,
+        2997924580.0
+      ],
+      "absolute_error": 9.5367431640625e-07,
+      "tolerance": 59958.49160000001,
+      "method": "五点矩阵最小二乘",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "斜率协方差频率误差MHz",
+      "computed": 9.480269926203672,
+      "reference": 9.480269926,
+      "absolute_error": 2.0367174613511452e-10,
+      "tolerance": 0.00018960539952,
+      "method": "设计矩阵协方差",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "含共同零点截距误差mm",
+      "computed": 2.0371548787463363,
+      "reference": 2.037154879,
+      "absolute_error": 2.5366375666635577e-10,
+      "tolerance": 4.0743098580000004e-05,
+      "method": "独立数值代入",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "截距斜率协方差",
+      "computed": -5e-08,
+      "reference": -5e-08,
+      "absolute_error": 0.0,
+      "tolerance": 2e-12,
+      "method": "设计矩阵逆",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "共同偏移不改斜率_0.002",
+      "computed": 0.050000000000000024,
+      "reference": 0.05,
+      "absolute_error": 2.0816681711721685e-17,
+      "tolerance": 1.0000010000000002e-06,
+      "method": "共同偏移后重新最小二乘",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "共同偏移不改斜率_0.05",
+      "computed": 0.04999999999999998,
+      "reference": 0.05,
+      "absolute_error": 2.0816681711721685e-17,
+      "tolerance": 1.0000010000000002e-06,
+      "method": "共同偏移后重新最小二乘",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "移动坐标零点的相位补偿_0.125",
+      "computed": -1.0,
+      "reference": -1.0,
+      "absolute_error": 0.0,
+      "tolerance": 2.0000001e-05,
+      "method": "相位参考变换数值反代",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "移动坐标零点的相位补偿_0.173",
+      "computed": -0.9685831611286304,
+      "reference": -0.9685831611286313,
+      "absolute_error": 8.881784197001252e-16,
+      "tolerance": 1.9371664222572626e-05,
+      "method": "相位参考变换数值反代",
+      "passed": true
+    },
+    {
+      "group": "W12",
+      "name": "TikZ曲线采样_0",
+      "computed": 1.22,
+      "reference": 1.22,
+      "absolute_error": 0.0,
+      "tolerance": 1.220001e-06,
+      "method": "读取实际TikZ坐标，核对0/45/90度实测数据",
+      "passed": true
+    },
+    {
+      "group": "W12",
+      "name": "TikZ曲线采样_2",
+      "computed": 0.626,
+      "reference": 0.626,
+      "absolute_error": 0.0,
+      "tolerance": 6.26001e-07,
+      "method": "读取实际TikZ坐标，核对0/45/90度实测数据",
+      "passed": true
+    },
+    {
+      "group": "W12",
+      "name": "TikZ曲线采样_4",
+      "computed": 0.032,
+      "reference": 0.032,
+      "absolute_error": 0.0,
+      "tolerance": 3.2001e-08,
+      "method": "读取实际TikZ坐标，核对0/45/90度实测数据",
+      "passed": true
+    }
+  ]
+}

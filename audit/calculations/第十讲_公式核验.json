@@ -1,0 +1,1395 @@
+{
+  "lecture": "第十讲",
+  "passed": 227,
+  "all_passed": true,
+  "groups": {
+    "积分或恒等式": {
+      "count": 165,
+      "maximum_normalized_error": 5.745404152435185e-14
+    },
+    "差分": {
+      "count": 15,
+      "maximum_normalized_error": 1.1137613054046369e-10
+    },
+    "渐近截断": {
+      "count": 6,
+      "maximum_normalized_error": 1.2522364928324592e-07
+    },
+    "弱场近似": {
+      "count": 4,
+      "maximum_normalized_error": 6.6666666356440926e-09
+    },
+    "运动方程积分": {
+      "count": 31,
+      "maximum_normalized_error": 3.5065323250402325e-08
+    },
+    "绝热近似": {
+      "count": 6,
+      "maximum_normalized_error": 8.957483683458278e-06
+    }
+  },
+  "checks": [
+    {
+      "name": "圆柱总电流 uniform",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁挤压压力源积分 uniform",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁挤压压力源积分 uniform",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "压力梯度与磁力",
+      "normalized_error": 1.8213208718975693e-13,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "磁挤压压力源积分 uniform",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "压力梯度与磁力",
+      "normalized_error": 8.414380303634061e-13,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "磁挤压压力源积分 uniform",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱总电流 center",
+      "normalized_error": 7.766922299056207e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 1.3877787807814457e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 1.0269562977782698e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 1.6930901125533637e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁挤压压力源积分 center",
+      "normalized_error": 6.522560269672795e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁挤压压力源积分 center",
+      "normalized_error": 3.608224830031759e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "压力梯度与磁力",
+      "normalized_error": 3.4769576107152034e-11,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "磁挤压压力源积分 center",
+      "normalized_error": 2.42861286636753e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "压力梯度与磁力",
+      "normalized_error": 6.549649711473648e-11,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "磁挤压压力源积分 center",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱总电流 uniform",
+      "normalized_error": 1.4135798584282297e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁挤压压力源积分 uniform",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁挤压压力源积分 uniform",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "压力梯度与磁力",
+      "normalized_error": 3.9995784462121264e-13,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "磁挤压压力源积分 uniform",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "压力梯度与磁力",
+      "normalized_error": 3.6258033612549907e-12,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "磁挤压压力源积分 uniform",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱总电流 center",
+      "normalized_error": 7.63333123551244e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 2.7755575615628914e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 2.4424906541753444e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 3.885780586188048e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁挤压压力源积分 center",
+      "normalized_error": 3.2751579226442118e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁挤压压力源积分 center",
+      "normalized_error": 1.8318679906315083e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "压力梯度与磁力",
+      "normalized_error": 5.763506338851698e-11,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "磁挤压压力源积分 center",
+      "normalized_error": 2.498001805406602e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "压力梯度与磁力",
+      "normalized_error": 1.1137613054046369e-10,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "磁挤压压力源积分 center",
+      "normalized_error": 8.326672684688674e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱总电流 uniform",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 uniform",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁挤压压力源积分 uniform",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁挤压压力源积分 uniform",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "压力梯度与磁力",
+      "normalized_error": 4.790917662589322e-12,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "磁挤压压力源积分 uniform",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "压力梯度与磁力",
+      "normalized_error": 3.2705504970920174e-12,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "磁挤压压力源积分 uniform",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆柱总电流 center",
+      "normalized_error": 7.774689221355263e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 3.3306690738754696e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 1.887379141862766e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 2.9976021664879227e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "累计源电流磁场 center",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁挤压压力源积分 center",
+      "normalized_error": 1.9984014443252818e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁挤压压力源积分 center",
+      "normalized_error": 1.1102230246251565e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "压力梯度与磁力",
+      "normalized_error": 5.176081785407405e-12,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "磁挤压压力源积分 center",
+      "normalized_error": 1.8041124150158794e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "压力梯度与磁力",
+      "normalized_error": 8.661987793701087e-12,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "磁挤压压力源积分 center",
+      "normalized_error": 5.3290705182007524e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "环形截面径向磁通",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "环形截面径向磁通",
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "环形截面径向磁通",
+      "normalized_error": 3.885780586188048e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "窄环磁通截断",
+      "normalized_error": 3.037987014731236e-10,
+      "tolerance": 2e-07,
+      "kind": "渐近截断"
+    },
+    {
+      "name": "窄环磁通截断",
+      "normalized_error": 9.726252955810644e-09,
+      "tolerance": 2e-07,
+      "kind": "渐近截断"
+    },
+    {
+      "name": "窄环磁通截断",
+      "normalized_error": 1.2522364928324592e-07,
+      "tolerance": 2e-07,
+      "kind": "渐近截断"
+    },
+    {
+      "name": "半球有向磁通",
+      "normalized_error": 7.774689221355263e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆弧力直接积分",
+      "normalized_error": 7.327471962526033e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "直径回流力直接积分",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆闭合回路梯度力",
+      "normalized_error": 1.4210854715202004e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆弧力直接积分",
+      "normalized_error": 7.327471962526033e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "直径回流力直接积分",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆闭合回路梯度力",
+      "normalized_error": 1.509903313490213e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆弧力直接积分",
+      "normalized_error": 7.438494264988549e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "直径回流力直接积分",
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆闭合回路梯度力",
+      "normalized_error": 1.3988810110276972e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半球有向磁通",
+      "normalized_error": 7.829057677448657e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆弧力直接积分",
+      "normalized_error": 7.686159401251083e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "直径回流力直接积分",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆闭合回路梯度力",
+      "normalized_error": 1.8174598179791525e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆弧力直接积分",
+      "normalized_error": 7.856962943501108e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "直径回流力直接积分",
+      "normalized_error": 3.4160708450004814e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆闭合回路梯度力",
+      "normalized_error": 1.9539925233402755e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆弧力直接积分",
+      "normalized_error": 7.686159401251083e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "直径回流力直接积分",
+      "normalized_error": 3.4160708450004814e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆闭合回路梯度力",
+      "normalized_error": 1.4764056299139287e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半球有向磁通",
+      "normalized_error": 7.774689221355263e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆弧力直接积分",
+      "normalized_error": 7.26983927191661e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "直径回流力直接积分",
+      "normalized_error": 4.163336342344337e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆闭合回路梯度力",
+      "normalized_error": 7.26983927191661e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆弧力直接积分",
+      "normalized_error": 6.661338147750939e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "直径回流力直接积分",
+      "normalized_error": 1.3877787807814457e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆闭合回路梯度力",
+      "normalized_error": 1.0880185641326534e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆弧力直接积分",
+      "normalized_error": 7.853221435712386e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "直径回流力直接积分",
+      "normalized_error": 2.7755575615628914e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "半圆闭合回路梯度力",
+      "normalized_error": 7.853221435712386e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "矩形回路四边积分",
+      "normalized_error": 8.326672684688674e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "矩形回路四边积分",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "矩形回路四边积分",
+      "normalized_error": 2.7755575615628914e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场闭合椭圆合力",
+      "normalized_error": 2.3228602956387123e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀场线圈力矩",
+      "normalized_error": 7.091747933112956e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场闭合椭圆合力",
+      "normalized_error": 3.179014030978078e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀场线圈力矩",
+      "normalized_error": 7.091747933112956e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场闭合椭圆合力",
+      "normalized_error": 4.882205750789126e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀场线圈力矩",
+      "normalized_error": 3.885780586188048e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场闭合椭圆合力",
+      "normalized_error": 5.206945985491984e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀场线圈力矩",
+      "normalized_error": 3.885780586188048e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场闭合椭圆合力",
+      "normalized_error": 4.121295301035447e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀场线圈力矩",
+      "normalized_error": 7.283651166439229e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场闭合椭圆合力",
+      "normalized_error": 4.1614083793186806e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀场线圈力矩",
+      "normalized_error": 7.283651166439229e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场闭合椭圆合力",
+      "normalized_error": 5.3790305543088834e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀场线圈力矩",
+      "normalized_error": 8.2615487767482e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场闭合椭圆合力",
+      "normalized_error": 5.140332604014475e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀场线圈力矩",
+      "normalized_error": 8.2615487767482e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场闭合椭圆合力",
+      "normalized_error": 5.5067062021407764e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀场线圈力矩",
+      "normalized_error": 6.9389994412600675e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场闭合椭圆合力",
+      "normalized_error": 3.83026943495679e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀场线圈力矩",
+      "normalized_error": 6.9389994412600675e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场闭合椭圆合力",
+      "normalized_error": 5.745404152435185e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀场线圈力矩",
+      "normalized_error": 7.092210967384757e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场闭合椭圆合力",
+      "normalized_error": 4.773959005888173e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀场线圈力矩",
+      "normalized_error": 7.092210967384757e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场六面通量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场六面通量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "线性场六面通量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "三导线横向场梯度",
+      "normalized_error": 5.792588630981754e-12,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "三导线横向场梯度",
+      "normalized_error": 9.153233726522103e-12,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "三导线横向场梯度",
+      "normalized_error": 1.7026116627683052e-11,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "转动力矩的机械功",
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "转动力矩的机械功",
+      "normalized_error": 3.885780586188048e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "转动力矩的机械功",
+      "normalized_error": 1.7703071188493676e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "临界扭转四阶势能",
+      "normalized_error": 1.2977924749759513e-15,
+      "tolerance": 7e-12,
+      "kind": "渐近截断"
+    },
+    {
+      "name": "临界扭转四阶势能",
+      "normalized_error": 8.893237331159983e-14,
+      "tolerance": 7e-12,
+      "kind": "渐近截断"
+    },
+    {
+      "name": "临界扭转四阶势能",
+      "normalized_error": 5.688838922805299e-12,
+      "tolerance": 7e-12,
+      "kind": "渐近截断"
+    },
+    {
+      "name": "单载流子 Hall 符号与系数",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子 Hall 符号与系数",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子 Hall 符号与系数",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子 Hall 符号与系数",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子 Hall 符号与系数",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "单载流子 Hall 符号与系数",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双载流子弱场输运方程",
+      "normalized_error": 8.639999965476264e-10,
+      "tolerance": 5e-08,
+      "kind": "弱场近似"
+    },
+    {
+      "name": "双载流子弱场输运方程",
+      "normalized_error": 1.6333333338417437e-09,
+      "tolerance": 5e-08,
+      "kind": "弱场近似"
+    },
+    {
+      "name": "双载流子弱场输运方程",
+      "normalized_error": 8.032238346666887e-10,
+      "tolerance": 5e-08,
+      "kind": "弱场近似"
+    },
+    {
+      "name": "双载流子弱场输运方程",
+      "normalized_error": 6.6666666356440926e-09,
+      "tolerance": 5e-08,
+      "kind": "弱场近似"
+    },
+    {
+      "name": "反转读数的四分量",
+      "normalized_error": 1.1102230246251566e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反转分量还原读数",
+      "normalized_error": 5.921189464667501e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀 Hall 横向电压积分",
+      "normalized_error": 3.885780586188048e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀 Hall 条磁力积分",
+      "normalized_error": 2.7755575615628914e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "Hall 电压与支承力消参",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀 Hall 横向电压积分",
+      "normalized_error": 3.3306690738754696e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀 Hall 条磁力积分",
+      "normalized_error": 8.326672684688674e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "Hall 电压与支承力消参",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀 Hall 横向电压积分",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀 Hall 条磁力积分",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "Hall 电压与支承力消参",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "例题 Hall 浓度",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "例题荷质比",
+      "normalized_error": 1.1920928955078126e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "例题迁移率",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "完整 Lorentz 方程回旋及平行电场",
+      "normalized_error": 3.112764014799398e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能增量",
+      "normalized_error": 9.992007221626409e-15,
+      "tolerance": 2e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整 Lorentz 方程回旋及平行电场",
+      "normalized_error": 3.1123611348662878e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能增量",
+      "normalized_error": 2.0650148258027912e-14,
+      "tolerance": 2e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整 Lorentz 方程回旋及平行电场",
+      "normalized_error": 4.623932145740507e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能增量",
+      "normalized_error": 4.118927421359331e-14,
+      "tolerance": 2e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整 Lorentz 方程回旋及平行电场",
+      "normalized_error": 3.1129067577597067e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能增量",
+      "normalized_error": 6.9944050551384854e-15,
+      "tolerance": 2e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整 Lorentz 方程回旋及平行电场",
+      "normalized_error": 3.1134244274254466e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能增量",
+      "normalized_error": 1.4299672557172014e-14,
+      "tolerance": 2e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整 Lorentz 方程回旋及平行电场",
+      "normalized_error": 4.624784941167468e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能增量",
+      "normalized_error": 2.8832491949515314e-14,
+      "tolerance": 2e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整 Lorentz 方程回旋及平行电场",
+      "normalized_error": 2.333250567500139e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能增量",
+      "normalized_error": 1.0436096431476471e-14,
+      "tolerance": 2e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整 Lorentz 方程回旋及平行电场",
+      "normalized_error": 1.5599205187947059e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能增量",
+      "normalized_error": 1.165993853680334e-14,
+      "tolerance": 2e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整 Lorentz 方程回旋及平行电场",
+      "normalized_error": 9.387450356913986e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能增量",
+      "normalized_error": 3.02206933099489e-14,
+      "tolerance": 2e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整 Lorentz 方程回旋及平行电场",
+      "normalized_error": 3.1126054115101663e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能增量",
+      "normalized_error": 1.0685896612017132e-14,
+      "tolerance": 2e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整 Lorentz 方程回旋及平行电场",
+      "normalized_error": 3.1123455223550044e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能增量",
+      "normalized_error": 2.1083829127022113e-14,
+      "tolerance": 2e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整 Lorentz 方程回旋及平行电场",
+      "normalized_error": 5.117092830806568e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "电场功与动能增量",
+      "normalized_error": 1.787459069646502e-14,
+      "tolerance": 2e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "有限磁条带首次出射事件",
+      "normalized_error": 3.966549311229528e-13,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "有限磁条带首次出射事件",
+      "normalized_error": 1.2745360322696797e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "有限磁条带首次出射事件",
+      "normalized_error": 1.9914758683752962e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "有限磁条带首次出射事件",
+      "normalized_error": 1.9963988340581887e-12,
+      "tolerance": 3e-09,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整三维磁镜与最低阶往返运动",
+      "normalized_error": 7.772306075404245e-07,
+      "tolerance": 0.0005,
+      "kind": "绝热近似"
+    },
+    {
+      "name": "完整三维磁镜的绝热磁矩",
+      "normalized_error": 5.4539736892289525e-06,
+      "tolerance": 0.0005,
+      "kind": "绝热近似"
+    },
+    {
+      "name": "完整三维静磁镜动能",
+      "normalized_error": 7.236010832668598e-09,
+      "tolerance": 2e-07,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整三维磁镜与最低阶往返运动",
+      "normalized_error": 4.219340606792521e-06,
+      "tolerance": 0.0005,
+      "kind": "绝热近似"
+    },
+    {
+      "name": "完整三维磁镜的绝热磁矩",
+      "normalized_error": 4.800639709090504e-06,
+      "tolerance": 0.0005,
+      "kind": "绝热近似"
+    },
+    {
+      "name": "完整三维静磁镜动能",
+      "normalized_error": 2.0920460957455096e-08,
+      "tolerance": 2e-07,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "完整三维磁镜与最低阶往返运动",
+      "normalized_error": 8.957483683458278e-06,
+      "tolerance": 0.0005,
+      "kind": "绝热近似"
+    },
+    {
+      "name": "完整三维磁镜的绝热磁矩",
+      "normalized_error": 5.245558394095795e-06,
+      "tolerance": 0.0005,
+      "kind": "绝热近似"
+    },
+    {
+      "name": "完整三维静磁镜动能",
+      "normalized_error": 3.5065323250402325e-08,
+      "tolerance": 2e-07,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "径向场与带符号回旋的镜力",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向场与带符号回旋的镜力",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向场与带符号回旋的镜力",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向场与带符号回旋的镜力",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向场与带符号回旋的镜力",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向场与带符号回旋的镜力",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "镜点纵向动能",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "镜点纵向动能",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "镜点纵向动能",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁镜回旋半径缩放",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "综合题入口与镜点能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁镜回旋半径缩放",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "综合题入口与镜点能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "磁镜回旋半径缩放",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "综合题入口与镜点能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "相对论周期与动量能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "相对论周期与动量能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "相对论周期与动量能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "相对论周期与动量能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    }
+  ]
+}

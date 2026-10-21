@@ -1,0 +1,1497 @@
+{
+  "count": 209,
+  "all_passed": true,
+  "count_description": "不同参数下的空间积分、边界矩阵、能量积分、有限差分与舍入比较实例，非独立公式数量",
+  "normalized_error_definition": "abs(got-expected)/max(1,abs(got),abs(expected));零值用单位化绝对误差",
+  "groups": {
+    "空间积分": {
+      "count": 40,
+      "maximum_normalized_error": 3.4638958368304884e-14
+    },
+    "有限差分": {
+      "count": 84,
+      "maximum_normalized_error": 8.881784197001252e-08
+    },
+    "边界矩阵": {
+      "count": 47,
+      "maximum_normalized_error": 1.5525626643358275e-15
+    },
+    "能量积分": {
+      "count": 18,
+      "maximum_normalized_error": 1.998401444325278e-15
+    },
+    "代数关系": {
+      "count": 7,
+      "maximum_normalized_error": 1.8735013540549514e-16
+    },
+    "题给数值": {
+      "count": 13,
+      "maximum_normalized_error": 0.0004063147356234577
+    }
+  },
+  "records": [
+    {
+      "group": "空间积分",
+      "name": "sphere-H-0.5-0.15",
+      "got": -0.23333333333333459,
+      "expected": -0.2333333333333333,
+      "normalized_error": 1.27675647831893e-15
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-0.5-0.5",
+      "got": -0.23333333333333653,
+      "expected": -0.2333333333333333,
+      "normalized_error": 3.219646771412954e-15
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-0.5-0.8",
+      "got": -0.23333333333335754,
+      "expected": -0.2333333333333333,
+      "normalized_error": 2.423061751244404e-14
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-0.5-1.5",
+      "got": 0.13827160493827478,
+      "expected": 0.1382716049382716,
+      "normalized_error": 3.191891195797325e-15
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-0.5-3.0",
+      "got": 0.017283950617284063,
+      "expected": 0.01728395061728395,
+      "normalized_error": 1.1449174941446927e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-external-energy-0.5",
+      "got": 0.028507044449240817,
+      "expected": 0.028507044449240713,
+      "normalized_error": 1.0408340855860843e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-1.0-0.15",
+      "got": -0.33333333333333515,
+      "expected": -0.3333333333333333,
+      "normalized_error": 1.8318679906315083e-15
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-1.0-0.5",
+      "got": -0.3333333333333379,
+      "expected": -0.3333333333333333,
+      "normalized_error": 4.6074255521944e-15
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-1.0-0.8",
+      "got": -0.33333333333336795,
+      "expected": -0.3333333333333333,
+      "normalized_error": 3.4638958368304884e-14
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-1.0-1.5",
+      "got": 0.19753086419753543,
+      "expected": 0.19753086419753085,
+      "normalized_error": 4.579669976578771e-15
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-1.0-3.0",
+      "got": 0.024691358024691523,
+      "expected": 0.024691358024691357,
+      "normalized_error": 1.6653345369377348e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-external-energy-1.0",
+      "got": 0.4654211338651562,
+      "expected": 0.4654211338651545,
+      "normalized_error": 1.7208456881689926e-15
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-2.0-0.15",
+      "got": -0.06666666666666703,
+      "expected": -0.06666666666666667,
+      "normalized_error": 3.608224830031759e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-2.0-0.5",
+      "got": -0.06666666666666758,
+      "expected": -0.06666666666666667,
+      "normalized_error": 9.159339953157541e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-2.0-0.8",
+      "got": -0.06666666666667359,
+      "expected": -0.06666666666666667,
+      "normalized_error": 6.925016116099414e-15
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-2.0-1.5",
+      "got": 0.03950617283950709,
+      "expected": 0.03950617283950617,
+      "normalized_error": 9.159339953157541e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-H-2.0-3.0",
+      "got": 0.004938271604938305,
+      "expected": 0.0049382716049382715,
+      "normalized_error": 3.382710778154774e-17
+    },
+    {
+      "group": "空间积分",
+      "name": "sphere-external-energy-2.0",
+      "got": 0.14893476283685,
+      "expected": 0.14893476283684948,
+      "normalized_error": 5.273559366969494e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "cylinder-center-1-0.2",
+      "got": -0.7203970247831988,
+      "expected": -0.7203970247832009,
+      "normalized_error": 2.1094237467877974e-15
+    },
+    {
+      "group": "空间积分",
+      "name": "cylinder-center-0.4-2",
+      "got": -0.07152330911474068,
+      "expected": -0.07152330911474081,
+      "normalized_error": 1.249000902703301e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "cylinder-center-2-3",
+      "got": -0.0799999999999999,
+      "expected": -0.08000000000000002,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "magnet-charge-moment-2.0",
+      "got": 10.053096491487386,
+      "expected": 10.053096491487338,
+      "normalized_error": 4.770832022195252e-15
+    },
+    {
+      "group": "空间积分",
+      "name": "magnet-charge-moment-0.7",
+      "got": 1.4367550402417386,
+      "expected": 1.4367550402417317,
+      "normalized_error": 4.7909229895708735e-15
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force--0.8-0.15",
+      "got": 0.11227622869341979,
+      "expected": 0.11227622873545655,
+      "normalized_error": 4.203676295944092e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force--0.8-0.6",
+      "got": 0.14349786552833588,
+      "expected": 0.14349786553409002,
+      "normalized_error": 5.754147158754108e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force--0.8-1.5",
+      "got": 0.011000378776415338,
+      "expected": 0.011000378774616371,
+      "normalized_error": 1.7989672251861322e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force--0.8-3.0",
+      "got": 0.0002454545454760285,
+      "expected": 0.00024545454545454545,
+      "normalized_error": 2.1483032366931276e-14
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force--0.1-0.15",
+      "got": 0.01064688375535666,
+      "expected": 0.010646883759396744,
+      "normalized_error": 4.040084239376185e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force--0.1-0.6",
+      "got": 0.013607556213898404,
+      "expected": 0.013607556214439574,
+      "normalized_error": 5.411695397361527e-13
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force--0.1-1.5",
+      "got": 0.001043139366731097,
+      "expected": 0.0010431393665584492,
+      "normalized_error": 1.7264792026572273e-13
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force--0.1-3.0",
+      "got": 2.3275862071002697e-05,
+      "expected": 2.3275862068965522e-05,
+      "normalized_error": 2.0371752245187946e-15
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force-0.2-0.15",
+      "got": -0.019297476806616476,
+      "expected": -0.0192974768139066,
+      "normalized_error": 7.290123366088253e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force-0.2-0.6",
+      "got": -0.02466369563771525,
+      "expected": -0.024663695638671726,
+      "normalized_error": 9.564744829493321e-13
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force-0.2-1.5",
+      "got": -0.0018906901022011297,
+      "expected": -0.0018906901018871892,
+      "normalized_error": 3.139404968627302e-13
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force-0.2-3.0",
+      "got": -4.2187500003713564e-05,
+      "expected": -4.218750000000001e-05,
+      "normalized_error": 3.7135550710887255e-15
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force-3.0-0.15",
+      "got": -0.1543798144529318,
+      "expected": -0.15437981451125274,
+      "normalized_error": 5.832093141755479e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force-3.0-0.6",
+      "got": -0.197309565101722,
+      "expected": -0.19730956510937375,
+      "normalized_error": 7.651740352443426e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force-3.0-1.5",
+      "got": -0.015125520817609038,
+      "expected": -0.01512552081509751,
+      "normalized_error": 2.5115274443487934e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force-3.0-3.0",
+      "got": -0.0003375000000297085,
+      "expected": -0.0003375,
+      "normalized_error": 2.970849477881843e-14
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force-30.0-0.15",
+      "got": -0.2806905717328556,
+      "expected": -0.2806905718386414,
+      "normalized_error": 1.0578576903341741e-10
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force-30.0-0.6",
+      "got": -0.3587446638211866,
+      "expected": -0.3587446638352251,
+      "normalized_error": 1.4038492590628948e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force-30.0-1.5",
+      "got": -0.02750094694106003,
+      "expected": -0.02750094693654093,
+      "normalized_error": 4.5191003716915645e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "induced-force-30.0-3.0",
+      "got": -0.0006136363636921041,
+      "expected": -0.0006136363636363636,
+      "normalized_error": 5.574045999073851e-14
+    },
+    {
+      "group": "有限差分",
+      "name": "ellipsoid-torque--0.5-0.2",
+      "got": -0.023140308963442987,
+      "expected": -0.023140308965709285,
+      "normalized_error": 2.266298260167332e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "ellipsoid-torque--0.5-0.7",
+      "got": -0.058558133356201296,
+      "expected": -0.058558133360944155,
+      "normalized_error": 4.742858883410861e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "ellipsoid-torque--0.5-1.2",
+      "got": -0.04013788000301055,
+      "expected": -0.04013787999879505,
+      "normalized_error": 4.2155029467139116e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "ellipsoid-torque-0.2-0.2",
+      "got": -0.0024518154305430695,
+      "expected": -0.0024518154309772894,
+      "normalized_error": 4.3421993431436157e-13
+    },
+    {
+      "group": "有限差分",
+      "name": "ellipsoid-torque-0.2-0.7",
+      "got": -0.006204486516919737,
+      "expected": -0.006204486517286575,
+      "normalized_error": 3.6683763665612545e-13
+    },
+    {
+      "group": "有限差分",
+      "name": "ellipsoid-torque-0.2-1.2",
+      "got": -0.004252781312524823,
+      "expected": -0.004252781313058151,
+      "normalized_error": 5.333285896247375e-13
+    },
+    {
+      "group": "有限差分",
+      "name": "ellipsoid-torque-2.0-0.2",
+      "got": -0.11955826298426507,
+      "expected": -0.11955826298949798,
+      "normalized_error": 5.232911326480405e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "ellipsoid-torque-2.0-0.7",
+      "got": -0.30255035567972044,
+      "expected": -0.30255035569821154,
+      "normalized_error": 1.849109754203937e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "ellipsoid-torque-2.0-1.2",
+      "got": -0.2073790466405878,
+      "expected": -0.20737904666044113,
+      "normalized_error": 1.9853341193254437e-11
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-0.05-0.2",
+      "got": 0.20084264648123717,
+      "expected": 0.20084264648123684,
+      "normalized_error": 3.3306690738754696e-16
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-0.05-0.2",
+      "got": 0.07465990645195844,
+      "expected": 0.07465990645195841,
+      "normalized_error": 2.7755575615628914e-17
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-0.05-0.7",
+      "got": 0.27508046103485273,
+      "expected": 0.2750804610348527,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-0.05-0.7",
+      "got": 0.16061948119825048,
+      "expected": 0.1606194811982503,
+      "normalized_error": 1.6653345369377348e-16
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-0.05-0.98",
+      "got": 0.8091364960045562,
+      "expected": 0.8091364960045558,
+      "normalized_error": 3.3306690738754696e-16
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-0.05-0.98",
+      "got": 0.7790001532684327,
+      "expected": 0.779000153268433,
+      "normalized_error": 2.220446049250313e-16
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-1-0.2",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-1-0.2",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-1-0.7",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-1-0.7",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-1-0.98",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-1-0.98",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-2-0.2",
+      "got": 0.9007205764611689,
+      "expected": 0.9007205764611689,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-2-0.2",
+      "got": 1.4963971176941553,
+      "expected": 1.4963971176941553,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-2-0.7",
+      "got": 0.9319664492078286,
+      "expected": 0.9319664492078286,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-2-0.7",
+      "got": 1.3401677539608574,
+      "expected": 1.3401677539608574,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-2-0.98",
+      "got": 0.9935081966634021,
+      "expected": 0.993508196663402,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-2-0.98",
+      "got": 1.03245901668299,
+      "expected": 1.0324590166829897,
+      "normalized_error": 2.1506384402394998e-16
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-10-0.2",
+      "got": 0.3589890867317634,
+      "expected": 0.35898908673176333,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-10-0.2",
+      "got": 2.495692130959219,
+      "expected": 2.495692130959219,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-10-0.7",
+      "got": 0.4581691560524146,
+      "expected": 0.4581691560524145,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-10-0.7",
+      "got": 2.264271969211033,
+      "expected": 2.264271969211033,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-10-0.98",
+      "got": 0.9042781762228372,
+      "expected": 0.9042781762228371,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-10-0.98",
+      "got": 1.2233509221467131,
+      "expected": 1.223350922146713,
+      "normalized_error": 1.8150524179553618e-16
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-1000-0.2",
+      "got": 0.004524809567054637,
+      "expected": 0.004524809567054637,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-1000-0.2",
+      "got": 2.9939397958521754,
+      "expected": 2.993939795852176,
+      "normalized_error": 1.483293720419184e-16
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-1000-0.7",
+      "got": 0.0068162540885766485,
+      "expected": 0.006816254088576648,
+      "normalized_error": 8.673617379884035e-19
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-1000-0.7",
+      "got": 2.9893500255943524,
+      "expected": 2.9893500255943524,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-cavity-1000-0.98",
+      "got": 0.07121330062004705,
+      "expected": 0.071213300620047,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "边界矩阵",
+      "name": "shield-outer-normal-1000-0.98",
+      "got": 2.8603625480072976,
+      "expected": 2.860362548007293,
+      "normalized_error": 1.5525626643358275e-15
+    },
+    {
+      "group": "边界矩阵",
+      "name": "anisotropic-normal",
+      "got": 1.1102230246251565e-16,
+      "expected": 0.0,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "边界矩阵",
+      "name": "anisotropic-energy",
+      "got": 1.6,
+      "expected": 1.6,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "laminate-difference-0.2",
+      "got": 0.9000000000000004,
+      "expected": 0.9000000000000002,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "边界矩阵",
+      "name": "laminate-normal-energy-0.2",
+      "got": 0.2,
+      "expected": 0.2,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "laminate-difference-0.7",
+      "got": 5.784166075230661,
+      "expected": 5.784166075230661,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "laminate-normal-energy-0.7",
+      "got": 1.1741666666666668,
+      "expected": 1.1741666666666668,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "laminate-difference-0.4",
+      "got": 0.0,
+      "expected": 0.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "laminate-normal-energy-0.4",
+      "got": 0.25,
+      "expected": 0.25,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-charge-current-1-0.22142857142857145",
+      "got": -1.3205334727319342,
+      "expected": -1.3205334727064222,
+      "normalized_error": 1.931949280671153e-11
+    },
+    {
+      "group": "边界矩阵",
+      "name": "layer-voltage-1-0.22142857142857145",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-total-current-1-0.22142857142857145",
+      "got": 1.7328418139949997,
+      "expected": 1.7328418139694877,
+      "normalized_error": 1.4722657729876327e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-charge-current-1-1.1071428571428572",
+      "got": -0.5933539373901358,
+      "expected": -0.5933539373732941,
+      "normalized_error": 1.6841639194353775e-11
+    },
+    {
+      "group": "边界矩阵",
+      "name": "layer-voltage-1-1.1071428571428572",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-total-current-1-1.1071428571428572",
+      "got": 1.5652889256616844,
+      "expected": 1.5652889256548705,
+      "normalized_error": 4.353115057307422e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-charge-current-1-3.3214285714285716",
+      "got": -0.0803017231691817,
+      "expected": -0.08030172317397422,
+      "normalized_error": 4.792513608187221e-12
+    },
+    {
+      "group": "边界矩阵",
+      "name": "layer-voltage-1-3.3214285714285716",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-total-current-1-3.3214285714285716",
+      "got": 1.4470741297591743,
+      "expected": 1.4470741297714875,
+      "normalized_error": 8.509074461483957e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-charge-current-3-0.1935483870967742",
+      "got": 1.6101704810829915,
+      "expected": 1.6101704810533641,
+      "normalized_error": 1.8400170654736943e-11
+    },
+    {
+      "group": "边界矩阵",
+      "name": "layer-voltage-3-0.1935483870967742",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-total-current-3-0.1935483870967742",
+      "got": 1.1182801976438106,
+      "expected": 1.118280197673438,
+      "normalized_error": 2.6493728223736976e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-charge-current-3-0.9677419354838709",
+      "got": 0.723496234320183,
+      "expected": 0.7234962343038365,
+      "normalized_error": 1.6346479725370955e-11
+    },
+    {
+      "group": "边界矩阵",
+      "name": "layer-voltage-3-0.9677419354838709",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-total-current-3-0.9677419354838709",
+      "got": 0.5557664282107251,
+      "expected": 0.5557664282328078,
+      "normalized_error": 2.208266902670175e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-charge-current-3-2.9032258064516125",
+      "got": 0.09791456779817408,
+      "expected": 0.09791456779013237,
+      "normalized_error": 8.041706189843012e-12
+    },
+    {
+      "group": "边界矩阵",
+      "name": "layer-voltage-3-2.9032258064516125",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-total-current-3-2.9032258064516125",
+      "got": 0.15889203762761847,
+      "expected": 0.15889203763566018,
+      "normalized_error": 8.041706189843012e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-charge-current-1-0.4",
+      "got": 0.0,
+      "expected": 0.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "layer-voltage-1-0.4",
+      "got": 1.0000000000000002,
+      "expected": 1.0,
+      "normalized_error": 2.2204460492503126e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-total-current-1-0.4",
+      "got": 1.5384615384615388,
+      "expected": 1.5384615384615388,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-charge-current-1-2.0",
+      "got": 0.0,
+      "expected": 0.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "layer-voltage-1-2.0",
+      "got": 1.0000000000000002,
+      "expected": 1.0,
+      "normalized_error": 2.2204460492503126e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-total-current-1-2.0",
+      "got": 1.5384615384615388,
+      "expected": 1.5384615384615388,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-charge-current-1-6.0",
+      "got": 0.0,
+      "expected": 0.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "边界矩阵",
+      "name": "layer-voltage-1-6.0",
+      "got": 1.0000000000000002,
+      "expected": 1.0,
+      "normalized_error": 2.2204460492503126e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "layer-total-current-1-6.0",
+      "got": 1.5384615384615388,
+      "expected": 1.5384615384615388,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "能量积分",
+      "name": "dielectric-energy-0.5",
+      "got": 0.10156250000000006,
+      "expected": 0.1015625,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "能量积分",
+      "name": "dielectric-legendre-0.5",
+      "got": 0.1937500000000001,
+      "expected": 0.19374999999999998,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "dielectric-capacitance-0.5",
+      "got": 0.9250000000293744,
+      "expected": 0.9249999999999999,
+      "normalized_error": 2.937450283013732e-11
+    },
+    {
+      "group": "能量积分",
+      "name": "dielectric-energy-1",
+      "got": 2.000000000000004,
+      "expected": 2.0,
+      "normalized_error": 1.998401444325278e-15
+    },
+    {
+      "group": "能量积分",
+      "name": "dielectric-legendre-1",
+      "got": 3.0000000000000053,
+      "expected": 3.0,
+      "normalized_error": 1.7763568394002473e-15
+    },
+    {
+      "group": "有限差分",
+      "name": "dielectric-capacitance-1",
+      "got": 7.000000000201289,
+      "expected": 7.0,
+      "normalized_error": 2.8755537632752987e-11
+    },
+    {
+      "group": "能量积分",
+      "name": "dielectric-energy-2.5",
+      "got": 15.234375000000016,
+      "expected": 15.234375,
+      "normalized_error": 1.0494169635841469e-15
+    },
+    {
+      "group": "能量积分",
+      "name": "dielectric-legendre-2.5",
+      "got": 26.56250000000002,
+      "expected": 26.5625,
+      "normalized_error": 8.024953250937595e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "dielectric-capacitance-2.5",
+      "got": 6.750000000099731,
+      "expected": 6.75,
+      "normalized_error": 1.477494669798436e-11
+    },
+    {
+      "group": "空间积分",
+      "name": "graded-capacitance-0.3",
+      "got": 8.28551908639063,
+      "expected": 8.285519086390662,
+      "normalized_error": 3.859073013509067e-15
+    },
+    {
+      "group": "空间积分",
+      "name": "graded-energy-0.3",
+      "got": 0.24138499702270888,
+      "expected": 0.24138499702270888,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "空间积分",
+      "name": "graded-capacitance-1",
+      "got": 33.510321638291074,
+      "expected": 33.510321638291124,
+      "normalized_error": 1.4842588513496412e-15
+    },
+    {
+      "group": "空间积分",
+      "name": "graded-energy-1",
+      "got": 0.003730193978716303,
+      "expected": 0.003730193978716303,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "空间积分",
+      "name": "graded-capacitance-2",
+      "got": 206.12744356576755,
+      "expected": 206.1274435657676,
+      "normalized_error": 2.7576832020754866e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "graded-energy-2",
+      "got": 0.0024256837971236406,
+      "expected": 0.0024256837971236406,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "空间积分",
+      "name": "power-current-internal-0",
+      "got": 0.031830988618379144,
+      "expected": 0.03183098861837907,
+      "normalized_error": 7.632783294297951e-17
+    },
+    {
+      "group": "空间积分",
+      "name": "power-current-internal-0.5",
+      "got": 0.02546479089470335,
+      "expected": 0.025464790894703257,
+      "normalized_error": 9.367506770274758e-17
+    },
+    {
+      "group": "空间积分",
+      "name": "power-current-internal-2",
+      "got": 0.01591549430918965,
+      "expected": 0.015915494309189534,
+      "normalized_error": 1.1449174941446927e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "power-current-internal-10",
+      "got": 0.005305164769729996,
+      "expected": 0.005305164769729845,
+      "normalized_error": 1.5092094240998222e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "power-current-internal-50",
+      "got": 0.0012242687930147636,
+      "expected": 0.0012242687930145795,
+      "normalized_error": 1.8409752888803865e-16
+    },
+    {
+      "group": "空间积分",
+      "name": "outer-return-inductance-0.5-1",
+      "got": 0.05022850230145298,
+      "expected": 0.05022850230145291,
+      "normalized_error": 6.938893903907228e-17
+    },
+    {
+      "group": "空间积分",
+      "name": "outer-return-inductance-1-1.5",
+      "got": 0.026054770354041655,
+      "expected": 0.02605477035404162,
+      "normalized_error": 3.469446951953614e-17
+    },
+    {
+      "group": "空间积分",
+      "name": "outer-return-inductance-2-3",
+      "got": 0.026054770354041655,
+      "expected": 0.02605477035404162,
+      "normalized_error": 3.469446951953614e-17
+    },
+    {
+      "group": "空间积分",
+      "name": "outer-return-inductance-1-1.02",
+      "got": 0.001060991142044045,
+      "expected": 0.0010609911420459263,
+      "normalized_error": 1.8813076096968473e-15
+    },
+    {
+      "group": "能量积分",
+      "name": "nonlinear-core-energy-0.2",
+      "got": 3.7950156871531484,
+      "expected": 3.7950156871531435,
+      "normalized_error": 1.2872097801564515e-15
+    },
+    {
+      "group": "有限差分",
+      "name": "nonlinear-core-force-0.2",
+      "got": -3.412957101334157,
+      "expected": -3.412957101346819,
+      "normalized_error": 3.709941606429324e-12
+    },
+    {
+      "group": "能量积分",
+      "name": "nonlinear-core-energy-1",
+      "got": 8.562811188317935,
+      "expected": 8.56281118831793,
+      "normalized_error": 6.223505810184267e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "nonlinear-core-force-1",
+      "got": -3.0316884587655575,
+      "expected": -3.031688458685183,
+      "normalized_error": 2.651142256742967e-11
+    },
+    {
+      "group": "能量积分",
+      "name": "nonlinear-core-energy-0.3",
+      "got": 0.14647170532743456,
+      "expected": 0.14647170532743436,
+      "normalized_error": 1.942890293094024e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "nonlinear-core-force-0.3",
+      "got": -0.08509911950393965,
+      "expected": -0.08509911950048535,
+      "normalized_error": 3.4543062854552886e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-force-1-0.3",
+      "got": -1.153674039722219,
+      "expected": -1.1536740395420173,
+      "normalized_error": 1.56198046579888e-10
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-diff-inductance-1-0.3",
+      "got": 2.6043529418373623,
+      "expected": 2.6043529417547466,
+      "normalized_error": 3.172215667779708e-11
+    },
+    {
+      "group": "能量积分",
+      "name": "branch-coenergy-1-0.3",
+      "got": 2.7207383202576714,
+      "expected": 2.720738320257671,
+      "normalized_error": 1.6322378618462818e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-force-1-0.8",
+      "got": -0.42617900584129836,
+      "expected": -0.4261790058400744,
+      "normalized_error": 1.2239653734980038e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-diff-inductance-1-0.8",
+      "got": 2.652114105572423,
+      "expected": 2.652114105569671,
+      "normalized_error": 1.0376705993375242e-12
+    },
+    {
+      "group": "能量积分",
+      "name": "branch-coenergy-1-0.8",
+      "got": 2.3694862803638856,
+      "expected": 2.369486280363887,
+      "normalized_error": 5.622601154481421e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-force-1-1.7",
+      "got": -0.14456232233506228,
+      "expected": -0.14456232235203326,
+      "normalized_error": 1.6970980176722605e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-diff-inductance-1-1.7",
+      "got": 2.653776434446975,
+      "expected": 2.6537764344194796,
+      "normalized_error": 1.0360834839648645e-11
+    },
+    {
+      "group": "能量积分",
+      "name": "branch-coenergy-1-1.7",
+      "got": 2.14588872400082,
+      "expected": 2.1458887240008213,
+      "normalized_error": 6.208465586539323e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-force-0.2-0.3",
+      "got": -0.09622634244421667,
+      "expected": -0.09622634243885235,
+      "normalized_error": 5.3643200992326e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-diff-inductance-0.2-0.3",
+      "got": 0.8815295474362549,
+      "expected": 0.8815295473576314,
+      "normalized_error": 7.862344109099695e-11
+    },
+    {
+      "group": "能量积分",
+      "name": "branch-coenergy-0.2-0.3",
+      "got": 0.3607155069977547,
+      "expected": 0.3607155069977551,
+      "normalized_error": 4.440892098500626e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-force-0.2-0.8",
+      "got": -0.05106480267524915,
+      "expected": -0.05106480267199823,
+      "normalized_error": 3.250920366237864e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-diff-inductance-0.2-0.8",
+      "got": 0.9183538402846024,
+      "expected": 0.9183538402107586,
+      "normalized_error": 7.384381994768319e-11
+    },
+    {
+      "group": "能量积分",
+      "name": "branch-coenergy-0.2-0.8",
+      "got": 0.32563189568069223,
+      "expected": 0.3256318956806925,
+      "normalized_error": 2.7755575615628914e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-force-0.2-1.7",
+      "got": -0.022790254583515687,
+      "expected": -0.022790254585640934,
+      "normalized_error": 2.125247894335658e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-diff-inductance-0.2-1.7",
+      "got": 0.9500090813574501,
+      "expected": 0.9500090812828275,
+      "normalized_error": 7.462264139945773e-11
+    },
+    {
+      "group": "能量积分",
+      "name": "branch-coenergy-0.2-1.7",
+      "got": 0.2948999124846744,
+      "expected": 0.2948999124846744,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-force-2-0.3",
+      "got": -29.856279168605223,
+      "expected": -29.856279162042018,
+      "normalized_error": 2.1982662519502832e-10
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-diff-inductance-2-0.3",
+      "got": 8.967146764327083,
+      "expected": 8.967146764280255,
+      "normalized_error": 5.222209497736877e-12
+    },
+    {
+      "group": "能量积分",
+      "name": "branch-coenergy-2-0.3",
+      "got": 25.954746017032065,
+      "expected": 25.95474601703207,
+      "normalized_error": 1.3688108049561083e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-force-2-0.8",
+      "got": -8.984457481098218,
+      "expected": -8.984457480382927,
+      "normalized_error": 7.961426041546397e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-diff-inductance-2-0.8",
+      "got": 7.637219957601359,
+      "expected": 7.637219957537116,
+      "normalized_error": 8.411808698974106e-12
+    },
+    {
+      "group": "能量积分",
+      "name": "branch-coenergy-2-0.8",
+      "got": 17.687176943649646,
+      "expected": 17.687176943649643,
+      "normalized_error": 2.008638060284718e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-force-2-1.7",
+      "got": -2.60572396415526,
+      "expected": -2.6057239640814855,
+      "normalized_error": 2.831240799148051e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "branch-diff-inductance-2-1.7",
+      "got": 6.224650065256298,
+      "expected": 6.224650065180983,
+      "normalized_error": 1.2099453730851688e-11
+    },
+    {
+      "group": "能量积分",
+      "name": "branch-coenergy-2-1.7",
+      "got": 13.320524274004473,
+      "expected": 13.320524274004473,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "secondary-force-0.3",
+      "got": 0.06860145451703659,
+      "expected": 0.06860145451175331,
+      "normalized_error": 5.283273818434964e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "secondary-force-0.7",
+      "got": 0.030824620494973583,
+      "expected": 0.03082462049270081,
+      "normalized_error": 2.2727722481796775e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "secondary-force-1.4",
+      "got": 0.007601257828726559,
+      "expected": 0.007601257828152247,
+      "normalized_error": 5.743122991064276e-13
+    },
+    {
+      "group": "有限差分",
+      "name": "pullin-first-0",
+      "got": -7.494005416219807e-11,
+      "expected": 0.0,
+      "normalized_error": 7.494005416219807e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "pullin-second-0",
+      "got": -2.4980018054066022e-08,
+      "expected": 0.0,
+      "normalized_error": 2.4980018054066022e-08
+    },
+    {
+      "group": "代数关系",
+      "name": "pullin-equilibrium-0",
+      "got": 0.14814814814814817,
+      "expected": 0.14814814814814814,
+      "normalized_error": 2.7755575615628914e-17
+    },
+    {
+      "group": "有限差分",
+      "name": "pullin-first-0.2",
+      "got": -6.38378239159465e-11,
+      "expected": 0.0,
+      "normalized_error": 6.38378239159465e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "pullin-second-0.2",
+      "got": -2.220446049250313e-08,
+      "expected": 0.0,
+      "normalized_error": 2.220446049250313e-08
+    },
+    {
+      "group": "代数关系",
+      "name": "pullin-equilibrium-0.2",
+      "got": 0.256,
+      "expected": 0.25599999999999995,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "有限差分",
+      "name": "pullin-first-1.9",
+      "got": -1.1102230246251564e-11,
+      "expected": 0.0,
+      "normalized_error": 1.1102230246251564e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "pullin-second-1.9",
+      "got": 4.440892098500626e-08,
+      "expected": 0.0,
+      "normalized_error": 4.440892098500626e-08
+    },
+    {
+      "group": "代数关系",
+      "name": "pullin-equilibrium-1.9",
+      "got": 3.6131851851851846,
+      "expected": 3.613185185185185,
+      "normalized_error": 1.2290795713181856e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "pullin-first-2",
+      "got": -4.4408920985006255e-11,
+      "expected": 0.0,
+      "normalized_error": 4.4408920985006255e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "pullin-second-2",
+      "got": -4.440892098500626e-08,
+      "expected": 0.0,
+      "normalized_error": 4.440892098500626e-08
+    },
+    {
+      "group": "代数关系",
+      "name": "pullin-equilibrium-2",
+      "got": 4.0,
+      "expected": 4.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数关系",
+      "name": "contact-equilibrium-2",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "pullin-first-3",
+      "got": -2.2204460492503128e-11,
+      "expected": 0.0,
+      "normalized_error": 2.2204460492503128e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "pullin-second-3",
+      "got": -8.881784197001252e-08,
+      "expected": 0.0,
+      "normalized_error": 8.881784197001252e-08
+    },
+    {
+      "group": "代数关系",
+      "name": "pullin-equilibrium-3",
+      "got": 9.481481481481483,
+      "expected": 9.481481481481481,
+      "normalized_error": 1.8735013540549514e-16
+    },
+    {
+      "group": "代数关系",
+      "name": "contact-equilibrium-3",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "空间积分",
+      "name": "resistor-power-0.7",
+      "got": 0.4330746750799873,
+      "expected": 0.43307467507998737,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "空间积分",
+      "name": "resistor-power-1",
+      "got": 0.716197243913529,
+      "expected": 0.716197243913529,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "题给数值",
+      "name": "B-W7",
+      "got": 0.28559933214452665,
+      "expected": 0.2856,
+      "normalized_error": 6.678554733685615e-07
+    },
+    {
+      "group": "题给数值",
+      "name": "L-W7",
+      "got": 0.11423973285781067,
+      "expected": 0.1142,
+      "normalized_error": 3.9732857810670374e-05
+    },
+    {
+      "group": "题给数值",
+      "name": "energy-W7",
+      "got": 0.014279966607226333,
+      "expected": 0.01428,
+      "normalized_error": 3.3392773665999465e-08
+    },
+    {
+      "group": "题给数值",
+      "name": "force-W7",
+      "got": 12.981787824751212,
+      "expected": 12.98,
+      "normalized_error": 0.00013771791492407892
+    },
+    {
+      "group": "题给数值",
+      "name": "shield-factor",
+      "got": 13.791637288825589,
+      "expected": 13.79,
+      "normalized_error": 0.0001187160589639607
+    },
+    {
+      "group": "题给数值",
+      "name": "shield-ratio",
+      "got": 0.07250770731987209,
+      "expected": 0.07251,
+      "normalized_error": 2.2926801279132825e-06
+    },
+    {
+      "group": "题给数值",
+      "name": "shield-thin",
+      "got": 14.30668,
+      "expected": 14.31,
+      "normalized_error": 0.00023200559049618683
+    },
+    {
+      "group": "题给数值",
+      "name": "BHmax",
+      "got": 268884.9736787659,
+      "expected": 268900.0,
+      "normalized_error": 5.5880703734188606e-05
+    },
+    {
+      "group": "题给数值",
+      "name": "magnet-B",
+      "got": 0.6722124341969147,
+      "expected": 0.6722,
+      "normalized_error": 1.2434196914656859e-05
+    },
+    {
+      "group": "题给数值",
+      "name": "gap-energy",
+      "got": 0.1432394487827058,
+      "expected": 0.1432,
+      "normalized_error": 3.944878270581431e-05
+    },
+    {
+      "group": "题给数值",
+      "name": "magnet-volume-cm3",
+      "got": 1.0654329010875299,
+      "expected": 1.065,
+      "normalized_error": 0.0004063147356234577
+    },
+    {
+      "group": "题给数值",
+      "name": "magnet-area-cm2",
+      "got": 4.462874899932593,
+      "expected": 4.463,
+      "normalized_error": 2.803048787976744e-05
+    },
+    {
+      "group": "题给数值",
+      "name": "magnet-length-mm",
+      "got": 2.38732414637843,
+      "expected": 2.387,
+      "normalized_error": 0.0001357781174883782
+    }
+  ]
+}

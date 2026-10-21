@@ -1,0 +1,2232 @@
+{
+  "count": 359,
+  "all_passed": true,
+  "maximum_normalized_error": 0.003321035473967892,
+  "exact_maximum_normalized_error": 2.333136633468808e-10,
+  "kinds": {
+    "库仑面积分": 19,
+    "积分或恒等式": 175,
+    "库仑环积分": 9,
+    "渐近比较": 6,
+    "边界线性方程": 52,
+    "椭球积分": 20,
+    "有限差分": 33,
+    "张量方程": 4,
+    "统计角积分": 14,
+    "周期积分": 12,
+    "运动方程积分": 6,
+    "小角近似": 3,
+    "数值代入与有效位数": 6
+  },
+  "groups": {
+    "库仑面积分": {
+      "count": 19,
+      "maximum_normalized_error": 7.722988915048745e-14
+    },
+    "积分或恒等式": {
+      "count": 175,
+      "maximum_normalized_error": 1.4210854715202004e-12
+    },
+    "库仑环积分": {
+      "count": 9,
+      "maximum_normalized_error": 3.2411504467001642e-15
+    },
+    "渐近比较": {
+      "count": 6,
+      "maximum_normalized_error": 0.003321035473967892
+    },
+    "边界线性方程": {
+      "count": 52,
+      "maximum_normalized_error": 4.440892098500627e-16
+    },
+    "椭球积分": {
+      "count": 20,
+      "maximum_normalized_error": 6.045239553825618e-15
+    },
+    "有限差分": {
+      "count": 33,
+      "maximum_normalized_error": 2.333136633468808e-10
+    },
+    "张量方程": {
+      "count": 4,
+      "maximum_normalized_error": 5.030218900547699e-17
+    },
+    "统计角积分": {
+      "count": 14,
+      "maximum_normalized_error": 9.995976988669322e-13
+    },
+    "周期积分": {
+      "count": 12,
+      "maximum_normalized_error": 6.4126380726807485e-15
+    },
+    "运动方程积分": {
+      "count": 6,
+      "maximum_normalized_error": 9.511070703106742e-13
+    },
+    "小角近似": {
+      "count": 3,
+      "maximum_normalized_error": 9.952437347704e-07
+    },
+    "数值代入与有效位数": {
+      "count": 6,
+      "maximum_normalized_error": 0.0005737894787608892
+    }
+  },
+  "checks": [
+    {
+      "name": "极化球内部面电荷电势",
+      "normalized_error": 2.6504622345529306e-17,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球内部面电荷电场",
+      "normalized_error": 2.4355517602714372e-14,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球内部面电荷电势",
+      "normalized_error": 2.6020852139652097e-14,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球内部面电荷电场",
+      "normalized_error": 1.7486012637846216e-14,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球内部面电荷电势",
+      "normalized_error": 1.3357370765021415e-14,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球内部面电荷电场",
+      "normalized_error": 6.453171330633722e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球内部面电荷电势",
+      "normalized_error": 2.395570514444162e-14,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球内部面电荷电场",
+      "normalized_error": 7.722988915048745e-14,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球外部偶极电势",
+      "normalized_error": 4.9343245538895844e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球外部偶极电场",
+      "normalized_error": 2.0192181260370035e-14,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球外部偶极电势",
+      "normalized_error": 1.413478387832954e-14,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球外部偶极电场",
+      "normalized_error": 2.3129646346357432e-14,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球外部偶极电势",
+      "normalized_error": 3.016532059638906e-14,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球外部偶极电场",
+      "normalized_error": 6.794538802046706e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球外部偶极电势",
+      "normalized_error": 2.581525528324004e-14,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "极化球外部偶极电场",
+      "normalized_error": 2.0054045872468178e-14,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "球面净电荷",
+      "normalized_error": 4.3252763363651504e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "球面电荷偶极矩",
+      "normalized_error": 1.5997302924599306e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "球内外场能总和",
+      "normalized_error": 5.867020387467346e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "球内场能比例",
+      "normalized_error": 2.1649348980190553e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "球内外场能总和",
+      "normalized_error": 6.1174419893714395e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "球内场能比例",
+      "normalized_error": 2.831068712794149e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "球内外场能总和",
+      "normalized_error": 6.184411880623504e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "球内场能比例",
+      "normalized_error": 2.3314683517128287e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限圆棒轴线退极化场",
+      "normalized_error": 1.947663002304169e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑环积分"
+    },
+    {
+      "name": "有限圆棒轴线退极化场",
+      "normalized_error": 1.930832008396462e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑环积分"
+    },
+    {
+      "name": "有限圆棒轴线退极化场",
+      "normalized_error": 2.3994416656061476e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑环积分"
+    },
+    {
+      "name": "有限圆棒轴线退极化场",
+      "normalized_error": 1.4873511064267798e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑环积分"
+    },
+    {
+      "name": "有限圆棒轴线退极化场",
+      "normalized_error": 3.2411504467001642e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑环积分"
+    },
+    {
+      "name": "有限圆棒轴线退极化场",
+      "normalized_error": 2.566180334509446e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑环积分"
+    },
+    {
+      "name": "有限圆棒轴线退极化场",
+      "normalized_error": 6.899842608536907e-16,
+      "tolerance": 2e-08,
+      "kind": "库仑环积分"
+    },
+    {
+      "name": "有限圆棒轴线退极化场",
+      "normalized_error": 2.1193020941451765e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑环积分"
+    },
+    {
+      "name": "有限圆棒轴线退极化场",
+      "normalized_error": 1.5658185747628745e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑环积分"
+    },
+    {
+      "name": "长棒中心退极化首项",
+      "normalized_error": 0.003321035473967892,
+      "tolerance": 0.0044444444444444444,
+      "kind": "渐近比较"
+    },
+    {
+      "name": "长棒中心退极化首项",
+      "normalized_error": 0.0008325624780027843,
+      "tolerance": 0.0011111111111111111,
+      "kind": "渐近比较"
+    },
+    {
+      "name": "长棒中心退极化首项",
+      "normalized_error": 0.00029990003547113804,
+      "tolerance": 0.0004,
+      "kind": "渐近比较"
+    },
+    {
+      "name": "径向幂律极化总电荷",
+      "normalized_error": 1.3322676295501878e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律Gauss内场",
+      "normalized_error": 2.6000539218387742e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化场能",
+      "normalized_error": 7.428277497887553e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化总电荷",
+      "normalized_error": 2.842170943040401e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律Gauss内场",
+      "normalized_error": 2.625054440317993e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化场能",
+      "normalized_error": 7.733337518973805e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化总电荷",
+      "normalized_error": 1.687538997430238e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律Gauss内场",
+      "normalized_error": 4.187212157168782e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化场能",
+      "normalized_error": 1.0729734163615349e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化总电荷",
+      "normalized_error": 5.3290705182007514e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律Gauss内场",
+      "normalized_error": 3.93043354316097e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化场能",
+      "normalized_error": 1.0433141741574128e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化总电荷",
+      "normalized_error": 1.9095836023552692e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律Gauss内场",
+      "normalized_error": 5.16147999340433e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化场能",
+      "normalized_error": 1.2638388798489237e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化总电荷",
+      "normalized_error": 7.460698725481052e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律Gauss内场",
+      "normalized_error": 5.075767307886829e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化场能",
+      "normalized_error": 1.2689431841556925e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化总电荷",
+      "normalized_error": 2.1760371282653068e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律Gauss内场",
+      "normalized_error": 8.017899249405192e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化场能",
+      "normalized_error": 1.798431441749305e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化总电荷",
+      "normalized_error": 1.4566126083082054e-13,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律Gauss内场",
+      "normalized_error": 7.513883289267195e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化场能",
+      "normalized_error": 1.7995501171294277e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化总电荷",
+      "normalized_error": 2.375877272697835e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律Gauss内场",
+      "normalized_error": 1.2894235500038369e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化场能",
+      "normalized_error": 2.6780820971810385e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化总电荷",
+      "normalized_error": 4.192202140984591e-13,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律Gauss内场",
+      "normalized_error": 1.2612441539673339e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化场能",
+      "normalized_error": 2.7682352734884314e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化总电荷",
+      "normalized_error": 1.8984813721090177e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律Gauss内场",
+      "normalized_error": 2.0225671419208254e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化场能",
+      "normalized_error": 4.0856470392772204e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化总电荷",
+      "normalized_error": 1.4210854715202004e-12,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律Gauss内场",
+      "normalized_error": 2.018906216394422e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向幂律极化场能",
+      "normalized_error": 4.099194157011902e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "变介电常数球壳体电荷",
+      "normalized_error": 1.6653345369377346e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "变介电常数球壳净束缚电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "变介电常数球壳体电荷",
+      "normalized_error": 1.4432899320127035e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "变介电常数球壳净束缚电荷",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "变介电常数球壳体电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "变介电常数球壳净束缚电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "带自由体电荷球束缚电荷抵消",
+      "normalized_error": 1.4432899320127035e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀介质内非零束缚体电荷",
+      "normalized_error": 2.5113709219524854e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "带自由体电荷球束缚电荷抵消",
+      "normalized_error": 7.993605777301127e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀介质内非零束缚体电荷",
+      "normalized_error": 2.4541316986601217e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "带自由体电荷球束缚电荷抵消",
+      "normalized_error": 1.3322676295501878e-14,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀介质内非零束缚体电荷",
+      "normalized_error": 2.2718247724739406e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 1.3322676295501878e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 1.628327102783563e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 1.6653345369377348e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 1.6653345369377348e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 2.590520390792032e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 1.942890293094024e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 1.5265566588595902e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 1.7578531223231647e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱内场边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "介质球柱外部扰动边界方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "真实空腔与冻结空腔差",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "真实空腔与冻结空腔差",
+      "normalized_error": 2.0816681711721685e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "真实空腔与冻结空腔差",
+      "normalized_error": 2.2898349882893854e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "真实空腔与冻结空腔差",
+      "normalized_error": 1.5131017399323462e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "椭球退极化因子迹",
+      "normalized_error": 5.329070518200751e-15,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化尺度不变",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化轴置换",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化因子迹",
+      "normalized_error": 5.551115123125783e-15,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化尺度不变",
+      "normalized_error": 7.700473653899556e-16,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化轴置换",
+      "normalized_error": 9.625592067374445e-17,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化因子迹",
+      "normalized_error": 5.551115123125783e-15,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化尺度不变",
+      "normalized_error": 3.602309284493701e-16,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化轴置换",
+      "normalized_error": 1.2007697614979004e-16,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化因子迹",
+      "normalized_error": 5.773159728050814e-15,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化尺度不变",
+      "normalized_error": 5.917371478570378e-16,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化轴置换",
+      "normalized_error": 1.4793428696425945e-16,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化因子迹",
+      "normalized_error": 5.995204332975845e-15,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化尺度不变",
+      "normalized_error": 5.6740887819698335e-16,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "椭球退极化轴置换",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "球形椭球因子",
+      "normalized_error": 5.495603971894525e-15,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "长旋转椭球因子闭式",
+      "normalized_error": 5.468369696055192e-15,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "长旋转椭球因子闭式",
+      "normalized_error": 6.045239553825618e-15,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "长旋转椭球因子闭式",
+      "normalized_error": 5.2833869505907896e-15,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "长旋转椭球因子闭式",
+      "normalized_error": 5.256420591911568e-15,
+      "tolerance": 2e-08,
+      "kind": "椭球积分"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 1.3877787807814457e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 1.4155343563970745e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 1.2212453270876723e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 1.5543122344752193e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 1.6653345369377346e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 1.6653345369377346e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 1.609823385706477e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 1.6098233857064772e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 2.3314683517128283e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 1.1657341758564144e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 1.6653345369377348e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化自洽内场",
+      "normalized_error": 2.775557561562892e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "自洽极化极小能量",
+      "normalized_error": 1.3877787807814457e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "孤立电容器插入力",
+      "normalized_error": 6.900092996975359e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "恒压电容器插入力",
+      "normalized_error": 7.376085278397193e-12,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "恒压插入供能",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "孤立电容器插入力",
+      "normalized_error": 1.3320020000179286e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "恒压电容器插入力",
+      "normalized_error": 7.375910095276937e-12,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "恒压插入供能",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "孤立电容器插入力",
+      "normalized_error": 1.3217895868855177e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "恒压电容器插入力",
+      "normalized_error": 3.6222363513822685e-12,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "恒压插入供能",
+      "normalized_error": 2.1450994317114478e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双层电容器总电压",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双层界面总面电荷",
+      "normalized_error": 1.5543122344752193e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双层场能与端口能量",
+      "normalized_error": 1.554312234475219e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双层电容器总电压",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双层界面总面电荷",
+      "normalized_error": 2.997602166487922e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双层场能与端口能量",
+      "normalized_error": 1.9984014443252816e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双层电容器总电压",
+      "normalized_error": 1.8503717077085943e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双层界面总面电荷",
+      "normalized_error": 1.1102230246251568e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双层场能与端口能量",
+      "normalized_error": 2.004569350017644e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "永久极化片短接电压",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "永久极化片短接板电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "永久极化片短接电压",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "永久极化片短接板电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "永久极化片短接电压",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "永久极化片短接板电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "各向异性板D法向",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "张量方程"
+    },
+    {
+      "name": "各向异性板E和P",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "张量方程"
+    },
+    {
+      "name": "各向异性介电本征值",
+      "normalized_error": 5.030218900547699e-17,
+      "tolerance": 2e-08,
+      "kind": "张量方程"
+    },
+    {
+      "name": "各向异性极化能正性",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "张量方程"
+    },
+    {
+      "name": "朗之万取向角积分",
+      "normalized_error": 9.995976988669322e-13,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "取向配分积分",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "朗之万取向角积分",
+      "normalized_error": 2.8537861084605305e-14,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "取向配分积分",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "朗之万取向角积分",
+      "normalized_error": 1.0834521824789944e-14,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "取向配分积分",
+      "normalized_error": 2.1305565659878664e-16,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "朗之万取向角积分",
+      "normalized_error": 9.930588061316421e-15,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "取向配分积分",
+      "normalized_error": 1.889417796084473e-15,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "朗之万取向角积分",
+      "normalized_error": 7.934456506906908e-15,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "取向配分积分",
+      "normalized_error": 1.0240156542050926e-14,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "朗之万取向角积分",
+      "normalized_error": 5.202186548691504e-15,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "取向配分积分",
+      "normalized_error": 3.4171369910138753e-14,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "朗之万取向角积分",
+      "normalized_error": 4.791488843119097e-15,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "取向配分积分",
+      "normalized_error": 8.75337097637339e-14,
+      "tolerance": 2e-08,
+      "kind": "统计角积分"
+    },
+    {
+      "name": "取向弱场立方修正",
+      "normalized_error": 4.7162797647305956e-14,
+      "tolerance": 1e-08,
+      "kind": "渐近比较"
+    },
+    {
+      "name": "取向弱场立方修正",
+      "normalized_error": 4.4148738952853113e-13,
+      "tolerance": 1e-08,
+      "kind": "渐近比较"
+    },
+    {
+      "name": "取向弱场立方修正",
+      "normalized_error": 6.348765955251527e-11,
+      "tolerance": 1e-08,
+      "kind": "渐近比较"
+    },
+    {
+      "name": "克劳修斯莫索蒂局域场自洽",
+      "normalized_error": 1.757853122323164e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "克劳修斯莫索蒂反馈参数",
+      "normalized_error": 2.7755575615628914e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "克劳修斯莫索蒂局域场自洽",
+      "normalized_error": 4.440892098500627e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "克劳修斯莫索蒂反馈参数",
+      "normalized_error": 4.163336342344337e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "克劳修斯莫索蒂局域场自洽",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "克劳修斯莫索蒂反馈参数",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "克劳修斯莫索蒂局域场自洽",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "克劳修斯莫索蒂反馈参数",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "畴壁面电荷投影",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "畴壁面电荷投影",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "畴壁面电荷投影",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "畴壁面电荷投影",
+      "normalized_error": 1.570092458683775e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "极化滞后周期损耗",
+      "normalized_error": 6.2684780725494036e-15,
+      "tolerance": 2e-08,
+      "kind": "周期积分"
+    },
+    {
+      "name": "极化滞后平均功率",
+      "normalized_error": 6.4126380726807485e-15,
+      "tolerance": 2e-08,
+      "kind": "周期积分"
+    },
+    {
+      "name": "电位移电流周期功",
+      "normalized_error": 7.374680085352286e-16,
+      "tolerance": 2e-08,
+      "kind": "周期积分"
+    },
+    {
+      "name": "极化滞后周期损耗",
+      "normalized_error": 5.480934584523541e-15,
+      "tolerance": 2e-08,
+      "kind": "周期积分"
+    },
+    {
+      "name": "极化滞后平均功率",
+      "normalized_error": 5.450776698021671e-15,
+      "tolerance": 2e-08,
+      "kind": "周期积分"
+    },
+    {
+      "name": "电位移电流周期功",
+      "normalized_error": 6.228334755140421e-16,
+      "tolerance": 2e-08,
+      "kind": "周期积分"
+    },
+    {
+      "name": "极化滞后周期损耗",
+      "normalized_error": 5.542147619941594e-15,
+      "tolerance": 2e-08,
+      "kind": "周期积分"
+    },
+    {
+      "name": "极化滞后平均功率",
+      "normalized_error": 5.527355634259895e-15,
+      "tolerance": 2e-08,
+      "kind": "周期积分"
+    },
+    {
+      "name": "电位移电流周期功",
+      "normalized_error": 2.0526472666450464e-16,
+      "tolerance": 2e-08,
+      "kind": "周期积分"
+    },
+    {
+      "name": "极化滞后周期损耗",
+      "normalized_error": 4.897525252141985e-15,
+      "tolerance": 2e-08,
+      "kind": "周期积分"
+    },
+    {
+      "name": "极化滞后平均功率",
+      "normalized_error": 4.785976872445778e-15,
+      "tolerance": 2e-08,
+      "kind": "周期积分"
+    },
+    {
+      "name": "电位移电流周期功",
+      "normalized_error": 4.739540566589041e-16,
+      "tolerance": 2e-08,
+      "kind": "周期积分"
+    },
+    {
+      "name": "偏心冻结极化空腔取消",
+      "normalized_error": 6.8833827526759706e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "偏心空腔总偶极矩",
+      "normalized_error": 8.262285574447276e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偏心冻结极化空腔取消",
+      "normalized_error": 3.6637359812630166e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "偏心空腔总偶极矩",
+      "normalized_error": 8.262285574447276e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偏心冻结极化空腔取消",
+      "normalized_error": 6.2727600891321345e-15,
+      "tolerance": 2e-08,
+      "kind": "库仑面积分"
+    },
+    {
+      "name": "偏心空腔总偶极矩",
+      "normalized_error": 8.262285574447276e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.4852933697776885e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 2.1552019875855215e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 1.980391159703585e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.5750363976015555e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 2.1000485301354073e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.6653345369377348e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球零壳厚极限",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 3.590469936772476e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 1.7952349683862377e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 8.551801242459889e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.8707695060612873e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 6.599659090827321e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.8816224298832285e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 4.440892098500627e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 8.881784197001252e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 8.881784197001256e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球零壳厚极限",
+      "normalized_error": 2.9605947323337506e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 8.251732630526477e-17,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 1.1307615800652932e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 4.4009240696141215e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 4.9873299934333204e-18,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 1.2159585507799335e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.3811174426336947e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 1.8867724626143377e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球零壳厚极限",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 9.637352644315595e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 2.2204460492503136e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 4.996003610813204e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 2.2204460492503136e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 1.6263032587282562e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 2.2204460492503136e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 2.2204460492503136e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球零壳厚极限",
+      "normalized_error": 8.326672684688674e-17,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.8503717077085943e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.8503717077085943e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.8503717077085943e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球四边界系数",
+      "normalized_error": 1.8503717077085943e-16,
+      "tolerance": 2e-08,
+      "kind": "边界线性方程"
+    },
+    {
+      "name": "包覆球总极化率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球内界面净极化面电荷",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "包覆球零壳厚极限",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "综合题包覆球数值",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "诱导椭球平动力能量导数",
+      "normalized_error": 2.3304369425521125e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力偶极梯度",
+      "normalized_error": 2.3304387708864066e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球转矩能量导数",
+      "normalized_error": 8.585132852445567e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力能量导数",
+      "normalized_error": 2.333136633468808e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力偶极梯度",
+      "normalized_error": 2.333136633468808e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球转矩能量导数",
+      "normalized_error": 8.765811492245332e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力能量导数",
+      "normalized_error": 2.328933306609032e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力偶极梯度",
+      "normalized_error": 2.328933306609032e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球转矩能量导数",
+      "normalized_error": 4.3905815437728116e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力能量导数",
+      "normalized_error": 1.3818501836875479e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力偶极梯度",
+      "normalized_error": 1.3818501836875479e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球转矩能量导数",
+      "normalized_error": 6.95630082978062e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力能量导数",
+      "normalized_error": 1.3458158089593291e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力偶极梯度",
+      "normalized_error": 1.3458158089593291e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球转矩能量导数",
+      "normalized_error": 7.737055792727962e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力能量导数",
+      "normalized_error": 1.3604660662540978e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力偶极梯度",
+      "normalized_error": 1.3604660662540978e-10,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球转矩能量导数",
+      "normalized_error": 5.635389067113875e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力能量导数",
+      "normalized_error": 6.84936078142086e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力偶极梯度",
+      "normalized_error": 6.849379064763798e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球转矩能量导数",
+      "normalized_error": 8.585132852445567e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力能量导数",
+      "normalized_error": 6.807297882373012e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力偶极梯度",
+      "normalized_error": 6.807297882373012e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球转矩能量导数",
+      "normalized_error": 8.765811492245332e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力能量导数",
+      "normalized_error": 6.654842016440279e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球平动力偶极梯度",
+      "normalized_error": 6.654842016440279e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "诱导椭球转矩能量导数",
+      "normalized_error": 4.3905815437728116e-11,
+      "tolerance": 2e-08,
+      "kind": "有限差分"
+    },
+    {
+      "name": "椭球落向点电荷速度",
+      "normalized_error": 9.420532261568737e-13,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "椭球平动机械能",
+      "normalized_error": 1.5293888604530218e-14,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "椭球落向点电荷速度",
+      "normalized_error": 9.511070703106742e-13,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "椭球平动机械能",
+      "normalized_error": 2.0513178858675573e-14,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "椭球落向点电荷速度",
+      "normalized_error": 5.305924001807361e-14,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "椭球平动机械能",
+      "normalized_error": 1.5105075164968117e-15,
+      "tolerance": 2e-08,
+      "kind": "运动方程积分"
+    },
+    {
+      "name": "椭球小角振动近似",
+      "normalized_error": 9.952437347704e-07,
+      "tolerance": 1.9999999999999998e-05,
+      "kind": "小角近似"
+    },
+    {
+      "name": "椭球小角振动近似",
+      "normalized_error": 9.952437333698366e-07,
+      "tolerance": 1.9999999999999998e-05,
+      "kind": "小角近似"
+    },
+    {
+      "name": "椭球小角振动近似",
+      "normalized_error": 9.952437347704e-07,
+      "tolerance": 1.9999999999999998e-05,
+      "kind": "小角近似"
+    },
+    {
+      "name": "电容器SI数值",
+      "normalized_error": 1.605020862344929e-16,
+      "tolerance": 1e-06,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "孤立介质插入SI数值",
+      "normalized_error": 4.4408920985006265e-21,
+      "tolerance": 1e-06,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "供能源和场能SI数值",
+      "normalized_error": 1.6718967316093012e-16,
+      "tolerance": 1e-06,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "温度极化数据参数",
+      "normalized_error": 0.0,
+      "tolerance": 2e-08,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "分子位移极化率数值",
+      "normalized_error": 0.00045197740112989373,
+      "tolerance": 0.001,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "永久分子偶极矩数值",
+      "normalized_error": 0.0005737894787608892,
+      "tolerance": 0.001,
+      "kind": "数值代入与有效位数"
+    }
+  ],
+  "count_description": "同一关系在不同参数下的实例，包含积分、边界线性方程、有限差分、运动方程及近似和有效位数比较；不代表独立公式数量。"
+}

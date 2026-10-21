@@ -1,0 +1,1574 @@
+{
+  "count": 211,
+  "count_description": "独立比较的参数实例数；不是独立公式数量",
+  "all_passed": true,
+  "groups": {
+    "独立节点": {
+      "count": 62,
+      "max_error": 6.0144511278675184e-15
+    },
+    "独立求根": {
+      "count": 15,
+      "max_error": 2.220446049250313e-16
+    },
+    "元件电压": {
+      "count": 8,
+      "max_error": 2.1499376424746294e-16
+    },
+    "有限差分": {
+      "count": 16,
+      "max_error": 4.317346894339673e-07
+    },
+    "独立积分": {
+      "count": 3,
+      "max_error": 4.618527782440651e-15
+    },
+    "储能极值": {
+      "count": 3,
+      "max_error": 4.440892098500626e-16
+    },
+    "独立微分方程": {
+      "count": 5,
+      "max_error": 1.959650323957174e-12
+    },
+    "能量积分": {
+      "count": 5,
+      "max_error": 1.686972783687679e-11
+    },
+    "相位条件": {
+      "count": 3,
+      "max_error": 2.9605947323337516e-16
+    },
+    "能量交换": {
+      "count": 3,
+      "max_error": 3.469446951953614e-18
+    },
+    "独立端口方程": {
+      "count": 3,
+      "max_error": 2.496592688765654e-16
+    },
+    "复功率": {
+      "count": 3,
+      "max_error": 1.9507201701960793e-16
+    },
+    "有功守恒": {
+      "count": 28,
+      "max_error": 8.51031299474035e-16
+    },
+    "独立多节点": {
+      "count": 4,
+      "max_error": 6.062520677306775e-16
+    },
+    "约束优化": {
+      "count": 3,
+      "max_error": 4.4443893010281954e-11
+    },
+    "复电压方程": {
+      "count": 3,
+      "max_error": 0
+    },
+    "两瓦特表": {
+      "count": 6,
+      "max_error": 1.941909339566074e-16
+    },
+    "瞬时合成": {
+      "count": 12,
+      "max_error": 1.1765324080666372e-15
+    },
+    "独立支路": {
+      "count": 2,
+      "max_error": 1.8708457023539044e-16
+    },
+    "空间合成": {
+      "count": 10,
+      "max_error": 5.955291750660588e-16
+    },
+    "效率优化": {
+      "count": 3,
+      "max_error": 2.923217223838037e-12
+    },
+    "数字代入": {
+      "count": 11,
+      "max_error": 3.635045464379968e-06
+    }
+  },
+  "records": [
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 1.6243534171511178e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 8.777083671441753e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 2.255140518769849e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 1.6699540590904644e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 1.3767561341147923e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 1.1768855521655126e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 8.25232590446673e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 2.1097483484280645e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 9.072255501230319e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 6.0144511278675184e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 1.6002993603415248e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 2.8423129344220324e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 1.0120575873780289e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "串联电流",
+      "normalized_error": 1.1852494182533767e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "半功率边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "半功率边界",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "带宽与几何中心",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "半功率边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "半功率边界",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "带宽与几何中心",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "半功率边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "半功率边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "带宽与几何中心",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "半功率边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "半功率边界",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "带宽与几何中心",
+      "normalized_error": 1.942890293094024e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "半功率边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "半功率边界",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立求根",
+      "name": "带宽与几何中心",
+      "normalized_error": 2.0469737016526324e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "元件电压",
+      "name": "节点峰值",
+      "normalized_error": 1.9229626863835636e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "元件电压峰驻点",
+      "normalized_error": 7.216449660063517e-12,
+      "tolerance": 3e-06,
+      "passed": true
+    },
+    {
+      "group": "元件电压",
+      "name": "节点峰值",
+      "normalized_error": 1.9229626863835636e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "元件电压峰驻点",
+      "normalized_error": 7.401486830834376e-13,
+      "tolerance": 3e-06,
+      "passed": true
+    },
+    {
+      "group": "元件电压",
+      "name": "节点峰值",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "元件电压峰驻点",
+      "normalized_error": 1.1102230246251565e-12,
+      "tolerance": 3e-06,
+      "passed": true
+    },
+    {
+      "group": "元件电压",
+      "name": "节点峰值",
+      "normalized_error": 2.1499376424746294e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "元件电压峰驻点",
+      "normalized_error": 1.0547118733938987e-11,
+      "tolerance": 3e-06,
+      "passed": true
+    },
+    {
+      "group": "元件电压",
+      "name": "节点峰值",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "元件电压峰驻点",
+      "normalized_error": 2.220446049250313e-12,
+      "tolerance": 3e-06,
+      "passed": true
+    },
+    {
+      "group": "元件电压",
+      "name": "节点峰值",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "元件电压峰驻点",
+      "normalized_error": 7.771561172376096e-12,
+      "tolerance": 3e-06,
+      "passed": true
+    },
+    {
+      "group": "元件电压",
+      "name": "节点峰值",
+      "normalized_error": 1.4210144154701786e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "元件电压峰驻点",
+      "normalized_error": 2.8310687127941495e-11,
+      "tolerance": 3e-06,
+      "passed": true
+    },
+    {
+      "group": "元件电压",
+      "name": "节点峰值",
+      "normalized_error": 1.4210144154701786e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "元件电压峰驻点",
+      "normalized_error": 1.5570877920367823e-10,
+      "tolerance": 3e-06,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "储能均值",
+      "normalized_error": 4.618527782440651e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "储能极值",
+      "name": "偏离谐振",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "储能均值",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "储能极值",
+      "name": "偏离谐振",
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分",
+      "name": "储能均值",
+      "normalized_error": 2.9976021664879227e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "储能极值",
+      "name": "偏离谐振",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "同相峰衰减",
+      "normalized_error": 4.04259687791092e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量积分",
+      "name": "自由衰减损耗",
+      "normalized_error": 1.686972783687679e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "同相峰衰减",
+      "normalized_error": 1.1440154379371847e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量积分",
+      "name": "自由衰减损耗",
+      "normalized_error": 1.4781509349859334e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "同相峰衰减",
+      "normalized_error": 4.234113060164191e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量积分",
+      "name": "自由衰减损耗",
+      "normalized_error": 5.661027202563673e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "同相峰衰减",
+      "normalized_error": 1.4909219692160747e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量积分",
+      "name": "自由衰减损耗",
+      "normalized_error": 1.930400284066991e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立微分方程",
+      "name": "同相峰衰减",
+      "normalized_error": 1.959650323957174e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量积分",
+      "name": "自由衰减损耗",
+      "normalized_error": 4.701100619897147e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 2.2094263978589027e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "相位条件",
+      "name": "并联零虚部",
+      "normalized_error": 1.0893014723166613e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "并联阻抗峰",
+      "normalized_error": 6.476300976980079e-12,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "相位条件",
+      "name": "并联零虚部",
+      "normalized_error": 1.9860273225978183e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "并联阻抗峰",
+      "normalized_error": 4.810966440042344e-11,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 1.196959198423997e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 2.1612234819214377e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "相位条件",
+      "name": "并联零虚部",
+      "normalized_error": 2.9605947323337516e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "并联阻抗峰",
+      "normalized_error": 2.8680761469483205e-11,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 2.284134230537562e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "并联阻抗峰",
+      "normalized_error": 1.7578531223231643e-11,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 7.001937802005925e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "并联阻抗峰",
+      "normalized_error": 3.700743415417188e-12,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 1.2070147183262287e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "有损并联端口",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "纯并联谐振",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量交换",
+      "name": "并联恒定储能",
+      "normalized_error": 3.469446951953614e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "纯并联谐振",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量交换",
+      "name": "并联恒定储能",
+      "normalized_error": 5.421010862427522e-20,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "纯并联谐振",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "能量交换",
+      "name": "并联恒定储能",
+      "normalized_error": 1.3010426069826053e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立端口方程",
+      "name": "阻抗折算",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "复功率",
+      "name": "理想变压器",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立端口方程",
+      "name": "阻抗折算",
+      "normalized_error": 2.496592688765654e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "复功率",
+      "name": "理想变压器",
+      "normalized_error": 1.9507201701960793e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立端口方程",
+      "name": "阻抗折算",
+      "normalized_error": 1.2412670766236366e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "复功率",
+      "name": "理想变压器",
+      "normalized_error": 7.348301093611927e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "完整T形模型",
+      "normalized_error": 6.339287770386499e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "变压器全部损耗",
+      "normalized_error": 4.410757312201561e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "完整T形模型",
+      "normalized_error": 1.4035903140696387e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "变压器全部损耗",
+      "normalized_error": 4.170715559621556e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "完整T形模型",
+      "normalized_error": 1.32935830843085e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "变压器全部损耗",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立多节点",
+      "name": "中性点位移",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "三相及导线",
+      "normalized_error": 1.3492503817510473e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立多节点",
+      "name": "中性点位移",
+      "normalized_error": 6.062520677306775e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "三相及导线",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立多节点",
+      "name": "中性点位移",
+      "normalized_error": 1.3075473368193978e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "三相及导线",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立多节点",
+      "name": "中性点位移",
+      "normalized_error": 1.8799193747047061e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "三相及导线",
+      "normalized_error": 1.5158245029548806e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 5.987113638869265e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 3.469446951953614e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 1.9032394707859825e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 2.0816681711721685e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 5.727296610660755e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 2.2107198434314146e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 1.4172342913805797e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 1.979369049617422e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 1.1683232335027734e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 8.51031299474035e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 1.7177742209618654e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 1.9576932667556928e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 1.6484143530951418e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 1.9222718654938426e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 2.289605306058469e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立节点",
+      "name": "浮置反应负载幅值",
+      "normalized_error": 1.5109606687517606e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "反应负载与中性线",
+      "normalized_error": 1.2357311967154567e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "中性点峰谷判据",
+      "normalized_error": 4.317346894339673e-07,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "中性点峰谷判据",
+      "normalized_error": 2.9669710188695575e-08,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "中性点峰谷判据",
+      "normalized_error": 6.472211433461439e-09,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "约束优化",
+      "name": "谐振匝数匹配",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "约束优化",
+      "name": "谐振匝数匹配",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "约束优化",
+      "name": "谐振匝数匹配",
+      "normalized_error": 4.4443893010281954e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "复电压方程",
+      "name": "超前滞后端电压",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "电压调整率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "复电压方程",
+      "name": "超前滞后端电压",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "电压调整率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "复电压方程",
+      "name": "超前滞后端电压",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有功守恒",
+      "name": "电压调整率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两瓦特表",
+      "name": "平衡有功及无功",
+      "normalized_error": 1.3206695062124976e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "瞬时合成",
+      "name": "平衡三相功率",
+      "normalized_error": 2.719624489434106e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "瞬时合成",
+      "name": "平衡三相功率",
+      "normalized_error": 5.439248978868212e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "瞬时合成",
+      "name": "平衡三相功率",
+      "normalized_error": 1.359812244717053e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两瓦特表",
+      "name": "平衡有功及无功",
+      "normalized_error": 1.6736843704365817e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "瞬时合成",
+      "name": "平衡三相功率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "瞬时合成",
+      "name": "平衡三相功率",
+      "normalized_error": 3.789561257387201e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "瞬时合成",
+      "name": "平衡三相功率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两瓦特表",
+      "name": "平衡有功及无功",
+      "normalized_error": 1.1478849297573074e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "瞬时合成",
+      "name": "平衡三相功率",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "瞬时合成",
+      "name": "平衡三相功率",
+      "normalized_error": 1.1478849297573074e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "瞬时合成",
+      "name": "平衡三相功率",
+      "normalized_error": 3.4436547892719225e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两瓦特表",
+      "name": "平衡有功及无功",
+      "normalized_error": 1.5247058765196146e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "瞬时合成",
+      "name": "平衡三相功率",
+      "normalized_error": 3.921774693555457e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "瞬时合成",
+      "name": "平衡三相功率",
+      "normalized_error": 3.921774693555457e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "瞬时合成",
+      "name": "平衡三相功率",
+      "normalized_error": 1.1765324080666372e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立支路",
+      "name": "三角形复功率",
+      "normalized_error": 3.0104882384835778e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两瓦特表",
+      "name": "不平衡代数和",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立支路",
+      "name": "三角形复功率",
+      "normalized_error": 1.8708457023539044e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两瓦特表",
+      "name": "不平衡代数和",
+      "normalized_error": 1.941909339566074e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "空间合成",
+      "name": "旋转磁场",
+      "normalized_error": 1.115797363838106e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "空间合成",
+      "name": "三次同相谐波",
+      "normalized_error": 2.803991866801376e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "空间合成",
+      "name": "旋转磁场",
+      "normalized_error": 3.870856997108263e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "空间合成",
+      "name": "三次同相谐波",
+      "normalized_error": 1.4737619734017297e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "空间合成",
+      "name": "旋转磁场",
+      "normalized_error": 2.5042750479488464e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "空间合成",
+      "name": "三次同相谐波",
+      "normalized_error": 7.142358204529661e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "空间合成",
+      "name": "旋转磁场",
+      "normalized_error": 5.955291750660588e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "空间合成",
+      "name": "三次同相谐波",
+      "normalized_error": 2.512324127070175e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "空间合成",
+      "name": "旋转磁场",
+      "normalized_error": 3.055756087536411e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "空间合成",
+      "name": "三次同相谐波",
+      "normalized_error": 2.976720092950171e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "效率优化",
+      "name": "铜损铁损平衡",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "效率优化",
+      "name": "铜损铁损平衡",
+      "normalized_error": 2.923217223838037e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "效率优化",
+      "name": "铜损铁损平衡",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W2电容微法",
+      "normalized_error": 2.682335535716258e-06,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W5相位频率",
+      "normalized_error": 4.393088753760114e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W5阻抗峰频率",
+      "normalized_error": 2.466179041505991e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W9电压",
+      "normalized_error": 3.7717034406502146e-08,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W10空载电流",
+      "normalized_error": 4.488126340573828e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "W10磁通",
+      "normalized_error": 3.635045464379968e-06,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "T1失谐",
+      "normalized_error": 2.06260038382311e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "T3Q",
+      "normalized_error": 7.026870590880696e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "T3电容微法",
+      "normalized_error": 1.1412820744196516e-06,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "T13中性电阻损耗",
+      "normalized_error": 8.200000663512356e-08,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "数字代入",
+      "name": "T18中性线电阻界",
+      "normalized_error": 3.531255852708219e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    }
+  ]
+}

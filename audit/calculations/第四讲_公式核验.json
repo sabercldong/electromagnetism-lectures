@@ -1,0 +1,150 @@
+[
+  {
+    "check": "有限杆径向场",
+    "relative_scaled_error": 6.956588083362192e-13
+  },
+  {
+    "check": "有限杆轴向场",
+    "relative_scaled_error": 6.042423505991934e-13
+  },
+  {
+    "check": "有限杆源积分",
+    "relative_scaled_error": 4.163336342344337e-17
+  },
+  {
+    "check": "普通圆盘场 z=-2.0",
+    "relative_scaled_error": 8.476483404074031e-12
+  },
+  {
+    "check": "偶极圆盘常规场 z=-2.0",
+    "relative_scaled_error": 3.4419203598368142e-12
+  },
+  {
+    "check": "圆盘立体角积分 z=-2.0",
+    "relative_scaled_error": 6.106226635438361e-16
+  },
+  {
+    "check": "普通圆盘场 z=-0.3",
+    "relative_scaled_error": 4.751976590000595e-12
+  },
+  {
+    "check": "偶极圆盘常规场 z=-0.3",
+    "relative_scaled_error": 4.1593395394556865e-12
+  },
+  {
+    "check": "圆盘立体角积分 z=-0.3",
+    "relative_scaled_error": 5.10702591327572e-15
+  },
+  {
+    "check": "普通圆盘场 z=0.3",
+    "relative_scaled_error": 4.751976590000595e-12
+  },
+  {
+    "check": "偶极圆盘常规场 z=0.3",
+    "relative_scaled_error": 4.1593395394556865e-12
+  },
+  {
+    "check": "圆盘立体角积分 z=0.3",
+    "relative_scaled_error": 5.10702591327572e-15
+  },
+  {
+    "check": "普通圆盘场 z=2.0",
+    "relative_scaled_error": 8.476483404074031e-12
+  },
+  {
+    "check": "偶极圆盘常规场 z=2.0",
+    "relative_scaled_error": 3.4419203598368142e-12
+  },
+  {
+    "check": "圆盘立体角积分 z=2.0",
+    "relative_scaled_error": 6.106226635438361e-16
+  },
+  {
+    "check": "带电层左端势",
+    "relative_scaled_error": 0.0
+  },
+  {
+    "check": "带电层右端势",
+    "relative_scaled_error": 0.0
+  },
+  {
+    "check": "带电层场",
+    "relative_scaled_error": 2.5908164502652653e-12
+  },
+  {
+    "check": "带电层高斯积分",
+    "relative_scaled_error": 1.1895246692412393e-15
+  },
+  {
+    "check": "双电荷能量水平导数",
+    "relative_scaled_error": 8.177056254332626e-12
+  },
+  {
+    "check": "双电荷能量竖直导数",
+    "relative_scaled_error": 4.850946033752024e-13
+  },
+  {
+    "check": "接地平面边界势",
+    "relative_scaled_error": 0.0
+  },
+  {
+    "check": "接地平面表面场",
+    "relative_scaled_error": 2.3056209719207743e-13
+  },
+  {
+    "check": "感应面电荷总量",
+    "relative_scaled_error": 1.4732659536775827e-13
+  },
+  {
+    "check": "球面等势",
+    "relative_scaled_error": 0.0
+  },
+  {
+    "check": "导体球径向场",
+    "relative_scaled_error": 1.3158807377067205e-11
+  },
+  {
+    "check": "导体球角向场",
+    "relative_scaled_error": 8.305189869162177e-12
+  },
+  {
+    "check": "导体球感应净量",
+    "relative_scaled_error": 3.8835874544674164e-16
+  },
+  {
+    "check": "导体球偶极矩",
+    "relative_scaled_error": 3.708465677975295e-15
+  },
+  {
+    "check": "非均匀层切向场 z=-0.7",
+    "relative_scaled_error": 1.906919067096169e-12
+  },
+  {
+    "check": "非均匀层法向场 z=-0.7",
+    "relative_scaled_error": 3.684344496157621e-12
+  },
+  {
+    "check": "非均匀层切向场 z=0.7",
+    "relative_scaled_error": 1.906919067096169e-12
+  },
+  {
+    "check": "非均匀层法向场 z=0.7",
+    "relative_scaled_error": 3.684344496157621e-12
+  },
+  {
+    "check": "负粒子转向位置 eta=0.1",
+    "relative_scaled_error": 8.326672684688674e-17
+  },
+  {
+    "check": "负粒子转向位置 eta=0.4",
+    "relative_scaled_error": 1.1102230246251565e-16
+  },
+  {
+    "check": "负粒子转向位置 eta=0.9",
+    "relative_scaled_error": 0.0
+  },
+  {
+    "check": "点源近似1%阈值",
+    "relative_scaled_error": 8.673617379884035e-18
+  }
+]

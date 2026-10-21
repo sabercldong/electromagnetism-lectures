@@ -1,0 +1,1239 @@
+{
+  "lecture": "第九讲",
+  "passed": 203,
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "直线段有向端点",
+      "normalized_error": 3.122502256758253e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "直线段有向端点",
+      "normalized_error": 1.214306433183765e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "直线段有向端点",
+      "normalized_error": 9.43689570931383e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "直线段有向端点",
+      "normalized_error": 6.38378239159465e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 4.981172968090061e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 2.40551452831434e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 1.80450081211329e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 2.353114378459888e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 6.715284786247751e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 1.2367534924678934e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 1.4365343700990678e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 3.5737943630748346e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 7.107305079886988e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 4.848548897647915e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 7.77967391447788e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "圆线圈三维毕奥积分",
+      "normalized_error": 4.627309727808455e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 1.5265566588595902e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 1.2212453270876722e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 6.106226635438361e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 1.5959455978986625e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "中心和端面场比",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 2.7200464103316335e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 5.440092820663267e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 1.9984014443252818e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 3.885780586188048e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 2.1094237467877974e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "中心和端面场比",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 1.5376588891058418e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 7.993605777301127e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 5.995204332975845e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 2.7144952952085077e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限螺线管逐匝积分",
+      "normalized_error": 1.1407541578023483e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "中心和端面场比",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "1%中心精度边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀匝密度中心",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀匝密度梯度差分",
+      "normalized_error": 8.516705118921664e-10,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "非均匀匝密度中心",
+      "normalized_error": 3.02662287407139e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀匝密度梯度差分",
+      "normalized_error": 3.190022690446881e-09,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "非均匀匝密度中心",
+      "normalized_error": 7.708746875746308e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀匝密度梯度差分",
+      "normalized_error": 3.020199377862826e-09,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "同向线圈曲率三维源积分",
+      "normalized_error": 1.0563167242245866e-08,
+      "tolerance": 8e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "反向线圈梯度三维源积分",
+      "normalized_error": 5.373824119025983e-08,
+      "tolerance": 8e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "反向线圈横向梯度",
+      "normalized_error": 5.058419627612665e-09,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "同向线圈曲率三维源积分",
+      "normalized_error": 5.551115123125783e-08,
+      "tolerance": 8e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "反向线圈梯度三维源积分",
+      "normalized_error": 3.663588765689951e-08,
+      "tolerance": 8e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "反向线圈横向梯度",
+      "normalized_error": 3.461970099483125e-09,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "同向线圈曲率三维源积分",
+      "normalized_error": 6.225500237544423e-08,
+      "tolerance": 8e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "反向线圈梯度三维源积分",
+      "normalized_error": 3.799812464677643e-09,
+      "tolerance": 8e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "反向线圈横向梯度",
+      "normalized_error": 3.846118978856339e-10,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "同向线圈曲率三维源积分",
+      "normalized_error": 2.445515283333588e-10,
+      "tolerance": 8e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "反向线圈梯度三维源积分",
+      "normalized_error": 3.917979662926285e-09,
+      "tolerance": 8e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "反向线圈横向梯度",
+      "normalized_error": 3.836239936827468e-10,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "反向线圈最大梯度",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "亥姆霍兹三维四阶展开",
+      "normalized_error": 6.578914080179743e-10,
+      "tolerance": 2e-08,
+      "kind": "渐近截断"
+    },
+    {
+      "name": "亥姆霍兹三维四阶展开",
+      "normalized_error": 2.0569645986512342e-10,
+      "tolerance": 2e-08,
+      "kind": "渐近截断"
+    },
+    {
+      "name": "亥姆霍兹三维四阶展开",
+      "normalized_error": 2.9910514375347397e-10,
+      "tolerance": 2e-08,
+      "kind": "渐近截断"
+    },
+    {
+      "name": "亥姆霍兹三维四阶展开",
+      "normalized_error": 2.3695750916985503e-09,
+      "tolerance": 2e-08,
+      "kind": "渐近截断"
+    },
+    {
+      "name": "圆盘立体角源积分",
+      "normalized_error": 1.7377028636584666e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "立体角梯度等于圆回路场",
+      "normalized_error": 2.1557543250505518e-10,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "圆盘立体角源积分",
+      "normalized_error": 5.995244301690692e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "立体角梯度等于圆回路场",
+      "normalized_error": 5.559498417184727e-10,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "圆盘立体角源积分",
+      "normalized_error": 6.531699269336753e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "立体角梯度等于圆回路场",
+      "normalized_error": 8.786085747836125e-10,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "圆盘立体角源积分",
+      "normalized_error": 1.1102230246251565e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "立体角梯度等于圆回路场",
+      "normalized_error": 1.0404648670414574e-10,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "径向分布总电流 r2",
+      "normalized_error": 7.65114209087152e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向累计电流求场 r2",
+      "normalized_error": 6.071532165918825e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向累计电流求场 r2",
+      "normalized_error": 7.355227538141662e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向累计电流求场 r2",
+      "normalized_error": 4.6629367034256575e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向累计电流求场 r2",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向累计电流求场 r2",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向分布总电流 center",
+      "normalized_error": 7.274856414271281e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向累计电流求场 center",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向累计电流求场 center",
+      "normalized_error": 5.551115123125783e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向累计电流求场 center",
+      "normalized_error": 4.551914400963142e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向累计电流求场 center",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "径向累计电流求场 center",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "内部峰值",
+      "normalized_error": 3.4416913763379853e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀回流总量",
+      "normalized_error": 5.551115123125783e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀回流包围电流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀回流包围电流",
+      "normalized_error": 4.11504364979858e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀回流包围电流",
+      "normalized_error": 1.3322676295501878e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀回流旋度差分",
+      "normalized_error": 1.0895284674461436e-11,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀同轴回流累计",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀回流总量",
+      "normalized_error": 1.8503717077085943e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀回流包围电流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀回流包围电流",
+      "normalized_error": 4.3586048347610504e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀回流包围电流",
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非均匀回流旋度差分",
+      "normalized_error": 4.109795836981789e-12,
+      "tolerance": 3e-09,
+      "kind": "差分"
+    },
+    {
+      "name": "外部导线完整环流",
+      "normalized_error": 1.9033322236484164e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "外部导线近点切向",
+      "normalized_error": 5.551115123125783e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "外部导线远点切向",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "外部导线完整环流",
+      "normalized_error": 7.609126592094234e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "外部导线近点切向",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "外部导线远点切向",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "外部导线完整环流",
+      "normalized_error": 2.2530376618629093e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "外部导线近点切向",
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "外部导线远点切向",
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 6.5919492087118674e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 6.5919492087118674e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 6.5919492087118674e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 6.5919492087118674e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.3061447348531254e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 9.324138683375338e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.3061447348531254e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 9.324138683375338e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.3061447348531254e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 9.324138683375338e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.3061447348531254e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 9.324138683375338e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.3061447348531254e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 1.8648277366750676e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.3061447348531254e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 1.8648277366750676e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.6326809185664065e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 3.1098684163169654e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 1.3061447348531254e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.6326809185664065e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 3.1098684163169654e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.3061447348531254e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 1.8648277366750676e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀电流层逐面叠加",
+      "normalized_error": 1.3061447348531254e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "反向体电流层逐面叠加",
+      "normalized_error": 1.8648277366750676e-17,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "环形截面磁通逐条带积分",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "环形截面磁通逐条带积分",
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "环形截面磁通逐条带积分",
+      "normalized_error": 1.3322676295501878e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "体电流加边界面电流",
+      "normalized_error": 1.4135798584282297e-16,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "体电流加边界面电流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "体电流加边界面电流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀柱内部直接源积分",
+      "normalized_error": 6.619704784327496e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀柱内部直接源积分",
+      "normalized_error": 8.715250743307479e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀柱内部直接源积分",
+      "normalized_error": 5.329070518200751e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀柱外部面积源积分",
+      "normalized_error": 1.9984014443252818e-15,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀柱外部面积源积分",
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偏心孔两体源积分",
+      "normalized_error": 7.66053886991358e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "孔内细线分量叠加",
+      "normalized_error": 7.66053886991358e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偏心孔两体源积分",
+      "normalized_error": 7.66053886991358e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "孔内细线分量叠加",
+      "normalized_error": 7.632783294297951e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "偏心孔两体源积分",
+      "normalized_error": 8.104628079763643e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "孔内细线分量叠加",
+      "normalized_error": 8.104628079763643e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "孔内零场点",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀孔场环流",
+      "normalized_error": 3.3291219441167227e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "孔内细线环流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀孔场环流",
+      "normalized_error": 8.315364613465306e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "孔内细线环流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "两孔叠加面积源积分",
+      "normalized_error": 7.549516567451064e-15,
+      "tolerance": 3e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "两孔叠加面积源积分",
+      "normalized_error": 7.605027718682322e-15,
+      "tolerance": 3e-08,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "平面电流轴矢量镜像",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双线圈同向/反向镜像",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双线圈同向/反向镜像",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "平面电流轴矢量镜像",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双线圈同向/反向镜像",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "双线圈同向/反向镜像",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "斜截面投影与穿面电流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "斜截面投影与穿面电流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "斜截面投影与穿面电流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "斜截面投影与穿面电流",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "非轴点立体角梯度与毕奥积分",
+      "normalized_error": 5.17727791193856e-10,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "窄带定向面元三重积",
+      "normalized_error": 7.523384137897438e-10,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "非轴点立体角梯度与毕奥积分",
+      "normalized_error": 4.3443881825311337e-10,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "窄带定向面元三重积",
+      "normalized_error": 1.641140001673591e-11,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "非轴点立体角梯度与毕奥积分",
+      "normalized_error": 2.034859572508374e-10,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "窄带定向面元三重积",
+      "normalized_error": 2.9284211860991505e-10,
+      "tolerance": 3e-08,
+      "kind": "差分"
+    },
+    {
+      "name": "有限段直接绕圆求积",
+      "normalized_error": 1.2212453270876722e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "实际回流三边补足环流",
+      "normalized_error": 1.6986412276764895e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "完整回路的安培环流",
+      "normalized_error": 1.5765166949677223e-14,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限段直接绕圆求积",
+      "normalized_error": 6.328271240363392e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "实际回流三边补足环流",
+      "normalized_error": 4.829470157119431e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "完整回路的安培环流",
+      "normalized_error": 1.2212453270876722e-15,
+      "tolerance": 2e-09,
+      "kind": "积分或恒等式"
+    }
+  ],
+  "groups": {
+    "差分": {
+      "count": 27,
+      "max_normalized_error": 6.225500237544423e-08
+    },
+    "渐近截断": {
+      "count": 4,
+      "max_normalized_error": 2.3695750916985503e-09
+    },
+    "积分或恒等式": {
+      "count": 172,
+      "max_normalized_error": 2.7144952952085077e-14
+    }
+  }
+}

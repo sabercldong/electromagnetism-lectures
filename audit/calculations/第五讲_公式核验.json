@@ -1,0 +1,1044 @@
+{
+  "normalization": "k=1, epsilon_0=1/(4*pi); consistent normalized units",
+  "methods": [
+    "Simpson integration",
+    "central finite differences",
+    "independent node solution"
+  ],
+  "count": 129,
+  "passed": 129,
+  "checks": [
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": -0.05369193950796524,
+      "expected": -0.053691939504609154,
+      "scaled_error": 3.356086242245482e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 1.1102230246251565e-16,
+      "expected": 0,
+      "scaled_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": -0.04855467426132021,
+      "expected": -0.04855467425741801,
+      "scaled_error": 3.902198009164692e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 1.1102230246251565e-16,
+      "expected": 0,
+      "scaled_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": -0.03378256997064441,
+      "expected": -0.033782569968048216,
+      "scaled_error": 2.5961940930407934e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": -0.02678542900417679,
+      "expected": -0.026785429002934923,
+      "scaled_error": 1.2418677197700845e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁总量积分",
+      "actual": -0.8000000000000015,
+      "expected": -0.8,
+      "scaled_error": 1.4432899320127035e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 去自场后的镜像力",
+      "actual": 0.04488310567207776,
+      "expected": 0.044883105673550035,
+      "scaled_error": 1.472273691849324e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": -4.440892098500626e-16,
+      "expected": 0,
+      "scaled_error": 4.440892098500626e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": -0.1898865883371783,
+      "expected": -0.18988658830430202,
+      "scaled_error": 3.287628502768314e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": -2.220446049250313e-16,
+      "expected": 0,
+      "scaled_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": -0.08211719542623941,
+      "expected": -0.08211719542066487,
+      "scaled_error": 5.5745408289453735e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": -0.01746902946834309,
+      "expected": -0.01746902946743265,
+      "scaled_error": 9.104418607908116e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": -0.009495713630655968,
+      "expected": -0.009495713630029977,
+      "scaled_error": 6.259905788175146e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁总量积分",
+      "actual": -0.8000000000000073,
+      "expected": -0.8,
+      "scaled_error": 7.216449660063518e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 去自场后的镜像力",
+      "actual": 0.2822092826049171,
+      "expected": 0.28220928260500877,
+      "scaled_error": 9.164891068280667e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 4.884981308350689e-15,
+      "expected": 0,
+      "scaled_error": 4.884981308350689e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": -2.9382451096077378,
+      "expected": -2.938245103234987,
+      "scaled_error": 2.1688969257589883e-09,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 1.1102230246251565e-16,
+      "expected": 0,
+      "scaled_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": -0.03907992866379543,
+      "expected": -0.03907992866839751,
+      "scaled_error": 4.602082603888391e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 5.551115123125783e-17,
+      "expected": 0,
+      "scaled_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": -0.0035145728446673843,
+      "expected": -0.003514572844760982,
+      "scaled_error": 9.359787250806662e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": -0.0017003733237444406,
+      "expected": -0.0017003733236313596,
+      "scaled_error": 1.1308098554763113e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁总量积分",
+      "actual": -0.8000000013297163,
+      "expected": -0.8,
+      "scaled_error": 1.3297162260172968e-09,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 去自场后的镜像力",
+      "actual": 3.972222224337685,
+      "expected": 3.972222222222223,
+      "scaled_error": 5.325637553332662e-10,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 2.220446049250313e-16,
+      "expected": 0,
+      "scaled_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": 0.07382641682273436,
+      "expected": 0.07382641681883759,
+      "scaled_error": 3.896771794131837e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": 0.06676267710948093,
+      "expected": 0.06676267710394976,
+      "scaled_error": 5.531172742045953e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": 0.046451033709359976,
+      "expected": 0.0464510337060663,
+      "scaled_error": 3.29367783047374e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": 0.0368299648807983,
+      "expected": 0.03682996487903552,
+      "scaled_error": 1.762784362924208e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁总量积分",
+      "actual": 1.0999999999999932,
+      "expected": 1.1,
+      "scaled_error": 6.257620684250882e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 去自场后的镜像力",
+      "actual": 0.08485712166661497,
+      "expected": 0.08485712166405553,
+      "scaled_error": 2.559438772031797e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 6.661338147750939e-16,
+      "expected": 0,
+      "scaled_error": 6.661338147750939e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": 0.2610940589626262,
+      "expected": 0.2610940589184153,
+      "scaled_error": 4.4210912708564365e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 4.440892098500626e-16,
+      "expected": 0,
+      "scaled_error": 4.440892098500626e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": 0.11291114371152092,
+      "expected": 0.11291114370341421,
+      "scaled_error": 8.106709747934815e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 1.1102230246251565e-16,
+      "expected": 0,
+      "scaled_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": 0.02401991551952393,
+      "expected": 0.024019915517719898,
+      "scaled_error": 1.8040326177359844e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": 0.013056606242013912,
+      "expected": 0.013056606241291221,
+      "scaled_error": 7.226910042623658e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁总量积分",
+      "actual": 1.100000000000009,
+      "expected": 1.1,
+      "scaled_error": 8.074349270001138e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 去自场后的镜像力",
+      "actual": 0.5335519249272114,
+      "expected": 0.5335519249250947,
+      "scaled_error": 2.116640196447861e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": -7.105427357601002e-15,
+      "expected": 0,
+      "scaled_error": 7.105427357601002e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": 4.040087025708872,
+      "expected": 4.040087016948108,
+      "scaled_error": 2.168459372655913e-09,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": -2.220446049250313e-16,
+      "expected": 0,
+      "scaled_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": 0.05373490191271872,
+      "expected": 0.05373490191904658,
+      "scaled_error": 6.327854906729158e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": 0.004832537661417654,
+      "expected": 0.00483253766154635,
+      "scaled_error": 1.2869653259750535e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 球壁势抵消",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁密度与势导数",
+      "actual": 0.002338013320093388,
+      "expected": 0.0023380133199931196,
+      "scaled_error": 1.0026831795406643e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 内壁总量积分",
+      "actual": 1.1000000018283587,
+      "expected": 1.1,
+      "scaled_error": 1.6621441596824254e-09,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W4 去自场后的镜像力",
+      "actual": 7.509982642903701,
+      "expected": 7.509982638888892,
+      "scaled_error": 5.345962997255528e-10,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T7 近远密度比",
+      "actual": 1.0472364650864658,
+      "expected": 1.0472364650864658,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T7 近远密度比",
+      "actual": 6.739368998628257,
+      "expected": 6.73936899862826,
+      "scaled_error": 3.9536865538045455e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T7 近远密度比",
+      "actual": 26.999999999999993,
+      "expected": 27.0,
+      "scaled_error": 2.631639762074445e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W2 金属区势连续",
+      "actual": 0.30000000000000004,
+      "expected": 0.30000000000000004,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W2 腔内积分势",
+      "actual": 0.8934065934065932,
+      "expected": 0.8934065934065936,
+      "scaled_error": 3.3306690738754696e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W2 接地外壁总量",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W5 等势方程解Qa",
+      "actual": 0.4979214780600462,
+      "expected": 0.4979214780600461,
+      "scaled_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W5 等势方程解Qb",
+      "actual": 0.9020785219399536,
+      "expected": 0.9020785219399539,
+      "scaled_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W5 两球电势一致",
+      "actual": 0.8015242494226329,
+      "expected": 0.8015242494226327,
+      "scaled_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "球形电容场积分",
+      "actual": 1.381818181818185,
+      "expected": 1.381818181818182,
+      "scaled_error": 2.0889722700183865e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "同轴电容场积分",
+      "actual": 2.4855564962680057,
+      "expected": 2.485556496267997,
+      "scaled_error": 3.573358404983768e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W6 最优耐压一阶导数",
+      "actual": 2.2204460492503128e-11,
+      "expected": 0,
+      "scaled_error": 2.2204460492503128e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W6 最优耐压数值",
+      "actual": 1.103638323514327,
+      "expected": 1.103638323514327,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T11 近似与精确电容比",
+      "actual": 0.6931471805599453,
+      "expected": 0.6931471805599453,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W7 内球势叠加",
+      "actual": 1.2000000000000004,
+      "expected": 1.2,
+      "scaled_error": 3.7007434154171886e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W7 中球势叠加",
+      "actual": -0.2999999999999998,
+      "expected": -0.3,
+      "scaled_error": 1.6653345369377348e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W7 外球势叠加",
+      "actual": 0.4,
+      "expected": 0.4,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W7 中性薄壳不改变两端电容",
+      "actual": 0.8769230769230768,
+      "expected": 0.8769230769230769,
+      "scaled_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W7 中性薄壳不改变两端电容",
+      "actual": 0.8769230769230768,
+      "expected": 0.8769230769230769,
+      "scaled_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W7 中性薄壳不改变两端电容",
+      "actual": 0.8769230769230769,
+      "expected": 0.8769230769230769,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T12 厚壳电容分段积分",
+      "actual": 0.8571428571428601,
+      "expected": 0.8571428571428571,
+      "scaled_error": 2.9976021664879227e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W9 桥中点M",
+      "actual": 0.4,
+      "expected": 0.4,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W9 桥中点N",
+      "actual": 0.6,
+      "expected": 0.6,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W9 桥电量",
+      "actual": -0.19999999999999996,
+      "expected": -0.2,
+      "scaled_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W9 端口电容",
+      "actual": 1.4,
+      "expected": 1.4,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T14 平衡桥电压",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T14 平衡桥端口电容",
+      "actual": 2.0,
+      "expected": 2,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T14 平衡桥电压",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T14 平衡桥端口电容",
+      "actual": 2.0,
+      "expected": 2,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T14 平衡桥电压",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T14 平衡桥端口电容",
+      "actual": 2.0,
+      "expected": 2,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 中间片势",
+      "actual": 0.5052631578947369,
+      "expected": 0.5052631578947369,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 片净电量",
+      "actual": -6.1844118806235045e-18,
+      "expected": 0.0,
+      "scaled_error": 6.1844118806235045e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 电压路径积分",
+      "actual": 0.8,
+      "expected": 0.8,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 压力与去自场力",
+      "actual": -3.0922059403117523e-18,
+      "expected": 0.0,
+      "scaled_error": 3.0922059403117523e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 力的化简",
+      "actual": -3.0922059403117523e-18,
+      "expected": 0.0,
+      "scaled_error": 3.0922059403117523e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 中间片势",
+      "actual": 2.7778292937004485,
+      "expected": 2.777829293700448,
+      "scaled_error": 1.5986915065557364e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 片净电量",
+      "actual": 0.7,
+      "expected": 0.7,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 电压路径积分",
+      "actual": 0.0,
+      "expected": 0.0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 压力与去自场力",
+      "actual": -0.5787144361875934,
+      "expected": -0.5787144361875936,
+      "scaled_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 力的化简",
+      "actual": -0.5787144361875934,
+      "expected": -0.5787144361875934,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 中间片势",
+      "actual": -1.0820678670769481,
+      "expected": -1.082067867076948,
+      "scaled_error": 2.0520395409656988e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 片净电量",
+      "actual": -0.4,
+      "expected": -0.4,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 电压路径积分",
+      "actual": 0.8,
+      "expected": 0.8,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 压力与去自场力",
+      "actual": -0.3573890317948748,
+      "expected": -0.3573890317948748,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 力的化简",
+      "actual": -0.3573890317948748,
+      "expected": -0.35738903179487486,
+      "scaled_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 中间片势",
+      "actual": 3.3820211219757654,
+      "expected": 3.382021121975765,
+      "scaled_error": 1.3130882210180498e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 片净电量",
+      "actual": 0.9000000000000001,
+      "expected": 0.9,
+      "scaled_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 电压路径积分",
+      "actual": -0.2999999999999998,
+      "expected": -0.3,
+      "scaled_error": 1.6653345369377348e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 压力与去自场力",
+      "actual": -1.0987556576720805,
+      "expected": -1.09875565767208,
+      "scaled_error": 4.041746740953752e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W12 力的化简",
+      "actual": -1.0987556576720805,
+      "expected": -1.09875565767208,
+      "scaled_error": 4.041746740953752e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T17 位移后压力差",
+      "actual": -0.8246680715673209,
+      "expected": -0.8246680715673205,
+      "scaled_error": 4.440892098500626e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T17 位移后压力差",
+      "actual": 0.0,
+      "expected": 0.0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T17 位移后压力差",
+      "actual": 0.5497787143782136,
+      "expected": 0.5497787143782137,
+      "scaled_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W10 中点电量守恒",
+      "actual": 0.40000000000000013,
+      "expected": 0.4,
+      "scaled_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W10 固定预电量增量电容",
+      "actual": 0.6666666666627075,
+      "expected": 0.6666666666666666,
+      "scaled_error": 3.959166328115771e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W10 中点电量守恒",
+      "actual": 3.0,
+      "expected": 3.0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "W10 固定预电量增量电容",
+      "actual": 0.5000000000032756,
+      "expected": 0.5,
+      "scaled_error": 3.275602011854062e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T16 合并节点电量守恒",
+      "actual": 4.0,
+      "expected": 4.0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T16 同向反向终态",
+      "actual": 1.3333333333333333,
+      "expected": 1.3333333333333333,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T16 合并节点电量守恒",
+      "actual": 0.0,
+      "expected": 0.0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T16 同向反向终态",
+      "actual": 0.0,
+      "expected": 0,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T2 球面势一致",
+      "actual": 0.8181818181818181,
+      "expected": 0.8181818181818181,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T2 表面密度与势导数",
+      "actual": 0.2263025451404229,
+      "expected": 0.22630254511537679,
+      "scaled_error": 2.5046104079606835e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T2 球面势一致",
+      "actual": 0.8181818181818181,
+      "expected": 0.8181818181818181,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T2 表面密度与势导数",
+      "actual": 0.16306876896787922,
+      "expected": 0.16306876895063277,
+      "scaled_error": 1.7246454264707722e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T2 球面势一致",
+      "actual": 0.8181818181818181,
+      "expected": 0.8181818181818181,
+      "scaled_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T2 表面密度与势导数",
+      "actual": -0.10792283539220675,
+      "expected": -0.1079228353776034,
+      "scaled_error": 1.4603346309982612e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "label": "T2 表面总量积分",
+      "actual": 0.8999999999999954,
+      "expected": 0.9,
+      "scaled_error": 4.6629367034256575e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    }
+  ]
+}

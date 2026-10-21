@@ -1,0 +1,947 @@
+% 第二讲 电场计算与高斯定理
+% 使用 Tectonic 或 XeLaTeX 编译。正文可在下方各 ContentPart 中编辑。
+% 图像以无损 PDF 图像流嵌入本文件，编译时无需另附图片文件。
+\documentclass[UTF8,fontset=fandol,zihao=-4,a4paper]{ctexart}
+\usepackage[top=19mm,bottom=18mm,left=21mm,right=21mm]{geometry}
+\usepackage{amsmath,amssymb,bm,esint}
+\usepackage{booktabs,array,float,caption}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={第二讲 电场计算与高斯定理},pdfsubject={电磁学课程讲义},pdfauthor={}}
+\ctexset{
+ section={format=\Large\sffamily\bfseries,beforeskip=3ex,afterskip=1.5ex},
+ subsection={format=\normalsize\sffamily\bfseries,beforeskip=2ex,afterskip=1ex}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.18}
+\renewcommand{\thefigure}{2-\arabic{figure}}
+\captionsetup{font=small,labelformat=simple,labelsep=quad,skip=6pt}
+\setlength{\abovedisplayskip}{7pt}
+\setlength{\belowdisplayskip}{7pt}
+\setlength{\intextsep}{8pt}
+\pagestyle{plain}
+\raggedbottom
+
+% 自包含原图排版命令，保留原始像素和比例。
+\newlength{\PptWidth}
+\newlength{\PptHeight}
+\newlength{\PptTileHeight}
+\newlength{\PptTileY}
+\makeatletter
+\newcommand{\PptDrawTile}[3]{%
+ \setlength{\PptTileHeight}{#2\PptHeight}%
+ \setlength{\PptTileY}{#3\PptHeight}%
+ \edef\PptTileHeightBP{\strip@pt\dimexpr0.996264\PptTileHeight\relax}%
+ \edef\PptTileYBP{\strip@pt\dimexpr0.996264\PptTileY\relax}%
+ \special{pdf:put @Ppt#1 << /Filter /FlateDecode >>}%
+ \special{pdf:put @resources << /XObject << /Ppt#1 @Ppt#1 >> >>}%
+ \special{pdf:content q \PptWidthBP\space 0 0 \PptTileHeightBP\space 0 \PptTileYBP\space cm /Ppt#1 Do Q}}
+\newcommand{\PptImageBox}[3]{%
+ \begingroup
+ \setlength{\PptWidth}{#2}%
+ \setlength{\PptHeight}{#3\PptWidth}%
+ \edef\PptWidthBP{\strip@pt\dimexpr0.996264\PptWidth\relax}%
+ \edef\PptHeightBP{\strip@pt\dimexpr0.996264\PptHeight\relax}%
+ \leavevmode\hbox to\PptWidth{%
+  \vrule width0pt height\PptHeight depth0pt%
+  \csname PptStream#1\endcsname%
+  \global\expandafter\let\csname PptStream#1\endcsname\relax%
+  \hss}%
+ \endgroup}
+\makeatother
+
+
+\usepackage{enumitem}
+\usepackage{xcolor,tikz,needspace}
+\usetikzlibrary{arrows.meta,calc,decorations.pathmorphing}
+\definecolor{ink}{HTML}{25323C}
+\definecolor{sourceink}{HTML}{A34435}
+\definecolor{fieldink}{HTML}{205D83}
+\definecolor{surfaceink}{HTML}{4B7B77}
+\tikzset{
+ charge/.style={circle,draw=sourceink,fill=sourceink!6,minimum size=6mm,inner sep=2pt},
+ point/.style={circle,fill=ink,inner sep=1.5pt},
+ axis/.style={draw=ink!65,thin,-{Latex[length=1.7mm]}},
+ force/.style={draw=fieldink,thick,-{Latex[length=2mm]}},
+ aux/.style={draw=ink!45,dashed,thin},
+ dim/.style={draw=ink!60,thin,{Latex[length=1.6mm]}-{Latex[length=1.6mm]}},
+ source/.style={draw=sourceink,very thick},
+ surface/.style={draw=surfaceink,fill=surfaceink!7}}
+\newcommand{\ProblemDiagram}[1]{\DrawDiagram{#1}{0}{Q}{题图}}
+\newcommand{\AnalysisDiagram}[1]{\DrawDiagram{#1}{1}{A}{解答分析图}}
+\newcommand{\DrawDiagram}[4]{%
+ \par\smallskip\noindent\begin{minipage}{\linewidth}\centering
+ \refstepcounter{figure}\label{fig:L2:#1:#3}
+ \begin{tikzpicture}[x=1cm,y=1cm,font=\small,text=ink,line cap=round,line join=round]
+ \csname Diagram#1\endcsname{#2}
+ \end{tikzpicture}\par\vspace{2pt}
+ {\footnotesize\textbf{图~\thefigure\quad #4}\quad\csname Caption#3#1\endcsname\par}
+ \end{minipage}\par\smallskip}
+\setlist[enumerate]{itemsep=4pt,parsep=0pt,topsep=5pt,leftmargin=2.3em}
+\newcommand{\Coach}[1]{\par\smallskip\noindent #1\par\smallskip}
+\newcommand{\Trap}[1]{\par\smallskip\noindent\textbf{注意}\quad #1\par\smallskip}
+\newcommand{\Task}[2]{\needspace{45mm}\subsection*{习题 #1\quad #2}}
+\newcommand{\Answer}[2]{\needspace{60mm}\subsection*{习题 #1 解答\quad #2}}
+\newcommand{\Worked}[2]{\needspace{45mm}\subsection*{例题 #1\quad #2}}
+\newcommand{\Solution}{\par\noindent\textbf{解}\quad}
+\newcommand{\Key}[1]{}
+
+\expandafter\def\csname DiagramW1\endcsname#1{%
+\draw[axis] (0,-1.8)--(0,2) node[above] {$z$};
+\draw[source] (0,-1.3)--(0,1.35);
+\node[left] at (0,-1.3) {$z_1$};
+\node[left] at (0,1.35) {$z_2$};
+\node[point] (P) at (3,0) {};\node[above right] at (3,.55) {$P(r,z_0)$};
+\draw[aux] (P)--(3,.55);
+\draw[aux] (0,0)--(P);\node[below] at (1.5,0) {$r$};
+\draw[source,line width=4pt] (0,.6)--(0,.83);
+\node[left] at (0,.72) {$\mathrm dq$};
+\draw[aux] (0,.72)--(P) node[midway,above] {$R$};
+\node[left,fill=white,inner sep=1pt] at (0,0) {$z_0$};
+\node at (1.7,-1.65) {$\mathrm dq=\lambda\,\mathrm dz'$};\ifnum#1=1
+\draw[aux] (4.5,0)--(4.5,-.36)--(3,-.36);
+\draw[force] (P)--++(1.5,-.36) node[right] {$\mathrm d\boldsymbol E$};
+\draw[force] (P)--++(1.5,0) node[above] {$\mathrm dE_r$};
+\draw[force] (P)--++(0,-.36);\draw[aux] (3,-.36)--(3.2,-.65);\node at (3.2,-.9) {$\mathrm dE_z$};\draw[aux] (0,-1.3)--(P)--(0,1.35);
+\node at (2.15,.5) {$\beta_2$};\node at (2.1,-.5) {$\beta_1$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW1\endcsname{有限棒的一般场点与源微元}
+\expandafter\def\csname CaptionAW1\endcsname{图示 $\lambda>0$；源到场点位移、端点角与分量}
+\expandafter\def\csname DiagramW2\endcsname#1{%
+\ifnum#1=0
+\draw[axis] (0,-1.8)--(0,2) node[above] {$z$};
+\draw[source] (0,-1.3)--(0,1.35);
+\node[left] at (0,-1.3) {$-l$};
+\node[left] at (0,1.35) {$l$};
+\node[point] (P) at (3,0) {};\node[above right] at (3,.55) {$P(r,0)$};
+\draw[aux] (P)--(3,.55);
+\draw[aux] (0,0)--(P);\node[below] at (1.5,0) {$r$};
+\draw[source,line width=4pt] (0,.6)--(0,.83);
+\node[left] at (0,.72) {$\mathrm dq$};
+\draw[aux] (0,.72)--(P) node[midway,above] {$R$};
+\node at (2,-1.25) {$\lambda=\lambda_0(1+\beta z/l)$};\ifnum#1=1
+\draw[force] (P)--++(.75,-.18) node[right] {$\mathrm d\boldsymbol E$};
+\draw[force] (P)--++(.75,0) node[above] {$\mathrm dE_r$};
+\draw[force] (P)--++(0,-.6) node[right] {$\mathrm dE_z$};
+\fi
+
+\else
+\draw[axis] (0,-1.8)--(0,1.9) node[above] {$z$};
+\draw[source] (0,-1.4)--(0,1.4);
+\node[left] at (0,1.4) {$l$};\node[left] at (0,-1.4) {$-l$};
+\draw[source,line width=4pt] (0,.7)--(0,.85) (0,-.85)--(0,-.7);
+\node[left] at (0,.78) {$\mathrm dq_+=\lambda(z)\mathrm dz$};
+\node[left] at (0,-.78) {$\mathrm dq_-=\lambda(-z)\mathrm dz$};
+\node[point] (P) at (3,0) {};\node[above] at (P) {$P(r,0)$};
+\draw[aux] (0,.78)--(P)--(0,-.78);
+\draw[force] (P)--++(.95,-.247) node[below right] {$\mathrm d\boldsymbol E_+$};
+\draw[force] (P)--++(.48,.125) node[above right] {$\mathrm d\boldsymbol E_-$};
+\node at (1,-2.15) {图示 $\beta>0,z>0$：上侧微元电量更大};
+\node at (1,-2.7) {$E_r$ 保留密度偶部，$E_z$ 保留密度奇部};
+\fi
+
+}
+\expandafter\def\csname CaptionQW2\endcsname{密度随 $z$ 变化的对称棒}
+\expandafter\def\csname CaptionAW2\endcsname{上、下对应微元不等，轴向不能全抵消}
+\expandafter\def\csname DiagramW3\endcsname#1{\begin{scope}\draw[axis] (-1.65,0)--(1.9,0) node[right] {$x$};\draw[axis] (0,-1.7)--(0,1.9) node[above] {$y$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};
+\draw[aux] (0,0)--(40:1.35) node[midway,above] {$a$};\draw (.45,0) arc (0:40:.45);\node at (.7,.22) {$\varphi$};
+\ifnum#1=1\draw[force] (O)--(-1.15,0) node[above] {$\boldsymbol E$};
+\coordinate (D) at (40:1.35);\coordinate (B) at (-40:1.35);
+\draw[force] (D)--++(-.5,-.4195);\draw[force] (B)--++(-.5,.4195);\fi\draw[source] (-65:1.35) arc (-65:65:1.35);\draw[aux] (0,0)--(-65:1.35) (0,0)--(65:1.35);\node[right] at (65:1.35) {$+\alpha$};\node[right] at (-65:1.35) {$-\alpha$};\node at (0,-2.05) {圆弧};\end{scope}\begin{scope}[xshift=5.3cm]\draw[axis] (-1.65,0)--(1.9,0) node[right] {$x$};\draw[axis] (0,-1.7)--(0,1.9) node[above] {$y$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};
+\draw[aux] (0,0)--(40:1.35) node[midway,above] {$a$};\draw (.45,0) arc (0:40:.45);\node at (.7,.22) {$\varphi$};
+\ifnum#1=1\draw[force] (O)--(-1.15,0) node[above] {$\boldsymbol E$};
+\coordinate (D) at (40:1.35);\coordinate (B) at (-40:1.35);
+\draw[force] (D)--++(-.5,-.4195);\draw[force] (B)--++(-.5,.4195);\fi\draw[source] (0,0) circle (1.35);\node at (0,2.35) {$\lambda=\lambda_0(1+\eta\cos\varphi)$};\node at (0,-2.05) {完整圆环};\end{scope}\ifnum#1=1\node at (2.65,-2.75) {箭头取 $\lambda>0$、$\lambda_0>0$、$\eta>0$；上下微元配对};\fi}
+\expandafter\def\csname CaptionQW3\endcsname{圆弧与完整非均匀圆环；两分问的密度与对称性分别处理}
+\expandafter\def\csname CaptionAW3\endcsname{圆心微元场与角度投影；完整环另按密度积分}
+\expandafter\def\csname DiagramW4\endcsname#1{%
+\ifnum#1=0
+\draw[axis] (-1.8,0)--(4.5,0) node[below right] {$x$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};\draw[source] (0,0) ellipse[x radius=.5,y radius=1.4];
+\node[left] at (-.5,1.4) {$a,Q$};\node[point] (P) at (3,0) {};\node[above] at (3,.85) {$P(x)$};
+\draw[aux] (P)--(3,.7);
+\draw[aux] (0,1.4)--(P)--(0,-1.4);
+\draw[dim] (0,-1.8)--(3,-1.8) node[midway,fill=white] {$x$};\ifnum#1=1
+\draw[force] (P)--++(.65,-.3) node[below right] {$\mathrm d\boldsymbol E_+$};
+\draw[force] (P)--++(.65,.3) node[above right] {$\mathrm d\boldsymbol E_-$};
+\draw[force] (P)--++(.8,0) node[right,fill=white,inner sep=1pt] {$E_x$};
+\node at (2,1.7) {成对微元的横向分量抵消};
+\fi
+
+\else
+\begin{scope}[xshift=-2.5cm]
+\draw[source] (0,0) ellipse[x radius=.4,y radius=1.1];
+\draw[axis] (-1.1,0)--(2.1,0) node[right] {$x$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};
+\node[charge,draw=ink] (P) at (.75,0) {$q<0$};
+\draw[force] (P.north)--++(-.6,0) node[above] {$F_x$};
+\node at (.3,-1.65) {$x>0$：轴向恢复};
+\end{scope}
+\begin{scope}[xshift=2.5cm]
+\draw[source] (0,0) circle (1.1);
+\draw[axis] (-1.3,0)--(2.1,0) node[right] {$s$};
+\node[point] (O) at (0,0) {};\node[below] at (O) {$O$};
+\node[charge,draw=ink] (P) at (.6,0) {$q<0$};
+\draw[force] (P.north)--++(.65,0) node[above] {$F_s$};
+\node at (.3,-1.65) {$s>0$：平面内失稳};
+\end{scope}
+\node at (0,-2.3) {$F_x\simeq-kQ|q|x/a^3,\qquad F_s\simeq+kQ|q|s/(2a^3)$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW4\endcsname{均匀圆环与轴线场点}
+\expandafter\def\csname CaptionAW4\endcsname{近环心的负粒子：轴向恢复、环平面内失稳；撤去导轨后不能三维稳定。}
+\expandafter\def\csname DiagramW5\endcsname#1{%
+\draw[axis] (-1.8,0)--(4.5,0) node[below right] {$x$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};\draw[surface] (0,0) ellipse[x radius=.5,y radius=1.4];
+\draw[source] (0,0) ellipse[x radius=.32,y radius=.9];
+\draw[source,line width=2.5pt] (0,0) ellipse[x radius=.34,y radius=.95];
+\node[left] at (-.5,1.4) {$a$};\node[left] at (-.34,.95) {$s,\mathrm ds$};\node[point] (P) at (3,0) {};\node[above] at (3,.85) {$P(x)$};
+\draw[aux] (P)--(3,.7);
+\draw[aux] (0,.95)--(P)--(0,-.95);
+\draw[dim] (0,-1.8)--(3,-1.8) node[midway,fill=white] {$x$};\ifnum#1=1
+\draw[force] (P)--++(.9,-.285) node[below right] {$\mathrm d\boldsymbol E_+$};
+\draw[force] (P)--++(.9,.285) node[above right] {$\mathrm d\boldsymbol E_-$};
+\draw[force] (P)--++(1.05,0) node[right,fill=white,inner sep=1pt] {$\mathrm dE_x$};
+\node at (2,1.65) {$R=\sqrt{x^2+s^2}$};
+\node at (2,-2.35) {$\mathrm dQ=2\pi\sigma s\,\mathrm ds$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW5\endcsname{圆盘划分成同心细环}
+\expandafter\def\csname CaptionAW5\endcsname{图示 $\sigma>0$；取环微元后只积分一个径向变量}
+\expandafter\def\csname DiagramW6\endcsname#1{%
+\ifnum#1=0
+\draw[axis] (-1.8,0)--(4.5,0) node[below right] {$x$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};\draw[surface] (0,0) ellipse[x radius=.55,y radius=1.4];
+\draw[fill=white,draw=sourceink] (0,0) ellipse[x radius=.28,y radius=.7];
+\node[left] at (-.5,1.4) {$a$};\node[left] at (-.25,.7) {$b$};\node[point] (P) at (3,0) {};\node[above] at (3,.85) {$P(x)$};
+\draw[aux] (P)--(3,.7);
+\draw[aux] (0,1.4)--(P)--(0,-1.4);
+\draw[dim] (0,-1.8)--(3,-1.8) node[midway,fill=white] {$x$};\ifnum#1=1
+\draw[force] (P)--++(.65,-.3) node[below right] {$\mathrm d\boldsymbol E_+$};
+\draw[force] (P)--++(.65,.3) node[above right] {$\mathrm d\boldsymbol E_-$};
+\draw[force] (P)--++(.8,0) node[right,fill=white,inner sep=1pt] {$E_x$};
+\node at (2,1.7) {成对微元的横向分量抵消};
+\fi
+
+\else
+\begin{scope}[xshift=-3cm]
+\draw[surface] (0,0) ellipse[x radius=.45,y radius=1.25];
+\node[above] at (0,1.25) {$a,+\sigma$};
+\draw[axis] (-.7,0)--(2.1,0);
+\node[point] at (1.4,0) {};\node[below] at (1.4,0) {$P(x)$};
+\draw[force] (1.4,.35)--(2.15,.35) node[right] {$E_a$};
+\end{scope}
+\node at (0,0) {$+$};
+\begin{scope}[xshift=1.2cm]
+\draw[fill=sourceink!6,draw=sourceink] (0,0) ellipse[x radius=.25,y radius=.7];
+\node[above] at (0,.7) {$b,-\sigma$};
+\draw[axis] (-.7,0)--(2.1,0);
+\node[point] at (1.4,0) {};\node[below] at (1.4,0) {$P(x)$};
+\draw[force] (1.4,.35)--(.65,.35) node[above] {$-E_b$};
+\end{scope}
+\node at (.2,-1.9) {$E_{\text{环面}}=E_a-E_b$（$E_b$ 指正密度内盘的场）};
+\node at (.2,-3.10) {$E_x=\dfrac{\sigma x}{2\varepsilon_0}
+\left[(x^2+b^2)^{-1/2}-(x^2+a^2)^{-1/2}\right]$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW6\endcsname{有孔圆盘的轴线几何}
+\expandafter\def\csname CaptionAW6\endcsname{外盘减内盘；小位移须满足 $|x|\ll b$}
+\expandafter\def\csname DiagramW7\endcsname#1{%
+\draw[axis] (0,-1.5)--(0,2.3) node[above] {$z$};
+\node[charge] at (0,-.8) {$-q$};\node[charge] at (0,.8) {$+q$};
+\node[point] (P) at (2.7,1.35) {};\node[above] at (P) {$P$};
+\draw[aux] (0,0)--(P) node[midway,below] {$r$};
+\draw (0,.5) arc (90:26.56:.5);\node at (.45,.6) {$\theta$};
+\draw[force] (-.7,-.6)--(-.7,.6) node[midway,left] {$\boldsymbol p$};\ifnum#1=1
+\draw[force] (P)--++(.85,.425) node[right] {$E_r$};
+\draw[force] (P)--++(.35,-.7) node[below] {$E_\theta$};
+\node at (2.2,-.85) {$\boldsymbol E=\boldsymbol E_r+\boldsymbol E_\theta$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW7\endcsname{电偶极子与一般方向场点}
+\expandafter\def\csname CaptionAW7\endcsname{径向与极角方向分量的合成}
+\expandafter\def\csname DiagramW8\endcsname#1{
+\node[charge] (Q) at (-2.5,0) {$q$};
+\node[point] (O) at (1,0) {};\node[below left] at (O) {$O$};\draw[surface] (1,0) ellipse[x radius=.4,y radius=1.3];
+\node[above] at (1,1.3) {$a$};\draw[aux] (Q)--(O);\draw[dim] (-2.5,-1.7)--(1,-1.7) node[midway,fill=white] {$h$};
+\draw[force] (O)--(2.15,0) node[below] {$\hat{\boldsymbol n}$};\ifnum#1=1
+\coordinate (D) at (1,1.1);
+\draw[aux] (Q)--(D) node[midway,above] {$\boldsymbol R$};
+\draw[force] (D)--++(.9,.28286) node[right] {$\boldsymbol E$};
+\draw[force] (D)--++(.9,0) node[below right] {$E_n$};
+\node at (-.7,1.95) {$\mathrm d\Phi=E_n\mathrm dS=kq\,\mathrm d\Omega$};
+\fi
+\begin{scope}[xshift=7cm]\node[charge] (Q) at (-2.5,0) {$q$};
+\node[point] (O) at (1,0) {};\node[below left] at (O) {$O$};\draw[surface] (.5,-1.2)--(1.5,-.8)--(1.5,1.2)--(.5,.8)--cycle;
+\node[above] at (1.5,1.2) {$2a\times2b$};\draw[aux] (Q)--(O);\draw[dim] (-2.5,-1.7)--(1,-1.7) node[midway,fill=white] {$h$};
+\draw[force] (O)--(2.15,0) node[below] {$\hat{\boldsymbol n}$};\ifnum#1=1
+\coordinate (D) at (1,.6);
+\draw[aux] (Q)--(D) node[midway,above] {$\boldsymbol R$};
+\draw[force] (D)--++(.9,.15429) node[right] {$\boldsymbol E$};
+\draw[force] (D)--++(.9,0) node[below right] {$E_n$};
+\node at (-.7,1.95) {$\mathrm d\Phi=E_n\mathrm dS=kq\,\mathrm d\Omega$};\node[left] at (.7,.7) {$\mathrm dS$};
+\fi
+\end{scope}
+}
+\expandafter\def\csname CaptionQW8\endcsname{圆盘与矩形开曲面；法向均取背离点源}
+\expandafter\def\csname CaptionAW8\endcsname{圆盘与矩形的法向投影采用同一几何核；分别作面积积分。}
+\expandafter\def\csname DiagramW9\endcsname#1{%
+\ifnum#1=0
+\begin{scope}[xshift=-2.5cm,scale=.75,transform shape]
+\coordinate (A) at (-1.5,-1);\coordinate (B) at (1,-1);
+\coordinate (C) at (1,1.2);\coordinate (D) at (-1.5,1.2);
+\coordinate (U) at (-.65,-.35);\coordinate (V) at (1.85,-.35);
+\coordinate (W) at (1.85,1.85);\coordinate (X) at (-.65,1.85);
+\draw[surface] (A)--(B)--(C)--(D)--cycle;
+\draw (B)--(V)--(W)--(C) (D)--(X)--(W);
+\draw[aux] (A)--(U)--(V) (U)--(X);
+\node[charge] (Q) at (.175,.425) {$q$};
+\node at (0,-1.8) {中心源};\end{scope}
+\begin{scope}[xshift=2.5cm,scale=.75,transform shape]
+\coordinate (A) at (-1.5,-1);\coordinate (B) at (1,-1);
+\coordinate (C) at (1,1.2);\coordinate (D) at (-1.5,1.2);
+\coordinate (U) at (-.65,-.35);\coordinate (V) at (1.85,-.35);
+\coordinate (W) at (1.85,1.85);\coordinate (X) at (-.65,1.85);
+\draw[surface] (A)--(B)--(C)--(D)--cycle;
+\draw (B)--(V)--(W)--(C) (D)--(X)--(W);
+\draw[aux] (A)--(U)--(V) (U)--(X);
+\node[charge] (Q) at (-1.5,-1) {$q$};
+\node at (0,-1.8) {顶点源};\end{scope}
+\else
+\begin{scope}[x={(1.1cm,0cm)},y={(.7cm,.45cm)},z={(0cm,1.1cm)}]
+\draw (-1,-1,-1)--(1,-1,-1)--(1,-1,1)--(-1,-1,1)--cycle;
+\draw (1,-1,-1)--(1,1,-1)--(1,1,1)--(1,-1,1) (-1,-1,1)--(-1,1,1)--(1,1,1);
+\draw[aux] (-1,-1,-1)--(-1,1,-1)--(1,1,-1) (-1,1,-1)--(-1,1,1);
+\draw[aux] (0,-1,-1)--(0,-1,1)--(0,1,1)--(0,1,-1)--cycle;
+\draw[aux] (-1,0,-1)--(1,0,-1)--(1,0,1)--(-1,0,1)--cycle;
+\draw[aux] (-1,-1,0)--(1,-1,0)--(1,1,0)--(-1,1,0)--cycle;
+\filldraw[draw=sourceink,fill=sourceink!12] (0,0,1)--(1,0,1)--(1,1,1)--(0,1,1)--cycle;
+\draw[source] (0,0,0)--(1,0,0)--(1,1,0)--(0,1,0)--cycle;
+\draw[source] (0,0,0)--(0,0,1) (1,0,0)--(1,0,1) (1,1,0)--(1,1,1) (0,1,0)--(0,1,1);
+\draw[source] (0,0,1)--(1,0,1)--(1,1,1)--(0,1,1)--cycle;
+\node[charge] at (0,0,0) {$q$};
+\end{scope}
+\node at (3,1.4) {原小立方体};\draw[->] (2.5,1.15)--(1.1,.75);
+\node at (3,.5) {边长 $a$};
+\node at (0,-2.1) {大立方体边长 $2a$；每远端小面占大面 $1/4$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW9\endcsname{点电荷位于立方体中心或顶点的两种题设}
+\expandafter\def\csname CaptionAW9\endcsname{中心情形等分六面；顶点情形用八体拼接}
+\expandafter\def\csname DiagramW10\endcsname#1{%
+\draw[surface] (0,0) circle (1.4);
+\draw[aux] (0,0) circle (.85);
+\draw[axis] (0,0)--(2.4,0) node[right] {$r$};
+\node[above] at (1.15,0) {$R$};\node at (-.45,.4) {$\rho$};\node[point] at (0,0) {};\ifnum#1=1
+\draw[force] (.85,0)--(1.35,0) node[below] {$E_r$};
+\draw[force] (0,.85)--(0,1.3);
+\node at (4.2,.9) {$Q_{\text{内}}=4\pi\varepsilon_0r^2E_r$};
+\node at (4.2,-.45) {$\mathrm dQ=4\pi r^2\rho\,\mathrm dr$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW10\endcsname{球对称场与同心高斯面}
+\expandafter\def\csname CaptionAW10\endcsname{包围电量的变化反映体密度}
+\expandafter\def\csname DiagramW11\endcsname#1{%
+\draw[thick] (-2,1.7)--(2,1.7) (-2,-1.4)--(2,-1.4);
+\node[above] at (0,1.7) {平行极板};
+\node[charge,draw=ink] (P) at (0,.2) {$q$};
+\draw[axis] (2.6,-1.2)--(2.6,1.5) node[above] {$y$};
+\node at (-2.7,.4) {$b,\Delta\rho,\eta$};
+\draw[->,thick] (-1,.1)--(-1,.95) node[left] {$\boldsymbol v$};\ifnum#1=1
+\draw[force] (P.north)--++(0,.9) node[right] {$|q|E$};
+\draw[force] (.4,.2)--++(0,-.85) node[right] {$G$};\draw[force] (-.4,.2)--++(0,-.85) node[left] {$6\pi\eta bv_1$};
+\node at (0,-2) {向上终速：重力与阻力都向下};
+\fi
+
+}
+\expandafter\def\csname CaptionQW11\endcsname{加场后向上运动的油滴}
+\expandafter\def\csname CaptionAW11\endcsname{向上终速时的三个受力方向}
+\expandafter\def\csname DiagramW12\endcsname#1{%
+\draw[axis] (-2.7,0)--(4,0) node[right] {$z$};
+\node[charge] at (-1.5,0) {$+q$};\node[charge] at (0,0) {$-2q$};\node[charge] at (1.5,0) {$+q$};
+\node[below] at (-1.5,-.35) {$-a$};\node[below] at (1.5,-.35) {$a$};
+\node[point] (P) at (3.3,0) {};\node[above] at (P) {$P(r)$};
+\node[point] (H) at (0,1.8) {};\node[above] at (H) {中垂场点};\ifnum#1=1
+\draw[force] (P)--++(.6,0) node[below] {$E_z>0$};
+\draw[force] (H)--++(0,-.7) node[right] {$E_r<0$};
+\node at (0,-1) {$Q_{\text{总}}=0,\ p=0$；保留到 $r^{-4}$};
+\fi
+
+}
+\expandafter\def\csname CaptionQW12\endcsname{总电量与偶极矩都为零的三电荷}
+\expandafter\def\csname CaptionAW12\endcsname{不同观测方向的四极远场}
+\expandafter\def\csname DiagramT1\endcsname#1{%
+\draw[axis] (-1.6,-.8)--(-1.6,1.5) node[above] {$\lambda$};
+\draw[axis] (-3,0)--(.2,0) node[right] {$z$};
+\draw[source,domain=-2.8:-.4,samples=40] plot (\x,{1.1*(1-(\x+1.6)^2/1.44)});
+\node[below] at (-2.8,0) {$-l$};\node[below] at (-.4,0) {$l$};\node[below left] at (-1.6,0) {$0$};
+\draw[surface] (3,0) circle (1.1);\draw[source] (3,0) circle (.65);
+\draw[dim] (3,0)--(3.65,0) node[midway,above] {$s$};
+\node at (3,-1.55) {$\sigma(s)=\sigma_0s/a$};\ifnum#1=1
+\draw[source,line width=3pt] (3,0) circle (.7);
+\node at (3,1.75) {$\mathrm dQ=2\pi s\sigma(s)\,\mathrm ds$};
+\node at (-1.6,-1.55) {$\mathrm dq=\lambda(z)\,\mathrm dz$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT1\endcsname{非均匀细棒与径向非均匀圆盘}
+\expandafter\def\csname CaptionAT1\endcsname{线微元与细环面积微元}
+\expandafter\def\csname DiagramT2\endcsname#1{%
+
+\draw[axis] (-3,0)--(3.2,0) node[right] {$x$};
+\draw[axis] (0,-.4)--(0,2.7) node[above] {$y$};
+\node[charge] (L) at (-2,0) {$+Q$};
+\node[charge] (R) at (2,0) {$+Q$};
+\node[charge,draw=ink] (P) at (0,1.65) {$P$};
+\node[below=5pt] at (L.south) {$-a$};
+\node[below=5pt] at (R.south) {$a$};
+\node[right=5pt] at (P.east) {$P(0,b)$};
+\draw[aux] (L)--(P)--(R);
+\node at (-1.15,1) {$\sqrt{a^2+b^2}$};
+\ifnum#1=1
+\draw[force] (P)--++(.75,.61875) node[right] {$E_L$};
+\draw[force] (P)--++(-.75,.61875) node[left] {$E_R$};
+\draw[force] (P)--++(0,1.2375) node[right] {$E_y$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT2\endcsname{两个正源的中垂线场点}
+\expandafter\def\csname CaptionAT2\endcsname{横向抵消，纵向投影相加}
+\expandafter\def\csname DiagramT3\endcsname#1{%
+\draw[axis] (0,-1.8)--(0,2) node[above] {$z$};
+\draw[source] (0,0)--(0,1.35);
+\node[left] at (0,0) {$0$};
+\node[left] at (0,1.35) {$+\infty$};
+\node[point] (P) at (3,0) {};\node[above right] at (3,.55) {$P(r,0)$};
+\draw[aux] (P)--(3,.55);
+\draw[aux] (0,0)--(P);\node[below] at (1.5,0) {$r$};
+\draw[source,line width=4pt] (0,.6)--(0,.83);
+\node[left] at (0,.72) {$\mathrm dq$};
+\draw[aux] (0,.72)--(P) node[midway,above] {$R$};
+\draw[source,->] (0,1.1)--(0,1.7);\node at (2,-1.25) {$\mathrm dq=\lambda\,\mathrm dz'$};
+\ifnum#1=1
+\begin{scope}[xshift=5.3cm]
+\node[point] (P) at (0,0) {};\node[above left] at (P) {$P$};
+\draw[force] (P)--(1.2,0) node[above] {$E_r$};
+\draw[force] (P)--(0,-1.2) node[left] {$E_z$};
+\draw[force] (P)--(1.2,-1.2) node[right] {$\boldsymbol E$};
+\draw[aux] (1.2,0)--(1.2,-1.2)--(0,-1.2);
+\draw (.45,0) arc (0:-45:.45);\node at (.78,-.25) {$45^\circ$};
+\node at (.6,-1.95) {$E_r=-E_z=k\lambda/r$};\node at (.6,-2.5) {积分后的合场，$\lambda>0$};
+\end{scope}\fi
+}
+\expandafter\def\csname CaptionQT3\endcsname{从原点向上延伸的半无限细线}
+\expandafter\def\csname CaptionAT3\endcsname{半无限棒的场积分后作等分量合成}
+\expandafter\def\csname DiagramT4\endcsname#1{%
+\draw[axis] (-1.5,0)--(2.3,0) node[right] {$x$};
+\draw[axis] (0,-1.5)--(0,2.3) node[above] {$y$};
+\draw[surface] (-1.1,-1.1)--(-.7,-1.5)--(1.5,.7)--(1.1,1.1)--cycle;
+\draw[force] (0,0)--(1.2,2.4) node[above] {$\boldsymbol E$};
+\draw[force] (0,0)--(1.2,-1.2) node[right] {$\hat{\boldsymbol n}$};
+\node at (-2,1.6) {$S$};\ifnum#1=1
+\node at (3,1.6) {$\Phi=\boldsymbol E\cdot\hat{\boldsymbol n}S$};
+\node at (3,.75) {$E_n=-E_0/\sqrt2$};
+\draw[force] (0,0)--(-.6,.6) node[left] {$E_n\hat{\boldsymbol n}$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT4\endcsname{匀强场、面积及指定法矢的截面示意}
+\expandafter\def\csname CaptionAT4\endcsname{投影可为负，通量随法向反转}
+\expandafter\def\csname DiagramT5\endcsname#1{%
+\draw[axis] (-2,0)--(2.5,0) node[right] {$x$};
+\draw[axis] (0,-.7)--(0,2.15) node[above] {$y$};
+\draw[source] (0:1.5) arc (0:180:1.5);
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};
+\coordinate (D) at (45:1.5);\draw[aux] (O)--(D) node[midway,above] {$a$};
+\draw[source,line width=4pt] (42:1.5) arc (42:48:1.5);
+\node[above right] at (D) {$\mathrm dq$};
+\draw (.5,0) arc (0:45:.5);\node at (.7,.25) {$\varphi$};
+\ifnum#1=1
+\draw[force] (O)--(-.7,-.7) node[left] {$\mathrm d\boldsymbol E$};
+\draw[force] (O)--(-.7,0) node[above] {$\mathrm dE_x$};
+\draw[force] (O)--(0,-.7) node[right] {$\mathrm dE_y$};\node at (3,1.5) {$\mathrm dq=\lambda(\varphi)a\,\mathrm d\varphi$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT5\endcsname{上半圆与中心场点}
+\expandafter\def\csname CaptionAT5\endcsname{微元场向圆心，密度变化时分量分别积分}
+\expandafter\def\csname DiagramT6\endcsname#1{%
+\ifnum#1=0
+\draw[axis] (0,-1.8)--(0,2) node[above] {$z$};
+\draw[source] (0,-1.3)--(0,1.35);
+\node[left] at (0,-1.3) {$-l$};
+\node[left] at (0,1.35) {$l$};
+\node[point] (P) at (3,0) {};\node[above right] at (3,.55) {$P(r,0)$};
+\draw[aux] (P)--(3,.55);
+\draw[aux] (0,0)--(P);\node[below] at (1.5,0) {$r$};
+\draw[source,line width=4pt] (0,.6)--(0,.83);
+\node[left] at (0,.72) {$\mathrm dq$};
+\draw[aux] (0,.72)--(P) node[midway,above] {$R$};
+\node at (2,-1.25) {$\lambda=\lambda_0(1+z/l)$};\ifnum#1=1
+\draw[force] (P)--++(.75,-.18) node[right] {$\mathrm d\boldsymbol E$};
+\draw[force] (P)--++(.75,0) node[above] {$\mathrm dE_r$};
+\draw[force] (P)--++(0,-.6) node[right] {$\mathrm dE_z$};
+\fi
+
+\else
+\draw[axis] (0,-1.8)--(0,1.9) node[above] {$z$};
+\draw[source] (0,-1.4)--(0,1.4);
+\node[left] at (0,1.4) {$l$};\node[left] at (0,-1.4) {$-l$};
+\draw[source,line width=4pt] (0,.7)--(0,.85) (0,-.85)--(0,-.7);
+\node[left] at (0,.78) {$\mathrm dq_+=\lambda(z)\mathrm dz$};
+\node[left] at (0,-.78) {$\mathrm dq_-=\lambda(-z)\mathrm dz$};
+\node[point] (P) at (3,0) {};\node[above] at (P) {$P(r,0)$};
+\draw[aux] (0,.78)--(P)--(0,-.78);
+\draw[force] (P)--++(.95,-.247) node[below right] {$\mathrm d\boldsymbol E_+$};
+\draw[force] (P)--++(.48,.125) node[above right] {$\mathrm d\boldsymbol E_-$};
+\node at (1,-2.15) {图示 $\beta=1,z>0$：上侧微元电量更大};
+\node at (1,-2.7) {$E_r$ 保留密度偶部，$E_z$ 保留密度奇部};
+\fi
+
+}
+\expandafter\def\csname CaptionQT6\endcsname{非均匀棒的中垂面远场点；取 $\beta=1$}
+\expandafter\def\csname CaptionAT6\endcsname{径向总电荷项与轴向偶极项}
+\expandafter\def\csname DiagramT7\endcsname#1{%
+\draw[axis] (-2,0)--(2.2,0) node[right] {$x$};
+\draw[axis] (0,-1.8)--(0,1.9) node[above] {$y$};
+\draw[source] (-45:1.3) arc (-45:45:1.3) (135:1.3) arc (135:225:1.3);
+\draw[draw=fieldink,very thick,dashed] (45:1.3) arc (45:135:1.3) (225:1.3) arc (225:315:1.3);
+\foreach \ang in {45,135,225,315}{\draw[aux] (0,0)--(\ang:1.3);}
+\node at (45:1.7) {$\pi/4$};
+\node at (1.3,0) {$+$};\node at (-1.3,0) {$+$};
+\node at (0,1.3) {$-$};\node at (0,-1.3) {$-$};
+\node at (3.7,1) {$\lambda=\lambda_0\cos2\varphi$};
+\node at (3.9,.55) {$z$ 轴垂直环平面};\ifnum#1=1
+\node at (3.7,-.7) {$Q=0,\ \boldsymbol p=0$};
+\node at (3.7,-1.35) {轴线上的三个分量都抵消};
+\fi
+
+}
+\expandafter\def\csname CaptionQT7\endcsname{环上密度的正负区域}
+\expandafter\def\csname CaptionAT7\endcsname{轴线角积分抵消，空间其他点不一定零场}
+\expandafter\def\csname DiagramT8\endcsname#1{%
+\draw[axis] (-1.8,0)--(4.5,0) node[below right] {$x$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};\draw[surface] (0,0) ellipse[x radius=.5,y radius=1.4];
+\draw[source] (0,0) ellipse[x radius=.32,y radius=.9];
+\draw[source,line width=2.5pt] (0,0) ellipse[x radius=.34,y radius=.95];
+\node[left] at (-.5,1.4) {$a$};\node[left] at (-.34,.95) {$s,\mathrm ds$};\node[point] (P) at (3,0) {};\node[above] at (3,.85) {$P(x)$};
+\draw[aux] (P)--(3,.7);
+\draw[aux] (0,.95)--(P)--(0,-.95);
+\draw[dim] (0,-1.8)--(3,-1.8) node[midway,fill=white] {$x$};\ifnum#1=1
+\draw[force] (P)--++(.9,-.285) node[below right] {$\mathrm d\boldsymbol E_+$};
+\draw[force] (P)--++(.9,.285) node[above right] {$\mathrm d\boldsymbol E_-$};
+\draw[force] (P)--++(1.05,0) node[right,fill=white,inner sep=1pt] {$\mathrm dE_x$};
+\node at (2,1.65) {$R=\sqrt{x^2+s^2}$};
+\node at (2,-2.35) {$\mathrm dQ=2\pi\sigma s\,\mathrm ds$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT8\endcsname{圆盘轴线上的近、远场观测}
+\expandafter\def\csname CaptionAT8\endcsname{细环积分与点电荷近似的首阶修正}
+\expandafter\def\csname DiagramT9\endcsname#1{%
+\ifnum#1=0
+\ifnum#1=0
+\draw[axis] (-1.8,0)--(4.5,0) node[below right] {$x$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};\draw[surface] (0,0) ellipse[x radius=.55,y radius=1.4];
+\draw[fill=white,draw=sourceink] (0,0) ellipse[x radius=.28,y radius=.7];
+\node[left] at (-.5,1.4) {$a$};\node[left] at (-.25,.7) {$b$};\node[point] (P) at (3,0) {};\node[above] at (3,.85) {$P(x)$};
+\draw[aux] (P)--(3,.7);
+\draw[aux] (0,1.4)--(P)--(0,-1.4);
+\draw[dim] (0,-1.8)--(3,-1.8) node[midway,fill=white] {$x$};\ifnum#1=1
+\draw[force] (P)--++(.65,-.3) node[below right] {$\mathrm d\boldsymbol E_+$};
+\draw[force] (P)--++(.65,.3) node[above right] {$\mathrm d\boldsymbol E_-$};
+\draw[force] (P)--++(.8,0) node[right,fill=white,inner sep=1pt] {$E_x$};
+\node at (2,1.7) {成对微元的横向分量抵消};
+\fi
+
+\else
+\begin{scope}[xshift=-3cm]
+\draw[surface] (0,0) ellipse[x radius=.45,y radius=1.25];
+\node[above] at (0,1.25) {$a,+\sigma$};
+\draw[axis] (-.7,0)--(2.1,0);
+\node[point] at (1.4,0) {};\node[below] at (1.4,0) {$P(x)$};
+\draw[force] (1.4,.35)--(2.15,.35) node[right] {$E_a$};
+\end{scope}
+\node at (0,0) {$+$};
+\begin{scope}[xshift=1.2cm]
+\draw[fill=sourceink!6,draw=sourceink] (0,0) ellipse[x radius=.25,y radius=.7];
+\node[above] at (0,.7) {$b,-\sigma$};
+\draw[axis] (-.7,0)--(2.1,0);
+\node[point] at (1.4,0) {};\node[below] at (1.4,0) {$P(x)$};
+\draw[force] (1.4,.35)--(.65,.35) node[above] {$-E_b$};
+\end{scope}
+\node at (.2,-1.9) {$E_{\text{环面}}=E_a-E_b$（$E_b$ 指正密度内盘的场）};
+\node at (.2,-2.5) {$E_x=\dfrac{\sigma x}{2\varepsilon_0}
+\left[(x^2+b^2)^{-1/2}-(x^2+a^2)^{-1/2}\right]$};
+\fi
+
+\else
+\draw[axis] (-.2,0)--(4.5,0) node[right] {$x/b$};
+\draw[axis] (0,-.2)--(0,2.1) node[above left] {$E_x$};
+\draw[source,domain=0:4,samples=90] plot (\x,{6*\x*(1/sqrt(\x*\x+1)-1/sqrt(\x*\x+4))});
+\draw[aux] (.98683,0)--(.98683,1.56);
+\node[below] at (.98683,0) {$x_{\max}/b$};
+\node at (2.5,2.8) {图示 $a=2b,\ \sigma>0$，纵轴作比例缩放};
+\node at (6.5,1.9) {$E_x'=0\ \Longrightarrow$};
+\node at (6.5,1.1) {$\dfrac{b^2}{(x^2+b^2)^{3/2}}=\dfrac{a^2}{(x^2+a^2)^{3/2}}$};
+\node at (3.5,-.9) {原点与无穷远场为零；唯一正驻点是最大值};
+\fi
+
+}
+\expandafter\def\csname CaptionQT9\endcsname{内、外半径限定的带电环面}
+\expandafter\def\csname CaptionAT9\endcsname{求导确定唯一正轴极值}
+\expandafter\def\csname DiagramT10\endcsname#1{%
+\ifnum#1=0
+\draw[axis] (0,-1.5)--(0,2.3) node[above] {$z$};
+\node[charge] at (0,-.8) {$-q$};\node[charge] at (0,.8) {$+q$};
+\node[point] (P) at (2.7,1.35) {};\node[above] at (P) {$P$};
+\draw[aux] (0,0)--(P) node[midway,below] {$r$};
+\draw (0,.5) arc (90:26.56:.5);\node at (.45,.6) {$\theta$};
+\draw[force] (-.7,-.6)--(-.7,.6) node[midway,left] {$\boldsymbol p$};\ifnum#1=1
+\draw[force] (P)--++(.85,.425) node[right] {$E_r$};
+\draw[force] (P)--++(.35,-.7) node[below] {$E_\theta$};
+\node at (2.2,-.85) {$\boldsymbol E=\boldsymbol E_r+\boldsymbol E_\theta$};\node at (2.2,-1.5) {$E_z=0$ 时总场仍非零};
+\fi
+
+\else
+\draw[axis] (0,-1.3)--(0,2.7) node[above] {$z$};
+\node[charge] at (0,-.7) {$-q$};\node[charge] at (0,.7) {$+q$};
+\node[point] (P) at (2.1,1.48492) {};\node[above left] at (P) {$P$};
+\draw[aux] (0,0)--(P);
+\draw (0,.55) arc (90:35.2644:.55);
+\node at (.65,.65) {$\theta$};
+\draw[force] (P)--++(.8,.565685) node[right] {$\boldsymbol E_r$};
+\draw[force] (P)--++(.4,-.565685) node[below right] {$\boldsymbol E_\theta$};
+\draw[aux] (2.9,2.0506)--(2.9,1.48492) (2.5,.91924)--(2.5,1.48492);
+\draw[force] (3.5,1.48492)--(3.5,2.0506) node[right] {$E_{z,r}$};
+\draw[force] (4.5,1.48492)--(4.5,.91924) node[right] {$E_{z,\theta}$};
+\draw[force] (P)--++(1.2,0) node[midway,below=5pt,fill=white,inner sep=1pt] {$\boldsymbol E$};
+\node at (2,-1.6) {$\cos^2\theta=1/3$：两个 $z$ 投影等大反向，总场水平};
+\node at (2,-2.2) {图示上半锥 $\theta=54.7356^\circ$，仍有 $\boldsymbol E\ne0$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT10\endcsname{沿 $z$ 的偶极矩与观察角}
+\expandafter\def\csname CaptionAT10\endcsname{指定 $z$ 分量为零并不使总场消失}
+\expandafter\def\csname DiagramT11\endcsname#1{%
+\ifnum#1=0
+\node[charge] (Q) at (-2.5,0) {$q$};
+\node[point] (O) at (1,0) {};\node[below left] at (O) {$O$};\draw[surface] (.5,-1.2)--(1.5,-.8)--(1.5,1.2)--(.5,.8)--cycle;
+\node[above] at (1.5,1.2) {$2a\times2a$};\draw[aux] (Q)--(O);\draw[dim] (-2.5,-1.7)--(1,-1.7) node[midway,fill=white] {$h=a$};
+\draw[force] (O)--(2.15,0) node[below] {$\hat{\boldsymbol n}$};\ifnum#1=1
+\coordinate (D) at (1,.6);
+\draw[aux] (Q)--(D) node[midway,above] {$\boldsymbol R$};
+\draw[force] (D)--++(.9,.15429) node[right] {$\boldsymbol E$};
+\draw[force] (D)--++(.9,0) node[below right] {$E_n$};
+\node at (-.7,1.95) {$\mathrm d\Phi=E_n\mathrm dS=kq\,\mathrm d\Omega$};\node[left] at (.7,.7) {$\mathrm dS$};
+\fi
+
+\else
+\node[charge] (Q) at (-2.5,0) {$q$};
+\node[point] (O) at (1,0) {};\node[below left] at (O) {$O$};\draw[surface] (.5,-1.2)--(1.5,-.8)--(1.5,1.2)--(.5,.8)--cycle;
+\node[above] at (1.5,1.2) {$2a\times2a$};\draw[aux] (Q)--(O);\draw[dim] (-2.5,-1.7)--(1,-1.7) node[midway,fill=white] {$h=a$};
+\draw[force] (O)--(2.15,0) node[below] {$\hat{\boldsymbol n}$};\ifnum#1=1
+\coordinate (D) at (1,.6);
+\draw[aux] (Q)--(D) node[midway,above] {$\boldsymbol R$};
+\draw[force] (D)--++(.9,.15429) node[right] {$\boldsymbol E$};
+\draw[force] (D)--++(.9,0) node[below right] {$E_n$};
+\node at (-.7,1.95) {$\mathrm d\Phi=E_n\mathrm dS=kq\,\mathrm d\Omega$};\node[left] at (.7,.7) {$\mathrm dS$};
+\fi
+\begin{scope}[xshift=7cm]\coordinate (A) at (-1.5,-1);\coordinate (B) at (1,-1);
+\coordinate (C) at (1,1.2);\coordinate (D) at (-1.5,1.2);
+\coordinate (U) at (-.65,-.35);\coordinate (V) at (1.85,-.35);
+\coordinate (W) at (1.85,1.85);\coordinate (X) at (-.65,1.85);
+\draw[surface] (A)--(B)--(C)--(D)--cycle;
+\draw (B)--(V)--(W)--(C) (D)--(X)--(W);
+\draw[aux] (A)--(U)--(V) (U)--(X);
+\node[charge] (Q) at (.15,.4) {$q$};\ifnum#1=1
+\draw[force] (Q)--++(.7,0);\draw[force] (Q)--++(-.7,0);
+\draw[force] (Q)--++(0,.7);\draw[force] (Q)--++(0,-.7);
+\node at (0,-1.7) {通量按面积分；面上场强一般不均匀};
+\fi
+\end{scope}\node at (3.7,-2.7) {左：方形面立体角；右：以该面补成立方体，点源在中心};
+\fi
+
+}
+\expandafter\def\csname CaptionQT11\endcsname{图示方形面；取 $h=a$ 且两半边长为 $a$}
+\expandafter\def\csname CaptionAT11\endcsname{方形面是边长 2a 的立方体一面；中心点源向六面等分通量。}
+\expandafter\def\csname DiagramT12\endcsname#1{%
+\ifnum#1=0
+\coordinate (A) at (-1.5,-1);\coordinate (B) at (1,-1);
+\coordinate (C) at (1,1.2);\coordinate (D) at (-1.5,1.2);
+\coordinate (U) at (-.65,-.35);\coordinate (V) at (1.85,-.35);
+\coordinate (W) at (1.85,1.85);\coordinate (X) at (-.65,1.85);
+\draw[surface] (A)--(B)--(C)--(D)--cycle;
+\draw (B)--(V)--(W)--(C) (D)--(X)--(W);
+\draw[aux] (A)--(U)--(V) (U)--(X);
+\node[charge] (Q) at (.15,.4) {$+Q$};\node[charge] (N) at (3.4,.7) {$-Q$};\ifnum#1=1
+\draw[force] (Q)--(N);
+\node at (0,-1.75) {外部电荷改变局部场，但不改净通量};
+\fi
+
+\else
+\coordinate (A) at (-1.5,-1);\coordinate (B) at (1,-1);
+\coordinate (C) at (1,1.2);\coordinate (D) at (-1.5,1.2);
+\coordinate (U) at (-.65,-.35);\coordinate (V) at (1.85,-.35);
+\coordinate (W) at (1.85,1.85);\coordinate (X) at (-.65,1.85);
+\draw[surface] (A)--(B)--(C)--(D)--cycle;
+\draw (B)--(V)--(W)--(C) (D)--(X)--(W);
+\draw[aux] (A)--(U)--(V) (U)--(X);
+\node[charge] (Q) at (.15,.4) {$+Q$};\node[charge] (N) at (3.4,.7) {$-Q$};\draw[force] (-2.15,.7)--(-1.05,.7) node[midway,above] {$\boldsymbol E_{\text{外}}$};
+\draw[force] (1.65,.7)--(2.6,.7) node[midway,above] {$\boldsymbol E_{\text{外}}$};
+\draw[axis] (-1.5,.15)--(-2.25,.15) node[left] {$\boldsymbol n_L$};
+\draw[axis] (1.85,.15)--(2.6,.15) node[right] {$\boldsymbol n_R$};
+\node at (-2.4,1.45) {穿入：负通量};
+\node at (2.5,2.25) {穿出：正通量};
+\node at (.3,-1.9) {$\Phi_{\text{外}}=0$：整个闭面相消，局部场并不为零};
+\fi
+
+}
+\expandafter\def\csname CaptionQT12\endcsname{立方体内外的两个电荷}
+\expandafter\def\csname CaptionAT12\endcsname{局部场含外部电荷贡献，净通量只计内部}
+\expandafter\def\csname DiagramT13\endcsname#1{%
+\coordinate (A) at (-1.5,-1);\coordinate (B) at (1,-1);
+\coordinate (C) at (1,1.2);\coordinate (D) at (-1.5,1.2);
+\coordinate (U) at (0,.1);\coordinate (V) at (2.5,.1);
+\coordinate (W) at (2.5,2.3);\coordinate (X) at (0,2.3);
+\draw[surface] (A)--(B)--(C)--(D)--cycle;
+\draw (B)--(V)--(W)--(C) (D)--(X)--(W);
+\draw[aux] (A)--(U)--(V) (U)--(X);
+\node[point] (Q) at (.5,.65) {};\node[above right] at (Q) {$q$};\draw[fill=white,draw=sourceink] (-.25,.1) circle (.48);
+\node[left] at (-.75,.1) {$b$};\draw[dim] (Q)--(-.25,.1);
+\node at (2.8,-1.3) {$h=a/2$};\ifnum#1=1
+\draw[force] (-.25,.1)--++(-.7,-.51) node[left] {$\hat{\boldsymbol n}$};
+\node at (0,-2) {$\Phi_{\text{剩余}}=\Phi_{\text{闭合}}-\Phi_{\text{圆盘}}$};
+\fi
+
+}
+\expandafter\def\csname CaptionQT13\endcsname{中心电荷与一面中心的圆孔}
+\expandafter\def\csname CaptionAT13\endcsname{补上辅助圆盘后再从总通量中扣除}
+\expandafter\def\csname DiagramT14\endcsname#1{%
+\draw[surface] (0,0) circle (1.4);
+\draw[aux] (0,0) circle (.85);
+\draw[axis] (0,0)--(2.4,0) node[right] {$r$};
+\node[above] at (1.15,0) {$R$};\node at (-.45,.4) {$\rho$};\node[charge] at (0,0) {$q_0$};\node[left] at (-1.35,.7) {$\sigma_R$};\ifnum#1=1
+\draw[force] (.85,0)--(1.35,0) node[below] {$E_r$};
+\draw[force] (0,.85)--(0,1.3);
+\node at (4.2,.9) {$Q_{\text{内}}=4\pi\varepsilon_0r^2E_r$};
+\node at (4.2,-.45) {$\mathrm dQ=4\pi r^2\rho\,\mathrm dr$};\node at (4.2,-1.15) {另查原点常数项与界面跳跃};
+\fi
+
+}
+\expandafter\def\csname CaptionQT14\endcsname{原点、球体及球面三种电荷}
+\expandafter\def\csname CaptionAT14\endcsname{分别读取常数项、导数及界面跳跃}
+\expandafter\def\csname DiagramT15\endcsname#1{%
+\draw[axis] (-2,0)--(5,0) node[right] {$x$};
+\draw[axis] (0,-1.7)--(0,2) node[above] {$y$};
+\node[charge] at (-1.3,0) {$+q$};\node[charge] at (1.3,0) {$+q$};
+\node[charge] at (0,-1.3) {$-q$};\node[charge] at (0,1.3) {$-q$};
+\node[point] (P) at (3,0) {};\node[above] at (P) {$P(r)$};
+\node at (-2.3,1.5) {$z$ 轴垂直纸面};\ifnum#1=1
+\draw[aux] (0,1.3)--(P)--(0,-1.3);
+\draw[force] (P)--++(.75,0) node[below] {$E_x\sim r^{-4}$};
+\node at (0,-2.1) {$z$ 轴全部分量抵消；$x$ 轴保留四极项};
+\fi
+
+}
+\expandafter\def\csname CaptionQT15\endcsname{两对异号电荷与特殊观测轴}
+\expandafter\def\csname CaptionAT15\endcsname{不同方向分别处理抵消与展开}
+\expandafter\def\csname DiagramT16\endcsname#1{%
+\ifnum#1=0
+\draw[axis] (-1.8,0)--(4.5,0) node[below right] {$x$};
+\node[point] (O) at (0,0) {};\node[below left] at (O) {$O$};\draw[source] (0,0) ellipse[x radius=.6,y radius=1.6];
+\draw[source] (0,0) ellipse[x radius=.3,y radius=.8];
+\node[left] at (-.6,1.6) {$2a,-8Q$};\node[left] at (-.3,.8) {$a,Q$};\node[point] (P) at (3,0) {};\node[above] at (3,.85) {$P(x)$};
+\draw[aux] (P)--(3,.7);
+\draw[aux] (0,1.4)--(P)--(0,-1.4);
+\draw[dim] (0,-1.8)--(3,-1.8) node[midway,fill=white] {$x$};\ifnum#1=1
+\node at (2,1.9) {两个圆环的线性项抵消};
+\draw[force] (P)--++(-.85,0) node[below,fill=white,inner sep=1pt] {$E_x\sim-x^3$};
+\fi
+
+\else
+\draw[source] (0,0) ellipse[x radius=.35,y radius=1.5];
+\draw[source] (0,0) ellipse[x radius=.175,y radius=.75];
+\node[left] at (-.35,1.5) {$2a,-8Q$};
+\node[left] at (-.175,.75) {$a,+Q$};
+\draw[axis] (-1,0)--(2.6,0) node[right] {$x$};
+\node[point] at (0,0) {};\node[below left] at (0,0) {$O$};
+\node[charge,draw=ink] (P) at (.45,0) {$q_t>0$};
+\draw[force] (P.north)--++(-.5,0) node[above] {$F_x$};
+\node at (4.7,.9) {$E_1\simeq +(kQ/a^3)x$};
+\node at (4.7,.15) {$E_2\simeq -(kQ/a^3)x$};
+\node at (4.7,-.65) {$E_1+E_2\simeq-9kQx^3/(8a^5)$};
+\node at (2.1,-2.1) {$|x|\ll a$：一次项抵消，三次项使正粒子恢复};
+\fi
+
+}
+\expandafter\def\csname CaptionQT16\endcsname{同心共面圆环与轴线粒子}
+\expandafter\def\csname CaptionAT16\endcsname{线性项抵消后保留三次恢复项}
+\expandafter\def\csname DiagramT17\endcsname#1{%
+\draw[thick] (-2,1.7)--(2,1.7) (-2,-1.4)--(2,-1.4);
+\node[above] at (0,1.7) {平行极板};
+\node[charge,draw=ink] (P) at (0,.2) {$q$};
+\draw[axis] (2.6,-1.2)--(2.6,1.5) node[above] {$y$};
+\node at (-2.7,.4) {$b,\Delta\rho,\eta$};
+\draw[->,thick] (-1,.1)--(-1,-.7) node[left] {$\boldsymbol v$};\ifnum#1=1
+\draw[force] (P.north)--++(0,.9) node[right] {$|q|E$};
+\draw[force] (.4,.2)--++(0,-.85) node[right] {$G$};\draw[force] (-.4,.2)--++(0,.8) node[left] {$6\pi\eta bv$};
+\node at (0,-2) {仍向下：阻力向上};
+\fi
+
+}
+\expandafter\def\csname CaptionQT17\endcsname{加场后仍向下运动的油滴}
+\expandafter\def\csname CaptionAT17\endcsname{重力向下，电力与黏滞阻力均向上}
+\expandafter\def\csname DiagramT18\endcsname#1{%
+\draw[axis] (0,0)--(5.8,0) node[right] {$n$};
+\draw[axis] (0,0)--(0,2.7) node[above] {$q/(10^{-19}\,\mathrm C)$};
+\foreach \x/\y/\n in {2/.96/2,3/1.443/3,4/1.92/4,5/2.406/5}{
+\node[point] at (\x,\y) {};\node[below] at (\x,0) {$\n$};}
+\node[left] at (0,.96) {$3.20$};\node[left] at (0,2.406) {$8.02$};\ifnum#1=1
+\draw[force] (0,0)--(5.2,2.49976) node[above left] {$q\simeq n\widehat e$};
+\node at (2,-.85) {斜率由最小二乘确定；逐点检查残差};
+\fi
+
+}
+\expandafter\def\csname CaptionQT18\endcsname{给定整数阶次的四次电荷测量}
+\expandafter\def\csname CaptionAT18\endcsname{用原始数值拟合斜率，并检查残差}
+% ===== 可编辑正文 =====
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ===== 图像数据与排版 =====
+
+\begin{document}
+\section*{2-W1\quad 有限带电棒的一般场点}
+\setcounter{figure}{17}\ProblemDiagram{W1}
+\bigskip\setcounter{figure}{18}\AnalysisDiagram{W1}\clearpage
+\section*{2-W2\quad 非均匀带电棒的电场}
+\setcounter{figure}{19}\ProblemDiagram{W2}
+\bigskip\setcounter{figure}{20}\AnalysisDiagram{W2}\clearpage
+\section*{2-W3\quad 均匀圆弧与带角度变化的圆环}
+\setcounter{figure}{21}\ProblemDiagram{W3}
+\bigskip\setcounter{figure}{22}\AnalysisDiagram{W3}\clearpage
+\section*{2-W4\quad 圆环轴线：最大场强与约束下的小振动}
+\setcounter{figure}{23}\ProblemDiagram{W4}
+\bigskip\setcounter{figure}{24}\AnalysisDiagram{W4}\clearpage
+\section*{2-W5\quad 从圆环积分得到圆盘}
+\setcounter{figure}{25}\ProblemDiagram{W5}
+\bigskip\setcounter{figure}{26}\AnalysisDiagram{W5}\clearpage
+\section*{2-W6\quad 带孔圆盘与叠加法}
+\setcounter{figure}{27}\ProblemDiagram{W6}
+\bigskip\setcounter{figure}{28}\AnalysisDiagram{W6}\clearpage
+\section*{2-W7\quad 电偶极子的一般远场与近似精度}
+\setcounter{figure}{29}\ProblemDiagram{W7}
+\bigskip\setcounter{figure}{30}\AnalysisDiagram{W7}\clearpage
+\section*{2-W8\quad 点电荷通过开曲面的通量}
+\setcounter{figure}{31}\ProblemDiagram{W8}
+\bigskip\setcounter{figure}{32}\AnalysisDiagram{W8}\clearpage
+\section*{2-W9\quad 立方体的通量与边界奇点}
+\setcounter{figure}{33}\ProblemDiagram{W9}
+\bigskip\setcounter{figure}{34}\AnalysisDiagram{W9}\clearpage
+\section*{2-W10\quad 由已知球对称场反演电荷分布}
+\setcounter{figure}{35}\ProblemDiagram{W10}
+\bigskip\setcounter{figure}{36}\AnalysisDiagram{W10}\clearpage
+\section*{2-W11\quad 油滴实验：从两次终速反演电荷}
+\setcounter{figure}{37}\ProblemDiagram{W11}
+\bigskip\setcounter{figure}{38}\AnalysisDiagram{W11}\clearpage
+\section*{2-W12\quad 总电荷和偶极矩都为零：首个非零远场}
+\setcounter{figure}{39}\ProblemDiagram{W12}
+\bigskip\setcounter{figure}{40}\AnalysisDiagram{W12}\clearpage
+\section*{2-T1\quad 非均匀电荷密度的归一化}
+\setcounter{figure}{41}\ProblemDiagram{T1}
+\bigskip\setcounter{figure}{59}\AnalysisDiagram{T1}\clearpage
+\section*{2-T2\quad 对称点电荷的电场与极值}
+\setcounter{figure}{42}\ProblemDiagram{T2}
+\bigskip\setcounter{figure}{60}\AnalysisDiagram{T2}\clearpage
+\section*{2-T3\quad 半无限长带电直线}
+\setcounter{figure}{43}\ProblemDiagram{T3}
+\bigskip\setcounter{figure}{61}\AnalysisDiagram{T3}\clearpage
+\section*{2-T4\quad 通量是带符号的投影}
+\setcounter{figure}{44}\ProblemDiagram{T4}
+\bigskip\setcounter{figure}{62}\AnalysisDiagram{T4}\clearpage
+\section*{2-T5\quad 上半圆的中心场}
+\setcounter{figure}{45}\ProblemDiagram{T5}
+\bigskip\setcounter{figure}{63}\AnalysisDiagram{T5}\clearpage
+\section*{2-T6\quad 非均匀棒的远场方向}
+\setcounter{figure}{46}\ProblemDiagram{T6}
+\bigskip\setcounter{figure}{64}\AnalysisDiagram{T6}\clearpage
+\section*{2-T7\quad 轴线上零场不等于空间处处零场}
+\setcounter{figure}{47}\ProblemDiagram{T7}
+\bigskip\setcounter{figure}{65}\AnalysisDiagram{T7}\clearpage
+\section*{2-T8\quad 圆盘与点电荷近似}
+\setcounter{figure}{48}\ProblemDiagram{T8}
+\bigskip\setcounter{figure}{66}\AnalysisDiagram{T8}\clearpage
+\section*{2-T9\quad 圆环形带电面的最大场}
+\setcounter{figure}{49}\ProblemDiagram{T9}
+\bigskip\setcounter{figure}{67}\AnalysisDiagram{T9}\clearpage
+\section*{2-T10\quad 一个分量为零的方向}
+\setcounter{figure}{50}\ProblemDiagram{T10}
+\bigskip\setcounter{figure}{68}\AnalysisDiagram{T10}\clearpage
+\section*{2-T11\quad 矩形通量与立方体面的联系}
+\setcounter{figure}{51}\ProblemDiagram{T11}
+\bigskip\setcounter{figure}{69}\AnalysisDiagram{T11}\clearpage
+\section*{2-T12\quad 面外电荷与电场通量}
+\setcounter{figure}{52}\ProblemDiagram{T12}
+\bigskip\setcounter{figure}{70}\AnalysisDiagram{T12}\clearpage
+\section*{2-T13\quad 挑战：有孔立方体的开曲面通量}
+\setcounter{figure}{53}\ProblemDiagram{T13}
+\bigskip\setcounter{figure}{71}\AnalysisDiagram{T13}\clearpage
+\section*{2-T14\quad 挑战：体电荷、点电荷和面电荷同时反演}
+\setcounter{figure}{54}\ProblemDiagram{T14}
+\bigskip\setcounter{figure}{72}\AnalysisDiagram{T14}\clearpage
+\section*{2-T15\quad 挑战：四电荷的方向性抵消}
+\setcounter{figure}{55}\ProblemDiagram{T15}
+\bigskip\setcounter{figure}{73}\AnalysisDiagram{T15}\clearpage
+\section*{2-T16\quad 挑战：线性恢复项被抵消}
+\setcounter{figure}{56}\ProblemDiagram{T16}
+\bigskip\setcounter{figure}{74}\AnalysisDiagram{T16}\clearpage
+\section*{2-T17\quad 挑战：油滴仍在向下运动}
+\setcounter{figure}{57}\ProblemDiagram{T17}
+\bigskip\setcounter{figure}{75}\AnalysisDiagram{T17}\clearpage
+\section*{2-T18\quad 挑战：量子性数据的参数拟合}
+\setcounter{figure}{58}\ProblemDiagram{T18}
+\bigskip\setcounter{figure}{76}\AnalysisDiagram{T18}\clearpage
+\end{document}

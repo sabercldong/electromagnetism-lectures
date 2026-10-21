@@ -1,0 +1,4815 @@
+{
+  "count": 472,
+  "count_description": "每次独立计算与一个解析结论的比较计一个参数实例；不是独立公式数量。",
+  "all_passed": true,
+  "groups": {
+    "独立面积积分": 62,
+    "有限差分反演": 10,
+    "独立数值极值": 3,
+    "独立线积分": 1,
+    "独立方程求解": 3,
+    "独立周期积分": 25,
+    "独立弛豫积分": 36,
+    "独立空间积分": 26,
+    "有限差分": 3,
+    "独立时间积分": 3,
+    "变化参数": 9,
+    "有限差分场方程": 24,
+    "独立积分场方程": 12,
+    "误差界": 4,
+    "数值边界": 3,
+    "有限差分行波": 12,
+    "有限差分驻波": 12,
+    "有限差分纵向场": 12,
+    "有限差分给定源": 8,
+    "独立初值求导": 4,
+    "独立耦合方程积分": 24,
+    "独立同轴积分": 6,
+    "有限差分同轴守恒": 3,
+    "独立横向耦合积分": 18,
+    "独立RC能量积分": 36,
+    "有限差分RC极值": 3,
+    "RC极值": 3,
+    "独立磁能空间积分": 3,
+    "独立两层弛豫积分": 48,
+    "两层界面守恒": 36,
+    "两层最终能量": 3,
+    "SI数值代入": 17
+  },
+  "records": [
+    {
+      "group": "独立面积积分",
+      "name": "均匀圆板磁场",
+      "computed": 0.025,
+      "reference": 0.025,
+      "normalizing_scale": 0.025,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "均匀圆板磁场",
+      "computed": 0.1,
+      "reference": 0.1,
+      "normalizing_scale": 0.1,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "均匀圆板磁场",
+      "computed": 0.24999999999999997,
+      "reference": 0.25,
+      "normalizing_scale": 0.25,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "均匀圆板磁场",
+      "computed": 0.4,
+      "reference": 0.4,
+      "normalizing_scale": 0.4,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "均匀圆板磁场",
+      "computed": 0.49999999999999994,
+      "reference": 0.5,
+      "normalizing_scale": 0.5,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "均匀圆板磁场",
+      "computed": 0.33333333333333326,
+      "reference": 0.3333333333333333,
+      "normalizing_scale": 0.3333333333333333,
+      "normalized_error": 1.6653345369377348e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "均匀圆板磁场",
+      "computed": 0.16666666666666663,
+      "reference": 0.16666666666666666,
+      "normalizing_scale": 0.16666666666666666,
+      "normalized_error": 1.6653345369377348e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.0,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.0,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.26590909090909093,
+      "reference": 0.26590909090909093,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.49499999999999994,
+      "reference": 0.495,
+      "normalizing_scale": 1.0,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.24749999999999997,
+      "reference": 0.2475,
+      "normalizing_scale": 1.0,
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.0,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.0,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.20833333333333337,
+      "reference": 0.20833333333333334,
+      "normalizing_scale": 1.0,
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.375,
+      "reference": 0.375,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.1875,
+      "reference": 0.1875,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.0,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.0,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.09444444444444441,
+      "reference": 0.09444444444444439,
+      "normalizing_scale": 1.0,
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.1799999999999999,
+      "reference": 0.17999999999999994,
+      "normalizing_scale": 1.0,
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "环形极板磁场",
+      "computed": 0.08999999999999996,
+      "reference": 0.08999999999999997,
+      "normalizing_scale": 1.0,
+      "normalized_error": 1.3877787807814457e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电电容",
+      "computed": 2.3561944901923395,
+      "reference": 2.356194490192345,
+      "normalizing_scale": 2.356194490192345,
+      "normalized_error": 2.2617277734851675e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.04987499999999999,
+      "reference": 0.049875,
+      "normalizing_scale": 0.049875,
+      "normalized_error": 2.782513846178337e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分反演",
+      "name": "由场反求介电",
+      "computed": 0.9949999999998008,
+      "reference": 0.995,
+      "normalizing_scale": 0.995,
+      "normalized_error": 2.0017488504296792e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.23437499999999983,
+      "reference": 0.234375,
+      "normalizing_scale": 0.234375,
+      "normalized_error": 7.105427357601002e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分反演",
+      "name": "由场反求介电",
+      "computed": 0.8749999999964804,
+      "reference": 0.875,
+      "normalizing_scale": 0.875,
+      "normalized_error": 4.022433180190482e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.37499999999999917,
+      "reference": 0.375,
+      "normalizing_scale": 0.375,
+      "normalized_error": 2.220446049250313e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.18749999999999958,
+      "reference": 0.1875,
+      "normalizing_scale": 0.1875,
+      "normalized_error": 2.220446049250313e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电电容",
+      "computed": 3.1415926535897927,
+      "reference": 3.141592653589793,
+      "normalizing_scale": 3.141592653589793,
+      "normalized_error": 1.4135798584282297e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.05,
+      "reference": 0.05,
+      "normalizing_scale": 0.05,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分反演",
+      "name": "由场反求介电",
+      "computed": 0.9999999999993375,
+      "reference": 1.0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 6.624700787938309e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.24999999999999997,
+      "reference": 0.25,
+      "normalizing_scale": 0.25,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分反演",
+      "name": "由场反求介电",
+      "computed": 0.9999999999968366,
+      "reference": 1.0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 3.1633584640644585e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.49999999999999994,
+      "reference": 0.5,
+      "normalizing_scale": 0.5,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.24999999999999997,
+      "reference": 0.25,
+      "normalizing_scale": 0.25,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电电容",
+      "computed": 3.9269908169872467,
+      "reference": 3.9269908169872414,
+      "normalizing_scale": 3.9269908169872414,
+      "normalized_error": 1.3570366640911006e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.05012500000000001,
+      "reference": 0.050125,
+      "normalizing_scale": 0.050125,
+      "normalized_error": 1.3843179858169032e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分反演",
+      "name": "由场反求介电",
+      "computed": 1.0050000000000305,
+      "reference": 1.005,
+      "normalizing_scale": 1.005,
+      "normalized_error": 3.048970694492968e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.26562500000000017,
+      "reference": 0.265625,
+      "normalizing_scale": 0.265625,
+      "normalized_error": 6.269494727295002e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分反演",
+      "name": "由场反求介电",
+      "computed": 1.1249999999985807,
+      "reference": 1.125,
+      "normalizing_scale": 1.125,
+      "normalized_error": 1.261608101938489e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.6250000000000009,
+      "reference": 0.625,
+      "normalizing_scale": 0.625,
+      "normalized_error": 1.4210854715202005e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.31250000000000044,
+      "reference": 0.3125,
+      "normalizing_scale": 0.3125,
+      "normalized_error": 1.4210854715202005e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电电容",
+      "computed": 6.28318530717961,
+      "reference": 6.283185307179586,
+      "normalizing_scale": 6.283185307179586,
+      "normalized_error": 3.81666561775622e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.05049999999999998,
+      "reference": 0.0505,
+      "normalizing_scale": 0.0505,
+      "normalized_error": 4.1221151904399374e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分反演",
+      "name": "由场反求介电",
+      "computed": 1.0200000000000138,
+      "reference": 1.02,
+      "normalizing_scale": 1.02,
+      "normalized_error": 1.3496828926815628e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.31250000000000044,
+      "reference": 0.3125,
+      "normalizing_scale": 0.3125,
+      "normalized_error": 1.4210854715202005e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分反演",
+      "name": "由场反求介电",
+      "computed": 1.499999999996874,
+      "reference": 1.5,
+      "normalizing_scale": 1.5,
+      "normalized_error": 2.0839626320897273e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 1.0000000000000038,
+      "reference": 1.0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 3.774758283725532e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.5000000000000019,
+      "reference": 0.5,
+      "normalizing_scale": 0.5,
+      "normalized_error": 3.774758283725532e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电电容",
+      "computed": 10.995574287564338,
+      "reference": 10.995574287564276,
+      "normalizing_scale": 10.995574287564276,
+      "normalized_error": 5.654319433712919e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.05125000000000002,
+      "reference": 0.051250000000000004,
+      "normalizing_scale": 0.051250000000000004,
+      "normalized_error": 2.7078610356711135e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分反演",
+      "name": "由场反求介电",
+      "computed": 1.0499999999992573,
+      "reference": 1.05,
+      "normalizing_scale": 1.05,
+      "normalized_error": 7.073706699754569e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.40625000000000117,
+      "reference": 0.40625,
+      "normalizing_scale": 0.40625,
+      "normalized_error": 2.8694995098004047e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分反演",
+      "name": "由场反求介电",
+      "computed": 2.249999999993923,
+      "reference": 2.25,
+      "normalizing_scale": 2.25,
+      "normalized_error": 2.700851887817003e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 1.75000000000001,
+      "reference": 1.75,
+      "normalizing_scale": 1.75,
+      "normalized_error": 5.709718412357948e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "径向介电磁场",
+      "computed": 0.875000000000005,
+      "reference": 0.875,
+      "normalizing_scale": 0.875,
+      "normalized_error": 5.709718412357948e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 0.19802640211919198,
+      "reference": 0.19802640211919206,
+      "normalizing_scale": 0.19802640211919206,
+      "normalized_error": 4.20482955584723e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 0.695442234973094,
+      "reference": 0.6954422349730947,
+      "normalizing_scale": 0.6954422349730947,
+      "normalized_error": 9.578564275735502e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 0.917946767215781,
+      "reference": 0.9179467672157826,
+      "normalizing_scale": 0.9179467672157826,
+      "normalized_error": 1.814195110669487e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 1.2454210902778147,
+      "reference": 1.2454210902778164,
+      "normalizing_scale": 1.2454210902778164,
+      "normalized_error": 1.426310228136572e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 1.6666460983659845,
+      "reference": 1.6666460983659857,
+      "normalizing_scale": 1.6666460983659857,
+      "normalized_error": 6.661420356209049e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 0.5901320105959598,
+      "reference": 0.5901320105959603,
+      "normalizing_scale": 0.5901320105959603,
+      "normalized_error": 9.406565011648569e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 1.8772111748654698,
+      "reference": 1.8772111748654732,
+      "normalizing_scale": 1.8772111748654732,
+      "normalized_error": 1.7742644612767958e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 2.189733836078905,
+      "reference": 2.189733836078913,
+      "normalizing_scale": 2.189733836078913,
+      "normalized_error": 3.6504919664643005e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 2.227105451389074,
+      "reference": 2.2271054513890824,
+      "normalizing_scale": 2.2271054513890824,
+      "normalized_error": 3.7886373911430465e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 2.3332304918299207,
+      "reference": 2.333230491829928,
+      "normalizing_scale": 2.333230491829928,
+      "normalized_error": 3.0453173754078155e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 2.0605280423838397,
+      "reference": 2.060528042383841,
+      "normalizing_scale": 2.060528042383841,
+      "normalized_error": 6.465661238994238e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 6.308844699461879,
+      "reference": 6.3088446994618925,
+      "normalizing_scale": 6.3088446994618925,
+      "normalized_error": 2.111745799771902e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 6.958935344315624,
+      "reference": 6.958935344315652,
+      "normalizing_scale": 6.958935344315652,
+      "normalized_error": 3.956572327287739e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 5.908421805556293,
+      "reference": 5.908421805556329,
+      "normalizing_scale": 5.908421805556329,
+      "normalized_error": 6.012965552763175e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立面积积分",
+      "name": "指数介电剖面",
+      "computed": 4.832921967319685,
+      "reference": 4.832921967319711,
+      "normalizing_scale": 4.832921967319711,
+      "normalized_error": 5.513300808740555e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立数值极值",
+      "name": "内部峰位置",
+      "computed": 1.1907674694346078,
+      "reference": 1.1907674694345172,
+      "normalizing_scale": 1.1907674694345172,
+      "normalized_error": 7.608051205197518e-14,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "group": "独立数值极值",
+      "name": "内部峰大小",
+      "computed": 13.918431768758797,
+      "reference": 13.91843176909858,
+      "normalizing_scale": 13.91843176909858,
+      "normalized_error": 2.4412471048045753e-11,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "group": "独立数值极值",
+      "name": "边缘场较低",
+      "computed": 9.665843934639422,
+      "reference": 9.665843934638,
+      "normalizing_scale": 9.665843934638,
+      "normalized_error": 1.4720513159339449e-13,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "group": "独立线积分",
+      "name": "偏心环流",
+      "computed": 1.2283696986087576,
+      "reference": 1.2283696986087567,
+      "normalizing_scale": 1.2283696986087567,
+      "normalized_error": 7.230546477221558e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立方程求解",
+      "name": "两曲面全电流",
+      "computed": 0.6000000000000001,
+      "reference": 0.6000000000000001,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立方程求解",
+      "name": "两曲面全电流",
+      "computed": 0.30000000000000004,
+      "reference": 0.30000000000000004,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立方程求解",
+      "name": "两曲面全电流",
+      "computed": 0.30000000000000004,
+      "reference": 0.30000000000000004,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化平均损耗",
+      "computed": 0.038461538461538755,
+      "reference": 0.03846153846153847,
+      "normalizing_scale": 0.03846153846153847,
+      "normalized_error": 7.396860901565104e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化耗散分解",
+      "computed": 0.03846153846153821,
+      "reference": 0.038461538461538755,
+      "normalizing_scale": 0.038461538461538755,
+      "normalized_error": 1.425248807862534e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "稳态极化周期",
+      "computed": 1.3598207330501337,
+      "reference": 1.359820733051053,
+      "normalizing_scale": 1.359820733051053,
+      "normalized_error": 6.760190090108862e-13,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "源功与热",
+      "computed": 0.038461538461472905,
+      "reference": 0.038461538461538755,
+      "normalizing_scale": 0.038461538461538755,
+      "normalized_error": 1.7121026818500564e-12,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "内部能收支",
+      "computed": -2.8252955530660984e-12,
+      "reference": -1.2501111257279263e-12,
+      "normalizing_scale": 1.0,
+      "normalized_error": 1.575184427338172e-12,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化平均损耗",
+      "computed": 0.5000000000000038,
+      "reference": 0.5,
+      "normalizing_scale": 0.5,
+      "normalized_error": 7.549516567451064e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化耗散分解",
+      "computed": 0.5,
+      "reference": 0.5000000000000038,
+      "normalizing_scale": 0.5000000000000038,
+      "normalized_error": 7.549516567451008e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "稳态极化周期",
+      "computed": 0.7071067811865842,
+      "reference": 0.7071067811865476,
+      "normalizing_scale": 0.7071067811865476,
+      "normalized_error": 5.181305113656457e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "源功与热",
+      "computed": 0.500000000000046,
+      "reference": 0.5000000000000038,
+      "normalizing_scale": 0.5000000000000038,
+      "normalized_error": 8.437694987151127e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "内部能收支",
+      "computed": -1.5276668818842154e-13,
+      "reference": 2.5868196473766147e-14,
+      "normalizing_scale": 1.0,
+      "normalized_error": 1.7863488466218769e-13,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化平均损耗",
+      "computed": 0.900000000000007,
+      "reference": 0.9,
+      "normalizing_scale": 0.9,
+      "normalized_error": 7.771561172376096e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化耗散分解",
+      "computed": 0.9000000000000052,
+      "reference": 0.900000000000007,
+      "normalizing_scale": 0.900000000000007,
+      "normalized_error": 1.9737298215558186e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "稳态极化周期",
+      "computed": 0.14142135623739985,
+      "reference": 0.1414213562373095,
+      "normalizing_scale": 0.1414213562373095,
+      "normalized_error": 6.38831369126961e-13,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "源功与热",
+      "computed": 0.9000000000000444,
+      "reference": 0.900000000000007,
+      "normalizing_scale": 0.900000000000007,
+      "normalized_error": 4.1571684366519424e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "内部能收支",
+      "computed": 7.105427357601002e-15,
+      "reference": 1.2776238400569184e-14,
+      "normalizing_scale": 1.0,
+      "normalized_error": 5.670811042968182e-15,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化平均损耗",
+      "computed": 0.9900990099009976,
+      "reference": 0.9900990099009901,
+      "normalizing_scale": 0.9900990099009901,
+      "normalized_error": 7.625011733125576e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化耗散分解",
+      "computed": 0.9900990099009973,
+      "reference": 0.9900990099009976,
+      "normalizing_scale": 0.9900990099009976,
+      "normalized_error": 3.3639757646141985e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "稳态极化周期",
+      "computed": 0.014002114478924289,
+      "reference": 0.014002114478941535,
+      "normalizing_scale": 0.014002114478941535,
+      "normalized_error": 1.2317154544122213e-12,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "源功与热",
+      "computed": 0.990099009901016,
+      "reference": 0.9900990099009976,
+      "normalizing_scale": 0.9900990099009976,
+      "normalized_error": 1.8501866705378092e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "内部能收支",
+      "computed": -7.771561172376096e-16,
+      "reference": -2.4149248139399004e-16,
+      "normalizing_scale": 1.0,
+      "normalized_error": 5.356636358436195e-16,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化平均损耗",
+      "computed": 0.11538461538461628,
+      "reference": 0.1153846153846154,
+      "normalizing_scale": 0.1153846153846154,
+      "normalized_error": 7.577272143066692e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化耗散分解",
+      "computed": 0.11538461538461459,
+      "reference": 0.11538461538461628,
+      "normalizing_scale": 0.11538461538461628,
+      "normalized_error": 1.4673447642129038e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "稳态极化周期",
+      "computed": 4.079462199150401,
+      "reference": 4.079462199153159,
+      "normalizing_scale": 4.079462199153159,
+      "normalized_error": 6.760190090108862e-13,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "源功与热",
+      "computed": 0.11538461538441917,
+      "reference": 0.11538461538461628,
+      "normalizing_scale": 0.11538461538461628,
+      "normalized_error": 1.7082539086980224e-12,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "内部能收支",
+      "computed": -8.450129485026991e-12,
+      "reference": -3.749889287973929e-12,
+      "normalizing_scale": 1.0,
+      "normalized_error": 4.700240197053063e-12,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化平均损耗",
+      "computed": 1.500000000000011,
+      "reference": 1.5,
+      "normalizing_scale": 1.5,
+      "normalized_error": 7.401486830834377e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化耗散分解",
+      "computed": 1.5000000000000007,
+      "reference": 1.500000000000011,
+      "normalizing_scale": 1.500000000000011,
+      "normalized_error": 6.957397620984263e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "稳态极化周期",
+      "computed": 2.1213203435597556,
+      "reference": 2.121320343559643,
+      "normalizing_scale": 2.121320343559643,
+      "normalized_error": 5.317379793409051e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "源功与热",
+      "computed": 1.5000000000001403,
+      "reference": 1.500000000000011,
+      "normalizing_scale": 1.500000000000011,
+      "normalized_error": 8.61533067109115e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "内部能收支",
+      "computed": -3.907985046680551e-13,
+      "reference": 7.978802803639458e-14,
+      "normalizing_scale": 1.0,
+      "normalized_error": 4.705865327044497e-13,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化平均损耗",
+      "computed": 2.7000000000000197,
+      "reference": 2.7,
+      "normalizing_scale": 2.7,
+      "normalized_error": 7.237009345704723e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化耗散分解",
+      "computed": 2.7000000000000166,
+      "reference": 2.7000000000000197,
+      "normalizing_scale": 2.7000000000000197,
+      "normalized_error": 1.1513423959075613e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "稳态极化周期",
+      "computed": 0.42426406871220274,
+      "reference": 0.42426406871192857,
+      "normalizing_scale": 0.42426406871192857,
+      "normalized_error": 6.46223887786597e-13,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "源功与热",
+      "computed": 2.7000000000001276,
+      "reference": 2.7000000000000197,
+      "normalizing_scale": 2.7000000000000197,
+      "normalized_error": 3.9968028886505345e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "内部能收支",
+      "computed": -4.440892098500626e-15,
+      "reference": 3.877453913503359e-14,
+      "normalizing_scale": 1.0,
+      "normalized_error": 4.321543123353422e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化平均损耗",
+      "computed": 2.9702970297029916,
+      "reference": 2.9702970297029703,
+      "normalizing_scale": 2.9702970297029703,
+      "normalized_error": 7.176481631177012e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化耗散分解",
+      "computed": 2.9702970297029925,
+      "reference": 2.9702970297029916,
+      "normalizing_scale": 2.9702970297029916,
+      "normalized_error": 2.9902006796570666e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "稳态极化周期",
+      "computed": 0.0420063434367729,
+      "reference": 0.04200634343682461,
+      "normalizing_scale": 0.04200634343682461,
+      "normalized_error": 1.2311373005745702e-12,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "源功与热",
+      "computed": 2.9702970297030555,
+      "reference": 2.9702970297029916,
+      "normalizing_scale": 2.9702970297029916,
+      "normalized_error": 2.1529444893530883e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "内部能收支",
+      "computed": 2.886579864025407e-15,
+      "reference": -7.241386310030684e-16,
+      "normalizing_scale": 1.0,
+      "normalized_error": 3.6107184950284754e-15,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化平均损耗",
+      "computed": 0.19230769230769382,
+      "reference": 0.19230769230769232,
+      "normalizing_scale": 0.19230769230769232,
+      "normalized_error": 7.7937656328686e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化耗散分解",
+      "computed": 0.192307692307691,
+      "reference": 0.19230769230769382,
+      "normalizing_scale": 0.19230769230769382,
+      "normalized_error": 1.457722831332819e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "稳态极化周期",
+      "computed": 6.79910366525067,
+      "reference": 6.799103665255265,
+      "normalizing_scale": 6.799103665255265,
+      "normalized_error": 6.757577456257612e-13,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "源功与热",
+      "computed": 0.19230769230736508,
+      "reference": 0.19230769230769382,
+      "normalizing_scale": 0.19230769230769382,
+      "normalized_error": 1.7094325954758326e-12,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "内部能收支",
+      "computed": -1.411670780271379e-11,
+      "reference": -6.247802275538561e-12,
+      "normalizing_scale": 1.0,
+      "normalized_error": 7.86890552717523e-12,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化平均损耗",
+      "computed": 2.5000000000000195,
+      "reference": 2.5,
+      "normalizing_scale": 2.5,
+      "normalized_error": 7.815970093361103e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化耗散分解",
+      "computed": 2.5,
+      "reference": 2.5000000000000195,
+      "normalizing_scale": 2.5000000000000195,
+      "normalized_error": 7.815970093361041e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "稳态极化周期",
+      "computed": 3.535533905932923,
+      "reference": 3.5355339059327378,
+      "normalizing_scale": 3.5355339059327378,
+      "normalized_error": 5.2378284421690734e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "源功与热",
+      "computed": 2.5000000000002363,
+      "reference": 2.5000000000000195,
+      "normalizing_scale": 2.5000000000000195,
+      "normalized_error": 8.668621376273155e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "内部能收支",
+      "computed": -6.288303211476887e-13,
+      "reference": 1.3091749906379846e-13,
+      "normalizing_scale": 1.0,
+      "normalized_error": 7.597478202114871e-13,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化平均损耗",
+      "computed": 4.500000000000034,
+      "reference": 4.5,
+      "normalizing_scale": 4.5,
+      "normalized_error": 7.500173321912169e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化耗散分解",
+      "computed": 4.500000000000028,
+      "reference": 4.500000000000034,
+      "normalizing_scale": 4.500000000000034,
+      "normalized_error": 1.1842378929334914e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "稳态极化周期",
+      "computed": 0.707106781187001,
+      "reference": 0.7071067811865476,
+      "normalizing_scale": 0.7071067811865476,
+      "normalized_error": 6.412257601264537e-13,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "源功与热",
+      "computed": 4.500000000000205,
+      "reference": 4.500000000000034,
+      "normalizing_scale": 4.500000000000034,
+      "normalized_error": 3.8092985556027307e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "内部能收支",
+      "computed": -1.7763568394002505e-15,
+      "reference": 6.411537967210279e-14,
+      "normalizing_scale": 1.0,
+      "normalized_error": 6.589173651150304e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化平均损耗",
+      "computed": 4.950495049504989,
+      "reference": 4.9504950495049505,
+      "normalizing_scale": 4.9504950495049505,
+      "normalized_error": 7.714717753515288e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "极化耗散分解",
+      "computed": 4.950495049504989,
+      "reference": 4.950495049504989,
+      "normalizing_scale": 4.950495049504989,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "稳态极化周期",
+      "computed": 0.0700105723946217,
+      "reference": 0.07001057239470768,
+      "normalizing_scale": 0.07001057239470768,
+      "normalized_error": 1.2279987511701808e-12,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "源功与热",
+      "computed": 4.9504950495051006,
+      "reference": 4.950495049504989,
+      "normalizing_scale": 4.950495049504989,
+      "normalized_error": 2.2605917138207412e-14,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立弛豫积分",
+      "name": "内部能收支",
+      "computed": 6.661338147750939e-15,
+      "reference": -1.2038113561541054e-15,
+      "normalizing_scale": 1.0,
+      "normalized_error": 7.865149503905044e-15,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形场能",
+      "computed": 0.015024768786539112,
+      "reference": 0.015024768786539038,
+      "normalizing_scale": 0.015024768786539038,
+      "normalized_error": 4.964676031076899e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形漏电热",
+      "computed": 0.004507430635961733,
+      "reference": 0.0045074306359617336,
+      "normalizing_scale": 0.0045074306359617336,
+      "normalized_error": 1.9242930353011141e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形场能",
+      "computed": 0.0030334485016770326,
+      "reference": 0.003033448501677016,
+      "normalizing_scale": 0.003033448501677016,
+      "normalized_error": 5.43271890479397e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形漏电热",
+      "computed": 0.0009100345505031093,
+      "reference": 0.0009100345505031098,
+      "normalizing_scale": 0.0009100345505031098,
+      "normalized_error": 4.765542898942053e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形场能",
+      "computed": 0.00041053261215813947,
+      "reference": 0.0004105326121581374,
+      "normalizing_scale": 0.0004105326121581374,
+      "normalized_error": 5.017833094655465e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形漏电热",
+      "computed": 0.00012315978364744185,
+      "reference": 0.00012315978364744182,
+      "normalizing_scale": 0.00012315978364744182,
+      "normalized_error": 2.2008039888839652e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形场能",
+      "computed": 0.005634288294952148,
+      "reference": 0.0056342882949521386,
+      "normalizing_scale": 0.0056342882949521386,
+      "normalized_error": 1.693377871064989e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形漏电热",
+      "computed": 0.002817144147476074,
+      "reference": 0.002817144147476074,
+      "normalizing_scale": 0.002817144147476074,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形场能",
+      "computed": 0.001137543188128883,
+      "reference": 0.001137543188128881,
+      "normalizing_scale": 0.001137543188128881,
+      "normalized_error": 1.9062171595768315e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形漏电热",
+      "computed": 0.0005687715940644416,
+      "reference": 0.0005687715940644416,
+      "normalizing_scale": 0.0005687715940644416,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形场能",
+      "computed": 0.00015394972955930187,
+      "reference": 0.0001539497295593015,
+      "normalizing_scale": 0.0001539497295593015,
+      "normalized_error": 2.4649004675500534e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形漏电热",
+      "computed": 7.697486477965094e-05,
+      "reference": 7.697486477965094e-05,
+      "normalizing_scale": 7.697486477965094e-05,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形场能",
+      "computed": 0.0788800361293318,
+      "reference": 0.07888003612932994,
+      "normalizing_scale": 0.07888003612932994,
+      "normalized_error": 2.3575338672489197e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形漏电热",
+      "computed": 0.1104320505810645,
+      "reference": 0.1104320505810645,
+      "normalizing_scale": 0.1104320505810645,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形场能",
+      "computed": 0.015925604633804692,
+      "reference": 0.01592560463380433,
+      "normalizing_scale": 0.01592560463380433,
+      "normalized_error": 2.265675252525606e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形漏电热",
+      "computed": 0.0222958464873266,
+      "reference": 0.02229584648732657,
+      "normalizing_scale": 0.02229584648732657,
+      "normalized_error": 1.4004860764237631e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形场能",
+      "computed": 0.002155296213830273,
+      "reference": 0.002155296213830221,
+      "normalizing_scale": 0.002155296213830221,
+      "normalized_error": 2.4145963763755626e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "球形漏电热",
+      "computed": 0.0030174146993623796,
+      "reference": 0.003017414699362382,
+      "normalizing_scale": 0.003017414699362382,
+      "normalized_error": 8.623558487055373e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "时变电导电荷",
+      "computed": -0.9630225575614954,
+      "reference": -0.9630225575549741,
+      "normalizing_scale": 0.9630225575549741,
+      "normalized_error": 6.771625390167437e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立时间积分",
+      "name": "时变电导发热",
+      "computed": 0.17798178945842932,
+      "reference": 0.1779817894584293,
+      "normalizing_scale": 0.1779817894584293,
+      "normalized_error": 1.5594615437952829e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "时变电导电荷",
+      "computed": -0.4462603202979679,
+      "reference": -0.44626032029685964,
+      "normalizing_scale": 0.44626032029685964,
+      "normalized_error": 2.4834834824544037e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立时间积分",
+      "name": "时变电导发热",
+      "computed": 0.47510646581606847,
+      "reference": 0.475106465816068,
+      "normalizing_scale": 0.475106465816068,
+      "normalized_error": 9.347151466088164e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分",
+      "name": "时变电导电荷",
+      "computed": -0.054946916665822104,
+      "reference": -0.054946916666202536,
+      "normalizing_scale": 0.054946916666202536,
+      "normalized_error": 6.923624113191025e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立时间积分",
+      "name": "时变电导发热",
+      "computed": 0.4998322686860526,
+      "reference": 0.49983226868604874,
+      "normalizing_scale": 0.49983226868604874,
+      "normalized_error": 7.774169115577367e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "变化参数",
+      "name": "介质插入能量",
+      "computed": 1.999999999987197,
+      "reference": 1.999999999987197,
+      "normalizing_scale": 1.999999999987197,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "变化参数",
+      "name": "极板分离能量",
+      "computed": -1.3888888888720823,
+      "reference": -1.3888888888552757,
+      "normalizing_scale": 1.3888888888552757,
+      "normalized_error": 1.2100720425971301e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "变化参数",
+      "name": "电源收到两倍机械功",
+      "computed": 2.7777777777441646,
+      "reference": 2.7777777777777777,
+      "normalizing_scale": 2.7777777777777777,
+      "normalized_error": 1.2100720425678447e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "变化参数",
+      "name": "介质插入能量",
+      "computed": 1.9999999999612916,
+      "reference": 1.9999999999612916,
+      "normalizing_scale": 1.9999999999612916,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "变化参数",
+      "name": "极板分离能量",
+      "computed": -0.692041522476483,
+      "reference": -0.6920415224616164,
+      "normalizing_scale": 0.6920415224616164,
+      "normalized_error": 2.148216826739639e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "变化参数",
+      "name": "电源收到两倍机械功",
+      "computed": 1.384083044952966,
+      "reference": 1.384083044982699,
+      "normalizing_scale": 1.384083044982699,
+      "normalized_error": 2.148216826647342e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "变化参数",
+      "name": "介质插入能量",
+      "computed": 2.0000000000279052,
+      "reference": 2.0000000000279052,
+      "normalizing_scale": 2.0000000000279052,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "变化参数",
+      "name": "极板分离能量",
+      "computed": -0.22222222222737875,
+      "reference": -0.2222222222325353,
+      "normalizing_scale": 0.2222222222325353,
+      "normalized_error": 2.3204438369706117e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "变化参数",
+      "name": "电源收到两倍机械功",
+      "computed": 0.4444444444547575,
+      "reference": 0.4444444444444444,
+      "normalizing_scale": 0.4444444444444444,
+      "normalized_error": 2.320443837078301e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔径向方程",
+      "computed": -0.0024999347923560884,
+      "reference": -0.002499937500390624,
+      "normalizing_scale": 0.002499937500390624,
+      "normalized_error": 1.0832408951586066e-06,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔磁场相位系数",
+      "computed": -0.0002499968796791189,
+      "reference": -0.00024999687501302086,
+      "normalizing_scale": 0.00024999687501302086,
+      "normalized_error": 1.8664625387325987e-08,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分场方程",
+      "name": "贝塞尔安培积分",
+      "computed": 0.019999750001041667,
+      "reference": 0.019999750001041667,
+      "normalizing_scale": 0.019999750001041667,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔径向方程",
+      "computed": -0.0024994373607850123,
+      "reference": -0.0024994375316398343,
+      "normalizing_scale": 0.0024994375316398343,
+      "normalized_error": 6.835730834674714e-08,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔磁场相位系数",
+      "computed": -0.0007499156240431403,
+      "reference": -0.0007499156281640032,
+      "normalizing_scale": 0.0007499156281640032,
+      "normalized_error": 5.495102094573814e-09,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分场方程",
+      "name": "贝塞尔安培积分",
+      "computed": 0.17997975075936076,
+      "reference": 0.17997975075936076,
+      "normalizing_scale": 0.17997975075936076,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔径向方程",
+      "computed": -0.002498437395242468,
+      "reference": -0.0024984377441236716,
+      "normalizing_scale": 0.0024984377441236716,
+      "normalized_error": 1.3963974257968057e-07,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔磁场相位系数",
+      "computed": -0.0012496094251949566,
+      "reference": -0.0012496094156879852,
+      "normalizing_scale": 0.0012496094156879852,
+      "normalized_error": 7.607954343697703e-09,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分场方程",
+      "name": "贝塞尔安培积分",
+      "computed": 0.4998437662751939,
+      "reference": 0.499843766275194,
+      "normalizing_scale": 0.499843766275194,
+      "normalized_error": 2.2211400832273503e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "误差界",
+      "name": "四阶电场展开",
+      "computed": 0.99937509765625,
+      "reference": 0.9993750976494685,
+      "normalizing_scale": 0.9993750976494685,
+      "normalized_error": 6.785704681821063e-12,
+      "tolerance": 7.812500000000004e-12,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔径向方程",
+      "computed": -0.009999000876510046,
+      "reference": -0.009999000024999724,
+      "normalizing_scale": 0.009999000024999724,
+      "normalized_error": 8.515954797412332e-08,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔磁场相位系数",
+      "computed": -0.0009999499996545442,
+      "reference": -0.0009999500008333266,
+      "normalizing_scale": 0.0009999500008333266,
+      "normalized_error": 1.1788412732431453e-09,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分场方程",
+      "name": "贝塞尔安培积分",
+      "computed": 0.019999000016666525,
+      "reference": 0.01999900001666653,
+      "normalizing_scale": 0.01999900001666653,
+      "normalized_error": 1.734810215041896e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔径向方程",
+      "computed": -0.009991000320273688,
+      "reference": -0.009991002024797512,
+      "normalizing_scale": 0.009991002024797512,
+      "normalized_error": 1.7060589317659472e-07,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔磁场相位系数",
+      "computed": -0.0029986501994446373,
+      "reference": -0.0029986502024848135,
+      "normalizing_scale": 0.0029986502024848135,
+      "normalized_error": 1.013848224510145e-09,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分场方程",
+      "name": "贝塞尔安培积分",
+      "computed": 0.17991901214908876,
+      "reference": 0.1799190121490888,
+      "normalizing_scale": 0.1799190121490888,
+      "normalized_error": 1.5426705207023605e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔径向方程",
+      "computed": -0.009975018689746321,
+      "reference": -0.009975015620660404,
+      "normalizing_scale": 0.009975015620660404,
+      "normalized_error": 3.0767730441857226e-07,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔磁场相位系数",
+      "computed": -0.004993752595698156,
+      "reference": -0.0049937526036242,
+      "normalizing_scale": 0.0049937526036242,
+      "normalized_error": 1.5871918637559174e-09,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分场方程",
+      "name": "贝塞尔安培积分",
+      "computed": 0.49937526036241986,
+      "reference": 0.49937526036241997,
+      "normalizing_scale": 0.49937526036241997,
+      "normalized_error": 2.223223921464223e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "误差界",
+      "name": "四阶电场展开",
+      "computed": 0.9975015625000001,
+      "reference": 0.9975015620660401,
+      "normalizing_scale": 0.9975015620660401,
+      "normalized_error": 4.3504691678253433e-10,
+      "tolerance": 5.000000000000002e-10,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔径向方程",
+      "computed": -0.03998400305987641,
+      "reference": -0.039984001599928896,
+      "normalizing_scale": 0.039984001599928896,
+      "normalized_error": 3.65132917824026e-08,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔磁场相位系数",
+      "computed": -0.00399920006277643,
+      "reference": -0.003999200053331557,
+      "normalizing_scale": 0.003999200053331557,
+      "normalized_error": 2.3616907323032618e-09,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分场方程",
+      "name": "贝塞尔安培积分",
+      "computed": 0.01999600026665779,
+      "reference": 0.019996000266657783,
+      "normalizing_scale": 0.019996000266657783,
+      "normalized_error": 3.4701409338733845e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔径向方程",
+      "computed": -0.039856125857224964,
+      "reference": -0.039856129548171665,
+      "normalizing_scale": 0.039856129548171665,
+      "normalized_error": 9.26067519072694e-08,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔磁场相位系数",
+      "computed": -0.011978412955970795,
+      "reference": -0.0119784129561127,
+      "normalizing_scale": 0.0119784129561127,
+      "normalized_error": 1.1846776782972318e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分场方程",
+      "name": "贝塞尔安培积分",
+      "computed": 0.1796761943416905,
+      "reference": 0.17967619434169046,
+      "normalizing_scale": 0.17967619434169046,
+      "normalized_error": 1.5447553148218453e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔径向方程",
+      "computed": -0.03960100308786785,
+      "reference": -0.039600998889583065,
+      "normalizing_scale": 0.039600998889583065,
+      "normalized_error": 1.0601461831873129e-07,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔磁场相位系数",
+      "computed": -0.019900166523904396,
+      "reference": -0.019900166527847204,
+      "normalizing_scale": 0.019900166527847204,
+      "normalized_error": 1.98129391541521e-10,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分场方程",
+      "name": "贝塞尔安培积分",
+      "computed": 0.49750416319617985,
+      "reference": 0.49750416319618,
+      "normalizing_scale": 0.49750416319618,
+      "normalized_error": 3.3473780927558715e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "误差界",
+      "name": "四阶电场展开",
+      "computed": 0.990025,
+      "reference": 0.9900249722395764,
+      "normalizing_scale": 0.9900249722395764,
+      "normalized_error": 2.8040124648282905e-08,
+      "tolerance": 3.2000000000000015e-08,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔径向方程",
+      "computed": -0.1597441009301414,
+      "reference": -0.1597441023817974,
+      "normalizing_scale": 0.1597441023817974,
+      "normalized_error": 9.087383936025701e-09,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔磁场相位系数",
+      "computed": -0.015987203404640066,
+      "reference": -0.01598720341287826,
+      "normalizing_scale": 0.01598720341287826,
+      "normalized_error": 5.152993075626844e-10,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分场方程",
+      "name": "贝塞尔安培积分",
+      "computed": 0.019984004266097824,
+      "reference": 0.019984004266097824,
+      "normalizing_scale": 0.019984004266097824,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔径向方程",
+      "computed": -0.15770428767125216,
+      "reference": -0.1577042811408971,
+      "normalizing_scale": 0.1577042811408971,
+      "normalized_error": 4.14088635705937e-08,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔磁场相位系数",
+      "computed": -0.04765522843378869,
+      "reference": -0.0476552284453883,
+      "normalizing_scale": 0.0476552284453883,
+      "normalized_error": 2.4340672788259925e-10,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分场方程",
+      "name": "贝塞尔安培积分",
+      "computed": 0.1787071066702061,
+      "reference": 0.1787071066702061,
+      "normalizing_scale": 0.1787071066702061,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔径向方程",
+      "computed": -0.1536637145401094,
+      "reference": -0.1536637162655302,
+      "normalizing_scale": 0.1536637162655302,
+      "normalized_error": 1.1228550372256231e-08,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "group": "有限差分场方程",
+      "name": "贝塞尔磁场相位系数",
+      "computed": -0.07841063118426324,
+      "reference": -0.0784106311821275,
+      "normalizing_scale": 0.0784106311821275,
+      "normalized_error": 2.7237837526274394e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立积分场方程",
+      "name": "贝塞尔安培积分",
+      "computed": 0.49006644488829676,
+      "reference": 0.49006644488829687,
+      "normalizing_scale": 0.49006644488829687,
+      "normalized_error": 2.2654540750657086e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "误差界",
+      "name": "四阶电场展开",
+      "computed": 0.9603999999999999,
+      "reference": 0.9603982266595634,
+      "normalizing_scale": 0.9603982266595634,
+      "normalized_error": 1.8464636723278985e-06,
+      "tolerance": 2.048000000000001e-06,
+      "passed": true
+    },
+    {
+      "group": "数值边界",
+      "name": "轴上参照误差",
+      "computed": 0.9900249722395764,
+      "reference": 0.9900249722395764,
+      "normalizing_scale": 0.9900249722395764,
+      "normalized_error": 0.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "group": "数值边界",
+      "name": "磁场主项参照误差",
+      "computed": 0.99500832639236,
+      "reference": 0.9950083263923599,
+      "normalizing_scale": 0.9950083263923599,
+      "normalized_error": 1.1157926975852905e-16,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "group": "数值边界",
+      "name": "给出的充分界确实小于1%",
+      "computed": 1,
+      "reference": 1,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "group": "有限差分行波",
+      "name": "法拉第方程",
+      "computed": -0.41325097206446054,
+      "reference": -0.41325097206446054,
+      "normalizing_scale": 0.41325097206446054,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分行波",
+      "name": "安培方程",
+      "computed": 0.3374180057531046,
+      "reference": 0.3374180057691411,
+      "normalizing_scale": 0.3374180057691411,
+      "normalized_error": 4.752711824118737e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分行波",
+      "name": "局部能量收支",
+      "computed": 5.181044482327479e-11,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 5.181044482327479e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分驻波",
+      "name": "法拉第方程",
+      "computed": -2.064270806073631,
+      "reference": -2.0642708060847332,
+      "normalizing_scale": 2.0642708060847332,
+      "normalized_error": 5.378281867633915e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分驻波",
+      "name": "安培方程",
+      "computed": -1.3480520495245025,
+      "reference": -1.3480520495212642,
+      "normalizing_scale": 1.3480520495212642,
+      "normalized_error": 2.402205849081776e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分驻波",
+      "name": "局部能量收支",
+      "computed": 5.782485601457665e-12,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 5.782485601457665e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分纵向场",
+      "name": "高斯约束",
+      "computed": -4.128541612147262,
+      "reference": -4.128541612164905,
+      "normalizing_scale": 4.128541612164905,
+      "normalized_error": 4.273367640751925e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分纵向场",
+      "name": "电荷连续性",
+      "computed": -2.035438484426777e-11,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 2.035438484426777e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分纵向场",
+      "name": "电能与源功",
+      "computed": -1.5109638240288583,
+      "reference": -1.5109638240509846,
+      "normalizing_scale": 1.5109638240509846,
+      "normalized_error": 1.464383226081984e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分给定源",
+      "name": "源驱动场法拉第方程",
+      "computed": 0.26000000000007495,
+      "reference": 0.26000000000027734,
+      "normalizing_scale": 0.26000000000027734,
+      "normalized_error": 7.784371438036544e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分给定源",
+      "name": "源驱动场能量",
+      "computed": 0.006760000000023856,
+      "reference": 0.006760000000000001,
+      "normalizing_scale": 0.006760000000000001,
+      "normalized_error": 3.528853532528855e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分行波",
+      "name": "法拉第方程",
+      "computed": -1.2301198211402593,
+      "reference": -1.2301198211347082,
+      "normalizing_scale": 1.2301198211347082,
+      "normalized_error": 4.512662122625768e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分行波",
+      "name": "安培方程",
+      "computed": 1.0043886280897139,
+      "reference": 1.004388628060108,
+      "normalizing_scale": 1.004388628060108,
+      "normalized_error": 2.947651186140015e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分行波",
+      "name": "局部能量收支",
+      "computed": -3.515721047619991e-11,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 3.515721047619991e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分驻波",
+      "name": "法拉第方程",
+      "computed": -2.687959331412979,
+      "reference": -2.6879593313970194,
+      "normalizing_scale": 2.6879593313970194,
+      "normalized_error": 5.93747004918292e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分驻波",
+      "name": "安培方程",
+      "computed": -1.1903209756784308,
+      "reference": -1.1903209756775055,
+      "normalizing_scale": 1.1903209756775055,
+      "normalized_error": 7.773196369962035e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分驻波",
+      "name": "局部能量收支",
+      "computed": -1.873479149594459e-11,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 1.873479149594459e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分纵向场",
+      "name": "高斯约束",
+      "computed": -5.375918662825958,
+      "reference": -5.375918662824892,
+      "normalizing_scale": 5.375918662824892,
+      "normalized_error": 1.9825711110742425e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分纵向场",
+      "name": "电荷连续性",
+      "computed": -1.4802914449774107e-10,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 1.4802914449774107e-10,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分纵向场",
+      "name": "电能与源功",
+      "computed": -0.2559529077969871,
+      "reference": -0.2559529077981027,
+      "normalizing_scale": 0.2559529077981027,
+      "normalized_error": 4.358644001710608e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分给定源",
+      "name": "源驱动场法拉第方程",
+      "computed": 0.7799999999999936,
+      "reference": 0.7799999999946737,
+      "normalizing_scale": 0.7799999999946737,
+      "normalized_error": 6.820327778375243e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分给定源",
+      "name": "源驱动场能量",
+      "computed": 0.18251999999788213,
+      "reference": 0.18252,
+      "normalizing_scale": 0.18252,
+      "normalized_error": 1.1603448618096367e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分行波",
+      "name": "法拉第方程",
+      "computed": -4.68186725870919,
+      "reference": -4.681867258791531,
+      "normalizing_scale": 4.681867258791531,
+      "normalized_error": 1.7587266016340002e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分行波",
+      "name": "安培方程",
+      "computed": 3.822728609098602,
+      "reference": 3.8227286091578137,
+      "normalizing_scale": 3.8227286091578137,
+      "normalized_error": 1.5489393224276874e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分行波",
+      "name": "局部能量收支",
+      "computed": 8.280398589022298e-11,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 8.280398589022298e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分驻波",
+      "name": "法拉第方程",
+      "computed": 0.3586413944434152,
+      "reference": 0.3586413944498915,
+      "normalizing_scale": 0.3586413944498915,
+      "normalized_error": 1.8057925217001164e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分驻波",
+      "name": "安培方程",
+      "computed": 4.115558081432824,
+      "reference": 4.115558081504988,
+      "normalizing_scale": 4.115558081504988,
+      "normalized_error": 1.7534343336451348e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分驻波",
+      "name": "局部能量收支",
+      "computed": 2.3129720361225736e-11,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 2.3129720361225736e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分纵向场",
+      "name": "高斯约束",
+      "computed": 0.7172827888868304,
+      "reference": 0.7172827888933123,
+      "normalizing_scale": 0.7172827888933123,
+      "normalized_error": 9.036779088164663e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分纵向场",
+      "name": "电荷连续性",
+      "computed": 5.551115123125783e-11,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 5.551115123125783e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分纵向场",
+      "name": "电能与源功",
+      "computed": 1.5366782759961466,
+      "reference": 1.5366782759751447,
+      "normalizing_scale": 1.5366782759751447,
+      "normalized_error": 1.366705525846118e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分给定源",
+      "name": "源驱动场法拉第方程",
+      "computed": 1.4300000000022626,
+      "reference": 1.430000000009664,
+      "normalizing_scale": 1.430000000009664,
+      "normalized_error": 5.175813157983251e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分给定源",
+      "name": "源驱动场能量",
+      "computed": 1.8218200000428653,
+      "reference": 1.8218199999999996,
+      "normalizing_scale": 1.8218199999999996,
+      "normalized_error": 2.3529059391584958e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分行波",
+      "name": "法拉第方程",
+      "computed": -0.6331679450207368,
+      "reference": -0.6331679450040835,
+      "normalizing_scale": 0.6331679450040835,
+      "normalized_error": 2.6301624238526392e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分行波",
+      "name": "安培方程",
+      "computed": 0.5169794622505995,
+      "reference": 0.5169794622580011,
+      "normalizing_scale": 0.5169794622580011,
+      "normalized_error": 1.4316862426103042e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分行波",
+      "name": "局部能量收支",
+      "computed": -3.145639304591441e-11,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 3.145639304591441e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分驻波",
+      "name": "法拉第方程",
+      "computed": 2.35637548781827,
+      "reference": 2.3563754878219707,
+      "normalizing_scale": 2.3563754878219707,
+      "normalized_error": 1.5704608220573036e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分驻波",
+      "name": "安培方程",
+      "computed": 2.44095199144355,
+      "reference": 2.440951991485492,
+      "normalizing_scale": 2.440951991485492,
+      "normalized_error": 1.7182642497923314e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分驻波",
+      "name": "局部能量收支",
+      "computed": -3.3769320673116e-11,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 3.3769320673116e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分纵向场",
+      "name": "高斯约束",
+      "computed": 4.71275097563654,
+      "reference": 4.712750975644956,
+      "normalizing_scale": 4.712750975644956,
+      "normalized_error": 1.7856853820940536e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分纵向场",
+      "name": "电荷连续性",
+      "computed": -3.700773021364512e-11,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 3.700773021364512e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分纵向场",
+      "name": "电能与源功",
+      "computed": -1.8254170175147075,
+      "reference": -1.8254170174831819,
+      "normalizing_scale": 1.8254170174831819,
+      "normalized_error": 1.727039392133939e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分给定源",
+      "name": "源驱动场法拉第方程",
+      "computed": 0.584999999997393,
+      "reference": 0.5849999999997061,
+      "normalizing_scale": 0.5849999999997061,
+      "normalized_error": 3.953912221376433e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分给定源",
+      "name": "源驱动场能量",
+      "computed": 1.2595400999961617,
+      "reference": 1.2595401,
+      "normalizing_scale": 1.2595401,
+      "normalized_error": 3.0473527922883053e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立周期积分",
+      "name": "驻波平均能流",
+      "computed": -9.00519807396074e-17,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 9.00519807396074e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立初值求导",
+      "name": "导电模式初始斜率",
+      "computed": 0.0,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式电场",
+      "computed": 0.7648421872844864,
+      "reference": 0.7648421872844885,
+      "normalizing_scale": 1.0,
+      "normalized_error": 2.1094237467877974e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式磁场",
+      "computed": -0.644217687237692,
+      "reference": -0.6442176872345494,
+      "normalizing_scale": 1.0,
+      "normalized_error": 3.142597293503968e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式热与场能",
+      "computed": 0.24999999999999953,
+      "reference": 0.25,
+      "normalizing_scale": 0.25,
+      "normalized_error": 1.887379141862766e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "导电模式平均热功率",
+      "computed": 0.0,
+      "reference": 0.0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式电场",
+      "computed": -0.41614683654714074,
+      "reference": -0.4161468365471424,
+      "normalizing_scale": 1.0,
+      "normalized_error": 1.6653345369377348e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式磁场",
+      "computed": -0.9092974268256829,
+      "reference": -0.9092974268302503,
+      "normalizing_scale": 1.0,
+      "normalized_error": 4.5673465010054315e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式热与场能",
+      "computed": 0.2500000000000002,
+      "reference": 0.25,
+      "normalizing_scale": 0.25,
+      "normalized_error": 8.881784197001252e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "导电模式平均热功率",
+      "computed": 0.0,
+      "reference": 0.0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立初值求导",
+      "name": "导电模式初始斜率",
+      "computed": -0.5999999999968992,
+      "reference": -0.6,
+      "normalizing_scale": 1.0,
+      "normalized_error": 3.1007418854755997e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式电场",
+      "computed": 0.47862934017077596,
+      "reference": 0.478629340170776,
+      "normalizing_scale": 1.0,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式磁场",
+      "computed": -0.5261712435003457,
+      "reference": -0.5261712434909102,
+      "normalizing_scale": 1.0,
+      "normalized_error": 9.43556344168428e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式热与场能",
+      "computed": 0.24999999999999994,
+      "reference": 0.25,
+      "normalizing_scale": 0.25,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "导电模式平均热功率",
+      "computed": 0.06872581358169319,
+      "reference": 0.0687258135816937,
+      "normalizing_scale": 1.0,
+      "normalized_error": 5.134781488891349e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式电场",
+      "computed": -0.34439147217363486,
+      "reference": -0.3443914721736344,
+      "normalizing_scale": 1.0,
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式磁场",
+      "computed": -0.5429345700215538,
+      "reference": -0.5429345700266957,
+      "normalizing_scale": 1.0,
+      "normalized_error": 5.14188691624895e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式热与场能",
+      "computed": 0.25000000000000033,
+      "reference": 0.25,
+      "normalizing_scale": 0.25,
+      "normalized_error": 1.3322676295501878e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "导电模式平均热功率",
+      "computed": 0.03558164583177678,
+      "reference": 0.03558164583177705,
+      "normalizing_scale": 1.0,
+      "normalized_error": 2.706168622523819e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立初值求导",
+      "name": "导电模式初始斜率",
+      "computed": -1.999999999992748,
+      "reference": -2.0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 7.2519767968515225e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式电场",
+      "computed": 0.14897559113742248,
+      "reference": 0.14897559113742287,
+      "normalizing_scale": 1.0,
+      "normalized_error": 3.885780586188048e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式磁场",
+      "computed": -0.34760971265398716,
+      "reference": -0.3476097126492229,
+      "normalizing_scale": 1.0,
+      "normalized_error": 4.764244554422703e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式热与场能",
+      "computed": 0.250000000000001,
+      "reference": 0.25,
+      "normalizing_scale": 0.25,
+      "normalized_error": 3.9968028886505635e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "导电模式平均热功率",
+      "computed": 0.022193726754744306,
+      "reference": 0.022193726754744472,
+      "normalizing_scale": 1.0,
+      "normalized_error": 1.6653345369377348e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式电场",
+      "computed": -0.13533528323661287,
+      "reference": -0.1353352832366127,
+      "normalizing_scale": 1.0,
+      "normalized_error": 1.6653345369377348e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式磁场",
+      "computed": -0.2706705664732253,
+      "reference": -0.27067056647438187,
+      "normalizing_scale": 1.0,
+      "normalized_error": 1.1565748359032568e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式热与场能",
+      "computed": 0.25000000000000216,
+      "reference": 0.25,
+      "normalizing_scale": 0.25,
+      "normalized_error": 8.659739592076221e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "导电模式平均热功率",
+      "computed": 0.018315638888734095,
+      "reference": 0.018315638888734227,
+      "normalizing_scale": 1.0,
+      "normalized_error": 1.3183898417423734e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立初值求导",
+      "name": "导电模式初始斜率",
+      "computed": -3.9999999999836455,
+      "reference": -4.0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 1.6354473331148256e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式电场",
+      "computed": 0.01490825014964555,
+      "reference": 0.014908250149645315,
+      "normalizing_scale": 1.0,
+      "normalized_error": 2.3592239273284576e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式磁场",
+      "computed": -0.218128716215954,
+      "reference": -0.21812871621387667,
+      "normalizing_scale": 1.0,
+      "normalized_error": 2.0773383013761304e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式热与场能",
+      "computed": 0.25000000000000183,
+      "reference": 0.25,
+      "normalizing_scale": 0.25,
+      "normalized_error": 7.327471962526033e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "导电模式平均热功率",
+      "computed": 0.00044451184504881,
+      "reference": 0.0004445118450488132,
+      "normalizing_scale": 1.0,
+      "normalized_error": 3.198396408832238e-18,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式电场",
+      "computed": -0.04464335239603928,
+      "reference": -0.04464335239603948,
+      "normalizing_scale": 1.0,
+      "normalized_error": 2.0122792321330962e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式磁场",
+      "computed": -0.16875084366851412,
+      "reference": -0.16875084367270404,
+      "normalizing_scale": 1.0,
+      "normalized_error": 4.1899261837841095e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立耦合方程积分",
+      "name": "导电模式热与场能",
+      "computed": 0.2500000000000321,
+      "reference": 0.25,
+      "normalizing_scale": 0.25,
+      "normalized_error": 1.283417816466681e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立空间积分",
+      "name": "导电模式平均热功率",
+      "computed": 0.003986057826313862,
+      "reference": 0.003986057826313893,
+      "normalizing_scale": 1.0,
+      "normalized_error": 3.0357660829594124e-17,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立同轴积分",
+      "name": "横截面能流",
+      "computed": 47.84359365712788,
+      "reference": 47.84359365712786,
+      "normalizing_scale": 47.84359365712786,
+      "normalized_error": 4.455409897836396e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立同轴积分",
+      "name": "每长度电场能",
+      "computed": 15.319377279375923,
+      "reference": 15.319377279375917,
+      "normalizing_scale": 15.319377279375917,
+      "normalized_error": 3.478646958695339e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分同轴守恒",
+      "name": "轴向电流梯度",
+      "computed": -12.690608396799991,
+      "reference": -12.690608397116144,
+      "normalizing_scale": 12.690608397116144,
+      "normalized_error": 2.4912315286209707e-11,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立同轴积分",
+      "name": "横截面能流",
+      "computed": 32.995581832501976,
+      "reference": 32.995581832501976,
+      "normalizing_scale": 32.995581832501976,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立同轴积分",
+      "name": "每长度电场能",
+      "computed": 15.319377279375923,
+      "reference": 15.319377279375917,
+      "normalizing_scale": 15.319377279375917,
+      "normalized_error": 3.478646958695339e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分同轴守恒",
+      "name": "轴向电流梯度",
+      "computed": -12.690608397036838,
+      "reference": -12.690608397116144,
+      "normalizing_scale": 12.690608397116144,
+      "normalized_error": 6.249144927759793e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立同轴积分",
+      "name": "横截面能流",
+      "computed": 8.248895458125494,
+      "reference": 8.248895458125494,
+      "normalizing_scale": 8.248895458125494,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立同轴积分",
+      "name": "每长度电场能",
+      "computed": 15.319377279375923,
+      "reference": 15.319377279375917,
+      "normalizing_scale": 15.319377279375917,
+      "normalized_error": 3.478646958695339e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分同轴守恒",
+      "name": "轴向电流梯度",
+      "computed": -12.690608397214474,
+      "reference": -12.690608397116144,
+      "normalizing_scale": 12.690608397116144,
+      "normalized_error": 7.74826783460955e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电场旋转",
+      "computed": [
+        0.8258955113659384,
+        -0.09572080993766108
+      ],
+      "reference": [
+        0.825895511365937,
+        -0.09572080993766106
+      ],
+      "normalizing_scale": 0.825895511365937,
+      "normalized_error": 1.747545436620265e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电流不做功",
+      "computed": 0.6500000000000014,
+      "reference": 0.65,
+      "normalizing_scale": 0.65,
+      "normalized_error": 2.049642507000289e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电场旋转",
+      "computed": [
+        0.46337212734512706,
+        -0.20864172478584864
+      ],
+      "reference": [
+        0.46337212734512734,
+        -0.2086417247858482
+      ],
+      "normalizing_scale": 0.46337212734512734,
+      "normalized_error": 9.583856767442067e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电流不做功",
+      "computed": 0.6500000000000016,
+      "reference": 0.65,
+      "normalizing_scale": 0.65,
+      "normalized_error": 2.391249591500337e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电场旋转",
+      "computed": [
+        0.20983494383078816,
+        -0.20315735276718166
+      ],
+      "reference": [
+        0.20983494383078763,
+        -0.2031573527671819
+      ],
+      "normalizing_scale": 0.20983494383078763,
+      "normalized_error": 2.5131940708703548e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电流不做功",
+      "computed": 0.6500000000000018,
+      "reference": 0.65,
+      "normalizing_scale": 0.65,
+      "normalized_error": 2.732856676000385e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电场旋转",
+      "computed": [
+        0.7444308108395592,
+        -0.3702548271424478
+      ],
+      "reference": [
+        0.7444308108395572,
+        -0.3702548271424474
+      ],
+      "normalizing_scale": 0.7444308108395572,
+      "normalized_error": 2.6844690134084007e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电流不做功",
+      "computed": 0.6500000000000017,
+      "reference": 0.65,
+      "normalizing_scale": 0.65,
+      "normalized_error": 2.5620531337503612e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电场旋转",
+      "computed": [
+        -0.061597585737246295,
+        -0.5044311996232028
+      ],
+      "reference": [
+        -0.06159758573724663,
+        -0.5044311996232044
+      ],
+      "normalizing_scale": 0.5044311996232044,
+      "normalized_error": 3.0813166109396998e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电流不做功",
+      "computed": 0.6499999999999981,
+      "reference": 0.65,
+      "normalizing_scale": 0.65,
+      "normalized_error": 2.9036602182504094e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电场旋转",
+      "computed": [
+        -0.2914573001812825,
+        -0.018874739915490858
+      ],
+      "reference": [
+        -0.2914573001812813,
+        -0.01887473991549209
+      ],
+      "normalizing_scale": 0.2914573001812813,
+      "normalized_error": 4.2258460061815785e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电流不做功",
+      "computed": 0.6500000000000039,
+      "reference": 0.65,
+      "normalizing_scale": 0.65,
+      "normalized_error": 5.978123978750843e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电场旋转",
+      "computed": [
+        0.33670493506936877,
+        -0.7601944855426508
+      ],
+      "reference": [
+        0.33670493506937177,
+        -0.7601944855426501
+      ],
+      "normalizing_scale": 0.7601944855426501,
+      "normalized_error": 3.9432043029727354e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电流不做功",
+      "computed": 0.6499999999999984,
+      "reference": 0.65,
+      "normalizing_scale": 0.65,
+      "normalized_error": 2.5620531337503612e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电场旋转",
+      "computed": [
+        -0.2353959133430708,
+        0.45037080467471374
+      ],
+      "reference": [
+        -0.2353959133430627,
+        0.45037080467471224
+      ],
+      "normalizing_scale": 0.45037080467471224,
+      "normalized_error": 1.799545617886431e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电流不做功",
+      "computed": 0.6500000000000056,
+      "reference": 0.65,
+      "normalizing_scale": 0.65,
+      "normalized_error": 8.540177112501204e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电场旋转",
+      "computed": [
+        0.04701431632309517,
+        -0.2882590288205333
+      ],
+      "reference": [
+        0.047014316323004804,
+        -0.28825902882046806
+      ],
+      "normalizing_scale": 0.28825902882046806,
+      "normalized_error": 3.1348615750337736e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立横向耦合积分",
+      "name": "横向电流不做功",
+      "computed": 0.6500000000000723,
+      "reference": 0.65,
+      "normalizing_scale": 0.65,
+      "normalized_error": 1.1119310600476568e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电源有限时功",
+      "computed": 0.30634502729821067,
+      "reference": 0.3063450272982107,
+      "normalizing_scale": 0.3063450272982107,
+      "normalized_error": 1.8120467539765432e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电阻有限时热",
+      "computed": 0.2785795610998848,
+      "reference": 0.2785795610998848,
+      "normalizing_scale": 0.2785795610998848,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "有限时能量收支",
+      "computed": 0.027765466198325872,
+      "reference": 0.027765466198325883,
+      "normalizing_scale": 0.027765466198325883,
+      "normalized_error": 3.748664179277643e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电源有限时功",
+      "computed": 0.8450000000000002,
+      "reference": 0.8450000000000001,
+      "normalizing_scale": 0.8450000000000001,
+      "normalized_error": 1.313873401923262e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电阻有限时热",
+      "computed": 0.633750000000001,
+      "reference": 0.63375,
+      "normalizing_scale": 0.63375,
+      "normalized_error": 1.5766480823079146e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "有限时能量收支",
+      "computed": 0.21124999999999916,
+      "reference": 0.21125000000000002,
+      "normalizing_scale": 0.21125000000000002,
+      "normalized_error": 4.073007545962112e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电源有限时功",
+      "computed": 1.0682837444202633,
+      "reference": 1.0682837444202626,
+      "normalizing_scale": 1.0682837444202626,
+      "normalized_error": 6.235551352853282e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电阻有限时热",
+      "computed": 0.7306416856650639,
+      "reference": 0.7306416856650624,
+      "normalizing_scale": 0.7306416856650624,
+      "normalized_error": 2.127324877529285e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "有限时能量收支",
+      "computed": 0.33764205875519937,
+      "reference": 0.33764205875520015,
+      "normalizing_scale": 0.33764205875520015,
+      "normalized_error": 2.3017159654303297e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电源有限时功",
+      "computed": 1.605859854458318,
+      "reference": 1.60585985445831,
+      "normalizing_scale": 1.60585985445831,
+      "normalized_error": 4.977772970106122e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电阻有限时热",
+      "computed": 0.8429054544107298,
+      "reference": 0.842905454410717,
+      "normalizing_scale": 0.842905454410717,
+      "normalized_error": 1.5278803830561705e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "有限时能量收支",
+      "computed": 0.7629544000475882,
+      "reference": 0.7629544000475931,
+      "normalizing_scale": 0.7629544000475931,
+      "normalized_error": 6.4027172633724424e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分RC极值",
+      "name": "侧面功率峰条件",
+      "computed": 9.25185853854297e-13,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 9.25185853854297e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "RC极值",
+      "name": "侧面功率峰值",
+      "computed": 0.42250000000000004,
+      "reference": 0.42250000000000004,
+      "normalizing_scale": 0.42250000000000004,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电源有限时功",
+      "computed": 0.0919035081894632,
+      "reference": 0.09190350818946322,
+      "normalizing_scale": 0.09190350818946322,
+      "normalized_error": 1.5100389616471194e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电阻有限时热",
+      "computed": 0.08357386832996543,
+      "reference": 0.08357386832996543,
+      "normalizing_scale": 0.08357386832996543,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "有限时能量收支",
+      "computed": 0.008329639859497778,
+      "reference": 0.008329639859497764,
+      "normalizing_scale": 0.008329639859497764,
+      "normalized_error": 1.6660729685678413e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电源有限时功",
+      "computed": 0.25350000000000006,
+      "reference": 0.2535,
+      "normalizing_scale": 0.2535,
+      "normalized_error": 2.189789003205437e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电阻有限时热",
+      "computed": 0.1901250000000003,
+      "reference": 0.190125,
+      "normalizing_scale": 0.190125,
+      "normalized_error": 1.6058452690173206e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "有限时能量收支",
+      "computed": 0.06337499999999976,
+      "reference": 0.063375,
+      "normalizing_scale": 0.063375,
+      "normalized_error": 3.722641305449243e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电源有限时功",
+      "computed": 0.320485123326079,
+      "reference": 0.32048512332607876,
+      "normalizing_scale": 0.32048512332607876,
+      "normalized_error": 6.928390392059204e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电阻有限时热",
+      "computed": 0.21919250569951917,
+      "reference": 0.21919250569951867,
+      "normalizing_scale": 0.21919250569951867,
+      "normalized_error": 2.2792766544956627e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "有限时能量收支",
+      "computed": 0.1012926176265598,
+      "reference": 0.10129261762656004,
+      "normalizing_scale": 0.10129261762656004,
+      "normalized_error": 2.329117345971167e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电源有限时功",
+      "computed": 0.48175795633749535,
+      "reference": 0.48175795633749297,
+      "normalizing_scale": 0.48175795633749297,
+      "normalized_error": 4.95472772487415e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电阻有限时热",
+      "computed": 0.2528716363232189,
+      "reference": 0.2528716363232151,
+      "normalizing_scale": 0.2528716363232151,
+      "normalized_error": 1.5147090004436172e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "有限时能量收支",
+      "computed": 0.22888632001427645,
+      "reference": 0.22888632001427792,
+      "normalizing_scale": 0.22888632001427792,
+      "normalized_error": 6.426969980279156e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分RC极值",
+      "name": "侧面功率峰条件",
+      "computed": -1.1564823173178713e-12,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 1.1564823173178713e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "RC极值",
+      "name": "侧面功率峰值",
+      "computed": 0.21125000000000002,
+      "reference": 0.21125000000000002,
+      "normalizing_scale": 0.21125000000000002,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电源有限时功",
+      "computed": 0.9190350818946319,
+      "reference": 0.9190350818946322,
+      "normalizing_scale": 0.9190350818946322,
+      "normalized_error": 3.6240935079530863e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电阻有限时热",
+      "computed": 0.8357386832996544,
+      "reference": 0.8357386832996544,
+      "normalizing_scale": 0.8357386832996544,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "有限时能量收支",
+      "computed": 0.0832963985949775,
+      "reference": 0.08329639859497764,
+      "normalizing_scale": 0.08329639859497764,
+      "normalized_error": 1.6660729685678413e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电源有限时功",
+      "computed": 2.5350000000000024,
+      "reference": 2.535,
+      "normalizing_scale": 2.535,
+      "normalized_error": 8.759156012821747e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电阻有限时热",
+      "computed": 1.9012500000000023,
+      "reference": 1.90125,
+      "normalizing_scale": 1.90125,
+      "normalized_error": 1.167887468376233e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "有限时能量收支",
+      "computed": 0.63375,
+      "reference": 0.63375,
+      "normalizing_scale": 0.63375,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电源有限时功",
+      "computed": 3.204851233260791,
+      "reference": 3.2048512332607877,
+      "normalizing_scale": 3.2048512332607877,
+      "normalized_error": 9.699746548882884e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电阻有限时热",
+      "computed": 2.1919250569951925,
+      "reference": 2.191925056995187,
+      "normalizing_scale": 2.191925056995187,
+      "normalized_error": 2.43122843146204e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "有限时能量收支",
+      "computed": 1.0129261762655983,
+      "reference": 1.0129261762656006,
+      "normalizing_scale": 1.0129261762656006,
+      "normalized_error": 2.1921104432669802e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电源有限时功",
+      "computed": 4.817579563374956,
+      "reference": 4.81757956337493,
+      "normalizing_scale": 4.81757956337493,
+      "normalized_error": 5.346496893817687e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "电阻有限时热",
+      "computed": 2.52871636323219,
+      "reference": 2.5287163632321508,
+      "normalizing_scale": 2.5287163632321508,
+      "normalized_error": 1.5454422265395747e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立RC能量积分",
+      "name": "有限时能量收支",
+      "computed": 2.288863200142766,
+      "reference": 2.2888632001427793,
+      "normalizing_scale": 2.2888632001427793,
+      "normalized_error": 5.820652057611311e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "有限差分RC极值",
+      "name": "侧面功率峰条件",
+      "computed": -7.401486830834376e-12,
+      "reference": 0,
+      "normalizing_scale": 1.0,
+      "normalized_error": 7.401486830834376e-12,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "RC极值",
+      "name": "侧面功率峰值",
+      "computed": 1.0562500000000001,
+      "reference": 1.0562500000000001,
+      "normalizing_scale": 1.0562500000000001,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立磁能空间积分",
+      "name": "充电磁能",
+      "computed": 0.005848944158627196,
+      "reference": 0.005848944158627153,
+      "normalizing_scale": 0.005848944158627153,
+      "normalized_error": 7.266392704184651e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立磁能空间积分",
+      "name": "充电磁能",
+      "computed": 0.006724296345632629,
+      "reference": 0.00672429634563258,
+      "normalizing_scale": 0.00672429634563258,
+      "normalized_error": 7.223396297651011e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立磁能空间积分",
+      "name": "充电磁能",
+      "computed": 8.952465548919182e-05,
+      "reference": 8.952465548919113e-05,
+      "normalizing_scale": 8.952465548919113e-05,
+      "normalized_error": 7.72054224819619e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "两层场强响应",
+      "computed": 0.701224237242441,
+      "reference": 0.7012242372424377,
+      "normalizing_scale": 0.7012242372424377,
+      "normalized_error": 4.749791717087984e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外源功",
+      "computed": 0.027646056460616374,
+      "reference": 0.027646056460616762,
+      "normalizing_scale": 0.027646056460616762,
+      "normalized_error": 1.4055460646705773e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外焦耳热",
+      "computed": 0.024063379408318007,
+      "reference": 0.024063379408318594,
+      "normalizing_scale": 0.024063379408318594,
+      "normalized_error": 2.436634210560912e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "有限时能量守恒",
+      "computed": 0.0035826770522983664,
+      "reference": 0.003582677052298755,
+      "normalizing_scale": 0.003582677052298755,
+      "normalized_error": 1.0846025275135565e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电荷",
+      "computed": -0.2073454234546459,
+      "reference": -0.2073454234546257,
+      "normalizing_scale": 0.2073454234546257,
+      "normalized_error": 9.745119381716003e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电流差",
+      "computed": -0.4938788137877951,
+      "reference": -0.4938788137877951,
+      "normalizing_scale": 0.4938788137877951,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "全电流连续",
+      "computed": 0.8658505085050393,
+      "reference": 0.8658505085050394,
+      "normalizing_scale": 0.8658505085050394,
+      "normalized_error": 1.2822340735724067e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "两层场强响应",
+      "computed": 0.7509494078438094,
+      "reference": 0.7509494078438077,
+      "normalizing_scale": 0.7509494078438077,
+      "normalized_error": 2.217638791033061e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外源功",
+      "computed": 0.06742619294171184,
+      "reference": 0.06742619294171283,
+      "normalizing_scale": 0.06742619294171283,
+      "normalized_error": 1.461335560212628e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外焦耳热",
+      "computed": 0.04611545156071285,
+      "reference": 0.04611545156071399,
+      "normalizing_scale": 0.04611545156071399,
+      "normalized_error": 2.46767311546882e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "有限时能量守恒",
+      "computed": 0.02131074138099899,
+      "reference": 0.021310741380999643,
+      "normalizing_scale": 0.021310741380999643,
+      "normalized_error": 3.060691391754309e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电荷",
+      "computed": -0.5056964470628562,
+      "reference": -0.5056964470628461,
+      "normalizing_scale": 0.5056964470628461,
+      "normalized_error": 1.997844671990222e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电流差",
+      "computed": -0.24525296078095316,
+      "reference": -0.24525296078095316,
+      "normalizing_scale": 0.24525296078095316,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "全电流连续",
+      "computed": 0.8327003947707937,
+      "reference": 0.8327003947707937,
+      "normalizing_scale": 0.8327003947707937,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "两层场强响应",
+      "computed": 0.7933617242176181,
+      "reference": 0.7933617242176182,
+      "normalizing_scale": 0.7933617242176182,
+      "normalized_error": 1.399390707586775e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外源功",
+      "computed": 0.10135604604076091,
+      "reference": 0.10135604604076119,
+      "normalizing_scale": 0.10135604604076119,
+      "normalized_error": 2.7384232810805164e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外焦耳热",
+      "computed": 0.05320113321724381,
+      "reference": 0.05320113321724446,
+      "normalizing_scale": 0.05320113321724446,
+      "normalized_error": 1.226019047947383e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "有限时能量守恒",
+      "computed": 0.0481549128235171,
+      "reference": 0.04815491282351658,
+      "normalizing_scale": 0.04815491282351658,
+      "normalized_error": 1.0807143285677284e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电荷",
+      "computed": -0.7601703453057085,
+      "reference": -0.7601703453057089,
+      "normalizing_scale": 0.7601703453057089,
+      "normalized_error": 5.841969666305102e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电流差",
+      "computed": -0.0331913789119096,
+      "reference": -0.0331913789119096,
+      "normalizing_scale": 0.0331913789119096,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "全电流连续",
+      "computed": 0.8044255171882546,
+      "reference": 0.8044255171882546,
+      "normalizing_scale": 0.8044255171882546,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "两层场强响应",
+      "computed": 0.799999180771687,
+      "reference": 0.7999991807716863,
+      "normalizing_scale": 0.7999991807716863,
+      "normalized_error": 8.326681211504934e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外源功",
+      "computed": 0.10666601128401279,
+      "reference": 0.10666601128401565,
+      "normalizing_scale": 0.10666601128401565,
+      "normalized_error": 2.6801642378823863e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外焦耳热",
+      "computed": 0.0533333333313547,
+      "reference": 0.05333333333131993,
+      "normalizing_scale": 0.05333333333131993,
+      "normalized_error": 6.518223461228924e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "有限时能量守恒",
+      "computed": 0.05333267795265809,
+      "reference": 0.05333267795269625,
+      "normalizing_scale": 0.05333267795269625,
+      "normalized_error": 7.154521213322425e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电荷",
+      "computed": -0.7999950846301218,
+      "reference": -0.7999950846301174,
+      "normalizing_scale": 0.7999950846301174,
+      "normalized_error": 5.55114923056546e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电流差",
+      "computed": -4.096141565157474e-06,
+      "reference": -4.096141565157474e-06,
+      "normalizing_scale": 4.096141565157474e-06,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "全电流连续",
+      "computed": 0.8000005461522087,
+      "reference": 0.8000005461522087,
+      "normalizing_scale": 0.8000005461522087,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层最终能量",
+      "name": "稳态场能增量",
+      "computed": 0.053333333333333344,
+      "reference": 0.05333333333333334,
+      "normalizing_scale": 0.05333333333333334,
+      "normalized_error": 1.3010426069826053e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "两层场强响应",
+      "computed": 3.038638361383887,
+      "reference": 3.0386383613838968,
+      "normalizing_scale": 3.0386383613838968,
+      "normalized_error": 3.2152436238749426e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外源功",
+      "computed": 0.21803523195273297,
+      "reference": 0.21803523195273086,
+      "normalizing_scale": 0.21803523195273086,
+      "normalized_error": 9.674692149042737e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外焦耳热",
+      "computed": 0.18977985226694352,
+      "reference": 0.1897798522669393,
+      "normalizing_scale": 0.1897798522669393,
+      "normalized_error": 2.223021802989643e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "有限时能量守恒",
+      "computed": 0.02825537968578945,
+      "reference": 0.028255379685787396,
+      "normalizing_scale": 0.028255379685787396,
+      "normalized_error": 7.269102798819116e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电荷",
+      "computed": -1.7969936699399724,
+      "reference": -1.7969936699400897,
+      "normalizing_scale": 1.7969936699400897,
+      "normalized_error": 6.524205029855514e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电流差",
+      "computed": -0.85605661056556,
+      "reference": -0.85605661056556,
+      "normalizing_scale": 0.85605661056556,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "全电流连续",
+      "computed": 1.5008075480754084,
+      "reference": 1.5008075480754082,
+      "normalizing_scale": 1.5008075480754082,
+      "normalized_error": 1.4795008541220014e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "两层场强响应",
+      "computed": 3.2541141006564986,
+      "reference": 3.2541141006565004,
+      "normalizing_scale": 3.2541141006565004,
+      "normalized_error": 5.458803177927534e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外源功",
+      "computed": 0.5317679083336446,
+      "reference": 0.5317679083336417,
+      "normalizing_scale": 0.5317679083336417,
+      "normalized_error": 5.428270150921386e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外焦耳热",
+      "computed": 0.3636971946421702,
+      "reference": 0.3636971946421643,
+      "normalizing_scale": 0.3636971946421643,
+      "normalized_error": 1.6178794110036178e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "有限时能量守恒",
+      "computed": 0.16807071369147442,
+      "reference": 0.16807071369147586,
+      "normalizing_scale": 0.16807071369147586,
+      "normalized_error": 8.587396937351756e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电荷",
+      "computed": -4.382702541211312,
+      "reference": -4.382702541211334,
+      "normalizing_scale": 4.382702541211334,
+      "normalized_error": 4.863730055225561e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电流差",
+      "computed": -0.42510513202033695,
+      "reference": -0.42510513202033695,
+      "normalizing_scale": 0.42510513202033695,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "全电流连续",
+      "computed": 1.4433473509360453,
+      "reference": 1.4433473509360453,
+      "normalizing_scale": 1.4433473509360453,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "两层场强响应",
+      "computed": 3.437900804943013,
+      "reference": 3.4379008049430126,
+      "normalizing_scale": 3.4379008049430126,
+      "normalized_error": 1.2917452685416383e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外源功",
+      "computed": 0.7993613497747993,
+      "reference": 0.7993613497748032,
+      "normalizing_scale": 0.7993613497748032,
+      "normalized_error": 4.86110641611926e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外焦耳热",
+      "computed": 0.41957960397333466,
+      "reference": 0.41957960397333466,
+      "normalizing_scale": 0.41957960397333466,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "有限时能量守恒",
+      "computed": 0.3797817458014647,
+      "reference": 0.37978174580146895,
+      "normalizing_scale": 0.37978174580146895,
+      "normalized_error": 1.125477643952186e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电荷",
+      "computed": -6.588142992649486,
+      "reference": -6.588142992649478,
+      "normalizing_scale": 6.588142992649478,
+      "normalized_error": 1.213332161463367e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电流差",
+      "computed": -0.05753172344730806,
+      "reference": -0.05753172344730806,
+      "normalizing_scale": 0.05753172344730806,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "全电流连续",
+      "computed": 1.394337563126308,
+      "reference": 1.394337563126308,
+      "normalizing_scale": 1.394337563126308,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "两层场强响应",
+      "computed": 3.46666311667731,
+      "reference": 3.466663116677308,
+      "normalizing_scale": 3.466663116677308,
+      "normalized_error": 6.405139393465333e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外源功",
+      "computed": 0.8412392756599156,
+      "reference": 0.8412392756599367,
+      "normalizing_scale": 0.8412392756599367,
+      "normalized_error": 2.507519332276769e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外焦耳热",
+      "computed": 0.4206222222066296,
+      "reference": 0.42062222220634315,
+      "normalizing_scale": 0.42062222220634315,
+      "normalized_error": 6.809852766475417e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "有限时能量守恒",
+      "computed": 0.42061705345328604,
+      "reference": 0.420617053453598,
+      "normalizing_scale": 0.420617053453598,
+      "normalized_error": 7.417023807240508e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电荷",
+      "computed": -6.93329073346105,
+      "reference": -6.933290733461018,
+      "normalizing_scale": 6.933290733461018,
+      "normalized_error": 4.611723976162074e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电流差",
+      "computed": -7.0999787140646475e-06,
+      "reference": -7.0999787140646475e-06,
+      "normalizing_scale": 7.0999787140646475e-06,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "全电流连续",
+      "computed": 1.3866676133304956,
+      "reference": 1.3866676133304956,
+      "normalizing_scale": 1.3866676133304956,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层最终能量",
+      "name": "稳态场能增量",
+      "computed": 0.4206222222222227,
+      "reference": 0.42062222222222223,
+      "normalizing_scale": 0.42062222222222223,
+      "normalized_error": 1.0557911265454784e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "两层场强响应",
+      "computed": 0.37398625986263473,
+      "reference": 0.3739862598626334,
+      "normalizing_scale": 0.3739862598626334,
+      "normalized_error": 3.562343787815988e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外源功",
+      "computed": 0.024770866588712328,
+      "reference": 0.024770866588712616,
+      "normalizing_scale": 0.024770866588712616,
+      "normalized_error": 1.1625111942727393e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外焦耳热",
+      "computed": 0.021560787949852892,
+      "reference": 0.021560787949853458,
+      "normalizing_scale": 0.021560787949853458,
+      "normalized_error": 2.6229090257913452e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "有限时能量守恒",
+      "computed": 0.0032100786388594357,
+      "reference": 0.0032100786388596925,
+      "normalizing_scale": 0.0032100786388596925,
+      "normalized_error": 7.997906074219048e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电荷",
+      "computed": -0.07740895808973254,
+      "reference": -0.07740895808972692,
+      "normalizing_scale": 0.07740895808972692,
+      "normalized_error": 7.260792808566121e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电流差",
+      "computed": -0.5268040680403193,
+      "reference": -0.5268040680403193,
+      "normalizing_scale": 0.5268040680403193,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "全电流连续",
+      "computed": 0.9235738757387093,
+      "reference": 0.9235738757387092,
+      "normalizing_scale": 0.9235738757387092,
+      "normalized_error": 1.2020944439741308e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "两层场强响应",
+      "computed": 0.4005063508500316,
+      "reference": 0.4005063508500308,
+      "normalizing_scale": 0.4005063508500308,
+      "normalized_error": 2.079036366593495e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外源功",
+      "computed": 0.0604138688757741,
+      "reference": 0.060413868875774684,
+      "normalizing_scale": 0.060413868875774684,
+      "normalized_error": 9.647902026051681e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外焦耳热",
+      "computed": 0.04131944459839928,
+      "reference": 0.04131944459839973,
+      "normalizing_scale": 0.04131944459839973,
+      "normalized_error": 1.0915638100601134e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "有限时能量守恒",
+      "computed": 0.019094424277374823,
+      "reference": 0.01909442427737562,
+      "normalizing_scale": 0.01909442427737562,
+      "normalized_error": 4.1790880277800464e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电荷",
+      "computed": -0.18879334023679945,
+      "reference": -0.18879334023679586,
+      "normalizing_scale": 0.18879334023679586,
+      "normalized_error": 1.8965018839781594e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电流差",
+      "computed": -0.2616031581663505,
+      "reference": -0.2616031581663505,
+      "normalizing_scale": 0.2616031581663505,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "全电流连续",
+      "computed": 0.8882137544221801,
+      "reference": 0.88821375442218,
+      "normalizing_scale": 0.88821375442218,
+      "normalized_error": 1.2499502727779787e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "两层场强响应",
+      "computed": 0.42312625291606315,
+      "reference": 0.42312625291606304,
+      "normalizing_scale": 0.42312625291606304,
+      "normalized_error": 2.623857576725203e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外源功",
+      "computed": 0.09081501725252095,
+      "reference": 0.09081501725252202,
+      "normalizing_scale": 0.09081501725252202,
+      "normalized_error": 1.1766662535892844e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外焦耳热",
+      "computed": 0.04766821536265023,
+      "reference": 0.047668215362651034,
+      "normalizing_scale": 0.047668215362651034,
+      "normalized_error": 1.688571067176772e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "有限时能量守恒",
+      "computed": 0.04314680188987072,
+      "reference": 0.04314680188987119,
+      "normalizing_scale": 0.04314680188987119,
+      "normalized_error": 1.0935799753363833e-14,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电荷",
+      "computed": -0.2837969289141319,
+      "reference": -0.2837969289141313,
+      "normalizing_scale": 0.2837969289141313,
+      "normalized_error": 2.151618292277549e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电流差",
+      "computed": -0.035404137506035105,
+      "reference": -0.035404137506035105,
+      "normalizing_scale": 0.035404137506035105,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "全电流连续",
+      "computed": 0.8580538850008047,
+      "reference": 0.8580538850008047,
+      "normalizing_scale": 0.8580538850008047,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "两层场强响应",
+      "computed": 0.42666622974489926,
+      "reference": 0.4266662297448994,
+      "normalizing_scale": 0.4266662297448994,
+      "normalized_error": 2.602087878595292e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外源功",
+      "computed": 0.0955727461104785,
+      "reference": 0.09557274611047802,
+      "normalizing_scale": 0.09557274611047802,
+      "normalized_error": 5.0822289098194526e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "额外焦耳热",
+      "computed": 0.04778666666489252,
+      "reference": 0.047786666664862656,
+      "normalizing_scale": 0.047786666664862656,
+      "normalized_error": 6.249651094491662e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "独立两层弛豫积分",
+      "name": "有限时能量守恒",
+      "computed": 0.04778607944558598,
+      "reference": 0.047786079445615304,
+      "normalizing_scale": 0.047786079445615304,
+      "normalized_error": 6.136466096007087e-13,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电荷",
+      "computed": -0.29866483159524354,
+      "reference": -0.29866483159524376,
+      "normalizing_scale": 0.29866483159524376,
+      "normalized_error": 7.434574862364457e-16,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "界面自由电流差",
+      "computed": -4.369217673994008e-06,
+      "reference": -4.369217673994008e-06,
+      "normalizing_scale": 4.369217673994008e-06,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层界面守恒",
+      "name": "全电流连续",
+      "computed": 0.8533339158956899,
+      "reference": 0.8533339158956899,
+      "normalizing_scale": 0.8533339158956899,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "两层最终能量",
+      "name": "稳态场能增量",
+      "computed": 0.047786666666666755,
+      "reference": 0.047786666666666665,
+      "normalizing_scale": 0.047786666666666665,
+      "normalized_error": 1.8876734253095837e-15,
+      "tolerance": 2e-07,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "圆板总电流",
+      "computed": 1.3908125693098383,
+      "reference": 1.39081,
+      "normalizing_scale": 1.39081,
+      "normalized_error": 1.8473478319960731e-06,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "圆板边缘磁场微特斯拉",
+      "computed": 5.563250277239352,
+      "reference": 5.56325,
+      "normalizing_scale": 5.56325,
+      "normalized_error": 4.983406324796361e-08,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "电容皮法",
+      "computed": 69.5406284654919,
+      "reference": 69.5406,
+      "normalizing_scale": 69.5406,
+      "normalized_error": 4.093363000677512e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "恒流电压",
+      "computed": 143.80082867617872,
+      "reference": 143.801,
+      "normalizing_scale": 143.801,
+      "normalized_error": 1.1913952007500543e-06,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "恒流场能微焦",
+      "computed": 0.7190041433808938,
+      "reference": 0.719004,
+      "normalizing_scale": 0.719004,
+      "normalized_error": 1.9941598909670205e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "行波阻抗",
+      "computed": 188.3651567821601,
+      "reference": 188.365,
+      "normalizing_scale": 188.365,
+      "normalized_error": 8.323316969940548e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "行波磁场幅值",
+      "computed": 0.3185302474458617,
+      "reference": 0.31853,
+      "normalizing_scale": 0.31853,
+      "normalized_error": 7.768369125206041e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "行波能流",
+      "computed": 9.555907423375851,
+      "reference": 9.55591,
+      "normalizing_scale": 9.55591,
+      "normalized_error": 2.6963671168912753e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "有损圆柱平均功率毫瓦",
+      "computed": 3.1415926535897936,
+      "reference": 3.14159,
+      "normalizing_scale": 3.14159,
+      "normalized_error": 8.446645786615914e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "RC峰时微秒",
+      "computed": 48.2018905552224,
+      "reference": 48.2019,
+      "normalizing_scale": 48.2019,
+      "normalized_error": 1.9594201895697505e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "RC最终场能微焦",
+      "computed": 0.3477031423274595,
+      "reference": 0.347703,
+      "normalizing_scale": 0.347703,
+      "normalized_error": 4.0933630006136516e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "两层时间毫秒",
+      "computed": 1.2,
+      "reference": 1.2,
+      "normalizing_scale": 1.2,
+      "normalized_error": 0.0,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "两层界面电荷微库每平方米",
+      "computed": -0.708335025024,
+      "reference": -0.708335,
+      "normalizing_scale": 0.708335,
+      "normalized_error": 3.5327916851879064e-08,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "两层初始电流微安",
+      "computed": 7.870389166933334,
+      "reference": 7.87039,
+      "normalizing_scale": 7.87039,
+      "normalized_error": 1.0584820654592657e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "两层最终电流微安",
+      "computed": 7.083350250240001,
+      "reference": 7.08335,
+      "normalizing_scale": 7.08335,
+      "normalized_error": 3.5327917039963465e-08,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "两层场能增量纳焦",
+      "computed": 47.22233500160001,
+      "reference": 47.2223,
+      "normalizing_scale": 47.2223,
+      "normalized_error": 7.41209132364198e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "group": "SI数值代入",
+      "name": "两层额外源功纳焦",
+      "computed": 94.44467000320002,
+      "reference": 94.4447,
+      "normalizing_scale": 94.4447,
+      "normalized_error": 3.1761231684611136e-07,
+      "tolerance": 5e-06,
+      "passed": true
+    }
+  ]
+}

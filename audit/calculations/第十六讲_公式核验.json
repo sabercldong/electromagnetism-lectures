@@ -1,0 +1,3459 @@
+{
+  "count": 572,
+  "all_passed": true,
+  "maximum_normalized_error": 1.8218740722820168e-10,
+  "计数说明": "同一关系在不同参数下的积分、边界矩阵、有限差分或极值采样实例，不代表独立公式数量。",
+  "零值误差说明": "mu0=1等单位化条件下，预期零值使用绝对误差。",
+  "groups": {
+    "积分或恒等式": {
+      "count": 372,
+      "maximum_normalized_error": 1.4210854715202004e-14
+    },
+    "边界线性方程": {
+      "count": 128,
+      "maximum_normalized_error": 4.0824846320126407e-16
+    },
+    "有限差分": {
+      "count": 56,
+      "maximum_normalized_error": 1.8218740722820168e-10
+    },
+    "极值采样": {
+      "count": 16,
+      "maximum_normalized_error": 2.7755575615628914e-17
+    }
+  },
+  "checks": [
+    {
+      "name": "finite_cylinder_axis_0",
+      "kind": "积分或恒等式",
+      "error": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_0",
+      "kind": "积分或恒等式",
+      "error": 1.3877787807814457e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_0",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_0",
+      "kind": "积分或恒等式",
+      "error": 3.0531133177191805e-15,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_0",
+      "kind": "积分或恒等式",
+      "error": 7.327471962526033e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_0",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_0",
+      "kind": "积分或恒等式",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_0",
+      "kind": "积分或恒等式",
+      "error": 1.734723475976807e-18,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_0",
+      "kind": "积分或恒等式",
+      "error": 2.168404344971009e-19,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_0",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_0",
+      "kind": "积分或恒等式",
+      "error": 7.932815882254785e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_0",
+      "kind": "积分或恒等式",
+      "error": 7.57761517110911e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_1",
+      "kind": "积分或恒等式",
+      "error": 5.78741746325237e-15,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_1",
+      "kind": "积分或恒等式",
+      "error": 6.49008912266949e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_1",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_1",
+      "kind": "积分或恒等式",
+      "error": 7.216449660063518e-16,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_1",
+      "kind": "积分或恒等式",
+      "error": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_1",
+      "kind": "积分或恒等式",
+      "error": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_1",
+      "kind": "积分或恒等式",
+      "error": 1.7719430720054393e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_1",
+      "kind": "积分或恒等式",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_1",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_1",
+      "kind": "积分或恒等式",
+      "error": 1.4538108070911615e-16,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_1",
+      "kind": "积分或恒等式",
+      "error": 7.994541310994495e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_1",
+      "kind": "积分或恒等式",
+      "error": 7.267764828176872e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_2",
+      "kind": "积分或恒等式",
+      "error": 7.429272539626979e-15,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_2",
+      "kind": "积分或恒等式",
+      "error": 6.933616334605128e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_2",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_2",
+      "kind": "积分或恒等式",
+      "error": 1.5543122344752192e-15,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_2",
+      "kind": "积分或恒等式",
+      "error": 5.537270945042369e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_2",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_2",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_2",
+      "kind": "积分或恒等式",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_2",
+      "kind": "积分或恒等式",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_2",
+      "kind": "积分或恒等式",
+      "error": 1.4201007186552218e-16,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_2",
+      "kind": "积分或恒等式",
+      "error": 7.780327569416548e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_2",
+      "kind": "积分或恒等式",
+      "error": 7.40983578039677e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_3",
+      "kind": "积分或恒等式",
+      "error": 3.885780586188048e-16,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_3",
+      "kind": "积分或恒等式",
+      "error": 1.9221525528774283e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_3",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_3",
+      "kind": "积分或恒等式",
+      "error": 2.7200464103316335e-15,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_3",
+      "kind": "积分或恒等式",
+      "error": 1.3154710828442778e-14,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_3",
+      "kind": "积分或恒等式",
+      "error": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_3",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_3",
+      "kind": "积分或恒等式",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_3",
+      "kind": "积分或恒等式",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_3",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_3",
+      "kind": "积分或恒等式",
+      "error": 7.71688237594233e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_3",
+      "kind": "积分或恒等式",
+      "error": 7.493204625915073e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_4",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_4",
+      "kind": "积分或恒等式",
+      "error": 1.887379141862766e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_4",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_4",
+      "kind": "积分或恒等式",
+      "error": 1.2545520178264269e-14,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_4",
+      "kind": "积分或恒等式",
+      "error": 7.299716386910404e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_4",
+      "kind": "积分或恒等式",
+      "error": 1.4210854715202004e-14,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_4",
+      "kind": "积分或恒等式",
+      "error": 1.674492362293607e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_4",
+      "kind": "积分或恒等式",
+      "error": 1.2212453270876722e-15,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_4",
+      "kind": "积分或恒等式",
+      "error": 1.1547221220990983e-15,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_4",
+      "kind": "积分或恒等式",
+      "error": 1.3900908125749695e-16,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_4",
+      "kind": "积分或恒等式",
+      "error": 7.327471962526033e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_4",
+      "kind": "积分或恒等式",
+      "error": 7.216449660063518e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_5",
+      "kind": "积分或恒等式",
+      "error": 1.2546125473144718e-15,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_5",
+      "kind": "积分或恒等式",
+      "error": 5.012448680670815e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_5",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_5",
+      "kind": "积分或恒等式",
+      "error": 1.623018707750155e-16,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_5",
+      "kind": "积分或恒等式",
+      "error": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_5",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_5",
+      "kind": "积分或恒等式",
+      "error": 1.6186391271179209e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_5",
+      "kind": "积分或恒等式",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_5",
+      "kind": "积分或恒等式",
+      "error": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_5",
+      "kind": "积分或恒等式",
+      "error": 1.904734691062373e-16,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_5",
+      "kind": "积分或恒等式",
+      "error": 7.558284305117736e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_5",
+      "kind": "积分或恒等式",
+      "error": 7.790846899121419e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_6",
+      "kind": "积分或恒等式",
+      "error": 4.85722573273506e-17,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_6",
+      "kind": "积分或恒等式",
+      "error": 7.771561172376096e-16,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_6",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_6",
+      "kind": "积分或恒等式",
+      "error": 2.983724378680108e-16,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_6",
+      "kind": "积分或恒等式",
+      "error": 6.661338147750939e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_6",
+      "kind": "积分或恒等式",
+      "error": 8.881784197001252e-16,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_6",
+      "kind": "积分或恒等式",
+      "error": 3.834214388301748e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_6",
+      "kind": "积分或恒等式",
+      "error": 1.6653345369377348e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_6",
+      "kind": "积分或恒等式",
+      "error": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_6",
+      "kind": "积分或恒等式",
+      "error": 1.614045055275959e-16,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_6",
+      "kind": "积分或恒等式",
+      "error": 7.47660680819194e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_6",
+      "kind": "积分或恒等式",
+      "error": 7.476606808191996e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_7",
+      "kind": "积分或恒等式",
+      "error": 4.163336342344337e-17,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_7",
+      "kind": "积分或恒等式",
+      "error": 7.771561172376096e-16,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_7",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_7",
+      "kind": "积分或恒等式",
+      "error": 2.1386390825002127e-15,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_7",
+      "kind": "积分或恒等式",
+      "error": 2.7532236284614466e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_7",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_7",
+      "kind": "积分或恒等式",
+      "error": 1.1765430908797398e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_7",
+      "kind": "积分或恒等式",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_7",
+      "kind": "积分或恒等式",
+      "error": 1.6653345369377348e-16,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_7",
+      "kind": "积分或恒等式",
+      "error": 1.3080229780950524e-16,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_7",
+      "kind": "积分或恒等式",
+      "error": 8.222255565413441e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_7",
+      "kind": "积分或恒等式",
+      "error": 7.53706760162905e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_8",
+      "kind": "积分或恒等式",
+      "error": 1.734723475976807e-17,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_8",
+      "kind": "积分或恒等式",
+      "error": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_8",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_8",
+      "kind": "积分或恒等式",
+      "error": 1.261608647810973e-16,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_8",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_8",
+      "kind": "积分或恒等式",
+      "error": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_8",
+      "kind": "积分或恒等式",
+      "error": 1.7393788602143446e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_8",
+      "kind": "积分或恒等式",
+      "error": 4.163336342344337e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_8",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_8",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_8",
+      "kind": "积分或恒等式",
+      "error": 7.824898488309897e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_8",
+      "kind": "积分或恒等式",
+      "error": 7.613414745382662e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_9",
+      "kind": "积分或恒等式",
+      "error": 2.914335439641036e-15,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_9",
+      "kind": "积分或恒等式",
+      "error": 6.402474254033605e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_9",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_9",
+      "kind": "积分或恒等式",
+      "error": 1.3766765505351941e-14,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_9",
+      "kind": "积分或恒等式",
+      "error": 1.1823875212257917e-14,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_9",
+      "kind": "积分或恒等式",
+      "error": 2.6645352591003757e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_9",
+      "kind": "积分或恒等式",
+      "error": 1.684663200512128e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_9",
+      "kind": "积分或恒等式",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_9",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_9",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_9",
+      "kind": "积分或恒等式",
+      "error": 7.63882775063797e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_9",
+      "kind": "积分或恒等式",
+      "error": 7.638827750638028e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_10",
+      "kind": "积分或恒等式",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_10",
+      "kind": "积分或恒等式",
+      "error": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_10",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_10",
+      "kind": "积分或恒等式",
+      "error": 1.880718443373752e-15,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_10",
+      "kind": "积分或恒等式",
+      "error": 1.670480298259216e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_10",
+      "kind": "积分或恒等式",
+      "error": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_10",
+      "kind": "积分或恒等式",
+      "error": 1.7355880834999592e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_10",
+      "kind": "积分或恒等式",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_10",
+      "kind": "积分或恒等式",
+      "error": 1.3877787807814457e-16,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_10",
+      "kind": "积分或恒等式",
+      "error": 1.7851025105341583e-16,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_10",
+      "kind": "积分或恒等式",
+      "error": 7.726008768587596e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_10",
+      "kind": "积分或恒等式",
+      "error": 7.522692748361664e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_11",
+      "kind": "积分或恒等式",
+      "error": 1.3322676295501878e-15,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_11",
+      "kind": "积分或恒等式",
+      "error": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_11",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_11",
+      "kind": "积分或恒等式",
+      "error": 2.55351295663786e-15,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_11",
+      "kind": "积分或恒等式",
+      "error": 1.000922011768443e-14,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_11",
+      "kind": "积分或恒等式",
+      "error": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_11",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_11",
+      "kind": "积分或恒等式",
+      "error": 1.0408340855860843e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_11",
+      "kind": "积分或恒等式",
+      "error": 2.6020852139652106e-18,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_11",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_11",
+      "kind": "积分或恒等式",
+      "error": 7.88030881399072e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_11",
+      "kind": "积分或恒等式",
+      "error": 7.513782822642373e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_12",
+      "kind": "积分或恒等式",
+      "error": 9.43689570931383e-16,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_12",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_12",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_12",
+      "kind": "积分或恒等式",
+      "error": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_12",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_12",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_12",
+      "kind": "积分或恒等式",
+      "error": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_12",
+      "kind": "积分或恒等式",
+      "error": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_12",
+      "kind": "积分或恒等式",
+      "error": 2.0816681711721685e-17,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_12",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_12",
+      "kind": "积分或恒等式",
+      "error": 2.4980018054066022e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_12",
+      "kind": "积分或恒等式",
+      "error": 2.4424906541753444e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_13",
+      "kind": "积分或恒等式",
+      "error": 4.551914400963142e-15,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_13",
+      "kind": "积分或恒等式",
+      "error": 6.0771219563107635e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_13",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_13",
+      "kind": "积分或恒等式",
+      "error": 6.772360450213455e-15,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_13",
+      "kind": "积分或恒等式",
+      "error": 1.279497922239204e-14,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_13",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_13",
+      "kind": "积分或恒等式",
+      "error": 1.3803104106811858e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_13",
+      "kind": "积分或恒等式",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_13",
+      "kind": "积分或恒等式",
+      "error": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_13",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_13",
+      "kind": "积分或恒等式",
+      "error": 7.916425466459905e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_13",
+      "kind": "积分或恒等式",
+      "error": 7.539452825199969e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_14",
+      "kind": "积分或恒等式",
+      "error": 8.604228440844963e-16,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_14",
+      "kind": "积分或恒等式",
+      "error": 3.106278466532931e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_14",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_14",
+      "kind": "积分或恒等式",
+      "error": 3.6637359812630166e-15,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_14",
+      "kind": "积分或恒等式",
+      "error": 3.113354939034519e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_14",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_14",
+      "kind": "积分或恒等式",
+      "error": 1.9862812900164764e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_14",
+      "kind": "积分或恒等式",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_14",
+      "kind": "积分或恒等式",
+      "error": 1.0408340855860843e-17,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_14",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_14",
+      "kind": "积分或恒等式",
+      "error": 7.183019870604845e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_14",
+      "kind": "积分或恒等式",
+      "error": 7.661887861978556e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_15",
+      "kind": "积分或恒等式",
+      "error": 1.9566915891963976e-15,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_15",
+      "kind": "积分或恒等式",
+      "error": 1.7886133694530298e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_15",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_15",
+      "kind": "积分或恒等式",
+      "error": 3.2751579226442118e-15,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_15",
+      "kind": "积分或恒等式",
+      "error": 8.769808683873162e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_15",
+      "kind": "积分或恒等式",
+      "error": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_15",
+      "kind": "积分或恒等式",
+      "error": 1.518380987119353e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_15",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_15",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_15",
+      "kind": "积分或恒等式",
+      "error": 1.417290056111642e-16,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_15",
+      "kind": "积分或恒等式",
+      "error": 8.013287948829173e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_15",
+      "kind": "积分或恒等式",
+      "error": 7.295680072814677e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_16",
+      "kind": "积分或恒等式",
+      "error": 7.216449660063518e-16,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_16",
+      "kind": "积分或恒等式",
+      "error": 1.4432899320127035e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_16",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_16",
+      "kind": "积分或恒等式",
+      "error": 3.9877530755095903e-16,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_16",
+      "kind": "积分或恒等式",
+      "error": 5.451489159132797e-16,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_16",
+      "kind": "积分或恒等式",
+      "error": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_16",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_16",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_16",
+      "kind": "积分或恒等式",
+      "error": 1.734723475976807e-18,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_16",
+      "kind": "积分或恒等式",
+      "error": 1.2841876131495042e-16,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_16",
+      "kind": "积分或恒等式",
+      "error": 7.588881294087088e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_16",
+      "kind": "积分或恒等式",
+      "error": 7.799683552256234e-15,
+      "passed": true
+    },
+    {
+      "name": "finite_cylinder_axis_17",
+      "kind": "积分或恒等式",
+      "error": 6.98467592273906e-15,
+      "passed": true
+    },
+    {
+      "name": "cylinder_center_17",
+      "kind": "积分或恒等式",
+      "error": 6.622272718450072e-15,
+      "passed": true
+    },
+    {
+      "name": "slab_gradient_current_17",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_mx_17",
+      "kind": "积分或恒等式",
+      "error": 2.6153141958867715e-15,
+      "passed": true
+    },
+    {
+      "name": "rotating_slab_my_17",
+      "kind": "积分或恒等式",
+      "error": 3.1190361977503732e-15,
+      "passed": true
+    },
+    {
+      "name": "graded_shell_current_17",
+      "kind": "积分或恒等式",
+      "error": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "name": "graded_partial_ampere_17",
+      "kind": "积分或恒等式",
+      "error": 1.650377208519377e-16,
+      "passed": true
+    },
+    {
+      "name": "toroid_flux_17",
+      "kind": "积分或恒等式",
+      "error": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "name": "toroid_energy_17",
+      "kind": "积分或恒等式",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "remanent_ring_partial_current_17",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_flux_17",
+      "kind": "积分或恒等式",
+      "error": 7.24044965863736e-15,
+      "passed": true
+    },
+    {
+      "name": "parabolic_cylinder_moment_17",
+      "kind": "积分或恒等式",
+      "error": 7.879312863811302e-15,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_H_0",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_B_0",
+      "kind": "边界线性方程",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "cavity_H_0",
+      "kind": "边界线性方程",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "transverse_cylinder_H_0",
+      "kind": "边界线性方程",
+      "error": 1.3714519715957817e-16,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H1_0",
+      "kind": "边界线性方程",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H2_0",
+      "kind": "边界线性方程",
+      "error": 1.5124777436922423e-16,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_H_1",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_B_1",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "cavity_H_1",
+      "kind": "边界线性方程",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "transverse_cylinder_H_1",
+      "kind": "边界线性方程",
+      "error": 1.5673736818237503e-16,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H1_1",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H2_1",
+      "kind": "边界线性方程",
+      "error": 1.6090188762683426e-16,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_H_2",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_B_2",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "cavity_H_2",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "transverse_cylinder_H_2",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H1_2",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H2_2",
+      "kind": "边界线性方程",
+      "error": 1.8021011414205438e-16,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_H_3",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_B_3",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "cavity_H_3",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "transverse_cylinder_H_3",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H1_3",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H2_3",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_H_4",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_B_4",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "cavity_H_4",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "transverse_cylinder_H_4",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H1_4",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H2_4",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_H_5",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_B_5",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "cavity_H_5",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "transverse_cylinder_H_5",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H1_5",
+      "kind": "边界线性方程",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H2_5",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_H_6",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_B_6",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "cavity_H_6",
+      "kind": "边界线性方程",
+      "error": 1.8286026287943754e-16,
+      "passed": true
+    },
+    {
+      "name": "transverse_cylinder_H_6",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H1_6",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H2_6",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_H_7",
+      "kind": "边界线性方程",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "linear_sphere_B_7",
+      "kind": "边界线性方程",
+      "error": 1.8111873656630004e-16,
+      "passed": true
+    },
+    {
+      "name": "cavity_H_7",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "transverse_cylinder_H_7",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H1_7",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "current_sheet_H2_7",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_0",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_0",
+      "kind": "边界线性方程",
+      "error": 1.3010426069826053e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_0",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_0",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_0",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_0",
+      "kind": "积分或恒等式",
+      "error": 1.4836275612554517e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_0",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_1",
+      "kind": "边界线性方程",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_1",
+      "kind": "边界线性方程",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_1",
+      "kind": "边界线性方程",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_1",
+      "kind": "边界线性方程",
+      "error": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_1",
+      "kind": "积分或恒等式",
+      "error": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_1",
+      "kind": "积分或恒等式",
+      "error": 1.5350263464502132e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_1",
+      "kind": "积分或恒等式",
+      "error": 5.292512768224393e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_2",
+      "kind": "边界线性方程",
+      "error": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_2",
+      "kind": "边界线性方程",
+      "error": 8.673617379884035e-19,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_2",
+      "kind": "边界线性方程",
+      "error": 4.336808689942018e-19,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_2",
+      "kind": "边界线性方程",
+      "error": 1.734723475976807e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_2",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_2",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_2",
+      "kind": "积分或恒等式",
+      "error": 9.71445146547012e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_3",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_3",
+      "kind": "边界线性方程",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_3",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_3",
+      "kind": "边界线性方程",
+      "error": 1.6653345369377348e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_3",
+      "kind": "积分或恒等式",
+      "error": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_3",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_3",
+      "kind": "积分或恒等式",
+      "error": 2.966875839681867e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_4",
+      "kind": "边界线性方程",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_4",
+      "kind": "边界线性方程",
+      "error": 4.163336342344337e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_4",
+      "kind": "边界线性方程",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_4",
+      "kind": "边界线性方程",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_4",
+      "kind": "积分或恒等式",
+      "error": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_4",
+      "kind": "积分或恒等式",
+      "error": 1.78299941167571e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_4",
+      "kind": "积分或恒等式",
+      "error": 3.4416913763379853e-15,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_5",
+      "kind": "边界线性方程",
+      "error": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_5",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_5",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_5",
+      "kind": "边界线性方程",
+      "error": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_5",
+      "kind": "积分或恒等式",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_5",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_5",
+      "kind": "积分或恒等式",
+      "error": 3.885780586188048e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_6",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_6",
+      "kind": "边界线性方程",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_6",
+      "kind": "边界线性方程",
+      "error": 1.6677804861539755e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_6",
+      "kind": "边界线性方程",
+      "error": 4.0824846320126407e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_6",
+      "kind": "积分或恒等式",
+      "error": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_6",
+      "kind": "积分或恒等式",
+      "error": 1.8858016415970196e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_6",
+      "kind": "积分或恒等式",
+      "error": 1.7326602914173583e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_7",
+      "kind": "边界线性方程",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_7",
+      "kind": "边界线性方程",
+      "error": 3.469446951953614e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_7",
+      "kind": "边界线性方程",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_7",
+      "kind": "边界线性方程",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_7",
+      "kind": "积分或恒等式",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_7",
+      "kind": "积分或恒等式",
+      "error": 1.4898760171179835e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_7",
+      "kind": "积分或恒等式",
+      "error": 1.8046784481138248e-15,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_8",
+      "kind": "边界线性方程",
+      "error": 1.7962240225173003e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_8",
+      "kind": "边界线性方程",
+      "error": 4.163336342344337e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_8",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_8",
+      "kind": "边界线性方程",
+      "error": 3.469446951953614e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_8",
+      "kind": "积分或恒等式",
+      "error": 1.6653345369377348e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_8",
+      "kind": "积分或恒等式",
+      "error": 1.6416566316572145e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_8",
+      "kind": "积分或恒等式",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_9",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_9",
+      "kind": "边界线性方程",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_9",
+      "kind": "边界线性方程",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_9",
+      "kind": "边界线性方程",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_9",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_9",
+      "kind": "积分或恒等式",
+      "error": 1.6828420816594528e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_9",
+      "kind": "积分或恒等式",
+      "error": 4.1857955023494706e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_10",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_10",
+      "kind": "边界线性方程",
+      "error": 3.469446951953614e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_10",
+      "kind": "边界线性方程",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_10",
+      "kind": "边界线性方程",
+      "error": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_10",
+      "kind": "积分或恒等式",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_10",
+      "kind": "积分或恒等式",
+      "error": 2.380862789791758e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_10",
+      "kind": "积分或恒等式",
+      "error": 1.236841798045489e-15,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_11",
+      "kind": "边界线性方程",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_11",
+      "kind": "边界线性方程",
+      "error": 1.734723475976807e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_11",
+      "kind": "边界线性方程",
+      "error": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_11",
+      "kind": "边界线性方程",
+      "error": 8.673617379884035e-19,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_11",
+      "kind": "积分或恒等式",
+      "error": 1.6653345369377348e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_11",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_11",
+      "kind": "积分或恒等式",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_12",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_12",
+      "kind": "边界线性方程",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_12",
+      "kind": "边界线性方程",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_12",
+      "kind": "边界线性方程",
+      "error": 3.469446951953614e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_12",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_12",
+      "kind": "积分或恒等式",
+      "error": 1.9807909108171994e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_12",
+      "kind": "积分或恒等式",
+      "error": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_13",
+      "kind": "边界线性方程",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_13",
+      "kind": "边界线性方程",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_13",
+      "kind": "边界线性方程",
+      "error": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_13",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_13",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_13",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_13",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_14",
+      "kind": "边界线性方程",
+      "error": 2.2202711917673212e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_14",
+      "kind": "边界线性方程",
+      "error": 3.469446951953614e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_14",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_14",
+      "kind": "边界线性方程",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_14",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_14",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_14",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_15",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_15",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_15",
+      "kind": "边界线性方程",
+      "error": 4.336808689942018e-19,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_15",
+      "kind": "边界线性方程",
+      "error": 8.673617379884035e-19,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_15",
+      "kind": "积分或恒等式",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_15",
+      "kind": "积分或恒等式",
+      "error": 2.2609571354812527e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_15",
+      "kind": "积分或恒等式",
+      "error": 1.249000902703301e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_16",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_16",
+      "kind": "边界线性方程",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_16",
+      "kind": "边界线性方程",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_16",
+      "kind": "边界线性方程",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_16",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_16",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_16",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_17",
+      "kind": "边界线性方程",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_17",
+      "kind": "边界线性方程",
+      "error": 2.0816681711721685e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_17",
+      "kind": "边界线性方程",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_17",
+      "kind": "边界线性方程",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_17",
+      "kind": "积分或恒等式",
+      "error": 1.6653345369377348e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_17",
+      "kind": "积分或恒等式",
+      "error": 1.6596728509756645e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_17",
+      "kind": "积分或恒等式",
+      "error": 1.8856627348064895e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_18",
+      "kind": "边界线性方程",
+      "error": 3.3921874289234026e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_18",
+      "kind": "边界线性方程",
+      "error": 2.0816681711721685e-17,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_18",
+      "kind": "边界线性方程",
+      "error": 3.6225938902942297e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_18",
+      "kind": "边界线性方程",
+      "error": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_18",
+      "kind": "积分或恒等式",
+      "error": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_18",
+      "kind": "积分或恒等式",
+      "error": 1.6843585074695061e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_18",
+      "kind": "积分或恒等式",
+      "error": 3.599956319419681e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_A_19",
+      "kind": "边界线性方程",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_C_19",
+      "kind": "边界线性方程",
+      "error": 3.469446951953614e-18,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_D_19",
+      "kind": "边界线性方程",
+      "error": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_magnet_E_19",
+      "kind": "边界线性方程",
+      "error": 2.8373247847306227e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_effective_moment_19",
+      "kind": "积分或恒等式",
+      "error": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_denominator_19",
+      "kind": "积分或恒等式",
+      "error": 1.5257246549956338e-16,
+      "passed": true
+    },
+    {
+      "name": "coated_surface_moment_19",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "sphere_outside_energy_0",
+      "kind": "积分或恒等式",
+      "error": 2.1649348980190553e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_demag_energy_0",
+      "kind": "积分或恒等式",
+      "error": 2.1649348980190553e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_B_energy_0",
+      "kind": "积分或恒等式",
+      "error": 2.1094237467877974e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_outside_energy_1",
+      "kind": "积分或恒等式",
+      "error": 1.096345236817342e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_demag_energy_1",
+      "kind": "积分或恒等式",
+      "error": 1.0824674490095276e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_B_energy_1",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_outside_energy_2",
+      "kind": "积分或恒等式",
+      "error": 1.130676928692397e-14,
+      "passed": true
+    },
+    {
+      "name": "sphere_demag_energy_2",
+      "kind": "积分或恒等式",
+      "error": 7.537846191282647e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_B_energy_2",
+      "kind": "积分或恒等式",
+      "error": 3.700397221175118e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_outside_energy_3",
+      "kind": "积分或恒等式",
+      "error": 5.495603971894525e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_demag_energy_3",
+      "kind": "积分或恒等式",
+      "error": 5.440092820663267e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_B_energy_3",
+      "kind": "积分或恒等式",
+      "error": 3.757516191144628e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_outside_energy_4",
+      "kind": "积分或恒等式",
+      "error": 1.1424124865933628e-14,
+      "passed": true
+    },
+    {
+      "name": "sphere_demag_energy_4",
+      "kind": "积分或恒等式",
+      "error": 7.616083243955752e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_B_energy_4",
+      "kind": "积分或恒等式",
+      "error": 3.710399529106649e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_outside_energy_5",
+      "kind": "积分或恒等式",
+      "error": 2.55351295663786e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_demag_energy_5",
+      "kind": "积分或恒等式",
+      "error": 2.55351295663786e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_B_energy_5",
+      "kind": "积分或恒等式",
+      "error": 2.55351295663786e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_outside_energy_6",
+      "kind": "积分或恒等式",
+      "error": 1.116745857756558e-14,
+      "passed": true
+    },
+    {
+      "name": "sphere_demag_energy_6",
+      "kind": "积分或恒等式",
+      "error": 7.54423868351097e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_B_energy_6",
+      "kind": "积分或恒等式",
+      "error": 3.772119341755485e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_outside_energy_7",
+      "kind": "积分或恒等式",
+      "error": 4.773959005888173e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_demag_energy_7",
+      "kind": "积分或恒等式",
+      "error": 4.773959005888173e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_B_energy_7",
+      "kind": "积分或恒等式",
+      "error": 3.696424268874089e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_outside_energy_8",
+      "kind": "积分或恒等式",
+      "error": 1.1298381101392956e-14,
+      "passed": true
+    },
+    {
+      "name": "sphere_demag_energy_8",
+      "kind": "积分或恒等式",
+      "error": 7.532254067595303e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_B_energy_8",
+      "kind": "积分或恒等式",
+      "error": 3.873730663334728e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_outside_energy_9",
+      "kind": "积分或恒等式",
+      "error": 1.1345996724568342e-14,
+      "passed": true
+    },
+    {
+      "name": "sphere_demag_energy_9",
+      "kind": "积分或恒等式",
+      "error": 7.399563081240224e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_B_energy_9",
+      "kind": "积分或恒等式",
+      "error": 3.781998908189448e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_outside_energy_10",
+      "kind": "积分或恒等式",
+      "error": 1.1556591514582222e-14,
+      "passed": true
+    },
+    {
+      "name": "sphere_demag_energy_10",
+      "kind": "积分或恒等式",
+      "error": 7.704394343054814e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_B_energy_10",
+      "kind": "积分或恒等式",
+      "error": 3.852197171527407e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_outside_energy_11",
+      "kind": "积分或恒等式",
+      "error": 1.1155508959264388e-14,
+      "passed": true
+    },
+    {
+      "name": "sphere_demag_energy_11",
+      "kind": "积分或恒等式",
+      "error": 7.437005972842926e-15,
+      "passed": true
+    },
+    {
+      "name": "sphere_B_energy_11",
+      "kind": "积分或恒等式",
+      "error": 3.718502986421463e-15,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_anisotropy_0",
+      "kind": "积分或恒等式",
+      "error": 3.5902841179497093e-16,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_torque_0",
+      "kind": "有限差分",
+      "error": 2.5011048787604295e-11,
+      "passed": true
+    },
+    {
+      "name": "small_sphere_force_0",
+      "kind": "有限差分",
+      "error": 7.635177212694799e-13,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_anisotropy_1",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_torque_1",
+      "kind": "有限差分",
+      "error": 4.186451185717033e-11,
+      "passed": true
+    },
+    {
+      "name": "small_sphere_force_1",
+      "kind": "有限差分",
+      "error": 4.821620533390636e-14,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_anisotropy_2",
+      "kind": "积分或恒等式",
+      "error": 1.5156404835134732e-16,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_torque_2",
+      "kind": "有限差分",
+      "error": 5.347032105222567e-11,
+      "passed": true
+    },
+    {
+      "name": "small_sphere_force_2",
+      "kind": "有限差分",
+      "error": 3.5449345282129174e-16,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_anisotropy_3",
+      "kind": "积分或恒等式",
+      "error": 5.637851296924623e-18,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_torque_3",
+      "kind": "有限差分",
+      "error": 8.0053888865117e-13,
+      "passed": true
+    },
+    {
+      "name": "small_sphere_force_3",
+      "kind": "有限差分",
+      "error": 2.0797339544964544e-13,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_anisotropy_4",
+      "kind": "积分或恒等式",
+      "error": 2.276791992538899e-16,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_torque_4",
+      "kind": "有限差分",
+      "error": 2.9076074881118075e-11,
+      "passed": true
+    },
+    {
+      "name": "small_sphere_force_4",
+      "kind": "有限差分",
+      "error": 1.829862650293279e-12,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_anisotropy_5",
+      "kind": "积分或恒等式",
+      "error": 1.850628409060142e-16,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_torque_5",
+      "kind": "有限差分",
+      "error": 5.224121305593362e-11,
+      "passed": true
+    },
+    {
+      "name": "small_sphere_force_5",
+      "kind": "有限差分",
+      "error": 2.505582546996621e-13,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_anisotropy_6",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_torque_6",
+      "kind": "有限差分",
+      "error": 2.2794821585847558e-12,
+      "passed": true
+    },
+    {
+      "name": "small_sphere_force_6",
+      "kind": "有限差分",
+      "error": 4.832397502985142e-14,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_anisotropy_7",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_torque_7",
+      "kind": "有限差分",
+      "error": 8.89710527474108e-12,
+      "passed": true
+    },
+    {
+      "name": "small_sphere_force_7",
+      "kind": "有限差分",
+      "error": 6.688288811673715e-12,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_anisotropy_8",
+      "kind": "积分或恒等式",
+      "error": 4.163336342344337e-17,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_torque_8",
+      "kind": "有限差分",
+      "error": 5.085983717512121e-13,
+      "passed": true
+    },
+    {
+      "name": "small_sphere_force_8",
+      "kind": "有限差分",
+      "error": 6.359669735278572e-14,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_anisotropy_9",
+      "kind": "积分或恒等式",
+      "error": 1.734723475976807e-18,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_torque_9",
+      "kind": "有限差分",
+      "error": 2.002191815120291e-13,
+      "passed": true
+    },
+    {
+      "name": "small_sphere_force_9",
+      "kind": "有限差分",
+      "error": 7.980757981557174e-15,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_anisotropy_10",
+      "kind": "积分或恒等式",
+      "error": 1.3877787807814457e-17,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_torque_10",
+      "kind": "有限差分",
+      "error": 3.1573112180272034e-12,
+      "passed": true
+    },
+    {
+      "name": "small_sphere_force_10",
+      "kind": "有限差分",
+      "error": 6.715905609411266e-12,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_anisotropy_11",
+      "kind": "积分或恒等式",
+      "error": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "name": "ellipsoid_torque_11",
+      "kind": "有限差分",
+      "error": 1.947976502325588e-12,
+      "passed": true
+    },
+    {
+      "name": "small_sphere_force_11",
+      "kind": "有限差分",
+      "error": 9.37340483009308e-13,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_0",
+      "kind": "有限差分",
+      "error": 1.7034595956033627e-11,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_0",
+      "kind": "积分或恒等式",
+      "error": 2.6748175035855546e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_0",
+      "kind": "积分或恒等式",
+      "error": 3.5013550818621553e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_0",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_0",
+      "kind": "有限差分",
+      "error": 1.37025807367408e-13,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_0",
+      "kind": "积分或恒等式",
+      "error": 3.0531133177191805e-16,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_1",
+      "kind": "有限差分",
+      "error": 2.8008824685976215e-11,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_1",
+      "kind": "积分或恒等式",
+      "error": 1.6718292327862736e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_1",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_1",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_1",
+      "kind": "有限差分",
+      "error": 1.576083014098728e-14,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_1",
+      "kind": "积分或恒等式",
+      "error": 3.0531133177191805e-16,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_2",
+      "kind": "有限差分",
+      "error": 8.42745261769247e-11,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_2",
+      "kind": "积分或恒等式",
+      "error": 1.6653345369377348e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_2",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_2",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_2",
+      "kind": "有限差分",
+      "error": 1.5817208653956527e-14,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_2",
+      "kind": "积分或恒等式",
+      "error": 2.1581469701973482e-16,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_3",
+      "kind": "有限差分",
+      "error": 1.6227523917221836e-10,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_3",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_3",
+      "kind": "积分或恒等式",
+      "error": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_3",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_3",
+      "kind": "有限差分",
+      "error": 2.69638478211931e-13,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_3",
+      "kind": "积分或恒等式",
+      "error": 5.484676953750821e-16,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_4",
+      "kind": "有限差分",
+      "error": 8.479883462086946e-13,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_4",
+      "kind": "积分或恒等式",
+      "error": 3.6145621471428676e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_4",
+      "kind": "积分或恒等式",
+      "error": 2.989502093722115e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_4",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_4",
+      "kind": "有限差分",
+      "error": 1.2424089534945892e-13,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_4",
+      "kind": "积分或恒等式",
+      "error": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_5",
+      "kind": "有限差分",
+      "error": 1.8218740722820168e-10,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_5",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_5",
+      "kind": "积分或恒等式",
+      "error": 1.9571689464774986e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_5",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_5",
+      "kind": "有限差分",
+      "error": 3.5180192092809648e-15,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_5",
+      "kind": "积分或恒等式",
+      "error": 4.163336342344337e-17,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_6",
+      "kind": "有限差分",
+      "error": 1.0253242699320708e-11,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_6",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_6",
+      "kind": "积分或恒等式",
+      "error": 2.37179448708836e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_6",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_6",
+      "kind": "有限差分",
+      "error": 1.459179999052651e-12,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_6",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_7",
+      "kind": "有限差分",
+      "error": 9.301448500309561e-13,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_7",
+      "kind": "积分或恒等式",
+      "error": 1.7716047516704047e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_7",
+      "kind": "积分或恒等式",
+      "error": 4.572527102816793e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_7",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_7",
+      "kind": "有限差分",
+      "error": 6.492306692251759e-13,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_7",
+      "kind": "积分或恒等式",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_8",
+      "kind": "有限差分",
+      "error": 6.777044316451091e-11,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_8",
+      "kind": "积分或恒等式",
+      "error": 3.3306690738754696e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_8",
+      "kind": "积分或恒等式",
+      "error": 6.386942792042623e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_8",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_8",
+      "kind": "有限差分",
+      "error": 1.628228801786591e-13,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_8",
+      "kind": "积分或恒等式",
+      "error": 1.6653345369377348e-16,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_9",
+      "kind": "有限差分",
+      "error": 7.959188863537747e-12,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_9",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_9",
+      "kind": "积分或恒等式",
+      "error": 1.9169772410736896e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_9",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_9",
+      "kind": "有限差分",
+      "error": 3.138721921258636e-13,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_9",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_10",
+      "kind": "有限差分",
+      "error": 1.8272271278957486e-11,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_10",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_10",
+      "kind": "积分或恒等式",
+      "error": 0.0,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_10",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_10",
+      "kind": "有限差分",
+      "error": 1.7397541740571398e-14,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_10",
+      "kind": "积分或恒等式",
+      "error": 4.6629367034256575e-15,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_11",
+      "kind": "有限差分",
+      "error": 7.966985188237489e-11,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_11",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_11",
+      "kind": "积分或恒等式",
+      "error": 1.911393964476457e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_11",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_11",
+      "kind": "有限差分",
+      "error": 1.3057263603677427e-14,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_11",
+      "kind": "积分或恒等式",
+      "error": 4.440892098500626e-16,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_12",
+      "kind": "有限差分",
+      "error": 1.9286461316880832e-11,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_12",
+      "kind": "积分或恒等式",
+      "error": 2.8411456508040427e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_12",
+      "kind": "积分或恒等式",
+      "error": 4.485246987760095e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_12",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_12",
+      "kind": "有限差分",
+      "error": 2.2967044932542535e-13,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_12",
+      "kind": "积分或恒等式",
+      "error": 4.85722573273506e-17,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_13",
+      "kind": "有限差分",
+      "error": 3.1495066511725796e-11,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_13",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_13",
+      "kind": "积分或恒等式",
+      "error": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_13",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_13",
+      "kind": "有限差分",
+      "error": 7.795430967405537e-13,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_13",
+      "kind": "积分或恒等式",
+      "error": 3.885780586188048e-16,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_14",
+      "kind": "有限差分",
+      "error": 1.1699389580537286e-10,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_14",
+      "kind": "积分或恒等式",
+      "error": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_14",
+      "kind": "积分或恒等式",
+      "error": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_14",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_14",
+      "kind": "有限差分",
+      "error": 5.5712379154471137e-14,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_14",
+      "kind": "积分或恒等式",
+      "error": 8.881784197001252e-16,
+      "passed": true
+    },
+    {
+      "name": "gap_fixed_current_force_15",
+      "kind": "有限差分",
+      "error": 5.1598059158664e-11,
+      "passed": true
+    },
+    {
+      "name": "pull_in_equilibrium_15",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_field_15",
+      "kind": "积分或恒等式",
+      "error": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "name": "pull_in_global_peak_15",
+      "kind": "极值采样",
+      "error": 2.7755575615628914e-17,
+      "passed": true
+    },
+    {
+      "name": "fixed_flux_force_15",
+      "kind": "有限差分",
+      "error": 2.1898802216036017e-13,
+      "passed": true
+    },
+    {
+      "name": "gap_source_energy_15",
+      "kind": "积分或恒等式",
+      "error": 1.3877787807814457e-16,
+      "passed": true
+    }
+  ]
+}

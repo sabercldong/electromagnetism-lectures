@@ -1,0 +1,1684 @@
+{
+  "count": 235,
+  "all_passed": true,
+  "count_description": "同一关系在不同参数下的积分、矩阵求解、有限差分和数值比较实例，非独立公式数量",
+  "normalized_error_definition": "abs(got-expected)/max(1,abs(got),abs(expected));单位化预期零值使用绝对误差",
+  "maximum_normalized_error": 0.0019575416669934485,
+  "groups": {
+    "代数与统计积分": {
+      "count": 86,
+      "maximum_normalized_error": 7.549516567451064e-15
+    },
+    "有限差分": {
+      "count": 53,
+      "maximum_normalized_error": 4.440892098500626e-08
+    },
+    "回线与空间积分": {
+      "count": 41,
+      "maximum_normalized_error": 1.1597836024890285e-09
+    },
+    "磁路矩阵": {
+      "count": 16,
+      "maximum_normalized_error": 1.4432899320127033e-16
+    },
+    "极值采样": {
+      "count": 8,
+      "maximum_normalized_error": 6.40001385221467e-11
+    },
+    "稳定性矩阵": {
+      "count": 21,
+      "maximum_normalized_error": 2.220446049250313e-16
+    },
+    "题给数值": {
+      "count": 10,
+      "maximum_normalized_error": 0.0019575416669934485
+    }
+  },
+  "records": [
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-root-plus-0.001",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-root-minus-0.001",
+      "got": 1.0000000000000002,
+      "expected": 1.0,
+      "normalized_error": 2.2204460492503126e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-sum-0.001",
+      "got": 0.0019999999999998908,
+      "expected": 0.002,
+      "normalized_error": 1.0928757898653885e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-kinetic-0.001",
+      "got": 1.000002,
+      "expected": 1.000002,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-root-plus-0.05",
+      "got": 1.0000000000000002,
+      "expected": 1.0,
+      "normalized_error": 2.2204460492503126e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-root-minus-0.05",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-sum-0.05",
+      "got": 0.10000000000000009,
+      "expected": 0.1,
+      "normalized_error": 8.326672684688674e-17
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-kinetic-0.05",
+      "got": 1.0050000000000001,
+      "expected": 1.005,
+      "normalized_error": 2.2093990539804108e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-root-plus-0.3",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-root-minus-0.3",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-sum-0.3",
+      "got": 0.6000000000000001,
+      "expected": 0.6,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-kinetic-0.3",
+      "got": 1.1800000000000002,
+      "expected": 1.18,
+      "normalized_error": 1.8817339400426379e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-root-plus-1.0",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-root-minus-1.0",
+      "got": 1.0000000000000002,
+      "expected": 1.0,
+      "normalized_error": 2.2204460492503126e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-sum-1.0",
+      "got": 1.9999999999999998,
+      "expected": 2.0,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-kinetic-1.0",
+      "got": 3.0,
+      "expected": 3.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-root-plus-3.0",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-root-minus-3.0",
+      "got": 1.000000000000001,
+      "expected": 1.0,
+      "normalized_error": 1.1102230246251554e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-sum-3.0",
+      "got": 6.0,
+      "expected": 6.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "orbit-kinetic-3.0",
+      "got": 19.000000000000004,
+      "expected": 19.0,
+      "normalized_error": 1.8698493046318422e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "continuous-average-0.01",
+      "got": 0.003333311111322836,
+      "expected": 0.0033333111113194036,
+      "normalized_error": 3.432584078089107e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "two-state-0.01",
+      "got": 0.00999966667999952,
+      "expected": 0.00999966667999946,
+      "normalized_error": 5.898059818321144e-17
+    },
+    {
+      "group": "有限差分",
+      "name": "two-state-heat-0.01",
+      "got": 9.999000067772296e-05,
+      "expected": 9.999000066662887e-05,
+      "normalized_error": 1.1094085177430768e-14
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "fluid-pressure-0.01",
+      "got": 1.6666611111501778e-05,
+      "expected": 1.6666611111603554e-05,
+      "normalized_error": 1.0177609081028771e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "continuous-average-0.05",
+      "got": 0.016663889550099502,
+      "expected": 0.016663889550098787,
+      "normalized_error": 7.147060721024445e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "two-state-0.05",
+      "got": 0.049958374957880025,
+      "expected": 0.04995837495787998,
+      "normalized_error": 4.85722573273506e-17
+    },
+    {
+      "group": "有限差分",
+      "name": "two-state-heat-0.05",
+      "got": 0.0024937604021710302,
+      "expected": 0.0024937604019289196,
+      "normalized_error": 2.4211058505252403e-13
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "fluid-pressure-0.05",
+      "got": 0.0004166319499548704,
+      "expected": 0.0004166319499549115,
+      "normalized_error": 4.109126233720062e-17
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "continuous-average-0.2",
+      "got": 0.06648956343947374,
+      "expected": 0.06648956343947265,
+      "normalized_error": 1.0824674490095276e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "two-state-0.2",
+      "got": 0.197375320224904,
+      "expected": 0.197375320224904,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "two-state-heat-0.2",
+      "got": 0.038441719322213075,
+      "expected": 0.03844171931864467,
+      "normalized_error": 3.568402517917235e-12
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "fluid-pressure-0.2",
+      "got": 0.006657800285227045,
+      "expected": 0.0066578002852268605,
+      "normalized_error": 1.8474805019152996e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "continuous-average-0.5",
+      "got": 0.16395341373865527,
+      "expected": 0.1639534137386529,
+      "normalized_error": 2.3592239273284576e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "two-state-0.5",
+      "got": 0.46211715726001,
+      "expected": 0.46211715726000974,
+      "normalized_error": 2.7755575615628914e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "two-state-heat-0.5",
+      "got": 0.1966119332522109,
+      "expected": 0.19661193324148188,
+      "normalized_error": 1.0729028776523819e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "fluid-pressure-0.5",
+      "got": 0.041324854612918155,
+      "expected": 0.041324854612918155,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "continuous-average-1.0",
+      "got": 0.3130352854993359,
+      "expected": 0.31303528549933146,
+      "normalized_error": 4.440892098500626e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "two-state-1.0",
+      "got": 0.7615941559557649,
+      "expected": 0.7615941559557649,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "two-state-heat-1.0",
+      "got": 0.4199743416033463,
+      "expected": 0.4199743416140261,
+      "normalized_error": 1.0679790385381693e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "fluid-pressure-1.0",
+      "got": 0.16143936157119557,
+      "expected": 0.16143936157119557,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "continuous-average-2.0",
+      "got": 0.5373147207275548,
+      "expected": 0.5373147207275482,
+      "normalized_error": 6.661338147750939e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "two-state-2.0",
+      "got": 0.9640275800758169,
+      "expected": 0.9640275800758169,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "two-state-heat-2.0",
+      "got": 0.2826032993952232,
+      "expected": 0.2826032994126579,
+      "normalized_error": 1.7434664822957302e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "fluid-pressure-2.0",
+      "got": 0.5952201920542224,
+      "expected": 0.5952201920542227,
+      "normalized_error": 3.3306690738754696e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "continuous-average-5.0",
+      "got": 0.8000908039820269,
+      "expected": 0.8000908039820194,
+      "normalized_error": 7.549516567451064e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "two-state-5.0",
+      "got": 0.999909204262595,
+      "expected": 0.9999092042625951,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "two-state-heat-5.0",
+      "got": 0.004539580794604702,
+      "expected": 0.004539580773595167,
+      "normalized_error": 2.1009535257354717e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "fluid-pressure-5.0",
+      "got": 2.697369506045578,
+      "expected": 2.697369506045584,
+      "normalized_error": 2.140292501680432e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "continuous-average-10.0",
+      "got": 0.900000004122315,
+      "expected": 0.9000000041223074,
+      "normalized_error": 7.549516567451064e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "two-state-10.0",
+      "got": 0.9999999958776926,
+      "expected": 0.9999999958776927,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "two-state-heat-10.0",
+      "got": 8.244516180866411e-07,
+      "expected": 8.244614455767399e-07,
+      "normalized_error": 9.827490098735113e-12
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "fluid-pressure-10.0",
+      "got": 7.004267724384835,
+      "expected": 7.004267724384856,
+      "normalized_error": 2.9165223913391978e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "isotropic-u2",
+      "got": 0.33333333333333826,
+      "expected": 0.3333333333333333,
+      "normalized_error": 4.9404924595819466e-15
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-area-0.1-0.3",
+      "got": 0.0003999999999999971,
+      "expected": 0.00040000000000000013,
+      "normalized_error": 3.0357660829594124e-18
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-HdM-0.1-0.3",
+      "got": 0.0004000000000000062,
+      "expected": 0.00040000000000000013,
+      "normalized_error": 6.071532165918825e-18
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-area-0.1-1.2",
+      "got": 0.001599999999999988,
+      "expected": 0.0016000000000000005,
+      "normalized_error": 1.2576745200831851e-17
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-HdM-0.1-1.2",
+      "got": 0.0016000000000000241,
+      "expected": 0.0016000000000000005,
+      "normalized_error": 2.3635607360183997e-17
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-area-0.1-0.05",
+      "got": 6.666666666666641e-05,
+      "expected": 6.666666666666668e-05,
+      "normalized_error": 2.710505431213761e-19
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-HdM-0.1-0.05",
+      "got": 6.6666666666672e-05,
+      "expected": 6.666666666666668e-05,
+      "normalized_error": 5.312590645178972e-18
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-area-0.4-0.3",
+      "got": 0.025599999999999803,
+      "expected": 0.025600000000000008,
+      "normalized_error": 2.0469737016526324e-16
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-HdM-0.4-0.3",
+      "got": 0.0256000000000004,
+      "expected": 0.025600000000000008,
+      "normalized_error": 3.920475055707584e-16
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-area-0.4-1.2",
+      "got": 0.10239999999999921,
+      "expected": 0.10240000000000003,
+      "normalized_error": 8.187894806610529e-16
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-HdM-0.4-1.2",
+      "got": 0.10240000000000156,
+      "expected": 0.10240000000000003,
+      "normalized_error": 1.5265566588595902e-15
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-area-0.4-0.05",
+      "got": 0.004266666666666631,
+      "expected": 0.004266666666666668,
+      "normalized_error": 3.642919299551295e-17
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-HdM-0.4-0.05",
+      "got": 0.00426666666666671,
+      "expected": 0.004266666666666668,
+      "normalized_error": 4.2500725161431774e-17
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-area-1.0-0.3",
+      "got": 0.3999999999999968,
+      "expected": 0.39999999999999997,
+      "normalized_error": 3.164135620181696e-15
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-HdM-1.0-0.3",
+      "got": 0.400000000000006,
+      "expected": 0.39999999999999997,
+      "normalized_error": 6.050715484207103e-15
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-area-1.0-1.2",
+      "got": 1.5999999999999872,
+      "expected": 1.5999999999999999,
+      "normalized_error": 7.91033905045424e-15
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-HdM-1.0-1.2",
+      "got": 1.6000000000000245,
+      "expected": 1.5999999999999999,
+      "normalized_error": 1.540434446667381e-14
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-area-1.0-0.05",
+      "got": 0.06666666666666615,
+      "expected": 0.06666666666666667,
+      "normalized_error": 5.134781488891349e-16
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-HdM-1.0-0.05",
+      "got": 0.06666666666666742,
+      "expected": 0.06666666666666667,
+      "normalized_error": 7.494005416219807e-16
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-area-2.0-0.3",
+      "got": 3.1999999999999744,
+      "expected": 3.1999999999999997,
+      "normalized_error": 7.91033905045424e-15
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-HdM-2.0-0.3",
+      "got": 3.200000000000049,
+      "expected": 3.1999999999999997,
+      "normalized_error": 1.540434446667381e-14
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-area-2.0-1.2",
+      "got": 12.799999999999898,
+      "expected": 12.799999999999999,
+      "normalized_error": 7.91033905045424e-15
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-HdM-2.0-1.2",
+      "got": 12.800000000000193,
+      "expected": 12.799999999999999,
+      "normalized_error": 1.512678871051753e-14
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-area-2.0-0.05",
+      "got": 0.533333333333329,
+      "expected": 0.5333333333333333,
+      "normalized_error": 4.3298697960381105e-15
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "Rayleigh-HdM-2.0-0.05",
+      "got": 0.5333333333333401,
+      "expected": 0.5333333333333333,
+      "normalized_error": 6.772360450213455e-15
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "ellipse-area-0.05",
+      "got": 0.31402838202656935,
+      "expected": 0.3140283820265676,
+      "normalized_error": 1.7763568394002505e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-0.05-0.1",
+      "got": 0.0024979173609871452,
+      "expected": 0.002497917360987117,
+      "normalized_error": 2.8189256484623115e-17
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-0.05-0.8",
+      "got": 0.002497917360986923,
+      "expected": 0.002497917360987117,
+      "normalized_error": 1.938553484404082e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-0.05-2.0",
+      "got": 0.0024979173609871452,
+      "expected": 0.002497917360987117,
+      "normalized_error": 2.8189256484623115e-17
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-0.05-4.0",
+      "got": 0.0024979173609871452,
+      "expected": 0.002497917360987117,
+      "normalized_error": 2.8189256484623115e-17
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "ellipse-area-0.3",
+      "got": 0.7427232881876868,
+      "expected": 0.7427232881876814,
+      "normalized_error": 5.440092820663267e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-0.3-0.1",
+      "got": 0.08733219254516089,
+      "expected": 0.08733219254516084,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-0.3-0.8",
+      "got": 0.08733219254516089,
+      "expected": 0.08733219254516084,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-0.3-2.0",
+      "got": 0.08733219254516089,
+      "expected": 0.08733219254516084,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-0.3-4.0",
+      "got": 0.08733219254516089,
+      "expected": 0.08733219254516084,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "ellipse-area-0.8",
+      "got": 1.3521843751067097,
+      "expected": 1.3521843751066995,
+      "normalized_error": 7.553741941253672e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-0.8-0.1",
+      "got": 0.5145997611506443,
+      "expected": 0.5145997611506444,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-0.8-0.8",
+      "got": 0.5145997611506445,
+      "expected": 0.5145997611506444,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-0.8-2.0",
+      "got": 0.5145997611506444,
+      "expected": 0.5145997611506444,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-0.8-4.0",
+      "got": 0.5145997611506444,
+      "expected": 0.5145997611506444,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "ellipse-area-1.5",
+      "got": 3.13372292190797,
+      "expected": 3.1337229219079465,
+      "normalized_error": 7.510787873907805e-15
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-1.5-0.1",
+      "got": 0.9949962483002227,
+      "expected": 0.9949962483002227,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-1.5-0.8",
+      "got": 0.9949962483002227,
+      "expected": 0.9949962483002227,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-1.5-2.0",
+      "got": 0.9949962483002228,
+      "expected": 0.9949962483002227,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "ellipse-equation-1.5-4.0",
+      "got": 0.9949962483002227,
+      "expected": 0.9949962483002227,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "eddy-space-time-0.1-0.3",
+      "got": 3.750000000000085e-05,
+      "expected": 3.7500000000000003e-05,
+      "normalized_error": 8.470329472543003e-19
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "eddy-space-time-0.1-2.0",
+      "got": 0.0016666666666667039,
+      "expected": 0.001666666666666667,
+      "normalized_error": 3.686287386450715e-17
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "eddy-space-time-0.1-5.0",
+      "got": 0.010416666666666904,
+      "expected": 0.01041666666666667,
+      "normalized_error": 2.3418766925686896e-16
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "eddy-space-time-0.5-0.3",
+      "got": 0.0009375000000000211,
+      "expected": 0.0009375,
+      "normalized_error": 2.1141942363467336e-17
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "eddy-space-time-0.5-2.0",
+      "got": 0.0416666666666676,
+      "expected": 0.041666666666666664,
+      "normalized_error": 9.367506770274758e-16
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "eddy-space-time-0.5-5.0",
+      "got": 0.2604166666666726,
+      "expected": 0.2604166666666667,
+      "normalized_error": 5.9396931817445875e-15
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "eddy-space-time-2.0-0.3",
+      "got": 0.015000000000000338,
+      "expected": 0.015,
+      "normalized_error": 3.382710778154774e-16
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "eddy-space-time-2.0-2.0",
+      "got": 0.6666666666666816,
+      "expected": 0.6666666666666666,
+      "normalized_error": 1.4988010832439613e-14
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "eddy-space-time-2.0-5.0",
+      "got": 4.166666666666762,
+      "expected": 4.166666666666667,
+      "normalized_error": 2.2808421817898695e-14
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "wall-energy-0.1-3",
+      "got": 2.1908902274797075,
+      "expected": 2.1908902300206647,
+      "normalized_error": 1.1597829903070054e-09
+    },
+    {
+      "group": "有限差分",
+      "name": "domain-min-derivative-0.1-3-0.1",
+      "got": -4.2694548536182995e-10,
+      "expected": 0.0,
+      "normalized_error": 4.2694548536182995e-10
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "domain-energy-0.1-3-0.1",
+      "got": 1.8722778554565729,
+      "expected": 1.8722778554565729,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "domain-min-derivative-0.1-3-1",
+      "got": -3.286627878705973e-11,
+      "expected": 0.0,
+      "normalized_error": 3.286627878705973e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "domain-energy-0.1-3-1",
+      "got": 1.6214401857684413,
+      "expected": 1.6214401857684413,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "domain-min-derivative-0.1-3-3",
+      "got": -4.8994155690216594e-11,
+      "expected": 0.0,
+      "normalized_error": 4.8994155690216594e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "domain-energy-0.1-3-3",
+      "got": 3.625650476828122,
+      "expected": 3.6256504768281217,
+      "normalized_error": 1.2248538922554149e-16
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "wall-energy-1-1",
+      "got": 3.9999999953608656,
+      "expected": 4.0,
+      "normalized_error": 1.1597836024890285e-09
+    },
+    {
+      "group": "有限差分",
+      "name": "domain-min-derivative-1-1-0.1",
+      "got": -3.5108334685767007e-10,
+      "expected": 0.0,
+      "normalized_error": 3.5108334685767007e-10
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "domain-energy-1-1-0.1",
+      "got": 2.5298221281347035,
+      "expected": 2.5298221281347035,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "domain-min-derivative-1-1-1",
+      "got": -3.0404709722440584e-11,
+      "expected": 0.0,
+      "normalized_error": 3.0404709722440584e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "domain-energy-1-1-1",
+      "got": 2.1908902300206643,
+      "expected": 2.1908902300206643,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "domain-min-derivative-1-1-3",
+      "got": -5.438959822042073e-11,
+      "expected": 0.0,
+      "normalized_error": 5.438959822042073e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "domain-energy-1-1-3",
+      "got": 4.898979485566356,
+      "expected": 4.898979485566356,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "wall-energy-5-0.2",
+      "got": 3.9999999953608674,
+      "expected": 4.0,
+      "normalized_error": 1.1597831583998186e-09
+    },
+    {
+      "group": "有限差分",
+      "name": "domain-min-derivative-5-0.2-0.1",
+      "got": -3.5108334685767007e-10,
+      "expected": 0.0,
+      "normalized_error": 3.5108334685767007e-10
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "domain-energy-5-0.2-0.1",
+      "got": 2.5298221281347035,
+      "expected": 2.5298221281347035,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "domain-min-derivative-5-0.2-1",
+      "got": -3.0404709722440584e-11,
+      "expected": 0.0,
+      "normalized_error": 3.0404709722440584e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "domain-energy-5-0.2-1",
+      "got": 2.1908902300206643,
+      "expected": 2.1908902300206643,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "domain-min-derivative-5-0.2-3",
+      "got": -5.438959822042073e-11,
+      "expected": 0.0,
+      "normalized_error": 5.438959822042073e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "domain-energy-5-0.2-3",
+      "got": 4.898979485566356,
+      "expected": 4.898979485566356,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "回线与空间积分",
+      "name": "wall-energy-4-7",
+      "got": 21.166010463968735,
+      "expected": 21.166010488516726,
+      "normalized_error": 1.1597835274849552e-09
+    },
+    {
+      "group": "有限差分",
+      "name": "domain-min-derivative-4-7-0.1",
+      "got": -4.88394427748263e-10,
+      "expected": 0.0,
+      "normalized_error": 4.88394427748263e-10
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "domain-energy-4-7-0.1",
+      "got": 5.819417220102608,
+      "expected": 5.819417220102608,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "domain-min-derivative-4-7-1",
+      "got": -2.6435123843547457e-11,
+      "expected": 0.0,
+      "normalized_error": 2.6435123843547457e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "domain-energy-4-7-1",
+      "got": 5.039763147829476,
+      "expected": 5.039763147829476,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "domain-min-derivative-4-7-3",
+      "got": -5.517001831394446e-11,
+      "expected": 0.0,
+      "normalized_error": 5.517001831394446e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "domain-energy-4-7-3",
+      "got": 11.26925298904503,
+      "expected": 11.26925298904503,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "mag-H-1-1",
+      "got": -0.17391304347826086,
+      "expected": -0.1739130434782609,
+      "normalized_error": 2.7755575615628914e-17
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "mag-B-1-1",
+      "got": 0.8260869565217391,
+      "expected": 0.8260869565217391,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "gap-optimum-1-1",
+      "got": 1.0408340855860843e-12,
+      "expected": 0.0,
+      "normalized_error": 1.0408340855860843e-12
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "gap-maxenergy-1-1",
+      "got": 0.125,
+      "expected": 0.125,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "极值采样",
+      "name": "BH-limit-1-1-0.2",
+      "got": 0.16000000000000003,
+      "expected": 0.16000000000000003,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "极值采样",
+      "name": "BH-limit-1-1-0.7",
+      "got": 0.249999999984,
+      "expected": 0.25,
+      "normalized_error": 1.600000687496106e-11
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "mag-H-0.8-1.5",
+      "got": -0.42500000000000004,
+      "expected": -0.42500000000000004,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "mag-B-0.8-1.5",
+      "got": 0.1625,
+      "expected": 0.1625,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "gap-optimum-0.8-1.5",
+      "got": 2.0816681711721685e-12,
+      "expected": 0.0,
+      "normalized_error": 2.0816681711721685e-12
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "gap-maxenergy-0.8-1.5",
+      "got": 0.053333333333333344,
+      "expected": 0.053333333333333344,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "极值采样",
+      "name": "BH-limit-0.8-1.5-0.10666666666666669",
+      "got": 0.06826666666666668,
+      "expected": 0.06826666666666668,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "极值采样",
+      "name": "BH-limit-0.8-1.5-0.3733333333333333",
+      "got": 0.10666666665984001,
+      "expected": 0.10666666666666667,
+      "normalized_error": 6.826664233905433e-12
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "mag-H-2-0.6",
+      "got": -2.565217391304348,
+      "expected": -2.565217391304348,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "mag-B-2-0.6",
+      "got": 0.4608695652173913,
+      "expected": 0.46086956521739136,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "有限差分",
+      "name": "gap-optimum-2-0.6",
+      "got": 1.9984014443252818e-11,
+      "expected": 0.0,
+      "normalized_error": 1.9984014443252818e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "gap-maxenergy-2-0.6",
+      "got": 0.8333333333333334,
+      "expected": 0.8333333333333334,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "极值采样",
+      "name": "BH-limit-2-0.6-0.6666666666666667",
+      "got": 1.0666666666666669,
+      "expected": 1.0666666666666669,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "极值采样",
+      "name": "BH-limit-2-0.6-2.3333333333333335",
+      "got": 1.6666666665599998,
+      "expected": 1.6666666666666667,
+      "normalized_error": 6.40001385221467e-11
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "mag-H-1.2-2",
+      "got": -0.12173913043478259,
+      "expected": -0.1217391304347826,
+      "normalized_error": 1.3877787807814457e-17
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "mag-B-1.2-2",
+      "got": 0.9565217391304347,
+      "expected": 0.9565217391304347,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "gap-optimum-1.2-2",
+      "got": 4.625929269271485e-13,
+      "expected": 0.0,
+      "normalized_error": 4.625929269271485e-13
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "gap-maxenergy-1.2-2",
+      "got": 0.09000000000000001,
+      "expected": 0.09,
+      "normalized_error": 1.3877787807814457e-17
+    },
+    {
+      "group": "极值采样",
+      "name": "BH-limit-1.2-2-0.12",
+      "got": 0.1152,
+      "expected": 0.1152,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "极值采样",
+      "name": "BH-limit-1.2-2-0.42",
+      "got": 0.17999999998848,
+      "expected": 0.18,
+      "normalized_error": 1.1520007170418012e-11
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "remanence-M-1-0.3",
+      "got": 1.5384615384615385,
+      "expected": 1.5384615384615383,
+      "normalized_error": 1.4432899320127033e-16
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "remanence-H-1-0.3",
+      "got": -0.4615384615384615,
+      "expected": -0.4615384615384615,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "remanence-B-1-0.3",
+      "got": 1.076923076923077,
+      "expected": 1.0769230769230769,
+      "normalized_error": 2.0618427600181474e-16
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "remanence-M-0.2-0.5",
+      "got": 0.9090909090909091,
+      "expected": 0.9090909090909091,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "remanence-H-0.2-0.5",
+      "got": -0.45454545454545453,
+      "expected": -0.45454545454545453,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "remanence-B-0.2-0.5",
+      "got": 0.45454545454545453,
+      "expected": 0.45454545454545453,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "remanence-M-5-0",
+      "got": 3.0,
+      "expected": 3.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "remanence-H-5-0",
+      "got": 0.0,
+      "expected": 0.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "remanence-B-5-0",
+      "got": 3.0,
+      "expected": 3.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "remanence-M-2-1",
+      "got": 0.33333333333333337,
+      "expected": 0.3333333333333333,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "磁路矩阵",
+      "name": "remanence-H-2-1",
+      "got": -0.3333333333333333,
+      "expected": -0.3333333333333333,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "remanence-B-2-1",
+      "got": 5.551115123125783e-17,
+      "expected": 0.0,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "barrier-0.05",
+      "got": 0.9025000000000002,
+      "expected": 0.9025,
+      "normalized_error": 2.220446049250313e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "saddle-derivative-0.05",
+      "got": -1.1102230246251564e-11,
+      "expected": 0.0,
+      "normalized_error": 1.1102230246251564e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "barrier-0.2",
+      "got": 0.64,
+      "expected": 0.6400000000000001,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "有限差分",
+      "name": "saddle-derivative-0.2",
+      "got": -1.1102230246251564e-11,
+      "expected": 0.0,
+      "normalized_error": 1.1102230246251564e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "barrier-0.5",
+      "got": 0.25,
+      "expected": 0.25,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "saddle-derivative-0.5",
+      "got": -4.4408920985006255e-11,
+      "expected": 0.0,
+      "normalized_error": 4.4408920985006255e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "barrier-0.7",
+      "got": 0.09000000000000008,
+      "expected": 0.09000000000000002,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "有限差分",
+      "name": "saddle-derivative-0.7",
+      "got": -4.4408920985006255e-11,
+      "expected": 0.0,
+      "normalized_error": 4.4408920985006255e-11
+    },
+    {
+      "group": "代数与统计积分",
+      "name": "barrier-0.9",
+      "got": 0.010000000000000009,
+      "expected": 0.009999999999999995,
+      "normalized_error": 1.3877787807814457e-17
+    },
+    {
+      "group": "有限差分",
+      "name": "saddle-derivative-0.9",
+      "got": -3.3306690738754696e-11,
+      "expected": 0.0,
+      "normalized_error": 3.3306690738754696e-11
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hx-0.1",
+      "got": 0.0009950108197862432,
+      "expected": 0.0009950108197862206,
+      "normalized_error": 2.2551405187698492e-17
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hz-0.1",
+      "got": -0.9850872462399207,
+      "expected": -0.9850872462399209,
+      "normalized_error": 2.220446049250313e-16
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-equation-0.1",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-first-0.1",
+      "got": -9.936496070395151e-10,
+      "expected": 0.0,
+      "normalized_error": 9.936496070395151e-10
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-second-0.1",
+      "got": -2.220446049250313e-08,
+      "expected": 0.0,
+      "normalized_error": 2.220446049250313e-08
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hx-0.4",
+      "got": 0.05905398523968128,
+      "expected": 0.05905398523968129,
+      "normalized_error": 1.3877787807814457e-17
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hz-0.4",
+      "got": -0.7813851841213322,
+      "expected": -0.7813851841213323,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-equation-0.4",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-first-0.4",
+      "got": -3.588240815588506e-09,
+      "expected": 0.0,
+      "normalized_error": 3.588240815588506e-09
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-second-0.4",
+      "got": -4.440892098500626e-08,
+      "expected": 0.0,
+      "normalized_error": 4.440892098500626e-08
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hx-0.8",
+      "got": 0.36915127303685435,
+      "expected": 0.3691512730368544,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hz-0.8",
+      "got": -0.3381816031250626,
+      "expected": -0.3381816031250626,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-equation-0.8",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-first-0.8",
+      "got": -4.9979465011062985e-09,
+      "expected": 0.0,
+      "normalized_error": 4.9979465011062985e-09
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-second-0.8",
+      "got": -5.551115123125783e-09,
+      "expected": 0.0,
+      "normalized_error": 5.551115123125783e-09
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hx-1.3",
+      "got": 0.8946101788588883,
+      "expected": 0.8946101788588882,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hz-1.3",
+      "got": -0.019141045418405504,
+      "expected": -0.01914104541840551,
+      "normalized_error": 6.938893903907228e-18
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-equation-1.3",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-first-1.3",
+      "got": -2.5768276401549883e-09,
+      "expected": 0.0,
+      "normalized_error": 2.5768276401549883e-09
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-second-1.3",
+      "got": 0.0,
+      "expected": 0.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hx-2.1",
+      "got": 0.6432035498655677,
+      "expected": 0.6432035498655677,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hz-2.1",
+      "got": 0.12866991935403937,
+      "expected": 0.1286699193540394,
+      "normalized_error": 2.7755575615628914e-17
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-equation-2.1",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-first-2.1",
+      "got": 4.358180483166052e-09,
+      "expected": 0.0,
+      "normalized_error": 4.358180483166052e-09
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-second-2.1",
+      "got": 1.1102230246251565e-08,
+      "expected": 0.0,
+      "normalized_error": 1.1102230246251565e-08
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hx-3.8",
+      "got": -0.2290612867908702,
+      "expected": -0.22906128679087018,
+      "normalized_error": 2.7755575615628914e-17
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hz-3.8",
+      "got": 0.49485306734884005,
+      "expected": 0.49485306734884016,
+      "normalized_error": 1.1102230246251565e-16
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-equation-3.8",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-first-3.8",
+      "got": -4.838907052828745e-09,
+      "expected": 0.0,
+      "normalized_error": 4.838907052828745e-09
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-second-3.8",
+      "got": 1.1102230246251565e-08,
+      "expected": 0.0,
+      "normalized_error": 1.1102230246251565e-08
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hx-5.4",
+      "got": -0.46146786906737347,
+      "expected": -0.4614678690673734,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-hz-5.4",
+      "got": -0.2556765343664175,
+      "expected": -0.2556765343664176,
+      "normalized_error": 5.551115123125783e-17
+    },
+    {
+      "group": "稳定性矩阵",
+      "name": "astroid-equation-5.4",
+      "got": 1.0,
+      "expected": 1.0,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-first-5.4",
+      "got": 4.904965322793942e-09,
+      "expected": 0.0,
+      "normalized_error": 4.904965322793942e-09
+    },
+    {
+      "group": "有限差分",
+      "name": "astroid-second-5.4",
+      "got": -1.1102230246251565e-08,
+      "expected": 0.0,
+      "normalized_error": 1.1102230246251565e-08
+    },
+    {
+      "group": "有限差分",
+      "name": "magnetostriction-0.1",
+      "got": -0.059600799239001294,
+      "expected": -0.059600799238518375,
+      "normalized_error": 4.829192601363275e-13
+    },
+    {
+      "group": "有限差分",
+      "name": "MR-sensitivity-0.1",
+      "got": 0.05990004999234521,
+      "expected": 0.05990004998809689,
+      "normalized_error": 4.248316975985489e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "magnetostriction-0.3",
+      "got": -0.16939274201099863,
+      "expected": -0.16939274201851065,
+      "normalized_error": 7.51201878479435e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "MR-sensitivity-0.3",
+      "got": 0.17731212399452187,
+      "expected": 0.1773121239968037,
+      "normalized_error": 2.2818413825120842e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "magnetostriction-0.8",
+      "got": -0.29987208089166106,
+      "expected": -0.2998720809124516,
+      "normalized_error": 2.0790535959491763e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "MR-sensitivity-0.8",
+      "got": 0.4304136545341119,
+      "expected": 0.43041365453971364,
+      "normalized_error": 5.60174129304869e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "magnetostriction-1.3",
+      "got": -0.154650411536561,
+      "expected": -0.15465041154643927,
+      "normalized_error": 9.878264872753562e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "MR-sensitivity-1.3",
+      "got": 0.5781349112443657,
+      "expected": 0.5781349112503158,
+      "normalized_error": 5.950129278176064e-12
+    },
+    {
+      "group": "有限差分",
+      "name": "magnetostriction-2.5",
+      "got": 0.2876772823824647,
+      "expected": 0.2876772823989416,
+      "normalized_error": 1.647687541961318e-11
+    },
+    {
+      "group": "有限差分",
+      "name": "MR-sensitivity-2.5",
+      "got": 0.35908328646083726,
+      "expected": 0.35908328646237386,
+      "normalized_error": 1.536604177232448e-12
+    },
+    {
+      "group": "题给数值",
+      "name": "TB-1s",
+      "got": 91.50127503387506,
+      "expected": 91.5,
+      "normalized_error": 1.3934602272904242e-05
+    },
+    {
+      "group": "题给数值",
+      "name": "TB-ms",
+      "got": 137.2519125508126,
+      "expected": 137.0,
+      "normalized_error": 0.0018354028452560137
+    },
+    {
+      "group": "题给数值",
+      "name": "tau-300K",
+      "got": 5.559532213722173e-07,
+      "expected": 5.56e-07,
+      "normalized_error": 4.67786277826667e-11
+    },
+    {
+      "group": "题给数值",
+      "name": "write-min-field",
+      "got": 0.5799159747915971,
+      "expected": 0.58,
+      "normalized_error": 8.402520840289363e-05
+    },
+    {
+      "group": "题给数值",
+      "name": "diameter-min-nm",
+      "got": 18.36398123332732,
+      "expected": 18.4,
+      "normalized_error": 0.0019575416669934485
+    },
+    {
+      "group": "题给数值",
+      "name": "diameter-max-nm",
+      "got": 22.984943907985425,
+      "expected": 23.0,
+      "normalized_error": 0.0006546126962858708
+    },
+    {
+      "group": "题给数值",
+      "name": "gap-field",
+      "got": 0.6,
+      "expected": 0.6,
+      "normalized_error": 0.0
+    },
+    {
+      "group": "题给数值",
+      "name": "gap-force",
+      "got": 14.32394487827058,
+      "expected": 14.3,
+      "normalized_error": 0.0016716678592434671
+    },
+    {
+      "group": "题给数值",
+      "name": "reverse-ampere-turn",
+      "got": 2291.831180523293,
+      "expected": 2290.0,
+      "normalized_error": 0.0007990032332463519
+    },
+    {
+      "group": "题给数值",
+      "name": "pickup-integral",
+      "got": 0.0030000000000000005,
+      "expected": 0.003,
+      "normalized_error": 4.336808689942018e-19
+    }
+  ]
+}

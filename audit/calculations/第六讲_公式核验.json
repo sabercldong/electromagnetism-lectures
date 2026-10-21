@@ -1,0 +1,1262 @@
+{
+  "units": "k=1, epsilon=1/(4pi)",
+  "count": 179,
+  "all_passed": true,
+  "maximum_normalized_error": 1.9231310988132577e-11,
+  "limits": "数值交叉核验覆盖上述有限模型，不替代唯一性、收敛性及近似条件的解析论证。",
+  "checks": [
+    {
+      "name": "cube lambda=0",
+      "actual": 8.581527510963607,
+      "expected": 8.581527510963607,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube center component 0,0",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube center component 0,1",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube center component 0,2",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube lambda=1",
+      "actual": 5.1038411836096245,
+      "expected": 5.103841183609625,
+      "normalized_error": 1.7402156292644916e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube center component 1,0",
+      "actual": -5.551115123125783e-17,
+      "expected": 0,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube center component 1,1",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube center component 1,2",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube lambda=2",
+      "actual": 1.6261548562556403,
+      "expected": 1.6261548562556425,
+      "normalized_error": 1.3654579333010607e-15,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube center component 2,0",
+      "actual": -1.1102230246251565e-16,
+      "expected": 0,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube center component 2,1",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube center component 2,2",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube lambda=3",
+      "actual": -1.8515314710983417,
+      "expected": -1.8515314710983395,
+      "normalized_error": 1.1992483432826185e-15,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube center component 3,0",
+      "actual": -2.220446049250313e-16,
+      "expected": 0,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube center component 3,1",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "cube center component 3,2",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "power density n=0 field",
+      "actual": 0.941739130434783,
+      "expected": 0.9417391304347827,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "power density n=0 assembly",
+      "actual": 0.9417391304347861,
+      "expected": 0.9417391304347827,
+      "normalized_error": 3.3306690738754696e-15,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "power density n=1 field",
+      "actual": 0.8968944099378903,
+      "expected": 0.8968944099378883,
+      "normalized_error": 1.9984014443252818e-15,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "power density n=1 assembly",
+      "actual": 0.8968944099379047,
+      "expected": 0.8968944099378883,
+      "normalized_error": 1.6431300764452317e-14,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "power density n=2 field",
+      "actual": 0.8719806763285082,
+      "expected": 0.8719806763285024,
+      "normalized_error": 5.773159728050814e-15,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "power density n=2 assembly",
+      "actual": 0.8719806763285599,
+      "expected": 0.8719806763285024,
+      "normalized_error": 5.750955267558311e-14,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "power density n=4 field",
+      "actual": 0.8451505016722634,
+      "expected": 0.8451505016722408,
+      "normalized_error": 2.2537527399890678e-14,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "power density n=4 assembly",
+      "actual": 0.8451505016725561,
+      "expected": 0.8451505016722408,
+      "normalized_error": 3.1530333899354446e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "power density n=10 field",
+      "actual": 0.8161739130436851,
+      "expected": 0.8161739130434783,
+      "normalized_error": 2.0683454948766666e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "power density n=10 assembly",
+      "actual": 0.8161739130488569,
+      "expected": 0.8161739130434783,
+      "normalized_error": 5.378586465099033e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "hollow shell 0.4,2.1",
+      "actual": 1.028158233708372,
+      "expected": 1.028158233708372,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "hollow shell 1.1,2.5",
+      "actual": 0.8404036199650629,
+      "expected": 0.8404036199650627,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "hollow shell 1.7,1.9",
+      "actual": 0.9832268051364225,
+      "expected": 0.9832268051364227,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "two shells 1.2,2.1",
+      "actual": 2.4718531468531464,
+      "expected": 2.471853146853147,
+      "normalized_error": 1.7965841151017457e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "two shells 1.2,-1.2",
+      "actual": 0.3776223776223776,
+      "expected": 0.3776223776223776,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "two shells 1.2,-0.5",
+      "actual": 0.47185314685314683,
+      "expected": 0.4718531468531467,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "finite dipole force r=1.0",
+      "actual": -0.6404981652506173,
+      "expected": -0.6404981652396308,
+      "normalized_error": 1.0986545007085624e-11,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "finite dipole energy r=1.0",
+      "actual": -0.31304347826086953,
+      "expected": -0.31304347826086953,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "finite dipole force r=2.0",
+      "actual": -0.07736794137372845,
+      "expected": -0.07736794137039701,
+      "normalized_error": 3.3314323522048994e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "finite dipole energy r=2.0",
+      "actual": -0.07693274670018849,
+      "expected": -0.07693274670018856,
+      "normalized_error": 6.938893903907228e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "finite dipole force r=4.0",
+      "actual": -0.009589451368319119,
+      "expected": -0.009589451368459123,
+      "normalized_error": 1.4000432757566017e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "finite dipole energy r=4.0",
+      "actual": -0.019151932404944456,
+      "expected": -0.019151932404944453,
+      "normalized_error": 3.469446951953614e-18,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "induced particle mechanical equilibrium",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "induced eliminate p z=-0.2",
+      "actual": -0.31752,
+      "expected": -0.31752,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "induced force z=-0.2",
+      "actual": 0.10080000000523003,
+      "expected": 0.10080000000000001,
+      "normalized_error": 5.230010868828572e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "induced eliminate p z=0",
+      "actual": -0.338,
+      "expected": -0.3380000000000001,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "induced force z=0",
+      "actual": 0.10400000000447088,
+      "expected": 0.10400000000000002,
+      "normalized_error": 4.4708542423776976e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "induced eliminate p z=0.7",
+      "actual": -0.41472000000000003,
+      "expected": -0.41472,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "induced force z=0.7",
+      "actual": 0.11519999999626272,
+      "expected": 0.11520000000000002,
+      "normalized_error": 3.737302134432241e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "induced point source r=1.2",
+      "actual": -0.9291409464907974,
+      "expected": -0.9291409465020579,
+      "normalized_error": 1.1260548049563113e-11,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "induced point source r=2.7",
+      "actual": -0.016112725520003437,
+      "expected": -0.01611272551979046,
+      "normalized_error": 2.1297894003957651e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plate Q pressure d=0.8",
+      "actual": -3.167772592334768,
+      "expected": -3.1677725923697087,
+      "normalized_error": 1.1029988398142942e-11,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plate V pressure d=0.8",
+      "actual": -0.38197186341589373,
+      "expected": -0.38197186342054884,
+      "normalized_error": 4.65510963110205e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plate Q pressure d=1.7",
+      "actual": -3.16777259236481,
+      "expected": -3.1677725923697087,
+      "normalized_error": 1.5464330001641453e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plate V pressure d=1.7",
+      "actual": -0.08458892477088278,
+      "expected": -0.08458892477133263,
+      "normalized_error": 4.498484917903056e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plate Q pressure d=2.6",
+      "actual": -3.167772592323951,
+      "expected": -3.1677725923697087,
+      "normalized_error": 1.444473003697879e-11,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plate V pressure d=2.6",
+      "actual": -0.036163016655195765,
+      "expected": -0.036163016655199894,
+      "normalized_error": 4.128641872824801e-15,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "constant V plate power balance",
+      "actual": 0.29878687983118496,
+      "expected": 0.29878687983118507,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "constant sigma source balance",
+      "actual": 426.14477823067335,
+      "expected": 426.1447782306732,
+      "normalized_error": 4.0016976692863667e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "constant sigma mechanical work",
+      "actual": 106.53619455766832,
+      "expected": 106.53619455766828,
+      "normalized_error": 4.001697669286367e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sharing 1,2,2,1",
+      "actual": 0.3333333333333335,
+      "expected": 0.3333333333333333,
+      "normalized_error": 1.6653345369377348e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sharing 1,2,2,-1",
+      "actual": 3.0,
+      "expected": 3.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sharing 0.4,3,1.2,-0.3",
+      "actual": 0.3970588235294117,
+      "expected": 0.3970588235294118,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sharing 2,1,2,2",
+      "actual": 0.0,
+      "expected": 0.0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane boundary h=0.7,rho=0",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane density h=0.7,rho=0",
+      "actual": -0.42224780820080754,
+      "expected": -0.4222478082029877,
+      "normalized_error": 2.18014495345642e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane boundary h=0.7,rho=0.3",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane density h=0.7,rho=0.3",
+      "actual": -0.327883478323853,
+      "expected": -0.32788347832661924,
+      "normalized_error": 2.76623168815604e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane boundary h=0.7,rho=2.1",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane density h=0.7,rho=2.1",
+      "actual": -0.013352648107299372,
+      "expected": -0.0133526481093537,
+      "normalized_error": 2.054327194467298e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane image force h=0.7",
+      "actual": -0.8622448979591839,
+      "expected": -0.8622448979591839,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane energy derivative h=0.7",
+      "actual": -0.8622448979561658,
+      "expected": -0.8622448979591839,
+      "normalized_error": 3.018141292443488e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane total induced h=0.7",
+      "actual": -1.3000000000000007,
+      "expected": -1.3,
+      "normalized_error": 5.124106267500722e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane boundary h=1.4,rho=0",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane density h=1.4,rho=0",
+      "actual": -0.10556195205189522,
+      "expected": -0.10556195205074692,
+      "normalized_error": 1.1483036743697994e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane boundary h=1.4,rho=0.3",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane density h=1.4,rho=0.3",
+      "actual": -0.09868717748304198,
+      "expected": -0.09868717748189776,
+      "normalized_error": 1.144223604754302e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane boundary h=1.4,rho=2.1",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane density h=1.4,rho=2.1",
+      "actual": -0.018016995544548754,
+      "expected": -0.01801699554352847,
+      "normalized_error": 1.020284551289663e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane image force h=1.4",
+      "actual": -0.21556122448979598,
+      "expected": -0.21556122448979598,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane energy derivative h=1.4",
+      "actual": -0.21556122448669549,
+      "expected": -0.21556122448979598,
+      "normalized_error": 3.100492085295059e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane total induced h=1.4",
+      "actual": -1.3000000000000007,
+      "expected": -1.3,
+      "normalized_error": 5.124106267500722e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane boundary h=2.8,rho=0",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane density h=2.8,rho=0",
+      "actual": -0.026390488013341925,
+      "expected": -0.02639048801268673,
+      "normalized_error": 6.551946485355842e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane boundary h=2.8,rho=0.3",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane density h=2.8,rho=0.3",
+      "actual": -0.02594249455974693,
+      "expected": -0.025942494558665218,
+      "normalized_error": 1.0817111095740017e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane boundary h=2.8,rho=2.1",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane density h=2.8,rho=2.1",
+      "actual": -0.013511929862777466,
+      "expected": -0.013511929862495602,
+      "normalized_error": 2.818648092706155e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane image force h=2.8",
+      "actual": -0.053890306122448994,
+      "expected": -0.053890306122448994,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane energy derivative h=2.8",
+      "actual": -0.05389030612167387,
+      "expected": -0.053890306122448994,
+      "normalized_error": 7.751230213237648e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "plane total induced h=2.8",
+      "actual": -1.3000000000000007,
+      "expected": -1.3,
+      "normalized_error": 5.124106267500722e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary ground s=1.4,t=0.1",
+      "actual": 3.552713678800501e-15,
+      "expected": 0,
+      "normalized_error": 3.552713678800501e-15,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary neutral s=1.4,t=0.1",
+      "actual": 0.9285714285714322,
+      "expected": 0.9285714285714287,
+      "normalized_error": 3.4416913763379853e-15,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere ratio s=1.4,t=0.1",
+      "actual": 0.7857142857142864,
+      "expected": 0.7857142857142858,
+      "normalized_error": 5.551115123125783e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary ground s=1.4,t=0.7",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary neutral s=1.4,t=0.7",
+      "actual": 0.9285714285714286,
+      "expected": 0.9285714285714287,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere ratio s=1.4,t=0.7",
+      "actual": 0.7857142857142859,
+      "expected": 0.7857142857142858,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary ground s=1.4,t=1.4",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary neutral s=1.4,t=1.4",
+      "actual": 0.9285714285714286,
+      "expected": 0.9285714285714287,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere ratio s=1.4,t=1.4",
+      "actual": 0.7857142857142858,
+      "expected": 0.7857142857142858,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary ground s=1.4,t=2.7",
+      "actual": 1.1102230246251565e-16,
+      "expected": 0,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary neutral s=1.4,t=2.7",
+      "actual": 0.9285714285714287,
+      "expected": 0.9285714285714287,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere ratio s=1.4,t=2.7",
+      "actual": 0.7857142857142858,
+      "expected": 0.7857142857142858,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere force derivative ground,s=1.4",
+      "actual": -4.6268444444267205,
+      "expected": -4.6268444444444485,
+      "normalized_error": 3.831561979245042e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere half induced ground,s=1.4",
+      "actual": -1.2393333333333343,
+      "expected": -1.239333333333334,
+      "normalized_error": 1.7916455480771748e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere force derivative neutral,s=1.4",
+      "actual": -3.949366310323129,
+      "expected": -3.9493663103336614,
+      "normalized_error": 2.6668743698084824e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere half induced neutral,s=1.4",
+      "actual": -0.7650986394557832,
+      "expected": -0.7650986394557829,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary ground s=2.0,t=0.1",
+      "actual": 4.440892098500626e-16,
+      "expected": 0,
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary neutral s=2.0,t=0.1",
+      "actual": 0.6500000000000005,
+      "expected": 0.65,
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere ratio s=2.0,t=0.1",
+      "actual": 0.5500000000000003,
+      "expected": 0.55,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary ground s=2.0,t=0.7",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary neutral s=2.0,t=0.7",
+      "actual": 0.65,
+      "expected": 0.65,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere ratio s=2.0,t=0.7",
+      "actual": 0.55,
+      "expected": 0.55,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary ground s=2.0,t=1.4",
+      "actual": 2.220446049250313e-16,
+      "expected": 0,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary neutral s=2.0,t=1.4",
+      "actual": 0.6500000000000002,
+      "expected": 0.65,
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere ratio s=2.0,t=1.4",
+      "actual": 0.5500000000000002,
+      "expected": 0.55,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary ground s=2.0,t=2.7",
+      "actual": 5.551115123125783e-17,
+      "expected": 0,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary neutral s=2.0,t=2.7",
+      "actual": 0.6500000000000001,
+      "expected": 0.65,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere ratio s=2.0,t=2.7",
+      "actual": 0.5500000000000002,
+      "expected": 0.55,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere force derivative ground,s=2.0",
+      "actual": -0.47764031808455076,
+      "expected": -0.4776403180843001,
+      "normalized_error": 2.5068835896036035e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere half induced ground,s=2.0",
+      "actual": -0.33315412186379934,
+      "expected": -0.33315412186379934,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere force derivative neutral,s=2.0",
+      "actual": -0.2452653180844491,
+      "expected": -0.24526531808430005,
+      "normalized_error": 1.4904744105592727e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere half induced neutral,s=2.0",
+      "actual": -0.10077912186379932,
+      "expected": -0.1007791218637993,
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary ground s=4.5,t=0.1",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary neutral s=4.5,t=0.1",
+      "actual": 0.2888888888888889,
+      "expected": 0.2888888888888889,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere ratio s=4.5,t=0.1",
+      "actual": 0.24444444444444446,
+      "expected": 0.24444444444444446,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary ground s=4.5,t=0.7",
+      "actual": -5.551115123125783e-17,
+      "expected": 0,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary neutral s=4.5,t=0.7",
+      "actual": 0.28888888888888886,
+      "expected": 0.2888888888888889,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere ratio s=4.5,t=0.7",
+      "actual": 0.24444444444444444,
+      "expected": 0.24444444444444446,
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary ground s=4.5,t=1.4",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary neutral s=4.5,t=1.4",
+      "actual": 0.2888888888888889,
+      "expected": 0.2888888888888889,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere ratio s=4.5,t=1.4",
+      "actual": 0.24444444444444446,
+      "expected": 0.24444444444444446,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary ground s=4.5,t=2.7",
+      "actual": -2.7755575615628914e-17,
+      "expected": 0,
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere boundary neutral s=4.5,t=2.7",
+      "actual": 0.28888888888888886,
+      "expected": 0.2888888888888889,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere ratio s=4.5,t=2.7",
+      "actual": 0.24444444444444446,
+      "expected": 0.24444444444444446,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere force derivative ground,s=4.5",
+      "actual": -0.023075866376001262,
+      "expected": -0.02307586637596216,
+      "normalized_error": 3.910066714851723e-14,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere half induced ground,s=4.5",
+      "actual": -0.048818277310924384,
+      "expected": -0.04881827731092438,
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere force derivative neutral,s=4.5",
+      "actual": -0.002675317679118141,
+      "expected": -0.002675317679117162,
+      "normalized_error": 9.792514021889076e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "sphere half induced neutral,s=4.5",
+      "actual": -0.0029170427430231364,
+      "expected": -0.0029170427430231342,
+      "normalized_error": 2.168404344971009e-18,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner boundary 0.8,1.4,(0, 0.2, 0.5)",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner boundary 0.8,1.4,(0, 2.7, 0.3)",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner boundary 0.8,1.4,(0.4, 0, 0.6)",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner boundary 0.8,1.4,(2.4, 0, 0)",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner Fx 0.8,1.4",
+      "actual": -0.5795336725030371,
+      "expected": -0.5795336725170145,
+      "normalized_error": 1.3977374813123333e-11,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner Fy 0.8,1.4",
+      "actual": -0.07447171389285412,
+      "expected": -0.07447171389457133,
+      "normalized_error": 1.7172097077633452e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner energy half 0.8,1.4",
+      "actual": -0.5678873374660115,
+      "expected": -0.5678873374660115,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner boundary 1.3,1.3,(0, 0.2, 0.5)",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner boundary 1.3,1.3,(0, 2.7, 0.3)",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner boundary 1.3,1.3,(0.4, 0, 0.6)",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner boundary 1.3,1.3,(2.4, 0, 0)",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner Fx 1.3,1.3",
+      "actual": -0.1616116523562035,
+      "expected": -0.16161165235168162,
+      "normalized_error": 4.521882868147031e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner Fy 1.3,1.3",
+      "actual": -0.1616116523562035,
+      "expected": -0.16161165235168162,
+      "normalized_error": 4.521882868147031e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner energy half 1.3,1.3",
+      "actual": -0.42019029611437203,
+      "expected": -0.4201902961143721,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner boundary 2.6,0.9,(0, 0.2, 0.5)",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner boundary 2.6,0.9,(0, 2.7, 0.3)",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner boundary 2.6,0.9,(0.4, 0, 0.6)",
+      "actual": 0.0,
+      "expected": 0,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner boundary 2.6,0.9,(2.4, 0, 0)",
+      "actual": -1.1102230246251565e-16,
+      "expected": 0,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner Fx 2.6,0.9",
+      "actual": -0.009758042799893996,
+      "expected": -0.009758042796762352,
+      "normalized_error": 3.1316442494766505e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner Fy 2.6,0.9",
+      "actual": -0.5033481069241507,
+      "expected": -0.5033481069320227,
+      "normalized_error": 7.872036356104672e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "corner energy half 2.6,0.9",
+      "actual": -0.47838420751040256,
+      "expected": -0.4783842075104025,
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "diagonal virtual work metric",
+      "actual": -0.27869764538198155,
+      "expected": -0.27869764538198155,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "two sources energy 2.1",
+      "actual": -0.4538637615978889,
+      "expected": -0.4538637615978889,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "two sources Fx 2.1",
+      "actual": 0.729063676397999,
+      "expected": 0.7290636763995759,
+      "normalized_error": 1.5769607841775724e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "two sources common h 2.1",
+      "actual": -1.3025169319175331,
+      "expected": -1.3025169319055139,
+      "normalized_error": 9.22772992056877e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "two sources energy -0.8",
+      "actual": -0.655670947962709,
+      "expected": -0.655670947962709,
+      "normalized_error": 0.0,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "two sources Fx -0.8",
+      "actual": -0.277738543391528,
+      "expected": -0.2777385433903147,
+      "normalized_error": 1.2133072324616023e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "two sources common h -0.8",
+      "actual": -0.14116571093266608,
+      "expected": -0.14116571092244162,
+      "normalized_error": 1.0224460167407301e-11,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "coax pressure a=0.7",
+      "actual": 1.1797235022814598,
+      "expected": 1.1797235023041475,
+      "normalized_error": 1.9231310988132577e-11,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "coax pressure a=1.1",
+      "actual": 0.7507331378253993,
+      "expected": 0.750733137829912,
+      "normalized_error": 4.512723528193874e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin f maximum derivative",
+      "actual": 5.551115123125782e-12,
+      "expected": 0,
+      "normalized_error": 5.551115123125782e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin V critical balance",
+      "actual": 0.98,
+      "expected": 0.9800000000000001,
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin stiffness 0.2,stable",
+      "actual": 1.3831052402050028,
+      "expected": 1.383105240204734,
+      "normalized_error": 1.9441471895834162e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin stiffness 0.2,unstable",
+      "actual": -30.682719974197838,
+      "expected": -30.682719974352338,
+      "normalized_error": 5.035420998947387e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin frequency squared 0.2",
+      "actual": 1.5367836002277808,
+      "expected": 1.536783600227482,
+      "normalized_error": 1.944789352156359e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin stiffness 0.6,stable",
+      "actual": 1.2199701558378293,
+      "expected": 1.2199701558343665,
+      "normalized_error": 2.8384182983866373e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin stiffness 0.6,unstable",
+      "actual": -6.1564852613019765,
+      "expected": -6.1564852613431595,
+      "normalized_error": 6.689377983773571e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin frequency squared 0.6",
+      "actual": 1.355522395375366,
+      "expected": 1.355522395371518,
+      "normalized_error": 2.8386185074362194e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin stiffness 0.9,stable",
+      "actual": 0.7966033802671764,
+      "expected": 0.7966033802681157,
+      "normalized_error": 9.39359701135345e-13,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin stiffness 0.9,unstable",
+      "actual": -1.6246555165063001,
+      "expected": -1.6246555165184868,
+      "normalized_error": 7.50109544626456e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin frequency squared 0.9",
+      "actual": 0.8851148669635293,
+      "expected": 0.8851148669645729,
+      "normalized_error": 1.0436096431476471e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin stiffness 0.99,stable",
+      "actual": 0.3088497636416498,
+      "expected": 0.3088497636512749,
+      "normalized_error": 9.625134023139026e-12,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin stiffness 0.99,unstable",
+      "actual": -0.38425663590468945,
+      "expected": -0.3842566359177104,
+      "normalized_error": 1.3020973188559992e-11,
+      "tolerance": 2e-07
+    },
+    {
+      "name": "pullin frequency squared 0.99",
+      "actual": 0.3431664040462775,
+      "expected": 0.34316640405697213,
+      "normalized_error": 1.0694611862760439e-11,
+      "tolerance": 2e-07
+    }
+  ]
+}

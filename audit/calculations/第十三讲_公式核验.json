@@ -1,0 +1,1508 @@
+{
+  "count": 241,
+  "all_passed": true,
+  "description": "同一物理关系在不同参数下的实例；包含场与回路积分、有限差分、几何积分、矩阵本征值、缓变和远场近似、书面有效位数核对，不代表独立公式数量。",
+  "maximum_normalized_error": 0.007158103843154612,
+  "groups": {
+    "积分或恒等式": {
+      "count": 86,
+      "maximum_normalized_error": 6.09245403798458e-13
+    },
+    "完整运动方程积分": {
+      "count": 6,
+      "maximum_normalized_error": 1.4920843628115181e-09
+    },
+    "缓变近似": {
+      "count": 3,
+      "maximum_normalized_error": 0.003602211041744404
+    },
+    "渐近比较": {
+      "count": 3,
+      "maximum_normalized_error": 9.925426443194805e-06
+    },
+    "回路方程积分": {
+      "count": 28,
+      "maximum_normalized_error": 1.5240653185395808e-14
+    },
+    "耦合回路积分": {
+      "count": 24,
+      "maximum_normalized_error": 4.121733818449355e-11
+    },
+    "矩阵本征值": {
+      "count": 13,
+      "maximum_normalized_error": 2.9605947323337506e-16
+    },
+    "线性方程求解": {
+      "count": 8,
+      "maximum_normalized_error": 1.750233944703188e-16
+    },
+    "有限差分": {
+      "count": 11,
+      "maximum_normalized_error": 1.1748948117812265e-10
+    },
+    "几何积分渐近": {
+      "count": 6,
+      "maximum_normalized_error": 0.007158103843154612
+    },
+    "运动与回路耦合积分": {
+      "count": 43,
+      "maximum_normalized_error": 2.903861748355816e-11
+    },
+    "强迫回路积分": {
+      "count": 6,
+      "maximum_normalized_error": 1.1315963021045711e-11
+    },
+    "数值代入与有效位数": {
+      "count": 4,
+      "maximum_normalized_error": 0.0004384960505570606
+    }
+  },
+  "checks": [
+    {
+      "name": "分区场磁通与动量增量",
+      "normalized_error": 1.4685489743719002e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "注入偏置与正则角动量",
+      "normalized_error": 7.558707956325956e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "加速器电力功与相对论能量",
+      "normalized_error": 9.418362785414398e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "实际飞行圈数与每圈增量",
+      "normalized_error": 4.709181392707195e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "分区场磁通与动量增量",
+      "normalized_error": 1.4685489743719002e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "注入偏置与正则角动量",
+      "normalized_error": 4.589215544912194e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "加速器电力功与相对论能量",
+      "normalized_error": 9.418362785414398e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "实际飞行圈数与每圈增量",
+      "normalized_error": 4.709181392707195e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "分区场磁通与动量增量",
+      "normalized_error": 1.4685489743719002e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "注入偏置与正则角动量",
+      "normalized_error": 8.260587980841935e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "加速器电力功与相对论能量",
+      "normalized_error": 9.418362785414398e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "实际飞行圈数与每圈增量",
+      "normalized_error": 4.709181392707195e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "分区场磁通与动量增量",
+      "normalized_error": 3.7762687912420293e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "注入偏置与正则角动量",
+      "normalized_error": 3.887335520396207e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "加速器电力功与相对论能量",
+      "normalized_error": 1.011260478655073e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "实际飞行圈数与每圈增量",
+      "normalized_error": 1.6854341310917866e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "分区场磁通与动量增量",
+      "normalized_error": 3.7762687912420293e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "注入偏置与正则角动量",
+      "normalized_error": 1.483534167987939e-14,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "加速器电力功与相对论能量",
+      "normalized_error": 1.011260478655073e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "实际飞行圈数与每圈增量",
+      "normalized_error": 1.6854341310917866e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "分区场磁通与动量增量",
+      "normalized_error": 2.5175125274946865e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "注入偏置与正则角动量",
+      "normalized_error": 6.743337127217904e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "加速器电力功与相对论能量",
+      "normalized_error": 1.011260478655073e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "实际飞行圈数与每圈增量",
+      "normalized_error": 1.6854341310917866e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "分区场磁通与动量增量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "注入偏置与正则角动量",
+      "normalized_error": 4.497743577317924e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "加速器电力功与相对论能量",
+      "normalized_error": 5.605877858144775e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "实际飞行圈数与每圈增量",
+      "normalized_error": 1.8686259527149242e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "分区场磁通与动量增量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "注入偏置与正则角动量",
+      "normalized_error": 3.276927463474493e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "加速器电力功与相对论能量",
+      "normalized_error": 5.605877858144775e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "实际飞行圈数与每圈增量",
+      "normalized_error": 1.8686259527149242e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "分区场磁通与动量增量",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "注入偏置与正则角动量",
+      "normalized_error": 1.092309154491493e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "加速器电力功与相对论能量",
+      "normalized_error": 5.605877858144775e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "实际飞行圈数与每圈增量",
+      "normalized_error": 1.8686259527149242e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "均匀时变场正则角动量",
+      "normalized_error": 1.0416572049365413e-09,
+      "tolerance": 5e-08,
+      "kind": "完整运动方程积分"
+    },
+    {
+      "name": "均匀时变场电场功",
+      "normalized_error": 1.4920843628115181e-09,
+      "tolerance": 5e-08,
+      "kind": "完整运动方程积分"
+    },
+    {
+      "name": "均匀场缓变半径近似",
+      "normalized_error": 0.0029009991928209207,
+      "tolerance": 0.012,
+      "kind": "缓变近似"
+    },
+    {
+      "name": "均匀时变场正则角动量",
+      "normalized_error": 7.873324214813238e-11,
+      "tolerance": 5e-08,
+      "kind": "完整运动方程积分"
+    },
+    {
+      "name": "均匀时变场电场功",
+      "normalized_error": 9.452282184094492e-11,
+      "tolerance": 5e-08,
+      "kind": "完整运动方程积分"
+    },
+    {
+      "name": "均匀场缓变半径近似",
+      "normalized_error": 0.003503324133854201,
+      "tolerance": 0.02,
+      "kind": "缓变近似"
+    },
+    {
+      "name": "均匀时变场正则角动量",
+      "normalized_error": 1.2092549184217205e-11,
+      "tolerance": 5e-08,
+      "kind": "完整运动方程积分"
+    },
+    {
+      "name": "均匀时变场电场功",
+      "normalized_error": 1.2591042862271571e-11,
+      "tolerance": 5e-08,
+      "kind": "完整运动方程积分"
+    },
+    {
+      "name": "均匀场缓变半径近似",
+      "normalized_error": 0.003602211041744404,
+      "tolerance": 0.03,
+      "kind": "缓变近似"
+    },
+    {
+      "name": "环形线圈磁通链",
+      "normalized_error": 7.131420897604721e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "环形线圈场能",
+      "normalized_error": 3.5657104488023603e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "环形线圈磁通链",
+      "normalized_error": 2.1883203992440427e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "环形线圈场能",
+      "normalized_error": 1.8236003327033689e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "环形线圈磁通链",
+      "normalized_error": 1.2309338853165042e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "环形线圈场能",
+      "normalized_error": 2.092587605038057e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布电流归一化",
+      "normalized_error": 1.2335811384723962e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布内部电感",
+      "normalized_error": 5.334387114601437e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布电流归一化",
+      "normalized_error": 1.8639411002317906e-13,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布内部电感",
+      "normalized_error": 7.950288488107911e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布电流归一化",
+      "normalized_error": 2.4671622769447922e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布内部电感",
+      "normalized_error": 1.0463605494025896e-14,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布电流归一化",
+      "normalized_error": 5.1810407815840636e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布内部电感",
+      "normalized_error": 1.5592823873450355e-14,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布电流归一化",
+      "normalized_error": 1.0238723449320887e-14,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布内部电感",
+      "normalized_error": 2.4928001324002867e-14,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布电流归一化",
+      "normalized_error": 2.0354088784794538e-14,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布内部电感",
+      "normalized_error": 4.295720392767984e-14,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布电流归一化",
+      "normalized_error": 3.885780586188048e-14,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布内部电感",
+      "normalized_error": 7.870785603226832e-14,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布电流归一化",
+      "normalized_error": 7.4138226422191e-14,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "幂分布内部电感",
+      "normalized_error": 1.5106830431999887e-13,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限厚度同轴外导体电感",
+      "normalized_error": 2.7798269374852214e-14,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限厚度同轴外导体电感",
+      "normalized_error": 1.2687450817269993e-14,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限厚度同轴外导体电感",
+      "normalized_error": 2.4420815662916234e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限厚度同轴外导体电感",
+      "normalized_error": 3.7184655697646574e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限厚度同轴外导体电感",
+      "normalized_error": 6.09245403798458e-13,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限厚度同轴外导体电感",
+      "normalized_error": 1.0937457601094989e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限厚度同轴外导体电感",
+      "normalized_error": 2.3135509575394325e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限厚度同轴外导体电感",
+      "normalized_error": 3.2055737670385004e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限厚度同轴外导体电感",
+      "normalized_error": 3.9353628409118974e-13,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限厚度同轴外导体电感",
+      "normalized_error": 1.531244064153296e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限厚度同轴外导体电感",
+      "normalized_error": 4.370040697574481e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "有限厚度同轴外导体电感",
+      "normalized_error": 3.4620196684015795e-15,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "同轴薄返回壳首项",
+      "normalized_error": 9.992531228500426e-08,
+      "tolerance": 0.002,
+      "kind": "渐近比较"
+    },
+    {
+      "name": "同轴薄返回壳首项",
+      "normalized_error": 8.979784573208526e-07,
+      "tolerance": 0.006,
+      "kind": "渐近比较"
+    },
+    {
+      "name": "同轴薄返回壳首项",
+      "normalized_error": 9.925426443194805e-06,
+      "tolerance": 0.02,
+      "kind": "渐近比较"
+    },
+    {
+      "name": "RL电流热量电源功",
+      "normalized_error": 2.115318897560383e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL电流热量电源功",
+      "normalized_error": 1.1653233187119222e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL电流热量电源功",
+      "normalized_error": 6.21351069055915e-16,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL总能量",
+      "normalized_error": 4.836405593249303e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL电流热量电源功",
+      "normalized_error": 1.993281268854976e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL电流热量电源功",
+      "normalized_error": 5.444271814780124e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL电流热量电源功",
+      "normalized_error": 4.046451176648116e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL总能量",
+      "normalized_error": 3.651748552595165e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL电流热量电源功",
+      "normalized_error": 6.968109309610673e-16,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL电流热量电源功",
+      "normalized_error": 4.84970981647019e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL电流热量电源功",
+      "normalized_error": 1.1492747046394405e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL总能量",
+      "normalized_error": 1.5240653185395808e-14,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL电流热量电源功",
+      "normalized_error": 7.712100147355561e-16,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL电流热量电源功",
+      "normalized_error": 1.5489594893903043e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL电流热量电源功",
+      "normalized_error": 1.9271142278481155e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "RL总能量",
+      "normalized_error": 1.178576485985144e-14,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "钳位停止电流",
+      "normalized_error": 5.551115123125783e-16,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "钳位器件能量",
+      "normalized_error": 1.8424844789282933e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "钳位放电总能量",
+      "normalized_error": 3.0839528461809903e-16,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "钳位停止电流",
+      "normalized_error": 1.3877787807814457e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "钳位器件能量",
+      "normalized_error": 7.256550603724853e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "钳位放电总能量",
+      "normalized_error": 6.418476861114185e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "钳位停止电流",
+      "normalized_error": 3.2452673027504575e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "钳位器件能量",
+      "normalized_error": 3.5664695114188435e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "钳位放电总能量",
+      "normalized_error": 5.124106267500722e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "钳位停止电流",
+      "normalized_error": 7.930164461608261e-16,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "钳位器件能量",
+      "normalized_error": 4.585967303238026e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "钳位放电总能量",
+      "normalized_error": 2.2657612747452178e-15,
+      "tolerance": 2e-07,
+      "kind": "回路方程积分"
+    },
+    {
+      "name": "等阻耦合回路原热量",
+      "normalized_error": 2.8106674986715464e-13,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "等阻耦合回路次级热量",
+      "normalized_error": 1.4270609487498455e-12,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "等阻耦合回路双指数",
+      "normalized_error": 2.1516588768698032e-15,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "等阻耦合回路原热量",
+      "normalized_error": 6.88133499703554e-13,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "等阻耦合回路次级热量",
+      "normalized_error": 2.978776767254546e-12,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "等阻耦合回路双指数",
+      "normalized_error": 3.85991282077457e-15,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "等阻耦合回路原热量",
+      "normalized_error": 1.7063870188319317e-11,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "等阻耦合回路次级热量",
+      "normalized_error": 4.121733818449355e-11,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "等阻耦合回路双指数",
+      "normalized_error": 5.661613094829346e-15,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "等阻耦合回路原热量",
+      "normalized_error": 9.527563922991554e-12,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "等阻耦合回路次级热量",
+      "normalized_error": 2.5586246084804052e-11,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "等阻耦合回路双指数",
+      "normalized_error": 5.143827608741883e-15,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "异阻耦合回路衰减率",
+      "normalized_error": 6.422249782993251e-17,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "异阻耦合回路传输电荷",
+      "normalized_error": 1.34728591919239e-11,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "异阻耦合回路总热量",
+      "normalized_error": 1.983720809288916e-13,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "异阻耦合回路双指数",
+      "normalized_error": 2.9272085950492852e-15,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "异阻耦合回路衰减率",
+      "normalized_error": 1.4737056686577239e-16,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "异阻耦合回路传输电荷",
+      "normalized_error": 1.3091749906379846e-11,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "异阻耦合回路总热量",
+      "normalized_error": 5.207083050062925e-13,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "异阻耦合回路双指数",
+      "normalized_error": 1.2331424085657646e-15,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "异阻耦合回路衰减率",
+      "normalized_error": 1.545509250042117e-16,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "异阻耦合回路传输电荷",
+      "normalized_error": 1.3165460785050496e-11,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "异阻耦合回路总热量",
+      "normalized_error": 1.6086779175064668e-11,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "异阻耦合回路双指数",
+      "normalized_error": 1.2797699483106103e-15,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "异阻耦合回路衰减率",
+      "normalized_error": 7.207778159232657e-17,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "异阻耦合回路传输电荷",
+      "normalized_error": 1.3091379832038305e-11,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "异阻耦合回路总热量",
+      "normalized_error": 8.986227400058584e-12,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "异阻耦合回路双指数",
+      "normalized_error": 1.2531303203077302e-15,
+      "tolerance": 2e-07,
+      "kind": "耦合回路积分"
+    },
+    {
+      "name": "并联端口电感",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "线性方程求解"
+    },
+    {
+      "name": "并联支路场能",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "线性方程求解"
+    },
+    {
+      "name": "串联相助电感",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "串联相抵电感",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "并联端口电感",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "线性方程求解"
+    },
+    {
+      "name": "并联支路场能",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "线性方程求解"
+    },
+    {
+      "name": "串联相助电感",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "串联相抵电感",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "并联端口电感",
+      "normalized_error": 1.4084918969125122e-16,
+      "tolerance": 2e-07,
+      "kind": "线性方程求解"
+    },
+    {
+      "name": "并联支路场能",
+      "normalized_error": 1.750233944703188e-16,
+      "tolerance": 2e-07,
+      "kind": "线性方程求解"
+    },
+    {
+      "name": "串联相助电感",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "串联相抵电感",
+      "normalized_error": 1.3061447348531254e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "并联端口电感",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "线性方程求解"
+    },
+    {
+      "name": "并联支路场能",
+      "normalized_error": 1.436759208338438e-16,
+      "tolerance": 2e-07,
+      "kind": "线性方程求解"
+    },
+    {
+      "name": "串联相助电感",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "串联相抵电感",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "三个等价线圈本征值",
+      "normalized_error": 1.4161007967157609e-16,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "三个等价线圈本征值",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "三个等价线圈本征值",
+      "normalized_error": 1.3216940769347104e-16,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "三个等价线圈本征值",
+      "normalized_error": 3.0500632544647154e-17,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "三个等价线圈本征值",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "三个等价线圈本征值",
+      "normalized_error": 2.846725704167068e-16,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "三个等价线圈本征值",
+      "normalized_error": 2.5376526277146434e-16,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "三个等价线圈本征值",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "三个等价线圈本征值",
+      "normalized_error": 2.9605947323337506e-16,
+      "tolerance": 2e-07,
+      "kind": "矩阵本征值"
+    },
+    {
+      "name": "固定磁通链磁力",
+      "normalized_error": 2.7970504645967453e-11,
+      "tolerance": 2e-07,
+      "kind": "有限差分"
+    },
+    {
+      "name": "自由部件动能与场能",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "恒流可变电感供能",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "固定磁通链磁力",
+      "normalized_error": 3.297660453234396e-11,
+      "tolerance": 2e-07,
+      "kind": "有限差分"
+    },
+    {
+      "name": "自由部件动能与场能",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "恒流可变电感供能",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "固定磁通链磁力",
+      "normalized_error": 8.314072788068022e-12,
+      "tolerance": 2e-07,
+      "kind": "有限差分"
+    },
+    {
+      "name": "自由部件动能与场能",
+      "normalized_error": 1.4115995227274714e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "恒流可变电感供能",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "固定磁通链磁力",
+      "normalized_error": 9.981234627014859e-12,
+      "tolerance": 2e-07,
+      "kind": "有限差分"
+    },
+    {
+      "name": "自由部件动能与场能",
+      "normalized_error": 2.823199045454943e-16,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "恒流可变电感供能",
+      "normalized_error": 0.0,
+      "tolerance": 2e-07,
+      "kind": "积分或恒等式"
+    },
+    {
+      "name": "远场互感与几何积分",
+      "normalized_error": 0.002725648541593556,
+      "tolerance": 0.0054666666666666665,
+      "kind": "几何积分渐近"
+    },
+    {
+      "name": "远场力与几何积分导数",
+      "normalized_error": 0.004537606401006508,
+      "tolerance": 0.010933333333333333,
+      "kind": "几何积分渐近"
+    },
+    {
+      "name": "远场互感与几何积分",
+      "normalized_error": 0.004302036677993522,
+      "tolerance": 0.008639999999999998,
+      "kind": "几何积分渐近"
+    },
+    {
+      "name": "远场力与几何积分导数",
+      "normalized_error": 0.007158103843154612,
+      "tolerance": 0.017279999999999997,
+      "kind": "几何积分渐近"
+    },
+    {
+      "name": "远场互感与几何积分",
+      "normalized_error": 0.0009927797142840664,
+      "tolerance": 0.0019875,
+      "kind": "几何积分渐近"
+    },
+    {
+      "name": "远场力与几何积分导数",
+      "normalized_error": 0.0016539534922794794,
+      "tolerance": 0.003975,
+      "kind": "几何积分渐近"
+    },
+    {
+      "name": "移动次级焦耳热",
+      "normalized_error": 4.267540217810999e-13,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级机械功",
+      "normalized_error": 1.0101150240323283e-13,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级电源净功",
+      "normalized_error": 2.1831013077535898e-13,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级双指数或重根解",
+      "normalized_error": 6.334444409220245e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级有限时能量",
+      "normalized_error": 1.3886133170135107e-14,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级焦耳热",
+      "normalized_error": 5.735438651915708e-12,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级机械功",
+      "normalized_error": 3.042153815869116e-13,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级电源净功",
+      "normalized_error": 1.2370473995226491e-12,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级双指数或重根解",
+      "normalized_error": 2.8948465427139575e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级有限时能量",
+      "normalized_error": 5.093631367151668e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级焦耳热",
+      "normalized_error": 1.507635873873783e-11,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级机械功",
+      "normalized_error": 6.6257405206121654e-12,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级电源净功",
+      "normalized_error": 2.903861748355816e-11,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级双指数或重根解",
+      "normalized_error": 3.0644490513881176e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级有限时能量",
+      "normalized_error": 3.3425406650416195e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级焦耳热",
+      "normalized_error": 4.430876135573856e-13,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级机械功",
+      "normalized_error": 9.769281118192959e-14,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级电源净功",
+      "normalized_error": 2.2274494789978209e-13,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级双指数或重根解",
+      "normalized_error": 9.055195247581441e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级有限时能量",
+      "normalized_error": 6.528143209728161e-16,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级焦耳热",
+      "normalized_error": 2.133914346999647e-12,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级机械功",
+      "normalized_error": 1.9026200733250759e-13,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级电源净功",
+      "normalized_error": 6.224606628951646e-13,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级双指数或重根解",
+      "normalized_error": 4.294221750739818e-16,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "移动次级有限时能量",
+      "normalized_error": 1.4790193094133883e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "给定原电流斜坡次级电流",
+      "normalized_error": 3.084131470098764e-15,
+      "tolerance": 2e-07,
+      "kind": "强迫回路积分"
+    },
+    {
+      "name": "原电流斜坡完整传输电荷",
+      "normalized_error": 8.92275671338623e-12,
+      "tolerance": 2e-07,
+      "kind": "强迫回路积分"
+    },
+    {
+      "name": "给定原电流斜坡次级电流",
+      "normalized_error": 3.8782069580192714e-16,
+      "tolerance": 2e-07,
+      "kind": "强迫回路积分"
+    },
+    {
+      "name": "原电流斜坡完整传输电荷",
+      "normalized_error": 5.523552294563041e-12,
+      "tolerance": 2e-07,
+      "kind": "强迫回路积分"
+    },
+    {
+      "name": "给定原电流斜坡次级电流",
+      "normalized_error": 1.821933816363809e-15,
+      "tolerance": 2e-07,
+      "kind": "强迫回路积分"
+    },
+    {
+      "name": "原电流斜坡完整传输电荷",
+      "normalized_error": 1.1315963021045711e-11,
+      "tolerance": 2e-07,
+      "kind": "强迫回路积分"
+    },
+    {
+      "name": "自由可变电感回路磁通链",
+      "normalized_error": 8.326672684688674e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "自由可变电感回路速度",
+      "normalized_error": 8.345786814940572e-16,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "自由可变电感总能量",
+      "normalized_error": 1.4398204850607496e-14,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "自由可变电感回路磁通链",
+      "normalized_error": 4.9563527885051635e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "自由可变电感回路速度",
+      "normalized_error": 3.78588936493606e-16,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "自由可变电感总能量",
+      "normalized_error": 4.389912469818859e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "自由可变电感回路磁通链",
+      "normalized_error": 3.947459643111668e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "自由可变电感回路速度",
+      "normalized_error": 1.898975095756385e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "自由可变电感总能量",
+      "normalized_error": 7.607083687246445e-15,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "转动线圈磁转矩",
+      "normalized_error": 4.776662524816402e-12,
+      "tolerance": 2e-07,
+      "kind": "有限差分"
+    },
+    {
+      "name": "转动线圈磁转矩",
+      "normalized_error": 2.4069330722354235e-11,
+      "tolerance": 2e-07,
+      "kind": "有限差分"
+    },
+    {
+      "name": "转动线圈磁转矩",
+      "normalized_error": 1.0103060426576171e-11,
+      "tolerance": 2e-07,
+      "kind": "有限差分"
+    },
+    {
+      "name": "转动线圈磁转矩",
+      "normalized_error": 1.3112792742307637e-11,
+      "tolerance": 2e-07,
+      "kind": "有限差分"
+    },
+    {
+      "name": "零磁通链次级场能与排斥力",
+      "normalized_error": 6.198766672683322e-11,
+      "tolerance": 2e-07,
+      "kind": "有限差分"
+    },
+    {
+      "name": "零磁通链次级场能与排斥力",
+      "normalized_error": 2.1361414509750253e-11,
+      "tolerance": 2e-07,
+      "kind": "有限差分"
+    },
+    {
+      "name": "零磁通链次级场能与排斥力",
+      "normalized_error": 1.1748948117812265e-10,
+      "tolerance": 2e-07,
+      "kind": "有限差分"
+    },
+    {
+      "name": "严格无电阻移动次级末电流",
+      "normalized_error": 2.3453461395206432e-14,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "严格无电阻移动次级机械功",
+      "normalized_error": 5.970339963153511e-14,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "严格无电阻移动次级电源净功",
+      "normalized_error": 1.1480978205173167e-12,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "严格无电阻移动次级末电流",
+      "normalized_error": 2.4021189078253382e-14,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "严格无电阻移动次级机械功",
+      "normalized_error": 5.057937539872871e-14,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "严格无电阻移动次级电源净功",
+      "normalized_error": 1.1494765194782512e-12,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "严格无电阻移动次级末电流",
+      "normalized_error": 2.590520390792032e-14,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "严格无电阻移动次级机械功",
+      "normalized_error": 4.27347751542223e-14,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "严格无电阻移动次级电源净功",
+      "normalized_error": 1.1492129998947304e-12,
+      "tolerance": 2e-07,
+      "kind": "运动与回路耦合积分"
+    },
+    {
+      "name": "趋肤深度书面有效位数",
+      "normalized_error": 0.0004384960505570606,
+      "tolerance": 0.001,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "趋肤深度书面有效位数",
+      "normalized_error": 0.00021946897419609758,
+      "tolerance": 0.001,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "注入动能书面有效位数",
+      "normalized_error": 4.1834877179333353e-05,
+      "tolerance": 5e-05,
+      "kind": "数值代入与有效位数"
+    },
+    {
+      "name": "最终动能书面有效位数",
+      "normalized_error": 0.0001582256062684486,
+      "tolerance": 0.0002,
+      "kind": "数值代入与有效位数"
+    }
+  ]
+}

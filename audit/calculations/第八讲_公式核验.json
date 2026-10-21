@@ -1,0 +1,662 @@
+{
+  "lecture": "第八讲",
+  "passed": 131,
+  "max_normalized_error": 0.005357993584204697,
+  "checks": [
+    {
+      "name": "W1 电压积分 β=0.05",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W1 体电荷积分 β=0.05",
+      "normalized_error": 6.938893903907228e-18,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W1 边界高斯关系 β=0.05",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W1 电压积分 β=0.4",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W1 体电荷积分 β=0.4",
+      "normalized_error": 1.1102230246251565e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W1 边界高斯关系 β=0.4",
+      "normalized_error": 1.6653345369377348e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W1 电压积分 β=1.3",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W1 体电荷积分 β=1.3",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W1 边界高斯关系 β=1.3",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W1 电压积分 β=4",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W1 体电荷积分 β=4",
+      "normalized_error": 5.273645045227907e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W1 边界高斯关系 β=4",
+      "normalized_error": 5.273645045227907e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴内边界",
+      "normalized_error": 1.3706457094137734e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴外边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴拉普拉斯差分",
+      "normalized_error": 2.357427986154903e-08,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "同轴内边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴外边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴拉普拉斯差分",
+      "normalized_error": 2.7070502728321344e-08,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "同轴内边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴外边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴拉普拉斯差分",
+      "normalized_error": 1.865370613529649e-08,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "同轴表面电量相反",
+      "normalized_error": 1.1896090136617956e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴内边界",
+      "normalized_error": 1.3706457094137734e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴外边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴拉普拉斯差分",
+      "normalized_error": 1.7054053724763207e-08,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "同轴内边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴外边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴拉普拉斯差分",
+      "normalized_error": 3.162819806057371e-08,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "同轴内边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴外边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴拉普拉斯差分",
+      "normalized_error": 1.5951232112954017e-08,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "同轴表面电量相反",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴内边界",
+      "normalized_error": 1.3706457094137734e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴外边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴拉普拉斯差分",
+      "normalized_error": 7.323360251554334e-10,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "同轴内边界",
+      "normalized_error": 1.8200377452871417e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴外边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴拉普拉斯差分",
+      "normalized_error": 3.126614189774557e-09,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "同轴内边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴外边界",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "同轴拉普拉斯差分",
+      "normalized_error": 1.8622963449121954e-09,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "同轴表面电量相反",
+      "normalized_error": 1.264405720019379e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W5 有限导线的三维求积",
+      "normalized_error": 2.6083592202299125e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W5 有限导线的三维求积",
+      "normalized_error": 4.710277376051326e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W5 有限导线的三维求积",
+      "normalized_error": 5.619317212719151e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W5 有限导线的三维求积",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T6 外侧垂足求积",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T6 外侧垂足求积",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T6 外侧垂足求积",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W6 两圆弧与径向段求积",
+      "normalized_error": 4.493759861578015e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W6 磁矩方向与扇环面积",
+      "normalized_error": 2.4030801398812917e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W6 两圆弧与径向段求积",
+      "normalized_error": 5.124106267500722e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W6 磁矩方向与扇环面积",
+      "normalized_error": 4.554761126667308e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W6 两圆弧与径向段求积",
+      "normalized_error": 5.551115123125783e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W6 磁矩方向与扇环面积",
+      "normalized_error": 3.3306690738754696e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W7 矩形四边求积",
+      "normalized_error": 3.14018491736755e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W7 矩形四边求积",
+      "normalized_error": 7.537892978467304e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W7 矩形四边求积",
+      "normalized_error": 6.46244724497257e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "圆线圈轴上场三维求积",
+      "normalized_error": 3.6753076319133974e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "圆线圈轴上场三维求积",
+      "normalized_error": 1.853988457055535e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "圆线圈轴上场三维求积",
+      "normalized_error": 4.209410035370992e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "圆线圈轴上场三维求积",
+      "normalized_error": 1.042155844089248e-15,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "圆线圈轴上场三维求积",
+      "normalized_error": 4.3326497642625766e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W8 中心反绕线圈零场",
+      "normalized_error": 1.3951473992034527e-15,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W8 中心二阶首项",
+      "normalized_error": 1.5223393348104053e-06,
+      "tolerance": 6e-06
+    },
+    {
+      "name": "W8 中心反绕线圈零场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W8 中心二阶首项",
+      "normalized_error": 1.3889157591123748e-06,
+      "tolerance": 6e-06
+    },
+    {
+      "name": "W10 四边受力积分",
+      "normalized_error": 1.2561380507187484e-15,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W10 四边受力积分",
+      "normalized_error": 5.792467954566034e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W10 四边受力积分",
+      "normalized_error": 2.0816681711721685e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W11 几何缩放场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W11 几何缩放力",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W11 几何缩放场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W11 几何缩放力",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W11 几何缩放场",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W11 几何缩放力",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W12 反向双线分量相加",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W12 反向双线分量相加",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "W12 反向双线分量相加",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T4 非正交磁针矢量反解",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T4 非正交磁针矢量反解",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T4 非正交磁针矢量反解",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T5 数值叉乘",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T7 折角半无限线求积",
+      "normalized_error": 3.03243080634727e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T7 折角半无限线求积",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T7 折角半无限线求积",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T8 弧加弦完整积分",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T8 弧加弦完整积分",
+      "normalized_error": 2.6463854293772567e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T8 弧加弦完整积分",
+      "normalized_error": 3.3079817867215713e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T9 多边形逐边求积 n=3",
+      "normalized_error": 1.1110451076882818e-15,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T9 多边形逐边求积 n=4",
+      "normalized_error": 7.216449660063519e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T9 多边形逐边求积 n=6",
+      "normalized_error": 3.333135323064845e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T9 多边形逐边求积 n=9",
+      "normalized_error": 7.049611551877512e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T9 多边形逐边求积 n=16",
+      "normalized_error": 3.627954236897548e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T10 垂直场合成",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T11 环带求积",
+      "normalized_error": 2.6693420097291267e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T11 环带求积",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T11 环带求积",
+      "normalized_error": 1.4088552941651087e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T12 圆盘磁场求积",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T12 圆盘磁矩求积",
+      "normalized_error": 4.440892098500626e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T12 圆盘磁场求积",
+      "normalized_error": 2.5984923868165986e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T12 圆盘磁矩求积",
+      "normalized_error": 2.1156054441820468e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T13 第一次力",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T13 第二次力",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T14 远場偶极展开",
+      "normalized_error": 0.0009132916496834319,
+      "tolerance": 0.007
+    },
+    {
+      "name": "T14 闭合回路磁矩恒等式",
+      "normalized_error": 3.769546289141946e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T14 远場偶极展开",
+      "normalized_error": 0.0004225072751383362,
+      "tolerance": 0.007
+    },
+    {
+      "name": "T14 闭合回路磁矩恒等式",
+      "normalized_error": 9.04691109394067e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T14 远場偶极展开",
+      "normalized_error": 0.0012514484020736385,
+      "tolerance": 0.007
+    },
+    {
+      "name": "T14 闭合回路磁矩恒等式",
+      "normalized_error": 1.055472960959745e-15,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T15 完整不共面双回路总力互易",
+      "normalized_error": 2.7755575615628914e-17,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T15 完整不共面双回路总力互易",
+      "normalized_error": 1.734723475976807e-18,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T16 均匀场闭合净力",
+      "normalized_error": 2.914335439641036e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T16 力矩积分",
+      "normalized_error": 1.1949111229317242e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T16 均匀场闭合净力",
+      "normalized_error": 1.1102230246251565e-15,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T16 力矩积分",
+      "normalized_error": 3.3457511442088276e-16,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T17 轴场曲率差分",
+      "normalized_error": 2.4852868389482807e-08,
+      "tolerance": 5e-06
+    },
+    {
+      "name": "T17 轴场曲率差分",
+      "normalized_error": 1.6486811915683575e-06,
+      "tolerance": 5e-06
+    },
+    {
+      "name": "T17 轴场曲率差分",
+      "normalized_error": 8.398552088229039e-07,
+      "tolerance": 5e-06
+    },
+    {
+      "name": "T17 四阶系数及高阶误差",
+      "normalized_error": 0.0004379915567598545,
+      "tolerance": 0.006
+    },
+    {
+      "name": "T17 四阶系数及高阶误差",
+      "normalized_error": 0.0017513236706594006,
+      "tolerance": 0.006
+    },
+    {
+      "name": "T17 四阶系数及高阶误差",
+      "normalized_error": 0.005357993584204697,
+      "tolerance": 0.006
+    },
+    {
+      "name": "T18 临界极值",
+      "normalized_error": 5.551115123125783e-17,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T18 净力导数与稳定刚度",
+      "normalized_error": 2.411715271932735e-11,
+      "tolerance": 3e-07
+    },
+    {
+      "name": "T18 无量纲平衡方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T18 净力导数与稳定刚度",
+      "normalized_error": 1.4227530265031874e-10,
+      "tolerance": 3e-07
+    },
+    {
+      "name": "T18 无量纲平衡方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T18 净力导数与稳定刚度",
+      "normalized_error": 1.5114306091275592e-09,
+      "tolerance": 3e-07
+    },
+    {
+      "name": "T18 无量纲平衡方程",
+      "normalized_error": 0.0,
+      "tolerance": 2e-09
+    },
+    {
+      "name": "T18 净力导数与稳定刚度",
+      "normalized_error": 5.351165630357093e-09,
+      "tolerance": 3e-07
+    },
+    {
+      "name": "T18 无量纲平衡方程",
+      "normalized_error": 2.220446049250313e-16,
+      "tolerance": 2e-09
+    }
+  ]
+}

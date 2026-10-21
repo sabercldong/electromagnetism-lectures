@@ -1,0 +1,535 @@
+{
+  "count": 46,
+  "all_passed": true,
+  "scope": "本轮改动图的曲线、闭路方向、归一化、叉乘及折射角；一项为一次参数实例比较。",
+  "checks": [
+    {
+      "problem": "11T10",
+      "name": "红去蓝回的有向面积",
+      "computed": 6.0,
+      "reference": 6,
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "11T10",
+      "name": "两规范的三开放路径线积分差",
+      "computed": [
+        2.0999999999999996,
+        2.0999999999999996,
+        2.0999999999999996
+      ],
+      "reference": [
+        2.0999999999999996,
+        2.0999999999999996,
+        2.0999999999999996
+      ],
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "11T10",
+      "name": "两种规范闭路积分",
+      "computed": [
+        4.199999999999999,
+        4.199999999999999
+      ],
+      "reference": [
+        4.199999999999999,
+        4.199999999999999
+      ],
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "11T10",
+      "name": "红去蓝回的有向面积",
+      "computed": 1.36,
+      "reference": 1.36,
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "11T10",
+      "name": "两规范的三开放路径线积分差",
+      "computed": [
+        -0.2720000000000001,
+        -0.2720000000000001,
+        -0.272
+      ],
+      "reference": [
+        -0.272,
+        -0.272,
+        -0.272
+      ],
+      "error": 5.551115123125783e-17,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "11T10",
+      "name": "两种规范闭路积分",
+      "computed": [
+        -0.5440000000000002,
+        -0.5440000000000002
+      ],
+      "reference": [
+        -0.544,
+        -0.544
+      ],
+      "error": 1.1102230246251565e-16,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "11T10",
+      "name": "红去蓝回的有向面积",
+      "computed": 2.07,
+      "reference": 2.07,
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "11T10",
+      "name": "两规范的三开放路径线积分差",
+      "computed": [
+        1.2419999999999995,
+        1.2419999999999995,
+        1.242
+      ],
+      "reference": [
+        1.242,
+        1.242,
+        1.242
+      ],
+      "error": 4.440892098500626e-16,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "11T10",
+      "name": "两种规范闭路积分",
+      "computed": [
+        2.483999999999999,
+        2.483999999999999
+      ],
+      "reference": [
+        2.484,
+        2.484
+      ],
+      "error": 8.881784197001252e-16,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "4T7",
+      "name": "场线切向与电场平行",
+      "computed": 1.1102230246251565e-16,
+      "reference": 0,
+      "error": 1.1102230246251565e-16,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "4T7",
+      "name": "场线常数保持",
+      "computed": 0.3328710836980795,
+      "reference": 0.33287108369807955,
+      "error": 5.551115123125783e-17,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "4T7",
+      "name": "等势与场线的切向点积",
+      "computed": 7.07648963385379e-17,
+      "reference": 0,
+      "error": 7.07648963385379e-17,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "4T7",
+      "name": "场线切向与电场平行",
+      "computed": 5.551115123125783e-17,
+      "reference": 0,
+      "error": 5.551115123125783e-17,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "4T7",
+      "name": "场线常数保持",
+      "computed": 0.3328710836980795,
+      "reference": 0.33287108369807955,
+      "error": 5.551115123125783e-17,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "4T7",
+      "name": "等势与场线的切向点积",
+      "computed": 1.0423219226911478e-16,
+      "reference": 0,
+      "error": 1.0423219226911478e-16,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "4T7",
+      "name": "场线切向与电场平行",
+      "computed": 0.0,
+      "reference": 0,
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "4T7",
+      "name": "场线常数保持",
+      "computed": 0.33287108369807955,
+      "reference": 0.33287108369807955,
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "4T7",
+      "name": "等势与场线的切向点积",
+      "computed": 1.216542169131749e-16,
+      "reference": 0,
+      "error": 1.216542169131749e-16,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "12T9",
+      "name": "非零极值根",
+      "computed": 1.2564312086261697,
+      "reference": 1.25643,
+      "error": 1.2086261698129874e-06,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "problem": "12T9",
+      "name": "最大场半径",
+      "computed": 1.1209064227785341,
+      "reference": 1.12091,
+      "error": 3.5772214659335333e-06,
+      "tolerance": 5e-06,
+      "passed": true
+    },
+    {
+      "problem": "12T9",
+      "name": "曲线峰值参考线的绘图坐标",
+      "computed": 1.276345372677903,
+      "reference": 1.27635,
+      "error": 4.6273220970505236e-06,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "problem": "12T9",
+      "name": "轴心磁场归一值",
+      "computed": 1.0,
+      "reference": 1,
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "12T9",
+      "name": "圆内磁通直接积分形成蓝线",
+      "computed": 0.286896049064584,
+      "reference": 0.28689604909590605,
+      "error": 3.1322056059934766e-11,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "12T9",
+      "name": "圆内磁通直接积分形成蓝线",
+      "computed": 0.638172685670768,
+      "reference": 0.6381726863389515,
+      "error": 6.681835085231569e-10,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "12T9",
+      "name": "蓝线峰处导数",
+      "computed": 2.775557561562891e-11,
+      "reference": 0,
+      "error": 2.775557561562891e-11,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "problem": "12T9",
+      "name": "圆内磁通直接积分形成蓝线",
+      "computed": 0.3701176551413326,
+      "reference": 0.37011765627675686,
+      "error": 1.1354242546168791e-09,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "16W1",
+      "name": "六面电流叉乘顺序",
+      "computed": [
+        0.0,
+        1.2,
+        0.0
+      ],
+      "reference": [
+        0.0,
+        1.2,
+        0.0
+      ],
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "16W1",
+      "name": "六面电流叉乘顺序",
+      "computed": [
+        0.0,
+        -1.2,
+        0.0
+      ],
+      "reference": [
+        0.0,
+        -1.2,
+        0.0
+      ],
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "16W1",
+      "name": "六面电流叉乘顺序",
+      "computed": [
+        -1.2,
+        0.0,
+        0.7
+      ],
+      "reference": [
+        -1.2,
+        0.0,
+        0.7
+      ],
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "16W1",
+      "name": "六面电流叉乘顺序",
+      "computed": [
+        1.2,
+        0.0,
+        -0.7
+      ],
+      "reference": [
+        1.2,
+        0.0,
+        -0.7
+      ],
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "16W1",
+      "name": "六面电流叉乘顺序",
+      "computed": [
+        0.0,
+        -0.7,
+        0.0
+      ],
+      "reference": [
+        0.0,
+        -0.7,
+        0.0
+      ],
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "16W1",
+      "name": "六面电流叉乘顺序",
+      "computed": [
+        -0.0,
+        0.7,
+        0.0
+      ],
+      "reference": [
+        0.0,
+        0.7,
+        0.0
+      ],
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "18W5",
+      "name": "磁感应折射角",
+      "computed": 66.58677555362947,
+      "reference": 66.58678,
+      "error": 4.446370539312738e-06,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "problem": "18W5",
+      "name": "电场折射角",
+      "computed": 59.99999999999999,
+      "reference": 60,
+      "error": 7.105427357601002e-15,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "18W5",
+      "name": "B图分量比例",
+      "computed": [
+        4.0,
+        1.0
+      ],
+      "reference": [
+        4,
+        1
+      ],
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "18W5",
+      "name": "E图分量比例",
+      "computed": [
+        1.0,
+        0.3333429561200924
+      ],
+      "reference": [
+        1.0,
+        0.3333333333333333
+      ],
+      "error": 9.62278675908923e-06,
+      "tolerance": 2e-05,
+      "passed": true
+    },
+    {
+      "problem": "7W9",
+      "name": "电流矢量法向分量连续",
+      "computed": [
+        1.1,
+        1.1
+      ],
+      "reference": [
+        1.1,
+        1.1
+      ],
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "7W9",
+      "name": "电流模长比",
+      "computed": 2.0,
+      "reference": 2,
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "7W9",
+      "name": "电场模长比",
+      "computed": 0.5,
+      "reference": 0.5,
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "5T17",
+      "name": "正负电量的压力合力",
+      "computed": 0.013333333333333334,
+      "reference": 0.01333333333333333,
+      "error": 3.469446951953614e-18,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "5T17",
+      "name": "正负电量的压力合力",
+      "computed": 0.013333333333333334,
+      "reference": 0.01333333333333333,
+      "error": 3.469446951953614e-18,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "22W8",
+      "name": "功率三角形横、竖边",
+      "computed": [
+        13.37579617834395,
+        25.477707006369425
+      ],
+      "reference": [
+        13.37579618,
+        25.47770701
+      ],
+      "error": 3.6305749517850927e-09,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "22W8",
+      "name": "功率三角形斜边",
+      "computed": 28.775431842233164,
+      "reference": 28.775423,
+      "error": 8.842233164330082e-06,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "problem": "22W8",
+      "name": "图中功率有功分支相加",
+      "computed": 13.375796178343947,
+      "reference": 13.37579617834395,
+      "error": 3.552713678800501e-15,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "15T2",
+      "name": "D沿x而大小随y变的散度",
+      "computed": 0.0,
+      "reference": 0,
+      "error": 0.0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "problem": "15T2",
+      "name": "D沿x而大小随y变的旋度",
+      "computed": -0.9999999999843466,
+      "reference": -1,
+      "error": 1.565336749109747e-11,
+      "tolerance": 1e-08,
+      "passed": true
+    }
+  ]
+}

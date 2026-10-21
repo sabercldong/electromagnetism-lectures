@@ -1,0 +1,2118 @@
+{
+  "count": 189,
+  "count_description": "一项为一个参数实例的一次数值比较；复数或向量以最大分量误差计作一次。覆盖12例题、18习题与规范理论，积分和差分网格点不计数，次数不等于独立公式数量。",
+  "all_passed": true,
+  "groups": [
+    "T1",
+    "T10",
+    "T11",
+    "T12",
+    "T13",
+    "T14",
+    "T15",
+    "T16",
+    "T17",
+    "T18",
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6",
+    "T7",
+    "T8",
+    "T9",
+    "W1",
+    "W10",
+    "W11",
+    "W12",
+    "W2",
+    "W3",
+    "W4",
+    "W5",
+    "W6",
+    "W7",
+    "W8",
+    "W9",
+    "理论"
+  ],
+  "records": [
+    {
+      "group": "理论",
+      "name": "协变动量 x=-0.8",
+      "computed": {
+        "real": 0.23326704335121784,
+        "imag": 0.22927509425086728
+      },
+      "reference": {
+        "real": 0.23326704335229867,
+        "imag": 0.22927509434655544
+      },
+      "absolute_error": 9.56942558204039e-11,
+      "tolerance": 4.270788626645646e-08,
+      "method": "有限差分求导",
+      "passed": true
+    },
+    {
+      "group": "理论",
+      "name": "概率流 x=-0.8",
+      "computed": 0.07634304005186263,
+      "reference": 0.07634303999322235,
+      "absolute_error": 5.864027319280041e-11,
+      "tolerance": 1.7634303999322237e-08,
+      "method": "有限差分求导",
+      "passed": true
+    },
+    {
+      "group": "理论",
+      "name": "协变动量 x=-0.2",
+      "computed": {
+        "real": 0.2504580026671473,
+        "imag": 0.046862301673887496
+      },
+      "reference": {
+        "real": 0.25045800263931156,
+        "imag": 0.04686230169781596
+      },
+      "absolute_error": 3.6706939823734693e-11,
+      "tolerance": 3.5480440813787055e-08,
+      "method": "有限差分求导",
+      "passed": true
+    },
+    {
+      "group": "理论",
+      "name": "概率流 x=-0.2",
+      "computed": 0.24385536003993172,
+      "reference": 0.24385536000889435,
+      "absolute_error": 3.103736712084526e-11,
+      "tolerance": 3.4385536000889436e-08,
+      "method": "有限差分求导",
+      "passed": true
+    },
+    {
+      "group": "理论",
+      "name": "协变动量 x=0.3",
+      "computed": {
+        "real": 0.41407523582304284,
+        "imag": -0.023802930522410976
+      },
+      "reference": {
+        "real": 0.4140752357982637,
+        "imag": -0.023802930560834323
+      },
+      "absolute_error": 4.572043968987084e-11,
+      "tolerance": 5.147588219732903e-08,
+      "method": "有限差分求导",
+      "passed": true
+    },
+    {
+      "group": "理论",
+      "name": "概率流 x=0.3",
+      "computed": 0.40416636004639755,
+      "reference": 0.40416636001272266,
+      "absolute_error": 3.367489620487163e-11,
+      "tolerance": 5.041663600127227e-08,
+      "method": "有限差分求导",
+      "passed": true
+    },
+    {
+      "group": "理论",
+      "name": "协变动量 x=0.9",
+      "computed": {
+        "real": 0.6568733385243222,
+        "imag": 0.36988064632844186
+      },
+      "reference": {
+        "real": 0.6568733387192758,
+        "imag": 0.3698806462125125
+      },
+      "absolute_error": 2.268182754737364e-10,
+      "tolerance": 8.538529535412023e-08,
+      "method": "有限差分求导",
+      "passed": true
+    },
+    {
+      "group": "理论",
+      "name": "概率流 x=0.9",
+      "computed": 0.7696390799907157,
+      "reference": 0.7696390799969403,
+      "absolute_error": 6.224576409863403e-12,
+      "tolerance": 8.696390799969402e-08,
+      "method": "有限差分求导",
+      "passed": true
+    },
+    {
+      "group": "W1",
+      "name": "负电荷相位rad",
+      "computed": -1.5707963267948966,
+      "reference": -1.5707963267948966,
+      "absolute_error": 0.0,
+      "tolerance": 0.0004712488980384689,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W1",
+      "name": "相量",
+      "computed": {
+        "real": 6.123233995736766e-17,
+        "imag": -1.0
+      },
+      "reference": {
+        "real": -0.0,
+        "imag": -1.0
+      },
+      "absolute_error": 6.123233995736766e-17,
+      "tolerance": 0.00030000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W1",
+      "name": "周期Wb/1e-15",
+      "computed": 4.135667696923859,
+      "reference": 4.135667696,
+      "absolute_error": 9.238592113547384e-10,
+      "tolerance": 0.0012407103087999998,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W2",
+      "name": "磁通Wb/1e-15",
+      "computed": 3.1415926535897927,
+      "reference": 3.1416,
+      "absolute_error": 7.346410207276222e-06,
+      "tolerance": 0.0009424899999999999,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W2",
+      "name": "矢势Tm/1e-9 r=2e-07",
+      "computed": 2.4999999999999996,
+      "reference": 2.5,
+      "absolute_error": 4.440892098500626e-16,
+      "tolerance": 0.00075001,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W2",
+      "name": "圆周独立积分 r=2e-07",
+      "computed": 0.9999999999999999,
+      "reference": 1,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "圆周积分",
+      "passed": true
+    },
+    {
+      "group": "W2",
+      "name": "矢势Tm/1e-9 r=4e-07",
+      "computed": 1.2499999999999998,
+      "reference": 1.25,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 0.00037500999999999995,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W2",
+      "name": "圆周独立积分 r=4e-07",
+      "computed": 0.9999999999999999,
+      "reference": 1,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "圆周积分",
+      "passed": true
+    },
+    {
+      "group": "W2",
+      "name": "电子相位rad",
+      "computed": -4.772919453093605,
+      "reference": -4.773,
+      "absolute_error": 8.054690639447415e-05,
+      "tolerance": 0.0014319099999999998,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W3",
+      "name": "波长nm",
+      "computed": 0.12264259653234232,
+      "reference": 0.12264,
+      "absolute_error": 2.5965323423166042e-06,
+      "tolerance": 3.6802e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W3",
+      "name": "条纹mm",
+      "computed": 0.12264259653234233,
+      "reference": 0.12264,
+      "absolute_error": 2.596532342330482e-06,
+      "tolerance": 3.6802e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W3",
+      "name": "位移mm",
+      "computed": 0.0367927789597027,
+      "reference": 0.03679,
+      "absolute_error": 2.778959702694206e-06,
+      "tolerance": 1.1047e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W3",
+      "name": "近轴路长差 y/df=-3.0",
+      "computed": -2.999999796943358,
+      "reference": -3.0,
+      "absolute_error": 2.0305664216735408e-07,
+      "tolerance": 3.01e-06,
+      "method": "精确路长",
+      "passed": true
+    },
+    {
+      "group": "W3",
+      "name": "近轴路长差 y/df=-1.0",
+      "computed": -0.9999999924792721,
+      "reference": -1.0,
+      "absolute_error": 7.520727929311022e-09,
+      "tolerance": 1.0099999999999999e-06,
+      "method": "精确路长",
+      "passed": true
+    },
+    {
+      "group": "W3",
+      "name": "近轴路长差 y/df=0.3",
+      "computed": 0.2999999997969063,
+      "reference": 0.3,
+      "absolute_error": 2.0309370851734343e-10,
+      "tolerance": 3.1e-07,
+      "method": "精确路长",
+      "passed": true
+    },
+    {
+      "group": "W3",
+      "name": "近轴路长差 y/df=1.0",
+      "computed": 0.9999999924792721,
+      "reference": 1.0,
+      "absolute_error": 7.520727929311022e-09,
+      "tolerance": 1.0099999999999999e-06,
+      "method": "精确路长",
+      "passed": true
+    },
+    {
+      "group": "W3",
+      "name": "近轴路长差 y/df=3.0",
+      "computed": 2.999999796943358,
+      "reference": 3.0,
+      "absolute_error": 2.0305664216735408e-07,
+      "tolerance": 3.01e-06,
+      "method": "精确路长",
+      "passed": true
+    },
+    {
+      "group": "W4",
+      "name": "开放积分1 1",
+      "computed": 1.5000000000000002,
+      "reference": 1.5,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 0.00045001,
+      "method": "逐段积分",
+      "passed": true
+    },
+    {
+      "group": "W4",
+      "name": "开放积分差 1",
+      "computed": 2.220446049250313e-16,
+      "reference": 0,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 1e-08,
+      "method": "逐段积分",
+      "passed": true
+    },
+    {
+      "group": "W4",
+      "name": "开放积分1 2",
+      "computed": -3.4,
+      "reference": -3.4,
+      "absolute_error": 0.0,
+      "tolerance": 0.0010200099999999998,
+      "method": "逐段积分",
+      "passed": true
+    },
+    {
+      "group": "W4",
+      "name": "开放积分差 2",
+      "computed": 1.3322676295501878e-15,
+      "reference": 0,
+      "absolute_error": 1.3322676295501878e-15,
+      "tolerance": 1e-08,
+      "method": "逐段积分",
+      "passed": true
+    },
+    {
+      "group": "W5",
+      "name": "相量模平方 f=0",
+      "computed": 9.0,
+      "reference": 9,
+      "absolute_error": 0.0,
+      "tolerance": 0.0027000099999999996,
+      "method": "直接复数求模",
+      "passed": true
+    },
+    {
+      "group": "W5",
+      "name": "相量模平方 f=0.25",
+      "computed": 5.000000000000001,
+      "reference": 5,
+      "absolute_error": 8.881784197001252e-16,
+      "tolerance": 0.0015000099999999998,
+      "method": "直接复数求模",
+      "passed": true
+    },
+    {
+      "group": "W5",
+      "name": "相量模平方 f=0.5",
+      "computed": 1.0,
+      "reference": 1,
+      "absolute_error": 0.0,
+      "tolerance": 0.00030000999999999997,
+      "method": "直接复数求模",
+      "passed": true
+    },
+    {
+      "group": "W5",
+      "name": "相量模平方 f=1",
+      "computed": 9.0,
+      "reference": 9,
+      "absolute_error": 0.0,
+      "tolerance": 0.0027000099999999996,
+      "method": "直接复数求模",
+      "passed": true
+    },
+    {
+      "group": "W5",
+      "name": "可见度",
+      "computed": 0.8,
+      "reference": 0.8,
+      "absolute_error": 0.0,
+      "tolerance": 0.00024000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W6",
+      "name": "高斯相位积分",
+      "computed": {
+        "real": 0.82086871741554,
+        "imag": 1.3840657738068483e-17
+      },
+      "reference": 0.8209,
+      "absolute_error": 3.128258445994625e-05,
+      "tolerance": 0.00024628,
+      "method": "高斯数值积分",
+      "passed": true
+    },
+    {
+      "group": "W6",
+      "name": "噪声比上限",
+      "computed": 0.07305905883467848,
+      "reference": 0.07306,
+      "absolute_error": 9.411653215246618e-07,
+      "tolerance": 2.1928e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W6",
+      "name": "Wb/1e-16",
+      "computed": 3.0214798959023943,
+      "reference": 3.0216,
+      "absolute_error": 0.00012010409760554452,
+      "tolerance": 0.0009064899999999999,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W7",
+      "name": "标势脉冲相位",
+      "computed": 1.2154139583029009,
+      "reference": 1.2154,
+      "absolute_error": 1.3958302900851649e-05,
+      "tolerance": 0.00036462999999999996,
+      "method": "时间积分",
+      "passed": true
+    },
+    {
+      "group": "W7",
+      "name": "pi脉冲nV",
+      "computed": 103.39169242309647,
+      "reference": 103.39,
+      "absolute_error": 0.0016924230964718845,
+      "tolerance": 0.031017009999999998,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W8",
+      "name": "扩散长度um",
+      "computed": 3.1622776601683795,
+      "reference": 3.162,
+      "absolute_error": 0.00027766016837960095,
+      "tolerance": 0.0009486099999999999,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W8",
+      "name": "平均自由程nm",
+      "computed": 42.85714285714286,
+      "reference": 42.86,
+      "absolute_error": 0.0028571428571382285,
+      "tolerance": 0.012858009999999998,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W8",
+      "name": "经验可见度",
+      "computed": 0.4516864379372503,
+      "reference": 0.4517,
+      "absolute_error": 1.356206274971683e-05,
+      "tolerance": 0.00013551999999999998,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W8",
+      "name": "弹道长度um",
+      "computed": 700.0,
+      "reference": 700,
+      "absolute_error": 0.0,
+      "tolerance": 0.21000001,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W9",
+      "name": "ER微eV",
+      "computed": 15.23992844387434,
+      "reference": 15.24,
+      "absolute_error": 7.155612565945546e-05,
+      "tolerance": 0.00457201,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W9",
+      "name": "能量微eV n=0",
+      "computed": 0.9524955277421463,
+      "reference": 0.9525,
+      "absolute_error": 4.472257853715966e-06,
+      "tolerance": 0.00028576,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W9",
+      "name": "电流与能量导数 n=0",
+      "computed": -2.952009088493318e-10,
+      "reference": -2.952009088492414e-10,
+      "absolute_error": 9.036948192141827e-23,
+      "tolerance": 2.953009088492414e-17,
+      "method": "有限差分",
+      "passed": true
+    },
+    {
+      "group": "W9",
+      "name": "能量微eV n=-1",
+      "computed": 8.572459749679316,
+      "reference": 8.5725,
+      "absolute_error": 4.025032068355472e-05,
+      "tolerance": 0.0025717599999999998,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W9",
+      "name": "电流与能量导数 n=-1",
+      "computed": 8.856027265535259e-10,
+      "reference": 8.856027265477243e-10,
+      "absolute_error": 5.801638021293798e-21,
+      "tolerance": 8.857027265477242e-17,
+      "method": "有限差分",
+      "passed": true
+    },
+    {
+      "group": "W9",
+      "name": "速度m/s",
+      "computed": 578.8381798194462,
+      "reference": 578.84,
+      "absolute_error": 0.0018201805538637927,
+      "tolerance": 0.17365201,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W9",
+      "name": "电流nA",
+      "computed": -0.29520090884924144,
+      "reference": -0.2952,
+      "absolute_error": 9.088492414210947e-07,
+      "tolerance": 8.856999999999999e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W10",
+      "name": "感应场V/m",
+      "computed": -0.13164239139018133,
+      "reference": -0.13164,
+      "absolute_error": 2.3913901813221727e-06,
+      "tolerance": 3.9502e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W10",
+      "name": "力矩时间积分/ħ",
+      "computed": 0.2,
+      "reference": 0.2,
+      "absolute_error": 0.0,
+      "tolerance": 6.0009999999999996e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W10",
+      "name": "速度m/s",
+      "computed": 231.5352719277785,
+      "reference": 231.54,
+      "absolute_error": 0.004728072221496404,
+      "tolerance": 0.06946200999999999,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W10",
+      "name": "电场功/动能",
+      "computed": 0.9999999999999999,
+      "reference": 1,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "功率积分",
+      "passed": true
+    },
+    {
+      "group": "W10",
+      "name": "强制路径相位rad",
+      "computed": -0.6283185307179587,
+      "reference": -0.6283185307179586,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 0.00018850555921538756,
+      "method": "时空作用积分",
+      "passed": true
+    },
+    {
+      "group": "W11",
+      "name": "磁矩相位rad",
+      "computed": -0.09162012333655893,
+      "reference": -0.09162,
+      "absolute_error": 1.2333655893814743e-07,
+      "tolerance": 2.7495999999999996e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W11",
+      "name": "混合自旋可见度",
+      "computed": 0.9958058116527894,
+      "reference": 0.9958,
+      "absolute_error": 5.811652789344812e-06,
+      "tolerance": 0.00029874999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W12",
+      "name": "h/e磁场周期mT",
+      "computed": 5.265695655607253,
+      "reference": 5.2657,
+      "absolute_error": 4.3443927468800325e-06,
+      "tolerance": 0.0015797199999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W12",
+      "name": "h/2e磁场周期mT",
+      "computed": 2.6328478278036265,
+      "reference": 2.6328,
+      "absolute_error": 4.7827803626443455e-05,
+      "tolerance": 0.00078985,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W12",
+      "name": "绕行差 1",
+      "computed": 6.123233995736766e-17,
+      "reference": 0,
+      "absolute_error": 6.123233995736766e-17,
+      "tolerance": 1e-08,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "W12",
+      "name": "绕行差 2",
+      "computed": -1.0,
+      "reference": -1,
+      "absolute_error": 0.0,
+      "tolerance": 0.00030000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T1",
+      "name": "偏心圆环流/Φ",
+      "computed": 0.0,
+      "reference": 0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-08,
+      "method": "偏心回路积分",
+      "passed": true
+    },
+    {
+      "group": "T2",
+      "name": "绕行数组合",
+      "computed": 0.050000000000000044,
+      "reference": 0.05,
+      "absolute_error": 4.163336342344337e-17,
+      "tolerance": 1.5009999999999999e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T2",
+      "name": "相量",
+      "computed": {
+        "real": 0.9510565162951535,
+        "imag": -0.3090169943749477
+      },
+      "reference": {
+        "real": 0.95106,
+        "imag": -0.30902
+      },
+      "absolute_error": 4.601084808249091e-06,
+      "tolerance": 0.0003000112725973008,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T3",
+      "name": "非均匀磁通Wb/1e-15",
+      "computed": 1.5707963228679056,
+      "reference": 1.5708,
+      "absolute_error": 3.6771320943707053e-06,
+      "tolerance": 0.00047124999999999993,
+      "method": "径向面积积分",
+      "passed": true
+    },
+    {
+      "group": "T3",
+      "name": "外部A/1e-9",
+      "computed": 1.249999996875,
+      "reference": 1.25,
+      "absolute_error": 3.1250000365190544e-09,
+      "tolerance": 0.00037500999999999995,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T3",
+      "name": "相位rad",
+      "computed": -2.3864597205806533,
+      "reference": -2.3865,
+      "absolute_error": 4.027941934658941e-05,
+      "tolerance": 0.00071596,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T3",
+      "name": "旋度/B0 r/a=0.1",
+      "computed": 0.989999999899578,
+      "reference": 0.99,
+      "absolute_error": 1.0042200404569712e-10,
+      "tolerance": 1e-06,
+      "method": "有限差分旋度",
+      "passed": true
+    },
+    {
+      "group": "T3",
+      "name": "旋度/B0 r/a=0.4",
+      "computed": 0.8399999999013363,
+      "reference": 0.84,
+      "absolute_error": 9.86636328192958e-11,
+      "tolerance": 8.499999999999999e-07,
+      "method": "有限差分旋度",
+      "passed": true
+    },
+    {
+      "group": "T3",
+      "name": "旋度/B0 r/a=0.8",
+      "computed": 0.3599999998989828,
+      "reference": 0.3599999999999999,
+      "absolute_error": 1.010170835868962e-10,
+      "tolerance": 3.6999999999999985e-07,
+      "method": "有限差分旋度",
+      "passed": true
+    },
+    {
+      "group": "T3",
+      "name": "旋度/B0 r/a=1.2",
+      "computed": 0.0,
+      "reference": 0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-08,
+      "method": "有限差分旋度",
+      "passed": true
+    },
+    {
+      "group": "T3",
+      "name": "旋度/B0 r/a=2",
+      "computed": 0.0,
+      "reference": 0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-08,
+      "method": "有限差分旋度",
+      "passed": true
+    },
+    {
+      "group": "T4",
+      "name": "切线连接 n=-1",
+      "computed": {
+        "real": -0.8090169943749472,
+        "imag": -0.5877852522924734
+      },
+      "reference": {
+        "real": -0.8090169943749473,
+        "imag": -0.5877852522924732
+      },
+      "absolute_error": 1.5700924586837752e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "本征态端点代入",
+      "passed": true
+    },
+    {
+      "group": "T4",
+      "name": "扭转态能量 n=-1",
+      "computed": {
+        "real": 1.9599998736163882,
+        "imag": 5.193740399781174e-15
+      },
+      "reference": 1.9599999999999997,
+      "absolute_error": 1.2638361157613087e-07,
+      "tolerance": 3.929999999999999e-06,
+      "method": "有限差分本征方程",
+      "passed": true
+    },
+    {
+      "group": "T4",
+      "name": "切线连接 n=0",
+      "computed": {
+        "real": -0.8090169943749473,
+        "imag": -0.5877852522924732
+      },
+      "reference": {
+        "real": -0.8090169943749473,
+        "imag": -0.5877852522924732
+      },
+      "absolute_error": 0.0,
+      "tolerance": 0.00030000999999999997,
+      "method": "本征态端点代入",
+      "passed": true
+    },
+    {
+      "group": "T4",
+      "name": "扭转态能量 n=0",
+      "computed": {
+        "real": 0.15999999915772406,
+        "imag": -4.517407654235487e-14
+      },
+      "reference": 0.16000000000000003,
+      "absolute_error": 8.422759724026603e-10,
+      "tolerance": 3.3000000000000007e-07,
+      "method": "有限差分本征方程",
+      "passed": true
+    },
+    {
+      "group": "T4",
+      "name": "切线连接 n=1",
+      "computed": {
+        "real": -0.8090169943749475,
+        "imag": -0.587785252292473
+      },
+      "reference": {
+        "real": -0.8090169943749473,
+        "imag": -0.5877852522924732
+      },
+      "absolute_error": 2.482534153247273e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "本征态端点代入",
+      "passed": true
+    },
+    {
+      "group": "T4",
+      "name": "扭转态能量 n=1",
+      "computed": {
+        "real": 0.35999999573638203,
+        "imag": -8.129372375527457e-14
+      },
+      "reference": 0.36,
+      "absolute_error": 4.263617959463577e-09,
+      "tolerance": 7.3e-07,
+      "method": "有限差分本征方程",
+      "passed": true
+    },
+    {
+      "group": "T4",
+      "name": "切线连接 n=2",
+      "computed": {
+        "real": -0.8090169943749477,
+        "imag": -0.5877852522924728
+      },
+      "reference": {
+        "real": -0.8090169943749473,
+        "imag": -0.5877852522924732
+      },
+      "absolute_error": 5.551115123125783e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "本征态端点代入",
+      "passed": true
+    },
+    {
+      "group": "T4",
+      "name": "扭转态能量 n=2",
+      "computed": {
+        "real": 2.559999784395424,
+        "imag": 8.130249477533903e-14
+      },
+      "reference": 2.5600000000000005,
+      "absolute_error": 2.1560457641457842e-07,
+      "tolerance": 5.130000000000001e-06,
+      "method": "有限差分本征方程",
+      "passed": true
+    },
+    {
+      "group": "T5",
+      "name": "相对论波长pm",
+      "computed": 3.7014366114870842,
+      "reference": 3.70144,
+      "absolute_error": 3.3885129155919458e-06,
+      "tolerance": 0.001110442,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T5",
+      "name": "条纹um",
+      "computed": 3.7014366114870842,
+      "reference": 3.70144,
+      "absolute_error": 3.3885129155919458e-06,
+      "tolerance": 0.001110442,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T5",
+      "name": "位移um",
+      "computed": 0.9253591528717711,
+      "reference": 0.92536,
+      "absolute_error": 8.471282288979864e-07,
+      "tolerance": 0.000277618,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T5",
+      "name": "非相对论误差百分比",
+      "computed": 4.77822097389804,
+      "reference": 4.778,
+      "absolute_error": 0.00022097389804009993,
+      "tolerance": 0.0014334099999999998,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T6",
+      "name": "标势积分 t0=0",
+      "computed": 0.24179892408419704,
+      "reference": 0.24179892420849183,
+      "absolute_error": 1.2429479667730448e-10,
+      "tolerance": 3.417989242084918e-08,
+      "method": "时间积分",
+      "passed": true
+    },
+    {
+      "group": "T6",
+      "name": "标势积分 t0=1e-07",
+      "computed": 0.05349359720881491,
+      "reference": 0.05349359723631282,
+      "absolute_error": 2.7497913668295126e-11,
+      "tolerance": 1.5349359723631284e-08,
+      "method": "时间积分",
+      "passed": true
+    },
+    {
+      "group": "T6",
+      "name": "标势积分 t0=2.5e-07",
+      "computed": -0.24179892408419695,
+      "reference": -0.2417989242084917,
+      "absolute_error": 1.2429474116615324e-10,
+      "tolerance": 3.4179892420849165e-08,
+      "method": "时间积分",
+      "passed": true
+    },
+    {
+      "group": "T6",
+      "name": "标势积分 t0=6e-07",
+      "computed": -0.05349359720881507,
+      "reference": -0.05349359723631309,
+      "absolute_error": 2.7498017751703685e-11,
+      "tolerance": 1.534935972363131e-08,
+      "method": "时间积分",
+      "passed": true
+    },
+    {
+      "group": "T6",
+      "name": "t0=0相位",
+      "computed": 0.24179892420849183,
+      "reference": 0.2418,
+      "absolute_error": 1.075791508153845e-06,
+      "tolerance": 7.254999999999999e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T6",
+      "name": "1ns抖动相位",
+      "computed": 0.0015192674478786263,
+      "reference": 0.0015193,
+      "absolute_error": 3.255212137364717e-08,
+      "tolerance": 4.6578999999999994e-07,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T7",
+      "name": "环境重叠",
+      "computed": 0.5,
+      "reference": 0.5,
+      "absolute_error": 0.0,
+      "tolerance": 0.00015000999999999998,
+      "method": "态内积",
+      "passed": true
+    },
+    {
+      "group": "T7",
+      "name": "投影成功率",
+      "computed": 0.75,
+      "reference": 0.75,
+      "absolute_error": 0.0,
+      "tolerance": 0.00022501,
+      "method": "矩阵投影",
+      "passed": true
+    },
+    {
+      "group": "T7",
+      "name": "求迹强度 δ=0",
+      "computed": {
+        "real": 3.0,
+        "imag": 0.0
+      },
+      "reference": 3.0,
+      "absolute_error": 0.0,
+      "tolerance": 0.00090001,
+      "method": "联合态范数",
+      "passed": true
+    },
+    {
+      "group": "T7",
+      "name": "条件强度 δ=0",
+      "computed": 2.9999999999999996,
+      "reference": 3.0,
+      "absolute_error": 4.440892098500626e-16,
+      "tolerance": 0.00090001,
+      "method": "联合态投影",
+      "passed": true
+    },
+    {
+      "group": "T7",
+      "name": "求迹强度 δ=1.5707963267948966",
+      "computed": {
+        "real": 2.0,
+        "imag": 0.0
+      },
+      "reference": 2.0,
+      "absolute_error": 0.0,
+      "tolerance": 0.00060001,
+      "method": "联合态范数",
+      "passed": true
+    },
+    {
+      "group": "T7",
+      "name": "条件强度 δ=1.5707963267948966",
+      "computed": 1.5000000000000002,
+      "reference": 1.5,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 0.00045001,
+      "method": "联合态投影",
+      "passed": true
+    },
+    {
+      "group": "T7",
+      "name": "求迹强度 δ=3.141592653589793",
+      "computed": {
+        "real": 0.9999999999999999,
+        "imag": 0.0
+      },
+      "reference": 1.0,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "联合态范数",
+      "passed": true
+    },
+    {
+      "group": "T7",
+      "name": "条件强度 δ=3.141592653589793",
+      "computed": 1.432968628098351e-32,
+      "reference": 0.0,
+      "absolute_error": 1.432968628098351e-32,
+      "tolerance": 1e-08,
+      "method": "联合态投影",
+      "passed": true
+    },
+    {
+      "group": "T8",
+      "name": "二点噪声平均 a=0.25",
+      "computed": {
+        "real": 6.123233995736766e-17,
+        "imag": 0.0
+      },
+      "reference": 0,
+      "absolute_error": 6.123233995736766e-17,
+      "tolerance": 1e-08,
+      "method": "离散平均",
+      "passed": true
+    },
+    {
+      "group": "T8",
+      "name": "二点噪声平均 a=0.5",
+      "computed": {
+        "real": -1.0,
+        "imag": 0.0
+      },
+      "reference": -1,
+      "absolute_error": 0.0,
+      "tolerance": 0.00030000999999999997,
+      "method": "离散平均",
+      "passed": true
+    },
+    {
+      "group": "T8",
+      "name": "二点噪声平均 a=1",
+      "computed": {
+        "real": 1.0,
+        "imag": 0.0
+      },
+      "reference": 1,
+      "absolute_error": 0.0,
+      "tolerance": 0.00030000999999999997,
+      "method": "离散平均",
+      "passed": true
+    },
+    {
+      "group": "T8",
+      "name": "同方差高斯误用结果",
+      "computed": 0.29121293321402086,
+      "reference": 0.2912,
+      "absolute_error": 1.2933214020849348e-05,
+      "tolerance": 8.736999999999999e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T9",
+      "name": "面积包络零点mT",
+      "computed": 52.65695655607254,
+      "reference": 52.657,
+      "absolute_error": 4.344392745991854e-05,
+      "tolerance": 0.01579711,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T9",
+      "name": "面积相量 B/B1=0.0",
+      "computed": {
+        "real": 0.9999999999999998,
+        "imag": 0.0
+      },
+      "reference": {
+        "real": 1.0,
+        "imag": 0.0
+      },
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 1.0099999999999999e-06,
+      "method": "面积分布积分",
+      "passed": true
+    },
+    {
+      "group": "T9",
+      "name": "面积相量 B/B1=0.2",
+      "computed": {
+        "real": 0.9354892834808752,
+        "imag": 1.6271424177132104e-15
+      },
+      "reference": {
+        "real": 0.935489283788639,
+        "imag": 4.582575828113627e-16
+      },
+      "absolute_error": 3.077638144355347e-10,
+      "tolerance": 9.45489283788639e-07,
+      "method": "面积分布积分",
+      "passed": true
+    },
+    {
+      "group": "T9",
+      "name": "面积相量 B/B1=1.0",
+      "computed": {
+        "real": 1.2052906797875633e-16,
+        "imag": 0.0
+      },
+      "reference": {
+        "real": 3.8981718325193755e-17,
+        "imag": 9.547767314442451e-32
+      },
+      "absolute_error": 8.154734965356259e-17,
+      "tolerance": 1.000000000000004e-08,
+      "method": "面积分布积分",
+      "passed": true
+    },
+    {
+      "group": "T9",
+      "name": "面积相量 B/B1=1.5",
+      "computed": {
+        "real": -0.21220658686220292,
+        "imag": -1.3860842817556978e-15
+      },
+      "reference": {
+        "real": -0.2122065907891938,
+        "imag": -2.2874528821606533e-15
+      },
+      "absolute_error": 3.926990871372485e-09,
+      "tolerance": 2.222065907891938e-07,
+      "method": "面积分布积分",
+      "passed": true
+    },
+    {
+      "group": "T10",
+      "name": "精确轨道偏转um",
+      "computed": 2.9669675327738734,
+      "reference": 2.967,
+      "absolute_error": 3.246722612670894e-05,
+      "tolerance": 0.00089011,
+      "method": "圆弧与自由漂移",
+      "passed": true
+    },
+    {
+      "group": "T10",
+      "name": "偏转/条纹",
+      "computed": 0.02419198236716595,
+      "reference": 0.024192,
+      "absolute_error": 1.7632834050512747e-08,
+      "tolerance": 7.2676e-06,
+      "method": "精确轨道",
+      "passed": true
+    },
+    {
+      "group": "T10",
+      "name": "漏场上限nT",
+      "computed": 41.33600896475621,
+      "reference": 41.336,
+      "absolute_error": 8.964756212037628e-06,
+      "tolerance": 0.012400809999999998,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T10",
+      "name": "归一化能量控制 K=30",
+      "computed": 0.024191982367414096,
+      "reference": 0.024192,
+      "absolute_error": 1.7632585905258402e-08,
+      "tolerance": 7.2676e-06,
+      "method": "精确轨道与波长",
+      "passed": true
+    },
+    {
+      "group": "T10",
+      "name": "归一化能量控制 K=100",
+      "computed": 0.02419198236716595,
+      "reference": 0.024192,
+      "absolute_error": 1.7632834050512747e-08,
+      "tolerance": 7.2676e-06,
+      "method": "精确轨道与波长",
+      "passed": true
+    },
+    {
+      "group": "T10",
+      "name": "归一化能量控制 K=300",
+      "computed": 0.024191982367095057,
+      "reference": 0.024192,
+      "absolute_error": 1.7632904945191763e-08,
+      "tolerance": 7.2676e-06,
+      "method": "精确轨道与波长",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "相干长度nm",
+      "computed": 0.7807670188698889,
+      "reference": 0.78077,
+      "absolute_error": 2.981130111101571e-06,
+      "tolerance": 0.00023424099999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "相位标准差",
+      "computed": 0.6403959028952306,
+      "reference": 0.6404,
+      "absolute_error": 4.097104769340554e-06,
+      "tolerance": 0.00019212999999999996,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "线性高斯积分",
+      "computed": {
+        "real": 0.8146037696071445,
+        "imag": 1.8903258272111985e-17
+      },
+      "reference": 0.8146,
+      "absolute_error": 3.769607144543663e-06,
+      "tolerance": 0.00024439,
+      "method": "能量分布数值积分",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "二阶相位参数",
+      "computed": 0.016009897572380766,
+      "reference": 0.01601,
+      "absolute_error": 1.0242761923351384e-07,
+      "tolerance": 4.8129999999999995e-06,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T11",
+      "name": "精确能量积分幅度与近似",
+      "computed": 0.814322985042314,
+      "reference": 0.8146,
+      "absolute_error": 0.0002770149576859504,
+      "tolerance": 0.0016292099999999999,
+      "method": "未展开波数数值积分",
+      "passed": true
+    },
+    {
+      "group": "T12",
+      "name": "固定分支做功微eV",
+      "computed": 9.143957066324607,
+      "reference": 9.144,
+      "absolute_error": 4.293367539354165e-05,
+      "tolerance": 0.00274321,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T12",
+      "name": "功积分/ER",
+      "computed": 0.6000000000000001,
+      "reference": 0.6,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 0.00018000999999999998,
+      "method": "磁通积分",
+      "passed": true
+    },
+    {
+      "group": "T12",
+      "name": "初电流nA",
+      "computed": -0.23616072707939315,
+      "reference": -0.2362,
+      "absolute_error": 3.927292060684762e-05,
+      "tolerance": 7.086999999999999e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T12",
+      "name": "末电流nA",
+      "computed": -0.9446429083175726,
+      "reference": -0.9446,
+      "absolute_error": 4.2908317572587507e-05,
+      "tolerance": 0.00028338999999999995,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T13",
+      "name": "矩阵本征值 α=0.35",
+      "computed": [
+        0.11438611699158101,
+        0.430613883008419
+      ],
+      "reference": [
+        0.11438611699158102,
+        0.430613883008419
+      ],
+      "absolute_error": 1.3877787807814457e-17,
+      "tolerance": 0.0001291941649025257,
+      "method": "独立矩阵对角化",
+      "passed": true
+    },
+    {
+      "group": "T13",
+      "name": "下支电流导数 α=0.35",
+      "computed": 0.6486832980505137,
+      "reference": 0.6486832980505137,
+      "absolute_error": 0.0,
+      "tolerance": 0.0001946149894151541,
+      "method": "本征态Hellmann-Feynman矩阵元",
+      "passed": true
+    },
+    {
+      "group": "T13",
+      "name": "矩阵本征值 α=0.45",
+      "computed": [
+        0.18178932188134525,
+        0.32321067811865484
+      ],
+      "reference": [
+        0.18178932188134525,
+        0.3232106781186548
+      ],
+      "absolute_error": 5.551115123125783e-17,
+      "tolerance": 9.697320343559642e-05,
+      "method": "独立矩阵对角化",
+      "passed": true
+    },
+    {
+      "group": "T13",
+      "name": "下支电流导数 α=0.45",
+      "computed": 0.6071067811865476,
+      "reference": 0.6071067811865474,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 0.0001821420343559642,
+      "method": "本征态Hellmann-Feynman矩阵元",
+      "passed": true
+    },
+    {
+      "group": "T13",
+      "name": "矩阵本征值 α=0.5",
+      "computed": [
+        0.2,
+        0.3
+      ],
+      "reference": [
+        0.2,
+        0.3
+      ],
+      "absolute_error": 0.0,
+      "tolerance": 9.000999999999999e-05,
+      "method": "独立矩阵对角化",
+      "passed": true
+    },
+    {
+      "group": "T13",
+      "name": "下支电流导数 α=0.5",
+      "computed": -2.2371143170757382e-17,
+      "reference": 0.0,
+      "absolute_error": 2.2371143170757382e-17,
+      "tolerance": 1e-08,
+      "method": "本征态Hellmann-Feynman矩阵元",
+      "passed": true
+    },
+    {
+      "group": "T13",
+      "name": "矩阵本征值 α=0.55",
+      "computed": [
+        0.18178932188134522,
+        0.3232106781186548
+      ],
+      "reference": [
+        0.18178932188134522,
+        0.3232106781186548
+      ],
+      "absolute_error": 0.0,
+      "tolerance": 9.697320343559642e-05,
+      "method": "独立矩阵对角化",
+      "passed": true
+    },
+    {
+      "group": "T13",
+      "name": "下支电流导数 α=0.55",
+      "computed": -0.6071067811865477,
+      "reference": -0.6071067811865478,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 0.00018214203435596433,
+      "method": "本征态Hellmann-Feynman矩阵元",
+      "passed": true
+    },
+    {
+      "group": "T13",
+      "name": "矩阵本征值 α=0.65",
+      "computed": [
+        0.11438611699158101,
+        0.430613883008419
+      ],
+      "reference": [
+        0.11438611699158102,
+        0.430613883008419
+      ],
+      "absolute_error": 1.3877787807814457e-17,
+      "tolerance": 0.0001291941649025257,
+      "method": "独立矩阵对角化",
+      "passed": true
+    },
+    {
+      "group": "T13",
+      "name": "下支电流导数 α=0.65",
+      "computed": -0.6486832980505137,
+      "reference": -0.6486832980505137,
+      "absolute_error": 0.0,
+      "tolerance": 0.0001946149894151541,
+      "method": "本征态Hellmann-Feynman矩阵元",
+      "passed": true
+    },
+    {
+      "group": "T13",
+      "name": "中心隙/ER",
+      "computed": 0.09999999999999998,
+      "reference": 0.1,
+      "absolute_error": 2.7755575615628914e-17,
+      "tolerance": 3.001e-05,
+      "method": "矩阵对角化",
+      "passed": true
+    },
+    {
+      "group": "T14",
+      "name": "采样j=0",
+      "computed": 1.2000000000000002,
+      "reference": 1.2,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 0.00036000999999999996,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T14",
+      "name": "采样j=1",
+      "computed": 1.0565685424949238,
+      "reference": 1.05657,
+      "absolute_error": 1.4575050761855834e-06,
+      "tolerance": 0.000316981,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T14",
+      "name": "采样j=2",
+      "computed": 0.88,
+      "reference": 0.88,
+      "absolute_error": 0.0,
+      "tolerance": 0.00026400999999999996,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T14",
+      "name": "采样j=3",
+      "computed": 0.9434314575050762,
+      "reference": 0.94343,
+      "absolute_error": 1.4575050761855834e-06,
+      "tolerance": 0.00028303899999999996,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T14",
+      "name": "采样j=4",
+      "computed": 1.04,
+      "reference": 1.04,
+      "absolute_error": 0.0,
+      "tolerance": 0.00031201,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T14",
+      "name": "采样j=5",
+      "computed": 0.9434314575050762,
+      "reference": 0.94343,
+      "absolute_error": 1.4575050761855834e-06,
+      "tolerance": 0.00028303899999999996,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T14",
+      "name": "采样j=6",
+      "computed": 0.88,
+      "reference": 0.88,
+      "absolute_error": 0.0,
+      "tolerance": 0.00026400999999999996,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T14",
+      "name": "采样j=7",
+      "computed": 1.0565685424949238,
+      "reference": 1.05657,
+      "absolute_error": 1.4575050761855834e-06,
+      "tolerance": 0.000316981,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T14",
+      "name": "离散系数",
+      "computed": [
+        1.0,
+        0.07999999999999996,
+        0.11999999999999994
+      ],
+      "reference": [
+        1.0,
+        0.08,
+        0.12
+      ],
+      "absolute_error": 5.551115123125783e-17,
+      "tolerance": 0.00030000999999999997,
+      "method": "离散傅里叶求和",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "电子相量 N=0",
+      "computed": {
+        "real": 1.0,
+        "imag": 0.0
+      },
+      "reference": 1,
+      "absolute_error": 0.0,
+      "tolerance": 0.00030000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "配对相量 N=0",
+      "computed": {
+        "real": 1.0,
+        "imag": 0.0
+      },
+      "reference": 1,
+      "absolute_error": 0.0,
+      "tolerance": 0.00030000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "电子相量 N=1",
+      "computed": {
+        "real": -1.0,
+        "imag": -1.2246467991473532e-16
+      },
+      "reference": -1,
+      "absolute_error": 1.2246467991473532e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "配对相量 N=1",
+      "computed": {
+        "real": 1.0,
+        "imag": 2.4492935982947064e-16
+      },
+      "reference": 1,
+      "absolute_error": 2.4492935982947064e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "电子相量 N=2",
+      "computed": {
+        "real": 1.0,
+        "imag": 2.4492935982947064e-16
+      },
+      "reference": 1,
+      "absolute_error": 2.4492935982947064e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "配对相量 N=2",
+      "computed": {
+        "real": 1.0,
+        "imag": 4.898587196589413e-16
+      },
+      "reference": 1,
+      "absolute_error": 4.898587196589413e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "电子相量 N=3",
+      "computed": {
+        "real": -1.0,
+        "imag": -3.6739403974420594e-16
+      },
+      "reference": -1,
+      "absolute_error": 3.6739403974420594e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "配对相量 N=3",
+      "computed": {
+        "real": 1.0,
+        "imag": 7.347880794884119e-16
+      },
+      "reference": 1,
+      "absolute_error": 7.347880794884119e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "电子相量 N=4",
+      "computed": {
+        "real": 1.0,
+        "imag": 4.898587196589413e-16
+      },
+      "reference": 1,
+      "absolute_error": 4.898587196589413e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T15",
+      "name": "配对相量 N=4",
+      "computed": {
+        "real": 1.0,
+        "imag": 9.797174393178826e-16
+      },
+      "reference": 1,
+      "absolute_error": 9.797174393178826e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T16",
+      "name": "三相量透射 (0, 0)",
+      "computed": 1.0,
+      "reference": 1.0,
+      "absolute_error": 0.0,
+      "tolerance": 0.00030000999999999997,
+      "method": "复数振幅相加",
+      "passed": true
+    },
+    {
+      "group": "T16",
+      "name": "三相量透射 (0.3333333333333333, 0.3333333333333333)",
+      "computed": 1.7804152374779777e-32,
+      "reference": 0.0,
+      "absolute_error": 1.7804152374779777e-32,
+      "tolerance": 1e-08,
+      "method": "复数振幅相加",
+      "passed": true
+    },
+    {
+      "group": "T16",
+      "name": "三相量透射 (0.1, 0.7)",
+      "computed": 0.5131148876388772,
+      "reference": 0.5131148876388772,
+      "absolute_error": 0.0,
+      "tolerance": 0.00015394446629166315,
+      "method": "复数振幅相加",
+      "passed": true
+    },
+    {
+      "group": "T16",
+      "name": "三相量透射 (0.5, 0.2)",
+      "computed": 0.11111111111111109,
+      "reference": 0.11111111111111109,
+      "absolute_error": 0.0,
+      "tolerance": 3.334333333333332e-05,
+      "method": "复数振幅相加",
+      "passed": true
+    },
+    {
+      "group": "T16",
+      "name": "三相量透射 (1.1, 0.7)",
+      "computed": 0.5131148876388768,
+      "reference": 0.513114887638877,
+      "absolute_error": 2.220446049250313e-16,
+      "tolerance": 0.0001539444662916631,
+      "method": "复数振幅相加",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "内部场周期T",
+      "computed": 0.20569123654715832,
+      "reference": 0.20569,
+      "absolute_error": 1.2365471583064558e-06,
+      "tolerance": 6.171699999999999e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "半周期内部场T",
+      "computed": 0.10284561827357916,
+      "reference": 0.10285,
+      "absolute_error": 4.381726420837895e-06,
+      "tolerance": 3.0865e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "条纹um",
+      "computed": 75.10294555856707,
+      "reference": 75.1029,
+      "absolute_error": 4.555856706645045e-05,
+      "tolerance": 0.02253088,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "半条纹位移um",
+      "computed": 37.551472779283536,
+      "reference": 37.5515,
+      "absolute_error": 2.7220716461329175e-05,
+      "tolerance": 0.011265459999999998,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "振幅可见度",
+      "computed": 0.9395973154362416,
+      "reference": 0.939597,
+      "absolute_error": 3.154362415713763e-07,
+      "tolerance": 0.0002818891,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "相干长度nm",
+      "computed": 1.593734003520994,
+      "reference": 1.59374,
+      "absolute_error": 5.996479006009636e-06,
+      "tolerance": 0.00047813199999999993,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "相位宽度",
+      "computed": 0.31372863909244786,
+      "reference": 0.31373,
+      "absolute_error": 1.3609075521503478e-06,
+      "tolerance": 9.412899999999999e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "能量积分因子",
+      "computed": 0.9519784990347021,
+      "reference": 0.951978,
+      "absolute_error": 4.99034702117207e-07,
+      "tolerance": 0.00028560339999999997,
+      "method": "高斯数值积分",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "磁通积分因子",
+      "computed": 0.9689107911912969,
+      "reference": 0.968911,
+      "absolute_error": 2.0880870310602262e-07,
+      "tolerance": 0.00029068329999999996,
+      "method": "高斯数值积分",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "总可见度",
+      "computed": 0.866667877164794,
+      "reference": 0.866668,
+      "absolute_error": 1.2283520600675502e-07,
+      "tolerance": 0.00026001039999999995,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "噪声上限比",
+      "computed": 0.05083111724724865,
+      "reference": 0.050831,
+      "absolute_error": 1.172472486460352e-07,
+      "tolerance": 1.52593e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "噪声Wb/1e-16",
+      "computed": 2.1022060959799544,
+      "reference": 2.1023,
+      "absolute_error": 9.390402004560983e-05,
+      "tolerance": 0.0006307,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T17",
+      "name": "漏场上限nT",
+      "computed": 25.804914914250364,
+      "reference": 25.805,
+      "absolute_error": 8.508574963528304e-05,
+      "tolerance": 0.007741509999999999,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "泡利占据能量 u=0.01",
+      "computed": 0.9802,
+      "reference": 0.9802,
+      "absolute_error": 0.0,
+      "tolerance": 0.00029406999999999995,
+      "method": "整数能级排序",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "占据电流 u=0.01",
+      "computed": 1.96,
+      "reference": 1.96,
+      "absolute_error": 0.0,
+      "tolerance": 0.00058801,
+      "method": "两个占据态电流求和",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "泡利占据能量 u=0.25",
+      "computed": 0.625,
+      "reference": 0.625,
+      "absolute_error": 0.0,
+      "tolerance": 0.00018750999999999997,
+      "method": "整数能级排序",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "占据电流 u=0.25",
+      "computed": 1.0,
+      "reference": 1.0,
+      "absolute_error": 0.0,
+      "tolerance": 0.00030000999999999997,
+      "method": "两个占据态电流求和",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "泡利占据能量 u=0.5",
+      "computed": 0.5,
+      "reference": 0.5,
+      "absolute_error": 0.0,
+      "tolerance": 0.00015000999999999998,
+      "method": "整数能级排序",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "占据电流 u=0.5",
+      "computed": -0.0,
+      "reference": 0.0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-08,
+      "method": "两个占据态电流求和",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "泡利占据能量 u=0.75",
+      "computed": 0.625,
+      "reference": 0.625,
+      "absolute_error": 0.0,
+      "tolerance": 0.00018750999999999997,
+      "method": "整数能级排序",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "占据电流 u=0.75",
+      "computed": -1.0,
+      "reference": -1.0,
+      "absolute_error": 0.0,
+      "tolerance": 0.00030000999999999997,
+      "method": "两个占据态电流求和",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "泡利占据能量 u=0.99",
+      "computed": 0.9802,
+      "reference": 0.9802,
+      "absolute_error": 0.0,
+      "tolerance": 0.00029406999999999995,
+      "method": "整数能级排序",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "占据电流 u=0.99",
+      "computed": -1.96,
+      "reference": -1.96,
+      "absolute_error": 0.0,
+      "tolerance": 0.00058801,
+      "method": "两个占据态电流求和",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "泡利占据能量 u=1.25",
+      "computed": 0.625,
+      "reference": 0.625,
+      "absolute_error": 0.0,
+      "tolerance": 0.00018750999999999997,
+      "method": "整数能级排序",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "占据电流 u=1.25",
+      "computed": 1.0,
+      "reference": 1.0,
+      "absolute_error": 0.0,
+      "tolerance": 0.00030000999999999997,
+      "method": "两个占据态电流求和",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "ER微eV",
+      "computed": 3.809982110968585,
+      "reference": 3.80998,
+      "absolute_error": 2.110968585267159e-06,
+      "tolerance": 0.0011430039999999998,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "平衡能量微eV",
+      "computed": 2.381238819355366,
+      "reference": 2.38124,
+      "absolute_error": 1.1806446340578702e-06,
+      "tolerance": 0.000714382,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "平衡电流nA",
+      "computed": 0.14760045442462072,
+      "reference": 0.1476,
+      "absolute_error": 4.5442462071054734e-07,
+      "tolerance": 4.429e-05,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "孤立末能量微eV",
+      "computed": 6.191220930323951,
+      "reference": 6.19122,
+      "absolute_error": 9.303239503211103e-07,
+      "tolerance": 0.001857376,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "孤立末电流nA",
+      "computed": -0.44280136327386216,
+      "reference": -0.442801,
+      "absolute_error": 3.632738621583975e-07,
+      "tolerance": 0.00013285029999999997,
+      "method": "独立参数代入",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "做功积分/ER",
+      "computed": 0.9999999999999999,
+      "reference": 1,
+      "absolute_error": 1.1102230246251565e-16,
+      "tolerance": 0.00030000999999999997,
+      "method": "磁通做功积分",
+      "passed": true
+    },
+    {
+      "group": "T18",
+      "name": "两个简并态混合电流",
+      "computed": 0.0,
+      "reference": 0,
+      "absolute_error": 0.0,
+      "tolerance": 1e-08,
+      "method": "简并态等量混合",
+      "passed": true
+    }
+  ]
+}
